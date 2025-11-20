@@ -35,6 +35,11 @@ function var_0_0.ShouldShowTip()
 	local var_7_1 = getProxy(TaskProxy)
 	local var_7_2 = getProxy(ActivityProxy):getActivityById(var_7_0)
 	local var_7_3 = var_7_2:getConfig("config_data")
+
+	if var_7_2.data3 then
+		return false
+	end
+
 	local var_7_4 = var_7_2.data3
 
 	if var_7_4 == 0 or var_7_4 == nil then
@@ -166,7 +171,7 @@ end
 
 function var_0_0.UpdateList(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 	local var_13_0 = arg_13_1 + 1
-	local var_13_1 = arg_13_0:findTF("frame", arg_13_2)
+	local var_13_1 = arg_13_2:Find("frame")
 	local var_13_2 = arg_13_0.taskProxy:getTaskVO(arg_13_3[var_13_0])
 	local var_13_3 = arg_13_2:Find("desc")
 
@@ -183,9 +188,9 @@ function var_0_0.UpdateList(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 
 	arg_13_0:updateAwards(var_13_2:getConfig("award_display"), var_13_7, var_13_6)
 
-	local var_13_8 = arg_13_0:findTF("go_btn", arg_13_2)
-	local var_13_9 = arg_13_0:findTF("get_btn", arg_13_2)
-	local var_13_10 = arg_13_0:findTF("got_btn", arg_13_2)
+	local var_13_8 = arg_13_2:Find("go_btn")
+	local var_13_9 = arg_13_2:Find("get_btn")
+	local var_13_10 = arg_13_2:Find("got_btn")
 	local var_13_11 = var_13_2:getTaskStatus()
 
 	setActive(var_13_8, var_13_11 == 0)

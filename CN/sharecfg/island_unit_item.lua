@@ -515,6 +515,11 @@ pg.island_unit_item = {
 		navAgentParam = "",
 		model = "island/item/02/20154/prefab/pre_item_02_20154"
 	},
+	[20158] = {
+		id = 20158,
+		navAgentParam = "",
+		model = "island/item/02/20158/prefab/pre_item_02_20158"
+	},
 	[60001] = {
 		id = 60001,
 		navAgentParam = "",
@@ -705,6 +710,11 @@ pg.island_unit_item = {
 		navAgentParam = "",
 		model = "Island/Unit_Item/Infrastructure/Farm/pre_coffeeshop01_03C"
 	},
+	[100501] = {
+		id = 100501,
+		navAgentParam = "",
+		model = "island/item/collider/1005/prefab/pre_collider"
+	},
 	all = {
 		1001,
 		1002,
@@ -809,6 +819,7 @@ pg.island_unit_item = {
 		20152,
 		20153,
 		20154,
+		20158,
 		60001,
 		60002,
 		60003,
@@ -846,6 +857,7 @@ pg.island_unit_item = {
 		100702,
 		100703,
 		100901,
-		100902
+		100902,
+		100501
 	}
 }

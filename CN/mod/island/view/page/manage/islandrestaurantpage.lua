@@ -115,7 +115,14 @@ function var_0_0.OnInit(arg_3_0)
 		arg_3_0:emit(IslandMediator.OPEN_RESTAURANT, {
 			restId = arg_3_0.restId,
 			ships = var_7_0,
-			commodities = arg_3_0.selectedDic
+			commodities = arg_3_0.selectedDic,
+			estimateData = {
+				trade_id = arg_3_0.restId,
+				sell_num_min = arg_3_0.totalMinCnt,
+				sell_num_max = arg_3_0.totalMaxCnt,
+				sell_money_min = arg_3_0.totalMinSales,
+				sell_money_max = arg_3_0.totalMaxSales
+			}
 		})
 	end, SFX_PANEL)
 	onButton(arg_3_0, arg_3_0.btnsTF:Find("close"), function()
@@ -167,6 +174,7 @@ function var_0_0.OnInit(arg_3_0)
 	arg_3_0.argC = var_0_3.island_manage_sale_coefficient_c.key_value_int / 100
 	arg_3_0.saleConst = var_0_3.island_manage_sale_constant.key_value_int / 100
 	arg_3_0.maxAttrEffect = pg.island_chara_att[1].manage_effect / 10000
+	arg_3_0.minSaleCnt = var_0_3.island_manage_sale_limit.key_value_int
 end
 
 function var_0_0.AddListeners(arg_16_0)
@@ -430,6 +438,7 @@ function var_0_0.UpdateShipItem(arg_35_0, arg_35_1, arg_35_2)
 			showBenefits = true,
 			selectNum = #arg_35_0.assistantsData,
 			selectedIds = Clone(arg_35_0.selectedShipIds),
+			attrType = IslandShipAttr.MANAGE_KEY,
 			confirmFunc = function(arg_37_0)
 				arg_35_0:OnSelectedShipsDone(arg_37_0)
 			end,
@@ -640,6 +649,11 @@ function var_0_0.UpdateShelfItem(arg_49_0, arg_49_1, arg_49_2)
 			arg_49_0:ReduceShelfCnt(var_49_2.id, 1)
 			arg_49_0:FlushEstimate()
 		end, SFX_PANEL)
+
+		if var_49_4 < var_49_2.num then
+			arg_49_0:ReduceShelfCnt(var_49_2.id, var_49_2.num - var_49_4)
+			arg_49_0:FlushEstimate()
+		end
 	end
 end
 
@@ -655,25 +669,32 @@ function var_0_0.ReduceShelfCnt(arg_51_0, arg_51_1, arg_51_2)
 end
 
 function var_0_0.FlushEstimate(arg_52_0)
-	local var_52_0, var_52_1 = arg_52_0.rest:GetRandomSaleCntBound()
-	local var_52_2 = 0
-	local var_52_3 = 0
-	local var_52_4 = 0
-	local var_52_5 = 0
+	local var_52_0 = arg_52_0.rest:GetStatus()
 
-	for iter_52_0, iter_52_1 in pairs(arg_52_0.selectedDic) do
-		local var_52_6 = arg_52_0:CaclBaseSaleCnt(iter_52_0)
-		local var_52_7 = math.max(0, math.min(iter_52_1, var_52_6 + var_52_0))
-		local var_52_8 = math.max(0, math.min(iter_52_1, var_52_6 + var_52_1))
+	if var_52_0 == IslandRestaurant.STATUS.OPENING or var_52_0 == IslandRestaurant.STATUS.CLOSE then
+		local var_52_1 = arg_52_0.rest:GetEstimateData()
 
-		var_52_4 = var_52_4 + arg_52_0:CaclGroupPrice(iter_52_0, var_52_7)
-		var_52_5 = var_52_5 + arg_52_0:CaclGroupPrice(iter_52_0, var_52_8)
-		var_52_2 = var_52_2 + var_52_7
-		var_52_3 = var_52_3 + var_52_8
+		setText(arg_52_0.estimateCntTF, var_52_1.cntMin .. "-" .. var_52_1.cntMax)
+		setText(arg_52_0.estimateSalesTF, var_52_1.salesMin .. "-" .. var_52_1.salesMax)
+	else
+		local var_52_2, var_52_3 = arg_52_0.rest:GetRandomSaleCntBound()
+
+		arg_52_0.totalMinCnt, arg_52_0.totalMaxCnt, arg_52_0.totalMinSales, arg_52_0.totalMaxSales = 0, 0, 0, 0
+
+		for iter_52_0, iter_52_1 in pairs(arg_52_0.selectedDic) do
+			local var_52_4 = arg_52_0:CaclBaseSaleCnt(iter_52_0)
+			local var_52_5 = math.min(iter_52_1, math.max(arg_52_0.minSaleCnt, var_52_4 + var_52_2))
+			local var_52_6 = math.min(iter_52_1, math.max(arg_52_0.minSaleCnt, var_52_4 + var_52_3))
+
+			arg_52_0.totalMinSales = arg_52_0.totalMinSales + arg_52_0:CaclGroupPrice(iter_52_0, var_52_5)
+			arg_52_0.totalMaxSales = arg_52_0.totalMaxSales + arg_52_0:CaclGroupPrice(iter_52_0, var_52_6)
+			arg_52_0.totalMinCnt = arg_52_0.totalMinCnt + var_52_5
+			arg_52_0.totalMaxCnt = arg_52_0.totalMaxCnt + var_52_6
+		end
+
+		setText(arg_52_0.estimateCntTF, arg_52_0.totalMinCnt .. "-" .. arg_52_0.totalMaxCnt)
+		setText(arg_52_0.estimateSalesTF, arg_52_0.totalMinSales .. "-" .. arg_52_0.totalMaxSales)
 	end
-
-	setText(arg_52_0.estimateCntTF, var_52_2 .. "-" .. var_52_3)
-	setText(arg_52_0.estimateSalesTF, var_52_4 .. "-" .. var_52_5)
 end
 
 function var_0_0.CaclBaseSaleCnt(arg_53_0, arg_53_1)

@@ -9,39 +9,39 @@ function var_0_0.getUIName(arg_1_0)
 end
 
 function var_0_0.init(arg_2_0)
-	arg_2_0.emojiGroup = arg_2_0:findTF("frame/group")
-	arg_2_0.emojiType = arg_2_0:findTF("type", arg_2_0.emojiGroup)
-	arg_2_0.emojiEvent = arg_2_0:findTF("frame/bg/mask/event")
-	arg_2_0.emojiSnap = arg_2_0:findTF("frame/bg/mask/event"):GetComponent("HScrollSnap")
+	arg_2_0.emojiGroup = arg_2_0._tf:Find("frame/group")
+	arg_2_0.emojiType = arg_2_0.emojiGroup:Find("type")
+	arg_2_0.emojiEvent = arg_2_0._tf:Find("frame/bg/mask/event")
+	arg_2_0.emojiSnap = arg_2_0._tf:Find("frame/bg/mask/event"):GetComponent("HScrollSnap")
 
 	arg_2_0.emojiSnap:Init()
 
-	arg_2_0.emojiContent = arg_2_0:findTF("content", arg_2_0.emojiSnap)
-	arg_2_0.emojiItem = arg_2_0:findTF("item", arg_2_0.emojiSnap)
-	arg_2_0.emojiDots = arg_2_0:findTF("frame/dots")
-	arg_2_0.emojiIconDots = arg_2_0:findTF("frame/emojiDots")
-	arg_2_0.emojiDot = arg_2_0:findTF("dot", arg_2_0.emojiSnap)
+	arg_2_0.emojiContent = tf(arg_2_0.emojiSnap):Find("content")
+	arg_2_0.emojiItem = tf(arg_2_0.emojiSnap):Find("item")
+	arg_2_0.emojiDots = arg_2_0._tf:Find("frame/dots")
+	arg_2_0.emojiIconDots = arg_2_0._tf:Find("frame/emojiDots")
+	arg_2_0.emojiDot = tf(arg_2_0.emojiSnap):Find("dot")
 
 	setText(arg_2_0.emojiEvent:Find("null_tpl/Text"), i18n("recently_sticker_placeholder"))
 	setActive(arg_2_0.emojiItem, false)
 	setActive(arg_2_0.emojiDot, false)
 
-	arg_2_0.emojiIconEvent = arg_2_0:findTF("frame/bg/mask/emojiicon_event")
-	arg_2_0.emojiIconSnap = arg_2_0:findTF("frame/bg/mask/emojiicon_event"):GetComponent("HScrollSnap")
+	arg_2_0.emojiIconEvent = arg_2_0._tf:Find("frame/bg/mask/emojiicon_event")
+	arg_2_0.emojiIconSnap = arg_2_0._tf:Find("frame/bg/mask/emojiicon_event"):GetComponent("HScrollSnap")
 
 	arg_2_0.emojiIconSnap:Init()
 
-	arg_2_0.emojiIconContent = arg_2_0:findTF("content", arg_2_0.emojiIconSnap)
-	arg_2_0.emojiIconItem = arg_2_0:findTF("item_emojiicon", arg_2_0.emojiIconSnap)
+	arg_2_0.emojiIconContent = tf(arg_2_0.emojiIconSnap):Find("content")
+	arg_2_0.emojiIconItem = tf(arg_2_0.emojiIconSnap):Find("item_emojiicon")
 
 	setActive(arg_2_0.emojiIconItem, false)
 
 	arg_2_0.parentTr = arg_2_0._tf.parent
-	arg_2_0.resource = arg_2_0:findTF("frame/resource")
-	arg_2_0.frame = arg_2_0:findTF("frame")
+	arg_2_0.resource = arg_2_0._tf:Find("frame/resource")
+	arg_2_0.frame = arg_2_0._tf:Find("frame")
 	arg_2_0.frame.position = arg_2_0.contextData.pos or Vector3(0, 0, 0)
 	arg_2_0.frame.localPosition = Vector3(arg_2_0.frame.localPosition.x, arg_2_0.frame.localPosition.y, 0)
-	arg_2_0.newTag = arg_2_0:findTF("newtag")
+	arg_2_0.newTag = arg_2_0._tf:Find("newtag")
 	arg_2_0.emojiProxy = getProxy(EmojiProxy)
 end
 
@@ -259,17 +259,18 @@ function var_0_0.emojiIconFliter(arg_18_0)
 
 	for iter_18_3 = arg_18_0.emojiIconContent.childCount + 1, var_18_3 do
 		local var_18_4 = Instantiate(arg_18_0.emojiIconItem)
-		local var_18_5 = arg_18_0:findTF("TitleCommom", var_18_4)
-		local var_18_6 = arg_18_0:findTF("TitleAll", var_18_4)
-		local var_18_7 = arg_18_0:findTF("CommomIconContainer", var_18_4)
-		local var_18_8 = arg_18_0:findTF("AllIconContainer", var_18_4)
-		local var_18_9 = GetComponent(var_18_8, "GridLayoutGroup")
+		local var_18_5 = tf(var_18_4)
+		local var_18_6 = var_18_5:Find("TitleCommom")
+		local var_18_7 = var_18_5:Find("TitleAll")
+		local var_18_8 = var_18_5:Find("CommomIconContainer")
+		local var_18_9 = var_18_5:Find("AllIconContainer")
+		local var_18_10 = GetComponent(var_18_9, "GridLayoutGroup")
 
 		if iter_18_3 == 1 then
-			local var_18_10 = arg_18_0:findTF("Icon", var_18_7)
-			local var_18_11 = UIItemList.New(var_18_7, var_18_10)
+			local var_18_11 = var_18_8:Find("Icon")
+			local var_18_12 = UIItemList.New(var_18_8, var_18_11)
 
-			var_18_11:make(function(arg_19_0, arg_19_1, arg_19_2)
+			var_18_12:make(function(arg_19_0, arg_19_1, arg_19_2)
 				local var_19_0 = var_18_1[arg_19_1 + 1]
 
 				if arg_19_0 == UIItemList.EventUpdate then
@@ -288,14 +289,14 @@ function var_0_0.emojiIconFliter(arg_18_0)
 					end)
 				end
 			end)
-			var_18_11:align(#var_18_1)
+			var_18_12:align(#var_18_1)
 
-			var_18_9.padding.left = 20
+			var_18_10.padding.left = 20
 
-			local var_18_12 = arg_18_0:findTF("Icon", var_18_8)
-			local var_18_13 = UIItemList.New(var_18_8, var_18_12)
+			local var_18_13 = var_18_9:Find("Icon")
+			local var_18_14 = UIItemList.New(var_18_9, var_18_13)
 
-			var_18_13:make(function(arg_22_0, arg_22_1, arg_22_2)
+			var_18_14:make(function(arg_22_0, arg_22_1, arg_22_2)
 				local var_22_0 = var_18_0[arg_22_1 + 1]
 
 				if arg_22_0 == UIItemList.EventUpdate then
@@ -314,18 +315,18 @@ function var_0_0.emojiIconFliter(arg_18_0)
 					end)
 				end
 			end)
-			var_18_13:align(var_0_0.True_Emoji_Num_Of_Page - var_0_0.Frequently_Used_Emoji_Num)
+			var_18_14:align(var_0_0.True_Emoji_Num_Of_Page - var_0_0.Frequently_Used_Emoji_Num)
 		else
-			local var_18_14 = var_0_0.True_Emoji_Num_Of_Page - var_0_0.Frequently_Used_Emoji_Num
-			local var_18_15 = _.slice(var_18_0, (iter_18_3 - 2) * var_0_0.True_Emoji_Num_Of_Page + 9 + 1, var_0_0.True_Emoji_Num_Of_Page)
+			local var_18_15 = var_0_0.True_Emoji_Num_Of_Page - var_0_0.Frequently_Used_Emoji_Num
+			local var_18_16 = _.slice(var_18_0, (iter_18_3 - 2) * var_0_0.True_Emoji_Num_Of_Page + 9 + 1, var_0_0.True_Emoji_Num_Of_Page)
 
-			var_18_9.padding.left = 60
+			var_18_10.padding.left = 60
 
-			local var_18_16 = arg_18_0:findTF("Icon", var_18_8)
-			local var_18_17 = UIItemList.New(var_18_8, var_18_16)
+			local var_18_17 = var_18_9:Find("Icon")
+			local var_18_18 = UIItemList.New(var_18_9, var_18_17)
 
-			var_18_17:make(function(arg_25_0, arg_25_1, arg_25_2)
-				local var_25_0 = var_18_15[arg_25_1 + 1]
+			var_18_18:make(function(arg_25_0, arg_25_1, arg_25_2)
+				local var_25_0 = var_18_16[arg_25_1 + 1]
 
 				if arg_25_0 == UIItemList.EventUpdate then
 					PoolMgr.GetInstance():GetPrefab("emoji/" .. var_25_0.pic, var_25_0.pic, true, function(arg_26_0)
@@ -343,12 +344,12 @@ function var_0_0.emojiIconFliter(arg_18_0)
 					end)
 				end
 			end)
-			var_18_17:align(#var_18_15)
+			var_18_18:align(#var_18_16)
 		end
 
-		setActive(var_18_5, iter_18_3 == 1)
 		setActive(var_18_6, iter_18_3 == 1)
 		setActive(var_18_7, iter_18_3 == 1)
+		setActive(var_18_8, iter_18_3 == 1)
 		setActive(var_18_4, true)
 		arg_18_0.emojiIconSnap:AddChild(var_18_4)
 	end

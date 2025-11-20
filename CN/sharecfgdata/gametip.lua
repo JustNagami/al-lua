@@ -881,7 +881,7 @@ _G.pg.base.gametip.battle_preCombatLayer_clear_confirm = {
 	tip = "是否确定要清除已经选择的编队？",
 }
 _G.pg.base.gametip.battle_preCombatLayer_auto_confirm = {
-	tip = "是否确定要清除已经选择的编队，使用推荐的配置？",
+	tip = "是否采用推荐配置补齐空余位置?",
 }
 _G.pg.base.gametip.battle_preCombatLayer_save_confirm = {
 	tip = "是否保存当前编队？",
@@ -3914,6 +3914,12 @@ _G.pg.base.gametip.word_shipNation_brs = {
 }
 _G.pg.base.gametip.word_shipNation_yumia = {
 	tip = "Atelier Yumia",
+}
+_G.pg.base.gametip.word_shipNation_danmachi = {
+	tip = "danmachi",
+}
+_G.pg.base.gametip.word_shipNation_dal = {
+	tip = "Date A Live",
 }
 _G.pg.base.gametip.word_reset = {
 	tip = "重置",
@@ -7821,16 +7827,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "每累计建造200次可获得海上传奇舰船 {namecode:302}(最多4次)",
+	tip = "夜刀神十香、五河琴里等角色 建造概率UP！",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "{namecode:461}、{namecode:460}、{namecode:457} 建造追加！",
+	tip = "{namecode:84}、{namecode:65} 建造追加！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "{namecode:448}、{namecode:449} 建造追加！",
+	tip = "{namecode:225}、{namecode:226} 建造追加！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "莱昂纳多·达·芬奇 建造追加！",
+	tip = "{namecode:84} 建造追加！",
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -16192,8 +16198,11 @@ _G.pg.base.gametip.technology_mission_unfinish = {
 _G.pg.base.gametip.word_chinese = {
 	tip = "中文",
 }
+_G.pg.base.gametip.word_japanese_3 = {
+	tip = "日文①",
+}
 _G.pg.base.gametip.word_japanese_2 = {
-	tip = "日文2",
+	tip = "日文②",
 }
 _G.pg.base.gametip.word_japanese = {
 	tip = "日文",
@@ -22433,7 +22442,7 @@ _G.pg.base.gametip.help_starLightAlbum = {
 			info = "纪念手册：",
 		},
 		{
-			info = "1. 回忆页面内新增「纪念手册」系统入口。\n2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动纪念章家具和活动勋章。\n ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；\n ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；\n ※ 「纪念贴纸」可以通过完成对应活动任务获取；\n ※ 奖励领取界面将延长至10月8日24时；",
+			info = "1. 回忆页面内新增「纪念手册」系统入口。\n2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动纪念章家具和活动勋章。\n ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；\n ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；\n ※ 「纪念贴纸」可以通过完成对应活动任务获取；\n ※ 奖励领取界面将延长至11月12日24时；",
 		},
 	},
 }
@@ -24292,6 +24301,9 @@ _G.pg.base.gametip.island_chara_list_level = {
 _G.pg.base.gametip.island_chara_list_attribute = {
 	tip = "综合能力",
 }
+_G.pg.base.gametip.island_chara_list_workspeed = {
+	tip = "工作速度",
+}
 _G.pg.base.gametip.island_index_name = {
 	tip = "剩余体力",
 }
@@ -24503,7 +24515,7 @@ _G.pg.base.gametip.island_visit_tip7 = {
 	tip = "常用访问码已满",
 }
 _G.pg.base.gametip.island_season_help = {
-	tip = "1.新的岛屿开发季开启时，岛屿开发PT将会自动重置\n2.开发季持续时间内，可通过资材转化、生产指定资材、完成货运委托、参与岛屿活动、以及在开发季商店购买商品获得岛屿开发PT\n3.岛屿开发季结束后，资材仓库中的资材将自动转化为岛屿开发PT并计入当前开发排行\n4.岛屿开发季结束后，当前开发季未领取的开发计划奖励和累积PT奖励将不再可领取",
+	tip = "1.新的岛屿开发季开启时，岛屿开发PT将会<color=#FD5650>自动重置</color>\n2.开发季持续时间内，可通过<color=#39bfff>资材转化</color>、<color=#39bfff>生产指定资材</color>、<color=#39bfff>参与岛屿活动</color>以及<color=#39bfff>在开发季商店购买商品</color>获得岛屿开发PT\n3.岛屿开发季结束后，临时仓库中的物品将直接清空，资材仓库中的资材将<color=#FD5650>自动转化</color>为岛屿开发PT并计入当前开发排行\n4.岛屿开发季结束后，正在进行的<color=#39bfff>岛屿订单、货运委托、角色委派、手动种植、店铺经营</color>等将清理重置\n5.岛屿开发季结束后，当前开发季未领取的开发计划奖励和累积PT奖励将<color=#FD5650>不再可领取</color>",
 }
 _G.pg.base.gametip.island_season_title = {
 	tip = "岛屿开发季",
@@ -24568,6 +24580,9 @@ _G.pg.base.gametip.island_season_charts_level = {
 _G.pg.base.gametip.island_season_charts_refresh = {
 	tip = "*开发排名每半小时更新一次",
 }
+_G.pg.base.gametip.island_season_charts_out = {
+	tip = "暂未上榜",
+}
 _G.pg.base.gametip.island_season_review_charnum = {
 	tip = "角色数量",
 }
@@ -24605,7 +24620,7 @@ _G.pg.base.gametip.island_season_window_end2 = {
 	tip = "岛屿开发季剩余时间：$1天",
 }
 _G.pg.base.gametip.island_season_window_rule = {
-	tip = "1.岛屿开发季结束时，资材仓库中的资材将自动转化为岛屿开发PT并计入当前开发排行，临时仓库中的物品将直接清空，正在进行的岛屿订单、货运委托、餐品制作、角色委派等将清理重置，请注意安排避免浪费\n2.岛屿开发季结束后，当前开发季未领取的开发计划奖励和累积PT奖励将不再可领取\n3.新的岛屿开发季开启时，岛屿开发PT将会自动重置",
+	tip = "1.岛屿开发季结束后，<color=#39bfff>临时仓库</color>中的物品将<color=#FD5650>直接清空</color>，资材仓库中的<color=#39bfff>资材</color>将自动转化为岛屿开发PT并计入当前开发排行\n2.岛屿开发季结束后，正在进行的<color=#39bfff>岛屿订单、货运委托、角色委派、手动种植、店铺经营</color>等将清理重置\n3.岛屿开发季结束后，当前开发季未领取的开发计划奖励和累积PT奖励将<color=#FD5650>不再可领取</color>\n4.新的岛屿开发季开启时，岛屿开发PT将会<color=#FD5650>自动重置</color>",
 }
 _G.pg.base.gametip.island_season_window_transformtip = {
 	tip = "是否确认转化所选物品？",
@@ -24645,6 +24660,18 @@ _G.pg.base.gametip.island_help_ship_order = {
 		{
 			icon = {
 				atlas = "helpbg/island_help_ship_order3",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_ship_order4",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_ship_order5",
 				path = "",
 			},
 		},
@@ -25072,6 +25099,43 @@ _G.pg.base.gametip.island_help_greet = {
 		{
 			icon = {
 				atlas = "helpbg/island_help_greet2",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.island_help_character_info = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_help_character_info1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_character_info2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_character_info3",
 				path = "",
 			},
 		},
@@ -26143,7 +26207,7 @@ _G.pg.base.gametip.island_production_selected_character = {
 	tip = "委派",
 }
 _G.pg.base.gametip.island_production_collect = {
-	tip = "收取产物",
+	tip = "收取",
 }
 _G.pg.base.gametip.island_production_selected_item = {
 	tip = "选择产物",
@@ -26198,6 +26262,24 @@ _G.pg.base.gametip.island_production_seeds_notenough = {
 }
 _G.pg.base.gametip.island_production_seeds_empty = {
 	tip = "未拥有种子，请前往商店购买",
+}
+_G.pg.base.gametip.island_production_tip = {
+	tip = "/次",
+}
+_G.pg.base.gametip.island_production_speed_addition1 = {
+	tip = "<color=#39bfff>$1</color>能力",
+}
+_G.pg.base.gametip.island_production_speed_addition2 = {
+	tip = "科技加成",
+}
+_G.pg.base.gametip.island_production_speed_addition3 = {
+	tip = "增益效果",
+}
+_G.pg.base.gametip.island_production_speed_tip1 = {
+	tip = "工作速度 <color=#39bfff>+$1%</color>",
+}
+_G.pg.base.gametip.island_production_speed_tip2 = {
+	tip = "工作速度加成",
 }
 _G.pg.base.gametip.island_order_ship_page_onekey_loadup = {
 	tip = "全部装载",
@@ -26513,6 +26595,12 @@ _G.pg.base.gametip.island_guide = {
 }
 _G.pg.base.gametip.island_guide_help = {
 	tip = "积累收集点可以提升收藏等级，并解锁对应的收藏奖励。\n达成以下条件可以领取角色收集点：\n\n1.<color=#39bfff>获取</color>角色：每名角色解锁后可领取<color=#39bfff>20</color>收集点\n2.<color=#39bfff>提升星级</color>：每名角色提升星级可领取<color=#39bfff>30</color>收集点，提升至5星时可额外获得<color=#39bfff>10</color>收集点\n3.角色<color=#39bfff>生活等级</color>：每名角色生活等级达到<color=#39bfff>50级</color>后可领取<color=#39bfff>50</color>收集点",
+}
+_G.pg.base.gametip.island_guide_help_npc = {
+	tip = "积累收集点可以提升收藏等级，并解锁对应的收藏奖励。\n与NPC互动并解锁图鉴可以领取收集点",
+}
+_G.pg.base.gametip.island_guide_help_item = {
+	tip = "积累收集点可以提升收藏等级，并解锁对应的收藏奖励。\n达成以下条件可以领取资材收集点：\n\n1.<color=#39bfff>获取</color>资材：每种资材解锁后可领取<color=#39bfff>20</color>收集点\n2.<color=#39bfff>累计获取某种资材达到一定数量</color>：获取某种资材的数量达到奖励阶段的目标数量后可领取收集点，每种资材都有各自的奖励阶段及其对应的目标数量，可在图鉴中查看",
 }
 _G.pg.base.gametip.island_guide_character_help = {
 	tip = "信息",
@@ -26946,7 +27034,7 @@ _G.pg.base.gametip.dorm3d_dafeng_bed = {
 	tip = "卧室",
 }
 _G.pg.base.gametip.island_draw_help = {
-	tip = "星彩奖说明\n\n星彩奖具有S奖、A奖、B奖、C奖三种等级奖励，可消耗奖券进行抽取。\n1.S奖可进行抽取顺序修改，调整想要抽出的奖励顺序。\n2.奖励被抽出后，不会放回奖池，全部奖励抽完后不可进行抽取。\n3.累计一定抽取次数可自选抽取次数奖励。\n4.奖池到期后，若奖池还有奖励，则将所有剩余奖券进行自动抽取。多余奖券则根据购买价格进行返还。返还及自动抽取奖励通过邮箱进行发放。 ",
+	tip = "星彩奖有<color=#39bfff>S奖、A奖、B奖、C奖</color>四种等级奖励，可消耗<color=#39bfff>星彩券</color>进行抽取。\n*星彩券可通过参与岛屿计划或消耗钻石购买获得。\n1.<color=#39bfff>S奖</color>可通过拖动调整后续奖励的获取顺序，已被抽出的奖励无法调整获取顺序。\n2.星彩奖中<color=#39bfff>所有奖励抽取概率完全相同</color>，奖励被抽出后不会放回奖池，全部奖励抽完后不可继续抽取。\n3.在星彩奖奖池开启期间，累计抽取一定次数后可在星彩奖页面<color=#39bfff>自选累计抽取次数奖励</color>，该累计抽取次数会在<color=#39bfff>活动结束后重置</color>。\n4.可点击星彩奖界面中的查看奖励，查看本期星彩奖奖池内的所有奖励。\n5.当星彩奖奖池到期后，若奖励未全部获得且仍持有星彩券，<color=#39bfff>将自动消耗剩余星彩券，直到抽取完所有奖励或消耗完星彩券</color>。未消耗的星彩券会根据<color=#39bfff>购买价格返还钻石</color>，返还及自动抽取奖励会通过邮箱进行发放。",
 }
 _G.pg.base.gametip.island_dress_initial_makesure = {
 	tip = "确认",
@@ -26993,7 +27081,390 @@ _G.pg.base.gametip.world_inventory_tip = {
 _G.pg.base.gametip.island_setmeal_title = {
 	tip = "套餐图鉴",
 }
+_G.pg.base.gametip.island_setmeal_benifit_title = {
+	tip = "收益提升",
+}
 _G.pg.base.gametip.island_shipselect_confirm = {
 	tip = "确认",
+}
+_G.pg.base.gametip.island_dresscolorunlock_tips = {
+	tip = "解锁消耗",
+}
+_G.pg.base.gametip.island_dresscolorunlock = {
+	tip = "解锁",
+}
+_G.pg.base.gametip.danmachi_main_sheet1 = {
+	tip = "晴空下的邂逅",
+}
+_G.pg.base.gametip.danmachi_main_sheet2 = {
+	tip = "圣火不灭",
+}
+_G.pg.base.gametip.danmachi_main_sheet3 = {
+	tip = "疾风不息",
+}
+_G.pg.base.gametip.danmachi_main_sheet4 = {
+	tip = "邂逅之旅",
+}
+_G.pg.base.gametip.danmachi_main_sheet5 = {
+	tip = "奖励汇总",
+}
+_G.pg.base.gametip.danmachi_main_time = {
+	tip = "剩余$1小时",
+}
+_G.pg.base.gametip.danmachi_award_1 = {
+	tip = "舰船",
+}
+_G.pg.base.gametip.danmachi_award_2 = {
+	tip = "家具",
+}
+_G.pg.base.gametip.danmachi_award_3 = {
+	tip = "外观装备",
+}
+_G.pg.base.gametip.danmachi_award_4 = {
+	tip = "特殊兵装",
+}
+_G.pg.base.gametip.danmachi_award_name1 = {
+	tip = "赫斯缇雅",
+}
+_G.pg.base.gametip.danmachi_award_name2 = {
+	tip = "琉·璃昂",
+}
+_G.pg.base.gametip.danmachi_award_get = {
+	tip = "已获得",
+}
+_G.pg.base.gametip.danmachi_award_unget = {
+	tip = "未获得",
+}
+_G.pg.base.gametip.dorm3d_touch2 = {
+	tip = "触摸（$1）",
+}
+_G.pg.base.gametip.dorm3d_furnitrue_type_special = {
+	tip = "特典",
+}
+_G.pg.base.gametip.island_helpbtn_order = {
+	tip = "<color=#E58A00>岛屿订单</color>：通过交付对应数量的<color=#39bfff>资材</color>即可完成岛屿订单，获得岛屿<color=#39bfff>开发资金</color>和<color=#39bfff>开发经验</color>的奖励。\n<color=#E58A00>加急订单</color>：在<color=#39bfff>岛屿科技</color>中开启加急订单后，在岛屿中<color=#39bfff>游玩一定时长</color>、<color=#39bfff>交付普通订单</color>和<color=#39bfff>装载货运委托</color>均有概率刷出加急订单。\n<color=#E58A00>订单上限</color>：普通订单与加急订单均有上限，普通订单为<color=#39bfff>每日上限</color>，加急订单为<color=#39bfff>每周上限</color>。\n<color=#E58A00>订单倾向</color>：可在订单倾向中选择订单的整体交付难度，改变后的倾向将在<color=#39bfff>下次出现订单时</color>生效。",
+}
+_G.pg.base.gametip.island_helpbtn_commission = {
+	tip = "在集成管理界面中可对已解锁的<color=#39bfff>生产</color>、<color=#39bfff>经营</color>以及<color=#39bfff>日常补给</color>等内容进行操作和确认。\n<color=#E58A00>生产</color>：点击<color=#39bfff>对应岗位</color>可进行角色委派和领取产物，点击<color=#39bfff>切换按钮</color>可查看委派角色与产物。\n<color=#E58A00>经营</color>：点击<color=#39bfff>经营准备</color>可进行店员、餐品选择，点击<color=#39bfff>营业结算</color>可收取营业收益。\n<color=#E58A00>补给</color>：点击<color=#39bfff>“补给”按钮</color>可快速传送至集会岛日常补给装置处。",
+}
+_G.pg.base.gametip.island_helpbtn_speedup = {
+	tip = "使用加速券可缩短<color=#39bfff>角色委派</color>、<color=#39bfff>更换订单</color>的等待时间。\n\n加速券有不同的<color=#39bfff>加速时长</color>，使用后超出部分时长<color=#FD5650>不会返还</color>，请合理规划使用对应时长的加速券。\n\n加速券有对应的<color=#39bfff>到期时间</color>，超过时间后对应的加速券将会<color=#FD5650>失效</color>。",
+}
+_G.pg.base.gametip.island_helpbtn_card = {
+	tip = {
+		{
+			info = "名片中可查看指挥官的各类信息，指挥官可以通过<color=#39bfff>聊天</color>或<color=#39bfff>拜访</color>功能查看他人的名片。\n<color=#E58A00>成就展示</color>：点击后可以选择已获得的<color=#39bfff>成就</color>在名片中进行展示。\n<color=#E58A00>修改名称</color>：点击<color=#39bfff>修改名称</color>可对岛屿名称进行修改。\n<color=#E58A00>修改签名</color>：点击<color=#39bfff>修改签名</color>可对名片中的签名进行修改。\n<color=#E58A00>评价标签</color>：点击查看已获得的所有评价标签。\n<color=#E58A00>岛屿形象</color>：点击切换按钮可重新选择岛屿形象。",
+		},
+	},
+}
+_G.pg.base.gametip.island_helpbtn_technology = {
+	tip = "可以委派角色对岛屿科技进行研发，满足科技解锁条件后消耗对应资材即可开始研发，等待研发完成后可开启全新功能、解锁<color=#39bfff>新产地</color>和<color=#39bfff>产物</color>。\n<color=#E58A00>中枢认证科技</color>：研发后可解锁<color=#39bfff>岛屿地图</color>、<color=#39bfff>集成管理</color>等便捷功能，还能进一步解锁<color=#39bfff>岛屿订单</color>、<color=#39bfff>货运委托</color>、<color=#39bfff>日常补给</color>的<color=#39bfff>额外功能</color>，以及获取<color=#39bfff>新角色</color>的岛屿权限认证函。\n<color=#E58A00>分支科技</color>：可开启各生产区域内的<color=#39bfff>委派功能</color>，提升手动及委派的生产效率，以及解锁各生产区域内的<color=#39bfff>配方</color>。",
+}
+_G.pg.base.gametip.island_shiporder_refresh_tip1 = {
+	tip = "该货运委托已装载资材，无法更换",
+}
+_G.pg.base.gametip.island_shiporder_refresh_tip2 = {
+	tip = "是否更换货运委托",
+}
+_G.pg.base.gametip.island_shiporder_refresh_preparing = {
+	tip = "货运委托准备中",
+}
+_G.pg.base.gametip.island_information_tech = {
+	tip = "科技研发-$1-$2",
+}
+_G.pg.base.gametip.dorm3d_shop_tag8 = {
+	tip = "解锁丝袜互动",
+}
+_G.pg.base.gametip.island_chara_attr_help = {
+	tip = "1.角色<color=#39bfff>能力值</color>越高，对应的<color=#39bfff>能力评级</color>越高\n2.<color=#39bfff>能力评级</color>越高，进行<color=#39bfff>对应能力的工作</color>时<color=#39bfff>效率</color>越高\n3.<color=#39bfff>能力评级</color>对应<color=#39bfff>能力值</color>范围：\n\t<color=#E79CC6>S</color>  能力值>=200\n\t<color=#FFDC1C>A</color>  120<=能力值<200\n\t<color=#B7A4FF>B</color>  80<=能力值<120\n\t<color=#97CFF6>C</color>  50<=能力值<80\n\t<color=#757577>D</color>  25<=能力值<50\n\t<color=#757577>E</color>  0<=能力值<25",
+}
+_G.pg.base.gametip.fengfanV3_20251023_Sidebar1 = {
+	tip = "飓风与自由群岛",
+}
+_G.pg.base.gametip.fengfanV3_20251023_Sidebar2 = {
+	tip = "自由群岛补给站",
+}
+_G.pg.base.gametip.fengfanV3_20251023_Sidebar3 = {
+	tip = "鬼怪故事集Ⅱ",
+}
+_G.pg.base.gametip.fengfanV3_20251023_jinianshouce = {
+	tip = "纪念手册",
+}
+_G.pg.base.gametip.island_selectall = {
+	tip = "全选",
+}
+_G.pg.base.gametip.island_quickselect_tip = {
+	tip = "*长按图标可快速增加选择数量",
+}
+_G.pg.base.gametip.search_equipment = {
+	tip = "搜索装备名",
+}
+_G.pg.base.gametip.search_sp_equipment = {
+	tip = "搜索特殊兵装名",
+}
+_G.pg.base.gametip.search_equipment_appearance = {
+	tip = "搜索装备外观名",
+}
+_G.pg.base.gametip.meta_reproduce_btn = {
+	tip = "是否进入当前信标META的档案重现战斗？\n战斗强度：Lv15\n*该战斗不消耗石油，不会获得任何奖励",
+}
+_G.pg.base.gametip.meta_simulated_btn = {
+	tip = "是否进入当前信标META的模拟战斗？\n战斗强度：Lv$1\n*该战斗不消耗石油，不会获得任何奖励",
+}
+_G.pg.base.gametip.equip_enhancement_tip = {
+	tip = "材料不足",
+}
+_G.pg.base.gametip.equip_enhancement_lv1 = {
+	tip = "强化至下一级",
+}
+_G.pg.base.gametip.equip_enhancement_lvx = {
+	tip = "强化至$1级",
+}
+_G.pg.base.gametip.equip_enhancement_finish = {
+	tip = "强化完成",
+}
+_G.pg.base.gametip.equip_enhancement_lv = {
+	tip = "级",
+}
+_G.pg.base.gametip.equip_enhancement_title = {
+	tip = "强化",
+}
+_G.pg.base.gametip.equip_enhancement_required = {
+	tip = "需要素材：",
+}
+_G.pg.base.gametip.shop_sell_ended = {
+	tip = "不可购买",
+}
+_G.pg.base.gametip.island_taskjump_systemnoopen_tips = {
+	tip = "系统未解锁，无法跳转",
+}
+_G.pg.base.gametip.island_taskjump_placenoopen_tips = {
+	tip = "地点未解锁，无法跳转",
+}
+_G.pg.base.gametip.island_ship_order_toggle_label_award = {
+	tip = "查看奖励",
+}
+_G.pg.base.gametip.island_ship_order_toggle_label_request = {
+	tip = "查看需求",
+}
+_G.pg.base.gametip.island_ship_order_delegate_auto_refresh_label = {
+	tip = "当前无可运输的货运委托",
+}
+_G.pg.base.gametip.island_ship_order_delegate_auto_refresh_time = {
+	tip = "委托列表自动刷新时间：",
+}
+_G.pg.base.gametip.island_order_ship_finish_cnt = {
+	tip = "运输次数$1/$2",
+}
+_G.pg.base.gametip.island_order_ship_sel_delegate_label = {
+	tip = "- 点击选择货运委托 -",
+}
+_G.pg.base.gametip.island_order_ship_finish_cnt_not_enough = {
+	tip = "停止装载",
+}
+_G.pg.base.gametip.island_order_ship_reset_all = {
+	tip = "是否确认刷新委托列表中的全部委托",
+}
+_G.pg.base.gametip.island_order_ship_exchange_tip = {
+	tip = "是否确认更换新的货运委托？",
+}
+_G.pg.base.gametip.island_order_ship_btn_replace = {
+	tip = "更换委托",
+}
+_G.pg.base.gametip.island_order_ship_exchange_tip_2 = {
+	tip = "无可运输次数",
+}
+_G.pg.base.gametip.island_order_ship_exchange_tip_1 = {
+	tip = "该委托已装载资材，更换将消耗一次运输次数且已装载资材无法取回，是否确认更换新的货运委托？",
+}
+_G.pg.base.gametip.island_urgent_notice = {
+	tip = {
+		{
+			info = "岛屿开发季特殊重置说明",
+		},
+		{
+			info = "在<color=#39bfff>2025.11.06维护</color>后，司令部将对本次岛屿开发季进行特殊重置，新的开发季持续时间为：<color=#39bfff>2025.11.6维护后~2026.2.5维护</color>，同时也将通过<color=#39bfff>「主界面」-「补偿」</color>向各位指挥官发放岛屿开发季相关补偿，届时还请指挥官注意查收。 \n※相关重置及补偿规则： \n1.生产经营（正在进行的<color=#39bfff>岛屿订单、货运委托、角色委派、手动种植、店铺经营；</color>等将清理重置）\n2.开发排行：各位指挥官将自动获得最高档位的开发排名奖励；\n3.开发计划：进度将随重置清空，未完成及已完成未领取的开发计划中的星彩券奖励将会通过<color=#39bfff>【补偿】</color>发放给指挥官，还请指挥官及时领取相关奖励； \n4.开发商店：重置开发商店内容，2026.2.5维护前商店内的指挥官配饰和动作将保留（不可重复获得）； \n5.岛屿订单：新增<color=#39bfff>岛屿PT兑换券</color>，将根据目前已完成的活动订单数量获得对应数量的岛屿PT兑换券，可直接转换为一定数量的岛屿开发PT。\n※岛屿PT兑换券属于资材，将于对应岛屿开发季结束后自动转化为对应数量的岛屿开发PT。\n6.其他进度重置：下次维护后，包括岛屿订单（每日订单、加急订单周剩余次数、好评等级）、货运委托（刷新次数重置）、开发区计划（每日计划、每周计划）、地图采集点（地图采集物、矿石、伐木点等）、每日补给及每日可领取补给次数、每日角色互动次数、店铺经营次数在内的玩法内容也将重置；\n*由于本次岛屿开发季提前结算，本次特殊结算PT将以<color=#39bfff>1:4</color>的比例进行换算，在自动将仓库中资材转换成岛屿开发PT后，将根据换算后的PT通过<color=#39bfff>【补偿】</color>发放相应的累计PT奖励；\n*本次结算不会转换秋季特产经营的特产资材；\n※岛屿开发季特殊重置后不会重置的内容：\n*星彩奖(奖品、已被抽出的奖励、抽取次数、累计抽取次数奖励、星彩券等)不会随开发季重置；\n*秋季特产经营的特产资材不会随开发季重置；\n*仅可获得一次、购买后永久获得或持有的内容将不会被重置，如开发资金、岛屿开发等级、角色的获取和养成、角色养成相关道具、集会岛建筑和家具、角色装扮、配饰，指挥官装扮、配饰、岛屿科技、店铺等级、岛屿计划（主线、支线）完成情况、成就等内容不会被重置\n*开发季限时加速券不会随开发季重置",
+		},
+	},
+}
+_G.pg.base.gametip.general_activity_side_bar1 = {
+	tip = "赛道上的等候",
+}
+_G.pg.base.gametip.general_activity_side_bar2 = {
+	tip = "港区时尚特刊",
+}
+_G.pg.base.gametip.general_activity_side_bar3 = {
+	tip = "BF Cruise Missions",
+}
+_G.pg.base.gametip.general_activity_side_bar4 = {
+	tip = "BF Ltd. Rerun Outfits",
+}
+_G.pg.base.gametip.black5_bundle_desc = {
+	tip = "购买三件指定换装可获得永恒礼盒*1",
+}
+_G.pg.base.gametip.black5_bundle_purchased = {
+	tip = "已购买",
+}
+_G.pg.base.gametip.black5_bundle_tip = {
+	tip = "购买全部即获得",
+}
+_G.pg.base.gametip.black5_bundle_buy_all = {
+	tip = "购买全部",
+}
+_G.pg.base.gametip.black5_bundle_popup = {
+	tip = "是否消耗<color=#92fc63>$1</color>钻石购买<color=#92fc63>$2</color>",
+}
+_G.pg.base.gametip.black5_bundle_receive = {
+	tip = "领取奖励",
+}
+_G.pg.base.gametip.black5_bundle_button = {
+	tip = "特别礼包",
+}
+_G.pg.base.gametip.skinshop_on_sale_tip = {
+	tip = "礼包在售",
+}
+_G.pg.base.gametip.skinshop_on_sale_tip_2 = {
+	tip = "福袋在售",
+}
+_G.pg.base.gametip.shop_tag_control_tip = {
+	tip = "该动态资源在商店内暂无法下载",
+}
+_G.pg.base.gametip.black5_bundle_help = {
+	tip = {
+		{
+			info = "若已购买部分皮肤，可通过补差价方式获取剩余礼包内容。\n本礼包购买时不支持使用换装抵扣券，如需使用，可在皮肤商店单独购买皮肤时使用。",
+		},
+	},
+}
+_G.pg.base.gametip.battlepass_main_tip_2512 = {
+	tip = "2025/12/1-2026/1/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「树城·META 」</color>在内的丰富奖励",
+}
+_G.pg.base.gametip.battlepass_main_help_2512 = {
+	tip = {
+		{
+			info = "世界巡游(2025.12.1-2026.1.31)\n\n·<color=#92fc63>开放时间</color>\n 2025.12.1 0点 ~ 2026.1.31 23:59:59\n\n·<color=#92fc63>巡游进度说明</color>\n（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。\n（2）巡游任务随时间开放解锁。\n（3）每获取100点「巡游点数」即可增加1巡游进度\n（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。\n\n·<color=#92fc63>奖励规则</color>\n巡游进度奖励分为两种：\n（1）基础巡游奖励：包含<color=#ff5c5c>「树城·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·八期</color>等奖励；\n 当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。\n（2）特许巡游奖励：包含<color=#ff5c5c>十纱换装「放学后的观察作业 </color>」、<color=#ff5c5c>钻石</color>等奖励；\n 购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。\n 注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。\n\n·<color=#92fc63>「特许巡游凭证」说明</color>\n（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。\n（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即1.31 22:59:59停止)，请指挥官注意购买时间。\n\n·<color=#92fc63>任务说明</color>\n巡游任务分为两种：\n（1）每周任务 \n 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务\n（2）S.P.任务\n S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。\n（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。\n\n·<color=#92fc63>「巡游任务快速完成券」说明</color>\n（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务\n（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐\n（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关\n（4）「巡游任务快速完成券」不会随本期活动结束而消失\n\n·<color=#ff5c5c>特别提示</color>\n（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。\n（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_task_help_2512 = {
+	tip = {
+		{
+			info = "巡游任务说明\n\n·<color=#92fc63>开放时间</color>\n 2025.12.1 0点 ~ 2026.1.31 23:59:59\n\n·<color=#92fc63>巡游任务分为两种</color>\n（1）每周任务\n 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。\n（2）S.P.任务\n S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。\n（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励\n\n·<color=#92fc63>「巡游任务快速完成券」说明</color>\n（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务\n（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐\n（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关\n（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_title_2512 = {
+	tip = "世界巡游·第二十六期",
+}
+_G.pg.base.gametip.DAL_stage_label_data = {
+	tip = "海域情报",
+}
+_G.pg.base.gametip.DAL_stage_label_support = {
+	tip = "空中支援",
+}
+_G.pg.base.gametip.DAL_stage_label_commander = {
+	tip = "指挥系统",
+}
+_G.pg.base.gametip.DAL_stage_label_analysis_2 = {
+	tip = "分析完成",
+}
+_G.pg.base.gametip.DAL_stage_label_analysis_1 = {
+	tip = "分析中",
+}
+_G.pg.base.gametip.DAL_stage_finish_at = {
+	tip = "完成于：",
+}
+_G.pg.base.gametip.activity_remain_time = {
+	tip = "活动剩余时间",
+}
+_G.pg.base.gametip.dal_main_sheet1 = {
+	tip = "主题页",
+}
+_G.pg.base.gametip.dal_main_sheet2 = {
+	tip = "累计PT",
+}
+_G.pg.base.gametip.dal_main_sheet3 = {
+	tip = "梦魇狂想曲",
+}
+_G.pg.base.gametip.dal_main_sheet4 = {
+	tip = "日常篇",
+}
+_G.pg.base.gametip.dal_main_sheet5 = {
+	tip = "奖励汇总",
+}
+_G.pg.base.gametip.DAL_upgrade_ship = {
+	tip = "飞船升级",
+}
+_G.pg.base.gametip.DAL_upgrade_active = {
+	tip = "已生效",
+}
+_G.pg.base.gametip.dal_main_sheet1_en = {
+	tip = "Main Page",
+}
+_G.pg.base.gametip.dal_main_sheet2_en = {
+	tip = "Milestone",
+}
+_G.pg.base.gametip.dal_main_sheet3_en = {
+	tip = "Kurumi Event",
+}
+_G.pg.base.gametip.dal_main_sheet4_en = {
+	tip = "Side Stories",
+}
+_G.pg.base.gametip.dal_main_sheet5_en = {
+	tip = "Reward List",
+}
+_G.pg.base.gametip.DAL_story_tip = {
+	tip = "阅读故事集获得活动限定外观奖励",
+}
+_G.pg.base.gametip.DAL_upgrade_program = {
+	tip = "飞船升级",
+}
+_G.pg.base.gametip.dal_story_tip_name_en_1 = {
+	tip = "AREA-1",
+}
+_G.pg.base.gametip.dal_story_tip_name_en_2 = {
+	tip = "AREA-2",
+}
+_G.pg.base.gametip.dal_story_tip_name_en_3 = {
+	tip = "AREA-3",
+}
+_G.pg.base.gametip.dal_story_tip_name_en_4 = {
+	tip = "AREA-4",
+}
+_G.pg.base.gametip.dal_story_tip_name_en_5 = {
+	tip = "AREA-5",
+}
+_G.pg.base.gametip.dal_story_tip_name_en_6 = {
+	tip = "AREA-6",
+}
+_G.pg.base.gametip.dal_story_tip1 = {
+	tip = "解锁剧情并阅读后\n可获取奖励",
+}
+_G.pg.base.gametip.dal_story_tip2 = {
+	tip = "阅读剧情后获取",
+}
+_G.pg.base.gametip.dal_story_tip3 = {
+	tip = "已完成",
+}
+_G.pg.base.gametip.dal_AwardPage_name_1 = {
+	tip = "Gear",
+}
+_G.pg.base.gametip.dal_AwardPage_name_2 = {
+	tip = "Module",
+}
+_G.pg.base.gametip.dal_chapter_goto = {
+	tip = "立刻前往",
+}
+_G.pg.base.gametip.DAL_upgrade_unlock = {
+	tip = "未解锁",
+}
+_G.pg.base.gametip.DAL_upgrade_not_enough = {
+	tip = "佛拉克西纳斯AL升级数据数量不足，完成活动任务获取更多",
+}
+_G.pg.base.gametip.dal_chapter_tip = {
+	tip = "<color=#92fc63><DATE A LANE>作战</color>\n1. 作战分为AREA-1~AREA-6：6个异常海域，每一次成功通关都可获得「战役贡献」\n2. 活动期间，根据本服所有玩家通关获得的「战役贡献」，减少对应「异常海域」的待压制进度，并逐步解锁剧情\n3. 在成功通关并完全压制AREA-1后，将解锁AREA-2~AREA-5；\n    在成功通关并完全压制AREA-2~AREA-5后，将解锁AREA-6；\n*4. 若在完全压制前未成功通关过对应异常海域，则需要再通关一次方可解锁对应剧情与后续关卡\n当每个「异常海域」完全压制后，成功通关过海域的指挥官将获得压制奖励，并记录当前港区的达成时间；\n5. 奖励将通过邮件发放，当前邮箱中邮件达到100封后将无法收到其他邮件，为保证奖励邮件正常领取，还请指挥官留意邮箱空间；\n6. 若指挥官在完全压制各异常海域前，未成功通关过对应异常海域，则在对应异常海域完全压制后将自动获得对应任务，完成任务后可获得对应异常海域压制奖励；\n7. 「活动关卡」多队作战时，「时崎狂三」需被编入最后一个编队。若作战通关且未被重创，可获取双倍「梦魇音符」\n<color=#92fc63><飞船升级></color>\n1. 通过活动任务获得「佛拉克西纳斯AL升级数据」，使用数据进行飞船升级可以获得阵营科技模块加成\n2. 加成效果对作战中的所有异常海域生效",
+}
+_G.pg.base.gametip.dal_chapter_tip2 = {
+	tip = "完成活动任务可获得奖励",
 }
 

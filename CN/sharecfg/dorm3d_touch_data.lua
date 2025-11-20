@@ -794,6 +794,30 @@ pg.dorm3d_touch_data = {
 			400710
 		}
 	},
+	[1051760] = {
+		default_favor = 1001,
+		id = 1051760,
+		heartbeat_enter_anim = "",
+		heartbeat_enable = 0,
+		finish_action = "Idle",
+		heartbeat_favor = {
+			{
+				0,
+				1011
+			},
+			{
+				50,
+				1012
+			},
+			{
+				100,
+				1013
+			}
+		},
+		ik_status = {
+			400510
+		}
+	},
 	[1051790] = {
 		default_favor = 1001,
 		id = 1051790,
@@ -938,6 +962,30 @@ pg.dorm3d_touch_data = {
 			500410
 		}
 	},
+	[3070750] = {
+		default_favor = 1001,
+		id = 3070750,
+		heartbeat_enter_anim = "",
+		heartbeat_enable = 0,
+		finish_action = "Idle",
+		heartbeat_favor = {
+			{
+				0,
+				1011
+			},
+			{
+				50,
+				1012
+			},
+			{
+				100,
+				1013
+			}
+		},
+		ik_status = {
+			500510
+		}
+	},
 	[3070790] = {
 		default_favor = 1001,
 		id = 3070790,
@@ -996,12 +1044,14 @@ pg.dorm3d_touch_data = {
 		1051730,
 		1051740,
 		1051750,
+		1051760,
 		1051790,
 		1051799,
 		3070710,
 		3070720,
 		3070730,
 		3070740,
+		3070750,
 		3070790
 	}
 }

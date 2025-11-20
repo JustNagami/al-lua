@@ -11,7 +11,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			50081
+			50222
 		}
 	},
 	{
@@ -37,9 +37,8 @@ pg.activity_link_button = {
 		order = 99
 	},
 	[10] = {
-		param = "0",
+		type = 2,
 		name = "event_map",
-		type = 0,
 		text_pic = "text_event_map",
 		id = 10,
 		group_id = 2,
@@ -47,7 +46,10 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			50114
+			50256
+		},
+		param = {
+			"bossrush dal collab"
 		}
 	},
 	[11] = {
@@ -250,10 +252,10 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			5765
+			50204
 		},
 		param = {
-			73
+			68
 		}
 	},
 	[106] = {
@@ -305,7 +307,7 @@ pg.activity_link_button = {
 		}
 	},
 	[109] = {
-		param = "TianYuTianYuanCoreActivityUI",
+		param = "DALCoreActivityUI",
 		name = "event_core",
 		type = 16,
 		text_pic = "text_event_core",
@@ -315,21 +317,21 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			50130
+			50256
 		}
 	},
 	[110] = {
-		param = "ALYCoreActivityUI",
+		param = "PSSCoreActivityUI",
 		name = "event_core_2",
 		type = 16,
-		text_pic = "text_event_yumia",
+		text_pic = "text_event_core2",
 		id = 110,
 		group_id = 2,
-		pic = "event_yumia",
+		pic = "event_core2",
 		order = 2,
 		time = {
 			"default",
-			50058
+			50234
 		}
 	},
 	[111] = {

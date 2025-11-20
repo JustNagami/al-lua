@@ -12,6 +12,7 @@ pg.island_item_data_template = setmetatable({
 			7,
 			8,
 			9,
+			10,
 			1000,
 			1001,
 			1002,
@@ -194,7 +195,13 @@ pg.island_item_data_template = setmetatable({
 			200012,
 			200013,
 			200014,
-			200015
+			200015,
+			300001,
+			300002,
+			300003,
+			300004,
+			300005,
+			300006
 		},
 		usage_island_gift = {
 			110001,
@@ -262,9 +269,16 @@ pg.island_item_data_template = setmetatable({
 			200012,
 			200013,
 			200014,
-			200015
+			200015,
+			300001,
+			300002,
+			300003,
+			300004,
+			300005,
+			300006
 		},
 		{
+			10,
 			1000,
 			1001,
 			1002,
@@ -425,6 +439,7 @@ pg.island_item_data_template = setmetatable({
 		7,
 		8,
 		9,
+		10,
 		1000,
 		1001,
 		1002,
@@ -613,7 +628,13 @@ pg.island_item_data_template = setmetatable({
 		200012,
 		200013,
 		200014,
-		200015
+		200015,
+		300001,
+		300002,
+		300003,
+		300004,
+		300005,
+		300006
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -623,15 +644,16 @@ pg.base.island_item_data_template = {
 		name = "开发资金",
 		group_max = 0,
 		type = 3,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "在岛屿开发区内流通的货币，是开发区持续发展的基础。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 1,
 		icon = "Islandprops/1",
 		price = 0,
-		icon_normal = "",
+		icon_normal = "props/item_island_1",
 		rarity = 1,
 		drop_after_use = 0,
 		usage_arg = "[]",
@@ -657,11 +679,12 @@ pg.base.island_item_data_template = {
 		name = "开发经验",
 		group_max = 0,
 		type = 4,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "岛屿的开发经验，累积足够的开发经验可以提升岛屿的开发等级",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "Islandprops/2",
 		price = 0,
@@ -691,11 +714,12 @@ pg.base.island_item_data_template = {
 		name = "装扮染色盘",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "盘中包含多种染料，能随心所欲地改变装扮的颜色，打造真正独一无二的装扮。 ",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "Islandprops/3",
 		price = 0,
@@ -713,6 +737,10 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{}
+			},
+			{
+				"累计PT",
+				{}
 			}
 		}
 	},
@@ -721,11 +749,12 @@ pg.base.island_item_data_template = {
 		name = "搭建凭证",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "集会岛搭建凭证，使用凭证，在集会岛上搭建属于自己的乐园。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "islandprops/4",
 		price = 0,
@@ -746,11 +775,12 @@ pg.base.island_item_data_template = {
 		name = "地图残片-1",
 		group_max = 0,
 		type = 3,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "岛屿上的神秘纸片，歪歪扭扭的线条里不知藏着什么秘密~",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "islandprops/Item_5",
 		price = 0,
@@ -771,11 +801,12 @@ pg.base.island_item_data_template = {
 		name = "地图残片-2",
 		group_max = 0,
 		type = 3,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "岛屿上的神秘纸片，歪歪扭扭的线条里不知藏着什么秘密~",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "islandprops/Item_5",
 		price = 0,
@@ -796,11 +827,12 @@ pg.base.island_item_data_template = {
 		name = "地图残片-3",
 		group_max = 0,
 		type = 3,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "岛屿上的神秘纸片，歪歪扭扭的线条里不知藏着什么秘密~",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "islandprops/Item_5",
 		price = 0,
@@ -821,11 +853,12 @@ pg.base.island_item_data_template = {
 		name = "地图残片-4",
 		group_max = 0,
 		type = 3,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "岛屿上的神秘纸片，歪歪扭扭的线条里不知藏着什么秘密~",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "islandprops/Item_5",
 		price = 0,
@@ -846,11 +879,12 @@ pg.base.island_item_data_template = {
 		name = "地图残片-5",
 		group_max = 0,
 		type = 3,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "岛屿上的神秘纸片，歪歪扭扭的线条里不知藏着什么秘密~",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "islandprops/Item_5",
 		price = 0,
@@ -866,16 +900,43 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {}
 	},
+	{
+		pt_num = 1,
+		name = "岛屿PT兑换券",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "岛屿计划开发季PT兑换券，开发季结束后会自动转化为当前开发季岛屿开发PT，也可在仓库中手动转化。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 0,
+		icon = "islandprops/Item_6",
+		price = 1,
+		icon_normal = "props/item_island_6",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 10,
+		have_max = 0,
+		filter = {
+			10114
+		},
+		sub_attribute = {},
+		jump_page = {}
+	},
 	[1000] = {
 		pt_num = 1,
 		name = "小麦种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的小麦种子，可以产出优质的小麦。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1000",
 		price = 1,
@@ -887,7 +948,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -905,11 +966,12 @@ pg.base.island_item_data_template = {
 		name = "玉米种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 500212,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的玉米种子，蕴含丰收的力量。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1001",
 		price = 1,
@@ -921,7 +983,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -939,11 +1001,12 @@ pg.base.island_item_data_template = {
 		name = "旱稻种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 310202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的旱稻种子，一起等待丰收时刻吧~",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1002",
 		price = 1,
@@ -955,7 +1018,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -973,11 +1036,12 @@ pg.base.island_item_data_template = {
 		name = "白菜种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 500215,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的白菜种子，可以种出水灵灵的大白菜！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1003",
 		price = 1,
@@ -989,7 +1053,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1007,11 +1071,12 @@ pg.base.island_item_data_template = {
 		name = "胡萝卜种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 320204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的胡萝卜种子，可以种出香甜的胡萝卜。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1004",
 		price = 1,
@@ -1023,7 +1088,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1041,11 +1106,12 @@ pg.base.island_item_data_template = {
 		name = "土豆种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 500214,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的土豆的种子，可以轻松种出高产的土豆。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1005",
 		price = 1,
@@ -1057,7 +1123,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1075,11 +1141,12 @@ pg.base.island_item_data_template = {
 		name = "大豆种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 500213,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的大豆的种子，可以轻松种出优质的大豆。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1006",
 		price = 1,
@@ -1091,7 +1158,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1109,11 +1176,12 @@ pg.base.island_item_data_template = {
 		name = "洋葱种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 320206,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的洋葱种子，能轻松培育出迷人的洋葱。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1007",
 		price = 1,
@@ -1125,7 +1193,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1143,11 +1211,12 @@ pg.base.island_item_data_template = {
 		name = "牧草种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 310201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的选牧草种子，能种出丰饶的牧草。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1008",
 		price = 1,
@@ -1159,7 +1228,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1177,11 +1246,12 @@ pg.base.island_item_data_template = {
 		name = "咖啡树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 500211,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的咖啡树种，可以结出风味独特的咖啡豆。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1009",
 		price = 1,
@@ -1193,7 +1263,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1211,11 +1281,12 @@ pg.base.island_item_data_template = {
 		name = "亚麻种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的亚麻种子，生长迅速，纤维长且坚韧，是纺织的好帮手。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1010",
 		price = 1,
@@ -1227,7 +1298,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1245,11 +1316,12 @@ pg.base.island_item_data_template = {
 		name = "草莓种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 320201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的草莓种子，可以种出鲜红的草莓。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1011",
 		price = 1,
@@ -1261,7 +1333,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1279,11 +1351,12 @@ pg.base.island_item_data_template = {
 		name = "棉花种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 320202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的棉花种子，可以结出柔软的棉花。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1012",
 		price = 1,
@@ -1295,7 +1368,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1313,11 +1386,12 @@ pg.base.island_item_data_template = {
 		name = "茶树种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 320203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的茶树种子，可以种出品质上乘的茶叶。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1014",
 		price = 1,
@@ -1329,7 +1403,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1347,11 +1421,12 @@ pg.base.island_item_data_template = {
 		name = "薰衣草种子",
 		group_max = 0,
 		type = 1,
+		tech_id = 320205,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区精选的薰衣草种子，可以种出一片紫色的花海。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1015",
 		price = 1,
@@ -1363,7 +1438,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1381,11 +1456,12 @@ pg.base.island_item_data_template = {
 		name = "苹果树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 500231,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
-		desc = "港区培育的优质柑橘树种，可以结出清脆可口的苹果。",
+		desc = "港区培育的优质苹果树种，可以结出清脆可口的苹果。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1016",
 		price = 1,
@@ -1397,7 +1473,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1415,11 +1491,12 @@ pg.base.island_item_data_template = {
 		name = "柑橘树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 500232,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区培育的优质柑橘树种，可以结出鲜甜多汁的柑橘。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1017",
 		price = 1,
@@ -1431,7 +1508,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1449,11 +1526,12 @@ pg.base.island_item_data_template = {
 		name = "香蕉树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 500233,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区培育的优质香蕉树种，可以结出饱满的香蕉。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1018",
 		price = 1,
@@ -1465,7 +1543,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1483,11 +1561,12 @@ pg.base.island_item_data_template = {
 		name = "芒果树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 500234,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区培育的优质芒果树种，可以结出香甜的芒果。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1019",
 		price = 1,
@@ -1499,7 +1578,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1517,11 +1596,12 @@ pg.base.island_item_data_template = {
 		name = "柠檬树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 500235,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区培育的优质柠檬树种，可以结出清新的柠檬。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1020",
 		price = 1,
@@ -1533,7 +1613,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1551,11 +1631,12 @@ pg.base.island_item_data_template = {
 		name = "牛油果树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 500236,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "港区培育的优质牛油果树种，可以结出营养丰富的牛油果。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1021",
 		price = 1,
@@ -1567,7 +1648,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1585,11 +1666,12 @@ pg.base.island_item_data_template = {
 		name = "橡胶树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 330201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
-		desc = "随熟随采随播，没有休眠期！",
+		desc = "港区精选的橡胶树种，可以产出优质的橡胶。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_1022",
 		price = 1,
@@ -1601,7 +1683,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10114,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1619,11 +1701,12 @@ pg.base.island_item_data_template = {
 		name = "小麦",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "刚收获不久的新鲜小麦，制作面粉的重要原料。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 8,
 		icon = "IslandProps/item_2000",
 		price = 1,
@@ -1650,11 +1733,12 @@ pg.base.island_item_data_template = {
 		name = "玉米",
 		group_max = 0,
 		type = 1,
+		tech_id = 500212,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "金黄饱满的玉米，散发着田野的清甜气息。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 8,
 		icon = "IslandProps/item_2001",
 		price = 1,
@@ -1681,11 +1765,12 @@ pg.base.island_item_data_template = {
 		name = "大米",
 		group_max = 0,
 		type = 1,
+		tech_id = 310202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "清白色的优质大米，含有丰富的淀粉和谷物蛋白。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 17,
 		icon = "IslandProps/item_2002",
 		price = 1,
@@ -1712,11 +1797,12 @@ pg.base.island_item_data_template = {
 		name = "白菜",
 		group_max = 0,
 		type = 1,
+		tech_id = 500215,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "清脆可口的白菜，新鲜直采！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 14,
 		icon = "IslandProps/item_2003",
 		price = 1,
@@ -1743,11 +1829,12 @@ pg.base.island_item_data_template = {
 		name = "胡萝卜",
 		group_max = 0,
 		type = 1,
+		tech_id = 320204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "家中常备蔬菜，营养丰富，口感清甜。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 34,
 		icon = "IslandProps/item_2004",
 		price = 1,
@@ -1759,7 +1846,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10132
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1774,11 +1861,12 @@ pg.base.island_item_data_template = {
 		name = "土豆",
 		group_max = 0,
 		type = 1,
+		tech_id = 500214,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "蔬菜中的淀粉代表，可以被做成千变万化的形态。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 33,
 		icon = "IslandProps/item_2005",
 		price = 1,
@@ -1805,11 +1893,12 @@ pg.base.island_item_data_template = {
 		name = "大豆",
 		group_max = 0,
 		type = 1,
+		tech_id = 500213,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "圆润饱满，富含蛋白质，除了制作美食之外，也有丰富的工业用途。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 14,
 		icon = "IslandProps/item_2006",
 		price = 1,
@@ -1836,11 +1925,12 @@ pg.base.island_item_data_template = {
 		name = "洋葱",
 		group_max = 0,
 		type = 1,
+		tech_id = 320206,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "紫色的外衣剥开……小心别被弄掉眼泪！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 244,
 		icon = "IslandProps/item_2007",
 		price = 1,
@@ -1852,7 +1942,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10132
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1867,11 +1957,12 @@ pg.base.island_item_data_template = {
 		name = "牧草",
 		group_max = 0,
 		type = 1,
+		tech_id = 310201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "高品质牧草，让牧场充满生机！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 11,
 		icon = "IslandProps/item_2008",
 		price = 1,
@@ -1898,11 +1989,12 @@ pg.base.island_item_data_template = {
 		name = "咖啡豆",
 		group_max = 0,
 		type = 1,
+		tech_id = 500211,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "香气浓郁，提神醒脑，不来一杯吗？",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 68,
 		icon = "IslandProps/item_2009",
 		price = 1,
@@ -1929,11 +2021,12 @@ pg.base.island_item_data_template = {
 		name = "亚麻",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "长纤维亚麻，适合纺线织布，你的工坊佳选！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 72,
 		icon = "IslandProps/item_2010",
 		price = 1,
@@ -1945,7 +2038,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10132
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1960,11 +2053,12 @@ pg.base.island_item_data_template = {
 		name = "草莓",
 		group_max = 0,
 		type = 1,
+		tech_id = 320201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "红彤彤的果实酸甜多汁，很适合搭配甜点食用。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 54,
 		icon = "IslandProps/item_2011",
 		price = 1,
@@ -1976,7 +2070,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10132
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -1991,11 +2085,12 @@ pg.base.island_item_data_template = {
 		name = "棉花",
 		group_max = 0,
 		type = 1,
+		tech_id = 320202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "柔软的白色棉花，纺织业的重要材料。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 92,
 		icon = "IslandProps/item_2012",
 		price = 1,
@@ -2007,7 +2102,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10132
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2022,11 +2117,12 @@ pg.base.island_item_data_template = {
 		name = "茶叶",
 		group_max = 0,
 		type = 1,
+		tech_id = 320203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "苦涩清香，享受大自然的味道~",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 118,
 		icon = "IslandProps/item_2014",
 		price = 1,
@@ -2038,7 +2134,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10132
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2053,11 +2149,12 @@ pg.base.island_item_data_template = {
 		name = "薰衣草",
 		group_max = 0,
 		type = 1,
+		tech_id = 320205,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "芬芳四溢，除点缀花园外，还能用来萃取精油。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 294,
 		icon = "IslandProps/item_2015",
 		price = 1,
@@ -2069,7 +2166,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10132
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2084,11 +2181,12 @@ pg.base.island_item_data_template = {
 		name = "苹果",
 		group_max = 0,
 		type = 1,
+		tech_id = 500231,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "清脆多汁，富含多种维生素，可直接食用也可加工为果汁。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 50,
 		icon = "IslandProps/item_2016",
 		price = 1,
@@ -2100,7 +2198,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10125
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2115,11 +2213,12 @@ pg.base.island_item_data_template = {
 		name = "柑橘",
 		group_max = 0,
 		type = 1,
+		tech_id = 500232,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "便宜、易保存、还带有美好香气的水果。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 65,
 		icon = "IslandProps/item_2017",
 		price = 1,
@@ -2131,7 +2230,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10125
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2146,11 +2245,12 @@ pg.base.island_item_data_template = {
 		name = "香蕉",
 		group_max = 0,
 		type = 1,
+		tech_id = 500233,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "热带风情的象征，柔软香甜，富含丰富的膳食纤维。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 80,
 		icon = "IslandProps/item_2018",
 		price = 1,
@@ -2162,7 +2262,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10125
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2177,11 +2277,12 @@ pg.base.island_item_data_template = {
 		name = "芒果",
 		group_max = 0,
 		type = 1,
+		tech_id = 500234,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "果肉细腻的夏日水果，拥有超高的甜度，可以榨汁食用。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 180,
 		icon = "IslandProps/item_2019",
 		price = 1,
@@ -2193,7 +2294,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10125
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2208,11 +2309,12 @@ pg.base.island_item_data_template = {
 		name = "柠檬",
 		group_max = 0,
 		type = 1,
+		tech_id = 500235,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "果皮清香，酸甜适中，时常用来调味。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 32,
 		icon = "IslandProps/item_2020",
 		price = 1,
@@ -2224,7 +2326,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10125
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2239,11 +2341,12 @@ pg.base.island_item_data_template = {
 		name = "牛油果",
 		group_max = 0,
 		type = 1,
+		tech_id = 500236,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "口感细腻软糯，美味无糖更健康。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 375,
 		icon = "IslandProps/item_2021",
 		price = 1,
@@ -2255,7 +2358,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10125
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2270,11 +2373,12 @@ pg.base.island_item_data_template = {
 		name = "橡胶",
 		group_max = 0,
 		type = 1,
+		tech_id = 330201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "高弹性，工业加工的常见材料，用途广泛！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 250,
 		icon = "IslandProps/item_2022",
 		price = 1,
@@ -2286,7 +2390,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10125
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2301,11 +2405,12 @@ pg.base.island_item_data_template = {
 		name = "鲜肉",
 		group_max = 0,
 		type = 1,
+		tech_id = 420301,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "动物产出的鲜肉，最为优质的蛋白质来源。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 200,
 		icon = "IslandProps/item_2600",
 		price = 1,
@@ -2332,11 +2437,12 @@ pg.base.island_item_data_template = {
 		name = "鸡蛋",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "土褐色的鸡蛋，是烹饪的常见原料。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 55,
 		icon = "IslandProps/item_2601",
 		price = 1,
@@ -2363,11 +2469,12 @@ pg.base.island_item_data_template = {
 		name = "禽肉",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "低脂肪高蛋白肉类，适合多种菜肴。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 20,
 		icon = "IslandProps/item_2602",
 		price = 1,
@@ -2394,11 +2501,12 @@ pg.base.island_item_data_template = {
 		name = "牛奶",
 		group_max = 0,
 		type = 1,
+		tech_id = 430301,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "不仅是天然的饮品，还能用来制作酸奶和奶酪等美味。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 136,
 		icon = "IslandProps/item_2603",
 		price = 1,
@@ -2425,11 +2533,12 @@ pg.base.island_item_data_template = {
 		name = "皮料",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "经过简单处理的动物皮，可进一步加工为皮革。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 95,
 		icon = "IslandProps/item_2604",
 		price = 1,
@@ -2456,11 +2565,12 @@ pg.base.island_item_data_template = {
 		name = "羊毛",
 		group_max = 0,
 		type = 1,
+		tech_id = 440301,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "动物身上的毛纤维，是纺织工业的重要原料。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 600,
 		icon = "IslandProps/item_2605",
 		price = 1,
@@ -2487,11 +2597,12 @@ pg.base.island_item_data_template = {
 		name = "新鲜蜂蜜",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "新鲜采集的蜂蜜，充满了自然的香甜。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 200,
 		icon = "IslandProps/item_2606",
 		price = 1,
@@ -2503,7 +2614,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2518,11 +2629,12 @@ pg.base.island_item_data_template = {
 		name = "煤炭",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "基础的燃料，燃烧效率高，常用于加热或工业生产。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 12,
 		icon = "IslandProps/item_2700",
 		price = 1,
@@ -2549,11 +2661,12 @@ pg.base.island_item_data_template = {
 		name = "铜矿",
 		group_max = 0,
 		type = 1,
+		tech_id = 220101,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "富含铜元素的矿石，冶炼出的铜常用于生产电子产品。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 100,
 		icon = "IslandProps/item_2701",
 		price = 1,
@@ -2580,11 +2693,12 @@ pg.base.island_item_data_template = {
 		name = "铝矿",
 		group_max = 0,
 		type = 1,
+		tech_id = 220201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "富含铝元素的矿石，冶炼出的铝常用于制造飞行器和船舶。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 300,
 		icon = "IslandProps/item_2702",
 		price = 1,
@@ -2611,11 +2725,12 @@ pg.base.island_item_data_template = {
 		name = "铁矿",
 		group_max = 0,
 		type = 1,
+		tech_id = 220202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "富含铁元素的矿石，冶炼出的铁常用于建造各种建筑。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 180,
 		icon = "IslandProps/item_2703",
 		price = 1,
@@ -2642,11 +2757,12 @@ pg.base.island_item_data_template = {
 		name = "硫矿",
 		group_max = 0,
 		type = 1,
+		tech_id = 220203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "富含硫元素的矿石，冶炼出的硫常用于制作肥料和杀虫剂。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 700,
 		icon = "IslandProps/item_2704",
 		price = 1,
@@ -2673,11 +2789,12 @@ pg.base.island_item_data_template = {
 		name = "银矿",
 		group_max = 0,
 		type = 1,
+		tech_id = 220204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "富含银元素的矿石，冶炼出的银常用于制作合金和化学仪器。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1600,
 		icon = "IslandProps/item_2705",
 		price = 1,
@@ -2704,11 +2821,12 @@ pg.base.island_item_data_template = {
 		name = "自然之木",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "木材中的基础款，从造纸到建筑，用途广泛。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 12,
 		icon = "IslandProps/item_2800",
 		price = 1,
@@ -2735,11 +2853,12 @@ pg.base.island_item_data_template = {
 		name = "实用之木",
 		group_max = 0,
 		type = 1,
+		tech_id = 210201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "纹理美观，适合制作家具和地板。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 125,
 		icon = "IslandProps/item_2801",
 		price = 1,
@@ -2766,11 +2885,12 @@ pg.base.island_item_data_template = {
 		name = "精选之木",
 		group_max = 0,
 		type = 1,
+		tech_id = 210202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "坚固耐用，传统造船和高端家具料。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 360,
 		icon = "IslandProps/item_2802",
 		price = 1,
@@ -2797,11 +2917,12 @@ pg.base.island_item_data_template = {
 		name = "典雅之木",
 		group_max = 0,
 		type = 1,
+		tech_id = 210203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "美观且坚硬，适合高档装饰和家具。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1200,
 		icon = "IslandProps/item_2803",
 		price = 1,
@@ -2824,15 +2945,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3000] = {
-		pt_num = 1,
+		pt_num = 3,
 		name = "咯咯鸡饲料",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "专为咯咯鸡打造的高蛋白饲料，能为其提供充足的能量。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 25,
 		icon = "IslandProps/item_3000",
 		price = 1,
@@ -2844,7 +2966,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10112,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2855,15 +2977,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3001] = {
-		pt_num = 1,
+		pt_num = 3,
 		name = "哼哼猪饲料",
 		group_max = 0,
 		type = 1,
+		tech_id = 420301,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "专为哼哼猪打造的增重用饲料，适合食量大的动物食用。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 25,
 		icon = "IslandProps/item_3001",
 		price = 1,
@@ -2875,7 +2998,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10112,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2890,11 +3013,12 @@ pg.base.island_item_data_template = {
 		name = "哞哞牛饲料",
 		group_max = 0,
 		type = 1,
+		tech_id = 430301,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "专为哞哞牛打造的营养饲料，能帮助哞哞牛产出香甜浓郁的牛奶。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 40,
 		icon = "IslandProps/item_3002",
 		price = 1,
@@ -2906,7 +3030,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10112,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2921,11 +3045,12 @@ pg.base.island_item_data_template = {
 		name = "咩咩羊饲料",
 		group_max = 0,
 		type = 1,
+		tech_id = 440301,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "专为咩咩羊打造的玉米粉制饲料，能帮助咩咩羊长出更加柔顺的羊毛 。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 40,
 		icon = "IslandProps/item_3003",
 		price = 1,
@@ -2937,7 +3062,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10112,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2948,15 +3073,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3004] = {
-		pt_num = 1,
+		pt_num = 6,
 		name = "面粉",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "由小麦磨成的白面粉，制作面包、蛋糕和披萨的必需品。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 50,
 		icon = "IslandProps/item_3004",
 		price = 1,
@@ -2968,7 +3094,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10112,
-			10127
+			10140
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -2979,15 +3105,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3005] = {
-		pt_num = 1,
+		pt_num = 15,
 		name = "冰咖啡",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 190,
 		desc = "口感清爽，适合夏日消暑和提神。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 95,
 		icon = "IslandProps/item_3005",
 		price = 1,
@@ -3017,11 +3144,12 @@ pg.base.island_item_data_template = {
 		name = "芝士",
 		group_max = 0,
 		type = 1,
+		tech_id = 550201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 150,
 		desc = "以奶类为原料制成，含有丰富的蛋白质和脂质，常用来搭配面包使用。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 550,
 		icon = "IslandProps/item_3006",
 		price = 1,
@@ -3051,11 +3179,12 @@ pg.base.island_item_data_template = {
 		name = "拿铁",
 		group_max = 0,
 		type = 1,
+		tech_id = 550202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 180,
 		desc = "浓缩咖啡与蒸奶混合，口感香滑，深受咖啡爱好者喜爱 。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 250,
 		icon = "IslandProps/item_3007",
 		price = 1,
@@ -3081,15 +3210,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3008] = {
-		pt_num = 20,
+		pt_num = 25,
 		name = "柑橘咖啡",
 		group_max = 0,
 		type = 1,
+		tech_id = 550203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 180,
 		desc = "加入了柑橘汁的咖啡饮品，以清新的酸度和自然的果香为特色。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 190,
 		icon = "IslandProps/item_3008",
 		price = 1,
@@ -3119,11 +3249,12 @@ pg.base.island_item_data_template = {
 		name = "苹果派",
 		group_max = 0,
 		type = 1,
+		tech_id = 550204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 190,
 		desc = "将苹果馅料裹在酥皮之中，口感香甜，是经典甜点代表之一。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 385,
 		icon = "IslandProps/item_3009",
 		price = 1,
@@ -3135,7 +3266,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10126
+			10129
 		},
 		sub_attribute = {
 			3,
@@ -3149,15 +3280,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3010] = {
-		pt_num = 25,
+		pt_num = 60,
 		name = "草莓奶绿",
 		group_max = 0,
 		type = 1,
+		tech_id = 550205,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 240,
 		desc = "入口细腻的奶沫，清新丝滑，口感丰富。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 260,
 		icon = "IslandProps/item_3010",
 		price = 1,
@@ -3187,11 +3319,12 @@ pg.base.island_item_data_template = {
 		name = "豆腐",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 170,
 		desc = "白净柔嫩，由大豆制成，富含丰富的植物蛋白。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 340,
 		icon = "IslandProps/item_3011",
 		price = 1,
@@ -3203,7 +3336,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10127
 		},
 		sub_attribute = {
 			5,
@@ -3221,11 +3354,12 @@ pg.base.island_item_data_template = {
 		name = "肉末烧豆腐",
 		group_max = 0,
 		type = 1,
+		tech_id = 510201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 180,
 		desc = "经典家常菜，口感滑嫩、汤汁浓郁。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1300,
 		icon = "IslandProps/item_3012",
 		price = 1,
@@ -3237,7 +3371,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10127
 		},
 		sub_attribute = {
 			3,
@@ -3255,11 +3389,12 @@ pg.base.island_item_data_template = {
 		name = "蛋包饭",
 		group_max = 0,
 		type = 1,
+		tech_id = 510202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 240,
 		desc = "金黄的煎蛋包裹着松软的米饭，每一口都充满了惊喜！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 355,
 		icon = "IslandProps/item_3013",
 		price = 1,
@@ -3271,7 +3406,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10127
 		},
 		sub_attribute = {
 			4,
@@ -3285,15 +3420,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3014] = {
-		pt_num = 40,
+		pt_num = 65,
 		name = "白菜豆腐汤",
 		group_max = 0,
 		type = 1,
+		tech_id = 510203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 180,
 		desc = "白菜的鲜甜与豆腐的嫩滑交织，是非常清淡健康的菜式。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 425,
 		icon = "IslandProps/item_3014",
 		price = 1,
@@ -3305,7 +3441,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10127
 		},
 		sub_attribute = {
 			5,
@@ -3323,11 +3459,12 @@ pg.base.island_item_data_template = {
 		name = "蔬菜沙拉",
 		group_max = 0,
 		type = 1,
+		tech_id = 510204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 160,
 		desc = "新鲜的蔬菜搭配香浓的酱汁，清爽可口！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 105,
 		icon = "IslandProps/item_3015",
 		price = 1,
@@ -3339,7 +3476,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10127
 		},
 		sub_attribute = {
 			3,
@@ -3357,11 +3494,12 @@ pg.base.island_item_data_template = {
 		name = "苹果汁",
 		group_max = 0,
 		type = 1,
+		tech_id = 500235,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 200,
 		desc = "鲜榨水果汁果香浓郁，是很受欢迎的健康饮品！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 105,
 		icon = "IslandProps/item_3017",
 		price = 1,
@@ -3373,7 +3511,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10128
 		},
 		sub_attribute = {
 			5,
@@ -3387,15 +3525,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3018] = {
-		pt_num = 20,
+		pt_num = 25,
 		name = "香蕉芒果汁",
 		group_max = 0,
 		type = 1,
+		tech_id = 520201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 190,
 		desc = "香蕉与芒果的完美融合，是热带风味的浓缩！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 215,
 		icon = "IslandProps/item_3018",
 		price = 1,
@@ -3407,7 +3546,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10128
 		},
 		sub_attribute = {
 			3,
@@ -3425,11 +3564,12 @@ pg.base.island_item_data_template = {
 		name = "蜂蜜柠檬水",
 		group_max = 0,
 		type = 1,
+		tech_id = 520202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 240,
 		desc = "甘甜蜂蜜与清爽柠檬的美妙融合，还能补充维c。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 140,
 		icon = "IslandProps/item_3019",
 		price = 1,
@@ -3441,7 +3581,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10128
 		},
 		sub_attribute = {
 			4,
@@ -3455,15 +3595,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3020] = {
-		pt_num = 25,
+		pt_num = 50,
 		name = "草莓蜜沁",
 		group_max = 0,
 		type = 1,
+		tech_id = 520205,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 180,
 		desc = "草莓与柠檬的奇妙组合，清爽不腻的果味特饮。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 270,
 		icon = "IslandProps/item_3020",
 		price = 1,
@@ -3475,7 +3616,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10128
 		},
 		sub_attribute = {
 			4,
@@ -3493,11 +3634,12 @@ pg.base.island_item_data_template = {
 		name = "薰衣草茶",
 		group_max = 0,
 		type = 1,
+		tech_id = 520204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 160,
 		desc = "具有净化心绪，舒解压力的作用，很适合调养身心。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1590,
 		icon = "IslandProps/item_3021",
 		price = 1,
@@ -3509,7 +3651,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10128
 		},
 		sub_attribute = {
 			3,
@@ -3527,11 +3669,12 @@ pg.base.island_item_data_template = {
 		name = "草莓蜂蜜冰沙",
 		group_max = 0,
 		type = 1,
+		tech_id = 520203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 220,
 		desc = "草莓的酸甜与蜂蜜的香浓完美融合，构成甜蜜的冰沙世界。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 790,
 		icon = "IslandProps/item_3022",
 		price = 1,
@@ -3543,7 +3686,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10128
 		},
 		sub_attribute = {
 			4,
@@ -3557,15 +3700,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3023] = {
-		pt_num = 4,
+		pt_num = 7,
 		name = "玉米杯",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 180,
 		desc = "金黄的玉米粒经过简单蒸煮变得香甜可口，是常见的美味小吃。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 45,
 		icon = "IslandProps/item_3023",
 		price = 1,
@@ -3577,7 +3721,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10129
 		},
 		sub_attribute = {
 			5,
@@ -3595,11 +3739,12 @@ pg.base.island_item_data_template = {
 		name = "香橙派",
 		group_max = 0,
 		type = 1,
+		tech_id = 530206,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 185,
 		desc = "经典甜点，下午茶时间食用更佳。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 375,
 		icon = "IslandProps/item_3024",
 		price = 1,
@@ -3611,7 +3756,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10126
+			10129
 		},
 		sub_attribute = {
 			3,
@@ -3629,11 +3774,12 @@ pg.base.island_item_data_template = {
 		name = "芒果糯米饭",
 		group_max = 0,
 		type = 1,
+		tech_id = 530202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 160,
 		desc = "热带风情特色家常菜，适合没食欲的时候食用。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 510,
 		icon = "IslandProps/item_3025",
 		price = 1,
@@ -3645,7 +3791,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10126
+			10129
 		},
 		sub_attribute = {
 			4,
@@ -3663,11 +3809,12 @@ pg.base.island_item_data_template = {
 		name = "香蕉可丽饼",
 		group_max = 0,
 		type = 1,
+		tech_id = 530203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 170,
 		desc = "经典早餐，口感酥脆，老少皆宜。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 230,
 		icon = "IslandProps/item_3026",
 		price = 1,
@@ -3679,7 +3826,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10126
+			10129
 		},
 		sub_attribute = {
 			5,
@@ -3697,11 +3844,12 @@ pg.base.island_item_data_template = {
 		name = "草莓夏洛特",
 		group_max = 0,
 		type = 1,
+		tech_id = 530204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 190,
 		desc = "口感酥脆的蛋白霜底搭配香甜的草莓馅料，深受甜品爱好者的喜爱。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1350,
 		icon = "IslandProps/item_3028",
 		price = 1,
@@ -3713,7 +3861,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10126
+			10129
 		},
 		sub_attribute = {
 			4,
@@ -3731,11 +3879,12 @@ pg.base.island_item_data_template = {
 		name = "炭烤肉串",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 210,
 		desc = "外焦里嫩，香气扑鼻，烧烤派对的必备美食！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 390,
 		icon = "IslandProps/item_3029",
 		price = 1,
@@ -3747,7 +3896,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10130
 		},
 		sub_attribute = {
 			4,
@@ -3765,11 +3914,12 @@ pg.base.island_item_data_template = {
 		name = "禽肉土豆拼盘",
 		group_max = 0,
 		type = 1,
+		tech_id = 540201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 230,
 		desc = "简单而美味，是家庭餐桌上的经典搭配！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 370,
 		icon = "IslandProps/item_3030",
 		price = 1,
@@ -3781,7 +3931,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10130
 		},
 		sub_attribute = {
 			5,
@@ -3799,11 +3949,12 @@ pg.base.island_item_data_template = {
 		name = "爆炒禽肉",
 		group_max = 0,
 		type = 1,
+		tech_id = 540202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 220,
 		desc = "禽肉搭配调料爆炒出锅，香气四溢！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 580,
 		icon = "IslandProps/item_3032",
 		price = 1,
@@ -3815,7 +3966,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10130
 		},
 		sub_attribute = {
 			4,
@@ -3833,11 +3984,12 @@ pg.base.island_item_data_template = {
 		name = "胡萝卜厚蛋烧",
 		group_max = 0,
 		type = 1,
+		tech_id = 540204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 180,
 		desc = "薄薄的蛋皮裹着香甜的胡萝卜，口感层次丰富，是早餐或下午茶的绝佳选择！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 170,
 		icon = "IslandProps/item_3033",
 		price = 1,
@@ -3849,7 +4001,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10130
 		},
 		sub_attribute = {
 			5,
@@ -3867,11 +4019,12 @@ pg.base.island_item_data_template = {
 		name = "汉堡肉饭",
 		group_max = 0,
 		type = 1,
+		tech_id = 540205,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 150,
 		desc = "既有快餐的便捷，又能享受主食的饱腹感，当之无愧的多功能美食！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 845,
 		icon = "IslandProps/item_3034",
 		price = 1,
@@ -3883,7 +4036,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10130
 		},
 		sub_attribute = {
 			4,
@@ -3901,11 +4054,12 @@ pg.base.island_item_data_template = {
 		name = "布料",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "由带有纤维的材料制成的织品，是很多日用品和工业产品的原料。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 340,
 		icon = "IslandProps/item_3035",
 		price = 1,
@@ -3917,7 +4071,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -3932,11 +4086,12 @@ pg.base.island_item_data_template = {
 		name = "皮革",
 		group_max = 0,
 		type = 1,
+		tech_id = 660201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "由动物的皮毛加工而来，常用于服装和家具的制作。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 600,
 		icon = "IslandProps/item_3036",
 		price = 1,
@@ -3948,7 +4103,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -3963,11 +4118,12 @@ pg.base.island_item_data_template = {
 		name = "绳索",
 		group_max = 0,
 		type = 1,
+		tech_id = 660202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "紧实坚韧，无论是绑货物还是搭架子，都能派上用场。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 600,
 		icon = "IslandProps/item_3037",
 		price = 1,
@@ -3979,7 +4135,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -3994,11 +4150,12 @@ pg.base.island_item_data_template = {
 		name = "手套",
 		group_max = 0,
 		type = 1,
+		tech_id = 660203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "家家必备的保暖用品，寒冷天气出行少不了它。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 890,
 		icon = "IslandProps/item_3038",
 		price = 1,
@@ -4010,7 +4167,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4025,11 +4182,12 @@ pg.base.island_item_data_template = {
 		name = "香囊",
 		group_max = 0,
 		type = 1,
+		tech_id = 660204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "装满草药或香料，随身携带提神醒脑。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1100,
 		icon = "IslandProps/item_3039",
 		price = 1,
@@ -4041,7 +4199,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4056,11 +4214,12 @@ pg.base.island_item_data_template = {
 		name = "鞋靴",
 		group_max = 0,
 		type = 1,
+		tech_id = 660205,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "皮革制品，通常用于保护足部。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 2380,
 		icon = "IslandProps/item_3040",
 		price = 1,
@@ -4072,7 +4231,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4087,11 +4246,12 @@ pg.base.island_item_data_template = {
 		name = "绷带",
 		group_max = 0,
 		type = 1,
+		tech_id = 660206,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "急救必备品，无论割伤还是擦伤，都能及时处理。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 2380,
 		icon = "IslandProps/item_3041",
 		price = 1,
@@ -4103,7 +4263,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4118,11 +4278,12 @@ pg.base.island_item_data_template = {
 		name = "炭笔",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "通常用于绘画和速写，美术常用工具的一种。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 300,
 		icon = "IslandProps/item_3042",
 		price = 1,
@@ -4134,7 +4295,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4149,11 +4310,12 @@ pg.base.island_item_data_template = {
 		name = "电缆",
 		group_max = 0,
 		type = 1,
+		tech_id = 640202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "现代化的象征，为众多设施提供了电力支持。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 770,
 		icon = "IslandProps/item_3043",
 		price = 1,
@@ -4165,7 +4327,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4180,11 +4342,12 @@ pg.base.island_item_data_template = {
 		name = "铁钉",
 		group_max = 0,
 		type = 1,
+		tech_id = 640201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "常见建造用品，经常用于固定木板和制作家具。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 660,
 		icon = "IslandProps/item_3044",
 		price = 1,
@@ -4196,7 +4359,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4211,11 +4374,12 @@ pg.base.island_item_data_template = {
 		name = "硫酸",
 		group_max = 0,
 		type = 1,
+		tech_id = 640203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "拥有很强腐蚀性的化学品。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 840,
 		icon = "IslandProps/item_3045",
 		price = 1,
@@ -4227,7 +4391,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4242,11 +4406,12 @@ pg.base.island_item_data_template = {
 		name = "火药",
 		group_max = 0,
 		type = 1,
+		tech_id = 640204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "现代武器的必需品，需要妥善保管的危险品。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1200,
 		icon = "IslandProps/item_3046",
 		price = 1,
@@ -4258,7 +4423,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4273,11 +4438,12 @@ pg.base.island_item_data_template = {
 		name = "刀叉餐具",
 		group_max = 0,
 		type = 1,
+		tech_id = 640206,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "家家户户，餐桌必备。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 2560,
 		icon = "IslandProps/item_3047",
 		price = 1,
@@ -4289,7 +4455,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4300,15 +4466,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3048] = {
-		pt_num = 1,
+		pt_num = 6,
 		name = "纸张",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "常以廉价的植物纤维制成，保存容易，书写方便。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 175,
 		icon = "IslandProps/item_3048",
 		price = 1,
@@ -4320,7 +4487,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4335,11 +4502,12 @@ pg.base.island_item_data_template = {
 		name = "记事本",
 		group_max = 0,
 		type = 1,
+		tech_id = 630201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "记满了日常事务的本子，也可当作日记本使用。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1230,
 		icon = "IslandProps/item_3049",
 		price = 1,
@@ -4351,7 +4519,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4366,11 +4534,12 @@ pg.base.island_item_data_template = {
 		name = "桌椅",
 		group_max = 0,
 		type = 1,
+		tech_id = 630202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "最常见的家具，能够提供一个休息的地方。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 810,
 		icon = "IslandProps/item_3050",
 		price = 1,
@@ -4382,7 +4551,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4397,11 +4566,12 @@ pg.base.island_item_data_template = {
 		name = "精选木桶",
 		group_max = 0,
 		type = 1,
+		tech_id = 630203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "多功能工具，通常用来储存红酒或蜂蜜。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1610,
 		icon = "IslandProps/item_3051",
 		price = 1,
@@ -4413,7 +4583,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4428,11 +4598,12 @@ pg.base.island_item_data_template = {
 		name = "文件柜",
 		group_max = 0,
 		type = 1,
+		tech_id = 630204,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "办公室必备，可以方便存放、管理各类文件。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 2880,
 		icon = "IslandProps/item_3052",
 		price = 1,
@@ -4444,7 +4615,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4459,11 +4630,12 @@ pg.base.island_item_data_template = {
 		name = "墨盒",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "用来存储打印墨水，是打印机的核心组件。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 570,
 		icon = "IslandProps/item_3053",
 		price = 1,
@@ -4475,7 +4647,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4490,11 +4662,12 @@ pg.base.island_item_data_template = {
 		name = "钟表",
 		group_max = 0,
 		type = 1,
+		tech_id = 650201,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "指示时间的精密仪器，常被固定在房间墙上。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 2590,
 		icon = "IslandProps/item_3054",
 		price = 1,
@@ -4506,7 +4679,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4521,11 +4694,12 @@ pg.base.island_item_data_template = {
 		name = "蓄电池",
 		group_max = 0,
 		type = 1,
+		tech_id = 650202,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "可重复使用，为电机、照明设备等提供稳定的能源。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1750,
 		icon = "IslandProps/item_3055",
 		price = 1,
@@ -4537,7 +4711,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4552,11 +4726,12 @@ pg.base.island_item_data_template = {
 		name = "净水滤芯",
 		group_max = 0,
 		type = 1,
+		tech_id = 650203,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "过滤掉水中的杂质，为大家提供纯净的水源！",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 2400,
 		icon = "IslandProps/item_3056",
 		price = 1,
@@ -4568,7 +4743,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -4579,15 +4754,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3059] = {
-		pt_num = 1,
+		pt_num = 2,
 		name = "欧姆蛋",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 210,
 		desc = "蓬松蛋皮包裹柔嫩内馅，金黄诱人，简单而满足的美味",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 50,
 		icon = "IslandProps/item_3059",
 		price = 1,
@@ -4613,15 +4789,16 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3101] = {
-		pt_num = 200,
+		pt_num = 230,
 		name = "经典豆腐套餐",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 210,
 		desc = "肉末烧豆腐搭配白菜豆腐汤，简单美味的一餐。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1735,
 		icon = "IslandProps/item_3101",
 		price = 1,
@@ -4633,7 +4810,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10127
 		},
 		sub_attribute = {
 			5,
@@ -4641,7 +4818,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"有鱼餐馆",
 				{}
 			}
 		}
@@ -4651,11 +4828,12 @@ pg.base.island_item_data_template = {
 		name = "绵玉定食",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 220,
 		desc = "蓬松蛋包饭搭配温润嫩豆腐，简单却令人满足的滋味。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 695,
 		icon = "IslandProps/item_3102",
 		price = 1,
@@ -4667,7 +4845,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10127
 		},
 		sub_attribute = {
 			5,
@@ -4675,22 +4853,23 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"有鱼餐馆",
 				{}
 			}
 		}
 	},
 	[3103] = {
-		pt_num = 200,
+		pt_num = 250,
 		name = "花香果韵",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 210,
 		desc = "薰衣草的舒缓芬芳与苹果的清新甘甜巧妙融合，带来双重味觉享受。",
 		usage = "usage_undefined",
-		order_price = 170,
+		resource_type = 1,
+		order_price = 1700,
 		icon = "IslandProps/item_3103",
 		price = 1,
 		icon_normal = "",
@@ -4701,7 +4880,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10128
 		},
 		sub_attribute = {
 			3,
@@ -4709,7 +4888,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"白熊饮品",
 				{}
 			}
 		}
@@ -4719,11 +4898,12 @@ pg.base.island_item_data_template = {
 		name = "缤纷果乐园",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 215,
 		desc = "香甜香蕉芒果汁碰撞草莓蜂蜜冰沙，双重果味为你带去清爽的体验。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1000,
 		icon = "IslandProps/item_3104",
 		price = 1,
@@ -4735,7 +4915,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10128
 		},
 		sub_attribute = {
 			5,
@@ -4743,21 +4923,22 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"白熊饮品",
 				{}
 			}
 		}
 	},
 	[3105] = {
-		pt_num = 60,
+		pt_num = 70,
 		name = "阳光蜜水",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 260,
 		desc = "草莓蜜沁的甜美与蜂蜜柠檬水的清新，碰撞出活力十足的阳光味道。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 410,
 		icon = "IslandProps/item_3105",
 		price = 1,
@@ -4769,7 +4950,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10128
 		},
 		sub_attribute = {
 			5,
@@ -4777,21 +4958,22 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"白熊饮品",
 				{}
 			}
 		}
 	},
 	[3106] = {
-		pt_num = 65,
+		pt_num = 70,
 		name = "香甜组合",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 250,
 		desc = "热带芒果香糯，遇上甜脆玉米杯，一次尝遍两种幸福甜味。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 560,
 		icon = "IslandProps/item_3106",
 		price = 1,
@@ -4803,7 +4985,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10129
 		},
 		sub_attribute = {
 			3,
@@ -4811,7 +4993,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"啾啾简餐",
 				{}
 			}
 		}
@@ -4821,11 +5003,12 @@ pg.base.island_item_data_template = {
 		name = "果园二重奏",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 240,
 		desc = "香蕉可丽饼的柔软搭配金黄苹果派的酥香，一次享受双重果味甜蜜。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 615,
 		icon = "IslandProps/item_3107",
 		price = 1,
@@ -4837,7 +5020,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10129
 		},
 		sub_attribute = {
 			5,
@@ -4845,7 +5028,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"啾啾简餐",
 				{}
 			}
 		}
@@ -4855,11 +5038,12 @@ pg.base.island_item_data_template = {
 		name = "莓果香橙甜点组",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 210,
 		desc = "草莓的浪漫邂逅香橙的阳光气息，碰撞出令人陶醉的甜点时光。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1730,
 		icon = "IslandProps/item_3108",
 		price = 1,
@@ -4871,7 +5055,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10129
 		},
 		sub_attribute = {
 			5,
@@ -4879,7 +5063,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"啾啾简餐",
 				{}
 			}
 		}
@@ -4889,11 +5073,12 @@ pg.base.island_item_data_template = {
 		name = "烤肉狂欢",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 230,
 		desc = "香烤肉串配酥嫩禽肉土豆，让你一次吃个过瘾。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 760,
 		icon = "IslandProps/item_3109",
 		price = 1,
@@ -4905,7 +5090,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10130
 		},
 		sub_attribute = {
 			3,
@@ -4913,7 +5098,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"乌鱼烤肉",
 				{}
 			}
 		}
@@ -4923,11 +5108,12 @@ pg.base.island_item_data_template = {
 		name = "能量双拼套餐",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 210,
 		desc = "经典汉堡肉饭搭配香辣爆炒禽肉，双重蛋白质满足你一天的能量。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1430,
 		icon = "IslandProps/item_3110",
 		price = 1,
@@ -4939,7 +5125,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10130
 		},
 		sub_attribute = {
 			5,
@@ -4947,7 +5133,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"乌鱼烤肉",
 				{}
 			}
 		}
@@ -4957,11 +5143,12 @@ pg.base.island_item_data_template = {
 		name = "晨光活力组合",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 250,
 		desc = "蓬松欧姆蛋邂逅香浓拿铁，给你一个完美的早餐时刻。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 300,
 		icon = "IslandProps/item_3111",
 		price = 1,
@@ -4973,7 +5160,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10126
 		},
 		sub_attribute = {
 			5,
@@ -4981,7 +5168,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"啾咖啡",
 				{}
 			}
 		}
@@ -4991,11 +5178,12 @@ pg.base.island_item_data_template = {
 		name = "醒神套餐",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 240,
 		desc = "冰咖啡搭配浓郁芝士，苦甜平衡的经典醒神套餐。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 650,
 		icon = "IslandProps/item_3112",
 		price = 1,
@@ -5007,7 +5195,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10126
 		},
 		sub_attribute = {
 			3,
@@ -5015,21 +5203,22 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"啾咖啡",
 				{}
 			}
 		}
 	},
 	[3113] = {
-		pt_num = 65,
+		pt_num = 90,
 		name = "果香双杯乐",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 260,
 		desc = "柑橘咖啡的微酸邂逅草莓奶绿的香甜，两份特调一次满足。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 450,
 		icon = "IslandProps/item_3113",
 		price = 1,
@@ -5041,7 +5230,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10125
+			10126
 		},
 		sub_attribute = {
 			3,
@@ -5049,7 +5238,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"套餐菜单",
+				"啾咖啡",
 				{}
 			}
 		}
@@ -5059,11 +5248,12 @@ pg.base.island_item_data_template = {
 		name = "秋菊",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "金黄色的秋菊，随风摇曳，是秋季观赏与泡茶的佳品。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 400,
 		icon = "IslandProps/item_4001",
 		price = 1,
@@ -5089,11 +5279,12 @@ pg.base.island_item_data_template = {
 		name = "芦苇花",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "轻盈洁白的芦苇花，生于水岸，常用于制作干花装饰。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 200,
 		icon = "IslandProps/item_4002",
 		price = 1,
@@ -5119,11 +5310,12 @@ pg.base.island_item_data_template = {
 		name = "花生",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "香脆可口的花生，富含蛋白质和健康脂肪。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 150,
 		icon = "IslandProps/item_4003",
 		price = 1,
@@ -5149,11 +5341,12 @@ pg.base.island_item_data_template = {
 		name = "松茸",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "鲜嫩的山林珍品松茸，香气独特，是煲汤提鲜的顶级食材。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 800,
 		icon = "IslandProps/item_4004",
 		price = 1,
@@ -5179,11 +5372,12 @@ pg.base.island_item_data_template = {
 		name = "秋月梨",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "清甜多汁的秋月梨，果肉细腻，是生津润燥的秋季佳果。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 70,
 		icon = "IslandProps/item_4005",
 		price = 1,
@@ -5195,7 +5389,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10125
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -5210,11 +5404,12 @@ pg.base.island_item_data_template = {
 		name = "秋月梨树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "秋月梨树种，蕴藏清甜的未来，可培育优质梨树。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_4006",
 		price = 1,
@@ -5243,11 +5438,12 @@ pg.base.island_item_data_template = {
 		name = "柿子",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "红艳饱满的柿子，软糯甘甜，富含维生素，是秋日时令鲜果。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 200,
 		icon = "IslandProps/item_4007",
 		price = 1,
@@ -5259,7 +5455,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10111,
-			10121
+			10125
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -5274,11 +5470,12 @@ pg.base.island_item_data_template = {
 		name = "柿子树种",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 0,
 		desc = "种下种子，收获“柿柿”如意的美好。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 0,
 		icon = "IslandProps/item_4008",
 		price = 1,
@@ -5307,11 +5504,12 @@ pg.base.island_item_data_template = {
 		name = "柿子饼",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 280,
 		desc = "香甜软糯的柿子饼，由鲜柿制作而成，是传统风味茶点。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 210,
 		icon = "IslandProps/item_4009",
 		price = 1,
@@ -5323,7 +5521,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10129
+			10127
 		},
 		sub_attribute = {
 			4,
@@ -5341,11 +5539,12 @@ pg.base.island_item_data_template = {
 		name = "松茸鸡汤",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 280,
 		desc = "鲜香浓郁的松茸鸡汤，使用禽肉与松茸慢炖，温补滋养。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 900,
 		icon = "IslandProps/item_4010",
 		price = 1,
@@ -5357,7 +5556,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10129
+			10127
 		},
 		sub_attribute = {
 			5,
@@ -5375,11 +5574,12 @@ pg.base.island_item_data_template = {
 		name = "秋季花束",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 280,
 		desc = "温暖橘黄的秋季花束，精选菊花、芦苇等时令花材，装点秋意。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 705,
 		icon = "IslandProps/item_4011",
 		price = 1,
@@ -5409,11 +5609,12 @@ pg.base.island_item_data_template = {
 		name = "花生油",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 280,
 		desc = "醇香浓郁的花生油，由优质花生压榨，是健康烹饪用油。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 1005,
 		icon = "IslandProps/item_4012",
 		price = 1,
@@ -5443,11 +5644,12 @@ pg.base.island_item_data_template = {
 		name = "胡萝卜秋梨汁",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 280,
 		desc = "鲜榨甘甜的胡萝卜秋梨汁，融合秋梨的清润与胡萝卜的营养，清爽解渴。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 200,
 		icon = "IslandProps/item_4013",
 		price = 1,
@@ -5477,11 +5679,12 @@ pg.base.island_item_data_template = {
 		name = "菊花茶",
 		group_max = 0,
 		type = 1,
+		tech_id = 0,
 		convert = 1,
-		resource_type = 1,
 		manage_influence = 280,
 		desc = "淡雅清香的菊花茶，冲泡秋菊花瓣，清热降火，回味甘醇。",
 		usage = "usage_undefined",
+		resource_type = 1,
 		order_price = 840,
 		icon = "IslandProps/item_4014",
 		price = 1,
@@ -5511,11 +5714,12 @@ pg.base.island_item_data_template = {
 		name = "生活经验指南T1",
 		group_max = 0,
 		type = 5,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容基础的开发区生活指南。使用后，能少量增加角色的开发区生活经验。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100001",
 		price = 0,
@@ -5531,7 +5735,15 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"白熊饮品",
+				"累计PT",
+				{}
+			},
+			{
+				"开发商店",
+				{}
+			},
+			{
+				"开发计划",
 				{}
 			}
 		}
@@ -5541,11 +5753,12 @@ pg.base.island_item_data_template = {
 		name = "生活经验指南T2",
 		group_max = 0,
 		type = 5,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容详细的开发区生活指南。使用后，能中幅增加角色的开发区生活经验。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100002",
 		price = 0,
@@ -5561,11 +5774,15 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
+				"累计PT",
+				{}
+			},
+			{
 				"开发商店",
 				{}
 			},
 			{
-				"计划",
+				"开发计划",
 				{}
 			}
 		}
@@ -5575,11 +5792,12 @@ pg.base.island_item_data_template = {
 		name = "生活经验指南T3",
 		group_max = 0,
 		type = 5,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容丰富的开发区生活指南。使用后，能大幅增加角色的开发区生活经验。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100003",
 		price = 0,
@@ -5595,11 +5813,15 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
+				"累计PT",
+				{}
+			},
+			{
 				"开发商店",
 				{}
 			},
 			{
-				"计划",
+				"开发计划",
 				{}
 			}
 		}
@@ -5609,11 +5831,12 @@ pg.base.island_item_data_template = {
 		name = "经营指南T1",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容基础的经营技巧指南。使用后，角色的经营能力将少量提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100011",
 		price = 0,
@@ -5629,11 +5852,11 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"开发商店",
+				"累计PT",
 				{}
 			},
 			{
-				"计划",
+				"开发计划",
 				{}
 			}
 		}
@@ -5643,11 +5866,12 @@ pg.base.island_item_data_template = {
 		name = "经营指南T2",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容详细的经营技巧指南。使用后，角色的经营能力将中幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100012",
 		price = 0,
@@ -5665,10 +5889,6 @@ pg.base.island_item_data_template = {
 			{
 				"累计PT",
 				{}
-			},
-			{
-				"开发计划",
-				{}
 			}
 		}
 	},
@@ -5677,11 +5897,12 @@ pg.base.island_item_data_template = {
 		name = "经营指南T3",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容丰富的经营技巧指南。使用后，角色的经营能力将大幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100013",
 		price = 0,
@@ -5695,23 +5916,19 @@ pg.base.island_item_data_template = {
 			10211
 		},
 		sub_attribute = {},
-		jump_page = {
-			{
-				"累计PT",
-				{}
-			}
-		}
+		jump_page = {}
 	},
 	[100021] = {
 		pt_num = 0,
 		name = "种植指南T1",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容基础的种植技巧指南。使用后，角色的种植能力将少量提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100021",
 		price = 0,
@@ -5741,11 +5958,12 @@ pg.base.island_item_data_template = {
 		name = "种植指南T2",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容详细的种植技巧指南。使用后，角色的种植能力将中幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100022",
 		price = 0,
@@ -5771,11 +5989,12 @@ pg.base.island_item_data_template = {
 		name = "种植指南T3",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容丰富的种植技巧指南。使用后，角色的种植能力将大幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100023",
 		price = 0,
@@ -5796,11 +6015,12 @@ pg.base.island_item_data_template = {
 		name = "制造指南T1",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容基础的制造技巧指南。使用后，角色的制造能力将少量提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100031",
 		price = 0,
@@ -5830,11 +6050,12 @@ pg.base.island_item_data_template = {
 		name = "制造指南T2",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容详细的制造技巧指南。使用后，角色的制造能力将中幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100032",
 		price = 0,
@@ -5860,11 +6081,12 @@ pg.base.island_item_data_template = {
 		name = "制造指南T3",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容丰富的制造技巧指南。使用后，角色的制造能力将大幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100033",
 		price = 0,
@@ -5885,11 +6107,12 @@ pg.base.island_item_data_template = {
 		name = "采集指南T1",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容基础的采集技巧指南。使用后，角色的采集能力将少量提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100041",
 		price = 0,
@@ -5919,11 +6142,12 @@ pg.base.island_item_data_template = {
 		name = "采集指南T2",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容详细的采集技巧指南。使用后，角色的采集能力将中幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100042",
 		price = 0,
@@ -5949,11 +6173,12 @@ pg.base.island_item_data_template = {
 		name = "采集指南T3",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容丰富的采集技巧指南。使用后，角色的采集能力将大幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100043",
 		price = 0,
@@ -5974,11 +6199,12 @@ pg.base.island_item_data_template = {
 		name = "养护指南T1",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容基础的养护技巧指南。使用后，能少量提升角色的养护能力。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100051",
 		price = 0,
@@ -6008,11 +6234,12 @@ pg.base.island_item_data_template = {
 		name = "养护指南T2",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容详细的养护技巧指南。使用后，角色的养护能力将中幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100052",
 		price = 0,
@@ -6038,11 +6265,12 @@ pg.base.island_item_data_template = {
 		name = "养护指南T3",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容丰富的养护技巧指南。使用后，角色的养护能力将大幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100053",
 		price = 0,
@@ -6063,11 +6291,12 @@ pg.base.island_item_data_template = {
 		name = "烹调指南T1",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容基础的烹调技巧指南。使用后，角色的烹调能力将少量提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100061",
 		price = 0,
@@ -6097,11 +6326,12 @@ pg.base.island_item_data_template = {
 		name = "烹调指南T2",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容详细的烹调技巧指南。使用后，角色的烹调能力将中幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100062",
 		price = 0,
@@ -6127,11 +6357,12 @@ pg.base.island_item_data_template = {
 		name = "烹调指南T3",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容丰富的烹调技巧指南。使用后，角色的烹调能力将大幅提升。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100063",
 		price = 0,
@@ -6152,11 +6383,12 @@ pg.base.island_item_data_template = {
 		name = "生产技能指南T1",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容基础的生产技能指南。用于提升角色的开发区生产技能等级。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100101",
 		price = 0,
@@ -6172,7 +6404,15 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
+				"累计PT",
+				{}
+			},
+			{
 				"开发商店",
+				{}
+			},
+			{
+				"开发计划",
 				{}
 			}
 		}
@@ -6182,11 +6422,12 @@ pg.base.island_item_data_template = {
 		name = "生产技能指南T2",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容详细的生产技能指南。用于提升角色的开发区生产技能等级。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100102",
 		price = 0,
@@ -6202,7 +6443,15 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
+				"累计PT",
+				{}
+			},
+			{
 				"开发商店",
+				{}
+			},
+			{
+				"开发计划",
 				{}
 			}
 		}
@@ -6212,11 +6461,12 @@ pg.base.island_item_data_template = {
 		name = "生产技能指南T3",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "一本内容丰富的生产技能指南。用于提升角色的开发区生产技能等级。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100103",
 		price = 0,
@@ -6232,7 +6482,15 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
+				"累计PT",
+				{}
+			},
+			{
 				"开发商店",
+				{}
+			},
+			{
+				"开发计划",
 				{}
 			}
 		}
@@ -6242,15 +6500,16 @@ pg.base.island_item_data_template = {
 		name = "岛屿开发结晶",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "岛屿开发经验的结晶。角色突破所需的必要材料。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_100201",
 		price = 0,
-		icon_normal = "",
+		icon_normal = "props/item_island_100201",
 		rarity = 3,
 		drop_after_use = 0,
 		usage_arg = "[]",
@@ -6272,6 +6531,7 @@ pg.base.island_item_data_template = {
 		name = "海盐特饮",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
 		desc = "使用后恢复角色50体力。基础款能量特饮，咸甜交织的独特口感，像海风拂过舌尖。",
@@ -6315,6 +6575,7 @@ pg.base.island_item_data_template = {
 		name = "新叶特饮",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
 		desc = "使用后恢复角色50体力，全能力提高3%，持续8小时。散发着嫩芽的清香，清新提神。",
@@ -6356,6 +6617,7 @@ pg.base.island_item_data_template = {
 		name = "草莓特饮",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
 		desc = "使用后恢复角色50体力，生产基础资材时，产出所需时间缩短5%，持续8小时。饱含草莓的甜香，酸甜之中活力满满。",
@@ -6397,6 +6659,7 @@ pg.base.island_item_data_template = {
 		name = "金桔特饮",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
 		desc = "使用后恢复角色50体力，在基地工厂制作产品时，产出所需时间缩短5%，持续8小时。带着金桔微涩的口感，清爽解乏一口回甘。",
@@ -6438,6 +6701,7 @@ pg.base.island_item_data_template = {
 		name = "蓝莓特饮",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
 		desc = "使用后恢复角色50体力，制作店铺餐品时，烹饪所需时间缩短5%，持续8小时。融汇蓝莓酸甜，馥郁果香令人愉悦。",
@@ -6479,6 +6743,7 @@ pg.base.island_item_data_template = {
 		name = "葡萄特饮",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
 		desc = "使用后恢复角色50体力，角色经营店铺时，销售额提高5%，持续8小时。每一口都是圆润饱满的甜蜜风味。",
@@ -6518,11 +6783,12 @@ pg.base.island_item_data_template = {
 		name = "柴郡岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "柴郡的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200001",
 		price = 0,
@@ -6536,18 +6802,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"星彩奖",
+				{}
+			}
+		}
 	},
 	[200002] = {
 		pt_num = 0,
 		name = "萨拉托加岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "萨拉托加的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200002",
 		price = 0,
@@ -6568,11 +6840,12 @@ pg.base.island_item_data_template = {
 		name = "{namecode:98:明石}岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "{namecode:98:明石}的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200003",
 		price = 0,
@@ -6586,18 +6859,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"计划",
+				{}
+			}
+		}
 	},
 	[200004] = {
 		pt_num = 0,
 		name = "{namecode:97:大凤}岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "{namecode:97:大凤}的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200004",
 		price = 0,
@@ -6618,11 +6897,12 @@ pg.base.island_item_data_template = {
 		name = "{namecode:199:新泽西}岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "{namecode:199:新泽西}的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200005",
 		price = 0,
@@ -6636,18 +6916,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"科技",
+				{}
+			}
+		}
 	},
 	[200006] = {
 		pt_num = 0,
 		name = "{namecode:18:岛风}岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "{namecode:18:岛风}的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200006",
 		price = 0,
@@ -6661,18 +6947,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"图鉴",
+				{}
+			}
+		}
 	},
 	[200007] = {
 		pt_num = 0,
 		name = "应瑞岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "应瑞的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200007",
 		price = 0,
@@ -6686,18 +6978,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"科技",
+				{}
+			}
+		}
 	},
 	[200008] = {
 		pt_num = 0,
 		name = "恶毒岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "恶毒的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200008",
 		price = 0,
@@ -6711,18 +7009,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"成就",
+				{}
+			}
+		}
 	},
 	[200009] = {
 		pt_num = 0,
 		name = "独角兽岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "独角兽的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200009",
 		price = 0,
@@ -6736,18 +7040,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"星彩奖",
+				{}
+			}
+		}
 	},
 	[200010] = {
 		pt_num = 0,
 		name = "塔什干岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "塔什干的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200010",
 		price = 0,
@@ -6761,18 +7071,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"科技",
+				{}
+			}
+		}
 	},
 	[200011] = {
 		pt_num = 0,
 		name = "胡德岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "胡德的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200011",
 		price = 0,
@@ -6786,18 +7102,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"科技",
+				{}
+			}
+		}
 	},
 	[200012] = {
 		pt_num = 0,
 		name = "{namecode:193:小天城}岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "{namecode:193:小天城}的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200012",
 		price = 0,
@@ -6811,18 +7133,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"星彩奖",
+				{}
+			}
+		}
 	},
 	[200013] = {
 		pt_num = 0,
 		name = "{namecode:427:欧根亲王}岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "{namecode:427:欧根亲王}的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200013",
 		price = 0,
@@ -6843,11 +7171,12 @@ pg.base.island_item_data_template = {
 		name = "肇和岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "肇和的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200014",
 		price = 0,
@@ -6861,18 +7190,24 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"科技",
+				{}
+			}
+		}
 	},
 	[200015] = {
 		pt_num = 0,
 		name = "莱昂纳多·达·芬奇岛屿权限认证函",
 		group_max = 0,
 		type = 2,
+		tech_id = 0,
 		convert = 0,
-		resource_type = 0,
 		manage_influence = 0,
 		desc = "莱昂纳多·达·芬奇的岛屿权限认证函。通过岛屿权限认证装置，可获得角色奇异点岛屿出入权限。",
 		usage = "usage_undefined",
+		resource_type = 0,
 		order_price = 0,
 		icon = "IslandProps/item_200015",
 		price = 0,
@@ -6886,6 +7221,185 @@ pg.base.island_item_data_template = {
 			10213
 		},
 		sub_attribute = {},
-		jump_page = {}
+		jump_page = {
+			{
+				"成就",
+				{}
+			}
+		}
+	},
+	[300001] = {
+		pt_num = 0,
+		name = "丰壤农田委派效率提高 4%",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "获得后，丰壤农田委派效率提高 4%",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/buff",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 300001,
+		have_max = 0,
+		filter = {},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"图鉴",
+				{}
+			}
+		}
+	},
+	[300002] = {
+		pt_num = 0,
+		name = "坠香果园委派效率提高 4%",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "获得后，坠香果园委派效率提高 4%",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/buff",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 300002,
+		have_max = 0,
+		filter = {},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"图鉴",
+				{}
+			}
+		}
+	},
+	[300003] = {
+		pt_num = 0,
+		name = "青芽苗圃委派效率提高 4%",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "获得后，青芽苗圃委派效率提高 4%",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/buff",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 300003,
+		have_max = 0,
+		filter = {},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"图鉴",
+				{}
+			}
+		}
+	},
+	[300004] = {
+		pt_num = 0,
+		name = "丰壤农田委派效率提高 8%",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "获得后，丰壤农田委派效率提高 8%",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/buff",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 300004,
+		have_max = 0,
+		filter = {},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"图鉴",
+				{}
+			}
+		}
+	},
+	[300005] = {
+		pt_num = 0,
+		name = "坠香果园委派效率提高 8%",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "获得后，坠香果园委派效率提高 8%",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/buff",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 300005,
+		have_max = 0,
+		filter = {},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"图鉴",
+				{}
+			}
+		}
+	},
+	[300006] = {
+		pt_num = 0,
+		name = "青芽苗圃委派效率提高 8%",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "获得后，青芽苗圃委派效率提高 8%",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/buff",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 300006,
+		have_max = 0,
+		filter = {},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"图鉴",
+				{}
+			}
+		}
 	}
 }

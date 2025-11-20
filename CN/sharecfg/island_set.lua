@@ -48,7 +48,7 @@ pg.island_set = {
 		key = "order_ship_award_coefficient",
 		key_value_varchar = {
 			1,
-			10,
+			25,
 			0
 		}
 	},
@@ -153,7 +153,7 @@ pg.island_set = {
 	work_points = {
 		key_value_varchar = "",
 		key = "work_points",
-		key_value_int = 15
+		key_value_int = 10
 	},
 	mining_recovery_time = {
 		key_value_int = 0,
@@ -201,6 +201,11 @@ pg.island_set = {
 			}
 		}
 	},
+	mining_recovery_tim_new = {
+		key_value_varchar = "",
+		key = "mining_recovery_tim_new",
+		key_value_int = 10800
+	},
 	collection_point_recovery_time = {
 		key_value_int = 0,
 		key = "collection_point_recovery_time",
@@ -226,6 +231,40 @@ pg.island_set = {
 			{
 				2015,
 				10040040
+			}
+		}
+	},
+	mining_default_slot = {
+		key_value_int = 0,
+		key = "mining_default_slot",
+		key_value_varchar = {
+			{
+				401,
+				{
+					2001,
+					2002,
+					2003,
+					2004,
+					2006,
+					2007,
+					2008,
+					2009,
+					2010
+				}
+			},
+			{
+				402,
+				{
+					2011,
+					2012,
+					2013,
+					2014,
+					2016,
+					2017,
+					2018,
+					2019,
+					2020
+				}
 			}
 		}
 	},
@@ -276,7 +315,10 @@ pg.island_set = {
 			10040005,
 			10040006,
 			10040007,
-			10040008
+			10040008,
+			10040070,
+			10040071,
+			10040072
 		}
 	},
 	task_daily = {
@@ -423,6 +465,11 @@ pg.island_set = {
 		key_value_varchar = "",
 		key = "island_manage_sale_constant",
 		key_value_int = 160
+	},
+	island_manage_sale_limit = {
+		key_value_varchar = "",
+		key = "island_manage_sale_limit",
+		key_value_int = 1
 	},
 	whit_list_max_cnt = {
 		key_value_varchar = "",
@@ -699,6 +746,11 @@ pg.island_set = {
 		key = "achievement_target_num_max",
 		key_value_int = 9999
 	},
+	achievement_target_num_max_special = {
+		key_value_varchar = "",
+		key = "achievement_target_num_max_special",
+		key_value_int = 99999999
+	},
 	default_dress = {
 		key_value_int = 0,
 		key = "default_dress",
@@ -892,6 +944,52 @@ pg.island_set = {
 		key = "agora_reloading_base_cd",
 		key_value_int = 3
 	},
+	island_corncup_return_mail_content = {
+		key_value_int = 0,
+		key = "island_corncup_return_mail_content",
+		key_value_varchar = {
+			"岛屿科技额外消耗资源返还",
+			"感谢指挥官在岛屿计划中作出的贡献喵~"
+		}
+	},
+	island_shiporder_refresh_cd = {
+		key_value_varchar = "",
+		key = "island_shiporder_refresh_cd",
+		key_value_int = 14400
+	},
+	island_combo_count_limit = {
+		key_value_varchar = "",
+		key = "island_combo_count_limit",
+		key_value_int = 9999
+	},
+	couple_word_cd = {
+		key_value_varchar = "",
+		key = "couple_word_cd",
+		key_value_int = 3
+	},
+	island_shiporder_refresh = {
+		key_value_int = 0,
+		key = "island_shiporder_refresh",
+		key_value_varchar = {
+			10800,
+			64800
+		}
+	},
+	island_shiporder_list_quantity = {
+		key_value_varchar = "",
+		key = "island_shiporder_list_quantity",
+		key_value_int = 6
+	},
+	island_shiporder_limit = {
+		key_value_varchar = "",
+		key = "island_shiporder_limit",
+		key_value_int = 1
+	},
+	island_guide_itemlimit = {
+		key_value_varchar = "",
+		key = "island_guide_itemlimit",
+		key_value_int = 99999
+	},
 	all = {
 		"order_complete_refresh_time",
 		"order_change_time",
@@ -915,8 +1013,10 @@ pg.island_set = {
 		"favorite_gifts_state",
 		"work_points",
 		"mining_recovery_time",
+		"mining_recovery_tim_new",
 		"collection_point_recovery_time",
 		"mission_gather_point",
+		"mining_default_slot",
 		"base_efficiency",
 		"stamina_cost",
 		"detection_parameters",
@@ -936,6 +1036,7 @@ pg.island_set = {
 		"island_manage_sale_coefficient_b",
 		"island_manage_sale_coefficient_c",
 		"island_manage_sale_constant",
+		"island_manage_sale_limit",
 		"whit_list_max_cnt",
 		"main_page_function_unlock",
 		"farm_empty_state_info",
@@ -959,6 +1060,7 @@ pg.island_set = {
 		"information_hud_height",
 		"achievement_mention_time",
 		"achievement_target_num_max",
+		"achievement_target_num_max_special",
 		"default_dress",
 		"island_time_rate",
 		"initial_dress_colordiff",
@@ -982,6 +1084,14 @@ pg.island_set = {
 		"island_photohight_TPS",
 		"island_dress_follow_param",
 		"island_ticket_shopid",
-		"agora_reloading_base_cd"
+		"agora_reloading_base_cd",
+		"island_corncup_return_mail_content",
+		"island_shiporder_refresh_cd",
+		"island_combo_count_limit",
+		"couple_word_cd",
+		"island_shiporder_refresh",
+		"island_shiporder_list_quantity",
+		"island_shiporder_limit",
+		"island_guide_itemlimit"
 	}
 }

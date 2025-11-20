@@ -3,6 +3,10 @@
 function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
 
+	if not pg.proxyRegister then
+		return
+	end
+
 	arg_1_0:sendNotification(GAME.WILL_LOGOUT)
 
 	if PLATFORM ~= PLATFORM_WINDOWSEDITOR and PLATFORM_CHT == PLATFORM_CODE and var_1_0.code ~= SDK_EXIT_CODE then
@@ -71,14 +75,12 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		var_1_2:SetLoginedFlag(false)
 	end
 
+	local var_1_4 = Context.New()
+
+	var_1_4:extendData(var_1_0)
+	SCENE.SetSceneInfo(var_1_4, SCENE.LOGIN)
 	arg_1_0:sendNotification(GAME.LOAD_SCENE, {
-		context = Context.New({
-			cleanStack = true,
-			scene = SCENE.LOGIN,
-			mediator = LoginMediator,
-			viewComponent = LoginScene,
-			data = var_1_0
-		}),
+		context = var_1_4,
 		callback = function()
 			if pg.proxyRegister then
 				pg.proxyRegister:Stop()

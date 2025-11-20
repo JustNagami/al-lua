@@ -162,7 +162,7 @@ function var_0_0.handleNotification(arg_12_0, arg_12_1)
 		arg_12_0.friendInfoPosition = nil
 		arg_12_0.friendInfoMsg = nil
 	elseif var_12_0 == GAME.ON_APPLICATION_PAUSE then
-		if not var_12_1 and _IslandCore then
+		if not var_12_1 and _IslandCore and not arg_12_0.exitProcessing then
 			arg_12_0:sendNotification(GAME.ISLAND_RECONNECT, {
 				islandId = _IslandCore:GetController():GetIsland().id
 			})
@@ -170,7 +170,15 @@ function var_0_0.handleNotification(arg_12_0, arg_12_1)
 	elseif var_12_0 == GAME.ISLAND_ON_HOME then
 		arg_12_0.viewComponent:emit(BaseUI.ON_HOME)
 	elseif var_12_0 == GAME.ISLAND_ON_RECONNECT then
+		if arg_12_0.exitProcessing then
+			return
+		end
+
+		arg_12_0.exitProcessing = true
+
 		arg_12_0.viewComponent:ExitProcess(BaseUI.ON_HOME, function()
+			arg_12_0.exitProcessing = false
+
 			pg.m02:sendNotification(GAME.ISLAND_ENTER, var_12_1)
 		end)
 	elseif var_12_0 == GAME.ISLAND_SELECT_GIFT_DONE then
@@ -181,12 +189,12 @@ function var_0_0.handleNotification(arg_12_0, arg_12_1)
 	arg_12_0.viewComponent:emit(var_12_0, var_12_1)
 end
 
-function var_0_0.SetUp(arg_14_0)
+function var_0_0.SetUp(arg_14_0, arg_14_1)
 	local var_14_0 = arg_14_0.viewComponent:GetIsland()
 	local var_14_1 = var_14_0.mapID
 	local var_14_2 = var_14_0.spawnPointId
 
-	_IslandCore = IslandCore.New(arg_14_0.viewComponent:GetPoolMgr(), var_14_0, arg_14_0.viewComponent._container)
+	_IslandCore = IslandCore.New(arg_14_0.viewComponent:GetPoolMgr(), var_14_0, arg_14_0.viewComponent._container, arg_14_1)
 
 	arg_14_0.viewComponent:OnSetUpCore(var_14_1, var_14_2)
 end
@@ -200,18 +208,26 @@ function var_0_0.SwitchScene(arg_15_0, arg_15_1, arg_15_2)
 		var_15_0:SetSpawnPointId(arg_15_2)
 	end
 
-	arg_15_0:UnloadScene()
-	arg_15_0:SetUp()
+	local var_15_1 = arg_15_0:UnloadScene()
+
+	arg_15_0:SetUp(var_15_1)
 end
 
 function var_0_0.UnloadScene(arg_16_0, arg_16_1)
 	arg_16_0.viewComponent:OnUnloadScene()
 
 	if _IslandCore then
+		local var_16_0 = _IslandCore:GetView():GetSubView(IslandOpView)
+		local var_16_1 = var_16_0 and var_16_0.showBalance or 1
+
 		_IslandCore:Dispose(arg_16_1)
 
 		_IslandCore = nil
+
+		return var_16_1
 	end
+
+	return 1
 end
 
 function var_0_0.remove(arg_17_0)

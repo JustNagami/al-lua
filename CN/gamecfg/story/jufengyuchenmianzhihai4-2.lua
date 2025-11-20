@@ -825,7 +825,7 @@
 			movableNode = {
 				{
 					time = 1000,
-					name = "fengfan_haigu03",
+					name = "fengfan_haigu_boss01",
 					spine = {
 						action = "",
 						scale = 1.75

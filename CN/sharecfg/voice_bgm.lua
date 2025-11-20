@@ -76,14 +76,14 @@ pg.voice_bgm = {
 		bgm = "main"
 	},
 	LoginScene = {
-		default_bgm = "login",
+		default_bgm = "dal-az-theme",
 		special_bgm = "",
-		bgm = "login"
+		bgm = "dal-az-theme"
 	},
 	NewMainScene = {
-		default_bgm = "main",
+		default_bgm = "dal-az-theme",
 		special_bgm = "",
-		bgm = "main"
+		bgm = "dal-az-theme"
 	},
 	HoloLiveLinkGameView = {
 		default_bgm = "holo-fff-inst",
@@ -135,10 +135,10 @@ pg.voice_bgm = {
 		special_bgm = "",
 		bgm = "idol-BlueSpirit-inst"
 	},
-	ActivityShop50129 = {
-		default_bgm = "story-amahara-stage1",
+	ActivityShop50246 = {
+		default_bgm = "dal-az-story-up",
 		special_bgm = "",
-		bgm = "story-amahara-stage1"
+		bgm = "dal-az-story-up"
 	},
 	BuildShipScene = {
 		default_bgm = "main",
@@ -2464,5 +2464,140 @@ pg.voice_bgm = {
 		default_bgm = "theme-myisland",
 		special_bgm = "",
 		bgm = "theme-myisland"
+	},
+	AEBCSMainPage = {
+		default_bgm = "danmachi-1",
+		special_bgm = "",
+		bgm = "danmachi-1"
+	},
+	AEBCSPtPage = {
+		default_bgm = "danmachi-2",
+		special_bgm = "",
+		bgm = "danmachi-2"
+	},
+	AEBCSAwardPage = {
+		default_bgm = "danmachi-az-story",
+		special_bgm = "",
+		bgm = "danmachi-az-story"
+	},
+	AEBCSHestiaPage = {
+		default_bgm = "danmachi-3",
+		special_bgm = "",
+		bgm = "danmachi-3"
+	},
+	AEBCSStoryPage = {
+		default_bgm = "danmachi-3",
+		special_bgm = "",
+		bgm = "danmachi-3"
+	},
+	ClemenceauMainRePage = {
+		default_bgm = "theme-clemenceau",
+		special_bgm = "",
+		bgm = "theme-clemenceau"
+	},
+	ExpoTicketTaskRePage = {
+		default_bgm = "story-clemenceau-judgement",
+		special_bgm = "",
+		bgm = "story-clemenceau-judgement"
+	},
+	SaDingPtRePage = {
+		default_bgm = "story-expo-lastday",
+		special_bgm = "",
+		bgm = "story-expo-lastday"
+	},
+	SaDingFrameRePage = {
+		default_bgm = "theme-marcopolo",
+		special_bgm = "",
+		bgm = "theme-marcopolo"
+	},
+	SaDingLoginRePage = {
+		default_bgm = "theme-irisangel",
+		special_bgm = "",
+		bgm = "theme-irisangel"
+	},
+	SailingShip3MainPage = {
+		default_bgm = "theme-tempest-light",
+		special_bgm = "",
+		bgm = "theme-tempest-light"
+	},
+	SailingShip3PtPage = {
+		default_bgm = "theme-tempest-light",
+		special_bgm = "",
+		bgm = "theme-tempest-light"
+	},
+	SailingShip3SkinActPage = {
+		default_bgm = "story-ghostnight-fascinsting",
+		special_bgm = "",
+		bgm = "story-ghostnight-fascinsting"
+	},
+	SailingShip3MedalAlbumView = {
+		default_bgm = "theme-tempest-light",
+		special_bgm = "",
+		bgm = "theme-tempest-light"
+	},
+	MarseillaiseSpRePage = {
+		default_bgm = "theme-irisangel",
+		special_bgm = "",
+		bgm = "theme-irisangel"
+	},
+	YunXianMainRePage = {
+		default_bgm = "theme-unzen",
+		special_bgm = "",
+		bgm = "theme-unzen"
+	},
+	XuYuWangYueChaoPtRePage = {
+		default_bgm = "story-unzen",
+		special_bgm = "",
+		bgm = "story-unzen"
+	},
+	ChongYingFrameRePage = {
+		default_bgm = "nagato-map",
+		special_bgm = "",
+		bgm = "nagato-map"
+	},
+	YueYeWeiYangRePage = {
+		default_bgm = "story-unzen-heart",
+		special_bgm = "",
+		bgm = "story-unzen-heart"
+	},
+	ChongYingLoginRePage = {
+		default_bgm = "story-afterrain-soft",
+		special_bgm = "",
+		bgm = "story-afterrain-soft"
+	},
+	PSSSkinPage = {
+		default_bgm = "story-richang-11",
+		special_bgm = "",
+		bgm = "story-richang-11"
+	},
+	PSSSkinMagazinePage = {
+		default_bgm = "story-richang-5",
+		special_bgm = "",
+		bgm = "story-richang-5"
+	},
+	DALMainPage = {
+		default_bgm = "dal-az-battle",
+		special_bgm = "",
+		bgm = "dal-az-battle"
+	},
+	DALptPage = {
+		default_bgm = "dal-az-story-up",
+		special_bgm = "",
+		bgm = "dal-az-story-up"
+	},
+	DALFavorabilityPage = {
+		default_bgm = "dal-az-story-up",
+		special_bgm = "",
+		bgm = "dal-az-story-up"
+	},
+	DALStagePage = {
+		default_bgm = "dal-az-theme",
+		special_bgm = "",
+		bgm = "dal-az-theme"
+	},
+	DALAwardPage = {
+		default_bgm = "dal-az-theme",
+		special_bgm = "",
+		bgm = "dal-az-theme"
 	}
 }
