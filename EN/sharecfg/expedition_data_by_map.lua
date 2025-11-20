@@ -424,6 +424,10 @@ pg.expedition_data_by_map = setmetatable({
 		1960012,
 		1960025,
 		1960026,
+		1970001,
+		1970002,
+		1970003,
+		1970004,
 		2100000,
 		2100001,
 		2100010,
@@ -528,6 +532,10 @@ pg.expedition_data_by_map = setmetatable({
 		2100502,
 		2100511,
 		2100512,
+		2100521,
+		2100522,
+		2100531,
+		2100532,
 		2200000,
 		2200010,
 		2200020,
@@ -542,6 +550,8 @@ pg.expedition_data_by_map = setmetatable({
 		2200110,
 		2200120,
 		2200130,
+		2200140,
+		2200141,
 		9920001,
 		9920002,
 		9920011,
@@ -16793,7 +16803,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4940,
+		on_activity = 50213,
 		ui_type = 1,
 		bg = "Map_1730001",
 		story_id = "",
@@ -16842,7 +16852,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4967,
+		on_activity = 50166,
 		ui_type = 1,
 		bg = "Map_1740005",
 		story_id = "",
@@ -16998,7 +17008,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4967,
+		on_activity = 50166,
 		ui_type = 1,
 		bg = "Map_1740011",
 		story_id = "",
@@ -17139,7 +17149,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4967,
+		on_activity = 50166,
 		ui_type = 1,
 		bg = "Map_1740005",
 		story_id = "",
@@ -17295,7 +17305,7 @@ pg.base.expedition_data_by_map = {
 		default_background = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4967,
+		on_activity = 50166,
 		ui_type = 1,
 		bg = "Map_1740011",
 		story_id = "",
@@ -17437,7 +17447,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4967,
+		on_activity = 50166,
 		ui_type = 1,
 		bg = "Map_1740012",
 		story_id = "",
@@ -17487,7 +17497,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 4967,
+		on_activity = 50166,
 		ui_type = 1,
 		bg = "Map_1740001",
 		story_id = "",
@@ -17537,7 +17547,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5001,
+		on_activity = 50222,
 		ui_type = 1,
 		bg = "Map_1750001",
 		story_id = "",
@@ -17587,7 +17597,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5001,
+		on_activity = 50222,
 		ui_type = 1,
 		bg = "Map_1750002",
 		story_id = "",
@@ -17637,7 +17647,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5001,
+		on_activity = 50222,
 		ui_type = 1,
 		bg = "Map_1750003",
 		story_id = "",
@@ -17687,7 +17697,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5001,
+		on_activity = 50222,
 		ui_type = 1,
 		bg = "Map_1750004",
 		story_id = "",
@@ -17737,7 +17747,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5001,
+		on_activity = 50222,
 		ui_type = 1,
 		bg = "Map_1750004",
 		story_id = "",
@@ -17787,7 +17797,7 @@ pg.base.expedition_data_by_map = {
 		cloud_suffix = "",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5001,
+		on_activity = 50222,
 		ui_type = 1,
 		bg = "Map_1750004",
 		story_id = "",
@@ -25288,6 +25298,355 @@ pg.base.expedition_data_by_map = {
 			269
 		}
 	},
+	[1970001] = {
+		map = 1970001,
+		name = "Tempesta and Islas de Libertád - Pt. 1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "SP",
+		drop_by_map_display = "",
+		bgm = "theme-tempest-light",
+		enter_story = "",
+		ani_name = "Map_1970001",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part1",
+		default_background = "bg_jufengv3_1",
+		cloud_suffix = "",
+		default_bgm = "Battle-nightmare-theme",
+		uifx = "",
+		on_activity = 50181,
+		ui_type = 10,
+		bg = "Map_1970001",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 0,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1970001
+			},
+			{
+				1970002
+			},
+			{
+				1970003
+			}
+		},
+		story_id = {
+			291,
+			292,
+			293,
+			294,
+			295,
+			296,
+			297,
+			298,
+			299,
+			300,
+			301,
+			302,
+			303,
+			304,
+			305,
+			306,
+			307,
+			308,
+			309,
+			310,
+			311,
+			312,
+			313,
+			314,
+			315,
+			316,
+			317,
+			318,
+			319
+		}
+	},
+	[1970002] = {
+		map = 1970002,
+		name = "Tempesta and Islas de Libertád - Pt. 2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "SP",
+		drop_by_map_display = "",
+		bgm = "story-temepest-2",
+		enter_story = "",
+		ani_name = "Map_1970002",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part2",
+		default_background = "bg_jufengv3_1",
+		cloud_suffix = "",
+		default_bgm = "Battle-nightmare-theme",
+		uifx = "",
+		on_activity = 50181,
+		ui_type = 10,
+		bg = "Map_1970002",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 0,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1970004
+			},
+			{
+				1970005
+			},
+			{
+				1970006
+			}
+		},
+		story_id = {
+			291,
+			292,
+			293,
+			294,
+			295,
+			296,
+			297,
+			298,
+			299,
+			300,
+			301,
+			302,
+			303,
+			304,
+			305,
+			306,
+			307,
+			308,
+			309,
+			310,
+			311,
+			312,
+			313,
+			314,
+			315,
+			316,
+			317,
+			318,
+			319
+		}
+	},
+	[1970003] = {
+		map = 1970003,
+		name = "Tempesta and Islas de Libertád - SP|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "SP",
+		drop_by_map_display = "",
+		bgm = "theme-tempest-light",
+		enter_story = "",
+		ani_name = "Map_1970001",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_sp",
+		default_background = "bg_jufengv3_1",
+		cloud_suffix = "",
+		default_bgm = "Battle-nightmare-theme",
+		uifx = "",
+		on_activity = 50181,
+		ui_type = 10,
+		bg = "Map_1970001",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1970002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1970041
+			}
+		},
+		story_id = {
+			291,
+			292,
+			293,
+			294,
+			295,
+			296,
+			297,
+			298,
+			299,
+			300,
+			301,
+			302,
+			303,
+			304,
+			305,
+			306,
+			307,
+			308,
+			309,
+			310,
+			311,
+			312,
+			313,
+			314,
+			315,
+			316,
+			317,
+			318,
+			319
+		}
+	},
+	[1970004] = {
+		map = 1970004,
+		name = "Tempesta and Islas de Libertád - EX|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "SP",
+		drop_by_map_display = "",
+		bgm = "story-tempest-freedom",
+		enter_story = "",
+		ani_name = "Map_1970002",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_ex",
+		default_background = "bg_jufengv3_1",
+		cloud_suffix = "",
+		default_bgm = "Battle-nightmare-theme",
+		uifx = "",
+		on_activity = 50181,
+		ui_type = 10,
+		bg = "Map_1970002",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 1970002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1970051,
+				1970052
+			}
+		},
+		story_id = {
+			291,
+			292,
+			293,
+			294,
+			295,
+			296,
+			297,
+			298,
+			299,
+			300,
+			301,
+			302,
+			303,
+			304,
+			305,
+			306,
+			307,
+			308,
+			309,
+			310,
+			311,
+			312,
+			313,
+			314,
+			315,
+			316,
+			317,
+			318,
+			319
+		}
+	},
 	[2100000] = {
 		map = 2100000,
 		name = "Visitors Dyed in Red: Prequel || || S.P. || E.X.",
@@ -30564,6 +30923,206 @@ pg.base.expedition_data_by_map = {
 			0.5
 		}
 	},
+	[2100521] = {
+		map = 2100521,
+		name = "Violet Tempest, Blooming Lycoris - PT. 1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-musashi-inside",
+		enter_story = "ZIJIANGJINLAN1",
+		ani_name = "Map_1680001",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1680001",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 2100531,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100522] = {
+		map = 2100522,
+		name = "Violet Tempest, Blooming Lycoris - PT. 2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "musashi-1",
+		enter_story = "ZIJIANGJINLAN19",
+		ani_name = "Map_1680002",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1680002",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 2100532,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100531] = {
+		map = 2100531,
+		name = "Violet Tempest, Blooming Lycoris - PT. 1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-musashi-inside",
+		enter_story = "ZIJIANGJINLAN1",
+		ani_name = "Map_1680003",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1680003",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 2100521,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2100532] = {
+		map = 2100532,
+		name = "Violet Tempest, Blooming Lycoris - PT. 2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "musashi-1",
+		enter_story = "ZIJIANGJINLAN19",
+		ani_name = "Map_1680004",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1680004",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 2100522,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
 	[2200000] = {
 		map = 2200000,
 		name = "Strive, Wish, and Strategize || || Chapter SP || S.P.",
@@ -30920,7 +31479,7 @@ pg.base.expedition_data_by_map = {
 		level_limit = 1,
 		type = 4,
 		anchor = "",
-		title = "EX",
+		title = "SP",
 		drop_by_map_display = "",
 		bgm = "idol-WISHNESS-inst",
 		enter_story = "JICHANG1",
@@ -31199,7 +31758,7 @@ pg.base.expedition_data_by_map = {
 		level_limit = 1,
 		type = 4,
 		anchor = "",
-		title = "EX",
+		title = "SP",
 		drop_by_map_display = "",
 		bgm = "theme-arbitrator-tower",
 		enter_story = "",
@@ -31277,6 +31836,106 @@ pg.base.expedition_data_by_map = {
 					},
 					"jianzhu04"
 				}
+			}
+		}
+	},
+	[2200140] = {
+		map = 2200140,
+		name = "Tempesta and the Fountain of Youth - PT.1|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "SP",
+		drop_by_map_display = "",
+		bgm = "story-temepest-1",
+		enter_story = "1767002",
+		ani_name = "Map_1760001",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1760001",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 0,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		}
+	},
+	[2200141] = {
+		map = 2200141,
+		name = "Tempesta and the Fountain of Youth - PT.2|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "SP",
+		drop_by_map_display = "",
+		bgm = "theme-tempest-up",
+		enter_story = "JUFENGYUQINGCHUNZHIQUAN14",
+		ani_name = "Map_1760002",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "",
+		default_background = "",
+		cloud_suffix = "",
+		default_bgm = "",
+		uifx = "",
+		on_activity = 0,
+		ui_type = 1,
+		bg = "Map_1760002",
+		story_id = "",
+		chapterGroups = "",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "",
+		animtor = 1,
+		bind_map = 0,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
 			}
 		}
 	},

@@ -48,7 +48,7 @@
 			movableNode = {
 				{
 					time = 1000,
-					name = "sairenboss27",
+					name = "weixu_baojian_2",
 					spine = {
 						action = "normal",
 						scale = 1
@@ -104,7 +104,7 @@
 			movableNode = {
 				{
 					time = 1000,
-					name = "sairenboss27",
+					name = "weixu_baojian_2",
 					spine = {
 						action = "normal",
 						scale = 1
@@ -186,7 +186,7 @@
 			movableNode = {
 				{
 					time = 1000,
-					name = "sairenboss27",
+					name = "weixu_baojian_2",
 					spine = {
 						action = "normal",
 						scale = 1

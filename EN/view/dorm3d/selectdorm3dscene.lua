@@ -128,7 +128,7 @@ function var_0_0.InitIconTrigger(arg_17_0, arg_17_1)
 			return
 		end
 
-		if arg_17_1 ~= 1 and (not getProxy(ApartmentProxy):getRoom(1) or not pg.NewStoryMgr.GetInstance():IsPlayed("DORM3D_GUIDE_02")) then
+		if arg_17_1 ~= 1 and (not getProxy(ApartmentProxy):getRoom(1) or not pg.NewStoryMgr.GetInstance():IsPlayed("DORM3D_GUIDE_02")) and not DORM_LOCK_GUIDE then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_guide_tip"))
 
 			return
@@ -138,7 +138,7 @@ function var_0_0.InitIconTrigger(arg_17_0, arg_17_1)
 		local var_18_1 = pg.dorm3d_rooms[arg_17_1].type
 
 		if var_18_1 == 1 then
-			if arg_17_1 ~= 4 and not pg.NewStoryMgr.GetInstance():IsPlayed("DORM3D_GUIDE_06") then
+			if arg_17_1 ~= 4 and not pg.NewStoryMgr.GetInstance():IsPlayed("DORM3D_GUIDE_06") and not DORM_LOCK_GUIDE then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("dorm3d_guide_tip2"))
 
 				return
@@ -261,6 +261,10 @@ function var_0_0.ReplaceSpecialRoomIcon(arg_29_0)
 
 		local var_29_3 = iter_29_5[1]
 		local var_29_4 = pg.dorm3d_dialogue_group[var_29_3]
+
+		if DORM_LOCK_GUIDE and var_29_3 == 10010 then
+			return
+		end
 
 		onButton(arg_29_0, var_29_2, function()
 			arg_29_0:TryDownloadResource({
@@ -449,6 +453,10 @@ function var_0_0.CheckGuide(arg_55_0, arg_55_1)
 		return
 	end
 
+	if DORM_LOCK_GUIDE then
+		return false
+	end
+
 	return switch(arg_55_1, {
 		DORM3D_GUIDE_02 = function()
 			local var_56_0 = getProxy(ApartmentProxy):getApartment(20220)
@@ -564,14 +572,10 @@ function var_0_0.SetMapSwitch(arg_61_0)
 					local var_72_3 = var_72_2 and var_72_2:getState() or "lock"
 
 					setActive(arg_72_2:Find("lock"), var_72_3 ~= "complete")
-					setActive(arg_72_2:Find("normal"), var_72_3 == "complete")
 
-					if var_72_3 == "complete" then
-						local var_72_4 = string.format("dorm3dselect/room_icon_%s", string.lower(var_72_1.assets_prefix))
+					local var_72_4 = string.format("dorm3dselect/room_icon_%s", string.lower(var_72_1.assets_prefix))
 
-						GetImageSpriteFromAtlasAsync(var_72_4, "", arg_72_2:Find("normal/mask/icon"), false)
-					end
-
+					GetImageSpriteFromAtlasAsync(var_72_4, "", arg_72_2:Find("normal/mask/icon"), false)
 					setText(arg_72_2:Find("roomId"), var_72_0)
 				end
 			end)

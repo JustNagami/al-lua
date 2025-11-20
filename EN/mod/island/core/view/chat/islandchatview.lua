@@ -11,20 +11,20 @@ function var_0_0.GetUIName(arg_2_0)
 end
 
 function var_0_0.SetUIParent(arg_3_0, arg_3_1)
-	setParent(arg_3_1, arg_3_0.parent)
+	return arg_3_0.parent
 end
 
 function var_0_0.FirstFlush(arg_4_0)
-	arg_4_0.settingsBtn = arg_4_0:findTF("top/settings")
-	arg_4_0.uiChannelList = UIItemList.New(arg_4_0:findTF("top/channels"), arg_4_0:findTF("top/channels/tpl"))
-	arg_4_0.sendChanncelBtn = arg_4_0:findTF("send_panel/channel_btn")
-	arg_4_0.sendChanncelTxt = arg_4_0:findTF("send_panel/channel_btn/Text"):GetComponent(typeof(Text))
-	arg_4_0.roomNumTxt = arg_4_0:findTF("top/settings/Text"):GetComponent(typeof(Text))
-	arg_4_0.scrollrect = arg_4_0:findTF("list"):GetComponent("LScrollRect")
-	arg_4_0.emojiBtn = arg_4_0:findTF("send_panel/input_panel/emoji")
-	arg_4_0.sendBtn = arg_4_0:findTF("send_panel/send_btn")
-	arg_4_0.inputField = arg_4_0:findTF("send_panel/input_panel/input"):GetComponent(typeof(InputField))
-	arg_4_0.uiSendChanncelList = UIItemList.New(arg_4_0:findTF("send_panel/channel_sel_panel"), arg_4_0:findTF("send_panel/channel_sel_panel/tpl"))
+	arg_4_0.settingsBtn = arg_4_0._tf:Find("top/settings")
+	arg_4_0.uiChannelList = UIItemList.New(arg_4_0._tf:Find("top/channels"), arg_4_0._tf:Find("top/channels/tpl"))
+	arg_4_0.sendChanncelBtn = arg_4_0._tf:Find("send_panel/channel_btn")
+	arg_4_0.sendChanncelTxt = arg_4_0._tf:Find("send_panel/channel_btn/Text"):GetComponent(typeof(Text))
+	arg_4_0.roomNumTxt = arg_4_0._tf:Find("top/settings/Text"):GetComponent(typeof(Text))
+	arg_4_0.scrollrect = arg_4_0._tf:Find("list"):GetComponent("LScrollRect")
+	arg_4_0.emojiBtn = arg_4_0._tf:Find("send_panel/input_panel/emoji")
+	arg_4_0.sendBtn = arg_4_0._tf:Find("send_panel/send_btn")
+	arg_4_0.inputField = arg_4_0._tf:Find("send_panel/input_panel/input"):GetComponent(typeof(InputField))
+	arg_4_0.uiSendChanncelList = UIItemList.New(arg_4_0._tf:Find("send_panel/channel_sel_panel"), arg_4_0._tf:Find("send_panel/channel_sel_panel/tpl"))
 	arg_4_0.channelValue = IslandChatConst.CHANNEL_ALL
 	arg_4_0.sendChannelValue = IslandChatConst.CHANNEL_ISLAND
 	arg_4_0.cards = {}
@@ -206,7 +206,9 @@ function var_0_0.InsertMsg(arg_28_0, arg_28_1, arg_28_2)
 		return
 	end
 
-	table.insert(arg_28_1, arg_28_2)
+	if arg_28_2.player and arg_28_2.content then
+		table.insert(arg_28_1, arg_28_2)
+	end
 end
 
 function var_0_0.MatchChannel(arg_29_0, arg_29_1)

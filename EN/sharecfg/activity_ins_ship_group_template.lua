@@ -1101,7 +1101,7 @@ pg.activity_ins_ship_group_template = {
 		name = "Bremerton",
 		background = "",
 		sculpture = "bulaimodun",
-		nationality = 0,
+		nationality = 1,
 		type = 1
 	},
 	[10738] = {
@@ -3876,8 +3876,8 @@ pg.activity_ins_ship_group_template = {
 		ship_group = 80503,
 		name = "Alsace",
 		background = "",
-		sculpture = "aersasi_3",
-		nationality = 0,
+		sculpture = "aersasi",
+		nationality = 8,
 		type = 1
 	},
 	[80302] = {
@@ -4848,6 +4848,118 @@ pg.activity_ins_ship_group_template = {
 		nationality = 0,
 		type = 1
 	},
+	[1140001] = {
+		ship_group = 1140001,
+		name = "Hestia",
+		background = "",
+		sculpture = "hesitiya",
+		nationality = 0,
+		type = 1
+	},
+	[1140002] = {
+		ship_group = 1140002,
+		name = "Ryu Lion",
+		background = "",
+		sculpture = "liuliang",
+		nationality = 0,
+		type = 1
+	},
+	[960012] = {
+		ship_group = 960012,
+		name = "Queen Anne's Revenge",
+		background = "",
+		sculpture = "anninvwang",
+		nationality = 10,
+		type = 1
+	},
+	[960013] = {
+		ship_group = 960013,
+		name = "Lyme",
+		background = "",
+		sculpture = "laimuhao",
+		nationality = 10,
+		type = 1
+	},
+	[960014] = {
+		ship_group = 960014,
+		name = "Pearl ",
+		background = "",
+		sculpture = "zhenzhuhao",
+		nationality = 10,
+		type = 1
+	},
+	[960015] = {
+		ship_group = 960015,
+		name = "Royal James",
+		background = "",
+		sculpture = "huangjiazhanmusi",
+		nationality = 10,
+		type = 1
+	},
+	[960016] = {
+		ship_group = 960016,
+		name = "Adventure",
+		background = "",
+		sculpture = "maoxianhao",
+		nationality = 10,
+		type = 1
+	},
+	[30121] = {
+		ship_group = 30121,
+		name = "Hatsuharu",
+		background = "",
+		sculpture = "chuchun",
+		nationality = 0,
+		type = 1
+	},
+	[1150001] = {
+		ship_group = 1150001,
+		name = "Tohka Yatogami",
+		background = "",
+		sculpture = "shixiang",
+		nationality = 0,
+		type = 1
+	},
+	[1150002] = {
+		ship_group = 1150002,
+		name = "Origami Tobiichi",
+		background = "",
+		sculpture = "zhezhi",
+		nationality = 0,
+		type = 1
+	},
+	[1150003] = {
+		ship_group = 1150003,
+		name = "Kotori Itsuka",
+		background = "",
+		sculpture = "qinli",
+		nationality = 0,
+		type = 1
+	},
+	[1150004] = {
+		ship_group = 1150004,
+		name = "Yoshino",
+		background = "",
+		sculpture = "sisinai",
+		nationality = 0,
+		type = 1
+	},
+	[1150005] = {
+		ship_group = 1150005,
+		name = "Kurumi Tokisaki",
+		background = "",
+		sculpture = "kuangsan",
+		nationality = 0,
+		type = 1
+	},
+	[1150006] = {
+		ship_group = 1150006,
+		name = "Kaguya Yamai・Yuzuru Yamai",
+		background = "",
+		sculpture = "bawu",
+		nationality = 0,
+		type = 1
+	},
 	all = {
 		30701,
 		30702,
@@ -5454,6 +5566,20 @@ pg.activity_ins_ship_group_template = {
 		30192,
 		20103,
 		10201,
-		69903
+		69903,
+		1140001,
+		1140002,
+		960012,
+		960013,
+		960014,
+		960015,
+		960016,
+		30121,
+		1150001,
+		1150002,
+		1150003,
+		1150004,
+		1150005,
+		1150006
 	}
 }

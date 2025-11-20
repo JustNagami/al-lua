@@ -154,6 +154,6 @@
 	painting = 0,
 	id = 17000,
 	picture = "0",
-	castCV = "skill",
+	castCV = "",
 	desc = ""
 }

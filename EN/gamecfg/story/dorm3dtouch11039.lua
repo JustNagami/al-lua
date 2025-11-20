@@ -17,7 +17,8 @@
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
 			dir = 1,
-			say = "If you wanna keep going, then I'm happy to!",
+			say = "Mm... Your hands are wandering...",
+			voice = "event:/dorm/drom3d_NewJersey_other/drom3d_NewJersey_ik_furniture2_tone2",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -28,10 +29,15 @@
 					op_list = {
 						{
 							param = "Play",
-							name = "shuohua_kaixing_01",
+							name = "IK_bed02_idle01_fb02",
 							time = 0,
 							type = "action",
 							skip = true
+						},
+						{
+							skip = true,
+							name = "face_happy_start",
+							type = "action"
 						},
 						{
 							skip = false,

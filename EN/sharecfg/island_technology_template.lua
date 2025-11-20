@@ -146,7 +146,6 @@ pg.island_technology_template = setmetatable({
 			530001,
 			320203,
 			520203,
-			530201,
 			500236,
 			530205,
 			520205,
@@ -338,7 +337,6 @@ pg.island_technology_template = setmetatable({
 		530001,
 		320203,
 		520203,
-		530201,
 		500236,
 		530205,
 		520205,
@@ -396,16 +394,19 @@ pg.base = pg.base or {}
 pg.base.island_technology_template = {
 	[100001] = {
 		tech_desc = "A device that gives a friend permission to come and go to the island. The permit is valid forever once they've gone through the process!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_100001",
 		auto_finish = 1,
 		tech_name = "Island Authority Permit",
-		complete_tips = "You can now research Island Authority Permits.",
+		complete_tips = "You can now recruit characters to the island with <color=#1E8FFE>Island Authority Permits</color>.",
 		formula_id = 7100001,
-		tech_chara = 1,
+		complete_title = "You can now recruit characters to the island with <color=#1E8FFE>Island Authority Permits</color>.",
+		tech_belong = 1,
 		id = 100001,
 		island_level = 1,
+		complete_map_id = 0,
 		sys_unlock = {},
 		tech_repeat = {
 			0,
@@ -418,16 +419,19 @@ pg.base.island_technology_template = {
 	},
 	[100002] = {
 		tech_desc = "Unlocks a map of the island. Makes exploring and getting around the island easier.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_100002",
 		auto_finish = 1,
 		tech_name = "Unlock: Island Map",
-		complete_tips = "You can now view the map from the main menu.",
+		complete_tips = "You can new view the <color=#1E8FFE>map</color> on the main menu.",
 		formula_id = 7100002,
-		tech_chara = 1,
+		complete_title = "You can new view the <color=#1E8FFE>map</color> on the main menu.",
+		tech_belong = 1,
 		id = 100002,
 		island_level = 4,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -445,16 +449,18 @@ pg.base.island_technology_template = {
 	},
 	[110001] = {
 		tech_desc = "Makes it possible for urgent requests to appear. Urgent requests often yield more rewards than regular ones do.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 1,
 		tech_icon = "tech_110001",
 		auto_finish = 1,
 		tech_name = "Unlock: Urgent Requests",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110001,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110001,
 		island_level = 4,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				1,
@@ -468,6 +474,9 @@ pg.base.island_technology_template = {
 		tech_repeat = {
 			0,
 			0
+		},
+		complete_character_id = {
+			100200
 		},
 		axis = {
 			2,
@@ -476,16 +485,18 @@ pg.base.island_technology_template = {
 	},
 	[110002] = {
 		tech_desc = "Completing island requests can now increase your rating level.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 1,
 		tech_icon = "tech_110002",
 		auto_finish = 1,
 		tech_name = "Unlock: Request Rating",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110002,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110002,
 		island_level = 4,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				1,
@@ -499,6 +510,9 @@ pg.base.island_technology_template = {
 		tech_repeat = {
 			0,
 			0
+		},
+		complete_character_id = {
+			100200
 		},
 		axis = {
 			2,
@@ -507,16 +521,18 @@ pg.base.island_technology_template = {
 	},
 	[110101] = {
 		tech_desc = "Increases the number of requests that can be accepted at a time. Makes task management more efficient.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 1,
 		tech_icon = "tech_110101",
 		auto_finish = 1,
 		tech_name = "Simultaneous Request Accepting Limit+ I",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110101,
 		island_level = 4,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				1,
@@ -531,6 +547,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			2,
 			4
@@ -538,16 +557,18 @@ pg.base.island_technology_template = {
 	},
 	[110102] = {
 		tech_desc = "Increases the number of requests that can be accepted at a time. Makes task management more efficient.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 1,
 		tech_icon = "tech_110101",
 		auto_finish = 1,
 		tech_name = "Simultaneous Request Accepting Limit+ II",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110102,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110102,
 		island_level = 5,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -570,6 +591,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			3,
 			1
@@ -577,16 +601,18 @@ pg.base.island_technology_template = {
 	},
 	[110301] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ I",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110301,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110301,
 		island_level = 7,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -597,6 +623,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			4,
 			1
@@ -604,16 +633,18 @@ pg.base.island_technology_template = {
 	},
 	[110302] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ II",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110302,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110302,
 		island_level = 8,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -624,6 +655,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			5,
 			1
@@ -631,16 +665,19 @@ pg.base.island_technology_template = {
 	},
 	[100301] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_100301",
 		auto_finish = 1,
 		tech_name = "Warehouse Capacity+ I",
-		complete_tips = "Can be inspected through the warehouse menu.",
+		complete_tips = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
 		formula_id = 7100301,
-		tech_chara = 1,
+		complete_title = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
+		tech_belong = 1,
 		id = 100301,
 		island_level = 9,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -658,16 +695,18 @@ pg.base.island_technology_template = {
 	},
 	[110303] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ III",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110303,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110303,
 		island_level = 10,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -678,6 +717,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			7,
 			1
@@ -685,16 +727,19 @@ pg.base.island_technology_template = {
 	},
 	[120001] = {
 		tech_desc = "Produces an Island Authority Authenticator for New Jersey. Go and recruit some new friends!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_120001",
 		auto_finish = 1,
 		tech_name = "Additional Permit",
-		complete_tips = "Use Island Authority Permits to invite new characters to the island.",
+		complete_tips = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
 		formula_id = 7120001,
-		tech_chara = 1,
+		complete_title = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
+		tech_belong = 1,
 		id = 120001,
 		island_level = 10,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -712,16 +757,19 @@ pg.base.island_technology_template = {
 	},
 	[100003] = {
 		tech_desc = "Business events may now appear when managing shops. If you change your sales lineup to the items called for by the event, you may earn a large amount of rewards.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_100003",
 		auto_finish = 1,
 		tech_name = "Unlock: Business Events",
-		complete_tips = "Business events may now appear when managing shops.",
+		complete_tips = "You can now check <color=#1E8FFE>Café Manjuu</color> and <color=#1E8FFE>the commercial area</color> on the <color=#1E8FFE>businesses screen</color>.",
 		formula_id = 7100003,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>Café Manjuu</color> and <color=#1E8FFE>the commercial area</color> on the <color=#1E8FFE>businesses screen</color>.",
+		tech_belong = 1,
 		id = 100003,
 		island_level = 11,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				1,
@@ -747,16 +795,19 @@ pg.base.island_technology_template = {
 	},
 	[140101] = {
 		tech_desc = "Add more slots for research at the base, doubling the efficiency.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_140101",
 		auto_finish = 1,
 		tech_name = "Research Slots+",
-		complete_tips = "The number of research slots has increased.",
+		complete_tips = "You can now check the <color=#1E8FFE>Island Tech research device</color> in the <color=#1E8FFE>Island Base</color>.",
 		formula_id = 7140101,
-		tech_chara = 1,
+		complete_title = "You can now check the <color=#1E8FFE>Island Tech research device</color> in the <color=#1E8FFE>Island Base</color>.",
+		tech_belong = 1,
 		id = 140101,
 		island_level = 14,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -774,16 +825,18 @@ pg.base.island_technology_template = {
 	},
 	[110103] = {
 		tech_desc = "Increases the number of requests that can be accepted at a time. Makes task management more efficient.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 1,
 		tech_icon = "tech_110101",
 		auto_finish = 1,
 		tech_name = "Simultaneous Request Accepting Limit+ III",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110103,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110103,
 		island_level = 16,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -794,6 +847,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			10,
 			1
@@ -801,16 +857,18 @@ pg.base.island_technology_template = {
 	},
 	[110304] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "4",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ IV",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110304,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110304,
 		island_level = 17,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -821,6 +879,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			12,
 			1
@@ -828,16 +889,19 @@ pg.base.island_technology_template = {
 	},
 	[100302] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "2",
+		complete_character_id = "",
 		tech_icon = "tech_100301",
 		auto_finish = 1,
 		tech_name = "Warehouse Capacity+ II",
-		complete_tips = "Can be inspected through the warehouse menu.",
+		complete_tips = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
 		formula_id = 7100302,
-		tech_chara = 1,
+		complete_title = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
+		tech_belong = 1,
 		id = 100302,
 		island_level = 17,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -855,16 +919,19 @@ pg.base.island_technology_template = {
 	},
 	[100004] = {
 		tech_desc = "Unlocks the centralized management function, powered by holographic integration technology. This intelligent hub helps you coordinate job assignments, facility construction, and materials management with a single click, significantly improving the efficiency of your island planning.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_100004",
 		auto_finish = 1,
 		tech_name = "Integrated Management Hub",
-		complete_tips = "Can be inspected through the management menu.",
+		complete_tips = "You can now check <color=#1E8FFE>management</color> on the <color=#1E8FFE>main screen</color>.",
 		formula_id = 7100004,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>management</color> on the <color=#1E8FFE>main screen</color>.",
+		tech_belong = 1,
 		id = 100004,
 		island_level = 18,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -886,16 +953,19 @@ pg.base.island_technology_template = {
 	},
 	[100303] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "3",
+		complete_character_id = "",
 		tech_icon = "tech_100301",
 		auto_finish = 1,
 		tech_name = "Warehouse Capacity+ III",
-		complete_tips = "Can be inspected through the warehouse menu.",
+		complete_tips = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
 		formula_id = 7100303,
-		tech_chara = 1,
+		complete_title = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
+		tech_belong = 1,
 		id = 100303,
 		island_level = 18,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -917,16 +987,18 @@ pg.base.island_technology_template = {
 	},
 	[110305] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "5",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ V",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110305,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110305,
 		island_level = 19,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -941,23 +1013,29 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			14,
 			1
 		}
 	},
 	[130301] = {
-		tech_desc = "Increases the number of daily supply drops. That means new surprises to go and collect!",
-		tech_belong = 1,
+		tech_desc = "Increases the max number of daily friend supplies you can get by 1. Let's see what new surprises are in store for us!",
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_130301",
 		auto_finish = 1,
 		tech_name = "Daily Supplies Amount+ I",
-		complete_tips = "Get-Together Island's regular supply drops now contain more supplies.",
+		complete_tips = "Your <color=#1E8FFE>daily friend supplies</color> is increased. Can be checked on the <color=#1E8FFE>Friend Visit screen</color>.",
 		formula_id = 7130301,
-		tech_chara = 1,
+		complete_title = "Your <color=#1E8FFE>daily friend supplies</color> is increased. Can be checked on the <color=#1E8FFE>Friend Visit screen</color>.",
+		tech_belong = 1,
 		id = 130301,
 		island_level = 19,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				1,
@@ -983,16 +1061,19 @@ pg.base.island_technology_template = {
 	},
 	[120003] = {
 		tech_desc = "Produces an Island Authority Authenticator for Tashkent. Go and recruit some new friends!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_120001",
 		auto_finish = 1,
 		tech_name = "Additional Permit",
-		complete_tips = "Use Island Authority Permits to invite new characters to the island.",
+		complete_tips = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
 		formula_id = 7120003,
-		tech_chara = 1,
+		complete_title = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
+		tech_belong = 1,
 		id = 120003,
 		island_level = 20,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -1014,16 +1095,19 @@ pg.base.island_technology_template = {
 	},
 	[100304] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "4",
+		complete_character_id = "",
 		tech_icon = "tech_100301",
 		auto_finish = 1,
 		tech_name = "Warehouse Capacity+ IV",
-		complete_tips = "Can be inspected through the warehouse menu.",
+		complete_tips = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
 		formula_id = 7100304,
-		tech_chara = 1,
+		complete_title = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
+		tech_belong = 1,
 		id = 100304,
 		island_level = 21,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -1040,17 +1124,20 @@ pg.base.island_technology_template = {
 		}
 	},
 	[130302] = {
-		tech_desc = "Increases the number of daily supply drops. That means new surprises to go and collect!",
-		tech_belong = 1,
+		tech_desc = "Increases the max number of daily friend supplies you can get by 1. Let's see what new surprises are in store for us!",
+		tech_chara = 1,
 		tech_level = "2",
+		complete_character_id = "",
 		tech_icon = "tech_130301",
 		auto_finish = 1,
 		tech_name = "Daily Supplies Amount+ II",
-		complete_tips = "Get-Together Island's regular supply drops now contain more supplies.",
+		complete_tips = "Your <color=#1E8FFE>daily friend supplies</color> is increased. Can be checked on the <color=#1E8FFE>Friend Visit screen</color>.",
 		formula_id = 7130302,
-		tech_chara = 1,
+		complete_title = "Your <color=#1E8FFE>daily friend supplies</color> is increased. Can be checked on the <color=#1E8FFE>Friend Visit screen</color>.",
+		tech_belong = 1,
 		id = 130302,
 		island_level = 22,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				1,
@@ -1072,16 +1159,18 @@ pg.base.island_technology_template = {
 	},
 	[110306] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "6",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ VI",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110306,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110306,
 		island_level = 23,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -1092,6 +1181,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			18,
 			1
@@ -1099,16 +1191,19 @@ pg.base.island_technology_template = {
 	},
 	[100305] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "5",
+		complete_character_id = "",
 		tech_icon = "tech_100301",
 		auto_finish = 1,
 		tech_name = "Warehouse Capacity+ V",
-		complete_tips = "Can be inspected through the warehouse menu.",
+		complete_tips = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
 		formula_id = 7100305,
-		tech_chara = 1,
+		complete_title = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
+		tech_belong = 1,
 		id = 100305,
 		island_level = 24,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -1126,16 +1221,18 @@ pg.base.island_technology_template = {
 	},
 	[110307] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "7",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ VII",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110307,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110307,
 		island_level = 27,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -1146,6 +1243,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			20,
 			1
@@ -1153,16 +1253,19 @@ pg.base.island_technology_template = {
 	},
 	[100306] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "6",
+		complete_character_id = "",
 		tech_icon = "tech_100301",
 		auto_finish = 1,
 		tech_name = "Warehouse Capacity+ VI",
-		complete_tips = "Can be inspected through the warehouse menu.",
+		complete_tips = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
 		formula_id = 7100306,
-		tech_chara = 1,
+		complete_title = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
+		tech_belong = 1,
 		id = 100306,
 		island_level = 28,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -1180,16 +1283,19 @@ pg.base.island_technology_template = {
 	},
 	[120004] = {
 		tech_desc = "Produces an Island Authority Authenticator for Ying Swei. Go and recruit some new friends!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_120001",
 		auto_finish = 1,
 		tech_name = "Additional Permit",
-		complete_tips = "Use Island Authority Permits to invite new characters to the island.",
+		complete_tips = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
 		formula_id = 7120004,
-		tech_chara = 1,
+		complete_title = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
+		tech_belong = 1,
 		id = 120004,
 		island_level = 30,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -1207,16 +1313,18 @@ pg.base.island_technology_template = {
 	},
 	[110308] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "8",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ VIII",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110308,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110308,
 		island_level = 32,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -1227,6 +1335,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			23,
 			1
@@ -1234,16 +1345,19 @@ pg.base.island_technology_template = {
 	},
 	[100307] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "7",
+		complete_character_id = "",
 		tech_icon = "tech_100301",
 		auto_finish = 1,
 		tech_name = "Warehouse Capacity+ VII",
-		complete_tips = "Can be inspected through the warehouse menu.",
+		complete_tips = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
 		formula_id = 7100307,
-		tech_chara = 1,
+		complete_title = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
+		tech_belong = 1,
 		id = 100307,
 		island_level = 32,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -1261,16 +1375,19 @@ pg.base.island_technology_template = {
 	},
 	[100308] = {
 		tech_desc = "Increases the warehouse's capacity. Now you can put more things there!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "8",
+		complete_character_id = "",
 		tech_icon = "tech_100301",
 		auto_finish = 1,
 		tech_name = "Warehouse Capacity+ VIII",
-		complete_tips = "Can be inspected through the warehouse menu.",
+		complete_tips = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
 		formula_id = 7100308,
-		tech_chara = 1,
+		complete_title = "You can now check your <color=#1E8FFE>warehouse</color> on the <color=#1E8FFE>management screen</color>.",
+		tech_belong = 1,
 		id = 100308,
 		island_level = 36,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				3,
@@ -1292,16 +1409,18 @@ pg.base.island_technology_template = {
 	},
 	[110309] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "9",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ IX",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110309,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110309,
 		island_level = 38,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -1312,6 +1431,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			25,
 			1
@@ -1319,16 +1441,19 @@ pg.base.island_technology_template = {
 	},
 	[120005] = {
 		tech_desc = "Produces an Island Authority Authenticator for Chao Ho. Go and recruit some new friends!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_120001",
 		auto_finish = 1,
 		tech_name = "Additional Permit",
-		complete_tips = "Use Island Authority Permits to invite new characters to the island.",
+		complete_tips = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
 		formula_id = 7120005,
-		tech_chara = 1,
+		complete_title = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
+		tech_belong = 1,
 		id = 120005,
 		island_level = 40,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -1346,16 +1471,18 @@ pg.base.island_technology_template = {
 	},
 	[110310] = {
 		tech_desc = "Increases the limit of daily requests that appear. Makes it easier to procure all kinds of resources.",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "10",
+		tech_belong = 1,
 		tech_icon = "tech_110301",
 		auto_finish = 1,
 		tech_name = "Island Request Limit+ X",
-		complete_tips = "Can be inspected through the requests menu.",
+		complete_tips = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		formula_id = 7110310,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>island requests</color> with <color=#1E8FFE>Patrick</color> at the <color=#1E8FFE>harbor</color>.",
 		id = 110310,
 		island_level = 43,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -1366,6 +1493,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100200
+		},
 		axis = {
 			27,
 			1
@@ -1373,16 +1503,19 @@ pg.base.island_technology_template = {
 	},
 	[120006] = {
 		tech_desc = "Produces an Island Authority Authenticator for Hood. Go and recruit some new friends!",
-		tech_belong = 1,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_120001",
 		auto_finish = 1,
 		tech_name = "Additional Permit",
-		complete_tips = "Use Island Authority Permits to invite new characters to the island.",
+		complete_tips = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
 		formula_id = 7120006,
-		tech_chara = 1,
+		complete_title = "You can now activate an <color=#1E8FFE>Island Authority Permit</color> at the <color=#1E8FFE>Island Base</color>.",
+		tech_belong = 1,
 		id = 120006,
 		island_level = 50,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -1400,16 +1533,18 @@ pg.base.island_technology_template = {
 	},
 	[210101] = {
 		tech_desc = "Unlocks a logging slot in the Verdant Woods. Helps keep a steady flow of lumber going to the harbor.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_210101",
 		auto_finish = 1,
 		tech_name = "Unlock: Logging Slot",
-		complete_tips = "You can assign characters at O'Brien's workspace.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		formula_id = 7210101,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		id = 210101,
 		island_level = 5,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				1,
@@ -1420,23 +1555,28 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100700
+		},
 		axis = {
 			1,
 			1
 		}
 	},
 	[220101] = {
-		tech_desc = "Unlocks a logging slot in Rockheap Mine. Time to accumulate heaps of minerals!",
-		tech_belong = 2,
+		tech_desc = "Unlocks a mining slot in Rockheap Mine. Time to accumulate heaps of minerals!",
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_220101",
 		auto_finish = 1,
 		tech_name = "Unlock: Mining Slot",
-		complete_tips = "You can assign characters at John's workspace.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		formula_id = 7220101,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		id = 220101,
 		island_level = 6,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				1,
@@ -1447,23 +1587,29 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100600
+		},
 		axis = {
 			1,
 			6.5
 		}
 	},
 	[220501] = {
-		tech_desc = "Increases manual logging efficiency. Allows for quicker extraction of resources.",
-		tech_belong = 2,
+		tech_desc = "Increases manual mining efficiency. Allows for quicker extraction of resources.",
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_220501",
 		auto_finish = 1,
 		tech_name = "Manual Mining Efficiency+ I",
-		complete_tips = "Your efficiency when mining manually has increased.",
+		complete_tips = "You can now manually collect resources at <color=#1E8FFE>Rockheap Mine in the Windswept Plains</color>.",
 		formula_id = 7220501,
-		tech_chara = 1,
+		complete_title = "You can now manually collect resources at <color=#1E8FFE>Rockheap Mine in the Windswept Plains</color>.",
+		tech_belong = 2,
 		id = 220501,
 		island_level = 7,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				1,
@@ -1481,16 +1627,19 @@ pg.base.island_technology_template = {
 	},
 	[210401] = {
 		tech_desc = "Decreases resource recovery time when logging manually. Enjoy the more frequent resources!",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_210401",
 		auto_finish = 1,
 		tech_name = "Manual Logging Resource Recovery+",
-		complete_tips = "The resource recovery time when logging manually has been decreased.",
+		complete_tips = "You can now manually collect resources at the <color=#1E8FFE>Verdant Woods in the Windswept Plains</color>.",
 		formula_id = 7210401,
-		tech_chara = 1,
+		complete_title = "You can now manually collect resources at the <color=#1E8FFE>Verdant Woods in the Windswept Plains</color>.",
+		tech_belong = 2,
 		id = 210401,
 		island_level = 8,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				1,
@@ -1508,16 +1657,18 @@ pg.base.island_technology_template = {
 	},
 	[220201] = {
 		tech_desc = "Gives access to new probing techniques that allow for mining Bauxite buried under the ground.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_220201",
 		auto_finish = 1,
 		tech_name = "Bauxite Mining Techniques",
-		complete_tips = "You can now obtain Bauxite Ore.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>mine Bauxite Ore with John in the Windswept Plains</color>.",
 		formula_id = 7220201,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>mine Bauxite Ore with John in the Windswept Plains</color>.",
 		id = 220201,
 		island_level = 9,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1528,23 +1679,29 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100600
+		},
 		axis = {
 			4,
 			8.5
 		}
 	},
 	[220401] = {
-		tech_desc = "Decreases resource recovery time when logging manually. Enjoy the more frequent resources!",
-		tech_belong = 2,
+		tech_desc = "Decreases resource recovery time when mining manually. Enjoy the more frequent resources!",
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_220401",
 		auto_finish = 1,
 		tech_name = "Manual Mining Resource Recovery+",
-		complete_tips = "The resource recovery time when mining manually has been decreased.",
+		complete_tips = "You can now manually collect resources at <color=#1E8FFE>Rockheap Mine in the Windswept Plains</color>.",
 		formula_id = 7220401,
-		tech_chara = 1,
+		complete_title = "You can now manually collect resources at <color=#1E8FFE>Rockheap Mine in the Windswept Plains</color>.",
+		tech_belong = 2,
 		id = 220401,
 		island_level = 9,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1562,16 +1719,18 @@ pg.base.island_technology_template = {
 	},
 	[210102] = {
 		tech_desc = "Increases the number of logging slots in the Verdant Woods. A straightforward increase to your lumber production output.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_210102",
 		auto_finish = 1,
 		tech_name = "Logging Slot+ I",
-		complete_tips = "You can now assign more characters to the logging site.",
+		complete_tips = "You can now characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		formula_id = 7210102,
-		tech_chara = 1,
+		complete_title = "You can now characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		id = 210102,
 		island_level = 11,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1581,6 +1740,9 @@ pg.base.island_technology_template = {
 		tech_repeat = {
 			0,
 			0
+		},
+		complete_character_id = {
+			100700
 		},
 		axis = {
 			5,
@@ -1589,16 +1751,18 @@ pg.base.island_technology_template = {
 	},
 	[210201] = {
 		tech_desc = "Gives access to new logging techniques that allow for logging Workable Wood in the forest.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_210201",
 		auto_finish = 1,
 		tech_name = "Workable Wood Harvesting Techniques",
-		complete_tips = "You can now obtain Workable Wood.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>log for Workable Wood with O'Brien in the Windswept Plains</color>.",
 		formula_id = 7210201,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>log for Workable Wood with O'Brien in the Windswept Plains</color>.",
 		id = 210201,
 		island_level = 11,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1609,6 +1773,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100700
+		},
 		axis = {
 			4,
 			3
@@ -1616,16 +1783,18 @@ pg.base.island_technology_template = {
 	},
 	[220202] = {
 		tech_desc = "Gives access to new probing techniques that allow for mining Iron Ore buried under the ground.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_220201",
 		auto_finish = 1,
 		tech_name = "Iron Ore Exploration Techniques",
-		complete_tips = "You can now obtain Iron Ore.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>mine Iron Ore with John in the Windswept Plains</color>.",
 		formula_id = 7220202,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>mine Iron Ore with John in the Windswept Plains</color>.",
 		id = 220202,
 		island_level = 12,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1636,6 +1805,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100600
+		},
 		axis = {
 			8,
 			8.5
@@ -1643,16 +1815,19 @@ pg.base.island_technology_template = {
 	},
 	[210501] = {
 		tech_desc = "Increases manual logging efficiency. Allows for quicker extraction of resources.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_210501",
 		auto_finish = 1,
 		tech_name = "Manual Logging Efficiency+ I",
-		complete_tips = "Your efficiency when logging manually has increased.",
+		complete_tips = "You can now manually collect resources at the <color=#1E8FFE>Verdant Woods in the Windswept Plains</color>.",
 		formula_id = 7210501,
-		tech_chara = 1,
+		complete_title = "You can now manually collect resources at the <color=#1E8FFE>Verdant Woods in the Windswept Plains</color>.",
+		tech_belong = 2,
 		id = 210501,
 		island_level = 13,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1669,17 +1844,20 @@ pg.base.island_technology_template = {
 		}
 	},
 	[220502] = {
-		tech_desc = "Increases manual logging efficiency. Allows for quicker extraction of resources.",
-		tech_belong = 2,
+		tech_desc = "Increases manual mining efficiency. Allows for quicker extraction of resources.",
+		tech_chara = 1,
 		tech_level = "2",
+		complete_character_id = "",
 		tech_icon = "tech_220501",
 		auto_finish = 1,
 		tech_name = "Manual Mining Efficiency+ II",
-		complete_tips = "Your efficiency when mining manually has increased.",
+		complete_tips = "You can now manually collect resources at <color=#1E8FFE>Rockheap Mine in the Windswept Plains</color>.",
 		formula_id = 7220502,
-		tech_chara = 1,
+		complete_title = "You can now manually collect resources at <color=#1E8FFE>Rockheap Mine in the Windswept Plains</color>.",
+		tech_belong = 2,
 		id = 220502,
 		island_level = 15,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1697,16 +1875,18 @@ pg.base.island_technology_template = {
 	},
 	[220102] = {
 		tech_desc = "Increases the number of mining slots in Rockheap Mine. A straightforward increase to your mineral production output.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_220102",
 		auto_finish = 1,
 		tech_name = "Mining Slot+ I",
-		complete_tips = "You can now assign more characters to the mine.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		formula_id = 7220102,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		id = 220102,
 		island_level = 16,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1717,6 +1897,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100600
+		},
 		axis = {
 			9,
 			6.5
@@ -1724,16 +1907,18 @@ pg.base.island_technology_template = {
 	},
 	[220203] = {
 		tech_desc = "Gives access to new probing techniques that allow for mining Sulfur buried under the ground.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_220201",
 		auto_finish = 1,
 		tech_name = "Sulfur Deposit Exploration Techniques",
-		complete_tips = "You can now obtain Sulfur.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>mine Sulfur with John in the Windswept Plains</color>.",
 		formula_id = 7220203,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>mine Sulfur with John in the Windswept Plains</color>.",
 		id = 220203,
 		island_level = 16,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1744,6 +1929,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100600
+		},
 		axis = {
 			11,
 			8.5
@@ -1751,16 +1939,18 @@ pg.base.island_technology_template = {
 	},
 	[210202] = {
 		tech_desc = "Gives access to new logging techniques that allow for logging Premium Wood in the forest.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_210201",
 		auto_finish = 1,
 		tech_name = "Premium Wood Harvesting Techniques",
-		complete_tips = "You can now obtain Premium Wood.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>log for Premium Wood with O'Brien in the Windswept Plains</color>.",
 		formula_id = 7210202,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>log for Premium Wood with O'Brien in the Windswept Plains</color>.",
 		id = 210202,
 		island_level = 17,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1771,6 +1961,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100700
+		},
 		axis = {
 			9,
 			3
@@ -1778,16 +1971,19 @@ pg.base.island_technology_template = {
 	},
 	[210502] = {
 		tech_desc = "Increases manual logging efficiency. Allows for quicker extraction of resources.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "2",
+		complete_character_id = "",
 		tech_icon = "tech_210501",
 		auto_finish = 1,
 		tech_name = "Manual Logging Efficiency+ II",
-		complete_tips = "Your efficiency when logging manually has increased.",
+		complete_tips = "You can now manually collect resources at the <color=#1E8FFE>Verdant Woods in the Windswept Plains</color>.",
 		formula_id = 7210502,
-		tech_chara = 1,
+		complete_title = "You can now manually collect resources at the <color=#1E8FFE>Verdant Woods in the Windswept Plains</color>.",
+		tech_belong = 2,
 		id = 210502,
 		island_level = 18,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1805,16 +2001,18 @@ pg.base.island_technology_template = {
 	},
 	[220103] = {
 		tech_desc = "Increases the number of mining slots in Rockheap Mine. A straightforward increase to your mineral production output.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 2,
 		tech_icon = "tech_220102",
 		auto_finish = 1,
 		tech_name = "Mining Slot+ II",
-		complete_tips = "You can now assign more characters to the mine.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		formula_id = 7220103,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		id = 220103,
 		island_level = 21,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1825,6 +2023,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100600
+		},
 		axis = {
 			14,
 			6.5
@@ -1832,16 +2033,18 @@ pg.base.island_technology_template = {
 	},
 	[220204] = {
 		tech_desc = "Gives access to new probing techniques that allow for mining Silver Ore buried under the ground.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_220201",
 		auto_finish = 1,
 		tech_name = "Silver Ore Exploration Techniques",
-		complete_tips = "You can now obtain Silver Ore.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>mine Silver Ore with John in the Windswept Plains</color>.",
 		formula_id = 7220204,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>mine Silver Ore with John in the Windswept Plains</color>.",
 		id = 220204,
 		island_level = 21,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1852,6 +2055,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100600
+		},
 		axis = {
 			14,
 			8.5
@@ -1859,16 +2065,18 @@ pg.base.island_technology_template = {
 	},
 	[210103] = {
 		tech_desc = "Increases the number of logging slots in the Verdant Woods. A straightforward increase to your lumber production output.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 2,
 		tech_icon = "tech_210102",
 		auto_finish = 1,
 		tech_name = "Logging Slot+ II",
-		complete_tips = "You can now assign more characters to the logging site.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		formula_id = 7210103,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		id = 210103,
 		island_level = 24,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1879,6 +2087,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100700
+		},
 		axis = {
 			14,
 			1
@@ -1886,16 +2097,18 @@ pg.base.island_technology_template = {
 	},
 	[210203] = {
 		tech_desc = "Gives access to new logging techniques that allow for logging Elegant Wood in the forest.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_210201",
 		auto_finish = 1,
 		tech_name = "Elegant Wood Harvesting Techniques",
-		complete_tips = "You can now obtain Elegant Wood.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>log for Elegant Wood with O'Brien in the Windswept Plains</color>.",
 		formula_id = 7210203,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>log for Elegant Wood with O'Brien in the Windswept Plains</color>.",
 		id = 210203,
 		island_level = 24,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1906,6 +2119,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100700
+		},
 		axis = {
 			14,
 			3
@@ -1913,16 +2129,18 @@ pg.base.island_technology_template = {
 	},
 	[210104] = {
 		tech_desc = "Increases the number of logging slots in the Verdant Woods. A straightforward increase to your lumber production output.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 2,
 		tech_icon = "tech_210102",
 		auto_finish = 1,
 		tech_name = "Logging Slot+ III",
-		complete_tips = "You can now assign more characters to the logging site.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		formula_id = 7210104,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		id = 210104,
 		island_level = 26,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1933,6 +2151,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100700
+		},
 		axis = {
 			17,
 			1
@@ -1940,16 +2161,18 @@ pg.base.island_technology_template = {
 	},
 	[220104] = {
 		tech_desc = "Increases the number of mining slots in Rockheap Mine. A straightforward increase to your mineral production output.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 2,
 		tech_icon = "tech_220102",
 		auto_finish = 1,
 		tech_name = "Mining Slot+ III",
-		complete_tips = "You can now assign more characters to the mine.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		formula_id = 7220104,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		id = 220104,
 		island_level = 29,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1960,6 +2183,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100600
+		},
 		axis = {
 			17,
 			6.5
@@ -1967,16 +2193,18 @@ pg.base.island_technology_template = {
 	},
 	[210601] = {
 		tech_desc = "Increases logging slot efficiency in the Verdant Woods. Allows for quicker extraction of resources.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_210601",
 		auto_finish = 1,
 		tech_name = "Logging Slot Efficiency+",
-		complete_tips = "Your efficiency when logging via assignments has increased.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		formula_id = 7210601,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>log with O'Brien in the Windswept Plains</color>.",
 		id = 210601,
 		island_level = 35,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -1987,6 +2215,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100700
+		},
 		axis = {
 			20,
 			4.5
@@ -1994,16 +2225,18 @@ pg.base.island_technology_template = {
 	},
 	[220601] = {
 		tech_desc = "Increases mining slot efficiency in Rockheap Mine. Allows for quicker extraction of resources.",
-		tech_belong = 2,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 2,
 		tech_icon = "tech_220601",
 		auto_finish = 1,
 		tech_name = "Mining Slot Efficiency+",
-		complete_tips = "Your efficiency when mining via assignments has increased.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		formula_id = 7220601,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>mine minerals with John in the Windswept Plains</color>.",
 		id = 220601,
 		island_level = 41,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -2014,6 +2247,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100600
+		},
 		axis = {
 			20,
 			10
@@ -2021,16 +2257,19 @@ pg.base.island_technology_template = {
 	},
 	[310301] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_310301",
 		auto_finish = 1,
 		tech_name = "Morningdew Farm Expansion I",
-		complete_tips = "You can now grow more types of crops at Morningdew Farm.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310301,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310301,
 		island_level = 6,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -2048,16 +2287,18 @@ pg.base.island_technology_template = {
 	},
 	[310201] = {
 		tech_desc = "Gives access to advanced growing techniques that make grass able to grow rapidly in the island's environment.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_500211",
 		auto_finish = 1,
 		tech_name = "Grass Cultivation Techniques",
-		complete_tips = "You can now obtain Grass.",
+		complete_tips = "You can now get Grass Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		formula_id = 7310201,
-		tech_chara = 1,
+		complete_title = "You can now get Grass Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		id = 310201,
 		island_level = 6,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -2068,6 +2309,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			1,
 			9
@@ -2075,16 +2319,19 @@ pg.base.island_technology_template = {
 	},
 	[310302] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "2",
+		complete_character_id = "",
 		tech_icon = "tech_310301",
 		auto_finish = 1,
 		tech_name = "Morningdew Farm Expansion II",
-		complete_tips = "You can now grow more types of crops at Morningdew Farm.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310302,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310302,
 		island_level = 7,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2102,16 +2349,19 @@ pg.base.island_technology_template = {
 	},
 	[320301] = {
 		tech_desc = "Expands Newsprout Nursery's cultivation area. Bring more vitality to the whole island!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_320301",
 		auto_finish = 1,
 		tech_name = "Newsprout Nursery Expansion I",
-		complete_tips = "You can now grow more types of crops at Newsprout Nursery.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Newsprout Nursery at the Prosperous Plantation</color>.",
 		formula_id = 7320301,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Newsprout Nursery at the Prosperous Plantation</color>.",
+		tech_belong = 3,
 		id = 320301,
 		island_level = 7,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				1,
@@ -2129,16 +2379,18 @@ pg.base.island_technology_template = {
 	},
 	[310101] = {
 		tech_desc = "Unlocks a management slot on Morningdew Farm. Contributes to a steady supply of ingredients!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_310101",
 		auto_finish = 1,
 		tech_name = "Unlock: Farm Slot",
-		complete_tips = "You can assign characters at Homeric's workspace.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Homeric at Morningdew Farm</color>.",
 		formula_id = 7310101,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Homeric at Morningdew Farm</color>.",
 		id = 310101,
 		island_level = 8,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2149,6 +2401,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			7,
 			3
@@ -2156,16 +2411,18 @@ pg.base.island_technology_template = {
 	},
 	[310202] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Upland Rice able to grow rapidly in the island's environment.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_500211",
 		auto_finish = 1,
 		tech_name = "Upland Rice Cultivation Techniques",
-		complete_tips = "You can now obtain Rice.",
+		complete_tips = "You can now get Upland Rice Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		formula_id = 7310202,
-		tech_chara = 1,
+		complete_title = "You can now get Upland Rice Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		id = 310202,
 		island_level = 8,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2176,6 +2433,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			4,
 			9
@@ -2183,16 +2443,19 @@ pg.base.island_technology_template = {
 	},
 	[330301] = {
 		tech_desc = "Expands Sweetscent Orchard's cultivation area. Bring more fruity fragrance to the whole island!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_330301",
 		auto_finish = 1,
 		tech_name = "Sweetscent Orchard Expansion I",
-		complete_tips = "You can now grow more types of crops at Sweetscent Orchard.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Sweetscent Orchard at the Prosperous Plantation</color>.",
 		formula_id = 7330301,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Sweetscent Orchard at the Prosperous Plantation</color>.",
+		tech_belong = 3,
 		id = 330301,
 		island_level = 9,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				1,
@@ -2210,16 +2473,19 @@ pg.base.island_technology_template = {
 	},
 	[310303] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "3",
+		complete_character_id = "",
 		tech_icon = "tech_310301",
 		auto_finish = 1,
 		tech_name = "Morningdew Farm Expansion III",
-		complete_tips = "You can now grow more types of crops at Morningdew Farm.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310303,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310303,
 		island_level = 11,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2237,16 +2503,19 @@ pg.base.island_technology_template = {
 	},
 	[310304] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "4",
+		complete_character_id = "",
 		tech_icon = "tech_310301",
 		auto_finish = 1,
 		tech_name = "Morningdew Farm Expansion IV",
-		complete_tips = "You can now grow more types of crops at Morningdew Farm.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310304,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310304,
 		island_level = 12,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2264,16 +2533,18 @@ pg.base.island_technology_template = {
 	},
 	[330101] = {
 		tech_desc = "Unlocks a management slot in Sweetscent Orchard. Makes harvesting fruit easier.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_330101",
 		auto_finish = 1,
 		tech_name = "Unlock: Orchard Slot",
-		complete_tips = "You can assign characters at Lusitania's workspace.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Lusitania in the Prosperous Plantation</color>.",
 		formula_id = 7330101,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Lusitania in the Prosperous Plantation</color>.",
 		id = 330101,
 		island_level = 12,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2284,6 +2555,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			10,
 			7
@@ -2291,16 +2565,19 @@ pg.base.island_technology_template = {
 	},
 	[310305] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "5",
+		complete_character_id = "",
 		tech_icon = "tech_310301",
 		auto_finish = 1,
 		tech_name = "Morningdew Farm Expansion V",
-		complete_tips = "You can now grow more types of crops at Morningdew Farm.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310305,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310305,
 		island_level = 13,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2318,16 +2595,18 @@ pg.base.island_technology_template = {
 	},
 	[320202] = {
 		tech_desc = "Gives access to advanced growing techniques that make Cotton able to grow rapidly in the island's environment.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_320201",
 		auto_finish = 1,
 		tech_name = "Cotton Cultivation Techniques",
-		complete_tips = "You can now obtain Cotton.",
+		complete_tips = "You can now get Cotton Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		formula_id = 7320202,
-		tech_chara = 1,
+		complete_title = "You can now get Cotton Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		id = 320202,
 		island_level = 13,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				1,
@@ -2342,6 +2621,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101400
+		},
 		axis = {
 			10,
 			9
@@ -2349,16 +2631,18 @@ pg.base.island_technology_template = {
 	},
 	[320101] = {
 		tech_desc = "Unlocks a management slot in Newsprout Nursery. Makes the nursery's output more stable and efficient.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_320101",
 		auto_finish = 1,
 		tech_name = "Unlock: Nursery Slot",
-		complete_tips = "You can assign characters at Laconia's workspace.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Laconia in the Prosperous Plantation</color>.",
 		formula_id = 7320101,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Laconia in the Prosperous Plantation</color>.",
 		id = 320101,
 		island_level = 14,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2369,6 +2653,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101400
+		},
 		axis = {
 			10,
 			5
@@ -2376,16 +2663,19 @@ pg.base.island_technology_template = {
 	},
 	[320302] = {
 		tech_desc = "Expands Newsprout Nursery's cultivation area. Bring more vitality to the whole island!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "2",
+		complete_character_id = "",
 		tech_icon = "tech_320301",
 		auto_finish = 1,
 		tech_name = "Newsprout Nursery Expansion II",
-		complete_tips = "You can now grow more types of crops at Newsprout Nursery.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Newsprout Nursery at the Prosperous Plantation</color>.",
 		formula_id = 7320302,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Newsprout Nursery at the Prosperous Plantation</color>.",
+		tech_belong = 3,
 		id = 320302,
 		island_level = 15,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2403,16 +2693,19 @@ pg.base.island_technology_template = {
 	},
 	[330302] = {
 		tech_desc = "Expands Sweetscent Orchard's cultivation area. Bring more fruity fragrance to the whole island!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "2",
+		complete_character_id = "",
 		tech_icon = "tech_330301",
 		auto_finish = 1,
 		tech_name = "Sweetscent Orchard Expansion II",
-		complete_tips = "You can now grow more types of crops at Sweetscent Orchard.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Sweetscent Orchard at the Prosperous Plantation</color>.",
 		formula_id = 7330302,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Sweetscent Orchard at the Prosperous Plantation</color>.",
+		tech_belong = 3,
 		id = 330302,
 		island_level = 15,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2430,16 +2723,19 @@ pg.base.island_technology_template = {
 	},
 	[310306] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "6",
+		complete_character_id = "",
 		tech_icon = "tech_310301",
 		auto_finish = 1,
 		tech_name = "Morningdew Farm Expansion VI",
-		complete_tips = "You can now grow more types of crops at Morningdew Farm.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310306,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310306,
 		island_level = 16,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2457,16 +2753,18 @@ pg.base.island_technology_template = {
 	},
 	[330102] = {
 		tech_desc = "Increases the number of management slots on Sweetscent Orchard. A straightforward increase to your fruit production output.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_330102",
 		auto_finish = 1,
 		tech_name = "Orchard Slot+ I",
-		complete_tips = "You can now assign more characters to the orchard.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Lusitania in the Prosperous Plantation</color>.",
 		formula_id = 7330102,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Lusitania in the Prosperous Plantation</color>.",
 		id = 330102,
 		island_level = 17,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2477,6 +2775,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			16,
 			7
@@ -2484,16 +2785,18 @@ pg.base.island_technology_template = {
 	},
 	[310102] = {
 		tech_desc = "Increases the number of management slots on Morningdew Farm. A straightforward increase to your produce production output.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_310102",
 		auto_finish = 1,
 		tech_name = "Farm Slot+ I",
-		complete_tips = "You can now assign more characters to the farm.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Homeric at Morningdew Farm</color>.",
 		formula_id = 7310102,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Homeric at Morningdew Farm</color>.",
 		id = 310102,
 		island_level = 18,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2504,6 +2807,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			16,
 			3
@@ -2511,16 +2817,19 @@ pg.base.island_technology_template = {
 	},
 	[320303] = {
 		tech_desc = "Expands Newsprout Nursery's cultivation area. Bring more vitality to the whole island!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "3",
+		complete_character_id = "",
 		tech_icon = "tech_320301",
 		auto_finish = 1,
 		tech_name = "Newsprout Nursery Expansion III",
-		complete_tips = "You can now grow more types of crops at Newsprout Nursery.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Newsprout Nursery at the Prosperous Plantation</color>.",
 		formula_id = 7320303,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Newsprout Nursery at the Prosperous Plantation</color>.",
+		tech_belong = 3,
 		id = 320303,
 		island_level = 19,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2538,16 +2847,18 @@ pg.base.island_technology_template = {
 	},
 	[330201] = {
 		tech_desc = "Gives access to advanced growing techniques that make Rubber Trees able to grow rapidly in the island's environment.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_320201",
 		auto_finish = 1,
 		tech_name = "Rubber Tree Cultivation Techniques",
-		complete_tips = "You can now obtain Rubber.",
+		complete_tips = "You can now get Rubber Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		formula_id = 7330201,
-		tech_chara = 1,
+		complete_title = "You can now get Rubber Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		id = 330201,
 		island_level = 19,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				1,
@@ -2562,6 +2873,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			16,
 			9
@@ -2569,16 +2883,19 @@ pg.base.island_technology_template = {
 	},
 	[310001] = {
 		tech_desc = "Increases your manual sowing range. Allows for more efficient sowing.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_310001",
 		auto_finish = 1,
 		tech_name = "Manual Sowing Range+",
-		complete_tips = "Your efficiency when sowing seeds has increased.",
+		complete_tips = "You can now manually sow seeds in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310001,
-		tech_chara = 1,
+		complete_title = "You can now manually sow seeds in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310001,
 		island_level = 20,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2596,16 +2913,19 @@ pg.base.island_technology_template = {
 	},
 	[310307] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "7",
+		complete_character_id = "",
 		tech_icon = "tech_310301",
 		auto_finish = 1,
 		tech_name = "Morningdew Farm Expansion VII",
-		complete_tips = "You can now grow more types of crops at Morningdew Farm.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310307,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310307,
 		island_level = 22,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2623,16 +2943,18 @@ pg.base.island_technology_template = {
 	},
 	[320205] = {
 		tech_desc = "Gives access to advanced growing techniques that make Lavender able to grow rapidly in the island's environment.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 3,
 		tech_icon = "tech_320201",
 		auto_finish = 1,
-		tech_name = "Lavender",
-		complete_tips = "You can now obtain Lavender.",
+		tech_name = "Lavender Cultivation Techniques",
+		complete_tips = "You can now get Lavender Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		formula_id = 7320205,
-		tech_chara = 1,
+		complete_title = "You can now get Lavender Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		id = 320205,
 		island_level = 22,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2643,6 +2965,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101400
+		},
 		axis = {
 			22,
 			9
@@ -2650,16 +2975,19 @@ pg.base.island_technology_template = {
 	},
 	[310308] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "8",
+		complete_character_id = "",
 		tech_icon = "tech_310301",
 		auto_finish = 1,
 		tech_name = "Morningdew Farm Expansion VIII",
-		complete_tips = "You can now grow more types of crops at Morningdew Farm.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310308,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310308,
 		island_level = 23,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2677,16 +3005,19 @@ pg.base.island_technology_template = {
 	},
 	[330303] = {
 		tech_desc = "Expands Sweetscent Orchard's cultivation area. Bring more fruity fragrance to the whole island!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "3",
+		complete_character_id = "",
 		tech_icon = "tech_330301",
 		auto_finish = 1,
 		tech_name = "Sweetscent Orchard Expansion III",
-		complete_tips = "You can now grow more types of crops at Sweetscent Orchard.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Sweetscent Orchard at the Prosperous Plantation</color>.",
 		formula_id = 7330303,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Sweetscent Orchard at the Prosperous Plantation</color>.",
+		tech_belong = 3,
 		id = 330303,
 		island_level = 24,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2704,16 +3035,18 @@ pg.base.island_technology_template = {
 	},
 	[310103] = {
 		tech_desc = "Increases the number of management slots on Morningdew Farm. A straightforward increase to your produce production output.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 3,
 		tech_icon = "tech_310102",
 		auto_finish = 1,
 		tech_name = "Farm Slot+ II",
-		complete_tips = "You can now assign more characters to the farm.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Homeric at Morningdew Farm</color>.",
 		formula_id = 7310103,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Homeric at Morningdew Farm</color>.",
 		id = 310103,
 		island_level = 25,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2724,6 +3057,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			25,
 			3
@@ -2731,16 +3067,18 @@ pg.base.island_technology_template = {
 	},
 	[330103] = {
 		tech_desc = "Increases the number of management slots on Sweetscent Orchard. A straightforward increase to your fruit production output.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 3,
 		tech_icon = "tech_330102",
 		auto_finish = 1,
 		tech_name = "Orchard Slot+ II",
-		complete_tips = "You can now assign more characters to the orchard.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Lusitania in the Prosperous Plantation</color>.",
 		formula_id = 7330103,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Lusitania in the Prosperous Plantation</color>.",
 		id = 330103,
 		island_level = 26,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2751,6 +3089,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			25,
 			7
@@ -2758,16 +3099,19 @@ pg.base.island_technology_template = {
 	},
 	[310309] = {
 		tech_desc = "Expands Morningdew Farm's cultivation area. Bring more food to the tables of all the islanders!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "9",
+		complete_character_id = "",
 		tech_icon = "tech_310301",
 		auto_finish = 1,
 		tech_name = "Morningdew Farm Expansion IX",
-		complete_tips = "You can now grow more types of crops at Morningdew Farm.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
 		formula_id = 7310309,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Faircrop Fields at Morningdew Farm</color>.",
+		tech_belong = 3,
 		id = 310309,
 		island_level = 27,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2785,16 +3129,19 @@ pg.base.island_technology_template = {
 	},
 	[320304] = {
 		tech_desc = "Expands Newsprout Nursery's cultivation area. Bring more vitality to the whole island!",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "4",
+		complete_character_id = "",
 		tech_icon = "tech_320301",
 		auto_finish = 1,
 		tech_name = "Newsprout Nursery Expansion IV",
-		complete_tips = "You can now grow more types of crops at Newsprout Nursery.",
+		complete_tips = "You can now grow more crops in the <color=#1E8FFE>Newsprout Nursery at the Prosperous Plantation</color>.",
 		formula_id = 7320304,
-		tech_chara = 1,
+		complete_title = "You can now grow more crops in the <color=#1E8FFE>Newsprout Nursery at the Prosperous Plantation</color>.",
+		tech_belong = 3,
 		id = 320304,
 		island_level = 32,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2812,16 +3159,19 @@ pg.base.island_technology_template = {
 	},
 	[320102] = {
 		tech_desc = "Increases the number of management slots in Newsprout Nursery. A straightforward increase to your seedling production output.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_320102",
 		auto_finish = 1,
 		tech_name = "Nursery Slot+",
-		complete_tips = "You can now assign more characters to the nursery.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Laconia in the Prosperous Plantation</color>.",
 		formula_id = 7320102,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Laconia in the Prosperous Plantation</color>.",
+		tech_belong = 3,
 		id = 320102,
 		island_level = 34,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2839,16 +3189,18 @@ pg.base.island_technology_template = {
 	},
 	[330104] = {
 		tech_desc = "Increases the number of management slots on Sweetscent Orchard. A straightforward increase to your fruit production output.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 3,
 		tech_icon = "tech_330102",
 		auto_finish = 1,
 		tech_name = "Orchard Slot+ III",
-		complete_tips = "You can now assign more characters to the orchard.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Lusitania in the Prosperous Plantation</color>.",
 		formula_id = 7330104,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Lusitania in the Prosperous Plantation</color>.",
 		id = 330104,
 		island_level = 37,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -2859,6 +3211,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			28,
 			7
@@ -2866,16 +3221,18 @@ pg.base.island_technology_template = {
 	},
 	[310104] = {
 		tech_desc = "Increases the number of management slots on Morningdew Farm. A straightforward increase to your produce production output.",
-		tech_belong = 3,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 3,
 		tech_icon = "tech_310102",
 		auto_finish = 1,
 		tech_name = "Farm Slot+ III",
-		complete_tips = "You can now assign more characters to the farm.",
+		complete_tips = "You can now assign characters to <color=#1E8FFE>grow crops with Homeric at Morningdew Farm</color>.",
 		formula_id = 7310104,
-		tech_chara = 1,
+		complete_title = "You can now assign characters to <color=#1E8FFE>grow crops with Homeric at Morningdew Farm</color>.",
 		id = 310104,
 		island_level = 39,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2886,6 +3243,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			28,
 			3
@@ -2893,16 +3253,18 @@ pg.base.island_technology_template = {
 	},
 	[410301] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 4,
 		tech_icon = "tech_410301",
 		auto_finish = 1,
 		tech_name = "More Chickens! I",
-		complete_tips = "Laidback Ranch can now accommodate more Clucky Clucky Birds.",
+		complete_tips = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7410301,
-		tech_chara = 1,
+		complete_title = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 410301,
 		island_level = 6,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -2912,6 +3274,9 @@ pg.base.island_technology_template = {
 		tech_repeat = {
 			0,
 			0
+		},
+		complete_character_id = {
+			100500
 		},
 		axis = {
 			1,
@@ -2920,16 +3285,18 @@ pg.base.island_technology_template = {
 	},
 	[420301] = {
 		tech_desc = "Introduces Oinky Oinky Pigs to Laidback Ranch, giving it more vitality and increasing its range of products.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 4,
 		tech_icon = "tech_420301",
 		auto_finish = 1,
 		tech_name = "Oinky Oinky Pig Raising",
-		complete_tips = "You can now raise Oinky Oinky Pigs at Laidback Ranch.",
+		complete_tips = "You can now raise Oinky Oinky Pigs with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7420301,
-		tech_chara = 1,
+		complete_title = "You can now raise Oinky Oinky Pigs with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 420301,
 		island_level = 7,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -2940,6 +3307,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			1,
 			3
@@ -2947,16 +3317,18 @@ pg.base.island_technology_template = {
 	},
 	[410302] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 4,
 		tech_icon = "tech_410301",
 		auto_finish = 1,
 		tech_name = "More Chickens! II",
-		complete_tips = "Laidback Ranch can now accommodate more Clucky Clucky Birds.",
+		complete_tips = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7410302,
-		tech_chara = 1,
+		complete_title = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 410302,
 		island_level = 8,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2967,6 +3339,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			4,
 			1
@@ -2974,16 +3349,18 @@ pg.base.island_technology_template = {
 	},
 	[420302] = {
 		tech_desc = "Increases the number of Oinky Oinky Pigs at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 4,
 		tech_icon = "tech_420302",
 		auto_finish = 1,
 		tech_name = "More Pigs! I",
-		complete_tips = "Laidback Ranch can now accommodate more Oinky Oinky Pigs.",
+		complete_tips = "You can now raise more Oinky Oinky Pigs with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7420302,
-		tech_chara = 1,
+		complete_title = "You can now raise more Oinky Oinky Pigs with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 420302,
 		island_level = 8,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -2994,6 +3371,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			4,
 			3
@@ -3001,16 +3381,18 @@ pg.base.island_technology_template = {
 	},
 	[400001] = {
 		tech_desc = "Increases Laidback Ranch's range of products. More diversity for everyone's dinner tables!",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 4,
 		tech_icon = "tech_400001",
 		auto_finish = 1,
 		tech_name = "Ranch Product Range+",
-		complete_tips = "Products have been added to Laidback Ranch.",
+		complete_tips = "You can now manage the ranch with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7400001,
-		tech_chara = 1,
+		complete_title = "You can now manage the ranch with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 400001,
 		island_level = 9,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -3020,6 +3402,9 @@ pg.base.island_technology_template = {
 		tech_repeat = {
 			0,
 			0
+		},
+		complete_character_id = {
+			100500
 		},
 		axis = {
 			1,
@@ -3028,16 +3413,18 @@ pg.base.island_technology_template = {
 	},
 	[430301] = {
 		tech_desc = "Introduces Moo Moo Cows to Laidback Ranch, giving it more vitality and increasing its range of products.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 4,
 		tech_icon = "tech_430301",
 		auto_finish = 1,
 		tech_name = "Moo Moo Cow Raising",
-		complete_tips = "You can now raise Moo Moo Cows at Laidback Ranch.",
+		complete_tips = "You can now raise Moo Moo Cows with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7430301,
-		tech_chara = 1,
+		complete_title = "You can now raise Moo Moo Cows with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 430301,
 		island_level = 9,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -3048,6 +3435,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			4,
 			5
@@ -3055,16 +3445,18 @@ pg.base.island_technology_template = {
 	},
 	[430302] = {
 		tech_desc = "Increases the number of Moo Moo Cows at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 4,
 		tech_icon = "tech_430302",
 		auto_finish = 1,
 		tech_name = "More Cows! I",
-		complete_tips = "Laidback Ranch can now accommodate more Moo Moo Cows.",
+		complete_tips = "You can now raise more Moo Moo Cows with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7430302,
-		tech_chara = 1,
+		complete_title = "You can now raise more Moo Moo Cows with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 430302,
 		island_level = 10,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3075,6 +3467,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			7,
 			5
@@ -3082,16 +3477,18 @@ pg.base.island_technology_template = {
 	},
 	[440301] = {
 		tech_desc = "Introduces Baa Baa Sheep to Laidback Ranch, giving it more vitality and increasing its range of products.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 4,
 		tech_icon = "tech_440301",
 		auto_finish = 1,
 		tech_name = "Baa Baa Sheep Raising",
-		complete_tips = "You can now raise Baa Baa Sheep at Laidback Ranch.",
+		complete_tips = "You can now raise Baa Baa Sheep with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7440301,
-		tech_chara = 1,
+		complete_title = "You can now raise Baa Baa Sheep with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 440301,
 		island_level = 11,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -3102,6 +3499,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			7,
 			7
@@ -3109,16 +3509,18 @@ pg.base.island_technology_template = {
 	},
 	[440302] = {
 		tech_desc = "Increases the number of Baa Baa Sheep at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 4,
 		tech_icon = "tech_440302",
 		auto_finish = 1,
 		tech_name = "More Sheep! I",
-		complete_tips = "Laidback Ranch can now accommodate more Baa Baa Sheep.",
+		complete_tips = "You can now raise more Baa Baa Sheep with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7440302,
-		tech_chara = 1,
+		complete_title = "You can now raise more Baa Baa Sheep with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 440302,
 		island_level = 12,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3129,6 +3531,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			10,
 			7
@@ -3136,16 +3541,18 @@ pg.base.island_technology_template = {
 	},
 	[420303] = {
 		tech_desc = "Increases the number of Oinky Oinky Pigs at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 4,
 		tech_icon = "tech_420302",
 		auto_finish = 1,
 		tech_name = "More Pigs! II",
-		complete_tips = "Laidback Ranch can now accommodate more Oinky Oinky Pigs.",
+		complete_tips = "You can now raise more Oinky Oinky Pigs with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7420303,
-		tech_chara = 1,
+		complete_title = "You can now raise more Oinky Oinky Pigs with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 420303,
 		island_level = 13,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3156,6 +3563,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			10,
 			3
@@ -3163,16 +3573,18 @@ pg.base.island_technology_template = {
 	},
 	[410303] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 4,
 		tech_icon = "tech_410301",
 		auto_finish = 1,
 		tech_name = "More Chickens! III",
-		complete_tips = "Laidback Ranch can now accommodate more Clucky Clucky Birds.",
+		complete_tips = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7410303,
-		tech_chara = 1,
+		complete_title = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 410303,
 		island_level = 14,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3183,6 +3595,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			10,
 			1
@@ -3190,16 +3605,18 @@ pg.base.island_technology_template = {
 	},
 	[430303] = {
 		tech_desc = "Increases the number of Moo Moo Cows at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 4,
 		tech_icon = "tech_430302",
 		auto_finish = 1,
 		tech_name = "More Cows! II",
-		complete_tips = "Laidback Ranch can now accommodate more Moo Moo Cows.",
+		complete_tips = "You can now raise more Moo Moo Cows with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7430303,
-		tech_chara = 1,
+		complete_title = "You can now raise more Moo Moo Cows with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 430303,
 		island_level = 15,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3210,6 +3627,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			13,
 			5
@@ -3217,16 +3637,18 @@ pg.base.island_technology_template = {
 	},
 	[410304] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "4",
+		tech_belong = 4,
 		tech_icon = "tech_410301",
 		auto_finish = 1,
 		tech_name = "More Chickens! IV",
-		complete_tips = "Laidback Ranch can now accommodate more Clucky Clucky Birds.",
+		complete_tips = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7410304,
-		tech_chara = 1,
+		complete_title = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 410304,
 		island_level = 16,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3237,6 +3659,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			13,
 			1
@@ -3244,16 +3669,18 @@ pg.base.island_technology_template = {
 	},
 	[440303] = {
 		tech_desc = "Increases the number of Baa Baa Sheep at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 4,
 		tech_icon = "tech_440302",
 		auto_finish = 1,
 		tech_name = "More Sheep! II",
-		complete_tips = "Laidback Ranch can now accommodate more Baa Baa Sheep.",
+		complete_tips = "You can now raise more Baa Baa Sheep with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7440303,
-		tech_chara = 1,
+		complete_title = "You can now raise more Baa Baa Sheep with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 440303,
 		island_level = 17,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3264,6 +3691,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			13,
 			7
@@ -3271,16 +3701,18 @@ pg.base.island_technology_template = {
 	},
 	[410305] = {
 		tech_desc = "Increases the number of Clucky Clucky Birds at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "5",
+		tech_belong = 4,
 		tech_icon = "tech_410301",
 		auto_finish = 1,
 		tech_name = "More Chickens! V",
-		complete_tips = "Laidback Ranch can now accommodate more Clucky Clucky Birds.",
+		complete_tips = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7410305,
-		tech_chara = 1,
+		complete_title = "You can now raise more Clucky Clucky Birds with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 410305,
 		island_level = 21,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3291,6 +3723,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			16,
 			1
@@ -3298,16 +3733,18 @@ pg.base.island_technology_template = {
 	},
 	[420304] = {
 		tech_desc = "Increases the number of Oinky Oinky Pigs at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 4,
 		tech_icon = "tech_420302",
 		auto_finish = 1,
 		tech_name = "More Pigs! III",
-		complete_tips = "Laidback Ranch can now accommodate more Oinky Oinky Pigs.",
+		complete_tips = "You can now raise more Oinky Oinky Pigs with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7420304,
-		tech_chara = 1,
+		complete_title = "You can now raise more Oinky Oinky Pigs with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 420304,
 		island_level = 22,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3318,6 +3755,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			16,
 			3
@@ -3325,16 +3765,18 @@ pg.base.island_technology_template = {
 	},
 	[430304] = {
 		tech_desc = "Increases the number of Moo Moo Cows at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 4,
 		tech_icon = "tech_430302",
 		auto_finish = 1,
 		tech_name = "More Cows! III",
-		complete_tips = "Laidback Ranch can now accommodate more Moo Moo Cows.",
+		complete_tips = "You can now raise more Moo Moo Cows with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7430304,
-		tech_chara = 1,
+		complete_title = "You can now raise more Moo Moo Cows with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 430304,
 		island_level = 25,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3345,6 +3787,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			16,
 			5
@@ -3352,16 +3797,19 @@ pg.base.island_technology_template = {
 	},
 	[450301] = {
 		tech_desc = "Increases the number of honey gathering sites. Honeybees are your loyal workers!",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_450301",
 		auto_finish = 1,
 		tech_name = "Honey Gathering Sites+ I",
-		complete_tips = "You have unlocked Honey gathering sites at Morningdew Farm.",
+		complete_tips = "You can now collect Honey at <color=#1E8FFE>Honey Gathering Spots at Morningdew Farm</color>.",
 		formula_id = 7450301,
-		tech_chara = 1,
+		complete_title = "You can now collect Honey at <color=#1E8FFE>Honey Gathering Spots at Morningdew Farm</color>.",
+		tech_belong = 4,
 		id = 450301,
 		island_level = 26,
+		complete_map_id = 1001,
 		sys_unlock = {},
 		tech_repeat = {
 			0,
@@ -3374,16 +3822,18 @@ pg.base.island_technology_template = {
 	},
 	[440304] = {
 		tech_desc = "Increases the number of Baa Baa Sheep at Laidback Ranch.",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 4,
 		tech_icon = "tech_440302",
 		auto_finish = 1,
 		tech_name = "More Sheep! III",
-		complete_tips = "Laidback Ranch can now accommodate more Baa Baa Sheep.",
+		complete_tips = "You can now raise more Baa Baa Sheep with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		formula_id = 7440304,
-		tech_chara = 1,
+		complete_title = "You can now raise more Baa Baa Sheep with <color=#1E8FFE>Amerigo at Morningdew Farm</color>.",
 		id = 440304,
 		island_level = 27,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3394,6 +3844,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100500
+		},
 		axis = {
 			16,
 			7
@@ -3401,16 +3854,19 @@ pg.base.island_technology_template = {
 	},
 	[450302] = {
 		tech_desc = "Increases the number of honey gathering sites. Honeybees are your loyal workers!",
-		tech_belong = 4,
+		tech_chara = 1,
 		tech_level = "2",
+		complete_character_id = "",
 		tech_icon = "tech_450301",
 		auto_finish = 1,
 		tech_name = "Honey Gathering Sites+ II",
-		complete_tips = "You have unlocked Honey gathering sites at the Windswept Plains.",
+		complete_tips = "You can now collect Honey at <color=#1E8FFE>Honey Gathering Spots in the Windswept Plains</color>.",
 		formula_id = 7450302,
-		tech_chara = 1,
+		complete_title = "You can now collect Honey at <color=#1E8FFE>Honey Gathering Spots in the Windswept Plains</color>.",
+		tech_belong = 4,
 		id = 450302,
 		island_level = 30,
+		complete_map_id = 1004,
 		sys_unlock = {
 			{
 				3,
@@ -3428,16 +3884,18 @@ pg.base.island_technology_template = {
 	},
 	[500211] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Coffee Trees able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500211",
 		auto_finish = 1,
 		tech_name = "Coffee Tree Cultivation Techniques",
-		complete_tips = "You can now obtain Coffee.",
+		complete_tips = "You can now get Coffee Tree Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		formula_id = 7500211,
-		tech_chara = 1,
+		complete_title = "You can now get Coffee Tree Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		id = 500211,
 		island_level = 6,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -3447,6 +3905,9 @@ pg.base.island_technology_template = {
 		tech_repeat = {
 			0,
 			0
+		},
+		complete_character_id = {
+			100400
 		},
 		axis = {
 			1,
@@ -3455,16 +3916,18 @@ pg.base.island_technology_template = {
 	},
 	[500212] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Corn able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500211",
 		auto_finish = 1,
 		tech_name = "Corn Cultivation Techniques",
-		complete_tips = "You can now obtain Corn.",
+		complete_tips = "You can now get Corn Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		formula_id = 7500212,
-		tech_chara = 1,
+		complete_title = "You can now get Corn Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		id = 500212,
 		island_level = 7,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -3475,6 +3938,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			1,
 			5
@@ -3482,16 +3948,18 @@ pg.base.island_technology_template = {
 	},
 	[500231] = {
 		tech_desc = "Gives access to advanced growing techniques that make Apple Trees able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500231",
 		auto_finish = 1,
 		tech_name = "Apple Tree Cultivation Techniques",
-		complete_tips = "You can now obtain Apples.",
+		complete_tips = "You can now get Apple Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		formula_id = 7500231,
-		tech_chara = 1,
+		complete_title = "You can now get Apple Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		id = 500231,
 		island_level = 8,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				1,
@@ -3502,6 +3970,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			1,
 			3
@@ -3509,16 +3980,18 @@ pg.base.island_technology_template = {
 	},
 	[550201] = {
 		tech_desc = "Allows for the production of protein-rich and fatty Cheese.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_550201",
 		auto_finish = 1,
 		tech_name = "Cheese",
-		complete_tips = "You can now obtain Cheese.",
+		complete_tips = "You can now check with <color=#1E8FFE>Bremen at Café Manjuu</color>.",
 		formula_id = 7550201,
-		tech_chara = 1,
+		complete_title = "You can now check with <color=#1E8FFE>Bremen at Café Manjuu</color>.",
 		id = 550201,
 		island_level = 8,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				1,
@@ -3533,6 +4006,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101200
+		},
 		axis = {
 			4,
 			1
@@ -3540,16 +4016,18 @@ pg.base.island_technology_template = {
 	},
 	[500213] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Soy Beans able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500211",
 		auto_finish = 1,
 		tech_name = "Soy Bean Cultivation Techniques",
-		complete_tips = "You can now obtain Soy Beans.",
+		complete_tips = "You can now get Soy Bean Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		formula_id = 7500213,
-		tech_chara = 1,
+		complete_title = "You can now get Soy Bean Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		id = 500213,
 		island_level = 9,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -3560,6 +4038,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			4,
 			8
@@ -3567,16 +4048,18 @@ pg.base.island_technology_template = {
 	},
 	[500215] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Napa Cabbage able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500211",
 		auto_finish = 1,
 		tech_name = "Napa Cabbage Cultivation Techniques",
-		complete_tips = "You can now obtain Napa Cabbage.",
+		complete_tips = "You can now get Napa Cabbage Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		formula_id = 7500215,
-		tech_chara = 1,
+		complete_title = "You can now get Napa Cabbage Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		id = 500215,
 		island_level = 9,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				3,
@@ -3587,6 +4070,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			7,
 			5
@@ -3594,16 +4080,18 @@ pg.base.island_technology_template = {
 	},
 	[520001] = {
 		tech_desc = "Sweet drinks that fill you with happiness after just one sip!",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_520001",
 		auto_finish = 1,
 		tech_name = "Unlock: Polar Bear Teahouse",
-		complete_tips = "You have unlocked a new store in the Commercial Area.",
+		complete_tips = "You can now assemble a menu at <color=#1E8FFE>Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area by the harbor</color>.",
 		formula_id = 7520001,
-		tech_chara = 1,
+		complete_title = "You can now assemble a menu at <color=#1E8FFE>Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area by the harbor</color>.",
 		id = 520001,
 		island_level = 9,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				1,
@@ -3618,6 +4106,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			4,
 			3
@@ -3625,16 +4116,18 @@ pg.base.island_technology_template = {
 	},
 	[500214] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Potatoes able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500211",
 		auto_finish = 1,
 		tech_name = "Potato Cultivation Techniques",
-		complete_tips = "You can now obtain Potatoes.",
+		complete_tips = "You can now get Potato Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		formula_id = 7500214,
-		tech_chara = 1,
+		complete_title = "You can now get Potato Seeds from <color=#1E8FFE>Homeric at Morningdew Farm</color>.",
 		id = 500214,
 		island_level = 10,
+		complete_map_id = 1001,
 		sys_unlock = {
 			{
 				1,
@@ -3645,6 +4138,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100400
+		},
 		axis = {
 			6,
 			10
@@ -3652,16 +4148,18 @@ pg.base.island_technology_template = {
 	},
 	[500232] = {
 		tech_desc = "Gives access to advanced growing techniques that make Citrus Trees able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500231",
 		auto_finish = 1,
 		tech_name = "Citrus Tree Cultivation Techniques",
-		complete_tips = "You can now obtain Citrus Fruit.",
+		complete_tips = "You can now get Citrus Fruit Tree Seeds from <color=#1E8FFE>Lusitania in the Prosperous Plantation</color>.",
 		formula_id = 7500232,
-		tech_chara = 1,
+		complete_title = "You can now get Citrus Fruit Tree Seeds from <color=#1E8FFE>Lusitania in the Prosperous Plantation</color>.",
 		id = 500232,
 		island_level = 10,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -3672,6 +4170,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			7,
 			3
@@ -3679,16 +4180,18 @@ pg.base.island_technology_template = {
 	},
 	[550202] = {
 		tech_desc = "Allows for the production of aromatic and smooth Lattes.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_550201",
 		auto_finish = 1,
 		tech_name = "Latte",
-		complete_tips = "You can now obtain Lattes.",
+		complete_tips = "You can now check with <color=#1E8FFE>Bremen at Café Manjuu</color>.",
 		formula_id = 7550202,
-		tech_chara = 1,
+		complete_title = "You can now check with <color=#1E8FFE>Bremen at Café Manjuu</color>.",
 		id = 550202,
 		island_level = 10,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -3699,6 +4202,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101200
+		},
 		axis = {
 			7,
 			1
@@ -3706,16 +4212,19 @@ pg.base.island_technology_template = {
 	},
 	[500001] = {
 		tech_desc = "Unlocks combinations of dishes that can be sold as a set.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		complete_character_id = "",
 		tech_icon = "tech_500001",
 		auto_finish = 1,
 		tech_name = "Unlock: Dish Arrangement",
-		complete_tips = "You can now make meal combos.",
+		complete_tips = "You can now make meal combos in <color=#1E8FFE>Café Manjuu and the commercial area</color>.",
 		formula_id = 7500001,
-		tech_chara = 1,
+		complete_title = "You can now make meal combos in <color=#1E8FFE>Café Manjuu and the commercial area</color>.",
+		tech_belong = 5,
 		id = 500001,
 		island_level = 11,
+		complete_map_id = 0,
 		sys_unlock = {
 			{
 				1,
@@ -3733,16 +4242,18 @@ pg.base.island_technology_template = {
 	},
 	[510201] = {
 		tech_desc = "Allows for the production of velvety Tofu with Minced Meat with a rich soup.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_510201",
 		auto_finish = 1,
 		tech_name = "Tofu with Minced Meat",
-		complete_tips = "You can now obtain Tofu with Minced Meat.",
+		complete_tips = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7510201,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 510201,
 		island_level = 11,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				1,
@@ -3757,6 +4268,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			7,
 			8
@@ -3764,16 +4278,18 @@ pg.base.island_technology_template = {
 	},
 	[510202] = {
 		tech_desc = "Allows for the production of golden and fluffy Omurice.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_510201",
 		auto_finish = 1,
 		tech_name = "Omurice",
-		complete_tips = "You can now obtain Omurice.",
+		complete_tips = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7510202,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 510202,
 		island_level = 11,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -3784,6 +4300,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			10,
 			9
@@ -3791,16 +4310,18 @@ pg.base.island_technology_template = {
 	},
 	[510203] = {
 		tech_desc = "Allows for the production of mild and healthy Cabbage and Tofu Soup.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_510201",
 		auto_finish = 1,
 		tech_name = "Cabbage and Tofu Soup",
-		complete_tips = "You can now obtain Cabbage and Tofu Soup.",
+		complete_tips = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7510203,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 510203,
 		island_level = 12,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -3815,6 +4336,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			10,
 			7
@@ -3822,16 +4346,18 @@ pg.base.island_technology_template = {
 	},
 	[550203] = {
 		tech_desc = "Allows for the production of fresh and uniquely flavored Citrus Coffee.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_550201",
 		auto_finish = 1,
 		tech_name = "Citrus Coffee",
-		complete_tips = "You can now obtain Citrus Coffees.",
+		complete_tips = "You can now check with <color=#1E8FFE>Bremen at Café Manjuu</color>.",
 		formula_id = 7550203,
-		tech_chara = 1,
+		complete_title = "You can now check with <color=#1E8FFE>Bremen at Café Manjuu</color>.",
 		id = 550203,
 		island_level = 12,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -3842,6 +4368,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101200
+		},
 		axis = {
 			16,
 			1
@@ -3849,16 +4378,18 @@ pg.base.island_technology_template = {
 	},
 	[320201] = {
 		tech_desc = "Gives access to advanced growing techniques that make Strawberries able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_320201",
 		auto_finish = 1,
 		tech_name = "Strawberry Cultivation Techniques",
-		complete_tips = "You can now obtain Strawberries.",
+		complete_tips = "You can now get Strawberry Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		formula_id = 7320201,
-		tech_chara = 1,
+		complete_title = "You can now get Strawberry Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		id = 320201,
 		island_level = 12,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				1,
@@ -3873,6 +4404,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101400
+		},
 		axis = {
 			10,
 			1
@@ -3880,16 +4414,18 @@ pg.base.island_technology_template = {
 	},
 	[500233] = {
 		tech_desc = "Gives access to advanced growing techniques that make Banana Trees able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500231",
 		auto_finish = 1,
 		tech_name = "Banana Tree Cultivation Techniques",
-		complete_tips = "You can now obtain Bananas.",
+		complete_tips = "You can now get Banana Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		formula_id = 7500233,
-		tech_chara = 1,
+		complete_title = "You can now get Banana Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		id = 500233,
 		island_level = 13,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -3900,6 +4436,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			10,
 			3
@@ -3907,16 +4446,18 @@ pg.base.island_technology_template = {
 	},
 	[500234] = {
 		tech_desc = "Gives access to advanced growing techniques that make Mango Trees able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500231",
 		auto_finish = 1,
 		tech_name = "Mango Tree Cultivation Techniques",
-		complete_tips = "You can now obtain Mangos.",
+		complete_tips = "You can now get Mango Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		formula_id = 7500234,
-		tech_chara = 1,
+		complete_title = "You can now get Mango Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		id = 500234,
 		island_level = 14,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				1,
@@ -3931,6 +4472,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			10,
 			5
@@ -3938,16 +4482,18 @@ pg.base.island_technology_template = {
 	},
 	[510204] = {
 		tech_desc = "Allows for the production of delightful and delicious Vegetable Salads.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_510201",
 		auto_finish = 1,
 		tech_name = "Vegetable Salad",
-		complete_tips = "You can now obtain Vegetable Salads.",
+		complete_tips = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7510204,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 510204,
 		island_level = 14,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -3962,6 +4508,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			13,
 			8
@@ -3969,16 +4518,18 @@ pg.base.island_technology_template = {
 	},
 	[500235] = {
 		tech_desc = "Gives access to advanced growing techniques that make Lemon Trees able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500231",
 		auto_finish = 1,
 		tech_name = "Lemon Tree Cultivation Techniques",
-		complete_tips = "You can now obtain Lemons.",
+		complete_tips = "You can now get Lemon Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		formula_id = 7500235,
-		tech_chara = 1,
+		complete_title = "You can now get Lemon Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		id = 500235,
 		island_level = 15,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -3993,6 +4544,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			13,
 			2
@@ -4000,16 +4554,18 @@ pg.base.island_technology_template = {
 	},
 	[520201] = {
 		tech_desc = "Allows for the production of rich and sweet Banana and Mango Juice.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_520201",
 		auto_finish = 1,
 		tech_name = "Banana and Mango Juice",
-		complete_tips = "You can now obtain Banana and Mango Juice.",
+		complete_tips = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7520201,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 520201,
 		island_level = 15,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				1,
@@ -4028,6 +4584,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			13,
 			4
@@ -4035,16 +4594,18 @@ pg.base.island_technology_template = {
 	},
 	[520202] = {
 		tech_desc = "Allows for the production of refreshing, sweet, and sour Honey and Lemon Water.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_520201",
 		auto_finish = 1,
 		tech_name = "Honey and Lemon Water",
-		complete_tips = "You can now obtain Honey and Lemon Water.",
+		complete_tips = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7520202,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 520202,
 		island_level = 16,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4059,6 +4620,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			16,
 			3
@@ -4066,16 +4630,18 @@ pg.base.island_technology_template = {
 	},
 	[530001] = {
 		tech_desc = "Offers light meals to readily solve your daily food needs!",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_530001",
 		auto_finish = 1,
 		tech_name = "Unlock: Manjuu Eatery",
-		complete_tips = "You have unlocked a new store in the Commercial Area.",
+		complete_tips = "You can now assemble a menu at <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area by the harbor</color>.",
 		formula_id = 7530001,
-		tech_chara = 1,
+		complete_title = "You can now assemble a menu at <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area by the harbor</color>.",
 		id = 530001,
 		island_level = 16,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				1,
@@ -4090,23 +4656,28 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			16,
 			5
 		}
 	},
 	[320203] = {
-		tech_desc = "Gives access to advanced growing techniques that make Cotton able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_desc = "Gives access to advanced growing techniques that make Tea Trees able to grow rapidly in the island's environment.",
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_320201",
 		auto_finish = 1,
 		tech_name = "Tea Tree Cultivation Techniques",
-		complete_tips = "You can now obtain Tea Leaves.",
+		complete_tips = "You can now get Tea Tree Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		formula_id = 7320203,
-		tech_chara = 1,
+		complete_title = "You can now get Tea Tree Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		id = 320203,
 		island_level = 16,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -4117,6 +4688,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101400
+		},
 		axis = {
 			22,
 			1
@@ -4124,16 +4698,18 @@ pg.base.island_technology_template = {
 	},
 	[520203] = {
 		tech_desc = "Allows for the production of cool and sweet Strawberry Honey Frappés.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_520201",
 		auto_finish = 1,
 		tech_name = "Strawberry Honey Frappé",
-		complete_tips = "You can now obtain Strawberry Honey Frappés.",
+		complete_tips = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7520203,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 520203,
 		island_level = 17,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4144,50 +4720,28 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			19,
 			3
 		}
 	},
-	[530201] = {
-		tech_desc = "Allows for the production of sweet and fluffy Corn Cups.",
-		tech_belong = 5,
-		tech_level = "1",
-		tech_icon = "tech_530201",
-		auto_finish = 1,
-		tech_name = "Corn Cup",
-		complete_tips = "You can now obtain Corn Cups.",
-		formula_id = 7530201,
-		tech_chara = 1,
-		id = 530201,
-		island_level = 17,
-		sys_unlock = {
-			{
-				3,
-				530001
-			}
-		},
-		tech_repeat = {
-			0,
-			0
-		},
-		axis = {
-			19,
-			5
-		}
-	},
 	[500236] = {
 		tech_desc = "Gives access to advanced growing techniques that make Avocado Trees able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_500231",
 		auto_finish = 1,
 		tech_name = "Avocado Tree Cultivation Techniques",
-		complete_tips = "You can now obtain Avocados.",
+		complete_tips = "You can now get Avocado Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		formula_id = 7500236,
-		tech_chara = 1,
+		complete_title = "You can now get Avocado Tree Seeds from <color=#1E8FFE>Lusitania at the Prosperous Plantation</color>.",
 		id = 500236,
 		island_level = 18,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				1,
@@ -4202,6 +4756,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101100
+		},
 		axis = {
 			13,
 			10
@@ -4209,43 +4766,50 @@ pg.base.island_technology_template = {
 	},
 	[530205] = {
 		tech_desc = "Allows for the production of aromatic, crunchy, and sweet Apple Pie.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_530201",
 		auto_finish = 1,
 		tech_name = "Apple Pie",
-		complete_tips = "You can now obtain Apple Pies.",
+		complete_tips = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7530205,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 530205,
 		island_level = 18,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
-				530201
+				530001
 			}
 		},
 		tech_repeat = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
-			22,
+			19,
 			5
 		}
 	},
 	[520205] = {
 		tech_desc = "Allows for the production of sweet and delicious Strawberry Lemon Drinks.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_520201",
 		auto_finish = 1,
 		tech_name = "Strawberry Lemon Drink",
-		complete_tips = "You can now obtain Strawberry Lemon Drinks.",
+		complete_tips = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7520205,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 520205,
 		island_level = 19,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4256,6 +4820,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			22,
 			3
@@ -4263,43 +4830,50 @@ pg.base.island_technology_template = {
 	},
 	[530206] = {
 		tech_desc = "Allows for the production of sweet, sour, and crunchy Orange Pie.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_530201",
 		auto_finish = 1,
 		tech_name = "Orange Pie",
-		complete_tips = "You can now obtain Orange Pies.",
+		complete_tips = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7530206,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 530206,
 		island_level = 19,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
-				530201
+				530001
 			}
 		},
 		tech_repeat = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
-			22,
+			19,
 			7
 		}
 	},
 	[530202] = {
 		tech_desc = "Allows for the production of sweet and doughy Sticky Rice with Mango.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_530201",
 		auto_finish = 1,
 		tech_name = "Sticky Rice with Mango",
-		complete_tips = "You can now obtain Sticky Rice with Mango.",
+		complete_tips = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7530202,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 530202,
 		island_level = 20,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4314,23 +4888,28 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
-			25,
+			22,
 			5
 		}
 	},
 	[320204] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Carrots able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_320201",
 		auto_finish = 1,
 		tech_name = "Carrot Cultivation Techniques",
-		complete_tips = "You can now obtain Carrots.",
+		complete_tips = "You can now get Carrot Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		formula_id = 7320204,
-		tech_chara = 1,
+		complete_title = "You can now get Carrot Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		id = 320204,
 		island_level = 21,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -4341,6 +4920,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101400
+		},
 		axis = {
 			16,
 			10
@@ -4348,16 +4930,18 @@ pg.base.island_technology_template = {
 	},
 	[550204] = {
 		tech_desc = "Allows for the production of invigorating and mellow Strawberry Milkshakes.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_550201",
 		auto_finish = 1,
 		tech_name = "Strawberry Milkshake",
-		complete_tips = "You can now obtain Strawberry Milkshakes.",
+		complete_tips = "You can now check with <color=#1E8FFE>Bremen at Café Manjuu</color>.",
 		formula_id = 7550204,
-		tech_chara = 1,
+		complete_title = "You can now check with <color=#1E8FFE>Bremen at Café Manjuu</color>.",
 		id = 550204,
 		island_level = 21,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -4368,6 +4952,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101200
+		},
 		axis = {
 			25,
 			1
@@ -4375,16 +4962,18 @@ pg.base.island_technology_template = {
 	},
 	[540001] = {
 		tech_desc = "Oh yeah, it's barbecue time!",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_540001",
 		auto_finish = 1,
 		tech_name = "Unlock: Fin-'n'-Feather Grill",
-		complete_tips = "You have unlocked a new store in the Commercial Area.",
+		complete_tips = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7540001,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 540001,
 		island_level = 22,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				1,
@@ -4399,6 +4988,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			19,
 			10
@@ -4406,16 +4998,18 @@ pg.base.island_technology_template = {
 	},
 	[540201] = {
 		tech_desc = "Allows for the production of simple and tasty Chicken and Potato Hors d'Oeuvres.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_540201",
 		auto_finish = 1,
 		tech_name = "Chicken and Potato Hors d'Oeuvre",
-		complete_tips = "You can now obtain Chicken and Potato Hors d'Oeuvres.",
+		complete_tips = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7540201,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 540201,
 		island_level = 23,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4426,6 +5020,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			22,
 			10
@@ -4433,16 +5030,18 @@ pg.base.island_technology_template = {
 	},
 	[520204] = {
 		tech_desc = "Allows for the production of soothing and relaxing Lavender Tea.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_520201",
 		auto_finish = 1,
 		tech_name = "Lavender Tea",
-		complete_tips = "You can now obtain Lavender Tea.",
+		complete_tips = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7520204,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 520204,
 		island_level = 24,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4457,6 +5056,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			25,
 			3
@@ -4464,16 +5066,18 @@ pg.base.island_technology_template = {
 	},
 	[530203] = {
 		tech_desc = "Allows for the production of soft and sweet Banana Crêpes.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_530201",
 		auto_finish = 1,
 		tech_name = "Banana Crêpe",
-		complete_tips = "You can now obtain Banana Crêpes.",
+		complete_tips = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7530203,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 530203,
 		island_level = 24,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4488,6 +5092,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			28,
 			5
@@ -4495,16 +5102,18 @@ pg.base.island_technology_template = {
 	},
 	[320206] = {
 		tech_desc = "Gives access to advanced harvesting techniques that make Onions able to grow rapidly in the island's environment.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_320201",
 		auto_finish = 1,
 		tech_name = "Onion Cultivation Techniques",
-		complete_tips = "You can now obtain Onions.",
+		complete_tips = "You can now get Onion Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		formula_id = 7320206,
-		tech_chara = 1,
+		complete_title = "You can now get Onion Seeds from <color=#1E8FFE>Laconia at the Prosperous Plantation</color>.",
 		id = 320206,
 		island_level = 25,
+		complete_map_id = 1005,
 		sys_unlock = {
 			{
 				3,
@@ -4515,6 +5124,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101400
+		},
 		axis = {
 			25,
 			10
@@ -4522,16 +5134,18 @@ pg.base.island_technology_template = {
 	},
 	[540202] = {
 		tech_desc = "Allows for the production of abundantly fragrant Stir-Fried Chicken.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_540201",
 		auto_finish = 1,
 		tech_name = "Stir-Fried Chicken",
-		complete_tips = "You can now obtain Stir-Fried Chicken.",
+		complete_tips = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7540202,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 540202,
 		island_level = 27,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4542,6 +5156,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			28,
 			10
@@ -4549,16 +5166,18 @@ pg.base.island_technology_template = {
 	},
 	[530204] = {
 		tech_desc = "Allows for the production of mildly flavored Strawberry Charlottes.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_530201",
 		auto_finish = 1,
 		tech_name = "Strawberry Charlotte",
-		complete_tips = "You can now obtain Strawberry Charlottes.",
+		complete_tips = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7530204,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 530204,
 		island_level = 28,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4569,6 +5188,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			31,
 			5
@@ -4576,16 +5198,18 @@ pg.base.island_technology_template = {
 	},
 	[540204] = {
 		tech_desc = "Allows for the production of texture-rich Rolled Carrot Omelettes.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_540201",
 		auto_finish = 1,
 		tech_name = "Rolled Carrot Omelette",
-		complete_tips = "You can now obtain Rolled Carrot Omelettes.",
+		complete_tips = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7540204,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 540204,
 		island_level = 29,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4596,6 +5220,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			31,
 			10
@@ -4603,16 +5230,18 @@ pg.base.island_technology_template = {
 	},
 	[510101] = {
 		tech_desc = "Increases the number of staff slots at the Golden Koi Restaurant. Increases your food production speed.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_510101",
 		auto_finish = 1,
 		tech_name = "Golden Koi Restaurant Slot+",
-		complete_tips = "You can now assign more characters to the Golden Koi Restaurant.",
+		complete_tips = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> from the shop management menu with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7510101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Golden Koi Restaurant</color> from the shop management menu with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 510101,
 		island_level = 30,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				1,
@@ -4627,6 +5256,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			29,
 			8
@@ -4634,16 +5266,18 @@ pg.base.island_technology_template = {
 	},
 	[540205] = {
 		tech_desc = "Allows for the production of delicious and convenient Steak Bowls.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_540201",
 		auto_finish = 1,
 		tech_name = "Steak Bowl",
-		complete_tips = "You can now obtain Steak Bowls.",
+		complete_tips = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7540205,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 540205,
 		island_level = 32,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4654,6 +5288,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			34,
 			10
@@ -4661,25 +5298,30 @@ pg.base.island_technology_template = {
 	},
 	[520101] = {
 		tech_desc = "Increases the number of staff slots at the Polar Bear Teahouse. Increases your food production speed.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_520101",
 		auto_finish = 1,
 		tech_name = "Polar Bear Teahouse Slot+",
-		complete_tips = "You can now assign more characters to Polar Bear Teahouse.",
+		complete_tips = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> from the shop management menu with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7520101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Polar Bear Teahouse</color> from the shop management menu with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 520101,
 		island_level = 35,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
-				520205
+				520204
 			}
 		},
 		tech_repeat = {
 			0,
 			0
+		},
+		complete_character_id = {
+			100800
 		},
 		axis = {
 			34,
@@ -4688,16 +5330,18 @@ pg.base.island_technology_template = {
 	},
 	[530101] = {
 		tech_desc = "Increases the number of staff slots at the Manjuu Eatery. Increases your food production speed.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_530101",
 		auto_finish = 1,
 		tech_name = "Manjuu Eatery Slot+",
-		complete_tips = "You can now assign more characters to the Manjuu Eatery.",
+		complete_tips = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> from the shop management menu with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7530101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Manjuu Eatery</color> from the shop management menu with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 530101,
 		island_level = 41,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4708,6 +5352,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			37,
 			5
@@ -4715,16 +5362,18 @@ pg.base.island_technology_template = {
 	},
 	[540101] = {
 		tech_desc = "Increases the number of staff slots at the Fin-'n'-Feather Grill. Increases your food production speed.",
-		tech_belong = 5,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 5,
 		tech_icon = "tech_540101",
 		auto_finish = 1,
 		tech_name = "Fin-'n'-Feather Grill Slot+",
-		complete_tips = "You can now assign more characters to the Fin-'n'-Feather Grill.",
+		complete_tips = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> from the shop management menu with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		formula_id = 7540101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>the Fin-'n'-Feather Grill</color> from the shop management menu with <color=#1E8FFE>Am-Mer-Mar in the commercial area</color>.",
 		id = 540101,
 		island_level = 47,
+		complete_map_id = 1006,
 		sys_unlock = {
 			{
 				3,
@@ -4735,6 +5384,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100800
+		},
 		axis = {
 			37,
 			10
@@ -4742,16 +5394,18 @@ pg.base.island_technology_template = {
 	},
 	[610101] = {
 		tech_desc = "Increases the number of transport jobs that can be accepted. This will let you acquire resources from different places more easily.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_610101",
 		auto_finish = 1,
 		tech_name = "Transport Job Limit+ I",
-		complete_tips = "Can be inspected through the transport job menu.",
+		complete_tips = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		formula_id = 7610101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		id = 610101,
 		island_level = 6,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				1,
@@ -4762,6 +5416,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100300
+		},
 		axis = {
 			1,
 			1
@@ -4769,16 +5426,18 @@ pg.base.island_technology_template = {
 	},
 	[610401] = {
 		tech_desc = "Shortens the transport time of transport jobs, making goods flow more efficiently.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_610401",
 		auto_finish = 1,
 		tech_name = "Transport Efficiency+ I",
-		complete_tips = "Your efficiency with transport jobs has increased.",
+		complete_tips = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		formula_id = 7610401,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		id = 610401,
 		island_level = 8,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -4789,6 +5448,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100300
+		},
 		axis = {
 			4,
 			1
@@ -4796,16 +5458,18 @@ pg.base.island_technology_template = {
 	},
 	[610102] = {
 		tech_desc = "Increases the number of transport jobs that can be accepted. This will let you acquire resources from different places more easily.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 6,
 		tech_icon = "tech_610101",
 		auto_finish = 1,
 		tech_name = "Transport Job Limit+ II",
-		complete_tips = "Can be inspected through the transport job menu.",
+		complete_tips = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		formula_id = 7610102,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		id = 610102,
 		island_level = 11,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -4816,6 +5480,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100300
+		},
 		axis = {
 			7,
 			1
@@ -4823,16 +5490,18 @@ pg.base.island_technology_template = {
 	},
 	[630201] = {
 		tech_desc = "Allows for the production of practical record-keeping Notebooks.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Notebook",
-		complete_tips = "You can now obtain Notebooks.",
+		complete_tips = "You can now perform <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7630201,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 630201,
 		island_level = 11,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				1,
@@ -4843,6 +5512,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			4,
 			3
@@ -4850,16 +5522,18 @@ pg.base.island_technology_template = {
 	},
 	[610402] = {
 		tech_desc = "Shortens the transport time of transport jobs, making goods flow more efficiently.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "2",
+		tech_belong = 6,
 		tech_icon = "tech_610401",
 		auto_finish = 1,
 		tech_name = "Transport Efficiency+ II",
-		complete_tips = "Your efficiency with transport jobs has increased.",
+		complete_tips = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		formula_id = 7610402,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		id = 610402,
 		island_level = 13,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -4870,6 +5544,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100300
+		},
 		axis = {
 			10,
 			1
@@ -4877,16 +5554,18 @@ pg.base.island_technology_template = {
 	},
 	[630202] = {
 		tech_desc = "Allows for the production of a place to rest and work in the form of Chairs and Desks.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Chair and Desk",
-		complete_tips = "You can now obtain Chairs and Desks.",
+		complete_tips = "You can now perform <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7630202,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 630202,
 		island_level = 13,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -4897,6 +5576,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			7,
 			3
@@ -4904,16 +5586,18 @@ pg.base.island_technology_template = {
 	},
 	[620101] = {
 		tech_desc = "Increases the number of staff slots at Café Manjuu. Increases your food production speed.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_620101",
 		auto_finish = 1,
 		tech_name = "Café Manjuu Slot+",
-		complete_tips = "You can now assign more characters to the orchard.",
+		complete_tips = "You can now check <color=#1E8FFE>goods production</color> with <color=#1E8FFE>Bremen at Café Manjuu by the harbor</color>.",
 		formula_id = 7620101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>goods production</color> with <color=#1E8FFE>Bremen at Café Manjuu by the harbor</color>.",
 		id = 620101,
 		island_level = 15,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				1,
@@ -4924,6 +5608,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			101200
+		},
 		axis = {
 			1,
 			9
@@ -4931,16 +5618,18 @@ pg.base.island_technology_template = {
 	},
 	[640001] = {
 		tech_desc = "Unlocks the production of manufactured items.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_640001",
 		auto_finish = 1,
 		tech_name = "Unlock: Manufactured Items",
-		complete_tips = "You have unlocked manufactured item production at the Base Factory.",
+		complete_tips = "You can now check <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7640001,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 640001,
 		island_level = 15,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				1,
@@ -4951,6 +5640,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			4,
 			5
@@ -4958,16 +5650,18 @@ pg.base.island_technology_template = {
 	},
 	[630101] = {
 		tech_desc = "Increases the number of staff slots for lumber processing. Increases your production speed of wooden items.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630101",
 		auto_finish = 1,
 		tech_name = "Lumber Processing Slot+",
-		complete_tips = "You can now assign more characters to manufacture wooden items.",
+		complete_tips = "You can now check <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7630101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 630101,
 		island_level = 16,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -4978,6 +5672,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			13,
 			3
@@ -4985,16 +5682,18 @@ pg.base.island_technology_template = {
 	},
 	[610403] = {
 		tech_desc = "Shortens the transport time of transport jobs, making goods flow more efficiently.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "3",
+		tech_belong = 6,
 		tech_icon = "tech_610401",
 		auto_finish = 1,
 		tech_name = "Transport Efficiency+ III",
-		complete_tips = "Your efficiency with transport jobs has increased.",
+		complete_tips = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		formula_id = 7610403,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>transport jobs</color> with <color=#1E8FFE>Stephen in the harbor</color>.",
 		id = 610403,
 		island_level = 17,
+		complete_map_id = 1002,
 		sys_unlock = {
 			{
 				3,
@@ -5005,6 +5704,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100300
+		},
 		axis = {
 			13,
 			1
@@ -5012,16 +5714,18 @@ pg.base.island_technology_template = {
 	},
 	[640201] = {
 		tech_desc = "Allows for the production of metallic Nails to keep things pinned down.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Nails",
-		complete_tips = "You can now obtain Nails.",
+		complete_tips = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7640201,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 640201,
 		island_level = 18,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5032,6 +5736,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			7,
 			5
@@ -5039,16 +5746,18 @@ pg.base.island_technology_template = {
 	},
 	[660001] = {
 		tech_desc = "Unlocks the production of arts & crafts items.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_660001",
 		auto_finish = 1,
 		tech_name = "Unlock: Arts & Crafts Items",
-		complete_tips = "You have unlocked manufactured item production at the Base Factory.",
+		complete_tips = "You can now check <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7660001,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 660001,
 		island_level = 19,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				1,
@@ -5059,23 +5768,28 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			4,
 			7
 		}
 	},
 	[630203] = {
-		tech_desc = "Allows for the production of tightly sealed Oak Barrels for preservation.",
-		tech_belong = 6,
+		tech_desc = "Allows for the production of tightly sealed Choice Wooden Barrels for preservation.",
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
-		tech_name = "Oak Barrel",
-		complete_tips = "You can now obtain Choice Wooden Barrels.",
+		tech_name = "Choice Wooden Barrel",
+		complete_tips = "You can now perform <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7630203,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 630203,
 		island_level = 20,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5086,6 +5800,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			16,
 			3
@@ -5093,16 +5810,18 @@ pg.base.island_technology_template = {
 	},
 	[640101] = {
 		tech_desc = "Increases the number of staff slots for industrial production. Increases your production speed of manufactured items.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_640101",
 		auto_finish = 1,
 		tech_name = "Industrial Production Slot+",
-		complete_tips = "You can now assign more characters to manufacture products.",
+		complete_tips = "You can now check <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7640101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 640101,
 		island_level = 20,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5113,6 +5832,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			13,
 			5
@@ -5120,16 +5842,18 @@ pg.base.island_technology_template = {
 	},
 	[640202] = {
 		tech_desc = "Allows for the production of insulated Cables for routing electricity and signals.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Cable",
-		complete_tips = "You can now obtain Cables.",
+		complete_tips = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7640202,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 640202,
 		island_level = 20,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5140,6 +5864,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			10,
 			5
@@ -5147,16 +5874,18 @@ pg.base.island_technology_template = {
 	},
 	[660201] = {
 		tech_desc = "Allows for the production of Leather suited for all kinds of manufacturing.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Leather",
-		complete_tips = "You can now obtain Leather.",
+		complete_tips = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7660201,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 660201,
 		island_level = 21,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5167,6 +5896,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			7,
 			7
@@ -5174,16 +5906,18 @@ pg.base.island_technology_template = {
 	},
 	[640203] = {
 		tech_desc = "Allows for the production of Chemicals for industrial and scientific applications.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Chemicals",
-		complete_tips = "You can now obtain Chemicals.",
+		complete_tips = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7640203,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 640203,
 		island_level = 22,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5194,6 +5928,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			16,
 			5
@@ -5201,16 +5938,18 @@ pg.base.island_technology_template = {
 	},
 	[660202] = {
 		tech_desc = "Allows for the production of Rope with highly durable fibers.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Rope",
-		complete_tips = "You can now obtain Ropes.",
+		complete_tips = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7660202,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 660202,
 		island_level = 22,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5221,6 +5960,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			10,
 			7
@@ -5228,16 +5970,18 @@ pg.base.island_technology_template = {
 	},
 	[660203] = {
 		tech_desc = "Allows for the production of Gloves for keeping one's hands protected and warm.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Gloves",
-		complete_tips = "You can now obtain Gloves.",
+		complete_tips = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7660203,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 660203,
 		island_level = 23,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5248,6 +5992,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			13,
 			7
@@ -5255,16 +6002,18 @@ pg.base.island_technology_template = {
 	},
 	[650001] = {
 		tech_desc = "Unlocks the production of electronic items.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_650001",
 		auto_finish = 1,
 		tech_name = "Unlock: Electronic Items",
-		complete_tips = "You have unlocked manufactured item production at the Base Factory.",
+		complete_tips = "You can now check <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7650001,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 650001,
 		island_level = 24,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				1,
@@ -5275,6 +6024,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			10,
 			9
@@ -5282,16 +6034,18 @@ pg.base.island_technology_template = {
 	},
 	[630204] = {
 		tech_desc = "Allows for the production of metallic Filing Cabinets to store documents.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Filing Cabinet",
-		complete_tips = "You can now obtain Filing Cabinets.",
+		complete_tips = "You can now perform <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7630204,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>lumber production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 630204,
 		island_level = 26,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5302,6 +6056,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			19,
 			3
@@ -5309,16 +6066,18 @@ pg.base.island_technology_template = {
 	},
 	[660204] = {
 		tech_desc = "Allows for the production of Aroma Sachets that release a pleasant scent.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Aroma Sachet",
-		complete_tips = "You can now obtain Aroma Sachets.",
+		complete_tips = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7660204,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 660204,
 		island_level = 26,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5329,6 +6088,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			16,
 			7
@@ -5336,16 +6098,18 @@ pg.base.island_technology_template = {
 	},
 	[640204] = {
 		tech_desc = "Allows for the production of granular Gunpowder for explosive and propulsive applications.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Gunpowder",
-		complete_tips = "You can now obtain Gunpowder.",
+		complete_tips = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7640204,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 640204,
 		island_level = 27,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5356,6 +6120,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			19,
 			5
@@ -5363,16 +6130,18 @@ pg.base.island_technology_template = {
 	},
 	[650201] = {
 		tech_desc = "Allows for the production of Clocks to accurately tell the time.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Clock",
-		complete_tips = "You can now obtain Clocks.",
+		complete_tips = "You can now perform <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7650201,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 650201,
 		island_level = 27,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5383,6 +6152,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			16,
 			9
@@ -5390,16 +6162,18 @@ pg.base.island_technology_template = {
 	},
 	[660101] = {
 		tech_desc = "Increases the number of staff slots for arts & crafts production. Increases your production speed of artisanal items.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_660101",
 		auto_finish = 1,
 		tech_name = "Arts & Crafts Slot+",
-		complete_tips = "You can now assign more characters to make arts & crafts.",
+		complete_tips = "You can now check <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7660101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 660101,
 		island_level = 28,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5410,6 +6184,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			19,
 			7
@@ -5417,16 +6194,18 @@ pg.base.island_technology_template = {
 	},
 	[640205] = {
 		tech_desc = "Allows for the production of metallic Utensils for eating with.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Utensils",
-		complete_tips = "You can now obtain Utensils.",
+		complete_tips = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7640205,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>mechanical production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 640205,
 		island_level = 30,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5437,6 +6216,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			22,
 			5
@@ -5444,16 +6226,18 @@ pg.base.island_technology_template = {
 	},
 	[660205] = {
 		tech_desc = "Allows for the production of Shoes that suit one's needs in everyday scenarios.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Shoes",
-		complete_tips = "You can now obtain Shoes.",
+		complete_tips = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7660205,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 660205,
 		island_level = 31,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5464,6 +6248,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			22,
 			7
@@ -5471,16 +6258,18 @@ pg.base.island_technology_template = {
 	},
 	[650101] = {
 		tech_desc = "Increases the number of staff slots for electronics production. Increases your production speed of electronic items.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_650101",
 		auto_finish = 1,
 		tech_name = "Electronics Production Slot+",
-		complete_tips = "You can now assign more characters to manufacture electronics.",
+		complete_tips = "You can now check <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7650101,
-		tech_chara = 1,
+		complete_title = "You can now check <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 650101,
 		island_level = 33,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5491,6 +6280,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			22,
 			9
@@ -5498,16 +6290,18 @@ pg.base.island_technology_template = {
 	},
 	[660206] = {
 		tech_desc = "Allows for the production of sterile Wound Dressings as a first aid solution.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Wound Dressings",
-		complete_tips = "You can now obtain Wound Dressings.",
+		complete_tips = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7660206,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>arts & crafts production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 660206,
 		island_level = 35,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5518,6 +6312,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			25,
 			7
@@ -5525,16 +6322,18 @@ pg.base.island_technology_template = {
 	},
 	[650202] = {
 		tech_desc = "Allows for the production of energy-storing Batteries.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Battery",
-		complete_tips = "You can now obtain Batteries.",
+		complete_tips = "You can now perform <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7650202,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 650202,
 		island_level = 36,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5545,6 +6344,9 @@ pg.base.island_technology_template = {
 			0,
 			0
 		},
+		complete_character_id = {
+			100900
+		},
 		axis = {
 			25,
 			9
@@ -5552,16 +6354,18 @@ pg.base.island_technology_template = {
 	},
 	[650203] = {
 		tech_desc = "Allows for the production of Water Filter cores that make water potable.",
-		tech_belong = 6,
+		tech_chara = 1,
 		tech_level = "1",
+		tech_belong = 6,
 		tech_icon = "tech_630201",
 		auto_finish = 1,
 		tech_name = "Water Filter",
-		complete_tips = "You can now obtain Water Filters.",
+		complete_tips = "You can now perform <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		formula_id = 7650203,
-		tech_chara = 1,
+		complete_title = "You can now perform <color=#1E8FFE>electronics production</color> with <color=#1E8FFE>Russell in the Base Factory by the harbor</color>.",
 		id = 650203,
 		island_level = 42,
+		complete_map_id = 1007,
 		sys_unlock = {
 			{
 				3,
@@ -5571,6 +6375,9 @@ pg.base.island_technology_template = {
 		tech_repeat = {
 			0,
 			0
+		},
+		complete_character_id = {
+			100900
 		},
 		axis = {
 			28,

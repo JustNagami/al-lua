@@ -23,7 +23,7 @@ var_0_0.SKIN_COLOR = 20
 var_0_0.ACHIEVEMENT = 21
 var_0_0.TASK = 22
 var_0_0.TASK_TYPE = 23
-var_0_0.HAND_PROD_PLUS = 24
+var_0_0.TASK_TYPE_PLUS = 24
 var_0_0.GIVE_GIFT = 25
 var_0_0.PROD_ITEM = 26
 var_0_0.RESTAURANT_SHELVE = 27
@@ -61,11 +61,13 @@ function var_0_0.GetRuntimeTypes()
 		var_0_0.SKIN_COLOR,
 		var_0_0.ACHIEVEMENT,
 		var_0_0.TASK,
+		var_0_0.TASK_TYPE_PLUS,
 		var_0_0.RESTAURANT_RANK,
 		var_0_0.STORY,
 		var_0_0.ACTION,
 		var_0_0.COMMANDER_DRESS_ID,
-		var_0_0.SHIP_DRESS_ID
+		var_0_0.SHIP_DRESS_ID,
+		var_0_0.ACTIVITY_ORDER
 	}
 end
 

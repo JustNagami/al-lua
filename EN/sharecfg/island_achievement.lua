@@ -87,8 +87,8 @@ pg.island_achievement = {
 		target_num = 60,
 		award = {
 			{
-				41,
-				200015,
+				44,
+				60802,
 				1
 			}
 		},
@@ -237,8 +237,8 @@ pg.island_achievement = {
 		target_num = 120,
 		award = {
 			{
-				41,
-				200008,
+				44,
+				90111,
 				1
 			}
 		},
@@ -2709,7 +2709,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Complete a Total of <color=#cd7900><b>$2</b></color> Transport Job(s)",
 		id = 2021,
-		target_num = 20,
+		target_num = 10,
 		award = {
 			{
 				45,
@@ -2734,7 +2734,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Complete a Total of <color=#cd7900><b>$2</b></color> Transport Job(s)",
 		id = 2022,
-		target_num = 100,
+		target_num = 50,
 		award = {
 			{
 				41,
@@ -2759,7 +2759,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Complete a Total of <color=#cd7900><b>$2</b></color> Transport Job(s)",
 		id = 2023,
-		target_num = 250,
+		target_num = 180,
 		award = {
 			{
 				41,
@@ -2784,7 +2784,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Complete a Total of <color=#cd7900><b>$2</b></color> Transport Job(s)",
 		id = 2024,
-		target_num = 500,
+		target_num = 350,
 		award = {
 			{
 				1,
@@ -2809,7 +2809,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Complete a Total of <color=#cd7900><b>$2</b></color> Transport Job(s)",
 		id = 2025,
-		target_num = 1000,
+		target_num = 750,
 		award = {
 			{
 				41,
@@ -2834,7 +2834,7 @@ pg.island_achievement = {
 		show_type = 1,
 		desc = "Complete a Total of <color=#cd7900><b>$2</b></color> Transport Job(s)",
 		id = 2026,
-		target_num = 1500,
+		target_num = 1000,
 		award = {
 			{
 				1,
@@ -3151,7 +3151,7 @@ pg.island_achievement = {
 		}
 	},
 	[2051] = {
-		target_type = 31,
+		target_type = 38,
 		name = "Livin' the Premium Life",
 		stage = 1,
 		target_value1 = 0,
@@ -3176,7 +3176,7 @@ pg.island_achievement = {
 		}
 	},
 	[2052] = {
-		target_type = 31,
+		target_type = 38,
 		name = "Livin' the Premium Life",
 		stage = 2,
 		target_value1 = 0,
@@ -3201,7 +3201,7 @@ pg.island_achievement = {
 		}
 	},
 	[2053] = {
-		target_type = 31,
+		target_type = 38,
 		name = "Livin' the Premium Life",
 		stage = 3,
 		target_value1 = 0,
@@ -3226,7 +3226,7 @@ pg.island_achievement = {
 		}
 	},
 	[2054] = {
-		target_type = 31,
+		target_type = 38,
 		name = "Livin' the Premium Life",
 		stage = 4,
 		target_value1 = 0,
@@ -3251,7 +3251,7 @@ pg.island_achievement = {
 		}
 	},
 	[2055] = {
-		target_type = 31,
+		target_type = 38,
 		name = "Livin' the Premium Life",
 		stage = 5,
 		target_value1 = 0,
@@ -3276,7 +3276,7 @@ pg.island_achievement = {
 		}
 	},
 	[2056] = {
-		target_type = 31,
+		target_type = 38,
 		name = "Livin' the Premium Life",
 		stage = 6,
 		target_value1 = 0,

@@ -4,23 +4,27 @@ local var_0_2 = {
 	[99] = true
 }
 
+var_0_0.optionsPath = {
+	"adapt/top/option"
+}
+
 function var_0_0.getUIName(arg_1_0)
 	return "WorldPreCombatUI"
 end
 
 function var_0_0.init(arg_2_0)
 	arg_2_0.eventTriggers = {}
-	arg_2_0.middle = arg_2_0:findTF("middle")
-	arg_2_0.right = arg_2_0:findTF("right")
-	arg_2_0.top = arg_2_0:findTF("top")
-	arg_2_0.moveLayer = arg_2_0:findTF("moveLayer")
+	arg_2_0.middle = arg_2_0._tf:Find("adapt/middle")
+	arg_2_0.right = arg_2_0._tf:Find("adapt/right")
+	arg_2_0.top = arg_2_0._tf:Find("adapt/top")
+	arg_2_0.moveLayer = arg_2_0._tf:Find("adapt/moveLayer")
 	arg_2_0.backBtn = arg_2_0.top:Find("back_btn")
 	arg_2_0.playerResOb = arg_2_0.top:Find("playerRes")
 	arg_2_0.resPanel = WorldResource.New()
 
 	tf(arg_2_0.resPanel._go):SetParent(tf(arg_2_0.playerResOb), false)
 
-	arg_2_0.strategyInfo = arg_2_0:findTF("strategy_info", arg_2_0.top)
+	arg_2_0.strategyInfo = arg_2_0.top:Find("strategy_info")
 
 	setActive(arg_2_0.strategyInfo, false)
 
@@ -46,7 +50,7 @@ function var_0_0.init(arg_2_0)
 
 	setActive(arg_2_0.strategy, false)
 
-	arg_2_0.fleet = arg_2_0:findTF("middle/fleet")
+	arg_2_0.fleet = arg_2_0.middle:Find("fleet")
 	arg_2_0.ship_tpl = findTF(arg_2_0.fleet, "shiptpl")
 	arg_2_0.empty_tpl = findTF(arg_2_0.fleet, "emptytpl")
 
@@ -59,8 +63,8 @@ function var_0_0.init(arg_2_0)
 	arg_2_0.infoBtn = arg_2_0.right:Find("information")
 	arg_2_0.heroInfo = arg_2_0:getTpl("heroInfo")
 	arg_2_0.starTpl = arg_2_0:getTpl("star_tpl")
-	arg_2_0.energyDescTF = arg_2_0:findTF("energy_desc")
-	arg_2_0.energyDescTextTF = arg_2_0:findTF("energy_desc/Text")
+	arg_2_0.energyDescTF = arg_2_0._tf:Find("energy_desc")
+	arg_2_0.energyDescTextTF = arg_2_0._tf:Find("energy_desc/Text")
 	arg_2_0.normaltab = arg_2_0.right:Find("normal")
 	arg_2_0.informationtab = arg_2_0.right:Find("infomation")
 	arg_2_0.buffInfo = arg_2_0.normaltab:Find("buff")
@@ -139,7 +143,7 @@ function var_0_0.didEnter(arg_5_0)
 			setActive(arg_5_0.autoSubToggle, false)
 		end
 	end, SFX_PANEL, SFX_PANEL)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_5_0._tf)
+	arg_5_0:OverlayPanel(arg_5_0._tf)
 	arg_5_0:updateCharacters()
 	arg_5_0:updateStageView()
 	triggerToggle(arg_5_0.autoToggle, ys.Battle.BattleState.IsAutoBotActive(SYSTEM_WORLD))
@@ -409,15 +413,13 @@ function var_0_0.loadAllCharacter(arg_33_0, arg_33_1)
 			return
 		end
 
-		local var_34_0 = arg_34_0.model
+		local var_34_0 = arg_34_0:GetRoleModel()
 		local var_34_1 = WorldConst.FetchWorldShip(arg_34_1.id)
 
 		arg_33_0.characterList[arg_34_2][arg_34_3] = arg_34_0
 
-		tf(var_34_0):SetParent(arg_33_0.heroContainer, false)
-
-		tf(var_34_0).localScale = Vector3(0.65, 0.65, 1)
-
+		arg_34_0:SetParent(arg_33_0.heroContainer, false)
+		arg_34_0:SetLocalScale(Vector3(0.65, 0.65, 1))
 		pg.ViewUtils.SetLayer(tf(var_34_0), Layer.UI)
 		arg_33_0:enabledCharacter(var_34_0, true, arg_34_2)
 		arg_33_0:setCharacterPos(arg_34_2, arg_34_3, var_34_0)
@@ -551,11 +553,11 @@ end
 
 function var_0_0.setAllCharacterPos(arg_41_0, arg_41_1)
 	for iter_41_0, iter_41_1 in ipairs(arg_41_0.characterList[TeamType.Vanguard]) do
-		arg_41_0:setCharacterPos(TeamType.Vanguard, iter_41_0, tf(iter_41_1.model), arg_41_1)
+		arg_41_0:setCharacterPos(TeamType.Vanguard, iter_41_0, tf(iter_41_1:GetRootModel()), arg_41_1)
 	end
 
 	for iter_41_2, iter_41_3 in ipairs(arg_41_0.characterList[TeamType.Main]) do
-		arg_41_0:setCharacterPos(TeamType.Main, iter_41_2, tf(iter_41_3.model), arg_41_1)
+		arg_41_0:setCharacterPos(TeamType.Main, iter_41_2, tf(iter_41_3:GetRootModel()), arg_41_1)
 	end
 
 	arg_41_0:sortSiblingIndex()
@@ -592,7 +594,7 @@ end
 function var_0_0.switchToEditMode(arg_44_0)
 	local function var_44_0(arg_45_0)
 		for iter_45_0, iter_45_1 in ipairs(arg_45_0) do
-			local var_45_0 = iter_45_1.model
+			local var_45_0 = iter_45_1:GetRootModel()
 			local var_45_1 = tf(var_45_0):Find("mouseChild")
 
 			if var_45_1 then
@@ -632,7 +634,7 @@ function var_0_0.switchToShiftMode(arg_46_0, arg_46_1, arg_46_2)
 	local var_46_2 = arg_46_0.characterList[arg_46_2]
 
 	for iter_46_1, iter_46_2 in ipairs(var_46_2) do
-		local var_46_3 = iter_46_2.model
+		local var_46_3 = iter_46_2:GetRootModel()
 
 		if var_46_3 ~= arg_46_1 then
 			local var_46_4 = arg_46_0.gridTFs[arg_46_2][iter_46_1]
@@ -645,7 +647,7 @@ function var_0_0.switchToShiftMode(arg_46_0, arg_46_1, arg_46_2)
 
 			var_46_5:AddPointEnterFunc(function()
 				for iter_47_0, iter_47_1 in ipairs(var_46_2) do
-					if iter_47_1.model == var_46_3 then
+					if iter_47_1:GetRootModel() == var_46_3 then
 						arg_46_0:shift(arg_46_0._shiftIndex, iter_47_0, arg_46_2)
 
 						break
@@ -664,7 +666,7 @@ end
 function var_0_0.shift(arg_48_0, arg_48_1, arg_48_2, arg_48_3)
 	local var_48_0 = arg_48_0.characterList[arg_48_3]
 	local var_48_1 = arg_48_0.gridTFs[arg_48_3]
-	local var_48_2 = var_48_0[arg_48_2].model
+	local var_48_2 = var_48_0[arg_48_2]:GetRootModel()
 	local var_48_3 = var_48_1[arg_48_1].localPosition
 
 	tf(var_48_2).localPosition = Vector3(var_48_3.x + 2, var_48_3.y - 80, var_48_3.z)
@@ -692,7 +694,7 @@ function var_0_0.sortSiblingIndex(arg_49_0)
 		local var_49_3 = arg_49_0.characterList[TeamType.Vanguard][var_49_0]
 
 		if var_49_2 then
-			local var_49_4 = var_49_2.model
+			local var_49_4 = var_49_2:GetRootModel()
 
 			tf(var_49_4):SetSiblingIndex(var_49_1)
 
@@ -700,7 +702,7 @@ function var_0_0.sortSiblingIndex(arg_49_0)
 		end
 
 		if var_49_3 then
-			local var_49_5 = var_49_3.model
+			local var_49_5 = var_49_3:GetRootModel()
 
 			tf(var_49_5):SetSiblingIndex(var_49_1)
 
@@ -715,7 +717,7 @@ function var_0_0.enabledTeamCharacter(arg_50_0, arg_50_1, arg_50_2)
 	local var_50_0 = arg_50_0.characterList[arg_50_1]
 
 	for iter_50_0, iter_50_1 in ipairs(var_50_0) do
-		arg_50_0:enabledCharacter(iter_50_1.model, arg_50_2, arg_50_1)
+		arg_50_0:enabledCharacter(iter_50_1:GetRootModel(), arg_50_2, arg_50_1)
 	end
 end
 
@@ -808,7 +810,7 @@ function var_0_0.recycleCharacterList(arg_59_0, arg_59_1, arg_59_2)
 end
 
 function var_0_0.willExit(arg_60_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_60_0._tf)
+	arg_60_0:UnOverlayPanel(arg_60_0._tf)
 
 	if arg_60_0.resPanel then
 		arg_60_0.resPanel:exit()

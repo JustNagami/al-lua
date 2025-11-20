@@ -621,6 +621,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>A commemorative frame that brings back memories of laughter and champagne.</color>\n–\"Castle of Celebrations\" event reward.",
 		scene = {}
 	},
+	[604] = {
+		time_limit_type = 0,
+		name = "Fitness Aficionado",
+		gain_by = "",
+		id = 604,
+		time_second = 0,
+		desc = "<color=#ffffff>Proof of all the exercise you did and the sweat you perspirated.</color>",
+		scene = {}
+	},
 	[605] = {
 		time_limit_type = 0,
 		name = "Seal of the Speedster",
@@ -673,6 +682,15 @@ pg.item_data_frame = {
 		id = 611,
 		time_second = 0,
 		desc = "<color=#ffffff>Take in the atmosphere and feel the wind blow through the trees on this extraordinary vacation.</color> Obtained by participating in the A Sylvan Retreat event.",
+		scene = {}
+	},
+	[612] = {
+		time_limit_type = 0,
+		name = "Black Friday Extravaganza",
+		gain_by = "",
+		id = 612,
+		time_second = 0,
+		desc = "<color=#FFD40D>50% OFF Mega Sale, Black Friday extravaganza begins!</color>Obtained from Black Friday Cruise Missions.",
 		scene = {}
 	},
 	[1001] = {
@@ -943,12 +961,14 @@ pg.item_data_frame = {
 		601,
 		602,
 		603,
+		604,
 		605,
 		606,
 		607,
 		608,
 		610,
 		611,
+		612,
 		1001,
 		1002,
 		1003,

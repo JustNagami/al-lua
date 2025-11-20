@@ -404,7 +404,8 @@ pg.island_interaction = setmetatable({
 			5818,
 			5819,
 			5820,
-			5821
+			5821,
+			5822
 		},
 		[59] = {
 			5901,
@@ -488,6 +489,18 @@ pg.island_interaction = setmetatable({
 		[77] = {
 			7701,
 			7702
+		},
+		[78] = {
+			7801,
+			7802,
+			7803,
+			7804
+		},
+		[79] = {
+			7901,
+			7902,
+			7903,
+			7904
 		}
 	},
 	all = {
@@ -777,6 +790,7 @@ pg.island_interaction = setmetatable({
 		5819,
 		5820,
 		5821,
+		5822,
 		5901,
 		5902,
 		6001,
@@ -821,7 +835,15 @@ pg.island_interaction = setmetatable({
 		7501,
 		7601,
 		7701,
-		7702
+		7702,
+		7801,
+		7802,
+		7803,
+		7804,
+		7901,
+		7902,
+		7903,
+		7904
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -1215,7 +1237,7 @@ pg.base.island_interaction = {
 		groupId = 12,
 		icon = 16,
 		param = {
-			"IslandRoleDelegationPage",
+			"IslandMallDelegationPage",
 			901
 		},
 		show_condition = {
@@ -1531,7 +1553,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[1301] = {
-		text = "Sit.",
+		text = "Rest",
 		id = 1301,
 		only_self = 1,
 		type = 9,
@@ -2525,7 +2547,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[2502] = {
-		text = "Mary? Why are you here?",
+		text = "What are you doing here, Mary?",
 		id = 2502,
 		only_self = 0,
 		type = 21,
@@ -2540,7 +2562,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[2503] = {
-		text = "Is this the treasure?",
+		text = "Is this treasure?",
 		id = 2503,
 		only_self = 0,
 		type = 12,
@@ -2555,7 +2577,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[2504] = {
-		text = "Mary, I got something.",
+		text = "Mary, I got the thing.",
 		id = 2504,
 		only_self = 0,
 		type = 12,
@@ -2588,7 +2610,7 @@ pg.base.island_interaction = {
 		text = "Go to the harbor.",
 		id = 2602,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 26,
 		icon = 5,
 		param = "10020021",
@@ -3347,7 +3369,7 @@ pg.base.island_interaction = {
 		text = "Go to the harbor.",
 		id = 3201,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 32,
 		icon = 5,
 		param = "10020001",
@@ -3362,7 +3384,7 @@ pg.base.island_interaction = {
 		text = "Go to Windswept Plains.",
 		id = 3202,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 32,
 		icon = 5,
 		param = "10040024",
@@ -3377,7 +3399,7 @@ pg.base.island_interaction = {
 		text = "Go to Prosperous Plantation.",
 		id = 3203,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 32,
 		icon = 5,
 		param = "10050001",
@@ -3481,7 +3503,7 @@ pg.base.island_interaction = {
 		text = "Go to the harbor.",
 		id = 3701,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 37,
 		icon = 5,
 		param = "10020011",
@@ -3491,7 +3513,7 @@ pg.base.island_interaction = {
 		text = "Go to the harbor.",
 		id = 3801,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 38,
 		icon = 5,
 		param = "10020001",
@@ -3506,7 +3528,7 @@ pg.base.island_interaction = {
 		text = "Go to Morningdew Farm.",
 		id = 3802,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 38,
 		icon = 5,
 		param = "10010064",
@@ -3521,7 +3543,7 @@ pg.base.island_interaction = {
 		text = "Go to Prosperous Plantation.",
 		id = 3803,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 38,
 		icon = 5,
 		param = "10050001",
@@ -3593,7 +3615,7 @@ pg.base.island_interaction = {
 		}
 	},
 	[4001] = {
-		text = "Daily Resupply",
+		text = "Daily Supply",
 		id = 4001,
 		only_self = 0,
 		type = 13,
@@ -3681,7 +3703,7 @@ pg.base.island_interaction = {
 		text = "Go to Windswept Plains.",
 		id = 4301,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 43,
 		icon = 5,
 		param = "10040024",
@@ -3696,7 +3718,7 @@ pg.base.island_interaction = {
 		text = "Go to Morningdew Farm.",
 		id = 4302,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 43,
 		icon = 5,
 		param = "10010064",
@@ -3711,7 +3733,7 @@ pg.base.island_interaction = {
 		text = "Head to the commercial district.",
 		id = 4303,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 43,
 		icon = 5,
 		param = "10060001",
@@ -5147,6 +5169,21 @@ pg.base.island_interaction = {
 			}
 		}
 	},
+	[5822] = {
+		text = "Peary? Are you... cooking?",
+		id = 5822,
+		only_self = 0,
+		type = 1,
+		groupId = 58,
+		icon = 9,
+		param = "ISLANDSIDE01603",
+		show_condition = {
+			{
+				2,
+				50000001
+			}
+		}
+	},
 	[5901] = {
 		text = "What's the scam this time?",
 		id = 5901,
@@ -5820,7 +5857,7 @@ pg.base.island_interaction = {
 		text = "Go to the harbor.",
 		id = 7601,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 76,
 		icon = 5,
 		param = "10020001",
@@ -5830,7 +5867,7 @@ pg.base.island_interaction = {
 		text = "Go to Windswept Plains.",
 		id = 7701,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 77,
 		icon = 5,
 		param = "10040024",
@@ -5845,7 +5882,7 @@ pg.base.island_interaction = {
 		text = "Go to Morningdew Farm.",
 		id = 7702,
 		only_self = 0,
-		type = 7,
+		type = 24,
 		groupId = 77,
 		icon = 5,
 		param = "10010064",
@@ -5853,6 +5890,126 @@ pg.base.island_interaction = {
 			{
 				11,
 				5001
+			}
+		}
+	},
+	[7801] = {
+		text = "Talk",
+		id = 7801,
+		only_self = 0,
+		type = 1,
+		groupId = 78,
+		icon = 1,
+		param = "ISLANDTALK10131_1",
+		show_condition = {
+			{
+				4,
+				10002280
+			}
+		}
+	},
+	[7802] = {
+		text = "What are you doing here, Mary?",
+		id = 7802,
+		only_self = 0,
+		type = 21,
+		groupId = 78,
+		icon = 7,
+		param = "ISLANDPERFORMANCE10",
+		show_condition = {
+			{
+				2,
+				10002271
+			}
+		}
+	},
+	[7803] = {
+		text = "Is this treasure?",
+		id = 7803,
+		only_self = 0,
+		type = 12,
+		groupId = 78,
+		icon = 7,
+		param = "10002280",
+		show_condition = {
+			{
+				3,
+				10002280
+			}
+		}
+	},
+	[7804] = {
+		text = "Mary, I got the thing.",
+		id = 7804,
+		only_self = 0,
+		type = 12,
+		groupId = 78,
+		icon = 7,
+		param = "10002290",
+		show_condition = {
+			{
+				3,
+				10002290
+			}
+		}
+	},
+	[7901] = {
+		text = "Talk",
+		id = 7901,
+		only_self = 0,
+		type = 1,
+		groupId = 79,
+		icon = 1,
+		param = "ISLANDTALK10131_2",
+		show_condition = {
+			{
+				4,
+				10002280
+			}
+		}
+	},
+	[7902] = {
+		text = "What are you doing here, Mary?",
+		id = 7902,
+		only_self = 0,
+		type = 21,
+		groupId = 79,
+		icon = 7,
+		param = "ISLANDPERFORMANCE10",
+		show_condition = {
+			{
+				2,
+				10002271
+			}
+		}
+	},
+	[7903] = {
+		text = "Is this treasure?",
+		id = 7903,
+		only_self = 0,
+		type = 12,
+		groupId = 79,
+		icon = 7,
+		param = "10002280",
+		show_condition = {
+			{
+				3,
+				10002280
+			}
+		}
+	},
+	[7904] = {
+		text = "Mary, I got the thing.",
+		id = 7904,
+		only_self = 0,
+		type = 12,
+		groupId = 79,
+		icon = 7,
+		param = "10002290",
+		show_condition = {
+			{
+				3,
+				10002290
 			}
 		}
 	}

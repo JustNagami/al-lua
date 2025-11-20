@@ -17,14 +17,22 @@ function var_0_0.DoInit(arg_2_0, arg_2_1, arg_2_2)
 end
 
 function var_0_0.SetUIParent(arg_3_0, arg_3_1)
-	setParent(arg_3_1, arg_3_0:GetView().opContainer)
+	return arg_3_0:GetView().opContainer
 end
 
 function var_0_0.TryDisable(arg_4_0, arg_4_1)
+	if arg_4_0.exiting then
+		return
+	end
+
 	arg_4_0.enableCnt = arg_4_0.enableCnt - 1
 
 	if arg_4_0.enableCnt == 0 then
+		arg_4_0.exiting = true
+
 		arg_4_0:HideUI(arg_4_1, function()
+			arg_4_0.exiting = false
+
 			arg_4_0:OnDisable()
 		end)
 	end

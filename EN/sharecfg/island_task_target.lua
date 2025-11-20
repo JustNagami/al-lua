@@ -17,6 +17,7 @@ pg.island_task_target = setmetatable({
 		902,
 		903,
 		40005,
+		500000011,
 		50001001,
 		50001002,
 		50001003,
@@ -65,6 +66,36 @@ pg.island_task_target = setmetatable({
 		80010028,
 		80010029,
 		80010030,
+		80011001,
+		80011002,
+		80011003,
+		80011004,
+		80011005,
+		80011006,
+		80011007,
+		80011008,
+		80011009,
+		80011010,
+		80011011,
+		80011012,
+		80011013,
+		80011014,
+		80011015,
+		80011016,
+		80011017,
+		80011018,
+		80011019,
+		80011020,
+		80011021,
+		80011022,
+		80011023,
+		80011024,
+		80011025,
+		80011026,
+		80011027,
+		80011028,
+		80011029,
+		80011030,
 		100010001,
 		100010101,
 		100010201,
@@ -343,6 +374,7 @@ pg.base = pg.base or {}
 pg.base.island_task_target = {
 	[101] = {
 		tips = "10040022",
+		jump_ui = "",
 		name = "Talk to Akashi.",
 		type = 1,
 		id = 101,
@@ -353,6 +385,7 @@ pg.base.island_task_target = {
 	},
 	[201] = {
 		tips = "10040022",
+		jump_ui = "",
 		name = "Reach the destination.",
 		type = 2,
 		id = 201,
@@ -363,6 +396,7 @@ pg.base.island_task_target = {
 	},
 	[301] = {
 		tips = "order",
+		jump_ui = "",
 		name = "Complete Request 1.",
 		type = 3,
 		id = 301,
@@ -371,6 +405,7 @@ pg.base.island_task_target = {
 	},
 	[302] = {
 		tips = "order",
+		jump_ui = "",
 		name = "Complete Request 2.",
 		type = 3,
 		id = 302,
@@ -381,6 +416,7 @@ pg.base.island_task_target = {
 	},
 	[401] = {
 		tips = "",
+		jump_ui = "",
 		name = "Retrieve an item.",
 		type = 4,
 		id = 401,
@@ -391,6 +427,7 @@ pg.base.island_task_target = {
 	},
 	[501] = {
 		tips = "",
+		jump_ui = "",
 		name = "Obtain any item.",
 		type = 5,
 		id = 501,
@@ -399,6 +436,7 @@ pg.base.island_task_target = {
 	},
 	[502] = {
 		tips = "",
+		jump_ui = "",
 		name = "Obtain any item.",
 		type = 5,
 		id = 502,
@@ -409,6 +447,7 @@ pg.base.island_task_target = {
 	},
 	[601] = {
 		tips = "",
+		jump_ui = "",
 		name = "Make any item manually using a recipe.",
 		type = 6,
 		id = 601,
@@ -417,6 +456,7 @@ pg.base.island_task_target = {
 	},
 	[602] = {
 		tips = "",
+		jump_ui = "",
 		name = "Make any item manually using a recipe.",
 		type = 6,
 		id = 602,
@@ -427,6 +467,7 @@ pg.base.island_task_target = {
 	},
 	[701] = {
 		tips = "",
+		jump_ui = "",
 		name = "Have an assigned character make any recipe.",
 		type = 7,
 		id = 701,
@@ -435,6 +476,7 @@ pg.base.island_task_target = {
 	},
 	[702] = {
 		tips = "",
+		jump_ui = "",
 		name = "Have an assigned character make a designated recipe.",
 		type = 7,
 		id = 702,
@@ -445,6 +487,7 @@ pg.base.island_task_target = {
 	},
 	[901] = {
 		tips = "",
+		jump_ui = "",
 		name = "Requires a higher development level.",
 		type = 9,
 		id = 901,
@@ -453,6 +496,7 @@ pg.base.island_task_target = {
 	},
 	[902] = {
 		tips = "",
+		jump_ui = "",
 		name = "Requires a higher development level.",
 		type = 9,
 		id = 902,
@@ -461,6 +505,7 @@ pg.base.island_task_target = {
 	},
 	[903] = {
 		tips = "",
+		jump_ui = "",
 		name = "Requires a higher development level.",
 		type = 9,
 		id = 903,
@@ -469,6 +514,7 @@ pg.base.island_task_target = {
 	},
 	[40005] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debt Repayment",
 		type = 5,
 		id = 40005,
@@ -477,101 +523,99 @@ pg.base.island_task_target = {
 			1
 		}
 	},
+	[500000011] = {
+		tips = "10020025",
+		jump_ui = "",
+		name = "Go see Peary.",
+		type = 1,
+		id = 500000011,
+		target_num = 1,
+		target_param = {
+			5822
+		}
+	},
 	[50001001] = {
 		tips = "",
+		jump_ui = "",
 		name = "Collect autumn gatherables",
-		type = 5,
+		type = 40,
 		id = 50001001,
 		target_num = 8,
 		target_param = {
-			4001,
-			4002,
-			4003,
-			4004
+			990003
 		}
 	},
 	[50001002] = {
 		tips = "",
+		jump_ui = "",
 		name = "Collect autumn gatherables",
-		type = 5,
+		type = 40,
 		id = 50001002,
 		target_num = 24,
 		target_param = {
-			4001,
-			4002,
-			4003,
-			4004
+			990003
 		}
 	},
 	[50001003] = {
 		tips = "",
+		jump_ui = "",
 		name = "Collect autumn gatherables",
-		type = 5,
+		type = 40,
 		id = 50001003,
 		target_num = 48,
 		target_param = {
-			4001,
-			4002,
-			4003,
-			4004
+			990003
 		}
 	},
 	[50001004] = {
 		tips = "",
+		jump_ui = "",
 		name = "Collect autumn gatherables",
-		type = 5,
+		type = 40,
 		id = 50001004,
 		target_num = 96,
 		target_param = {
-			4001,
-			4002,
-			4003,
-			4004
+			990003
 		}
 	},
 	[50001005] = {
 		tips = "",
+		jump_ui = "",
 		name = "Collect autumn gatherables",
-		type = 5,
+		type = 40,
 		id = 50001005,
 		target_num = 120,
 		target_param = {
-			4001,
-			4002,
-			4003,
-			4004
+			990003
 		}
 	},
 	[50001006] = {
 		tips = "",
+		jump_ui = "",
 		name = "Collect autumn gatherables",
-		type = 5,
+		type = 40,
 		id = 50001006,
 		target_num = 160,
 		target_param = {
-			4001,
-			4002,
-			4003,
-			4004
+			990003
 		}
 	},
 	[50001007] = {
 		tips = "",
+		jump_ui = "",
 		name = "Collect autumn gatherables",
-		type = 5,
+		type = 40,
 		id = 50001007,
 		target_num = 240,
 		target_param = {
-			4001,
-			4002,
-			4003,
-			4004
+			990003
 		}
 	},
 	[50002001] = {
 		tips = "",
+		jump_ui = "",
 		name = "Make autumn specialties.",
-		type = 5,
+		type = 26,
 		id = 50002001,
 		target_num = 40,
 		target_param = {
@@ -587,8 +631,9 @@ pg.base.island_task_target = {
 	},
 	[50002002] = {
 		tips = "",
+		jump_ui = "",
 		name = "Make autumn specialties.",
-		type = 5,
+		type = 26,
 		id = 50002002,
 		target_num = 80,
 		target_param = {
@@ -604,8 +649,9 @@ pg.base.island_task_target = {
 	},
 	[50002003] = {
 		tips = "",
+		jump_ui = "",
 		name = "Make autumn specialties.",
-		type = 5,
+		type = 26,
 		id = 50002003,
 		target_num = 100,
 		target_param = {
@@ -621,8 +667,9 @@ pg.base.island_task_target = {
 	},
 	[50002004] = {
 		tips = "",
+		jump_ui = "",
 		name = "Make autumn specialties.",
-		type = 5,
+		type = 26,
 		id = 50002004,
 		target_num = 200,
 		target_param = {
@@ -638,8 +685,9 @@ pg.base.island_task_target = {
 	},
 	[50002005] = {
 		tips = "",
+		jump_ui = "",
 		name = "Make autumn specialties.",
-		type = 5,
+		type = 26,
 		id = 50002005,
 		target_num = 400,
 		target_param = {
@@ -655,8 +703,9 @@ pg.base.island_task_target = {
 	},
 	[50002006] = {
 		tips = "",
+		jump_ui = "",
 		name = "Make autumn specialties.",
-		type = 5,
+		type = 26,
 		id = 50002006,
 		target_num = 600,
 		target_param = {
@@ -672,8 +721,9 @@ pg.base.island_task_target = {
 	},
 	[50002007] = {
 		tips = "",
+		jump_ui = "",
 		name = "Make autumn specialties.",
-		type = 5,
+		type = 26,
 		id = 50002007,
 		target_num = 800,
 		target_param = {
@@ -689,6 +739,7 @@ pg.base.island_task_target = {
 	},
 	[50003001] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete autumn requests",
 		type = 39,
 		id = 50003001,
@@ -699,6 +750,7 @@ pg.base.island_task_target = {
 	},
 	[50003002] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete autumn requests",
 		type = 39,
 		id = 50003002,
@@ -709,6 +761,7 @@ pg.base.island_task_target = {
 	},
 	[50003003] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete autumn requests",
 		type = 39,
 		id = 50003003,
@@ -719,6 +772,7 @@ pg.base.island_task_target = {
 	},
 	[50003004] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete autumn requests",
 		type = 39,
 		id = 50003004,
@@ -729,6 +783,7 @@ pg.base.island_task_target = {
 	},
 	[80010001] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 500 Wheat.",
 		type = 4,
 		id = 80010001,
@@ -739,6 +794,7 @@ pg.base.island_task_target = {
 	},
 	[80010002] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 500 Grass.",
 		type = 4,
 		id = 80010002,
@@ -749,6 +805,7 @@ pg.base.island_task_target = {
 	},
 	[80010003] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 500 Soy Beans.",
 		type = 4,
 		id = 80010003,
@@ -759,6 +816,7 @@ pg.base.island_task_target = {
 	},
 	[80010004] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 500 Rice.",
 		type = 4,
 		id = 80010004,
@@ -769,6 +827,7 @@ pg.base.island_task_target = {
 	},
 	[80010005] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 500 Corn.",
 		type = 4,
 		id = 80010005,
@@ -779,6 +838,7 @@ pg.base.island_task_target = {
 	},
 	[80010006] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 250 Carrots.",
 		type = 4,
 		id = 80010006,
@@ -789,6 +849,7 @@ pg.base.island_task_target = {
 	},
 	[80010007] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 250 Milk.",
 		type = 4,
 		id = 80010007,
@@ -799,6 +860,7 @@ pg.base.island_task_target = {
 	},
 	[80010008] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 250 Apple Pies.",
 		type = 4,
 		id = 80010008,
@@ -809,6 +871,7 @@ pg.base.island_task_target = {
 	},
 	[80010009] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 250 Iced Coffee.",
 		type = 4,
 		id = 80010009,
@@ -819,6 +882,7 @@ pg.base.island_task_target = {
 	},
 	[80010010] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 250 Coal-Roasted Skewers.",
 		type = 4,
 		id = 80010010,
@@ -829,6 +893,7 @@ pg.base.island_task_target = {
 	},
 	[80010011] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 100 Onions.",
 		type = 4,
 		id = 80010011,
@@ -839,6 +904,7 @@ pg.base.island_task_target = {
 	},
 	[80010012] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 100 Vegetable Salads.",
 		type = 4,
 		id = 80010012,
@@ -849,6 +915,7 @@ pg.base.island_task_target = {
 	},
 	[80010013] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 100 Tofu with Minced Meat.",
 		type = 4,
 		id = 80010013,
@@ -859,6 +926,7 @@ pg.base.island_task_target = {
 	},
 	[80010014] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 100 Lattes.",
 		type = 4,
 		id = 80010014,
@@ -869,6 +937,7 @@ pg.base.island_task_target = {
 	},
 	[80010015] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 100 Stir-Fried Chicken.",
 		type = 4,
 		id = 80010015,
@@ -879,6 +948,7 @@ pg.base.island_task_target = {
 	},
 	[80010016] = {
 		tips = "",
+		jump_ui = "",
 		name = "Deliver 50 Steak Bowls.",
 		type = 4,
 		id = 80010016,
@@ -889,6 +959,7 @@ pg.base.island_task_target = {
 	},
 	[80010017] = {
 		tips = "",
+		jump_ui = "",
 		name = "Accept 1 Daily Supply.",
 		type = 13,
 		id = 80010017,
@@ -897,7 +968,8 @@ pg.base.island_task_target = {
 	},
 	[80010018] = {
 		tips = "",
-		name = "Accept 3 Daily Supplies.",
+		jump_ui = "",
+		name = "Accept 5 Daily Supplies.",
 		type = 13,
 		id = 80010018,
 		target_num = 5,
@@ -905,7 +977,8 @@ pg.base.island_task_target = {
 	},
 	[80010019] = {
 		tips = "",
-		name = "Accept 5 Daily Supplies.",
+		jump_ui = "",
+		name = "Accept 10 Daily Supplies.",
 		type = 13,
 		id = 80010019,
 		target_num = 10,
@@ -913,7 +986,8 @@ pg.base.island_task_target = {
 	},
 	[80010020] = {
 		tips = "",
-		name = "Accept 10 Daily Supplies.",
+		jump_ui = "",
+		name = "Accept 20 Daily Supplies.",
 		type = 13,
 		id = 80010020,
 		target_num = 20,
@@ -921,7 +995,8 @@ pg.base.island_task_target = {
 	},
 	[80010021] = {
 		tips = "",
-		name = "Accept 15 Daily Supplies.",
+		jump_ui = "",
+		name = "Accept 30 Daily Supplies.",
 		type = 13,
 		id = 80010021,
 		target_num = 30,
@@ -929,7 +1004,8 @@ pg.base.island_task_target = {
 	},
 	[80010022] = {
 		tips = "",
-		name = "Accept 20 Daily Supplies.",
+		jump_ui = "",
+		name = "Accept 45 Daily Supplies.",
 		type = 13,
 		id = 80010022,
 		target_num = 45,
@@ -937,7 +1013,8 @@ pg.base.island_task_target = {
 	},
 	[80010023] = {
 		tips = "",
-		name = "Accept 25 Daily Supplies.",
+		jump_ui = "",
+		name = "Accept 60 Daily Supplies.",
 		type = 13,
 		id = 80010023,
 		target_num = 60,
@@ -945,6 +1022,7 @@ pg.base.island_task_target = {
 	},
 	[80010024] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete 10 Island Requests.",
 		type = 3,
 		id = 80010024,
@@ -953,6 +1031,7 @@ pg.base.island_task_target = {
 	},
 	[80010025] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete 30 Island Requests.",
 		type = 3,
 		id = 80010025,
@@ -961,6 +1040,7 @@ pg.base.island_task_target = {
 	},
 	[80010026] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete 50 Island Requests.",
 		type = 3,
 		id = 80010026,
@@ -969,6 +1049,7 @@ pg.base.island_task_target = {
 	},
 	[80010027] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete 100 Island Requests.",
 		type = 3,
 		id = 80010027,
@@ -977,6 +1058,7 @@ pg.base.island_task_target = {
 	},
 	[80010028] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete 150 Island Requests.",
 		type = 3,
 		id = 80010028,
@@ -985,6 +1067,7 @@ pg.base.island_task_target = {
 	},
 	[80010029] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete 200 Island Requests.",
 		type = 3,
 		id = 80010029,
@@ -993,14 +1076,318 @@ pg.base.island_task_target = {
 	},
 	[80010030] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete 300 Island Requests.",
 		type = 3,
 		id = 80010030,
 		target_num = 300,
 		target_param = ""
 	},
+	[80011001] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 500 Wheat.",
+		type = 4,
+		id = 80011001,
+		target_num = 500,
+		target_param = {
+			2000
+		}
+	},
+	[80011002] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 500 Grass.",
+		type = 4,
+		id = 80011002,
+		target_num = 500,
+		target_param = {
+			2008
+		}
+	},
+	[80011003] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 500 Soy Beans.",
+		type = 4,
+		id = 80011003,
+		target_num = 500,
+		target_param = {
+			2006
+		}
+	},
+	[80011004] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 500 Rice.",
+		type = 4,
+		id = 80011004,
+		target_num = 500,
+		target_param = {
+			2002
+		}
+	},
+	[80011005] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 500 Corn.",
+		type = 4,
+		id = 80011005,
+		target_num = 500,
+		target_param = {
+			2001
+		}
+	},
+	[80011006] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 250 Carrots.",
+		type = 4,
+		id = 80011006,
+		target_num = 250,
+		target_param = {
+			2004
+		}
+	},
+	[80011007] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 250 Milk.",
+		type = 4,
+		id = 80011007,
+		target_num = 250,
+		target_param = {
+			2603
+		}
+	},
+	[80011008] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 250 Apple Juice.",
+		type = 4,
+		id = 80011008,
+		target_num = 250,
+		target_param = {
+			3017
+		}
+	},
+	[80011009] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 250 Iced Coffee.",
+		type = 4,
+		id = 80011009,
+		target_num = 250,
+		target_param = {
+			3005
+		}
+	},
+	[80011010] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 250 Coal-Roasted Skewers.",
+		type = 4,
+		id = 80011010,
+		target_num = 250,
+		target_param = {
+			3029
+		}
+	},
+	[80011011] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 100 Onions.",
+		type = 4,
+		id = 80011011,
+		target_num = 100,
+		target_param = {
+			2007
+		}
+	},
+	[80011012] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 100 Vegetable Salads.",
+		type = 4,
+		id = 80011012,
+		target_num = 100,
+		target_param = {
+			3015
+		}
+	},
+	[80011013] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 100 Rolled Carrot Omelettes.",
+		type = 4,
+		id = 80011013,
+		target_num = 100,
+		target_param = {
+			3033
+		}
+	},
+	[80011014] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 100 Lattes.",
+		type = 4,
+		id = 80011014,
+		target_num = 100,
+		target_param = {
+			3007
+		}
+	},
+	[80011015] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 100 Stir-Fried Chicken.",
+		type = 4,
+		id = 80011015,
+		target_num = 100,
+		target_param = {
+			3032
+		}
+	},
+	[80011016] = {
+		tips = "",
+		jump_ui = "",
+		name = "Deliver 50 Steak Bowls.",
+		type = 4,
+		id = 80011016,
+		target_num = 50,
+		target_param = {
+			3034
+		}
+	},
+	[80011017] = {
+		tips = "",
+		jump_ui = "",
+		name = "Accept 1 Daily Supply.",
+		type = 13,
+		id = 80011017,
+		target_num = 1,
+		target_param = ""
+	},
+	[80011018] = {
+		tips = "",
+		jump_ui = "",
+		name = "Accept 5 Daily Supplies.",
+		type = 13,
+		id = 80011018,
+		target_num = 5,
+		target_param = ""
+	},
+	[80011019] = {
+		tips = "",
+		jump_ui = "",
+		name = "Accept 10 Daily Supplies.",
+		type = 13,
+		id = 80011019,
+		target_num = 10,
+		target_param = ""
+	},
+	[80011020] = {
+		tips = "",
+		jump_ui = "",
+		name = "Accept 20 Daily Supplies.",
+		type = 13,
+		id = 80011020,
+		target_num = 20,
+		target_param = ""
+	},
+	[80011021] = {
+		tips = "",
+		jump_ui = "",
+		name = "Accept 30 Daily Supplies.",
+		type = 13,
+		id = 80011021,
+		target_num = 30,
+		target_param = ""
+	},
+	[80011022] = {
+		tips = "",
+		jump_ui = "",
+		name = "Accept 45 Daily Supplies.",
+		type = 13,
+		id = 80011022,
+		target_num = 45,
+		target_param = ""
+	},
+	[80011023] = {
+		tips = "",
+		jump_ui = "",
+		name = "Accept 60 Daily Supplies.",
+		type = 13,
+		id = 80011023,
+		target_num = 60,
+		target_param = ""
+	},
+	[80011024] = {
+		tips = "",
+		jump_ui = "",
+		name = "Complete 10 Island Requests.",
+		type = 3,
+		id = 80011024,
+		target_num = 10,
+		target_param = ""
+	},
+	[80011025] = {
+		tips = "",
+		jump_ui = "",
+		name = "Complete 30 Island Requests.",
+		type = 3,
+		id = 80011025,
+		target_num = 30,
+		target_param = ""
+	},
+	[80011026] = {
+		tips = "",
+		jump_ui = "",
+		name = "Complete 50 Island Requests.",
+		type = 3,
+		id = 80011026,
+		target_num = 50,
+		target_param = ""
+	},
+	[80011027] = {
+		tips = "",
+		jump_ui = "",
+		name = "Complete 100 Island Requests.",
+		type = 3,
+		id = 80011027,
+		target_num = 100,
+		target_param = ""
+	},
+	[80011028] = {
+		tips = "",
+		jump_ui = "",
+		name = "Complete 150 Island Requests.",
+		type = 3,
+		id = 80011028,
+		target_num = 150,
+		target_param = ""
+	},
+	[80011029] = {
+		tips = "",
+		jump_ui = "",
+		name = "Complete 200 Island Requests.",
+		type = 3,
+		id = 80011029,
+		target_num = 200,
+		target_param = ""
+	},
+	[80011030] = {
+		tips = "",
+		jump_ui = "",
+		name = "Complete 300 Island Requests.",
+		type = 3,
+		id = 80011030,
+		target_num = 300,
+		target_param = ""
+	},
 	[100010001] = {
 		tips = "10040044",
+		jump_ui = "",
 		name = "Check things out.",
 		type = 2,
 		id = 100010001,
@@ -1011,6 +1398,7 @@ pg.base.island_task_target = {
 	},
 	[100010101] = {
 		tips = "10040002",
+		jump_ui = "",
 		name = "Search for O'Brien.",
 		type = 34,
 		id = 100010101,
@@ -1021,6 +1409,7 @@ pg.base.island_task_target = {
 	},
 	[100010201] = {
 		tips = "10040022",
+		jump_ui = "",
 		name = "Search for John.",
 		type = 2,
 		id = 100010201,
@@ -1031,6 +1420,7 @@ pg.base.island_task_target = {
 	},
 	[100010301] = {
 		tips = "10040035",
+		jump_ui = "",
 		name = "Gather Coal.",
 		type = 4,
 		id = 100010301,
@@ -1040,7 +1430,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[100010401] = {
-		tips = "10040040",
+		tips = "10040017",
+		jump_ui = "",
 		name = "Gather Raw Timber.",
 		type = 4,
 		id = 100010401,
@@ -1051,6 +1442,7 @@ pg.base.island_task_target = {
 	},
 	[100010501] = {
 		tips = "10040066",
+		jump_ui = "",
 		name = "Repair the damaged bus stop.",
 		type = 34,
 		id = 100010501,
@@ -1061,6 +1453,7 @@ pg.base.island_task_target = {
 	},
 	[100010601] = {
 		tips = "10040032",
+		jump_ui = "",
 		name = "Talk with John.",
 		type = 2,
 		id = 100010601,
@@ -1071,6 +1464,7 @@ pg.base.island_task_target = {
 	},
 	[100010701] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Search for Patrick.",
 		type = 1,
 		id = 100010701,
@@ -1080,7 +1474,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[100010711] = {
-		tips = "order",
+		tips = "10020009",
+		jump_ui = "",
 		name = "Ask for Patrick's help.",
 		type = 3,
 		id = 100010711,
@@ -1091,6 +1486,7 @@ pg.base.island_task_target = {
 	},
 	[100010801] = {
 		tips = "10020006",
+		jump_ui = "",
 		name = "Find Akashi.",
 		type = 2,
 		id = 100010801,
@@ -1101,6 +1497,7 @@ pg.base.island_task_target = {
 	},
 	[100010901] = {
 		tips = "10020007",
+		jump_ui = "",
 		name = "Enter Café Manjuu.",
 		type = 2,
 		id = 100010901,
@@ -1111,6 +1508,7 @@ pg.base.island_task_target = {
 	},
 	[100011001] = {
 		tips = "10100007",
+		jump_ui = "",
 		name = "Evade the security system as you pursue Akashi.",
 		type = 2,
 		id = 100011001,
@@ -1121,6 +1519,7 @@ pg.base.island_task_target = {
 	},
 	[100011101] = {
 		tips = "10090011",
+		jump_ui = "",
 		name = "Search the hidden passage.",
 		type = 1,
 		id = 100011101,
@@ -1131,6 +1530,7 @@ pg.base.island_task_target = {
 	},
 	[100011201] = {
 		tips = "10070038",
+		jump_ui = "",
 		name = "Catch Akashi.",
 		type = 1,
 		id = 100011201,
@@ -1141,6 +1541,7 @@ pg.base.island_task_target = {
 	},
 	[100011301] = {
 		tips = "10070027",
+		jump_ui = "",
 		name = "Take control from Akashi.",
 		type = 1,
 		id = 100011301,
@@ -1151,6 +1552,7 @@ pg.base.island_task_target = {
 	},
 	[100011401] = {
 		tips = "10070004",
+		jump_ui = "",
 		name = "Develop an Island Authorization Permit.",
 		type = 2,
 		id = 100011401,
@@ -1161,6 +1563,7 @@ pg.base.island_task_target = {
 	},
 	[100011411] = {
 		tips = "10070004",
+		jump_ui = "",
 		name = "Develop an Island Authorization Permit.",
 		type = 8,
 		id = 100011411,
@@ -1171,6 +1574,7 @@ pg.base.island_task_target = {
 	},
 	[100011501] = {
 		tips = "10070003",
+		jump_ui = "",
 		name = "Search for Akashi.",
 		type = 2,
 		id = 100011501,
@@ -1181,6 +1585,7 @@ pg.base.island_task_target = {
 	},
 	[100011511] = {
 		tips = "10070003",
+		jump_ui = "",
 		name = "Use the Island Authorization Permit.",
 		type = 11,
 		id = 100011511,
@@ -1191,6 +1596,7 @@ pg.base.island_task_target = {
 	},
 	[100011601] = {
 		tips = "10020012",
+		jump_ui = "",
 		name = "Welcome Saratoga.",
 		type = 1,
 		id = 100011601,
@@ -1201,6 +1607,7 @@ pg.base.island_task_target = {
 	},
 	[100011701] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete Daily Plan.",
 		type = 23,
 		id = 100011701,
@@ -1211,6 +1618,7 @@ pg.base.island_task_target = {
 	},
 	[100011801] = {
 		tips = "",
+		jump_ui = "",
 		name = "Raise the Island Development Level.",
 		type = 9,
 		id = 100011801,
@@ -1219,6 +1627,7 @@ pg.base.island_task_target = {
 	},
 	[100020101] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Ask Patrick for help.",
 		type = 1,
 		id = 100020101,
@@ -1229,6 +1638,7 @@ pg.base.island_task_target = {
 	},
 	[100020201] = {
 		tips = "10020035",
+		jump_ui = "",
 		name = "Go find Stephen.",
 		type = 2,
 		id = 100020201,
@@ -1239,6 +1649,7 @@ pg.base.island_task_target = {
 	},
 	[100020301] = {
 		tips = "10020031",
+		jump_ui = "",
 		name = "Track Stephen.",
 		type = 2,
 		id = 100020301,
@@ -1249,6 +1660,7 @@ pg.base.island_task_target = {
 	},
 	[100020311] = {
 		tips = "10020032",
+		jump_ui = "",
 		name = "Track Stephen.",
 		type = 2,
 		id = 100020311,
@@ -1259,6 +1671,7 @@ pg.base.island_task_target = {
 	},
 	[100020321] = {
 		tips = "10020033",
+		jump_ui = "",
 		name = "Track Stephen.",
 		type = 2,
 		id = 100020321,
@@ -1269,6 +1682,7 @@ pg.base.island_task_target = {
 	},
 	[100020401] = {
 		tips = "10020034",
+		jump_ui = "",
 		name = "Ask Stephen for help.",
 		type = 1,
 		id = 100020401,
@@ -1279,6 +1693,7 @@ pg.base.island_task_target = {
 	},
 	[100020501] = {
 		tips = "10020004",
+		jump_ui = "",
 		name = "Help Stephen load cargo.",
 		type = 1,
 		id = 100020501,
@@ -1289,6 +1704,7 @@ pg.base.island_task_target = {
 	},
 	[100020511] = {
 		tips = "",
+		jump_ui = "",
 		name = "Raise the Island Development Level.",
 		type = 9,
 		id = 100020511,
@@ -1297,6 +1713,7 @@ pg.base.island_task_target = {
 	},
 	[100020601] = {
 		tips = "10020005",
+		jump_ui = "",
 		name = "Go to Morningdew Farm.",
 		type = 2,
 		id = 100020601,
@@ -1307,6 +1724,7 @@ pg.base.island_task_target = {
 	},
 	[100020701] = {
 		tips = "10010068",
+		jump_ui = "",
 		name = "Find Homeric.",
 		type = 1,
 		id = 100020701,
@@ -1316,7 +1734,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[100020801] = {
-		tips = "shop",
+		tips = "10010040",
+		jump_ui = "",
 		name = "Buy wheat seeds at the Shop.",
 		type = 5,
 		id = 100020801,
@@ -1327,6 +1746,7 @@ pg.base.island_task_target = {
 	},
 	[100020811] = {
 		tips = "10010004",
+		jump_ui = "",
 		name = "Plant the wheat seeds.",
 		type = 14,
 		id = 100020811,
@@ -1337,6 +1757,7 @@ pg.base.island_task_target = {
 	},
 	[100020901] = {
 		tips = "10010003",
+		jump_ui = "",
 		name = "Search for Amerigo.",
 		type = 1,
 		id = 100020901,
@@ -1347,6 +1768,7 @@ pg.base.island_task_target = {
 	},
 	[100021001] = {
 		tips = "10010046",
+		jump_ui = "",
 		name = "Bring back the lost bird.",
 		type = 1,
 		id = 100021001,
@@ -1357,6 +1779,7 @@ pg.base.island_task_target = {
 	},
 	[100021101] = {
 		tips = "10010041",
+		jump_ui = "",
 		name = "Head to the mill.",
 		type = 1,
 		id = 100021101,
@@ -1367,6 +1790,7 @@ pg.base.island_task_target = {
 	},
 	[100021201] = {
 		tips = "10010041",
+		jump_ui = "",
 		name = "Make Clucky Clucky Bird Feed.",
 		type = 5,
 		id = 100021201,
@@ -1377,6 +1801,7 @@ pg.base.island_task_target = {
 	},
 	[100021301] = {
 		tips = "10010003",
+		jump_ui = "",
 		name = "Check on the ranch.",
 		type = 1,
 		id = 100021301,
@@ -1387,6 +1812,7 @@ pg.base.island_task_target = {
 	},
 	[100021311] = {
 		tips = "10010003",
+		jump_ui = "",
 		name = "Talk to Homeric.",
 		type = 1,
 		id = 100021311,
@@ -1397,6 +1823,7 @@ pg.base.island_task_target = {
 	},
 	[100021401] = {
 		tips = "10010040",
+		jump_ui = "",
 		name = "Find Homeric.",
 		type = 1,
 		id = 100021401,
@@ -1407,6 +1834,7 @@ pg.base.island_task_target = {
 	},
 	[100021411] = {
 		tips = "",
+		jump_ui = "",
 		name = "Raise the Island Development Level.",
 		type = 9,
 		id = 100021411,
@@ -1415,6 +1843,7 @@ pg.base.island_task_target = {
 	},
 	[100021501] = {
 		tips = "10090001",
+		jump_ui = "",
 		name = "Go to Café Manjuu.",
 		type = 2,
 		id = 100021501,
@@ -1425,6 +1854,7 @@ pg.base.island_task_target = {
 	},
 	[100021601] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Search for Bremen.",
 		type = 1,
 		id = 100021601,
@@ -1435,6 +1865,7 @@ pg.base.island_task_target = {
 	},
 	[100021701] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Make omelettes.",
 		type = 5,
 		id = 100021701,
@@ -1445,6 +1876,7 @@ pg.base.island_task_target = {
 	},
 	[100021801] = {
 		tips = "10020004",
+		jump_ui = "",
 		name = "Bring the omelette to Stephen.",
 		type = 4,
 		id = 100021801,
@@ -1455,6 +1887,7 @@ pg.base.island_task_target = {
 	},
 	[100021901] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Talk to Bremen about Stephen's proposal.",
 		type = 1,
 		id = 100021901,
@@ -1465,6 +1898,7 @@ pg.base.island_task_target = {
 	},
 	[100022001] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Buy omelettes and add them to the lineup.",
 		type = 27,
 		id = 100022001,
@@ -1475,6 +1909,7 @@ pg.base.island_task_target = {
 	},
 	[100022101] = {
 		tips = "10090019",
+		jump_ui = "",
 		name = "Talk to Akashi.",
 		type = 1,
 		id = 100022101,
@@ -1485,6 +1920,7 @@ pg.base.island_task_target = {
 	},
 	[100022111] = {
 		tips = "",
+		jump_ui = "",
 		name = "Raise the Island Development Level.",
 		type = 9,
 		id = 100022111,
@@ -1493,6 +1929,7 @@ pg.base.island_task_target = {
 	},
 	[100022201] = {
 		tips = "10090020",
+		jump_ui = "",
 		name = "Search for Akashi.",
 		type = 1,
 		id = 100022201,
@@ -1503,6 +1940,7 @@ pg.base.island_task_target = {
 	},
 	[100022301] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris at the long levee",
 		type = 10,
 		id = 100022301,
@@ -1513,6 +1951,7 @@ pg.base.island_task_target = {
 	},
 	[100022302] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris at the fishing hole",
 		type = 10,
 		id = 100022302,
@@ -1523,6 +1962,7 @@ pg.base.island_task_target = {
 	},
 	[100022303] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris at Greatship Pier",
 		type = 10,
 		id = 100022303,
@@ -1533,6 +1973,7 @@ pg.base.island_task_target = {
 	},
 	[100022401] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris at the Verdant Woods",
 		type = 10,
 		id = 100022401,
@@ -1543,6 +1984,7 @@ pg.base.island_task_target = {
 	},
 	[100022402] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris at Rockheap Mine",
 		type = 10,
 		id = 100022402,
@@ -1553,6 +1995,7 @@ pg.base.island_task_target = {
 	},
 	[100022403] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris at the riverside cabin",
 		type = 10,
 		id = 100022403,
@@ -1563,6 +2006,7 @@ pg.base.island_task_target = {
 	},
 	[100022404] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris behind Windswept Plains Station",
 		type = 10,
 		id = 100022404,
@@ -1573,6 +2017,7 @@ pg.base.island_task_target = {
 	},
 	[100022501] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris at Laidback Ranch",
 		type = 10,
 		id = 100022501,
@@ -1583,6 +2028,7 @@ pg.base.island_task_target = {
 	},
 	[100022502] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris at the mill",
 		type = 10,
 		id = 100022502,
@@ -1593,6 +2039,7 @@ pg.base.island_task_target = {
 	},
 	[100022503] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris outside of Laidback Ranch",
 		type = 10,
 		id = 100022503,
@@ -1603,6 +2050,7 @@ pg.base.island_task_target = {
 	},
 	[100022504] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris at Faircrop Fields",
 		type = 10,
 		id = 100022504,
@@ -1613,6 +2061,7 @@ pg.base.island_task_target = {
 	},
 	[100022505] = {
 		tips = "",
+		jump_ui = "",
 		name = "Debris outside the ranch gate",
 		type = 10,
 		id = 100022505,
@@ -1623,6 +2072,7 @@ pg.base.island_task_target = {
 	},
 	[100022511] = {
 		tips = "10090020",
+		jump_ui = "",
 		name = "Talk to Akashi.",
 		type = 1,
 		id = 100022511,
@@ -1633,6 +2083,7 @@ pg.base.island_task_target = {
 	},
 	[100022601] = {
 		tips = "10020016",
+		jump_ui = "",
 		name = "Find Akashi.",
 		type = 1,
 		id = 100022601,
@@ -1643,6 +2094,7 @@ pg.base.island_task_target = {
 	},
 	[100022701] = {
 		tips = "10030001",
+		jump_ui = "",
 		name = "Go to Treasure Island.",
 		type = 2,
 		id = 100022701,
@@ -1653,26 +2105,29 @@ pg.base.island_task_target = {
 	},
 	[100022711] = {
 		tips = "10030003",
+		jump_ui = "",
 		name = "Go and see Mary.",
 		type = 1,
 		id = 100022711,
 		target_num = 1,
 		target_param = {
-			2502
+			7802
 		}
 	},
 	[100022801] = {
-		tips = "10030009",
+		tips = "",
+		jump_ui = "",
 		name = "Hurry after Mary.",
 		type = 2,
 		id = 100022801,
 		target_num = 1,
 		target_param = {
-			10030009
+			10030006
 		}
 	},
 	[100022901] = {
-		tips = "",
+		tips = "10030009",
+		jump_ui = "",
 		name = "Get your daily supplies.",
 		type = 13,
 		id = 100022901,
@@ -1681,6 +2136,7 @@ pg.base.island_task_target = {
 	},
 	[100023001] = {
 		tips = "10030008",
+		jump_ui = "",
 		name = "Search for Elizabeth.",
 		type = 1,
 		id = 100023001,
@@ -1691,6 +2147,7 @@ pg.base.island_task_target = {
 	},
 	[100023101] = {
 		tips = "10030008",
+		jump_ui = "",
 		name = "Place the Beary Nice Bus Stop.",
 		type = 1,
 		id = 100023101,
@@ -1700,7 +2157,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[100023201] = {
-		tips = "10030008",
+		tips = "",
+		jump_ui = "19",
 		name = "Take a picture of Get-Together Island.",
 		type = 43,
 		id = 100023201,
@@ -1710,7 +2168,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[100023301] = {
-		tips = "10030008",
+		tips = "",
+		jump_ui = "19",
 		name = "Take a picture of an animal on Get-Together Island.",
 		type = 43,
 		id = 100023301,
@@ -1720,7 +2179,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[100023401] = {
-		tips = "",
+		tips = "10040022",
+		jump_ui = "",
 		name = "Gather Coal.",
 		type = 4,
 		id = 100023401,
@@ -1730,7 +2190,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[100023402] = {
-		tips = "",
+		tips = "10040002",
+		jump_ui = "",
 		name = "Gather Raw Timber.",
 		type = 4,
 		id = 100023402,
@@ -1741,6 +2202,7 @@ pg.base.island_task_target = {
 	},
 	[100023501] = {
 		tips = "10030005",
+		jump_ui = "",
 		name = "Find the mysterious expert.",
 		type = 1,
 		id = 100023501,
@@ -1751,6 +2213,7 @@ pg.base.island_task_target = {
 	},
 	[100023601] = {
 		tips = "10030007",
+		jump_ui = "",
 		name = "Board the aircraft.",
 		type = 1,
 		id = 100023601,
@@ -1761,6 +2224,7 @@ pg.base.island_task_target = {
 	},
 	[100023701] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Get Patrick's status report on the development.",
 		type = 2,
 		id = 100023701,
@@ -1771,6 +2235,7 @@ pg.base.island_task_target = {
 	},
 	[100023801] = {
 		tips = "",
+		jump_ui = "",
 		name = "Raise the Island Development Level.",
 		type = 9,
 		id = 100023801,
@@ -1779,6 +2244,7 @@ pg.base.island_task_target = {
 	},
 	[100030101] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Search for Patrick.",
 		type = 1,
 		id = 100030101,
@@ -1789,6 +2255,7 @@ pg.base.island_task_target = {
 	},
 	[100030111] = {
 		tips = "10060001",
+		jump_ui = "",
 		name = "Head to the commercial district.",
 		type = 2,
 		id = 100030111,
@@ -1799,6 +2266,7 @@ pg.base.island_task_target = {
 	},
 	[100030201] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Look for Am-Mer-Mar.",
 		type = 1,
 		id = 100030201,
@@ -1809,6 +2277,7 @@ pg.base.island_task_target = {
 	},
 	[100030301] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Make tofu.",
 		type = 5,
 		id = 100030301,
@@ -1819,6 +2288,7 @@ pg.base.island_task_target = {
 	},
 	[100030401] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Manage a shop in the commercial district.",
 		type = 1,
 		id = 100030401,
@@ -1829,6 +2299,7 @@ pg.base.island_task_target = {
 	},
 	[100030501] = {
 		tips = "10050001",
+		jump_ui = "",
 		name = "Arrive at Prosperous Plantation.",
 		type = 2,
 		id = 100030501,
@@ -1839,6 +2310,7 @@ pg.base.island_task_target = {
 	},
 	[100030511] = {
 		tips = "10050003",
+		jump_ui = "",
 		name = "Check things out.",
 		type = 1,
 		id = 100030511,
@@ -1849,6 +2321,7 @@ pg.base.island_task_target = {
 	},
 	[100030601] = {
 		tips = "10050034",
+		jump_ui = "",
 		name = "Gather bee nests.",
 		type = 1,
 		id = 100030601,
@@ -1859,6 +2332,7 @@ pg.base.island_task_target = {
 	},
 	[100030701] = {
 		tips = "",
+		jump_ui = "",
 		name = "Gather Fresh Honey.",
 		type = 5,
 		id = 100030701,
@@ -1869,6 +2343,7 @@ pg.base.island_task_target = {
 	},
 	[100030801] = {
 		tips = "10050010",
+		jump_ui = "",
 		name = "Plant apple trees.",
 		type = 14,
 		id = 100030801,
@@ -1879,6 +2354,7 @@ pg.base.island_task_target = {
 	},
 	[100030901] = {
 		tips = "10050010",
+		jump_ui = "",
 		name = "Harvest apples.",
 		type = 6,
 		id = 100030901,
@@ -1889,6 +2365,7 @@ pg.base.island_task_target = {
 	},
 	[100030911] = {
 		tips = "",
+		jump_ui = "",
 		name = "Harvest apples.",
 		type = 4,
 		id = 100030911,
@@ -1898,7 +2375,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[100031001] = {
-		tips = "technology",
+		tips = "",
+		jump_ui = "12",
 		name = "Research Strawberry Cultivation Techniques.",
 		type = 8,
 		id = 100031001,
@@ -1909,6 +2387,7 @@ pg.base.island_task_target = {
 	},
 	[100031101] = {
 		tips = "",
+		jump_ui = "",
 		name = "Raise the Island Development Level.",
 		type = 9,
 		id = 100031101,
@@ -1917,6 +2396,7 @@ pg.base.island_task_target = {
 	},
 	[100040101] = {
 		tips = "10070030",
+		jump_ui = "",
 		name = "Search for Akashi.",
 		type = 1,
 		id = 100040101,
@@ -1926,7 +2406,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[100040201] = {
-		tips = "",
+		tips = "10040022",
+		jump_ui = "",
 		name = "Gather Coal",
 		type = 4,
 		id = 100040201,
@@ -1937,6 +2418,7 @@ pg.base.island_task_target = {
 	},
 	[100040301] = {
 		tips = "10070031",
+		jump_ui = "",
 		name = "Check out the factory.",
 		type = 2,
 		id = 100040301,
@@ -1947,6 +2429,7 @@ pg.base.island_task_target = {
 	},
 	[200010011] = {
 		tips = "10040050",
+		jump_ui = "",
 		name = "Find the source of the howls.",
 		type = 1,
 		id = 200010011,
@@ -1956,7 +2439,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200010021] = {
-		tips = "",
+		tips = "10040080",
+		jump_ui = "",
 		name = "Finish logging.",
 		type = 6,
 		id = 200010021,
@@ -1967,6 +2451,7 @@ pg.base.island_task_target = {
 	},
 	[200010031] = {
 		tips = "10040002",
+		jump_ui = "",
 		name = "Return and share your findings with O'Brien.",
 		type = 1,
 		id = 200010031,
@@ -1977,6 +2462,7 @@ pg.base.island_task_target = {
 	},
 	[200010041] = {
 		tips = "10040022",
+		jump_ui = "",
 		name = "Go to Rockheap Mine and see what happened.",
 		type = 1,
 		id = 200010041,
@@ -1987,6 +2473,7 @@ pg.base.island_task_target = {
 	},
 	[200010051] = {
 		tips = "10040002",
+		jump_ui = "",
 		name = "Look for Wood suited to make a temporary track.",
 		type = 1,
 		id = 200010051,
@@ -1996,8 +2483,9 @@ pg.base.island_task_target = {
 		}
 	},
 	[200010061] = {
-		tips = "",
-		name = "Look for Premium Wood around the Verdant Woods.",
+		tips = "10040002",
+		jump_ui = "",
+		name = "Look for Workable Wood around the Verdant Woods.",
 		type = 4,
 		id = 200010061,
 		target_num = 10,
@@ -2007,6 +2495,7 @@ pg.base.island_task_target = {
 	},
 	[200010071] = {
 		tips = "10040022",
+		jump_ui = "",
 		name = "Give the track to John.",
 		type = 1,
 		id = 200010071,
@@ -2016,7 +2505,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200010081] = {
-		tips = "",
+		tips = "10040022",
+		jump_ui = "",
 		name = "Gather Iron Ore at Rockheap Mine.",
 		type = 4,
 		id = 200010081,
@@ -2027,6 +2517,7 @@ pg.base.island_task_target = {
 	},
 	[200010091] = {
 		tips = "10040056",
+		jump_ui = "",
 		name = "Search for the singing person.",
 		type = 2,
 		id = 200010091,
@@ -2037,6 +2528,7 @@ pg.base.island_task_target = {
 	},
 	[200020011] = {
 		tips = "10020018",
+		jump_ui = "",
 		name = "Look around at the harbor.",
 		type = 1,
 		id = 200020011,
@@ -2047,6 +2539,7 @@ pg.base.island_task_target = {
 	},
 	[200020021] = {
 		tips = "10020004",
+		jump_ui = "",
 		name = "Ask Stephen for inspiration.",
 		type = 1,
 		id = 200020021,
@@ -2057,6 +2550,7 @@ pg.base.island_task_target = {
 	},
 	[200020031] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Ask for Bremen's suggestion.",
 		type = 1,
 		id = 200020031,
@@ -2066,7 +2560,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200020041] = {
-		tips = "",
+		tips = "10010003",
+		jump_ui = "",
 		name = "Gather Wool to make a brush with.",
 		type = 4,
 		id = 200020041,
@@ -2076,7 +2571,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200020051] = {
-		tips = "",
+		tips = "10040002",
+		jump_ui = "",
 		name = "Gather Elegant Wood to make a frame with.",
 		type = 4,
 		id = 200020051,
@@ -2087,6 +2583,7 @@ pg.base.island_task_target = {
 	},
 	[200020061] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Bring the frame to Patrick.",
 		type = 1,
 		id = 200020061,
@@ -2097,6 +2594,7 @@ pg.base.island_task_target = {
 	},
 	[200030011] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Go talk to Bremen.",
 		type = 1,
 		id = 200030011,
@@ -2106,7 +2604,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200030021] = {
-		tips = "",
+		tips = "10040022",
+		jump_ui = "",
 		name = "Gather Bauxite Ore.",
 		type = 4,
 		id = 200030021,
@@ -2117,6 +2616,7 @@ pg.base.island_task_target = {
 	},
 	[200030031] = {
 		tips = "10020019",
+		jump_ui = "",
 		name = "Search Greatship Pier for the parts she ordered.",
 		type = 1,
 		id = 200030031,
@@ -2127,6 +2627,7 @@ pg.base.island_task_target = {
 	},
 	[200030041] = {
 		tips = "10070011",
+		jump_ui = "",
 		name = "Install the power system into the servers.",
 		type = 1,
 		id = 200030041,
@@ -2137,6 +2638,7 @@ pg.base.island_task_target = {
 	},
 	[200040000] = {
 		tips = "",
+		jump_ui = "",
 		name = "Raise the Island Development Level.",
 		type = 9,
 		id = 200040000,
@@ -2145,6 +2647,7 @@ pg.base.island_task_target = {
 	},
 	[200040011] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Go to Bremen and ask for tips on making new dishes.",
 		type = 1,
 		id = 200040011,
@@ -2154,7 +2657,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200040021] = {
-		tips = "",
+		tips = "10090008",
+		jump_ui = "",
 		name = "Make a Rolled Carrot Omelette.",
 		type = 4,
 		id = 200040021,
@@ -2165,6 +2669,7 @@ pg.base.island_task_target = {
 	},
 	[200040031] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Go back to Am-Mer-Mar.",
 		type = 1,
 		id = 200040031,
@@ -2175,6 +2680,7 @@ pg.base.island_task_target = {
 	},
 	[200050011] = {
 		tips = "10010040",
+		jump_ui = "",
 		name = "Go speak to Homeric.",
 		type = 1,
 		id = 200050011,
@@ -2185,6 +2691,7 @@ pg.base.island_task_target = {
 	},
 	[200050021] = {
 		tips = "10010069",
+		jump_ui = "",
 		name = "Go to the forest and investigate.",
 		type = 2,
 		id = 200050021,
@@ -2195,7 +2702,8 @@ pg.base.island_task_target = {
 	},
 	[200050031] = {
 		tips = "10010040",
-		name = "Go to the forest and investigate.",
+		jump_ui = "",
+		name = "Go talk to Homeric.",
 		type = 1,
 		id = 200050031,
 		target_num = 1,
@@ -2205,6 +2713,7 @@ pg.base.island_task_target = {
 	},
 	[200050041] = {
 		tips = "10010003",
+		jump_ui = "",
 		name = "Go speak to Amerigo.",
 		type = 1,
 		id = 200050041,
@@ -2215,6 +2724,7 @@ pg.base.island_task_target = {
 	},
 	[200050051] = {
 		tips = "10010070",
+		jump_ui = "",
 		name = "Go to the toolshed and investigate.",
 		type = 1,
 		id = 200050051,
@@ -2225,6 +2735,7 @@ pg.base.island_task_target = {
 	},
 	[200050061] = {
 		tips = "10010041",
+		jump_ui = "",
 		name = "Go speak to Olympic.",
 		type = 1,
 		id = 200050061,
@@ -2235,6 +2746,7 @@ pg.base.island_task_target = {
 	},
 	[200050071] = {
 		tips = "10010071",
+		jump_ui = "",
 		name = "Patrol the ranch and investigate.",
 		type = 2,
 		id = 200050071,
@@ -2245,6 +2757,7 @@ pg.base.island_task_target = {
 	},
 	[200050081] = {
 		tips = "10010072",
+		jump_ui = "",
 		name = "Patrol the ranch and investigate.",
 		type = 2,
 		id = 200050081,
@@ -2255,6 +2768,7 @@ pg.base.island_task_target = {
 	},
 	[200050091] = {
 		tips = "10010073",
+		jump_ui = "",
 		name = "Patrol the ranch and investigate.",
 		type = 1,
 		id = 200050091,
@@ -2265,6 +2779,7 @@ pg.base.island_task_target = {
 	},
 	[200060011] = {
 		tips = "10010075",
+		jump_ui = "",
 		name = "Follow Amerigo to the place where the sheep like to go.",
 		type = 1,
 		id = 200060011,
@@ -2275,6 +2790,7 @@ pg.base.island_task_target = {
 	},
 	[200060021] = {
 		tips = "10010076",
+		jump_ui = "",
 		name = "Follow the hoofprints and investigate.",
 		type = 1,
 		id = 200060021,
@@ -2285,6 +2801,7 @@ pg.base.island_task_target = {
 	},
 	[200060031] = {
 		tips = "10010077",
+		jump_ui = "",
 		name = "Follow the hoofprints.",
 		type = 2,
 		id = 200060031,
@@ -2295,6 +2812,7 @@ pg.base.island_task_target = {
 	},
 	[200060041] = {
 		tips = "10010074",
+		jump_ui = "",
 		name = "Catch the Baa Baa Sheep.",
 		type = 1,
 		id = 200060041,
@@ -2305,6 +2823,7 @@ pg.base.island_task_target = {
 	},
 	[200060051] = {
 		tips = "10010040",
+		jump_ui = "",
 		name = "Ask Homeric about where the sheep have gone.",
 		type = 1,
 		id = 200060051,
@@ -2315,6 +2834,7 @@ pg.base.island_task_target = {
 	},
 	[200060061] = {
 		tips = "10010081",
+		jump_ui = "",
 		name = "Head to where the sheep are.",
 		type = 2,
 		id = 200060061,
@@ -2325,6 +2845,7 @@ pg.base.island_task_target = {
 	},
 	[200060071] = {
 		tips = "10010078",
+		jump_ui = "",
 		name = "Herd all of the sheep.",
 		type = 1,
 		id = 200060071,
@@ -2335,6 +2856,7 @@ pg.base.island_task_target = {
 	},
 	[200060072] = {
 		tips = "10010079",
+		jump_ui = "",
 		name = "Herd all of the sheep.",
 		type = 1,
 		id = 200060072,
@@ -2345,6 +2867,7 @@ pg.base.island_task_target = {
 	},
 	[200060073] = {
 		tips = "10010080",
+		jump_ui = "",
 		name = "Herd all of the sheep.",
 		type = 1,
 		id = 200060073,
@@ -2355,6 +2878,7 @@ pg.base.island_task_target = {
 	},
 	[200060081] = {
 		tips = "10010003",
+		jump_ui = "",
 		name = "Go see Amerigo.",
 		type = 1,
 		id = 200060081,
@@ -2364,8 +2888,9 @@ pg.base.island_task_target = {
 		}
 	},
 	[200060091] = {
-		tips = "",
-		name = "Turn in 30 Raw Timber.",
+		tips = "10040002",
+		jump_ui = "",
+		name = "Gather Raw Timber.",
 		type = 4,
 		id = 200060091,
 		target_num = 10,
@@ -2375,6 +2900,7 @@ pg.base.island_task_target = {
 	},
 	[200070011] = {
 		tips = "10040057",
+		jump_ui = "",
 		name = "Get rid of the nearby bee nest.",
 		type = 1,
 		id = 200070011,
@@ -2385,6 +2911,7 @@ pg.base.island_task_target = {
 	},
 	[200070021] = {
 		tips = "10020026",
+		jump_ui = "",
 		name = "Get rid of the bee nest around the harbor.",
 		type = 1,
 		id = 200070021,
@@ -2395,6 +2922,7 @@ pg.base.island_task_target = {
 	},
 	[200070031] = {
 		tips = "10010082",
+		jump_ui = "",
 		name = "Get rid of the bee nest around the farm.",
 		type = 1,
 		id = 200070031,
@@ -2405,6 +2933,7 @@ pg.base.island_task_target = {
 	},
 	[200070041] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Ask Bremen about the honey water recipe.",
 		type = 1,
 		id = 200070041,
@@ -2415,6 +2944,7 @@ pg.base.island_task_target = {
 	},
 	[200070051] = {
 		tips = "10060030",
+		jump_ui = "",
 		name = "Head to the commercial area and find the recipe.",
 		type = 1,
 		id = 200070051,
@@ -2424,7 +2954,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200070061] = {
-		tips = "",
+		tips = "10050002",
+		jump_ui = "",
 		name = "Gather fresh Lemons.",
 		type = 4,
 		id = 200070061,
@@ -2435,6 +2966,7 @@ pg.base.island_task_target = {
 	},
 	[200070062] = {
 		tips = "",
+		jump_ui = "",
 		name = "Gather fresh Honey.",
 		type = 4,
 		id = 200070062,
@@ -2445,6 +2977,7 @@ pg.base.island_task_target = {
 	},
 	[200070071] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Ask Am-Mer-Mar about rosemary.",
 		type = 1,
 		id = 200070071,
@@ -2455,6 +2988,7 @@ pg.base.island_task_target = {
 	},
 	[200070081] = {
 		tips = "10060031",
+		jump_ui = "",
 		name = "Look for rosemary at the Golden Koi Restaurant.",
 		type = 1,
 		id = 200070081,
@@ -2465,6 +2999,7 @@ pg.base.island_task_target = {
 	},
 	[200070091] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Go deliver all the ingredients to Bremen.",
 		type = 1,
 		id = 200070091,
@@ -2475,6 +3010,7 @@ pg.base.island_task_target = {
 	},
 	[200070101] = {
 		tips = "10040057",
+		jump_ui = "",
 		name = "Give Honey Water to the nameless person.",
 		type = 1,
 		id = 200070101,
@@ -2485,7 +3021,8 @@ pg.base.island_task_target = {
 	},
 	[200080011] = {
 		tips = "10020004",
-		name = "Check out the request.",
+		jump_ui = "",
+		name = "Go to Stephen and scope out the situation.",
 		type = 1,
 		id = 200080011,
 		target_num = 1,
@@ -2494,7 +3031,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200080021] = {
-		tips = "",
+		tips = "10040002",
+		jump_ui = "",
 		name = "Gather Raw Timber.",
 		type = 4,
 		id = 200080021,
@@ -2504,7 +3042,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200080031] = {
-		tips = "",
+		tips = "10040022",
+		jump_ui = "",
 		name = "Gather Coal.",
 		type = 4,
 		id = 200080031,
@@ -2515,6 +3054,7 @@ pg.base.island_task_target = {
 	},
 	[200080041] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Go see Patrick and complete the request.",
 		type = 1,
 		id = 200080041,
@@ -2525,6 +3065,7 @@ pg.base.island_task_target = {
 	},
 	[200090011] = {
 		tips = "10040059",
+		jump_ui = "",
 		name = "Wait next to the mine.",
 		type = 2,
 		id = 200090011,
@@ -2535,6 +3076,7 @@ pg.base.island_task_target = {
 	},
 	[200090021] = {
 		tips = "10040002",
+		jump_ui = "",
 		name = "Bring the ore to O'Brien.",
 		type = 1,
 		id = 200090021,
@@ -2545,6 +3087,7 @@ pg.base.island_task_target = {
 	},
 	[200090031] = {
 		tips = "10020029",
+		jump_ui = "",
 		name = "Bring the ore to Akashi.",
 		type = 1,
 		id = 200090031,
@@ -2555,6 +3098,7 @@ pg.base.island_task_target = {
 	},
 	[200090041] = {
 		tips = "10020004",
+		jump_ui = "",
 		name = "Go see Stephen.",
 		type = 1,
 		id = 200090041,
@@ -2565,6 +3109,7 @@ pg.base.island_task_target = {
 	},
 	[200100011] = {
 		tips = "10010041",
+		jump_ui = "",
 		name = "Go and ask Olympic for advice.",
 		type = 1,
 		id = 200100011,
@@ -2575,6 +3120,7 @@ pg.base.island_task_target = {
 	},
 	[200100021] = {
 		tips = "10020004",
+		jump_ui = "",
 		name = "Go speak to Stephen.",
 		type = 1,
 		id = 200100021,
@@ -2585,6 +3131,7 @@ pg.base.island_task_target = {
 	},
 	[200100031] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Ask Bremen for help.",
 		type = 1,
 		id = 200100031,
@@ -2595,6 +3142,7 @@ pg.base.island_task_target = {
 	},
 	[200100041] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Return to Bremen.",
 		type = 1,
 		id = 200100041,
@@ -2605,6 +3153,7 @@ pg.base.island_task_target = {
 	},
 	[200100051] = {
 		tips = "10010040",
+		jump_ui = "",
 		name = "Get some help from Homeric.",
 		type = 1,
 		id = 200100051,
@@ -2615,6 +3164,7 @@ pg.base.island_task_target = {
 	},
 	[200100061] = {
 		tips = "10010041",
+		jump_ui = "",
 		name = "Get some help from Olympic.",
 		type = 1,
 		id = 200100061,
@@ -2624,7 +3174,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200100071] = {
-		tips = "",
+		tips = "10010003",
+		jump_ui = "",
 		name = "Gather Eggs.",
 		type = 4,
 		id = 200100071,
@@ -2635,6 +3186,7 @@ pg.base.island_task_target = {
 	},
 	[200100081] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Bring the energy drink to Patrick.",
 		type = 1,
 		id = 200100081,
@@ -2645,6 +3197,7 @@ pg.base.island_task_target = {
 	},
 	[200110011] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Go to Café Manjuu and get some advice from Bremen.",
 		type = 1,
 		id = 200110011,
@@ -2655,6 +3208,7 @@ pg.base.island_task_target = {
 	},
 	[200110021] = {
 		tips = "10020028",
+		jump_ui = "",
 		name = "Go to the harbor.",
 		type = 2,
 		id = 200110021,
@@ -2665,6 +3219,7 @@ pg.base.island_task_target = {
 	},
 	[200110031] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Go see Am-Mer-Mar.",
 		type = 1,
 		id = 200110031,
@@ -2674,7 +3229,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200110041] = {
-		tips = "",
+		tips = "10040002",
+		jump_ui = "",
 		name = "Gather Raw Timber.",
 		type = 4,
 		id = 200110041,
@@ -2684,7 +3240,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200110042] = {
-		tips = "",
+		tips = "10040022",
+		jump_ui = "",
 		name = "Gather Iron Ore.",
 		type = 4,
 		id = 200110042,
@@ -2694,7 +3251,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200110051] = {
-		tips = "",
+		tips = "10010003",
+		jump_ui = "",
 		name = "Gather Poultry.",
 		type = 4,
 		id = 200110051,
@@ -2704,7 +3262,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200110052] = {
-		tips = "",
+		tips = "10010003",
+		jump_ui = "",
 		name = "Gather Milk.",
 		type = 4,
 		id = 200110052,
@@ -2715,6 +3274,7 @@ pg.base.island_task_target = {
 	},
 	[200120011] = {
 		tips = "10010040",
+		jump_ui = "",
 		name = "Borrow a pair of pruning shears from Homeric.",
 		type = 1,
 		id = 200120011,
@@ -2725,6 +3285,7 @@ pg.base.island_task_target = {
 	},
 	[200120021] = {
 		tips = "10050002",
+		jump_ui = "",
 		name = "Return to Lusitania and give her the item.",
 		type = 1,
 		id = 200120021,
@@ -2735,6 +3296,7 @@ pg.base.island_task_target = {
 	},
 	[200120031] = {
 		tips = "10050002",
+		jump_ui = "",
 		name = "Return to Lusitania and give her the item.",
 		type = 1,
 		id = 200120031,
@@ -2745,6 +3307,7 @@ pg.base.island_task_target = {
 	},
 	[200120041] = {
 		tips = "10050036",
+		jump_ui = "",
 		name = "Help Lusitania fertilize the soil.",
 		type = 1,
 		id = 200120041,
@@ -2754,7 +3317,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200120051] = {
-		tips = "",
+		tips = "10050002",
+		jump_ui = "",
 		name = "Harvest Citrus Fruit.",
 		type = 4,
 		id = 200120051,
@@ -2765,6 +3329,7 @@ pg.base.island_task_target = {
 	},
 	[200120061] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Give the citrus fruits to Bremen.",
 		type = 1,
 		id = 200120061,
@@ -2775,6 +3340,7 @@ pg.base.island_task_target = {
 	},
 	[200120071] = {
 		tips = "10050002",
+		jump_ui = "",
 		name = "Bring the citrus coffee to Lusitania.",
 		type = 1,
 		id = 200120071,
@@ -2785,6 +3351,7 @@ pg.base.island_task_target = {
 	},
 	[200120081] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Check the number of orders with Patrick.",
 		type = 1,
 		id = 200120081,
@@ -2795,6 +3362,7 @@ pg.base.island_task_target = {
 	},
 	[200120091] = {
 		tips = "10050002",
+		jump_ui = "",
 		name = "Bring the insect repellent to Lusitania.",
 		type = 1,
 		id = 200120091,
@@ -2805,6 +3373,7 @@ pg.base.island_task_target = {
 	},
 	[200120101] = {
 		tips = "10050037",
+		jump_ui = "",
 		name = "Apply insect repellent to the trees.",
 		type = 1,
 		id = 200120101,
@@ -2815,6 +3384,7 @@ pg.base.island_task_target = {
 	},
 	[200130000] = {
 		tips = "",
+		jump_ui = "",
 		name = "Raise the Island Development Level.",
 		type = 9,
 		id = 200130000,
@@ -2823,6 +3393,7 @@ pg.base.island_task_target = {
 	},
 	[200130011] = {
 		tips = "10020004",
+		jump_ui = "",
 		name = "Talk to Stephen.",
 		type = 1,
 		id = 200130011,
@@ -2833,6 +3404,7 @@ pg.base.island_task_target = {
 	},
 	[200130021] = {
 		tips = "10050003",
+		jump_ui = "",
 		name = "Go see Laconia.",
 		type = 1,
 		id = 200130021,
@@ -2843,6 +3415,7 @@ pg.base.island_task_target = {
 	},
 	[200130031] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Go see Patrick and place a new order.",
 		type = 1,
 		id = 200130031,
@@ -2853,6 +3426,7 @@ pg.base.island_task_target = {
 	},
 	[200130041] = {
 		tips = "10020030",
+		jump_ui = "",
 		name = "Go to Greatship Pier and look for fertilizer.",
 		type = 1,
 		id = 200130041,
@@ -2863,6 +3437,7 @@ pg.base.island_task_target = {
 	},
 	[200130051] = {
 		tips = "10050003",
+		jump_ui = "",
 		name = "Give Laconia the fertilizer.",
 		type = 1,
 		id = 200130051,
@@ -2872,9 +3447,10 @@ pg.base.island_task_target = {
 		}
 	},
 	[200130061] = {
-		tips = "",
+		tips = "10050003",
+		jump_ui = "",
 		name = "Assign a character to plant lavenders in the nursery.",
-		type = 14,
+		type = 7,
 		id = 200130061,
 		target_num = 1,
 		target_param = {
@@ -2882,7 +3458,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[200130071] = {
-		tips = "",
+		tips = "10050003",
+		jump_ui = "",
 		name = "Harvest the lavenders.",
 		type = 4,
 		id = 200130071,
@@ -2893,6 +3470,7 @@ pg.base.island_task_target = {
 	},
 	[200130081] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Give the packaged lavenders to Patrick.",
 		type = 1,
 		id = 200130081,
@@ -2903,6 +3481,7 @@ pg.base.island_task_target = {
 	},
 	[200140011] = {
 		tips = "",
+		jump_ui = "",
 		name = "Find the lost map fragments around the island - 1",
 		type = 4,
 		id = 200140011,
@@ -2913,6 +3492,7 @@ pg.base.island_task_target = {
 	},
 	[200140012] = {
 		tips = "",
+		jump_ui = "",
 		name = "Find the lost map fragments around the island - 2",
 		type = 4,
 		id = 200140012,
@@ -2923,6 +3503,7 @@ pg.base.island_task_target = {
 	},
 	[200140013] = {
 		tips = "",
+		jump_ui = "",
 		name = "Find the lost map fragments around the island - 3",
 		type = 4,
 		id = 200140013,
@@ -2933,6 +3514,7 @@ pg.base.island_task_target = {
 	},
 	[200140014] = {
 		tips = "",
+		jump_ui = "",
 		name = "Find the lost map fragments around the island - 4",
 		type = 4,
 		id = 200140014,
@@ -2943,6 +3525,7 @@ pg.base.island_task_target = {
 	},
 	[200140015] = {
 		tips = "",
+		jump_ui = "",
 		name = "Find the lost map fragments around the island - 5",
 		type = 4,
 		id = 200140015,
@@ -2953,6 +3536,7 @@ pg.base.island_task_target = {
 	},
 	[200140021] = {
 		tips = "10040051",
+		jump_ui = "",
 		name = "Go to the place marked on the map and look for treasure.",
 		type = 2,
 		id = 200140021,
@@ -2963,6 +3547,7 @@ pg.base.island_task_target = {
 	},
 	[200140031] = {
 		tips = "10040051",
+		jump_ui = "",
 		name = "Dig into the ground.",
 		type = 1,
 		id = 200140031,
@@ -2973,6 +3558,7 @@ pg.base.island_task_target = {
 	},
 	[200150011] = {
 		tips = "",
+		jump_ui = "11",
 		name = "Obtain an outfit from the seasonal shop.",
 		type = 44,
 		id = 200150011,
@@ -2983,8 +3569,9 @@ pg.base.island_task_target = {
 	},
 	[200150021] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete seasonal plans.",
-		type = 23,
+		type = 24,
 		id = 200150021,
 		target_num = 5,
 		target_param = {
@@ -2993,6 +3580,7 @@ pg.base.island_task_target = {
 	},
 	[301010011] = {
 		tips = "",
+		jump_ui = "",
 		name = "Collect lumber or minerals manually.",
 		type = 6,
 		id = 301010011,
@@ -3012,6 +3600,7 @@ pg.base.island_task_target = {
 	},
 	[302010011] = {
 		tips = "",
+		jump_ui = "8",
 		name = "Assign a character to a material production slot.",
 		type = 7,
 		id = 302010011,
@@ -3022,6 +3611,7 @@ pg.base.island_task_target = {
 	},
 	[303010011] = {
 		tips = "",
+		jump_ui = "7",
 		name = "Complete 1 Transport Job.",
 		type = 12,
 		id = 303010011,
@@ -3032,6 +3622,7 @@ pg.base.island_task_target = {
 	},
 	[304010011] = {
 		tips = "",
+		jump_ui = "6",
 		name = "Complete any Island Request.",
 		type = 3,
 		id = 304010011,
@@ -3042,6 +3633,7 @@ pg.base.island_task_target = {
 	},
 	[305010011] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Go find Patrick.",
 		type = 1,
 		id = 305010011,
@@ -3052,6 +3644,7 @@ pg.base.island_task_target = {
 	},
 	[305010021] = {
 		tips = "10040002",
+		jump_ui = "",
 		name = "Go find O'Brien.",
 		type = 1,
 		id = 305010021,
@@ -3062,6 +3655,7 @@ pg.base.island_task_target = {
 	},
 	[305010022] = {
 		tips = "10010003",
+		jump_ui = "",
 		name = "Go see Amerigo.",
 		type = 1,
 		id = 305010022,
@@ -3072,6 +3666,7 @@ pg.base.island_task_target = {
 	},
 	[305010023] = {
 		tips = "10030008",
+		jump_ui = "",
 		name = "Talk to Elizabeth.",
 		type = 1,
 		id = 305010023,
@@ -3082,6 +3677,7 @@ pg.base.island_task_target = {
 	},
 	[305010111] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Go find Patrick.",
 		type = 1,
 		id = 305010111,
@@ -3092,6 +3688,7 @@ pg.base.island_task_target = {
 	},
 	[305010121] = {
 		tips = "10050003",
+		jump_ui = "",
 		name = "Go see Laconia.",
 		type = 1,
 		id = 305010121,
@@ -3102,6 +3699,7 @@ pg.base.island_task_target = {
 	},
 	[305010122] = {
 		tips = "10040022",
+		jump_ui = "",
 		name = "Go see John.",
 		type = 1,
 		id = 305010122,
@@ -3112,6 +3710,7 @@ pg.base.island_task_target = {
 	},
 	[305010123] = {
 		tips = "10010041",
+		jump_ui = "",
 		name = "Go see Olympic.",
 		type = 1,
 		id = 305010123,
@@ -3122,6 +3721,7 @@ pg.base.island_task_target = {
 	},
 	[305010211] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Go find Patrick.",
 		type = 1,
 		id = 305010211,
@@ -3132,6 +3732,7 @@ pg.base.island_task_target = {
 	},
 	[305010221] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Go back to Am-Mer-Mar.",
 		type = 1,
 		id = 305010221,
@@ -3142,6 +3743,7 @@ pg.base.island_task_target = {
 	},
 	[305010222] = {
 		tips = "10040022",
+		jump_ui = "",
 		name = "Go see John.",
 		type = 1,
 		id = 305010222,
@@ -3152,6 +3754,7 @@ pg.base.island_task_target = {
 	},
 	[305010223] = {
 		tips = "10050002",
+		jump_ui = "",
 		name = "Go find Lusitania.",
 		type = 1,
 		id = 305010223,
@@ -3162,6 +3765,7 @@ pg.base.island_task_target = {
 	},
 	[305010311] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Go find Patrick.",
 		type = 1,
 		id = 305010311,
@@ -3172,6 +3776,7 @@ pg.base.island_task_target = {
 	},
 	[305010321] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Go back to Am-Mer-Mar.",
 		type = 1,
 		id = 305010321,
@@ -3182,6 +3787,7 @@ pg.base.island_task_target = {
 	},
 	[305010322] = {
 		tips = "10050003",
+		jump_ui = "",
 		name = "Go see Laconia.",
 		type = 1,
 		id = 305010322,
@@ -3192,6 +3798,7 @@ pg.base.island_task_target = {
 	},
 	[305010323] = {
 		tips = "10030008",
+		jump_ui = "",
 		name = "Talk to Elizabeth.",
 		type = 1,
 		id = 305010323,
@@ -3202,6 +3809,7 @@ pg.base.island_task_target = {
 	},
 	[305020011] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Go back to Am-Mer-Mar.",
 		type = 1,
 		id = 305020011,
@@ -3212,6 +3820,7 @@ pg.base.island_task_target = {
 	},
 	[305020021] = {
 		tips = "10050003",
+		jump_ui = "",
 		name = "Go see Laconia.",
 		type = 1,
 		id = 305020021,
@@ -3222,6 +3831,7 @@ pg.base.island_task_target = {
 	},
 	[305020022] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Go find Patrick.",
 		type = 1,
 		id = 305020022,
@@ -3232,6 +3842,7 @@ pg.base.island_task_target = {
 	},
 	[305020023] = {
 		tips = "10030008",
+		jump_ui = "",
 		name = "Talk to Elizabeth.",
 		type = 1,
 		id = 305020023,
@@ -3242,6 +3853,7 @@ pg.base.island_task_target = {
 	},
 	[305020111] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Go back to Am-Mer-Mar.",
 		type = 1,
 		id = 305020111,
@@ -3252,6 +3864,7 @@ pg.base.island_task_target = {
 	},
 	[305020121] = {
 		tips = "10040002",
+		jump_ui = "",
 		name = "Go find O'Brien.",
 		type = 1,
 		id = 305020121,
@@ -3262,6 +3875,7 @@ pg.base.island_task_target = {
 	},
 	[305020122] = {
 		tips = "10030008",
+		jump_ui = "",
 		name = "Talk to Elizabeth.",
 		type = 1,
 		id = 305020122,
@@ -3272,6 +3886,7 @@ pg.base.island_task_target = {
 	},
 	[305020123] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Go see Bremen.",
 		type = 1,
 		id = 305020123,
@@ -3282,6 +3897,7 @@ pg.base.island_task_target = {
 	},
 	[305020211] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Go back to Am-Mer-Mar.",
 		type = 1,
 		id = 305020211,
@@ -3292,6 +3908,7 @@ pg.base.island_task_target = {
 	},
 	[305020221] = {
 		tips = "10010040",
+		jump_ui = "",
 		name = "Go find Homeric.",
 		type = 1,
 		id = 305020221,
@@ -3302,6 +3919,7 @@ pg.base.island_task_target = {
 	},
 	[305020222] = {
 		tips = "10030008",
+		jump_ui = "",
 		name = "Talk to Elizabeth.",
 		type = 1,
 		id = 305020222,
@@ -3312,6 +3930,7 @@ pg.base.island_task_target = {
 	},
 	[305020223] = {
 		tips = "10050002",
+		jump_ui = "",
 		name = "Go find Lusitania.",
 		type = 1,
 		id = 305020223,
@@ -3322,6 +3941,7 @@ pg.base.island_task_target = {
 	},
 	[305020311] = {
 		tips = "10060002",
+		jump_ui = "",
 		name = "Go back to Am-Mer-Mar.",
 		type = 1,
 		id = 305020311,
@@ -3332,6 +3952,7 @@ pg.base.island_task_target = {
 	},
 	[305020321] = {
 		tips = "10030008",
+		jump_ui = "",
 		name = "Talk to Elizabeth.",
 		type = 1,
 		id = 305020321,
@@ -3342,6 +3963,7 @@ pg.base.island_task_target = {
 	},
 	[305020322] = {
 		tips = "10050002",
+		jump_ui = "",
 		name = "Go find Lusitania.",
 		type = 1,
 		id = 305020322,
@@ -3352,6 +3974,7 @@ pg.base.island_task_target = {
 	},
 	[305020323] = {
 		tips = "10040002",
+		jump_ui = "",
 		name = "Go find O'Brien.",
 		type = 1,
 		id = 305020323,
@@ -3362,6 +3985,7 @@ pg.base.island_task_target = {
 	},
 	[305040011] = {
 		tips = "",
+		jump_ui = "",
 		name = "Pet a cat.",
 		type = 1,
 		id = 305040011,
@@ -3372,6 +3996,7 @@ pg.base.island_task_target = {
 	},
 	[305050011] = {
 		tips = "",
+		jump_ui = "",
 		name = "Perform any action.",
 		type = 36,
 		id = 305050011,
@@ -3382,6 +4007,7 @@ pg.base.island_task_target = {
 	},
 	[305080011] = {
 		tips = "",
+		jump_ui = "",
 		name = "Interact with any character.",
 		type = 37,
 		id = 305080011,
@@ -3389,7 +4015,8 @@ pg.base.island_task_target = {
 		target_param = ""
 	},
 	[306010011] = {
-		tips = "",
+		tips = "10030009",
+		jump_ui = "",
 		name = "Accept your daily supplies.",
 		type = 13,
 		id = 306010011,
@@ -3398,6 +4025,7 @@ pg.base.island_task_target = {
 	},
 	[307010011] = {
 		tips = "",
+		jump_ui = "5",
 		name = "Make any dish.",
 		type = 7,
 		id = 307010011,
@@ -3430,11 +4058,16 @@ pg.base.island_task_target = {
 			901003,
 			901004,
 			901005,
-			901006
+			901006,
+			9900003,
+			9900004,
+			9900007,
+			9900008
 		}
 	},
 	[307020011] = {
-		tips = "",
+		tips = "10060002",
+		jump_ui = "",
 		name = "Make any Golden Koi Restaurant recipe.",
 		type = 7,
 		id = 307020011,
@@ -3444,11 +4077,14 @@ pg.base.island_task_target = {
 			601002,
 			601003,
 			601004,
-			601005
+			601005,
+			9900003,
+			9900004
 		}
 	},
 	[307030011] = {
-		tips = "",
+		tips = "10060002",
+		jump_ui = "",
 		name = "Make any Polar Bear Teahouse recipe.",
 		type = 7,
 		id = 307030011,
@@ -3459,11 +4095,14 @@ pg.base.island_task_target = {
 			602003,
 			602004,
 			602005,
-			602006
+			602006,
+			9900007,
+			9900008
 		}
 	},
 	[307040011] = {
-		tips = "",
+		tips = "10060002",
+		jump_ui = "",
 		name = "Make any Manjuu Eatery recipe.",
 		type = 7,
 		id = 307040011,
@@ -3478,7 +4117,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[307050011] = {
-		tips = "",
+		tips = "10060002",
+		jump_ui = "",
 		name = "Make any Fin-'n'-Feather Grill recipe.",
 		type = 7,
 		id = 307050011,
@@ -3492,7 +4132,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[307060011] = {
-		tips = "",
+		tips = "10090008",
+		jump_ui = "",
 		name = "Make any Café Manjuu recipe.",
 		type = 7,
 		id = 307060011,
@@ -3507,7 +4148,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[300000011] = {
-		tips = "",
+		tips = "10040079",
+		jump_ui = "",
 		name = "Gather some minerals.",
 		type = 6,
 		id = 300000011,
@@ -3522,7 +4164,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[300000021] = {
-		tips = "",
+		tips = "10040080",
+		jump_ui = "",
 		name = "Gather any lumber resource.",
 		type = 6,
 		id = 300000021,
@@ -3536,6 +4179,7 @@ pg.base.island_task_target = {
 	},
 	[300000031] = {
 		tips = "",
+		jump_ui = "6",
 		name = "Complete any Island Request.",
 		type = 3,
 		id = 300000031,
@@ -3546,6 +4190,7 @@ pg.base.island_task_target = {
 	},
 	[300000041] = {
 		tips = "",
+		jump_ui = "12",
 		name = "Complete any research.",
 		type = 7,
 		id = 300000041,
@@ -3744,6 +4389,7 @@ pg.base.island_task_target = {
 	},
 	[300000051] = {
 		tips = "",
+		jump_ui = "",
 		name = "Perform any action.",
 		type = 36,
 		id = 300000051,
@@ -3754,6 +4400,7 @@ pg.base.island_task_target = {
 	},
 	[300000061] = {
 		tips = "10020009",
+		jump_ui = "",
 		name = "Go find Patrick.",
 		type = 1,
 		id = 300000061,
@@ -3764,6 +4411,7 @@ pg.base.island_task_target = {
 	},
 	[300000071] = {
 		tips = "10040002",
+		jump_ui = "",
 		name = "Go find O'Brien.",
 		type = 1,
 		id = 300000071,
@@ -3774,6 +4422,7 @@ pg.base.island_task_target = {
 	},
 	[300000072] = {
 		tips = "10040022",
+		jump_ui = "",
 		name = "Go see John.",
 		type = 1,
 		id = 300000072,
@@ -3784,6 +4433,7 @@ pg.base.island_task_target = {
 	},
 	[300000073] = {
 		tips = "10090008",
+		jump_ui = "",
 		name = "Go see Bremen.",
 		type = 1,
 		id = 300000073,
@@ -3794,6 +4444,7 @@ pg.base.island_task_target = {
 	},
 	[300000081] = {
 		tips = "",
+		jump_ui = "",
 		name = "Pet a cat.",
 		type = 1,
 		id = 300000081,
@@ -3803,7 +4454,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[401010011] = {
-		tips = "",
+		tips = "10040022",
+		jump_ui = "",
 		name = "Assign a character to produce ore.",
 		type = 7,
 		id = 401010011,
@@ -3818,7 +4470,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[401020011] = {
-		tips = "",
+		tips = "10040002",
+		jump_ui = "",
 		name = "Assign a character to produce lumber.",
 		type = 7,
 		id = 401020011,
@@ -3831,7 +4484,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[401030011] = {
-		tips = "",
+		tips = "10010040",
+		jump_ui = "",
 		name = "Assign a character to produce crops.",
 		type = 7,
 		id = 401030011,
@@ -3848,7 +4502,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[401040011] = {
-		tips = "",
+		tips = "10050003",
+		jump_ui = "",
 		name = "Assign a character to produce nursery crops.",
 		type = 7,
 		id = 401040011,
@@ -3864,7 +4519,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[401050011] = {
-		tips = "",
+		tips = "10050002",
+		jump_ui = "",
 		name = "Assign a character to produce orchard crops.",
 		type = 7,
 		id = 401050011,
@@ -3876,11 +4532,14 @@ pg.base.island_task_target = {
 			501004,
 			501005,
 			501006,
-			501007
+			501007,
+			9900001,
+			9900002
 		}
 	},
 	[401060011] = {
-		tips = "",
+		tips = "10010003",
+		jump_ui = "",
 		name = "Assign a character to produce livestock products.",
 		type = 7,
 		id = 401060011,
@@ -3893,7 +4552,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[401070011] = {
-		tips = "",
+		tips = "10070016",
+		jump_ui = "",
 		name = "Produce an arts & crafts item.",
 		type = 7,
 		id = 401070011,
@@ -3905,11 +4565,14 @@ pg.base.island_task_target = {
 			701004,
 			701005,
 			701006,
-			701007
+			701007,
+			9900005,
+			9900006
 		}
 	},
 	[401080011] = {
-		tips = "",
+		tips = "10070014",
+		jump_ui = "",
 		name = "Produce a mechanic product.",
 		type = 7,
 		id = 401080011,
@@ -3924,7 +4587,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[401090011] = {
-		tips = "",
+		tips = "10070013",
+		jump_ui = "",
 		name = "Produce a wooden product.",
 		type = 7,
 		id = 401090011,
@@ -3938,7 +4602,8 @@ pg.base.island_task_target = {
 		}
 	},
 	[401100011] = {
-		tips = "",
+		tips = "10070015",
+		jump_ui = "",
 		name = "Produce an electronic product.",
 		type = 7,
 		id = 401100011,
@@ -3952,6 +4617,7 @@ pg.base.island_task_target = {
 	},
 	[402010011] = {
 		tips = "",
+		jump_ui = "5",
 		name = "Make a meal combo.",
 		type = 7,
 		id = 402010011,
@@ -3974,6 +4640,7 @@ pg.base.island_task_target = {
 	},
 	[403010011] = {
 		tips = "",
+		jump_ui = "5",
 		name = "Produce any commodity.",
 		type = 27,
 		id = 403010011,
@@ -3984,6 +4651,7 @@ pg.base.island_task_target = {
 	},
 	[404010011] = {
 		tips = "",
+		jump_ui = "19",
 		name = "Take a picture.",
 		type = 43,
 		id = 404010011,
@@ -3994,6 +4662,7 @@ pg.base.island_task_target = {
 	},
 	[405010011] = {
 		tips = "",
+		jump_ui = "",
 		name = "Complete Daily Plan.",
 		type = 23,
 		id = 405010011,
@@ -4004,10 +4673,11 @@ pg.base.island_task_target = {
 	},
 	[406010011] = {
 		tips = "",
+		jump_ui = "",
 		name = "Obtain Development Funds.",
 		type = 5,
 		id = 406010011,
-		target_num = 400000,
+		target_num = 120000,
 		target_param = {
 			1
 		}

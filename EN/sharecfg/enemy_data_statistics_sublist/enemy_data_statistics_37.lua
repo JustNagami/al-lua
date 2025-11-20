@@ -1,43 +1,43 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_37 = {
-	[91145] = {
+	[91162] = {
 		cannon = 0,
-		name = "Corruption of Amahara - Oni",
-		type = 3,
+		name = "Silent Sentry - Abyssal Wings",
+		type = 7,
 		speed_growth = 0,
 		air_growth = 0,
 		air = 0,
 		battle_unit_type = 49,
 		durability = 99999,
 		armor = 0,
-		friendly_cld = 1,
-		id = 91145,
+		friendly_cld = 0,
+		id = 91162,
 		bubble_fx = "",
 		dodge_growth = 0,
-		icon = "chongying_u_zhongxun",
+		icon = "fengfan_haigu_hangmu",
 		star = 0,
 		fog_fx = "",
 		antisub_growth = 0,
 		rarity = 0,
 		torpedo = 0,
 		luck_growth = 0,
-		icon_type = 3,
+		icon_type = 7,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		hit_growth = 0,
 		speed = 15,
 		luck = 0,
 		antisub = 0,
-		scale = 200,
+		scale = 350,
 		wave_fx = "",
-		prefab = "chongying_u_zhongxun",
+		prefab = "fengfan_haigu_hangmu",
 		cannon_growth = 0,
 		pilot_ai_template_id = 20004,
 		reload = 150,
 		dodge = 0,
 		reload_growth = 0,
 		hit = 0,
-		nationality = 95,
+		nationality = 96,
 		durability_growth = 0,
 		antiaircraft = 0,
 		antiaircraft_growth = 0,
@@ -57,7 +57,7 @@ pg.enemy_data_statistics_37 = {
 			0
 		},
 		cld_box = {
-			15,
+			18.7,
 			7.5,
 			9
 		},
@@ -74,29 +74,22 @@ pg.enemy_data_statistics_37 = {
 		bound_bone = {
 			cannon = {
 				{
-					1,
-					1,
-					0
-				}
-			},
-			vicegun = {
-				{
-					2.91,
-					2,
+					0,
+					0.5,
 					0
 				}
 			},
 			torpedo = {
 				{
-					0.85,
-					0.15,
+					0,
+					0.5,
 					0
 				}
 			},
-			antiaircraft = {
+			plane = {
 				{
-					1.21,
-					2,
+					0,
+					0.5,
 					0
 				}
 			}
@@ -135,16 +128,556 @@ pg.enemy_data_statistics_37 = {
 		},
 		hp_bar = {
 			200,
-			5
+			4.5
 		},
 		equipment_list = {},
 		random_equipment_list = {},
 		random_nub = {},
 		buff_list = {}
 	},
-	[91146] = {
+	[91163] = {
 		cannon = 0,
-		name = "Corruption of Amahara - Kitsune",
+		name = "Silent Sentry - Raging Carapace",
+		type = 16,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 91163,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "fengfan_haigu_zibao",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 16,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 400,
+		wave_fx = "",
+		prefab = "fengfan_haigu_zibao",
+		cannon_growth = 0,
+		pilot_ai_template_id = 10001,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 96,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 1,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			6,
+			7.5,
+			6
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0,
+					0.5,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0.5,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					0.5,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearsmall"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			3
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[91164] = {
+		cannon = 0,
+		name = "Silent Soul - Spectral Beguiler",
+		type = 1,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 91164,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "fengfan_lingti_quzhu",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 1,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 220,
+		wave_fx = "",
+		prefab = "fengfan_lingti_quzhu",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20005,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 96,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 1,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			6,
+			7.5,
+			6
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0,
+					0.5,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0.5,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					0.5,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearsmall"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			3
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[91165] = {
+		cannon = 0,
+		name = "Silent Soul - Devouring Cruiser",
+		type = 2,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 91165,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "fengfan_lingti_qingxun",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 2,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 350,
+		wave_fx = "",
+		prefab = "fengfan_lingti_qingxun",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20005,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 96,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 1,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			13,
+			7.5,
+			6
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0,
+					0.5,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0.5,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					0.5,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearsmall"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			2.5
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[91166] = {
+		cannon = 0,
+		name = "Silent Soul - Dormant Lurker",
+		type = 3,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 91166,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "fengfan_lingti_zhongxun",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 3,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 270,
+		wave_fx = "",
+		prefab = "fengfan_lingti_zhongxun",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20004,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 96,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 2,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			13,
+			7.5,
+			8
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0,
+					0.5,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0.5,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					0.5,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearsmall"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			4
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[91167] = {
+		cannon = 0,
+		name = "Silent Soul - Thrusting Lancer",
 		type = 5,
 		speed_growth = 0,
 		air_growth = 0,
@@ -152,11 +685,11 @@ pg.enemy_data_statistics_37 = {
 		battle_unit_type = 49,
 		durability = 99999,
 		armor = 0,
-		friendly_cld = 1,
-		id = 91146,
+		friendly_cld = 0,
+		id = 91167,
 		bubble_fx = "",
 		dodge_growth = 0,
-		icon = "chongying_u_zhanlie",
+		icon = "fengfan_lingti_zhanlie",
 		star = 0,
 		fog_fx = "",
 		antisub_growth = 0,
@@ -170,16 +703,16 @@ pg.enemy_data_statistics_37 = {
 		speed = 15,
 		luck = 0,
 		antisub = 0,
-		scale = 230,
+		scale = 500,
 		wave_fx = "",
-		prefab = "chongying_u_zhanlie",
+		prefab = "fengfan_lingti_zhanlie",
 		cannon_growth = 0,
 		pilot_ai_template_id = 20004,
 		reload = 150,
 		dodge = 0,
 		reload_growth = 0,
 		hit = 0,
-		nationality = 95,
+		nationality = 96,
 		durability_growth = 0,
 		antiaircraft = 0,
 		antiaircraft_growth = 0,
@@ -216,29 +749,22 @@ pg.enemy_data_statistics_37 = {
 		bound_bone = {
 			cannon = {
 				{
-					1.188,
-					0.917,
-					0
-				}
-			},
-			vicegun = {
-				{
-					0.694,
-					0.853,
+					0,
+					0.5,
 					0
 				}
 			},
 			torpedo = {
 				{
-					0.088,
-					0.917,
+					0,
+					0.5,
 					0
 				}
 			},
-			antiaircraft = {
+			plane = {
 				{
-					0.096,
-					3.156,
+					0,
+					0.5,
 					0
 				}
 			}
@@ -277,16 +803,16 @@ pg.enemy_data_statistics_37 = {
 		},
 		hp_bar = {
 			200,
-			5.5
+			4
 		},
 		equipment_list = {},
 		random_equipment_list = {},
 		random_nub = {},
 		buff_list = {}
 	},
-	[91147] = {
+	[91168] = {
 		cannon = 0,
-		name = "Corruption of Amahara - Ootori",
+		name = "Silent Soul - Abyssal Wings",
 		type = 7,
 		speed_growth = 0,
 		air_growth = 0,
@@ -294,11 +820,11 @@ pg.enemy_data_statistics_37 = {
 		battle_unit_type = 49,
 		durability = 99999,
 		armor = 0,
-		friendly_cld = 1,
-		id = 91147,
+		friendly_cld = 0,
+		id = 91168,
 		bubble_fx = "",
 		dodge_growth = 0,
-		icon = "chongying_u_hangmu",
+		icon = "fengfan_lingti_hangmu",
 		star = 0,
 		fog_fx = "",
 		antisub_growth = 0,
@@ -312,16 +838,16 @@ pg.enemy_data_statistics_37 = {
 		speed = 15,
 		luck = 0,
 		antisub = 0,
-		scale = 260,
+		scale = 350,
 		wave_fx = "",
-		prefab = "chongying_u_hangmu",
+		prefab = "fengfan_lingti_hangmu",
 		cannon_growth = 0,
 		pilot_ai_template_id = 20004,
 		reload = 150,
 		dodge = 0,
 		reload_growth = 0,
 		hit = 0,
-		nationality = 95,
+		nationality = 96,
 		durability_growth = 0,
 		antiaircraft = 0,
 		antiaircraft_growth = 0,
@@ -358,29 +884,22 @@ pg.enemy_data_statistics_37 = {
 		bound_bone = {
 			cannon = {
 				{
-					1.2,
-					1.08,
+					0,
+					0.5,
 					0
 				}
 			},
 			torpedo = {
 				{
-					0.07,
-					0.1,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.51,
-					2.88,
+					0,
+					0.5,
 					0
 				}
 			},
 			plane = {
 				{
-					2.08,
-					3.91,
+					0,
+					0.5,
 					0
 				}
 			}
@@ -419,16 +938,16 @@ pg.enemy_data_statistics_37 = {
 		},
 		hp_bar = {
 			200,
-			6
+			4.5
 		},
 		equipment_list = {},
 		random_equipment_list = {},
 		random_nub = {},
 		buff_list = {}
 	},
-	[91148] = {
+	[91169] = {
 		cannon = 0,
-		name = "Corruption of Amahara - Karasu",
+		name = "Silent Soul - Raging Carapace",
 		type = 16,
 		speed_growth = 0,
 		air_growth = 0,
@@ -437,10 +956,10 @@ pg.enemy_data_statistics_37 = {
 		durability = 99999,
 		armor = 0,
 		friendly_cld = 0,
-		id = 91148,
+		id = 91169,
 		bubble_fx = "",
 		dodge_growth = 0,
-		icon = "chongying_u_zibao",
+		icon = "fengfan_lingti_zibao",
 		star = 0,
 		fog_fx = "",
 		antisub_growth = 0,
@@ -451,19 +970,19 @@ pg.enemy_data_statistics_37 = {
 		armor_growth = 0,
 		torpedo_growth = 0,
 		hit_growth = 0,
-		speed = 30,
+		speed = 15,
 		luck = 0,
 		antisub = 0,
-		scale = 200,
+		scale = 400,
 		wave_fx = "",
-		prefab = "chongying_u_zibao",
+		prefab = "fengfan_lingti_zibao",
 		cannon_growth = 0,
 		pilot_ai_template_id = 10001,
 		reload = 150,
 		dodge = 0,
 		reload_growth = 0,
 		hit = 0,
-		nationality = 95,
+		nationality = 96,
 		durability_growth = 0,
 		antiaircraft = 0,
 		antiaircraft_growth = 0,
@@ -483,9 +1002,9 @@ pg.enemy_data_statistics_37 = {
 			0
 		},
 		cld_box = {
-			5.5,
+			6,
 			7.5,
-			8
+			6
 		},
 		cld_offset = {
 			0,
@@ -501,7 +1020,21 @@ pg.enemy_data_statistics_37 = {
 			cannon = {
 				{
 					0,
-					1,
+					0.5,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0.5,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					0.5,
 					0
 				}
 			}
@@ -539,18 +1072,18 @@ pg.enemy_data_statistics_37 = {
 			0
 		},
 		hp_bar = {
-			150,
-			3.5
+			200,
+			3
 		},
 		equipment_list = {},
 		random_equipment_list = {},
 		random_nub = {},
 		buff_list = {}
 	},
-	[91149] = {
+	[91170] = {
 		cannon = 0,
-		name = "Corruption of Amahara - Sakana",
-		type = 8,
+		name = "Silent Overlord - Paguroidea",
+		type = 13,
 		speed_growth = 0,
 		air_growth = 0,
 		air = 0,
@@ -558,32 +1091,306 @@ pg.enemy_data_statistics_37 = {
 		durability = 99999,
 		armor = 0,
 		friendly_cld = 0,
-		id = 91149,
-		fog_fx = "",
+		id = 91170,
+		bubble_fx = "",
 		dodge_growth = 0,
-		icon = "chongying_u_qianting",
+		icon = "fengfan_haigu_boss02",
 		star = 0,
-		torpedo = 0,
+		fog_fx = "",
 		antisub_growth = 0,
 		rarity = 0,
+		torpedo = 0,
 		luck_growth = 0,
-		hit_growth = 0,
-		icon_type = 8,
+		icon_type = 13,
 		armor_growth = 0,
 		torpedo_growth = 0,
-		speed = 10,
+		hit_growth = 0,
+		speed = 15,
 		luck = 0,
 		antisub = 0,
-		scale = 160,
-		wave_fx = "danchuanlanghuaxiao2",
-		prefab = "chongying_u_qianting",
+		scale = 300,
+		wave_fx = "",
+		prefab = "fengfan_haigu_boss02",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20004,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 96,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 3,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			-15
+		},
+		cld_box = {
+			21,
+			25,
+			35
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0,
+					1.8,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					1.8,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					1.8,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				15
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearQ"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			5
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[91171] = {
+		cannon = 0,
+		name = "Silent Overlord - Paguroidea",
+		type = 13,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 91171,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "fengfan_lingti_boss02",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 13,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 15,
+		luck = 0,
+		antisub = 0,
+		scale = 300,
+		wave_fx = "",
+		prefab = "fengfan_lingti_boss02",
+		cannon_growth = 0,
+		pilot_ai_template_id = 20004,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 96,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 3,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			-15
+		},
+		cld_box = {
+			21,
+			25,
+			35
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0,
+					1.8,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					1.8,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					1.8,
+					0
+				}
+			}
+		},
+		smoke = {},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				15
+			}
+		},
+		specific_fx_scale = {
+			jinluhao_lingyu_enemy = 5
+		},
+		appear_fx = {
+			"appearQ",
+			"jinluhao_lingyu_enemy"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			200,
+			5
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[91172] = {
+		cannon = 0,
+		name = "DOS - Sword III - Collide",
+		type = 2,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 91172,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "weixu_baojian_3",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 2,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 18,
+		luck = 0,
+		antisub = 0,
+		scale = 200,
+		wave_fx = "movewave",
+		prefab = "weixu_baojian_3",
 		cannon_growth = 0,
 		pilot_ai_template_id = 10001,
 		reload = 150,
 		dodge = 0,
 		reload_growth = 0,
 		hit = 0,
-		nationality = 95,
+		nationality = 99,
 		durability_growth = 0,
 		antiaircraft = 0,
 		antiaircraft_growth = 0,
@@ -603,9 +1410,9 @@ pg.enemy_data_statistics_37 = {
 			0
 		},
 		cld_box = {
-			10.5,
+			5.5,
 			7.5,
-			8
+			10
 		},
 		cld_offset = {
 			0,
@@ -620,15 +1427,22 @@ pg.enemy_data_statistics_37 = {
 		bound_bone = {
 			cannon = {
 				{
-					-1.68,
-					0.79,
+					1,
+					1,
 					0
 				}
 			},
 			torpedo = {
 				{
-					2.3,
-					-0.6,
+					0,
+					1,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					1,
 					0
 				}
 			}
@@ -638,10 +1452,10 @@ pg.enemy_data_statistics_37 = {
 				50,
 				{
 					{
-						"hit_bubble",
+						"smoke",
 						{
-							0.21,
-							3,
+							-0.4,
+							2,
 							0
 						}
 					}
@@ -672,7 +1486,7 @@ pg.enemy_data_statistics_37 = {
 		},
 		specific_fx_scale = {},
 		appear_fx = {
-			"appearsmall"
+			"appearQ"
 		},
 		position_offset = {
 			0,
@@ -686,152 +1500,12 @@ pg.enemy_data_statistics_37 = {
 		equipment_list = {},
 		random_equipment_list = {},
 		random_nub = {},
-		buff_list = {},
-		bubble_fx = {
-			"bubble",
-			20,
-			3
-		}
-	},
-	[91150] = {
-		cannon = 0,
-		name = "Corruption of Amahara - Suiryuu",
-		type = 4,
-		speed_growth = 0,
-		air_growth = 0,
-		air = 0,
-		battle_unit_type = 49,
-		durability = 99999,
-		armor = 0,
-		friendly_cld = 0,
-		id = 91150,
-		bubble_fx = "",
-		dodge_growth = 0,
-		icon = "chongying_u_boss02",
-		star = 0,
-		fog_fx = "",
-		antisub_growth = 0,
-		rarity = 0,
-		torpedo = 0,
-		luck_growth = 0,
-		icon_type = 4,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		hit_growth = 0,
-		speed = 15,
-		luck = 0,
-		antisub = 0,
-		scale = 120,
-		wave_fx = "",
-		prefab = "chongying_u_boss02",
-		cannon_growth = 0,
-		pilot_ai_template_id = 10001,
-		reload = 150,
-		dodge = 0,
-		reload_growth = 0,
-		hit = 0,
-		nationality = 95,
-		durability_growth = 0,
-		antiaircraft = 0,
-		antiaircraft_growth = 0,
-		armor_type = 2,
-		world_enhancement = {
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		},
-		prefab_offset = {
-			0,
-			0,
-			-5
-		},
-		cld_box = {
-			21,
-			25,
-			25
-		},
-		cld_offset = {
-			0,
-			0,
-			0
-		},
-		aim_offset = {
-			0,
-			0,
-			0
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1,
-					2,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					1,
-					0
-				}
-			},
-			plane = {
-				{
-					0,
-					1,
-					0
-				}
-			}
-		},
-		smoke = {},
-		fx_container = {
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				5
-			}
-		},
-		specific_fx_scale = {},
-		appear_fx = {
-			"appearsmall"
-		},
-		position_offset = {
-			0,
-			0,
-			0
-		},
-		hp_bar = {
-			200,
-			5
-		},
-		equipment_list = {},
-		random_equipment_list = {},
-		random_nub = {},
 		buff_list = {}
 	},
-	[91151] = {
+	[91173] = {
 		cannon = 0,
-		name = "Corruption of Amahara - Kyuubi Tenko",
-		type = 5,
+		name = "DOS - Sword IV - Recover",
+		type = 12,
 		speed_growth = 0,
 		air_growth = 0,
 		air = 0,
@@ -839,168 +1513,182 @@ pg.enemy_data_statistics_37 = {
 		durability = 99999,
 		armor = 0,
 		friendly_cld = 0,
-		id = 91151,
+		id = 91173,
 		bubble_fx = "",
 		dodge_growth = 0,
-		icon = "chongying_u_boss01",
+		icon = "weixu_baojian_4",
 		star = 0,
 		fog_fx = "",
 		antisub_growth = 0,
 		rarity = 0,
 		torpedo = 0,
 		luck_growth = 0,
-		icon_type = 5,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		hit_growth = 0,
-		speed = 15,
-		luck = 0,
-		antisub = 0,
-		scale = 230,
-		wave_fx = "",
-		prefab = "chongying_u_boss01",
-		cannon_growth = 0,
-		pilot_ai_template_id = 10001,
-		reload = 150,
-		dodge = 0,
-		reload_growth = 0,
-		hit = 0,
-		nationality = 95,
-		durability_growth = 0,
-		antiaircraft = 0,
-		antiaircraft_growth = 0,
-		armor_type = 3,
-		world_enhancement = {
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		},
-		prefab_offset = {
-			0,
-			0,
-			-8
-		},
-		cld_box = {
-			21,
-			25,
-			25
-		},
-		cld_offset = {
-			0,
-			0,
-			0
-		},
-		aim_offset = {
-			0,
-			0,
-			0
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1,
-					1,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					1,
-					0
-				}
-			},
-			plane = {
-				{
-					0,
-					1,
-					0
-				}
-			}
-		},
-		smoke = {},
-		fx_container = {
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				8
-			}
-		},
-		specific_fx_scale = {},
-		appear_fx = {
-			"appearsmall"
-		},
-		position_offset = {
-			0,
-			0,
-			0
-		},
-		hp_bar = {
-			200,
-			5
-		},
-		equipment_list = {},
-		random_equipment_list = {},
-		random_nub = {},
-		buff_list = {}
-	},
-	[91152] = {
-		cannon = 0,
-		name = "Houshou META",
-		type = 6,
-		speed_growth = 0,
-		air_growth = 0,
-		air = 0,
-		battle_unit_type = 49,
-		durability = 99999,
-		armor = 0,
-		friendly_cld = 0,
-		id = 91152,
-		bubble_fx = "",
-		dodge_growth = 0,
-		icon = "fengxiang_alter",
-		star = 0,
-		fog_fx = "",
-		antisub_growth = 0,
-		rarity = 0,
-		torpedo = 0,
-		luck_growth = 0,
-		icon_type = 6,
+		icon_type = 12,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		hit_growth = 0,
 		speed = 18,
 		luck = 0,
 		antisub = 0,
-		scale = 150,
+		scale = 200,
 		wave_fx = "movewave",
-		prefab = "fengxiang_alter",
+		prefab = "weixu_baojian_4",
 		cannon_growth = 0,
 		pilot_ai_template_id = 10001,
 		reload = 150,
 		dodge = 0,
 		reload_growth = 0,
 		hit = 0,
-		nationality = 97,
+		nationality = 99,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 1,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			5.5,
+			7.5,
+			10
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1,
+					1,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					1,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					1,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.4,
+							2,
+							0
+						}
+					}
+				}
+			}
+		},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearQ"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			150,
+			4
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[91174] = {
+		cannon = 0,
+		name = "DOS - Sword V - Repay",
+		type = 3,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 91174,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "weixu_baojian_5",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 3,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 18,
+		luck = 0,
+		antisub = 0,
+		scale = 200,
+		wave_fx = "movewave",
+		prefab = "weixu_baojian_5",
+		cannon_growth = 0,
+		pilot_ai_template_id = 10001,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 99,
 		durability_growth = 0,
 		antiaircraft = 0,
 		antiaircraft_growth = 0,
@@ -1022,7 +1710,7 @@ pg.enemy_data_statistics_37 = {
 		cld_box = {
 			5.5,
 			7.5,
-			8
+			10
 		},
 		cld_offset = {
 			0,
@@ -1064,9 +1752,9 @@ pg.enemy_data_statistics_37 = {
 					{
 						"smoke",
 						{
-							-0.52,
-							2.21,
-							-0.55
+							-0.4,
+							2,
+							0
 						}
 					}
 				}
@@ -1112,179 +1800,44 @@ pg.enemy_data_statistics_37 = {
 		random_nub = {},
 		buff_list = {}
 	},
-	[91153] = {
+	[91175] = {
 		cannon = 0,
-		name = "Amahara's Blessing - Uroko",
-		type = 1,
+		name = "DOS - Sword VI - Pilgrimage",
+		type = 13,
 		speed_growth = 0,
 		air_growth = 0,
 		air = 0,
-		battle_unit_type = 90,
+		battle_unit_type = 49,
 		durability = 99999,
 		armor = 0,
 		friendly_cld = 0,
-		id = 91153,
+		id = 91175,
 		bubble_fx = "",
 		dodge_growth = 0,
-		icon = "i404_honglong",
+		icon = "weixu_baojian_6",
 		star = 0,
 		fog_fx = "",
 		antisub_growth = 0,
 		rarity = 0,
 		torpedo = 0,
 		luck_growth = 0,
-		icon_type = 1,
+		icon_type = 13,
 		armor_growth = 0,
 		torpedo_growth = 0,
 		hit_growth = 0,
-		speed = 15,
-		luck = 0,
-		antisub = 0,
-		scale = 100,
-		wave_fx = "",
-		prefab = "i404_honglong",
-		cannon_growth = 0,
-		pilot_ai_template_id = 20001,
-		reload = 150,
-		dodge = 0,
-		reload_growth = 0,
-		hit = 0,
-		nationality = 3,
-		durability_growth = 0,
-		antiaircraft = 0,
-		antiaircraft_growth = 0,
-		armor_type = 1,
-		world_enhancement = {
-			0,
-			0,
-			0,
-			0,
-			0,
-			0,
-			0
-		},
-		prefab_offset = {
-			0,
-			0,
-			0
-		},
-		cld_box = {
-			7,
-			5,
-			5
-		},
-		cld_offset = {
-			0,
-			0,
-			0
-		},
-		aim_offset = {
-			0,
-			0,
-			0
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1,
-					1,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					1,
-					0
-				}
-			},
-			plane = {
-				{
-					0,
-					1,
-					0
-				}
-			}
-		},
-		smoke = {},
-		fx_container = {
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		specific_fx_scale = {},
-		appear_fx = {
-			"appearsmall"
-		},
-		position_offset = {
-			0,
-			0,
-			0
-		},
-		hp_bar = {
-			150,
-			4
-		},
-		equipment_list = {},
-		random_equipment_list = {},
-		random_nub = {},
-		buff_list = {}
-	},
-	[91154] = {
-		cannon = 0,
-		name = "Shadow of Corruption - Penumbral X",
-		type = 18,
-		speed_growth = 0,
-		air_growth = 0,
-		air = 0,
-		battle_unit_type = 90,
-		durability = 99999,
-		armor = 0,
-		friendly_cld = 0,
-		id = 91154,
-		bubble_fx = "",
-		dodge_growth = 0,
-		icon = "wuxing_x",
-		star = 0,
-		fog_fx = "",
-		antisub_growth = 0,
-		rarity = 0,
-		torpedo = 0,
-		luck_growth = 0,
-		icon_type = 18,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		hit_growth = 0,
-		speed = 20,
+		speed = 18,
 		luck = 0,
 		antisub = 0,
 		scale = 200,
-		wave_fx = "",
-		prefab = "wuxing_x",
+		wave_fx = "movewave",
+		prefab = "weixu_baojian_6",
 		cannon_growth = 0,
 		pilot_ai_template_id = 10001,
 		reload = 150,
 		dodge = 0,
 		reload_growth = 0,
 		hit = 0,
-		nationality = 95,
+		nationality = 99,
 		durability_growth = 0,
 		antiaircraft = 0,
 		antiaircraft_growth = 0,
@@ -1301,12 +1854,12 @@ pg.enemy_data_statistics_37 = {
 		prefab_offset = {
 			0,
 			0,
-			-20
+			0
 		},
 		cld_box = {
-			20,
-			35,
-			35
+			5.5,
+			7.5,
+			10
 		},
 		cld_offset = {
 			0,
@@ -1321,8 +1874,22 @@ pg.enemy_data_statistics_37 = {
 		bound_bone = {
 			cannon = {
 				{
-					4,
-					3.4,
+					1,
+					1,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					1,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					1,
 					0
 				}
 			}
@@ -1334,9 +1901,9 @@ pg.enemy_data_statistics_37 = {
 					{
 						"smoke",
 						{
-							-0.45,
-							2.26,
-							0.53
+							-0.4,
+							2,
+							0
 						}
 					}
 				}
@@ -1361,14 +1928,11 @@ pg.enemy_data_statistics_37 = {
 			{
 				0,
 				0,
-				20
+				0
 			}
 		},
-		specific_fx_scale = {
-			heisewuqi_stg = 5
-		},
+		specific_fx_scale = {},
 		appear_fx = {
-			"heisewuqi_stg",
 			"appearQ"
 		},
 		position_offset = {
@@ -1377,7 +1941,156 @@ pg.enemy_data_statistics_37 = {
 			0
 		},
 		hp_bar = {
-			200,
+			150,
+			4
+		},
+		equipment_list = {},
+		random_equipment_list = {},
+		random_nub = {},
+		buff_list = {}
+	},
+	[91176] = {
+		cannon = 0,
+		name = "DOS - Sword VII - Impulse",
+		type = 6,
+		speed_growth = 0,
+		air_growth = 0,
+		air = 0,
+		battle_unit_type = 49,
+		durability = 99999,
+		armor = 0,
+		friendly_cld = 0,
+		id = 91176,
+		bubble_fx = "",
+		dodge_growth = 0,
+		icon = "weixu_baojian_7",
+		star = 0,
+		fog_fx = "",
+		antisub_growth = 0,
+		rarity = 0,
+		torpedo = 0,
+		luck_growth = 0,
+		icon_type = 6,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		hit_growth = 0,
+		speed = 18,
+		luck = 0,
+		antisub = 0,
+		scale = 200,
+		wave_fx = "movewave",
+		prefab = "weixu_baojian_7",
+		cannon_growth = 0,
+		pilot_ai_template_id = 10001,
+		reload = 150,
+		dodge = 0,
+		reload_growth = 0,
+		hit = 0,
+		nationality = 99,
+		durability_growth = 0,
+		antiaircraft = 0,
+		antiaircraft_growth = 0,
+		armor_type = 2,
+		world_enhancement = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		prefab_offset = {
+			0,
+			0,
+			0
+		},
+		cld_box = {
+			5.5,
+			7.5,
+			10
+		},
+		cld_offset = {
+			0,
+			0,
+			0
+		},
+		aim_offset = {
+			0,
+			0,
+			0
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1,
+					1,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					1,
+					0
+				}
+			},
+			plane = {
+				{
+					0,
+					1,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.4,
+							2,
+							0
+						}
+					}
+				}
+			}
+		},
+		fx_container = {
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		specific_fx_scale = {},
+		appear_fx = {
+			"appearQ"
+		},
+		position_offset = {
+			0,
+			0,
+			0
+		},
+		hp_bar = {
+			150,
 			4
 		},
 		equipment_list = {},
@@ -2252,183 +2965,6 @@ pg.enemy_data_statistics_37 = {
 			315073,
 			315074,
 			315075
-		}
-	},
-	[652] = {
-		cannon = 355,
-		battle_unit_type = 60,
-		fog_fx = "",
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 0,
-		speed = 20,
-		dodge = 9,
-		id = 652,
-		cannon_growth = 1700,
-		rarity = 4,
-		reload_growth = 0,
-		dodge_growth = 126,
-		armor = 0,
-		star = 5,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 0,
-		reload = 150,
-		base = 90206,
-		durability = 9170,
-		armor_growth = 0,
-		torpedo_growth = 4600,
-		luck_growth = 0,
-		hit_growth = 210,
-		luck = 0,
-		torpedo = 342,
-		durability_growth = 81600,
-		antisub = 0,
-		antiaircraft = 44,
-		antiaircraft_growth = 6600,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			100202,
-			315077,
-			315078,
-			315079
-		}
-	},
-	[653] = {
-		cannon = 320,
-		battle_unit_type = 70,
-		fog_fx = "",
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 565,
-		speed = 20,
-		dodge = 7,
-		id = 653,
-		cannon_growth = 1800,
-		rarity = 6,
-		reload_growth = 0,
-		dodge_growth = 108,
-		armor = 0,
-		star = 6,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 6501,
-		reload = 150,
-		base = 90243,
-		durability = 14170,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 210,
-		luck = 0,
-		torpedo = 0,
-		durability_growth = 123800,
-		antisub = 0,
-		antiaircraft = 78,
-		antiaircraft_growth = 6435,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			100202,
-			100352,
-			315082,
-			315083,
-			315084
-		}
-	},
-	[654] = {
-		cannon = 320,
-		battle_unit_type = 70,
-		fog_fx = "",
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 565,
-		speed = 20,
-		dodge = 7,
-		id = 654,
-		cannon_growth = 1800,
-		rarity = 6,
-		reload_growth = 0,
-		dodge_growth = 108,
-		armor = 0,
-		star = 6,
-		hit = 14,
-		antisub_growth = 0,
-		air_growth = 6301,
-		reload = 150,
-		base = 90244,
-		durability = 14170,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 210,
-		luck = 0,
-		torpedo = 0,
-		durability_growth = 123800,
-		antisub = 0,
-		antiaircraft = 78,
-		antiaircraft_growth = 6435,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			100202,
-			100342,
-			315086,
-			315087,
-			315088,
-			315089
-		}
-	},
-	[661] = {
-		cannon = 280,
-		battle_unit_type = 95,
-		fog_fx = "",
-		speed_growth = 0,
-		pilot_ai_template_id = 10001,
-		air = 0,
-		speed = 18,
-		dodge = 25,
-		id = 661,
-		cannon_growth = 0,
-		rarity = 4,
-		reload_growth = 0,
-		dodge_growth = 0,
-		armor = 0,
-		star = 5,
-		hit = 50,
-		antisub_growth = 0,
-		air_growth = 0,
-		reload = 150,
-		base = 90202,
-		durability = 70000,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 0,
-		luck = 0,
-		torpedo = 240,
-		durability_growth = 0,
-		antisub = 0,
-		antiaircraft = 280,
-		antiaircraft_growth = 0,
-		appear_fx = {
-			"bossguangxiao",
-			"appearQ"
-		},
-		equipment_list = {
-			100202,
-			100352,
-			316046,
-			316047,
-			316048,
-			316049
 		}
 	}
 }

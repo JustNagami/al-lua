@@ -30,8 +30,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					1,
-					23
+					11,
+					13
 				},
 				{
 					0,
@@ -42,8 +42,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					1,
-					30
+					12,
+					3
 				},
 				{
 					23,
@@ -83,8 +83,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					1,
-					23
+					11,
+					13
 				},
 				{
 					0,
@@ -95,8 +95,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					1,
-					30
+					12,
+					3
 				},
 				{
 					23,
@@ -190,8 +190,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					4,
-					24
+					11,
+					13
 				},
 				{
 					0,
@@ -202,8 +202,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					4,
-					30
+					12,
+					3
 				},
 				{
 					23,
@@ -243,8 +243,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					4,
-					24
+					11,
+					13
 				},
 				{
 					0,
@@ -255,8 +255,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					4,
-					30
+					12,
+					3
 				},
 				{
 					23,
@@ -375,9 +375,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
-					4,
-					25
+					2025,
+					11,
+					13
 				},
 				{
 					0,
@@ -387,9 +387,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2024,
-					5,
-					1
+					2025,
+					12,
+					3
 				},
 				{
 					23,
@@ -428,9 +428,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
-					4,
-					25
+					2025,
+					11,
+					13
 				},
 				{
 					0,
@@ -440,9 +440,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2024,
-					5,
-					1
+					2025,
+					12,
+					3
 				},
 				{
 					23,
@@ -481,9 +481,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
-					4,
-					25
+					2025,
+					11,
+					13
 				},
 				{
 					0,
@@ -493,9 +493,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2024,
-					5,
-					1
+					2025,
+					12,
+					3
 				},
 				{
 					23,
@@ -534,9 +534,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
-					7,
-					25
+					2025,
+					11,
+					13
 				},
 				{
 					0,
@@ -546,9 +546,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2024,
-					7,
-					31
+					2025,
+					12,
+					3
 				},
 				{
 					23,
@@ -587,9 +587,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
-					7,
-					25
+					2025,
+					11,
+					13
 				},
 				{
 					0,
@@ -599,9 +599,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2024,
-					7,
-					31
+					2025,
+					12,
+					3
 				},
 				{
 					23,
@@ -640,9 +640,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
-					7,
-					25
+					2025,
+					11,
+					13
 				},
 				{
 					0,
@@ -652,9 +652,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2024,
-					7,
-					31
+					2025,
+					12,
+					3
 				},
 				{
 					23,
@@ -720,9 +720,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
+					2025,
 					11,
-					21
+					13
 				},
 				{
 					0,
@@ -732,9 +732,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2024,
-					11,
-					27
+					2025,
+					12,
+					3
 				},
 				{
 					23,
@@ -773,9 +773,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
+					2025,
 					11,
-					21
+					13
 				},
 				{
 					0,
@@ -785,9 +785,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2024,
-					11,
-					27
+					2025,
+					12,
+					3
 				},
 				{
 					23,
@@ -826,9 +826,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
-					12,
-					19
+					2025,
+					11,
+					13
 				},
 				{
 					0,
@@ -838,9 +838,9 @@ pg.soundstory_template = {
 			},
 			{
 				{
-					2024,
+					2025,
 					12,
-					25
+					3
 				},
 				{
 					23,
@@ -879,9 +879,9 @@ pg.soundstory_template = {
 			"timer",
 			{
 				{
-					2024,
-					12,
-					26
+					2025,
+					11,
+					13
 				},
 				{
 					0,
@@ -892,8 +892,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					1,
-					1
+					12,
+					3
 				},
 				{
 					23,
@@ -933,8 +933,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					1,
-					23
+					11,
+					13
 				},
 				{
 					0,
@@ -945,8 +945,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					1,
-					30
+					12,
+					3
 				},
 				{
 					23,
@@ -986,8 +986,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					1,
-					23
+					11,
+					13
 				},
 				{
 					0,
@@ -998,8 +998,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					1,
-					30
+					12,
+					3
 				},
 				{
 					23,
@@ -1039,8 +1039,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					4,
-					24
+					11,
+					13
 				},
 				{
 					0,
@@ -1051,8 +1051,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					4,
-					30
+					12,
+					3
 				},
 				{
 					23,
@@ -1092,8 +1092,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					4,
-					24
+					11,
+					13
 				},
 				{
 					0,
@@ -1104,8 +1104,8 @@ pg.soundstory_template = {
 			{
 				{
 					2025,
-					4,
-					30
+					12,
+					3
 				},
 				{
 					23,
@@ -1221,6 +1221,112 @@ pg.soundstory_template = {
 			}
 		}
 	},
+	{
+		story_pic = "",
+		name = "Monster's Dietary Observation Log",
+		story_resource_CN = "",
+		audition_resource_CN = "",
+		CV_JP = "Tsubame Yuzuki",
+		audition_text = "Are you not afraid of being devoured, my sweet...delicious...Commander?",
+		id = 26,
+		ship_id = 960008,
+		audition_resource_JP = "ss-960008-1",
+		CV_CN = "",
+		overview = "You are worried after hearing that Fancy has been eating some strange things.\nShe makes you accompany her, and you end up learning more about her \"feeding behaviors\" than you bargained for...",
+		captions_color = "#274576",
+		story_resource_JP = "soundStory26_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					10,
+					23
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					29
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		story_pic = "",
+		name = "A Mesmerizing Respite",
+		story_resource_CN = "",
+		audition_resource_CN = "",
+		CV_JP = "Lynn",
+		audition_text = "Now then, Commander...you have my full trust...",
+		id = 27,
+		ship_id = 30510,
+		audition_resource_JP = "ss-30510-1",
+		CV_CN = "",
+		overview = "Where, oh where, can one find the ultimate relaxation spot that is comfortable, worry-free, and utterly irresistible?\nThe answer might just be found betwixt Musashi's gently-swaying tails.",
+		captions_color = "#3a343a",
+		story_resource_JP = "soundStory27_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2025,
+					10,
+					23
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					10,
+					29
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -1246,6 +1352,8 @@ pg.soundstory_template = {
 		22,
 		23,
 		24,
-		25
+		25,
+		26,
+		27
 	}
 }

@@ -1934,6 +1934,21 @@ pg.ship_data_group = setmetatable({
 		[960011] = {
 			668
 		},
+		[960012] = {
+			709
+		},
+		[960013] = {
+			710
+		},
+		[960014] = {
+			711
+		},
+		[960015] = {
+			712
+		},
+		[960016] = {
+			713
+		},
 		[1010001] = {
 			10001
 		},
@@ -2140,6 +2155,30 @@ pg.ship_data_group = setmetatable({
 		},
 		[1130004] = {
 			10134
+		},
+		[1140001] = {
+			10141
+		},
+		[1140002] = {
+			10142
+		},
+		[1150001] = {
+			10151
+		},
+		[1150002] = {
+			10152
+		},
+		[1150003] = {
+			10153
+		},
+		[1150004] = {
+			10154
+		},
+		[1150005] = {
+			10155
+		},
+		[1150006] = {
+			10156
 		},
 		[29901] = {
 			20001
@@ -2422,6 +2461,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[970110] = {
 			30052
+		},
+		[970208] = {
+			30053
 		}
 	},
 	get_id_list_by_handbook_type = {
@@ -3069,7 +3111,12 @@ pg.ship_data_group = setmetatable({
 			665,
 			666,
 			667,
-			668
+			668,
+			709,
+			710,
+			711,
+			712,
+			713
 		},
 		{
 			10001,
@@ -3140,7 +3187,15 @@ pg.ship_data_group = setmetatable({
 			10131,
 			10132,
 			10133,
-			10134
+			10134,
+			10141,
+			10142,
+			10151,
+			10152,
+			10153,
+			10154,
+			10155,
+			10156
 		},
 		{
 			20001,
@@ -3238,7 +3293,8 @@ pg.ship_data_group = setmetatable({
 			30049,
 			30050,
 			30051,
-			30052
+			30052,
+			30053
 		}
 	},
 	all = {
@@ -3886,6 +3942,11 @@ pg.ship_data_group = setmetatable({
 		666,
 		667,
 		668,
+		709,
+		710,
+		711,
+		712,
+		713,
 		10001,
 		10002,
 		10003,
@@ -3955,6 +4016,14 @@ pg.ship_data_group = setmetatable({
 		10132,
 		10133,
 		10134,
+		10141,
+		10142,
+		10151,
+		10152,
+		10153,
+		10154,
+		10155,
+		10156,
 		20001,
 		20002,
 		20003,
@@ -4048,7 +4117,8 @@ pg.ship_data_group = setmetatable({
 		30049,
 		30050,
 		30051,
-		30052
+		30052,
+		30053
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -17209,6 +17279,16 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"Merit Shop",
+				{
+					"SHOP",
+					{
+						warp = "supplies"
+					}
+				},
+				0
 			}
 		}
 	},
@@ -18953,6 +19033,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"Light ship Construction",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -20080,6 +20171,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"Light ship Construction",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -20510,6 +20612,17 @@ pg.base.ship_data_group = {
 				"Event: Violet Tempest, Blooming Lycoris",
 				{
 					""
+				},
+				0
+			},
+			{
+				"Heavy Ship Construction",
+				{
+					"GETBOAT",
+					{
+						projectName = "heavy",
+						page = 1
+					}
 				},
 				0
 			}
@@ -21739,6 +21852,28 @@ pg.base.ship_data_group = {
 				"Event: Violet Tempest, Blooming Lycoris",
 				{
 					""
+				},
+				0
+			},
+			{
+				"Heavy/Special Construction",
+				{
+					"GETBOAT",
+					{
+						projectName = "special",
+						page = 1
+					}
+				},
+				0
+			},
+			{
+				"UR Exchange",
+				{
+					"GETBOAT",
+					{
+						projectName = "heavy",
+						page = 1
+					}
 				},
 				0
 			}
@@ -31250,7 +31385,7 @@ pg.base.ship_data_group = {
 				0
 			},
 			{
-				"Light Ship Construction",
+				"Light ship Construction",
 				{
 					"GETBOAT",
 					{
@@ -31921,6 +32056,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"Heavy Ship Construction",
+				{
+					"GETBOAT",
+					{
+						projectName = "heavy",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -31951,6 +32097,17 @@ pg.base.ship_data_group = {
 				"Event: Tempesta and the Fountain of Youth",
 				{
 					""
+				},
+				0
+			},
+			{
+				"Light Ship Construction",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
 				},
 				0
 			}
@@ -31985,6 +32142,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"Special Construction",
+				{
+					"GETBOAT",
+					{
+						projectName = "special",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -32017,6 +32185,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"Special Construction",
+				{
+					"GETBOAT",
+					{
+						projectName = "special",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -32047,6 +32226,16 @@ pg.base.ship_data_group = {
 				"Event: Tempesta and the Fountain of Youth",
 				{
 					""
+				},
+				0
+			},
+			{
+				"Merit Shop",
+				{
+					"SHOP",
+					{
+						warp = "supplies"
+					}
 				},
 				0
 			}
@@ -32205,6 +32394,166 @@ pg.base.ship_data_group = {
 		description = {
 			{
 				"Event: Tempesta and the Sleeping Sea",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[709] = {
+		type = 24,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 646,
+		code = 709,
+		group_type = 960012,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[710] = {
+		type = 23,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 647,
+		code = 710,
+		group_type = 960013,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"E",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[711] = {
+		type = 24,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 646,
+		code = 711,
+		group_type = 960014,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[712] = {
+		type = 23,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 646,
+		code = 712,
+		group_type = 960015,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[713] = {
+		type = 22,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 96,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 647,
+		code = 713,
+		group_type = 960016,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"E",
+			"E",
+			"C",
+			"E",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Tempesta and Islas de Libertád",
 				{
 					""
 				},
@@ -34413,6 +34762,262 @@ pg.base.ship_data_group = {
 		description = {
 			{
 				"Event: The Alchemist and the Tower of Horizons",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10141] = {
+		type = 12,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 114,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10141,
+		code = 10141,
+		group_type = 1140001,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"E",
+			"E",
+			"E",
+			"C",
+			"D",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: An Encounter Beneath Clear Skies",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10142] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 114,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10142,
+		code = 10142,
+		group_type = 1140002,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"B",
+			"E",
+			"B",
+			"B",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: An Encounter Beneath Clear Skies",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10151] = {
+		type = 3,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 115,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10151,
+		code = 10151,
+		group_type = 1150001,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"E",
+			"E",
+			"B",
+			"B",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: DATE A LANE",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10152] = {
+		type = 7,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 115,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10152,
+		code = 10152,
+		group_type = 1150002,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"E",
+			"E",
+			"S",
+			"B",
+			"B",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: DATE A LANE",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10153] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 115,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10153,
+		code = 10153,
+		group_type = 1150003,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"S",
+			"E",
+			"E",
+			"D",
+			"C",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: DATE A LANE",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10154] = {
+		type = 6,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 115,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10154,
+		code = 10154,
+		group_type = 1150004,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"E",
+			"E",
+			"A",
+			"D",
+			"A",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: DATE A LANE",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10155] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 115,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10155,
+		code = 10155,
+		group_type = 1150005,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"B",
+			"B",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: DATE A LANE",
+				{
+					""
+				},
+				0
+			}
+		}
+	},
+	[10156] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 115,
+		trans_skin = 0,
+		handbook_type = 1,
+		index_id = 10156,
+		code = 10156,
+		group_type = 1150006,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"B",
+			"E",
+			"B",
+			"B",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: DATE A LANE",
 				{
 					""
 				},
@@ -37687,6 +38292,41 @@ pg.base.ship_data_group = {
 					"METACHARACTER",
 					{
 						autoOpenShipConfigID = 9701101
+					}
+				},
+				0
+			}
+		}
+	},
+	[30053] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30050,
+		code = 30053,
+		group_type = 970208,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"E",
+			"E",
+			"B",
+			"B",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Cruise Missions",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9702081
 					}
 				},
 				0

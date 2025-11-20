@@ -342,7 +342,7 @@ pg.gameset = {
 	},
 	activity_res_id = {
 		description = "PT",
-		key_value = 543
+		key_value = 577
 	},
 	chapter_move_speed_1 = {
 		description = "",
@@ -1927,7 +1927,7 @@ pg.gameset = {
 	},
 	skin_ticket = {
 		description = "",
-		key_value = 551
+		key_value = 586
 	},
 	order_pt_max = {
 		key_value = 0,
@@ -3839,8 +3839,7 @@ pg.gameset = {
 	act_npc_ship_id = {
 		key_value = 0,
 		description = {
-			5987,
-			5995
+			50154
 		}
 	},
 	music_Version = {
@@ -4041,5 +4040,27 @@ pg.gameset = {
 				"L2D+"
 			}
 		}
+	},
+	payshop_pack_red_dot = {
+		key_value = 20251113,
+		description = {
+			{
+				60697
+			},
+			{}
+		}
+	},
+	gemshop_pack_red_dot = {
+		key_value = 20251113,
+		description = {
+			{
+				60697
+			},
+			{}
+		}
+	},
+	profile_cvchange_button_block = {
+		key_value = 0,
+		description = {}
 	}
 }

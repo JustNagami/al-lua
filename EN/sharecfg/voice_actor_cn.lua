@@ -1839,5 +1839,49 @@ pg.voice_actor_CN = {
 	[476] = {
 		code = 476,
 		actor_name = "Mizuki Niizaki"
+	},
+	[477] = {
+		code = 477,
+		actor_name = "Haru Amaichi"
+	},
+	[478] = {
+		code = 478,
+		actor_name = "Yumika Yano"
+	},
+	[479] = {
+		code = 479,
+		actor_name = "Narumi Aisaka"
+	},
+	[480] = {
+		code = 480,
+		actor_name = "Rena Ozawa"
+	},
+	[481] = {
+		code = 481,
+		actor_name = "Misuzu Yamada"
+	},
+	[482] = {
+		code = 482,
+		actor_name = "Takako Honda"
+	},
+	[483] = {
+		code = 483,
+		actor_name = "Misuzu Togashi"
+	},
+	[484] = {
+		code = 484,
+		actor_name = "Ayana Taketatsu"
+	},
+	[485] = {
+		code = 485,
+		actor_name = "Iori Nomizu"
+	},
+	[486] = {
+		code = 486,
+		actor_name = "Asami Sanada"
+	},
+	[487] = {
+		code = 487,
+		actor_name = "Maaya Uchida & Sarah Emi Bridcutt"
 	}
 }

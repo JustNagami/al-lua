@@ -15,6 +15,8 @@ function var_0_0.OnLoaded(arg_2_0)
 	arg_2_0.typeUIList = UIItemList.New(var_2_0, var_2_0:Find("tpl"))
 
 	setActive(arg_2_0._tf:Find("tpl"), false)
+	setText(arg_2_0._tf:Find("tpl/status/get/Text"), i18n("handbook_claim"))
+	setText(arg_2_0._tf:Find("tpl/status/got/Text"), i18n("handbook_finished"))
 
 	arg_2_0.scrollRect = arg_2_0._tf:Find("view"):GetComponent("LScrollRect")
 
@@ -129,11 +131,14 @@ function var_0_0.FlushDetail(arg_16_0)
 			return arg_22_0.id
 		end
 	}))
-	arg_16_0.scrollRect:SetTotalCount(#arg_16_0.showAchvList, -1)
+
+	arg_16_0.scrollRect.enabled = true
+
+	arg_16_0.scrollRect:SetTotalCount(#arg_16_0.showAchvList, 0)
 end
 
 function var_0_0.OnInitItem(arg_23_0, arg_23_1)
-	local var_23_0 = IslandAchievementCard.New(arg_23_1)
+	local var_23_0 = IslandAchievementCard.New(arg_23_1, arg_23_0)
 
 	arg_23_0.cards[arg_23_1] = var_23_0
 

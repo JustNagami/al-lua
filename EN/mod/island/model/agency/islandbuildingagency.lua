@@ -1,6 +1,7 @@
 ﻿local var_0_0 = class("IslandBuildingAgency", import(".IslandBaseAgency"))
 
 var_0_0.COLLECT_SlOT_UNIT_INIT = "IslandBuildingAgency:COLLECT_SlOT_UNIT_INIT"
+var_0_0.COLLECT_SlOT_UNIT_UPDATE = "IslandBuildingAgency:COLLECT_SlOT_UNIT_UPDATE"
 var_0_0.COLLECT_SLOT_UNIT_REMOVE = "IslandBuildingAgency:COLLECT_SLOT_UNIT_REMOVE"
 var_0_0.SLOT_HANDPLABT_SLOT_UNIT_CHANGE = "IslandBuildingAgency:SLOT_HANDPLABT_SLOT_UNIT_CHANGE"
 var_0_0.SLOT_RESET_DELEGATION_STATE_DONE = "IslandBuildingAgency:SLOT_RESET_DELEGATION_STATE_DONE"
@@ -101,7 +102,7 @@ function var_0_0.InitBuildData(arg_10_0, arg_10_1)
 
 	for iter_10_0, iter_10_1 in ipairs(arg_10_1.build_collect.collect_list or {}) do
 		var_10_1:DispatchEvent(IslandBuildingAgency.COLLECT_SlOT_UNIT_INIT, {
-			slotId = iter_10_1.id
+			slotId = iter_10_1
 		})
 	end
 
@@ -249,7 +250,7 @@ function var_0_0.GetTipInfos(arg_20_0)
 			for iter_20_2, iter_20_3 in pairs(var_20_3:GetDelegationSlotDatas()) do
 				if iter_20_3:GetSlotRewardData() then
 					var_20_0 = var_20_0 + 1
-				elseif iter_20_3:CanStartDelegation() then
+				elseif iter_20_3:CanStartDelegationTip() then
 					var_20_1 = var_20_1 + 1
 				elseif iter_20_3:GetSlotRoleData() then
 					table.insert(var_20_2, iter_20_3:GetSlotRoleData():GetFinishTime())

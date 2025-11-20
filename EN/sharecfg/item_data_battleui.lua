@@ -148,6 +148,36 @@ pg.item_data_battleui = {
 			1
 		}
 	},
+	[110] = {
+		key = "SkinNormal_20251113",
+		name = "Black Friday",
+		desc = "This Battle UI is designed for shopping-loving Commanders. While enjoying the thrill of shopping, overwhelm your opponents with a deluge of gifts.",
+		display_icon = "ui_110",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Obtained from Black Friday Cruise Pass.",
+		id = 110,
+		icon = "110",
+		scene = {},
+		rare_display = {
+			1
+		}
+	},
+	[111] = {
+		key = "SkinNormal_20251120",
+		name = "Shadow Pictures",
+		desc = "Simple shadow pictures evoke boundless imagination, and modest stories abound with wonderful hopes.",
+		display_icon = "ui_111",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Cruise Missions S26",
+		id = 111,
+		icon = "111",
+		scene = {},
+		rare_display = {
+			1
+		}
+	},
 	[201] = {
 		key = "SkinNormal_20241209",
 		name = "Christmas",
@@ -244,6 +274,8 @@ pg.item_data_battleui = {
 		107,
 		108,
 		109,
+		110,
+		111,
 		201,
 		202,
 		203,

@@ -94,8 +94,8 @@ function var_0_0.init(arg_2_0)
 	setText(arg_2_0.panelAction:Find("Layout/Title/Special/Selected"), i18n("dorm3d_photo_special_anim"))
 
 	arg_2_0.mainCamera = GameObject.Find("BackYardMainCamera"):GetComponent(typeof(Camera))
-	arg_2_0.stopRecBtn = arg_2_0:findTF("stopRec")
-	arg_2_0.videoTipPanel = arg_2_0:findTF("videoTipPanel")
+	arg_2_0.stopRecBtn = arg_2_0._tf:Find("stopRec")
+	arg_2_0.videoTipPanel = arg_2_0._tf:Find("videoTipPanel")
 
 	setActive(arg_2_0.videoTipPanel, false)
 
@@ -195,7 +195,7 @@ function var_0_0.didEnter(arg_7_0)
 		local function var_15_0(arg_16_0)
 			setActive(arg_7_0.centerPanel, arg_16_0)
 
-			arg_7_0:findTF("RightTop"):GetComponent("CanvasGroup").alpha = arg_16_0 and 1 or 0
+			arg_7_0._tf:Find("RightTop"):GetComponent("CanvasGroup").alpha = arg_16_0 and 1 or 0
 		end
 
 		if not arg_7_0.recordState then
@@ -234,7 +234,7 @@ function var_0_0.didEnter(arg_7_0)
 					if not var_21_0 or var_21_0 <= 0 then
 						PlayerPrefs.SetInt("hadShowForVideoTipDorm", 1)
 
-						arg_7_0:findTF("Text", arg_7_0.videoTipPanel):GetComponent("Text").text = i18n("word_take_video_tip")
+						arg_7_0.videoTipPanel:Find("Text"):GetComponent("Text").text = i18n("word_take_video_tip")
 
 						onButton(arg_7_0, arg_7_0.videoTipPanel, function()
 							setActive(arg_7_0.videoTipPanel, false)
@@ -280,7 +280,7 @@ function var_0_0.didEnter(arg_7_0)
 		local function var_23_1(arg_28_0)
 			setActive(arg_7_0.centerPanel, arg_28_0)
 
-			arg_7_0:findTF("RightTop"):GetComponent("CanvasGroup").alpha = arg_28_0 and 1 or 0
+			arg_7_0._tf:Find("RightTop"):GetComponent("CanvasGroup").alpha = arg_28_0 and 1 or 0
 		end
 
 		if not LeanTween.isTweening(go(arg_7_0.stopRecBtn)) then
@@ -694,6 +694,7 @@ function var_0_0.UpdateActionPanel(arg_69_0)
 		local function var_74_7(arg_77_0, arg_77_1, arg_77_2)
 			arg_69_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "PlayEnterSceneAnim", arg_77_0:GetEnterSceneAnim(), arg_77_2 ~= arg_77_1, arg_69_0.animSpeed)
 			arg_69_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "PlayEnterExtraItem", arg_77_0:GetEnterExtraItem(), arg_69_0.animSpeed)
+			arg_69_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "HideSceneItem", arg_77_0:GetHideSceneItem())
 
 			arg_69_0.cacheSceneAnim = arg_77_0:GetEnterSceneAnim()
 			arg_69_0.cacheExtraItem = arg_77_0:GetEnterExtraItem()
@@ -1382,13 +1383,9 @@ end
 
 function var_0_0.SetMute(arg_134_0)
 	if arg_134_0 then
-		CriWare.CriAtom.SetCategoryVolume("Category_CV", 0)
-		CriWare.CriAtom.SetCategoryVolume("Category_BGM", 0)
-		CriWare.CriAtom.SetCategoryVolume("Category_SE", 0)
+		pg.CriMgr.GetInstance():MuteAllVolume()
 	else
-		CriWare.CriAtom.SetCategoryVolume("Category_CV", pg.CriMgr.GetInstance():getCVVolume())
-		CriWare.CriAtom.SetCategoryVolume("Category_BGM", pg.CriMgr.GetInstance():getBGMVolume())
-		CriWare.CriAtom.SetCategoryVolume("Category_SE", pg.CriMgr.GetInstance():getSEVolume())
+		pg.CriMgr.GetInstance():ResetAllVolume()
 	end
 end
 
@@ -1415,6 +1412,7 @@ function var_0_0.willExit(arg_135_0)
 
 	arg_135_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetSceneItemAnimators")
 	arg_135_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetCharacterExtraItem")
+	arg_135_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "ResetTempHideSceneItems")
 	arg_135_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "RevertCharacterLight")
 	arg_135_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "RevertVolumeProfile")
 	arg_135_0.scene:emit(Dorm3dRoomTemplateScene.PHOTO_CALL, "RevertCameraSettings")

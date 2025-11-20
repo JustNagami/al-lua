@@ -66,7 +66,15 @@ var_0_0.ShowTypeColors = {
 	[var_0_0.SHOW_WEEKLY] = "#46cd92",
 	[var_0_0.SHOW_ACTIVITY] = "#ffc561"
 }
+var_0_0.ShowTypeTrackColors = {
+	[var_0_0.SHOW_MAIN] = "#39bfff",
+	[var_0_0.SHOW_BRANCH] = "#cb72d1",
+	[var_0_0.SHOW_DAILY] = "#b29dff",
+	[var_0_0.SHOW_WEEKLY] = "#8dffc0",
+	[var_0_0.SHOW_ACTIVITY] = "#ffe18e"
+}
 var_0_0.EXCLUED_TRACK_TYPES = {
+	var_0_0.MAIN,
 	var_0_0.SEASON,
 	var_0_0.HIDE
 }
@@ -100,7 +108,7 @@ function var_0_0.GetTrackPriority(arg_2_0)
 end
 
 function var_0_0.GetHudPriority(arg_11_0)
-	return switch(type, {
+	return switch(arg_11_0, {
 		[var_0_0.SHOW_MAIN] = function()
 			return 1
 		end,
@@ -119,6 +127,22 @@ function var_0_0.GetHudPriority(arg_11_0)
 	}, function()
 		return 999
 	end)
+end
+
+function var_0_0.GetTrackingIconName(arg_18_0)
+	if arg_18_0 == var_0_0.MAIN then
+		return "task_type_1"
+	elseif arg_18_0 == var_0_0.BRANCH then
+		return "task_type_2"
+	elseif arg_18_0 == var_0_0.DAILY then
+		return "task_type_3"
+	elseif arg_18_0 == var_0_0.WEEKLY then
+		return "task_type_4"
+	elseif arg_18_0 == var_0_0.ACTIVITY_BRANCH or arg_18_0 == var_0_0.ACTIVITY_DAILY or arg_18_0 == var_0_0.ACTIVITY_WEEKLY or arg_18_0 == var_0_0.SEASON or arg_18_0 == var_0_0.HIDE then
+		return "task_type_5"
+	end
+
+	assert(false, "Unknown type >>>" .. arg_18_0)
 end
 
 return var_0_0

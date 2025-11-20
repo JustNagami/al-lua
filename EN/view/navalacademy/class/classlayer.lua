@@ -30,31 +30,31 @@ function var_0_0.OnUpdateResField(arg_5_0, arg_5_1)
 end
 
 function var_0_0.init(arg_6_0)
-	arg_6_0.backBtn = arg_6_0:findTF("blur_panel/adapt/top/back")
-	arg_6_0.lessonTxt = arg_6_0:findTF("blur_panel/adapt/bottom/lesson/mask/Text"):GetComponent("ScrollText")
-	arg_6_0.tranSpeedTxt = arg_6_0:findTF("blur_panel/adapt/bottom/progress/proficiency/value"):GetComponent(typeof(Text))
-	arg_6_0.proficiencyProgressTxt = arg_6_0:findTF("blur_panel/adapt/bottom/progress/proficiency/Text"):GetComponent(typeof(Text))
-	arg_6_0.proficiencyProgress = arg_6_0:findTF("blur_panel/adapt/bottom/progress/proficiency/slider/Image")
-	arg_6_0.tranProgressTxt = arg_6_0:findTF("blur_panel/adapt/bottom/progress/book/Text/value"):GetComponent(typeof(Text))
-	arg_6_0.tranProgress = arg_6_0:findTF("blur_panel/adapt/bottom/progress/book/slider/Image")
-	arg_6_0.exp2ProficiencyRatioTxt = arg_6_0:findTF("blur_panel/adapt/top/proficiency/Text"):GetComponent(typeof(Text))
-	arg_6_0.exp2ProficiencyRatio = arg_6_0:findTF("blur_panel/adapt/top/proficiency")
-	arg_6_0.chatProficiency = arg_6_0:findTF("blur_panel/adapt/top/proficiency/chat")
+	arg_6_0.backBtn = arg_6_0._tf:Find("blur_panel/adapt/top/back")
+	arg_6_0.lessonTxt = arg_6_0._tf:Find("blur_panel/adapt/bottom/lesson/mask/Text"):GetComponent("ScrollText")
+	arg_6_0.tranSpeedTxt = arg_6_0._tf:Find("blur_panel/adapt/bottom/progress/proficiency/value"):GetComponent(typeof(Text))
+	arg_6_0.proficiencyProgressTxt = arg_6_0._tf:Find("blur_panel/adapt/bottom/progress/proficiency/Text"):GetComponent(typeof(Text))
+	arg_6_0.proficiencyProgress = arg_6_0._tf:Find("blur_panel/adapt/bottom/progress/proficiency/slider/Image")
+	arg_6_0.tranProgressTxt = arg_6_0._tf:Find("blur_panel/adapt/bottom/progress/book/Text/value"):GetComponent(typeof(Text))
+	arg_6_0.tranProgress = arg_6_0._tf:Find("blur_panel/adapt/bottom/progress/book/slider/Image")
+	arg_6_0.exp2ProficiencyRatioTxt = arg_6_0._tf:Find("blur_panel/adapt/top/proficiency/Text"):GetComponent(typeof(Text))
+	arg_6_0.exp2ProficiencyRatio = arg_6_0._tf:Find("blur_panel/adapt/top/proficiency")
+	arg_6_0.chatProficiency = arg_6_0._tf:Find("blur_panel/adapt/top/proficiency/chat")
 	arg_6_0.chatProficiencyTxt = arg_6_0.chatProficiency:Find("Text"):GetComponent(typeof(Text))
-	arg_6_0.helpBtn = arg_6_0:findTF("blur_panel/adapt/top/btn_help")
-	arg_6_0.upgradeBtn = arg_6_0:findTF("blur_panel/adapt/bottom/upgarde")
-	arg_6_0.teacherSeat = arg_6_0:findTF("scene/desk0")
+	arg_6_0.helpBtn = arg_6_0._tf:Find("blur_panel/adapt/top/btn_help")
+	arg_6_0.upgradeBtn = arg_6_0._tf:Find("blur_panel/adapt/bottom/upgarde")
+	arg_6_0.teacherSeat = arg_6_0._tf:Find("scene/desk0")
 	arg_6_0.studentSeats = {
-		arg_6_0:findTF("scene/desk1"),
-		arg_6_0:findTF("scene/desk2"),
-		arg_6_0:findTF("scene/desk3"),
-		arg_6_0:findTF("scene/desk4"),
-		arg_6_0:findTF("scene/desk5")
+		arg_6_0._tf:Find("scene/desk1"),
+		arg_6_0._tf:Find("scene/desk2"),
+		arg_6_0._tf:Find("scene/desk3"),
+		arg_6_0._tf:Find("scene/desk4"),
+		arg_6_0._tf:Find("scene/desk5")
 	}
 
-	setText(arg_6_0:findTF("blur_panel/adapt/bottom/progress/book/Text/label"), i18n("class_label_gen"))
-	setText(arg_6_0:findTF("blur_panel/adapt/bottom/progress/proficiency/label"), i18n("class_label_tran"))
-	setText(arg_6_0:findTF("blur_panel/adapt/bottom/upgarde/Text"), i18n("word_levelup"))
+	setText(arg_6_0._tf:Find("blur_panel/adapt/bottom/progress/book/Text/label"), i18n("class_label_gen"))
+	setText(arg_6_0._tf:Find("blur_panel/adapt/bottom/progress/proficiency/label"), i18n("class_label_tran"))
+	setText(arg_6_0._tf:Find("blur_panel/adapt/bottom/upgarde/Text"), i18n("word_levelup"))
 
 	arg_6_0.chars = {}
 	arg_6_0.resFieldPage = ClassResourcePage.New(arg_6_0._tf, arg_6_0.event)
@@ -174,25 +174,19 @@ function var_0_0.LoadClassRoom(arg_17_0)
 end
 
 function var_0_0.AddStudent(arg_23_0, arg_23_1, arg_23_2)
-	local var_23_0 = arg_23_1.transform
-
-	var_23_0.localScale = Vector3(-0.9, 0.9, 1)
-	var_23_0.localPosition = Vector3(37, 62, 0)
-
-	setParent(var_23_0, arg_23_2)
+	arg_23_1:SetLocalScale(Vector3(-0.9, 0.9, 1))
+	arg_23_1:SetLocalPosition(Vector3(37, 62, 0))
+	arg_23_1:SetParent(arg_23_2)
 	setActive(arg_23_2:Find("icon"), true)
-	arg_23_1:GetComponent("SpineAnimUI"):SetAction("sit", 0)
-	var_23_0:SetSiblingIndex(0)
+	arg_23_1:SetAction("sit", 0)
+	arg_23_1:SetSiblingIndex(0)
 end
 
 function var_0_0.AddTeacher(arg_24_0, arg_24_1, arg_24_2)
-	local var_24_0 = arg_24_1.transform
-
-	var_24_0.localScale = Vector3(0.9, 0.9, 1)
-	var_24_0.localPosition = Vector3(0, 0, 0)
-
-	setParent(var_24_0, arg_24_2)
-	arg_24_1:GetComponent("SpineAnimUI"):SetAction("stand2", 0)
+	arg_24_1:SetLocalScale(Vector3(0.9, 0.9, 1))
+	arg_24_1:SetLocalPosition(Vector3(0, 0, 0))
+	arg_24_1:SetParent(arg_24_2)
+	arg_24_1:SetAction("stand2", 0)
 end
 
 function var_0_0.willExit(arg_25_0)
@@ -203,14 +197,17 @@ function var_0_0.willExit(arg_25_0)
 end
 
 function var_0_0.LoadChar(arg_26_0, arg_26_1, arg_26_2)
-	PoolMgr.GetInstance():GetSpineChar(arg_26_1, true, function(arg_27_0)
+	local var_26_0 = SpineAnimChar.New()
+
+	var_26_0:SetPaint(arg_26_1)
+	var_26_0:Load(true, function(arg_27_0)
 		if arg_26_0.exited then
-			PoolMgr.GetInstance():ReturnSpineChar(arg_26_1, arg_27_0)
+			arg_27_0:Dispose()
 
 			return
 		end
 
-		pg.ViewUtils.SetLayer(arg_27_0.transform, Layer.UI)
+		arg_27_0:SetLayer(Layer.UI)
 
 		arg_26_0.chars[arg_26_1] = arg_27_0
 
@@ -220,7 +217,7 @@ end
 
 function var_0_0.ClearChars(arg_28_0)
 	for iter_28_0, iter_28_1 in pairs(arg_28_0.chars) do
-		PoolMgr.GetInstance():ReturnSpineChar(iter_28_0, iter_28_1)
+		iter_28_1:Dispose()
 	end
 
 	arg_28_0.chars = {}

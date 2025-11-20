@@ -143,6 +143,8 @@ pg.pay_data_display = setmetatable({
 		1022,
 		1023,
 		1024,
+		1025,
+		1301,
 		2001,
 		2002,
 		2003,
@@ -199,6 +201,8 @@ pg.pay_data_display = setmetatable({
 		2057,
 		2058,
 		2059,
+		2063,
+		2064,
 		5011,
 		5012,
 		5013,
@@ -226,7 +230,13 @@ pg.pay_data_display = setmetatable({
 		156,
 		157,
 		158,
-		159
+		159,
+		160,
+		161,
+		162,
+		163,
+		164,
+		165
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -16143,6 +16153,176 @@ pg.base.pay_data_display = {
 		limit_args = {},
 		drop_item = {}
 	},
+	[1025] = {
+		limit_group = 0,
+		name = "Fair Winds Cruise Pass (2025.12)",
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		second_text = "Unlock Special Rewards",
+		type_order = 6,
+		subject = "Fair Winds Cruise Pass",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 999,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 1025,
+		name_display = "Fair Winds Cruise Pass",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "battlepass_1",
+		extra_service = 4,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.passport29",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Purchase to immediately gain 1,500 Progress Points, and also unlock additional Fair Winds Cruise rewards.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.passport29",
+		extra_service_item = {
+			{
+				1,
+				4026,
+				1500
+			},
+			{
+				8,
+				65108,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					12,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					1,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7026,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1301] = {
+		limit_group = 0,
+		name = "Black Friday Cruise Pass",
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		second_text = "",
+		type_order = 3,
+		subject = "Black Friday Cruise Pass",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 799,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 1301,
+		name_display = "Black Friday Cruise Pass",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "battlepass_blackfriday_1",
+		extra_service = 4,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.passport28",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Purchase to immediately gain 200 Progress Points, and also unlock additional Black Friday Cruise Missions rewards.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.passport28",
+		extra_service_item = {
+			{
+				1,
+				4101,
+				200
+			},
+			{
+				8,
+				65107,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					11,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					12,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				65107,
+				200
+			}
+		},
+		sub_display = {
+			7301,
+			200
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
 	[2001] = {
 		limit_group = 1,
 		name = "PR Construction Pack - Series 1",
@@ -20921,6 +21101,232 @@ pg.base.pay_data_display = {
 			}
 		}
 	},
+	[2063] = {
+		limit_group = 0,
+		name = "Outfit Selection Pack (Musashi)",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 5,
+		subject = "Outfit Selection Pack (Musashi)",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 1799,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2063,
+		name_display = "Outfit Selection Pack (Musashi)",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "Great\nDeal",
+		picture = "huteng_package",
+		sub_display = "",
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.yostaren.azurlane.pack33",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains an Outfit Voucher, Wisdom Cubes, T2 EXP Data Packs, and more.",
+		show_group = "",
+		package_tag_open = 1,
+		airijp_id = "com.yostaren.azurlane.pack33",
+		extra_service_item = {
+			{
+				2,
+				59565,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				1,
+				1,
+				30000
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					11,
+					6
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					11,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				59565,
+				1
+			},
+			{
+				2,
+				20001,
+				40
+			},
+			{
+				2,
+				16502,
+				50
+			}
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40070,
+				1
+			}
+		}
+	},
+	[2064] = {
+		limit_group = 0,
+		name = "Skill Book Pack",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 0,
+		subject = "Skill Book Pack",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 4,
+		money = 299,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2064,
+		name_display = "Skill Book Pack",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "boxSkill",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.pack34",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Buy to receive a large amount of Skill Books.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack34",
+		extra_service_item = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			},
+			{
+				2,
+				16003,
+				3
+			},
+			{
+				2,
+				16013,
+				3
+			},
+			{
+				2,
+				16023,
+				3
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					11,
+					20
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					15
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40023,
+				1
+			}
+		}
+	},
 	[5011] = {
 		limit_group = 0,
 		name = "Daily Paid Pack (Day 1)",
@@ -24310,6 +24716,737 @@ pg.base.pay_data_display = {
 				1,
 				14,
 				2025
+			}
+		}
+	},
+	[160] = {
+		limit_group = 0,
+		name = "Halloween Lucky Box 2025",
+		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
+		type = 1,
+		second_text = "Many Rewards",
+		type_order = 2,
+		subject = "Halloween Lucky Box 2025",
+		first_text = "Random Skin & Abundant Gems",
+		limit_arg = 1,
+		tip = "",
+		money = 2999,
+		tip_open = 0,
+		tag = 2,
+		id = 160,
+		gem = 0,
+		name_display = "Halloween Lucky Box 2025",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai98",
+		show_group = "",
+		skin_inquire_relation = 86418,
+		package_tag_open = 0,
+		id_str = "com.yostaren.azurlane.luckybag69",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random character outfit and a large amount of supplies ",
+		airijp_id = "com.yostaren.azurlane.luckybag69",
+		extra_service_item = {
+			{
+				2,
+				86418,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					10,
+					23
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					11,
+					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81428,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86418,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			}
+		}
+	},
+	[161] = {
+		limit_group = 0,
+		name = "Choose-Your-Own Gift Pack I 2025",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 3,
+		subject = "Choose-Your-Own Gift Pack I",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 1499,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 161,
+		name_display = "Choose-Your-Own Gift Pack I 2025",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "pack_2024_98",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.bfchoosebag6",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains 980x Gems, 1x Choose-Your-Own Gift Pack I, and loads of other valuable rewards.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.bfchoosebag6",
+		extra_service_item = {
+			{
+				2,
+				81429,
+				1
+			},
+			{
+				1,
+				14,
+				980
+			},
+			{
+				2,
+				16501,
+				100
+			},
+			{
+				2,
+				59010,
+				1000
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					11,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					12,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				81429,
+				1
+			},
+			{
+				1,
+				14,
+				980
+			},
+			{
+				2,
+				16501,
+				100
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81433,
+				1
+			}
+		}
+	},
+	[162] = {
+		limit_group = 0,
+		name = "Choose-Your-Own Gift Pack II 2025",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 3,
+		subject = "Choose-Your-Own Gift Pack II",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 2999,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 162,
+		name_display = "Choose-Your-Own Gift Pack II 2025",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "pack_2024_198",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.bfchoosebag7",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains 1980x Gems, 1x Choose-Your-Own Gift Pack II, and loads of other valuable rewards.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.bfchoosebag7",
+		extra_service_item = {
+			{
+				2,
+				81430,
+				1
+			},
+			{
+				1,
+				14,
+				1980
+			},
+			{
+				2,
+				15008,
+				1000
+			},
+			{
+				2,
+				30114,
+				30
+			},
+			{
+				2,
+				59010,
+				2000
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					11,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					12,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				81430,
+				1
+			},
+			{
+				1,
+				14,
+				1980
+			},
+			{
+				2,
+				15008,
+				1000
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81434,
+				1
+			}
+		}
+	},
+	[163] = {
+		limit_group = 0,
+		name = "Choose-Your-Own Gift Pack III 2025",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		type_order = 3,
+		subject = "Choose-Your-Own Gift Pack III",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 4499,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 163,
+		name_display = "Choose-Your-Own Gift Pack III 2025",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "pack_2024_328",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.yostaren.azurlane.bfchoosebag8",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains 3280x Gems, 1x Choose-Your-Own Gift Pack III, and loads of other valuable rewards.",
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.bfchoosebag8",
+		extra_service_item = {
+			{
+				2,
+				81431,
+				1
+			},
+			{
+				1,
+				14,
+				3280
+			},
+			{
+				2,
+				15012,
+				150
+			},
+			{
+				2,
+				15008,
+				2000
+			},
+			{
+				2,
+				16004,
+				2
+			},
+			{
+				2,
+				16014,
+				2
+			},
+			{
+				2,
+				16024,
+				2
+			},
+			{
+				2,
+				16032,
+				30
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					11,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					12,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				81431,
+				1
+			},
+			{
+				1,
+				14,
+				3280
+			},
+			{
+				2,
+				15012,
+				150
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81435,
+				1
+			}
+		}
+	},
+	[164] = {
+		limit_group = 0,
+		name = "Black Friday Lucky Bag (2025)",
+		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
+		type = 1,
+		second_text = "Many Rewards",
+		type_order = 2,
+		subject = "Black Friday Lucky Bag (2025)",
+		first_text = "Random Skin & Abundant Gems",
+		limit_arg = 1,
+		tip = "",
+		money = 2999,
+		tip_open = 0,
+		tag = 2,
+		id = 164,
+		gem = 0,
+		name_display = "Black Friday Lucky Bag (2025)",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai99",
+		show_group = "",
+		skin_inquire_relation = 86419,
+		package_tag_open = 0,
+		id_str = "com.yostaren.azurlane.luckybag71",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random character outfit and a large amount of supplies ",
+		airijp_id = "com.yostaren.azurlane.luckybag71",
+		extra_service_item = {
+			{
+				2,
+				86419,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				35
+			},
+			{
+				2,
+				15003,
+				12
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					11,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					12,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				35
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81436,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86419,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			}
+		}
+	},
+	[165] = {
+		limit_group = 0,
+		name = "Live2D Surprise Lucky Bag (2025)",
+		descrip_extra = "*The contents of the Lucky Box will be sent to your ingame inbox. Please remember to check it. \n*It is possible to obtain an outfit you already own. In such cases, you will instead receive Gems equivalent to the value of that outfit. ",
+		type = 1,
+		second_text = "Many Rewards",
+		type_order = 2,
+		subject = "Live2D Surprise Lucky Bag (2025)",
+		first_text = "Random Skin",
+		limit_arg = 2,
+		tip = "",
+		money = 999,
+		tip_open = 0,
+		tag = 2,
+		id = 165,
+		gem = 0,
+		name_display = "Live2D Surprise Lucky Bag (2025)",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai_L2d_new",
+		show_group = "",
+		skin_inquire_relation = 86420,
+		package_tag_open = 0,
+		id_str = "com.yostaren.azurlane.luckybag72",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "Contains a random unowned rerun L2D outfit and other supplies",
+		airijp_id = "com.yostaren.azurlane.luckybag72",
+		extra_service_item = {
+			{
+				2,
+				86420,
+				1
+			},
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		time = {
+			{
+				{
+					2025,
+					11,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					12,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81437,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86420,
+				1
 			}
 		}
 	}
