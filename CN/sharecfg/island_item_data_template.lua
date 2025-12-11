@@ -955,8 +955,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -990,8 +999,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1025,8 +1043,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1060,8 +1087,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1095,8 +1131,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1130,8 +1175,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1165,8 +1219,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1200,8 +1263,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1235,8 +1307,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1270,8 +1351,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1305,8 +1395,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1340,8 +1439,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1375,8 +1483,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1410,8 +1527,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1445,8 +1571,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1480,8 +1615,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1515,8 +1659,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1550,8 +1703,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1585,8 +1747,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1620,8 +1791,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1655,8 +1835,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1690,8 +1879,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -5427,8 +5625,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -5493,8 +5700,17 @@ pg.base.island_item_data_template = {
 			{
 				"商店购买",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -6620,7 +6836,7 @@ pg.base.island_item_data_template = {
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "使用后恢复角色50体力，生产基础资材时，产出所需时间缩短5%，持续8小时。饱含草莓的甜香，酸甜之中活力满满。",
+		desc = "使用后恢复角色50体力，生产基础资材时，工作速度提高5%，持续8小时。饱含草莓的甜香，酸甜之中活力满满。",
 		usage = "usage_island_gift",
 		order_price = 0,
 		icon = "IslandProps/item_110003",
@@ -6662,7 +6878,7 @@ pg.base.island_item_data_template = {
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "使用后恢复角色50体力，在基地工厂制作产品时，产出所需时间缩短5%，持续8小时。带着金桔微涩的口感，清爽解乏一口回甘。",
+		desc = "使用后恢复角色50体力，在基地工厂制作产品时，工作速度提高5%，持续8小时。带着金桔微涩的口感，清爽解乏一口回甘。",
 		usage = "usage_island_gift",
 		order_price = 0,
 		icon = "IslandProps/item_110004",
@@ -6704,7 +6920,7 @@ pg.base.island_item_data_template = {
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "使用后恢复角色50体力，制作店铺餐品时，烹饪所需时间缩短5%，持续8小时。融汇蓝莓酸甜，馥郁果香令人愉悦。",
+		desc = "使用后恢复角色50体力，制作店铺餐品时，工作速度提高5%，持续8小时。融汇蓝莓酸甜，馥郁果香令人愉悦。",
 		usage = "usage_island_gift",
 		order_price = 0,
 		icon = "IslandProps/item_110005",

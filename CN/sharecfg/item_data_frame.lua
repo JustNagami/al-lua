@@ -522,6 +522,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>「初至天域，忽闻凤鸣。翩然而过，响彻天原」</color>\n「起舞于天原之上」活动获取",
 		scene = {}
 	},
+	[337] = {
+		time_limit_type = 0,
+		name = "幽海幽影",
+		gain_by = "",
+		id = 337,
+		time_second = 0,
+		desc = "通过后续活动获得",
+		scene = {}
+	},
 	[401] = {
 		time_limit_type = 0,
 		name = "殿堂纪念：企业",
@@ -601,6 +610,33 @@ pg.item_data_frame = {
 		id = 417,
 		time_second = 0,
 		desc = "<color=#ffffff>为{namecode:199:新泽西}特别制作的角色专属头像框</color>\n「Azurlane人气投票2023」活动获取",
+		scene = {}
+	},
+	[418] = {
+		time_limit_type = 0,
+		name = "殿堂纪念：{namecode:182:信浓}",
+		gain_by = "",
+		id = 418,
+		time_second = 0,
+		desc = "<color=#ffffff>为{namecode:182}特别制作的角色专属头像框</color>\n「Azurlane人气投票2025」活动获取",
+		scene = {}
+	},
+	[422] = {
+		time_limit_type = 0,
+		name = "殿堂纪念：{namecode:480:埃吉尔}",
+		gain_by = "",
+		id = 422,
+		time_second = 0,
+		desc = "<color=#ffffff>为{namecode:480}特别制作的角色专属头像框</color>\n「Azurlane人气投票2025」活动获取",
+		scene = {}
+	},
+	[423] = {
+		time_limit_type = 0,
+		name = "殿堂纪念：镇海",
+		gain_by = "",
+		id = 423,
+		time_second = 0,
+		desc = "<color=#ffffff>为镇海特别制作的角色专属头像框</color>\n「Azurlane人气投票2025」活动获取",
 		scene = {}
 	},
 	[501] = {
@@ -700,6 +736,15 @@ pg.item_data_frame = {
 		id = 611,
 		time_second = 0,
 		desc = "<color=#ffffff>感受着林间的清风，来一场别样的度假体验吧~</color>通过参与「林间度假准备」活动获取",
+		scene = {}
+	},
+	[613] = {
+		time_limit_type = 0,
+		name = "冬至促销纪念（2025）",
+		gain_by = "",
+		id = 613,
+		time_second = 0,
+		desc = "<color=#ffffff>指挥官，感谢您参与促销活动，请收好赠品喵~！</color>通过参与「特别巡游 茗的赠礼」获取",
 		scene = {}
 	},
 	[1001] = {
@@ -959,6 +1004,7 @@ pg.item_data_frame = {
 		334,
 		335,
 		336,
+		337,
 		401,
 		402,
 		404,
@@ -968,6 +1014,9 @@ pg.item_data_frame = {
 		415,
 		416,
 		417,
+		418,
+		422,
+		423,
 		501,
 		601,
 		602,
@@ -979,6 +1028,7 @@ pg.item_data_frame = {
 		609,
 		610,
 		611,
+		613,
 		1001,
 		1002,
 		1003,

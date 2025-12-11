@@ -12,8 +12,8 @@ pg.activity_banner = {
 			{
 				{
 					2025,
-					11,
-					20
+					12,
+					11
 				},
 				{
 					0,
@@ -25,12 +25,12 @@ pg.activity_banner = {
 				{
 					2025,
 					12,
-					3
+					18
 				},
 				{
-					23,
-					59,
-					59
+					12,
+					0,
+					0
 				}
 			}
 		}
@@ -38,38 +38,13 @@ pg.activity_banner = {
 	{
 		id = 2,
 		pic = "temp2",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene get boat",
 			{
 				projectName = "new",
 				page = 1
-			}
-		},
-		time = {
-			{
-				{
-					2025,
-					11,
-					20
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					12,
-					4
-				},
-				{
-					12,
-					0,
-					0
-				}
 			}
 		}
 	},
@@ -80,15 +55,15 @@ pg.activity_banner = {
 		param = {
 			"scene core activity",
 			{
-				coreName = "DALCoreActivityUI"
+				coreName = "HelenaCoreActivityUI"
 			}
 		},
 		time = {
 			{
 				{
 					2025,
-					11,
-					20
+					12,
+					11
 				},
 				{
 					0,
@@ -100,7 +75,7 @@ pg.activity_banner = {
 				{
 					2025,
 					12,
-					4
+					18
 				},
 				{
 					12,
@@ -117,127 +92,10 @@ pg.activity_banner = {
 		param = {
 			"scene charge",
 			{
-				wrap = 2
+				wrap = 4
 			}
 		},
 		time = {
-			{
-				{
-					2025,
-					11,
-					20
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					12,
-					3
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 5,
-		pic = "temp5",
-		type = 2,
-		param = {
-			"scene shop",
-			{
-				warp = "shopstreet"
-			}
-		},
-		time = {
-			{
-				{
-					2025,
-					11,
-					20
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					12,
-					3
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 6,
-		pic = "temp6",
-		type = 2,
-		param = {
-			"scene court yard"
-		},
-		time = {
-			{
-				{
-					2025,
-					11,
-					20
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					12,
-					3
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	},
-	{
-		id = 7,
-		pic = "temp7",
-		type = 2,
-		param = {
-			"crusing"
-		},
-		time = {
-			{
-				{
-					2025,
-					12,
-					1
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
 			{
 				{
 					2025,
@@ -245,6 +103,18 @@ pg.activity_banner = {
 					11
 				},
 				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					12,
+					18
+				},
+				{
 					12,
 					0,
 					0
@@ -253,21 +123,44 @@ pg.activity_banner = {
 		}
 	},
 	{
-		id = 8,
-		pic = "temp8",
+		id = 5,
+		pic = "temp5",
+		time = "stop",
 		type = 2,
 		param = {
-			"scene charge",
+			"scene shop",
 			{
-				wrap = 2
+				warp = "shopstreet"
+			}
+		}
+	},
+	{
+		id = 6,
+		pic = "temp6",
+		time = "stop",
+		type = 2,
+		param = {
+			"scene court yard"
+		}
+	},
+	{
+		id = 7,
+		pic = "temp7",
+		type = 2,
+		param = {
+			"scene core activity",
+			{
+				actID = 7302,
+				openPass = true,
+				coreName = "WinterFestival2025CoreActivityUI"
 			}
 		},
 		time = {
 			{
 				{
 					2025,
-					11,
-					20
+					12,
+					11
 				},
 				{
 					0,
@@ -279,12 +172,44 @@ pg.activity_banner = {
 				{
 					2025,
 					12,
-					3
+					18
 				},
 				{
-					23,
-					59,
-					59
+					12,
+					0,
+					0
+				}
+			}
+		}
+	},
+	{
+		param = "50263",
+		id = 8,
+		pic = "temp8",
+		type = 3,
+		time = {
+			{
+				{
+					2025,
+					12,
+					11
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2025,
+					12,
+					18
+				},
+				{
+					12,
+					0,
+					0
 				}
 			}
 		}
@@ -294,18 +219,14 @@ pg.activity_banner = {
 		pic = "temp9",
 		type = 2,
 		param = {
-			"scene equip",
-			{
-				designPage = 2,
-				warp = "WARP_TO_DESIGN"
-			}
+			"metacharacter"
 		},
 		time = {
 			{
 				{
 					2025,
-					11,
-					20
+					12,
+					11
 				},
 				{
 					0,
@@ -317,7 +238,7 @@ pg.activity_banner = {
 				{
 					2025,
 					12,
-					4
+					18
 				},
 				{
 					12,
@@ -431,8 +352,10 @@ pg.activity_banner = {
 			5,
 			6,
 			7,
-			8,
 			9
+		},
+		[3] = {
+			8
 		},
 		[9] = {
 			90,
