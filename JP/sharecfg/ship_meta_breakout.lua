@@ -202,6 +202,10 @@ pg.ship_meta_breakout = setmetatable({
 		9707072,
 		9707073,
 		9707074,
+		9707081,
+		9707082,
+		9707083,
+		9707084,
 		9708011,
 		9708012,
 		9708013,
@@ -3485,6 +3489,75 @@ pg.base.ship_meta_breakout = {
 		id = 9707074,
 		item1 = 21048,
 		pre_id = 9707073,
+		weapon_ids = {}
+	},
+	[9707081] = {
+		breakout_view = "【構造の理-ヨークタウン】習得/戦闘機数+1/艦載機補正+3%",
+		gold = 1000,
+		breakout_id = 9707082,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9707081,
+		item1 = 21054,
+		pre_id = 0,
+		weapon_ids = {
+			60081,
+			54014
+		}
+	},
+	[9707082] = {
+		breakout_view = "攻撃隊+1/爆撃機数+1/艦載機補正+5%",
+		gold = 3000,
+		breakout_id = 9707083,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9707082,
+		item1 = 21054,
+		pre_id = 9707081,
+		weapon_ids = {
+			60082,
+			54014,
+			60082,
+			54014
+		}
+	},
+	[9707083] = {
+		breakout_view = "【構造の理-ヨークタウン】強化/艦載機数+1/艦載機補正+7%",
+		gold = 10000,
+		breakout_id = 9707084,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9707083,
+		item1 = 21054,
+		pre_id = 9707082,
+		weapon_ids = {
+			60083,
+			54015,
+			60083,
+			54015
+		}
+	},
+	[9707084] = {
+		breakout_view = "なし",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21001,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9707084,
+		item1 = 21054,
+		pre_id = 9707083,
 		weapon_ids = {}
 	},
 	[9708011] = {

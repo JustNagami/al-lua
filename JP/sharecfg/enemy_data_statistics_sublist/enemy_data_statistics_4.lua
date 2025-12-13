@@ -665,7 +665,7 @@ pg.enemy_data_statistics_4 = {
 		name = "四糸乃",
 		type = 6,
 		speed_growth = 0,
-		air_growth = 0,
+		air_growth = 5000,
 		air = 0,
 		battle_unit_type = 49,
 		durability = 0,
@@ -777,96 +777,131 @@ pg.enemy_data_statistics_4 = {
 		equipment_list = {},
 		random_equipment_list = {},
 		random_nub = {},
-		buff_list = {}
+		buff_list = {
+			{
+				ID = 115203,
+				LV = 1
+			}
+		}
 	},
 	[50132] = {
 		antisub_growth = 5500,
+		air_growth = 5500,
 		name = "四糸乃",
-		base = 50131,
 		cannon_growth = 5500,
-		durability_growth = 5500,
-		armor_growth = 0,
+		base = 50131,
+		fog_fx = "",
 		torpedo_growth = 5500,
 		luck_growth = 10000,
 		antiaircraft_growth = 5500,
-		hit_growth = 5500,
-		air_growth = 0,
+		armor_growth = 0,
+		durability_growth = 5500,
 		reload_growth = 5500,
-		id = 50132,
 		dodge_growth = 3200,
 		bubble_fx = "",
-		fog_fx = ""
+		hit_growth = 5500,
+		id = 50132,
+		buff_list = {
+			{
+				ID = 115203,
+				LV = 2
+			}
+		}
 	},
 	[50133] = {
 		antisub_growth = 6100,
+		air_growth = 6100,
 		name = "四糸乃",
-		base = 50131,
 		cannon_growth = 6100,
-		durability_growth = 6100,
-		armor_growth = 0,
+		base = 50131,
+		fog_fx = "",
 		torpedo_growth = 6100,
 		luck_growth = 10000,
 		antiaircraft_growth = 6100,
-		hit_growth = 6100,
-		air_growth = 0,
+		armor_growth = 0,
+		durability_growth = 6100,
 		reload_growth = 6100,
-		id = 50133,
 		dodge_growth = 3400,
 		bubble_fx = "",
-		fog_fx = ""
+		hit_growth = 6100,
+		id = 50133,
+		buff_list = {
+			{
+				ID = 115203,
+				LV = 3
+			}
+		}
 	},
 	[50134] = {
 		antisub_growth = 6650,
+		air_growth = 6650,
 		name = "四糸乃",
-		base = 50131,
 		cannon_growth = 6650,
-		durability_growth = 6650,
-		armor_growth = 0,
+		base = 50131,
+		fog_fx = "",
 		torpedo_growth = 6650,
 		luck_growth = 10000,
 		antiaircraft_growth = 6650,
-		hit_growth = 6650,
-		air_growth = 0,
+		armor_growth = 0,
+		durability_growth = 6650,
 		reload_growth = 6650,
-		id = 50134,
 		dodge_growth = 3600,
 		bubble_fx = "",
-		fog_fx = ""
+		hit_growth = 6650,
+		id = 50134,
+		buff_list = {
+			{
+				ID = 115203,
+				LV = 4
+			}
+		}
 	},
 	[50135] = {
 		antisub_growth = 7200,
+		air_growth = 7200,
 		name = "四糸乃",
-		base = 50131,
 		cannon_growth = 7200,
-		durability_growth = 7200,
-		armor_growth = 0,
+		base = 50131,
+		fog_fx = "",
 		torpedo_growth = 7200,
 		luck_growth = 10000,
 		antiaircraft_growth = 7200,
-		hit_growth = 7200,
-		air_growth = 0,
+		armor_growth = 0,
+		durability_growth = 7200,
 		reload_growth = 7200,
-		id = 50135,
 		dodge_growth = 3800,
 		bubble_fx = "",
-		fog_fx = ""
+		hit_growth = 7200,
+		id = 50135,
+		buff_list = {
+			{
+				ID = 115203,
+				LV = 5
+			}
+		}
 	},
 	[50136] = {
 		antisub_growth = 7750,
+		air_growth = 7750,
 		name = "四糸乃",
-		base = 50131,
 		cannon_growth = 7750,
-		durability_growth = 7750,
-		armor_growth = 0,
+		base = 50131,
+		fog_fx = "",
 		torpedo_growth = 7750,
 		luck_growth = 10000,
 		antiaircraft_growth = 7750,
-		hit_growth = 7750,
-		air_growth = 0,
+		armor_growth = 0,
+		durability_growth = 7750,
 		reload_growth = 7750,
-		id = 50136,
 		dodge_growth = 4000,
 		bubble_fx = "",
-		fog_fx = ""
+		hit_growth = 7750,
+		id = 50136,
+		buff_list = {
+			{
+				ID = 115203,
+				LV = 6
+			}
+		}
 	}
 }

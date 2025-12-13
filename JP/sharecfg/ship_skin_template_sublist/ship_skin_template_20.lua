@@ -1,6 +1,286 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_20 = {
+	[11400020] = {
+		ship_group = 1140002,
+		name = "リュー・リオン",
+		hand_id = 13,
+		bgm = "",
+		gyro = 0,
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 11400020,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "liuliang",
+		l2d_drag_rate = "",
+		part_scale = "",
+		prefab = "liuliang",
+		shop_type_id = 0,
+		shop_dynamic_hx = 0,
+		double_char = 0,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		illustrator = -1,
+		bg = "",
+		l2d_para_range = "",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		l2d_voice_calibrate = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "貴方は？いや、それよりここは…？どうやらオラリオではなさそうですが。私は貴方に助けられたと言うわけですね。感謝します。私はリュー・リオンと言います。オラリオにある酒場『豊穣の女主人』で給仕をしています。",
+		voice_actor = 284,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.76,
+					0.783,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.831,
+					0.715,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.727,
+					2.322,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.609,
+							2.334,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[11400021] = {
+		ship_group = 1140002,
+		name = "夜の酒場にて",
+		hand_id = 13,
+		bgm = "danmachi-az-story",
+		gyro = 0,
+		illustrator2 = -1,
+		id = 11400021,
+		l2d_drag_rate = "",
+		group_index = 1,
+		purchase_offset = "",
+		painting = "liuliang_2",
+		part_scale = "",
+		prefab = "liuliang_2",
+		shop_dynamic_hx = 0,
+		shop_type_id = 17,
+		double_char = 0,
+		shop_id = 71225,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		illustrator = -1,
+		l2d_voice_calibrate = "",
+		bg = "163",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "い、いらっしゃ…い…ませ……ってそのようにまじまじと見ないでください。このお店の制服は少々露出が多いので緊張してしまいます。ど、どうしてもと言うのでしたら、閉店後に…少しだけ話をする時間を作りますので。",
+		voice_actor = 284,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			6,
+			2,
+			5
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		shop_offset = {
+			-139.3,
+			-627.4,
+			0,
+			0.38
+		},
+		spine_offset_profile = {
+			-65.2,
+			-614.4,
+			0,
+			0.37
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.808,
+					0.87,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.897,
+					2.299,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.681,
+							2.382,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			-28.1,
+			-748.74,
+			0,
+			0.43
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					-1376,
+					533.75,
+					2,
+					120,
+					0,
+					2
+				},
+				{
+					858,
+					56,
+					2,
+					0,
+					-120,
+					2
+				},
+				{
+					-467,
+					-395,
+					2,
+					-100,
+					0,
+					2
+				}
+			}
+		}
+	},
 	[11500010] = {
 		ship_group = 1150001,
 		name = "夜刀神十香",
@@ -805,8 +1085,8 @@ pg.base.ship_skin_template_20 = {
 			}
 		},
 		spine_offset = {
-			-35.2,
-			-737.3,
+			147.3,
+			-745,
 			0,
 			0.44
 		},
@@ -1085,10 +1365,10 @@ pg.base.ship_skin_template_20 = {
 			}
 		},
 		spine_offset = {
-			-180.2,
-			-405.8,
+			-58.6,
+			-447.1,
 			0,
-			0.39
+			0.4
 		},
 		get_showing = {
 			show = 1,
@@ -16361,7 +16641,7 @@ pg.base.ship_skin_template_20 = {
 		part_scale = "",
 		prefab = "nabulesi_2",
 		shop_type_id = 16,
-		shop_dynamic_hx = 0,
+		shop_dynamic_hx = 1,
 		double_char = 0,
 		lip_smoothing = 0,
 		shop_id = 71091,
@@ -16662,7 +16942,7 @@ pg.base.ship_skin_template_20 = {
 		part_scale = "",
 		prefab = "naximofu_2",
 		shop_type_id = 16,
-		shop_dynamic_hx = 0,
+		shop_dynamic_hx = 1,
 		double_char = 0,
 		lip_smoothing = 0,
 		shop_id = 71092,
@@ -17817,7 +18097,7 @@ pg.base.ship_skin_template_20 = {
 		part_scale = "",
 		prefab = "dashan_2",
 		shop_type_id = 16,
-		shop_dynamic_hx = 0,
+		shop_dynamic_hx = 1,
 		double_char = 0,
 		lip_smoothing = 0,
 		l2d_animations = "",

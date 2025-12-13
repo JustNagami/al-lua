@@ -19802,6 +19802,11 @@ pg.painting_filte_map = {
 		key = "yuekecheng_alter",
 		res_list = {
 			"painting/yuekecheng_alter_tex",
+			"painting/yuekecheng_alter_rw_tex",
+			"painting/yuekecheng_alter_n_tex",
+			"painting/yuekecheng_alter_n_rw_tex",
+			"painting/yuekecheng_alter_n",
+			"painting/yuekecheng_alter_bj_tex",
 			"painting/yuekecheng_alter"
 		}
 	},
@@ -20581,6 +20586,7 @@ pg.painting_filte_map = {
 		key = "zhaohe_4",
 		res_list = {
 			"painting/zhaohe_4_tex",
+			"painting/zhaohe_4_shophx_tex",
 			"painting/zhaohe_4_rw_tex",
 			"painting/zhaohe_4_rw_hx_tex",
 			"painting/zhaohe_4_n_rw_tex",

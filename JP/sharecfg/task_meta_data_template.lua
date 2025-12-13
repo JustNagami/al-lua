@@ -332,6 +332,11 @@ pg.task_meta_data_template = setmetatable({
 		100483,
 		100484,
 		100485,
+		100491,
+		100492,
+		100493,
+		100494,
+		100495,
 		200001,
 		200002,
 		200003,
@@ -487,7 +492,11 @@ pg.task_meta_data_template = setmetatable({
 		200391,
 		200392,
 		200393,
-		200394
+		200394,
+		200401,
+		200402,
+		200403,
+		200404
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -3132,6 +3141,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100491] = {
+		target_id_2 = "970708",
+		sub_type = 180,
+		desc = "ヨークタウン(META)を編成した艦隊で1回戦闘を勝利する",
+		id = 100491,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100492] = {
+		target_id_2 = "970708",
+		sub_type = 180,
+		desc = "ヨークタウン(META)を編成した艦隊でLv30+の敵艦隊を撃破する",
+		id = 100492,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100493] = {
+		target_id_2 = "970708",
+		sub_type = 180,
+		desc = "ヨークタウン(META)を編成した艦隊でLv55+の敵艦隊を撃破する",
+		id = 100493,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100494] = {
+		target_id_2 = "970708",
+		sub_type = 180,
+		desc = "ヨークタウン(META)を編成した艦隊でLv80+の敵艦隊を撃破する",
+		id = 100494,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100495] = {
+		target_id_2 = "970708",
+		sub_type = 180,
+		desc = "ヨークタウン(META)を編成した艦隊でLv100+の敵艦隊を撃破する",
+		id = 100495,
+		target_num = 1,
+		target_id = "100"
+	},
 	[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -4377,6 +4426,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "セイレーン作戦でボイシ(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200394,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200401] = {
+		target_id_2 = "970708",
+		sub_type = 302,
+		desc = "セイレーン作戦でヨークタウン(META)を含めた艦隊で1回勝利する",
+		id = 200401,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200402] = {
+		target_id_2 = "970708",
+		sub_type = 302,
+		desc = "セイレーン作戦でヨークタウン(META)を含めた艦隊でLv70+の敵を撃破",
+		id = 200402,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200403] = {
+		target_id_2 = "970708",
+		sub_type = 302,
+		desc = "セイレーン作戦でヨークタウン(META)を含めた艦隊でLv90+の敵を撃破",
+		id = 200403,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200404] = {
+		target_id_2 = "970708",
+		sub_type = 302,
+		desc = "セイレーン作戦でヨークタウン(META)を含めた艦隊でLv100+の敵を撃破",
+		id = 200404,
 		target_num = 1,
 		target_id = "100"
 	}

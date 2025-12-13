@@ -955,8 +955,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -990,8 +999,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1025,8 +1043,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1060,8 +1087,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1095,8 +1131,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1130,8 +1175,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1165,8 +1219,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1200,8 +1263,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1235,8 +1307,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1270,8 +1351,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10022
+					}
 				}
 			}
 		}
@@ -1305,8 +1395,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1340,8 +1439,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1375,8 +1483,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1410,8 +1527,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1445,8 +1571,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
 				}
 			}
 		}
@@ -1480,8 +1615,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1515,8 +1659,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1550,8 +1703,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1585,8 +1747,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1620,8 +1791,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1655,8 +1835,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -1690,8 +1879,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -5427,8 +5625,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -5493,8 +5700,17 @@ pg.base.island_item_data_template = {
 			{
 				"ショップ購入",
 				{
-					"IslandShopScene",
-					"page = 1"
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
 				}
 			}
 		}
@@ -6620,7 +6836,7 @@ pg.base.island_item_data_template = {
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "体力が50回復し、8時間、基本資源生産時に生産に必要な時間を5％短縮する。いちごの甘い香りで今日も元気いっぱい",
+		desc = "体力が50回復し、8時間、基本資源生産時に作業速度が5％アップ。いちごの甘い香りで今日も元気いっぱい",
 		usage = "usage_island_gift",
 		order_price = 0,
 		icon = "IslandProps/item_110003",
@@ -6662,7 +6878,7 @@ pg.base.island_item_data_template = {
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "体力が50回復し、8時間、基地工場でアイテム制作時に制作に必要な時間を5％短縮する。キンカンの渋みもあるけど、後味が甘く気分も爽やかに",
+		desc = "体力が50回復し、8時間、基地工場でアイテム制作時に作業速度が5％アップ。キンカンの渋みもあるけど、後味が甘く気分も爽やかに",
 		usage = "usage_island_gift",
 		order_price = 0,
 		icon = "IslandProps/item_110004",
@@ -6704,7 +6920,7 @@ pg.base.island_item_data_template = {
 		tech_id = 0,
 		convert = 0,
 		manage_influence = 0,
-		desc = "体力が50回復し、8時間、店舗で料理アイテム制作時に制作に必要な時間を5％短縮する。酸っぱくて甘い、フルーティーなベリーの嬉しい味覚",
+		desc = "体力が50回復し、8時間、店舗で料理アイテム制作時に作業速度が5％アップ。酸っぱくて甘い、フルーティーなベリーの嬉しい味覚",
 		usage = "usage_island_gift",
 		order_price = 0,
 		icon = "IslandProps/item_110005",

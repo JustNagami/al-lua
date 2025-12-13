@@ -39,7 +39,7 @@ pg.island_buff_template = {
 		buff_duel = {}
 	},
 	{
-		buff_desc = "8時間の間、基本資源を生産する場合、生産に必要な時間が5%短縮する",
+		buff_desc = "8時間の間、基本資源を生産時、作業時間が5%短縮",
 		name = "生産効率アップ",
 		buff_type = 102,
 		buff_level = 1,
@@ -62,7 +62,7 @@ pg.island_buff_template = {
 		buff_duel = {}
 	},
 	{
-		buff_desc = "8時間の間、基地工場でアイテムを制作する場合、制作に必要な時間が5%短縮する",
+		buff_desc = "8時間の間、基地工場でアイテムを制作時、作業時間が5%短縮",
 		name = "制作効率アップ",
 		buff_type = 102,
 		buff_level = 1,
@@ -83,7 +83,7 @@ pg.island_buff_template = {
 		buff_duel = {}
 	},
 	{
-		buff_desc = "8時間の間、料理アイテムを制作時、制作に必要な時間が5%短縮する",
+		buff_desc = "8時間の間、料理アイテムを制作時、作業時間が5%短縮",
 		name = "料理効率アップ",
 		buff_type = 102,
 		buff_level = 1,

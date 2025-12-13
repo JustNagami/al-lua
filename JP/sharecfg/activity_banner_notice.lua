@@ -200,6 +200,21 @@ pg.activity_banner_notice = {
 			}
 		}
 	},
+	{
+		id = 25,
+		param = {
+			"scene vote entrance"
+		}
+	},
+	{
+		id = 26,
+		param = {
+			"scene core activity",
+			{
+				coreName = "WinterFestival2025CoreActivityUI"
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -224,6 +239,8 @@ pg.activity_banner_notice = {
 		21,
 		22,
 		23,
-		24
+		24,
+		25,
+		26
 	}
 }
