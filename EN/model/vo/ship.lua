@@ -1696,7 +1696,7 @@ function var_0_0.getShipSkillEffects(arg_119_0)
 	local var_119_1 = arg_119_0:getSkillList()
 
 	for iter_119_0, iter_119_1 in ipairs(var_119_1) do
-		local var_119_2 = arg_119_0:RemapSkillId(iter_119_1)
+		local var_119_2 = arg_119_0:RemapSkillId(iter_119_1, true)
 		local var_119_3 = pg.buffCfg["buff_" .. var_119_2]
 
 		arg_119_0:FilterActiveSkill(var_119_0, var_119_3, arg_119_0.skills[iter_119_1])
@@ -2500,12 +2500,20 @@ function var_0_0.fateSkillChange(arg_190_0, arg_190_1)
 	return arg_190_1
 end
 
-function var_0_0.RemapSkillId(arg_191_0, arg_191_1)
+function var_0_0.RemapSkillId(arg_191_0, arg_191_1, arg_191_2)
 	local var_191_0 = arg_191_0:GetSpWeapon()
 
 	if var_191_0 then
 		if table.contains(pg.ship_data_template[arg_191_0.configId].hide_buff_list, arg_191_1) then
 			return var_191_0:RemapHiddenSkillId(arg_191_1)
+		elseif arg_191_2 then
+			local var_191_1 = var_191_0:RemapHiddenSkillId(arg_191_1)
+
+			if var_191_1 == arg_191_1 then
+				var_191_1 = var_191_0:RemapSkillId(arg_191_1)
+			end
+
+			return var_191_1
 		else
 			return var_191_0:RemapSkillId(arg_191_1)
 		end

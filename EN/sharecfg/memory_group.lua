@@ -246,6 +246,8 @@ pg.memory_group = setmetatable({
 		346,
 		347,
 		348,
+		349,
+		350,
 		501,
 		502,
 		503,
@@ -360,6 +362,7 @@ pg.memory_group = setmetatable({
 		614,
 		615,
 		616,
+		617,
 		1000,
 		1001,
 		1002,
@@ -1610,7 +1613,10 @@ pg.base.memory_group = {
 			1875,
 			3211,
 			3217,
-			3218
+			3218,
+			3212,
+			3213,
+			4834
 		}
 	},
 	[167] = {
@@ -6036,7 +6042,7 @@ pg.base.memory_group = {
 		subtype = 3,
 		icon = "title_event",
 		type = 2,
-		link_event = 50240,
+		link_event = 50268,
 		title = "The New Sales Campaign Just Dropped!",
 		group_id = "",
 		memories = {
@@ -6101,6 +6107,56 @@ pg.base.memory_group = {
 			4824,
 			4825,
 			4826
+		}
+	},
+	[349] = {
+		id = 349,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 50262,
+		title = "Memories in Echo",
+		group_id = "",
+		memories = {
+			4841,
+			4842,
+			4843,
+			4844,
+			4845,
+			4846,
+			4847,
+			4848,
+			4849,
+			4850,
+			4851,
+			4852,
+			4853,
+			4854,
+			4855,
+			4856,
+			4857,
+			4858,
+			4859
+		}
+	},
+	[350] = {
+		id = 350,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 50266,
+		title = "To a Brighter World",
+		group_id = "",
+		memories = {
+			4871,
+			4872,
+			4873,
+			4874,
+			4875,
+			4876,
+			4877,
+			4878,
+			4879
 		}
 	},
 	[501] = {
@@ -8389,6 +8445,26 @@ pg.base.memory_group = {
 			4755,
 			4756,
 			4757
+		},
+		group_id = {
+			10000
+		}
+	},
+	[617] = {
+		id = 617,
+		subtype = 0,
+		icon = "title_chara_fage",
+		type = 3,
+		link_event = 0,
+		title = "Happiness Is Incalculable",
+		memories = {
+			4861,
+			4862,
+			4863,
+			4864,
+			4865,
+			4866,
+			4867
 		},
 		group_id = {
 			10000

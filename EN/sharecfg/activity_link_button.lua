@@ -291,9 +291,8 @@ pg.activity_link_button = {
 		}
 	},
 	[109] = {
-		param = "DALCoreActivityUI",
-		name = "event_core",
 		type = 16,
+		name = "event_core",
 		text_pic = "text_event_core",
 		id = 109,
 		group_id = 1,
@@ -301,24 +300,25 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			50256
+			7302
+		},
+		param = {
+			"WinterFestival2025CoreActivityUI",
+			"JINNIANDECUXIAOXINGSHISHI1"
 		}
 	},
 	[110] = {
-		type = 16,
+		param = "HelenaCoreActivityUI",
 		name = "event_core_2",
-		text_pic = "text_event_blackfriday",
+		type = 16,
+		text_pic = "text_event_core2",
 		id = 110,
 		group_id = 2,
-		pic = "event_blackfriday",
+		pic = "event_core2",
 		order = 2,
 		time = {
 			"default",
-			50234
-		},
-		param = {
-			"PSSCoreActivityUI",
-			"JINNIANDECUXIAOXINGSHISHI1"
+			50261
 		}
 	},
 	[111] = {

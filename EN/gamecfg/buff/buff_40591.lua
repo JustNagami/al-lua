@@ -11,7 +11,7 @@
 	last_effect = "",
 	effect_list = {
 		{
-			type = "BattleBuffAddAttrCommander",
+			type = "BattleBuffAddAttrRatioCommander",
 			trigger = {
 				"onAttach"
 			},

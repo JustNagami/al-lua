@@ -3379,6 +3379,12 @@ pg.skill_data_display = setmetatable({
 		801891,
 		801921,
 		801952,
+		801970,
+		801971,
+		801972,
+		801973,
+		801980,
+		801990,
 		902201,
 		1010140,
 		1010143,
@@ -3616,6 +3622,7 @@ pg.skill_data_display = setmetatable({
 		201532,
 		201547,
 		201550,
+		201633,
 		1011540,
 		1011541,
 		1090010,
@@ -3762,8 +3769,16 @@ pg.skill_data_display = setmetatable({
 		1012431,
 		1012432,
 		1012435,
+		1012640,
 		10151811,
 		1011911,
+		1011472,
+		1012570,
+		1012571,
+		1012572,
+		1012580,
+		1012581,
+		1012582,
 		1090020,
 		1090042,
 		1090043,
@@ -17352,6 +17367,30 @@ pg.base.skill_data_display = {
 		id = 801952,
 		name = "Tragedy's Ward"
 	},
+	[801970] = {
+		id = 801970,
+		name = "To Gaze Upon Fate"
+	},
+	[801971] = {
+		id = 801971,
+		name = "To Gaze Upon Fate"
+	},
+	[801972] = {
+		id = 801972,
+		name = "To Gaze Upon Fate"
+	},
+	[801973] = {
+		id = 801973,
+		name = "To Gaze Upon Fate"
+	},
+	[801980] = {
+		id = 801980,
+		name = "To Remember the Past"
+	},
+	[801990] = {
+		id = 801990,
+		name = "To Witness Life and Death"
+	},
 	[902201] = {
 		id = 902201,
 		name = "Fantastic Loop"
@@ -18300,6 +18339,10 @@ pg.base.skill_data_display = {
 		id = 201550,
 		name = "Island Ruins Support"
 	},
+	[201633] = {
+		id = 201633,
+		name = "Zeroth Quadrant Expansion -5%"
+	},
 	[1011540] = {
 		id = 1011540,
 		name = "Final Shot+"
@@ -18884,6 +18927,10 @@ pg.base.skill_data_display = {
 		id = 1012435,
 		name = "Lucky A +"
 	},
+	[1012640] = {
+		id = 1012640,
+		name = "Sardegnian Coercion+"
+	},
 	[10151811] = {
 		id = 10151811,
 		name = "Final Sacrament+"
@@ -18891,6 +18938,34 @@ pg.base.skill_data_display = {
 	[1011911] = {
 		id = 1011911,
 		name = "Patriotic Spirit+"
+	},
+	[1011472] = {
+		id = 1011472,
+		name = "Nasty Asty +"
+	},
+	[1012570] = {
+		id = 1012570,
+		name = "Supporting Wings+"
+	},
+	[1012571] = {
+		id = 1012571,
+		name = "Supporting Wings+"
+	},
+	[1012572] = {
+		id = 1012572,
+		name = "Supporting Wings+"
+	},
+	[1012580] = {
+		id = 1012580,
+		name = "Don't Move An Inch!"
+	},
+	[1012581] = {
+		id = 1012581,
+		name = "Don't Move An Inch!"
+	},
+	[1012582] = {
+		id = 1012582,
+		name = "Don't Move An Inch!"
 	},
 	[1090020] = {
 		id = 1090020,

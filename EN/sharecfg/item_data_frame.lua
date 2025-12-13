@@ -531,6 +531,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>\"Upon my first arrival in the Sky Realm, I heard a phoenix's cry. Past me it flew, its voice echoing throughout Amahara.\"</color>\nGiven to Commanders who participated in the A Dance for Amahara Above event.",
 		scene = {}
 	},
+	[337] = {
+		time_limit_type = 0,
+		name = "Ghost of the Dark Blue",
+		gain_by = "",
+		id = 337,
+		time_second = 0,
+		desc = "Obtained from a future event.",
+		scene = {}
+	},
 	[406] = {
 		time_limit_type = 0,
 		name = "Hall of Fame: Laffey ",
@@ -567,6 +576,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>A special portrait frame made to commemorate New Jersey.</color>\nObtained from the Azur Lane Popularity Poll 2023.",
 		scene = {}
 	},
+	[418] = {
+		time_limit_type = 0,
+		name = "Hall of Fame: Shinano",
+		gain_by = "",
+		id = 418,
+		time_second = 0,
+		desc = "<color=#ffffff>A special portrait frame made to commemorate Shinano.</color>\n\nObtained from the Azur Lane Popularity Poll 2025.",
+		scene = {}
+	},
 	[420] = {
 		time_limit_type = 0,
 		name = "Hall of Fame: Prinz Eugen",
@@ -583,6 +601,24 @@ pg.item_data_frame = {
 		id = 421,
 		time_second = 0,
 		desc = "<color=#ffffff>A special portrait frame made to commemorate Friedrich der Große.</color>\nObtained from the Azur Lane Popularity Poll 2023.",
+		scene = {}
+	},
+	[422] = {
+		time_limit_type = 0,
+		name = "Hall of Fame: Ägir",
+		gain_by = "",
+		id = 422,
+		time_second = 0,
+		desc = "<color=#ffffff>A special portrait frame made to commemorate Ägir.</color>\n\nObtained from the Azur Lane Popularity Poll 2025.",
+		scene = {}
+	},
+	[425] = {
+		time_limit_type = 0,
+		name = "Hall of Fame: Kearsarge",
+		gain_by = "",
+		id = 425,
+		time_second = 0,
+		desc = "<color=#ffffff>A special portrait frame made to commemorate Kearsarge.</color>\n\nObtained from the Azur Lane Popularity Poll 2025.",
 		scene = {}
 	},
 	[501] = {
@@ -951,12 +987,16 @@ pg.item_data_frame = {
 		334,
 		335,
 		336,
+		337,
 		406,
 		411,
 		412,
 		417,
+		418,
 		420,
 		421,
+		422,
+		425,
 		501,
 		601,
 		602,

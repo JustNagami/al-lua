@@ -232,7 +232,7 @@ function var_0_0.UpdateMap(arg_27_0)
 
 		for iter_27_0, iter_27_1 in pairs(arg_27_0.maps) do
 			if iter_27_0 ~= 1 and iter_27_0 ~= 6 then
-				setActive(arg_27_0.mapFX:Find("state_4/k"), false)
+				setActive(arg_27_0.mapFX:Find("state_4/" .. iter_27_0), false)
 			end
 
 			setActive(iter_27_1, true)
