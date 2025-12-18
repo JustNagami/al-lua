@@ -37,8 +37,9 @@ pg.activity_link_button = {
 		order = 99
 	},
 	[10] = {
-		type = 2,
+		param = "0",
 		name = "event_map",
+		type = 0,
 		text_pic = "text_event_map",
 		id = 10,
 		group_id = 2,
@@ -46,10 +47,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			50256
-		},
-		param = {
-			"bossrush dal collab"
+			50281
 		}
 	},
 	[11] = {
@@ -317,7 +315,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			50270
+			50297
 		}
 	},
 	[110] = {
@@ -374,6 +372,20 @@ pg.activity_link_button = {
 		time = {
 			"default",
 			50118
+		}
+	},
+	[114] = {
+		param = "WinterFestival2025CoreActivityUI",
+		name = "event_core",
+		type = 16,
+		text_pic = "text_event_core3",
+		id = 114,
+		group_id = 1,
+		pic = "event_core3",
+		order = 1,
+		time = {
+			"default",
+			50290
 		}
 	},
 	get_id_list_by_name = {
@@ -438,7 +450,8 @@ pg.activity_link_button = {
 			107
 		},
 		event_core = {
-			109
+			109,
+			114
 		},
 		event_core_2 = {
 			110,
@@ -478,6 +491,7 @@ pg.activity_link_button = {
 		110,
 		111,
 		112,
-		113
+		113,
+		114
 	}
 }

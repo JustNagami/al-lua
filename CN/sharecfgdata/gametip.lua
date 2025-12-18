@@ -7827,16 +7827,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "夜刀神十香、五河琴里等角色 建造概率UP！",
+	tip = "每累计建造200次可获得海上传奇舰船 列克星敦II(最多4次)",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "{namecode:84}、{namecode:65} 建造追加！",
+	tip = "约克城II、北安普敦II 建造追加！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "{namecode:225}、{namecode:226} 建造追加！",
+	tip = "哈曼II 建造追加！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "{namecode:84} 建造追加！",
+	tip = "约克城II、大黄蜂II 建造追加！",
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -14621,10 +14621,10 @@ _G.pg.base.gametip.ssssmedal_desc6 = {
 	tip = "可爱与实力兼备的净化亲，这是她第几次失去记忆了呢？",
 }
 _G.pg.base.gametip.show_fate_demand_count = {
-	tip = "显示<color=#92fc63>天运拟合</color>所需数量",
+	tip = "切换至<color=#92fc63>天运拟合</color>所需数量",
 }
 _G.pg.base.gametip.show_design_demand_count = {
-	tip = "显示<color=#92fc63>科研等级30</color>所需数量",
+	tip = "切换至<color=#92fc63>科研等级30</color>所需数量",
 }
 _G.pg.base.gametip.blueprint_select_overflow = {
 	tip = "超出所需数量",
@@ -22442,7 +22442,7 @@ _G.pg.base.gametip.help_starLightAlbum = {
 			info = "纪念手册：",
 		},
 		{
-			info = "1. 回忆页面内新增「纪念手册」系统入口。\n2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动纪念章家具和活动勋章。\n ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；\n ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；\n ※ 「纪念贴纸」可以通过完成对应活动任务获取；\n ※ 奖励领取界面将延长至11月12日24时；",
+			info = "1. 回忆页面内新增「纪念手册」系统入口。\n2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动纪念章家具和活动勋章。\n ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；\n ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；\n ※ 「纪念贴纸」可以通过完成对应活动任务获取；\n ※ 奖励领取界面将延长至1月14日24时；",
 		},
 	},
 }
@@ -27518,6 +27518,15 @@ _G.pg.base.gametip.battlepass_main_help_1211 = {
 _G.pg.base.gametip.cruise_title_1211 = {
 	tip = "世界巡游·冬日赠礼",
 }
+_G.pg.base.gametip.HelenaCoreActivity_subtitle_4 = {
+	tip = "响彻于天穹之音",
+}
+_G.pg.base.gametip.HelenaCoreActivity_subtitle_5 = {
+	tip = "帷幕补给站",
+}
+_G.pg.base.gametip.HelenaCoreActivity_subtitle_6 = {
+	tip = "UR兑换",
+}
 _G.pg.base.gametip.winter_battlepass_proceed = {
 	tip = "前往",
 }
@@ -27562,5 +27571,29 @@ _G.pg.base.gametip.winter_luckybag_9006 = {
 }
 _G.pg.base.gametip.winter_cruise_btn_all = {
 	tip = "全部领取",
+}
+_G.pg.base.gametip.winter__battlepass_rewards = {
+	tip = "奖励",
+}
+_G.pg.base.gametip.fate_unlock_icon_desc = {
+	tip = "※方案舰已拥有天运拟合",
+}
+_G.pg.base.gametip.blueprint_exchange_fate_unlock = {
+	tip = "当前方案舰暂未拥有天运拟合，是否继续兑换",
+}
+_G.pg.base.gametip.blueprint_exchange_fate_unlock_over = {
+	tip = "兑换的<color=#22ff22>$1</color>超出所需数量<color=#ff5c5c>$2张</color>",
+}
+_G.pg.base.gametip.blueprint_lab_fate_lock = {
+	tip = "<color=#ff5c5c>未拥有</color>天运拟合",
+}
+_G.pg.base.gametip.blueprint_lab_fate_unlock = {
+	tip = "<color=#92fc63>已拥有</color>天运拟合",
+}
+_G.pg.base.gametip.blueprint_lab_exchange_fate_unlock = {
+	tip = "当前方案舰暂未拥有天运拟合，是否继续兑换",
+}
+_G.pg.base.gametip.skinstory_20251218 = {
+	tip = "专属心动时刻(上)",
 }
 
