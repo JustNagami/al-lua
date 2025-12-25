@@ -45,7 +45,7 @@
 				"onAttach"
 			},
 			arg_list = {
-				number = 0.01,
+				number = 0.1,
 				label = {
 					"FT"
 				}
@@ -57,7 +57,7 @@
 				"onAttach"
 			},
 			arg_list = {
-				number = 0.01,
+				number = 0.1,
 				label = {
 					"TB"
 				}

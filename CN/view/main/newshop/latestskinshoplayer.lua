@@ -842,6 +842,7 @@ function var_0_0.FlushChangeSkin(arg_46_0, arg_46_1)
 	end
 
 	arg_46_0.changeSkinToggle:setSkinData(arg_46_0.skinId)
+	setActive(arg_46_0.changeSkin, not arg_46_0.changeSkinToggle:IsAsmrSkin())
 end
 
 function var_0_0.GCHandle(arg_47_0)
@@ -1056,12 +1057,8 @@ function var_0_0.FlushPaintingToggle(arg_63_0, arg_63_1)
 	local var_63_1 = arg_63_0.shipSkin:IsSpine() or arg_63_0.shipSkin:IsLive2d() or arg_63_0.shipSkin:IsSpinePlus() or arg_63_0.shipSkin:IsLive2dPlus()
 	local var_63_2 = arg_63_0.shipSkin:IsHxDynamicPreview()
 
-	print("is hx prever" .. tostring(var_63_2))
-
 	if var_63_1 and not var_63_2 and PlayerPrefs.GetInt("skinShop#l2dPreViewToggle" .. getProxy(PlayerProxy):getRawData().id, 0) == 1 then
 		arg_63_0.isToggleDynamic = true
-
-		print("os   sssssssssssssssssssssssss")
 	end
 
 	if var_63_1 then

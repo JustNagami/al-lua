@@ -14883,7 +14883,7 @@ _G.pg.base.gametip.backhill_cantupbuilding = {
 	tip = "必须先升级<color=#92fc63>$1</color>才能继续升级哦",
 }
 _G.pg.base.gametip.pray_cant_tips = {
-	tip = "在绘马祈愿中悬挂舰船绘马可以获取有效次数",
+	tip = "送出贺卡可以获取心愿有效次数",
 }
 _G.pg.base.gametip.help_xinnian2022_feast = {
 	tip = {
@@ -14895,7 +14895,7 @@ _G.pg.base.gametip.help_xinnian2022_feast = {
 _G.pg.base.gametip.Pray_activity_tips1 = {
 	tip = {
 		{
-			info = "<size=31><color=#92fc63>TIPS：\n在没有许愿有效次数时无法进行许愿</color></size>\n1.活动期间指挥官每天获得<color=#92fc63>1次帮助舰船挂绘马的祈愿次数</color>，次数可叠加，消耗祈愿次数可以获得新年的祝福和2次许愿有效次数，<color=#ff5c5c>最多可获得14次许愿有效次数</color>\n2.帮助舰船挂绘马会获得对应舰船的祈愿加成和新年的祝福，集齐7个新年的祝福可获得「年贺状」\n3.同一时间只能存在一种舰船的祈愿加成\n4.拥有有效次数的情况下消耗5物资进行许愿可以选择不同加成效果：\n学业：战术学院技能学习时间略微减少\n事业：主线、困难、作战档案关卡中，我方战斗内造成的伤害略微提高\n姻缘：秘书舰好感度提高速度加快\n以上三种效果持续时间为一天\n5.获得学业效果时不会减少正在进行的技能学习时间，学业效果消失时不会增加已经被学业效果减少的技能学习时间\n6.如果在已经拥有加成效果的状态下进行许愿，那么新获得的加成效果会覆盖掉之前拥有的加成效果，且持续时间重置\n7.同一时间只能存在一种许愿加成效果",
+			info = "<size=31><color=#92fc63>TIPS：\n在没有心愿有效次数时无法收获心愿</color></size>\n1.活动期间指挥官每天获得<color=#92fc63>1次送出贺卡的次数</color>，次数可叠加，消耗送出贺卡次数可以获得冬日的心愿和2次心愿有效次数，<color=#ff5c5c>最多可获得14次心愿有效次数</color>\n2.送出贺卡会获得对应舰船的心愿加成和冬日的心愿，集齐7个冬日的心愿可获得「心愿卡」\n3.同一时间只能存在一种舰船的心愿加成\n4.拥有有效次数的情况下消耗5物资收获心愿可以选择不同加成效果：\n学业：战术学院技能学习时间略微减少\n事业：主线、困难、作战档案关卡中，我方战斗内造成的伤害略微提高\n缘分：秘书舰好感度提高速度加快\n以上三种效果持续时间为一天\n5.获得学业效果时不会减少正在进行的技能学习时间，学业效果消失时不会增加已经被学业效果减少的技能学习时间\n6.如果在已经拥有加成效果的状态下收获心愿，那么新获得的加成效果会覆盖掉之前拥有的加成效果，且持续时间重置\n7.同一时间只能存在一种心愿加成效果",
 		},
 	},
 }
@@ -25856,6 +25856,9 @@ _G.pg.base.gametip.island_manage_shop_exp = {
 _G.pg.base.gametip.island_manage_help_tip = {
 	tip = "餐品的吸引力会影响餐品的销售情况，吸引力越高，餐品售出概率越大。\n每种餐品的吸引力会受到角色两种能力的加成，分主加成能力和次加成能力。\n主加成能力：能够显著提升餐品的吸引力。\n次加成能力：能够小幅提升餐品的吸引力。",
 }
+_G.pg.base.gametip.island_manage_buff_tip = {
+	tip = "*经营开始后，角色能力与增益效果变化均不影响经营结果",
+}
 _G.pg.base.gametip.island_word_go = {
 	tip = "前往",
 }
@@ -27595,5 +27598,32 @@ _G.pg.base.gametip.blueprint_lab_exchange_fate_unlock = {
 }
 _G.pg.base.gametip.skinstory_20251218 = {
 	tip = "专属心动时刻(上)",
+}
+_G.pg.base.gametip.skinstory_20251225 = {
+	tip = "专属心动时刻(下)",
+}
+_G.pg.base.gametip.change_skin_asmr_desc_1 = {
+	tip = "离开场景，注意音量 ",
+}
+_G.pg.base.gametip.change_skin_asmr_desc_2 = {
+	tip = "请佩戴好耳机 ",
+}
+_G.pg.base.gametip.dorm3d_aijier_table = {
+	tip = "书房",
+}
+_G.pg.base.gametip.dorm3d_aijier_chair = {
+	tip = "客厅",
+}
+_G.pg.base.gametip.dorm3d_aijier_bed = {
+	tip = "卧室",
+}
+_G.pg.base.gametip.winterwish_20251225 = {
+	tip = "冬日贺卡与心愿",
+}
+_G.pg.base.gametip.winterwish_20251225_tip1 = {
+	tip = "送出贺卡次数",
+}
+_G.pg.base.gametip.winterwish_20251225_tip2 = {
+	tip = "收获心愿有效次数",
 }
 
