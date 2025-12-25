@@ -525,10 +525,10 @@ pg.item_data_frame = {
 	[337] = {
 		time_limit_type = 0,
 		name = "ダークシースペクター",
-		gain_by = "",
+		gain_by = "天穹に響く音謡",
 		id = 337,
 		time_second = 0,
-		desc = "今後開催するイベントで入手可能",
+		desc = "<color=#ffffff>「久しぶりね、指揮官——ただいま」</color>\n「天穹に響く音謡」イベント参加",
 		scene = {}
 	},
 	[401] = {

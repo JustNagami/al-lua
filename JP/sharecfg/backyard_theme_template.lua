@@ -3603,7 +3603,7 @@ pg.backyard_theme_template = {
 	[96] = {
 		Cfg_1 = 5,
 		name = "饅頭ビーチハウス",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 96,
 		comfortable = 0,
@@ -4995,6 +4995,45 @@ pg.backyard_theme_template = {
 			332301
 		}
 	},
+	[133] = {
+		Cfg_1 = 5,
+		name = "メイドニャーハウス",
+		hot = 1,
+		is_view = 1,
+		id = 133,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "ケーキとネコをテーマとしたメイドハウス。ぽかぽかであまーい香り♪",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "nvpthemeicon",
+		deblocking = 1,
+		order = 133,
+		ids = {
+			333001,
+			333002,
+			333101,
+			333102,
+			333103,
+			333104,
+			333105,
+			333106,
+			333107,
+			333108,
+			333109,
+			333110,
+			333111,
+			333112,
+			333113,
+			333114,
+			333115,
+			333116,
+			333117,
+			333118,
+			333301
+		}
+	},
 	all = {
 		1,
 		2,
@@ -5113,6 +5152,7 @@ pg.backyard_theme_template = {
 		129,
 		130,
 		131,
-		132
+		132,
+		133
 	}
 }
