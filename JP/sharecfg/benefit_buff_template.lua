@@ -90,6 +90,13 @@ pg.benefit_buff_template = setmetatable({
 		86,
 		87,
 		88,
+		89,
+		90,
+		91,
+		92,
+		93,
+		94,
+		95,
 		101,
 		102,
 		103,
@@ -127,6 +134,9 @@ pg.benefit_buff_template = setmetatable({
 		140,
 		141,
 		142,
+		143,
+		144,
+		145,
 		300001,
 		300002,
 		300003,
@@ -1702,6 +1712,125 @@ pg.base.benefit_buff_template = {
 			0
 		}
 	},
+	{
+		type_priority = 0,
+		name = "{namecode:435}的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "ビスマルクの願い――メイン海域・イベント・作戦履歴ステージで受けるダメージが3%ダウン\n残り時間:$1",
+		benefit_effect = "520",
+		id = 89,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "南达科他的祈愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "サウスダコタの願い――メイン海域・イベント・作戦履歴ステージで入手できる経験値が3%アップ\n残り時間:$1",
+		benefit_effect = "3",
+		id = 90,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "古比雪夫的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "クイビシェフの願い――寮舎で入手できる経験値が3%アップ\n残り時間:$1",
+		benefit_effect = "3",
+		id = 91,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "帝国的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "インペロの願い――寮舎で入手できる経験値が3%アップ\n残り時間:$1",
+		benefit_effect = "3",
+		id = 92,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "dorm_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "贝尔法斯特的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "ベルファストの願い――メイン海域・イベント・作戦履歴ステージで受けるダメージが3%ダウン\n残り時間:$1",
+		benefit_effect = "520",
+		id = 93,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "黎塞留的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "リシュリューの願い――メイン海域・イベント・作戦履歴ステージで受けるダメージが3%ダウン\n残り時間:$1",
+		benefit_effect = "520",
+		id = 94,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "battle_buff",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
+	{
+		type_priority = 0,
+		name = "{namecode:437}的心愿",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		desc = "グラーフ・ツェッペリンの願い――メイン海域・イベント・作戦履歴ステージで入手できる経験値が3%アップ\n残り時間:$1",
+		benefit_effect = "3",
+		id = 95,
+		icon = "Props/jianchuanxinyuan",
+		benefit_type = "ship_battle_exp",
+		benefit_condition = {
+			"activity",
+			50298,
+			0
+		}
+	},
 	[101] = {
 		type_priority = 1,
 		name = "新人指揮官出撃経験UP",
@@ -2410,6 +2539,45 @@ pg.base.benefit_buff_template = {
 		id = 142,
 		icon = "Props/yanhuiyaoyue",
 		benefit_type = "ship_battle_intimacy"
+	},
+	[143] = {
+		type_priority = 0,
+		name = "学業祈願",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "戦術教室でスキルを新たに強化する場合、所要時間が少し短縮\n残り時間:$1",
+		benefit_effect = "300",
+		id = 143,
+		icon = "Props/buff_qiaozhong_10",
+		benefit_type = "skill_learncost_up"
+	},
+	[144] = {
+		type_priority = 0,
+		name = "開運招福",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "メイン海域及び作戦履歴海域戦闘時、味方が与えるダメージが微増\n残り時間:$1",
+		benefit_effect = "522",
+		id = 144,
+		icon = "Props/buff_qiaozhong_11",
+		benefit_type = "battle_buff"
+	},
+	[145] = {
+		type_priority = 0,
+		name = "良縁祈願",
+		hide = 0,
+		max_time = 86400,
+		act_id = 0,
+		benefit_condition = "",
+		desc = "秘書艦の親密度上昇スピードがアップ\n残り時間:$1",
+		benefit_effect = "1",
+		id = 145,
+		icon = "Props/buff_qiaozhong_12",
+		benefit_type = "intimacy_up_extra"
 	},
 	[300001] = {
 		type_priority = 0,

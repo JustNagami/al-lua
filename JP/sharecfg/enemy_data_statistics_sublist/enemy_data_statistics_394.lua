@@ -1,93 +1,172 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_394 = {
-	[295299] = {
-		cannon = 207,
-		name = "夕立(META)-Tier.14",
+	[295266] = {
+		cannon = 192,
+		name = "ホーネット(META)-Tier.11",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 0,
+		air = 395,
 		hit_growth = 0,
-		dodge = 71,
-		base = 91141,
-		antiaircraft = 287,
-		speed = 30,
+		dodge = 60,
+		base = 91063,
+		durability_growth = 0,
+		antiaircraft = 283,
 		reload_growth = 0,
 		dodge_growth = 0,
+		speed = 20,
 		luck = 50,
+		hit = 85,
+		antisub_growth = 0,
+		air_growth = 0,
 		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 518000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295266
+	},
+	[295267] = {
+		cannon = 204,
+		name = "ホーネット(META)-Tier.12",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 419,
+		hit_growth = 0,
+		dodge = 64,
+		base = 91063,
+		durability_growth = 0,
+		antiaircraft = 300,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 90,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 674000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295267
+	},
+	[295268] = {
+		cannon = 215,
+		name = "ホーネット(META)-Tier.13",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 442,
+		hit_growth = 0,
+		dodge = 67,
+		base = 91063,
+		durability_growth = 0,
+		antiaircraft = 316,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 95,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 864000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295268
+	},
+	[295269] = {
+		cannon = 226,
+		name = "ホーネット(META)-Tier.14",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 465,
+		hit_growth = 0,
+		dodge = 71,
+		base = 91063,
+		durability_growth = 0,
+		antiaircraft = 333,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
 		hit = 100,
 		antisub_growth = 0,
 		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 362,
-		durability = 1290000,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 1072000,
 		armor_growth = 0,
-		durability_growth = 0,
+		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		antisub = 0,
 		fog_fx = "",
-		id = 295299,
-		equipment_list = {},
-		buff_list = {
-			{
-				ID = 201500,
-				LV = 5
-			}
-		}
+		antisub = 0,
+		id = 295269
 	},
-	[295300] = {
-		cannon = 218,
-		name = "夕立(META)-Tier.15",
+	[295270] = {
+		cannon = 238,
+		name = "ホーネット(META)-Tier.15",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 489,
+		hit_growth = 0,
+		dodge = 75,
+		base = 91063,
+		durability_growth = 0,
+		antiaircraft = 350,
+		reload_growth = 0,
+		dodge_growth = 0,
+		speed = 20,
+		luck = 50,
+		hit = 110,
+		antisub_growth = 0,
+		air_growth = 0,
+		battle_unit_type = 90,
+		torpedo = 0,
+		durability = 1280000,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		fog_fx = "",
+		antisub = 0,
+		id = 295270
+	},
+	[295271] = {
+		cannon = 78,
+		name = "江風(META)-Tier.1",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
 		air = 0,
 		hit_growth = 0,
-		dodge = 75,
-		base = 91141,
-		antiaircraft = 302,
-		speed = 30,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 50,
-		battle_unit_type = 90,
-		hit = 110,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 381,
-		durability = 1540000,
-		armor_growth = 0,
-		durability_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295300,
-		equipment_list = {},
-		buff_list = {
-			{
-				ID = 201500,
-				LV = 5
-			}
-		}
-	},
-	[295301] = {
-		cannon = 78,
-		name = "ヨークタウン(META)-Tier.1",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 164,
-		hit_growth = 0,
 		dodge = 25,
-		base = 91177,
-		antiaircraft = 116,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 101,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -96,56 +175,7 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 50000,
-		armor_growth = 0,
-		durability_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		antisub = 0,
-		fog_fx = "",
-		id = 295301,
-		equipment_list = {
-			2983000,
-			2983005
-		},
-		buff_list = {
-			{
-				ID = 201634,
-				LV = 1
-			},
-			{
-				ID = 200280,
-				LV = 1
-			},
-			{
-				ID = 201637,
-				LV = 1
-			}
-		}
-	},
-	[295302] = {
-		cannon = 89,
-		name = "ヨークタウン(META)-Tier.2",
-		reload = 150,
-		cannon_growth = 0,
-		speed_growth = 0,
-		air = 187,
-		hit_growth = 0,
-		dodge = 28,
-		base = 91177,
-		antiaircraft = 133,
-		speed = 20,
-		reload_growth = 0,
-		dodge_growth = 0,
-		luck = 50,
-		battle_unit_type = 90,
-		hit = 40,
-		antisub_growth = 0,
-		air_growth = 0,
-		torpedo_growth = 0,
-		torpedo = 0,
+		torpedo = 121,
 		durability = 54000,
 		armor_growth = 0,
 		durability_growth = 0,
@@ -154,47 +184,48 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295302,
+		id = 295271,
 		equipment_list = {
-			2983000,
-			2983005
+			2981000,
+			2981001,
+			2981005
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 2
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201428,
 				LV = 1
 			}
 		}
 	},
-	[295303] = {
-		cannon = 100,
-		name = "ヨークタウン(META)-Tier.3",
+	[295272] = {
+		cannon = 89,
+		name = "江風(META)-Tier.2",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 210,
+		air = 0,
 		hit_growth = 0,
-		dodge = 32,
-		base = 91177,
-		antiaircraft = 150,
-		speed = 20,
+		dodge = 28,
+		base = 91099,
+		antiaircraft = 116,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
 		battle_unit_type = 90,
-		hit = 45,
+		hit = 40,
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
+		torpedo = 139,
 		durability = 58000,
 		armor_growth = 0,
 		durability_growth = 0,
@@ -203,38 +234,89 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295303,
+		id = 295272,
 		equipment_list = {
-			2983000,
-			2983005
+			2981000,
+			2981001,
+			2981005
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 3
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201429,
 				LV = 1
 			}
 		}
 	},
-	[295304] = {
-		cannon = 111,
-		name = "ヨークタウン(META)-Tier.4",
+	[295273] = {
+		cannon = 100,
+		name = "江風(META)-Tier.3",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 234,
+		air = 0,
+		hit_growth = 0,
+		dodge = 32,
+		base = 91099,
+		antiaircraft = 130,
+		speed = 30,
+		reload_growth = 0,
+		dodge_growth = 0,
+		luck = 50,
+		battle_unit_type = 90,
+		hit = 45,
+		antisub_growth = 0,
+		air_growth = 0,
+		torpedo_growth = 0,
+		torpedo = 156,
+		durability = 62000,
+		armor_growth = 0,
+		durability_growth = 0,
+		luck_growth = 0,
+		antiaircraft_growth = 0,
+		armor = 0,
+		antisub = 0,
+		fog_fx = "",
+		id = 295273,
+		equipment_list = {
+			2981000,
+			2981001,
+			2981005
+		},
+		buff_list = {
+			{
+				ID = 201420,
+				LV = 1
+			},
+			{
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201430,
+				LV = 1
+			}
+		}
+	},
+	[295274] = {
+		cannon = 111,
+		name = "江風(META)-Tier.4",
+		reload = 150,
+		cannon_growth = 0,
+		speed_growth = 0,
+		air = 0,
 		hit_growth = 0,
 		dodge = 35,
-		base = 91177,
-		antiaircraft = 166,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 145,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -243,8 +325,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 70000,
+		torpedo = 173,
+		durability = 75000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -252,38 +334,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295304,
+		id = 295274,
 		equipment_list = {
-			2983001,
-			2983006
+			2981000,
+			2981001,
+			2981006
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 4
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201431,
 				LV = 1
 			}
 		}
 	},
-	[295305] = {
+	[295275] = {
 		cannon = 123,
-		name = "ヨークタウン(META)-Tier.5",
+		name = "江風(META)-Tier.5",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 257,
+		air = 0,
 		hit_growth = 0,
 		dodge = 39,
-		base = 91177,
-		antiaircraft = 183,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 159,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -292,8 +375,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 111000,
+		torpedo = 191,
+		durability = 118000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -301,38 +384,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295305,
+		id = 295275,
 		equipment_list = {
-			2983001,
-			2983006
+			2981000,
+			2981001,
+			2981006
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 5
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201432,
 				LV = 1
 			}
 		}
 	},
-	[295306] = {
+	[295276] = {
 		cannon = 134,
-		name = "ヨークタウン(META)-Tier.6",
+		name = "江風(META)-Tier.6",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 281,
+		air = 0,
 		hit_growth = 0,
 		dodge = 42,
-		base = 91177,
-		antiaircraft = 200,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 174,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -341,8 +425,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 152000,
+		torpedo = 208,
+		durability = 162000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -350,38 +434,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295306,
+		id = 295276,
 		equipment_list = {
-			2983001,
-			2983006
+			2981000,
+			2981001,
+			2981006
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 6
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201433,
 				LV = 1
 			}
 		}
 	},
-	[295307] = {
+	[295277] = {
 		cannon = 145,
-		name = "ヨークタウン(META)-Tier.7",
+		name = "江風(META)-Tier.7",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 304,
+		air = 0,
 		hit_growth = 0,
 		dodge = 46,
-		base = 91177,
-		antiaircraft = 216,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 188,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -390,8 +475,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 233000,
+		torpedo = 225,
+		durability = 248000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -399,38 +484,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295307,
+		id = 295277,
 		equipment_list = {
-			2983002,
-			2983007
+			2981000,
+			2981001,
+			2981007
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 7
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201434,
 				LV = 1
 			}
 		}
 	},
-	[295308] = {
+	[295278] = {
 		cannon = 156,
-		name = "ヨークタウン(META)-Tier.8",
+		name = "江風(META)-Tier.8",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 328,
+		air = 0,
 		hit_growth = 0,
 		dodge = 50,
-		base = 91177,
-		antiaircraft = 233,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 203,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -439,8 +525,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 314000,
+		torpedo = 243,
+		durability = 335000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -448,38 +534,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295308,
+		id = 295278,
 		equipment_list = {
-			2983002,
-			2983007
+			2981000,
+			2981001,
+			2981007
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 8
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201435,
 				LV = 1
 			}
 		}
 	},
-	[295309] = {
+	[295279] = {
 		cannon = 167,
-		name = "ヨークタウン(META)-Tier.9",
+		name = "江風(META)-Tier.9",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 351,
+		air = 0,
 		hit_growth = 0,
 		dodge = 53,
-		base = 91177,
-		antiaircraft = 250,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 217,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -488,8 +575,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 395000,
+		torpedo = 260,
+		durability = 421000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -497,38 +584,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295309,
+		id = 295279,
 		equipment_list = {
-			2983002,
-			2983007
+			2981000,
+			2981001,
+			2981007
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 9
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201436,
 				LV = 1
 			}
 		}
 	},
-	[295310] = {
+	[295280] = {
 		cannon = 179,
-		name = "ヨークタウン(META)-Tier.10",
+		name = "江風(META)-Tier.10",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 374,
+		air = 0,
 		hit_growth = 0,
 		dodge = 57,
-		base = 91177,
-		antiaircraft = 266,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 232,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -537,8 +625,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 486000,
+		torpedo = 278,
+		durability = 518000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -546,38 +634,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295310,
+		id = 295280,
 		equipment_list = {
-			2983003,
-			2983008
+			2981000,
+			2981001,
+			2981008
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 10
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201437,
 				LV = 1
 			}
 		}
 	},
-	[295311] = {
+	[295281] = {
 		cannon = 190,
-		name = "ヨークタウン(META)-Tier.11",
+		name = "江風(META)-Tier.11",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 398,
+		air = 0,
 		hit_growth = 0,
 		dodge = 60,
-		base = 91177,
-		antiaircraft = 283,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 246,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -586,8 +675,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 608000,
+		torpedo = 295,
+		durability = 648000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -595,38 +684,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295311,
+		id = 295281,
 		equipment_list = {
-			2983003,
-			2983008
+			2981000,
+			2981001,
+			2981008
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 11
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201438,
 				LV = 1
 			}
 		}
 	},
-	[295312] = {
+	[295282] = {
 		cannon = 201,
-		name = "ヨークタウン(META)-Tier.12",
+		name = "江風(META)-Tier.12",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 421,
+		air = 0,
 		hit_growth = 0,
 		dodge = 64,
-		base = 91177,
-		antiaircraft = 300,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 261,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -635,8 +725,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 790000,
+		torpedo = 312,
+		durability = 843000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -644,38 +734,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295312,
+		id = 295282,
 		equipment_list = {
-			2983003,
-			2983008
+			2981000,
+			2981001,
+			2981008
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 12
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201439,
 				LV = 1
 			}
 		}
 	},
-	[295313] = {
+	[295283] = {
 		cannon = 212,
-		name = "ヨークタウン(META)-Tier.13",
+		name = "江風(META)-Tier.13",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 445,
+		air = 0,
 		hit_growth = 0,
 		dodge = 67,
-		base = 91177,
-		antiaircraft = 316,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 275,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -684,8 +775,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 1013000,
+		torpedo = 330,
+		durability = 1081000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -693,38 +784,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295313,
+		id = 295283,
 		equipment_list = {
-			2983004,
-			2983009
+			2981000,
+			2981001,
+			2981009
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 13
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201440,
 				LV = 1
 			}
 		}
 	},
-	[295314] = {
+	[295284] = {
 		cannon = 223,
-		name = "ヨークタウン(META)-Tier.14",
+		name = "江風(META)-Tier.14",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 468,
+		air = 0,
 		hit_growth = 0,
 		dodge = 71,
-		base = 91177,
-		antiaircraft = 333,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 290,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -733,8 +825,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 1256000,
+		torpedo = 347,
+		durability = 1340000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -742,38 +834,39 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295314,
+		id = 295284,
 		equipment_list = {
-			2983004,
-			2983009
+			2981000,
+			2981001,
+			2981009
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 14
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201441,
 				LV = 1
 			}
 		}
 	},
-	[295315] = {
+	[295285] = {
 		cannon = 235,
-		name = "ヨークタウン(META)-Tier.15",
+		name = "江風(META)-Tier.15",
 		reload = 150,
 		cannon_growth = 0,
 		speed_growth = 0,
-		air = 492,
+		air = 0,
 		hit_growth = 0,
 		dodge = 75,
-		base = 91177,
-		antiaircraft = 350,
-		speed = 20,
+		base = 91099,
+		antiaircraft = 305,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
 		luck = 50,
@@ -782,8 +875,8 @@ pg.enemy_data_statistics_394 = {
 		antisub_growth = 0,
 		air_growth = 0,
 		torpedo_growth = 0,
-		torpedo = 0,
-		durability = 1500000,
+		torpedo = 365,
+		durability = 1600000,
 		armor_growth = 0,
 		durability_growth = 0,
 		luck_growth = 0,
@@ -791,504 +884,481 @@ pg.enemy_data_statistics_394 = {
 		armor = 0,
 		antisub = 0,
 		fog_fx = "",
-		id = 295315,
+		id = 295285,
 		equipment_list = {
-			2983004,
-			2983009
+			2981000,
+			2981001,
+			2981009
 		},
 		buff_list = {
 			{
-				ID = 201634,
-				LV = 15
-			},
-			{
-				ID = 200280,
+				ID = 201420,
 				LV = 1
 			},
 			{
-				ID = 201637,
+				ID = 201425,
+				LV = 1
+			},
+			{
+				ID = 201442,
 				LV = 1
 			}
 		}
 	},
-	[295901] = {
-		cannon = 115,
+	[295286] = {
+		cannon = 72,
+		name = "夕立(META)-Tier.1",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 188,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
-		reload_growth = 0,
-		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
-		hit = 30,
-		antisub_growth = 0,
-		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
 		speed_growth = 0,
-		id = 295901,
-		antisub = 0,
-		fog_fx = ""
-	},
-	[295902] = {
-		cannon = 125,
-		reload = 150,
-		rarity = 2,
-		cannon_growth = 0,
-		torpedo = 0,
-		air = 201,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 25,
+		base = 91141,
+		antiaircraft = 100,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 35,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 127,
+		durability = 52000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295902,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295286,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 1
+			}
+		}
 	},
-	[295903] = {
-		cannon = 135,
+	[295287] = {
+		cannon = 83,
+		name = "夕立(META)-Tier.2",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 214,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 28,
+		base = 91141,
+		antiaircraft = 115,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 40,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 145,
+		durability = 56000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295903,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295287,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 1
+			}
+		}
 	},
-	[295904] = {
-		cannon = 146,
+	[295288] = {
+		cannon = 93,
+		name = "夕立(META)-Tier.3",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 227,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 32,
+		base = 91141,
+		antiaircraft = 129,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 45,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 163,
+		durability = 60000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295904,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295288,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 1
+			}
+		}
 	},
-	[295905] = {
-		cannon = 157,
+	[295289] = {
+		cannon = 103,
+		name = "夕立(META)-Tier.4",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 240,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 35,
+		base = 91141,
+		antiaircraft = 143,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 50,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 181,
+		durability = 72000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295905,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295289,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 2
+			}
+		}
 	},
-	[295906] = {
-		cannon = 169,
+	[295290] = {
+		cannon = 114,
+		name = "夕立(META)-Tier.5",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 253,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 39,
+		base = 91141,
+		antiaircraft = 158,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 55,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 199,
+		durability = 114000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295906,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295290,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 2
+			}
+		}
 	},
-	[295907] = {
-		cannon = 181,
+	[295291] = {
+		cannon = 124,
+		name = "夕立(META)-Tier.6",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 266,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 42,
+		base = 91141,
+		antiaircraft = 172,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 60,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 217,
+		durability = 156000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295907,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295291,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 2
+			}
+		}
 	},
-	[295908] = {
-		cannon = 194,
+	[295292] = {
+		cannon = 134,
+		name = "夕立(META)-Tier.7",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 279,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 46,
+		base = 91141,
+		antiaircraft = 186,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 65,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 235,
+		durability = 239000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295908,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295292,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 3
+			}
+		}
 	},
-	[295909] = {
-		cannon = 207,
+	[295293] = {
+		cannon = 145,
+		name = "夕立(META)-Tier.8",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 292,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 50,
+		base = 91141,
+		antiaircraft = 201,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 70,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 254,
+		durability = 322000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295909,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295293,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 3
+			}
+		}
 	},
-	[295910] = {
-		cannon = 221,
+	[295294] = {
+		cannon = 155,
+		name = "夕立(META)-Tier.9",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 305,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 53,
+		base = 91141,
+		antiaircraft = 215,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 75,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 272,
+		durability = 405000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295910,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295294,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 3
+			}
+		}
 	},
-	[295911] = {
-		cannon = 235,
+	[295295] = {
+		cannon = 166,
+		name = "夕立(META)-Tier.10",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 319,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 57,
+		base = 91141,
+		antiaircraft = 230,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 80,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 290,
+		durability = 499000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295911,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295295,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 4
+			}
+		}
 	},
-	[295912] = {
-		cannon = 250,
+	[295296] = {
+		cannon = 176,
+		name = "夕立(META)-Tier.11",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 333,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 60,
+		base = 91141,
+		antiaircraft = 244,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 85,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
+		torpedo = 308,
+		durability = 624000,
+		armor_growth = 0,
+		durability_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295912,
 		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295296,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 4
+			}
+		}
 	},
-	[295913] = {
-		cannon = 265,
+	[295297] = {
+		cannon = 186,
+		name = "夕立(META)-Tier.12",
 		reload = 150,
-		rarity = 2,
 		cannon_growth = 0,
-		torpedo = 0,
-		air = 347,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
+		speed_growth = 0,
+		air = 0,
+		hit_growth = 0,
+		dodge = 64,
+		base = 91141,
+		antiaircraft = 258,
+		speed = 30,
 		reload_growth = 0,
 		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
+		luck = 50,
+		battle_unit_type = 90,
 		hit = 90,
 		antisub_growth = 0,
 		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
 		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		speed_growth = 0,
-		id = 295913,
-		antisub = 0,
-		fog_fx = ""
-	},
-	[295914] = {
-		cannon = 281,
-		reload = 150,
-		rarity = 2,
-		cannon_growth = 0,
-		torpedo = 0,
-		air = 361,
+		torpedo = 326,
+		durability = 811000,
+		armor_growth = 0,
 		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
-		reload_growth = 0,
-		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
-		hit = 95,
-		antisub_growth = 0,
-		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
-		torpedo_growth = 0,
 		luck_growth = 0,
 		antiaircraft_growth = 0,
 		armor = 0,
-		speed_growth = 0,
-		id = 295914,
 		antisub = 0,
-		fog_fx = ""
-	},
-	[295915] = {
-		cannon = 297,
-		reload = 150,
-		rarity = 2,
-		cannon_growth = 0,
-		torpedo = 0,
-		air = 375,
-		durability_growth = 0,
-		dodge = 0,
-		antiaircraft = 0,
-		speed = 120,
-		luck = 0,
-		reload_growth = 0,
-		dodge_growth = 0,
-		icon = "sairenboss11",
-		star = 2,
-		hit = 105,
-		antisub_growth = 0,
-		air_growth = 0,
-		hit_growth = 0,
-		base = 90535,
-		durability = 99999,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		antiaircraft_growth = 0,
-		armor = 0,
-		speed_growth = 0,
-		id = 295915,
-		antisub = 0,
-		fog_fx = ""
+		fog_fx = "",
+		id = 295297,
+		equipment_list = {},
+		buff_list = {
+			{
+				ID = 201500,
+				LV = 4
+			}
+		}
 	}
 }

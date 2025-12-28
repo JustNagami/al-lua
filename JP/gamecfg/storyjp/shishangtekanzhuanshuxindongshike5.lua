@@ -257,7 +257,7 @@
 			spine = true,
 			withoutActorName = true,
 			nameColor = "#A9F548FF",
-			say = "そのまま、黒いストッキングに包まれた長い脚が自然と寄り添ってくる――まるで無言の誘いのように。",
+			say = "そのまま、長い脚が自然と寄り添ってくる――まるで無言の誘いのように。",
 			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
