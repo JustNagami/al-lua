@@ -239,7 +239,7 @@
 		},
 		{
 			expression = 8,
-			side = 0,
+			side = 2,
 			bgName = "bg_port_ny_future",
 			hidePaintObj = true,
 			dir = 1,
