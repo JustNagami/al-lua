@@ -1243,6 +1243,9 @@ _G.pg.base.gametip.battle_result_total_score = {
 _G.pg.base.gametip.battle_result_max_combo = {
 	tip = "Max COMBO:",
 }
+_G.pg.base.gametip.battle_result_boss_hp_lower = {
+	tip = "The boss has less than $1% HP left",
+}
 _G.pg.base.gametip.battle_levelScene_0Oil = {
 	tip = "Oil Production is 0",
 }
@@ -2624,6 +2627,9 @@ _G.pg.base.gametip.ship_formationUI_fleetName11 = {
 }
 _G.pg.base.gametip.ship_formationUI_fleetName12 = {
 	tip = "Submarine 2",
+}
+_G.pg.base.gametip.ship_formationUI_fleetName13 = {
+	tip = "Support Fleet",
 }
 _G.pg.base.gametip.ship_formationUI_exercise_fleetName = {
 	tip = "Exercise Fleet",
@@ -5953,7 +5959,7 @@ _G.pg.base.gametip.elite_warp_to_latest_map = {
 	tip = "Viewing newest chapter.",
 }
 _G.pg.base.gametip.elite_fleet_confirm = {
-	tip = "$1 <color=#ff0000>does not meet</color> requirements to attack and may not enter battle. Would you like to continue your attack?",
+	tip = "$1 cannot participate in battle because she <color=#ff5c5c>does not meet the sortie requirements.</color>",
 }
 _G.pg.base.gametip.elite_condition_level = {
 	tip = "Average Level",
@@ -7967,7 +7973,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points.",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Lexington II guaranteed with every 200 event builds (can be done up to 4 times)!",
+	tip = "Get Guam guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "Yorktown II and Northampton II added to standard build pool!",
@@ -19233,11 +19239,73 @@ _G.pg.base.gametip.help_supportfleet = {
 		},
 	},
 }
+_G.pg.base.gametip.help_supportfleet_16 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/supportfleet_help1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/supportfleet_help_16",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.help_supportfleet_16_submarine = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/supportfleet_submarine_help1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/supportfleet_submarine_help2",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
 _G.pg.base.gametip.word_status_inSupportFleet = {
 	tip = "In Support Fleet",
 }
 _G.pg.base.gametip.ship_formationMediator_request_replace_support = {
-	tip = "This ship is currently in the <color=#92fc63>Support Fleet</color>. Continue making changes?",
+	tip = "This shipgirl is assigned to your Support Fleet. Remove her from the formation?",
 }
 _G.pg.base.gametip.courtyard_label_train = {
 	tip = "Train",
@@ -27002,10 +27070,10 @@ _G.pg.base.gametip.island_card_no_label_tip = {
 	tip = "You have not received any rating tags.",
 }
 _G.pg.base.gametip.gift_giving_prefer = {
-	tip = "It seems she really likes your gift.",
+	tip = " really likes your gift.",
 }
 _G.pg.base.gametip.gift_giving_dislike = {
-	tip = "It seems she is confused by your gift.",
+	tip = " is confused by your gift.",
 }
 _G.pg.base.gametip.dorm3d_publicroom_unlock = {
 	tip = "You need to unlock shared areas first.",
@@ -27602,5 +27670,38 @@ _G.pg.base.gametip.winterwish_20251225_tip1 = {
 }
 _G.pg.base.gametip.winterwish_20251225_tip2 = {
 	tip = "Wishes Left",
+}
+_G.pg.base.gametip.battle_battleMediator_quest_exist_submarine_support = {
+	tip = "If you stop the battle, your result will be calculated based on the boss' remaining HP. Stop the battle?",
+}
+_G.pg.base.gametip.island_survey_ui_1 = {
+	tip = "",
+}
+_G.pg.base.gametip.island_survey_ui_2 = {
+	tip = "",
+}
+_G.pg.base.gametip.island_survey_ui_award = {
+	tip = "",
+}
+_G.pg.base.gametip.island_survey_ui_button = {
+	tip = "",
+}
+_G.pg.base.gametip.ANTTFFCoreActivity_subtitle_1 = {
+	tip = "A Note Through the Firmament - Finale",
+}
+_G.pg.base.gametip.ANTTFFCoreActivity_title = {
+	tip = "Finale",
+}
+_G.pg.base.gametip.ANTTFFCoreActivity_title2 = {
+	tip = "",
+}
+_G.pg.base.gametip.ANTTFFCoreActivityPtpage_title = {
+	tip = "Finale",
+}
+_G.pg.base.gametip.ANTTFFCoreActivityPtpage_title2 = {
+	tip = "",
+}
+_G.pg.base.gametip.submarine_support_oil_consume_tip = {
+	tip = "Sending your supporting Submarine Fleet into battle will cost $1 Oil. Continue?",
 }
 

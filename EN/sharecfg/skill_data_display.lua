@@ -1950,6 +1950,9 @@ pg.skill_data_display = setmetatable({
 		151923,
 		151926,
 		151941,
+		151963,
+		151964,
+		151971,
 		18010,
 		18040,
 		18041,
@@ -2634,6 +2637,8 @@ pg.skill_data_display = setmetatable({
 		30502,
 		30511,
 		30512,
+		30571,
+		30572,
 		39000,
 		39001,
 		39002,
@@ -3419,6 +3424,8 @@ pg.skill_data_display = setmetatable({
 		1010143,
 		1010144,
 		1010147,
+		1010270,
+		1010271,
 		1010390,
 		1010410,
 		1010411,
@@ -3654,6 +3661,12 @@ pg.skill_data_display = setmetatable({
 		201633,
 		201668,
 		201669,
+		201672,
+		201673,
+		201680,
+		201687,
+		201688,
+		201689,
 		1011540,
 		1011541,
 		1090010,
@@ -3810,6 +3823,12 @@ pg.skill_data_display = setmetatable({
 		1012580,
 		1012581,
 		1012582,
+		1014990,
+		1014991,
+		1014992,
+		1014993,
+		1014995,
+		1014996,
 		1090020,
 		1090042,
 		1090043,
@@ -11682,6 +11701,18 @@ pg.base.skill_data_display = {
 		id = 151941,
 		name = "Inexperienced Patroller"
 	},
+	[151963] = {
+		id = 151963,
+		name = "Trend Setter"
+	},
+	[151964] = {
+		id = 151964,
+		name = "Trend Setter"
+	},
+	[151971] = {
+		id = 151971,
+		name = "Attention Getter"
+	},
 	[18010] = {
 		id = 18010,
 		name = "MKV-Class AP Shells 194/160+"
@@ -14416,6 +14447,14 @@ pg.base.skill_data_display = {
 	},
 	[30512] = {
 		id = 30512,
+		name = "All Out Assault II"
+	},
+	[30571] = {
+		id = 30571,
+		name = "All Out Assault I"
+	},
+	[30572] = {
+		id = 30572,
 		name = "All Out Assault II"
 	},
 	[39000] = {
@@ -17558,6 +17597,14 @@ pg.base.skill_data_display = {
 		id = 1010147,
 		name = "Eagle's Tears+"
 	},
+	[1010270] = {
+		id = 1010270,
+		name = "Final Glory+"
+	},
+	[1010271] = {
+		id = 1010271,
+		name = "Final Glory+"
+	},
 	[1010390] = {
 		id = 1010390,
 		name = "Unbreakable Shield+"
@@ -18498,6 +18545,30 @@ pg.base.skill_data_display = {
 		id = 201669,
 		name = "Attack Restrictions Lifted"
 	},
+	[201672] = {
+		id = 201672,
+		name = "Deconstructing Observation"
+	},
+	[201673] = {
+		id = 201673,
+		name = "Unextinguished Will"
+	},
+	[201680] = {
+		id = 201680,
+		name = "The Final Concerto"
+	},
+	[201687] = {
+		id = 201687,
+		name = "VII=VI Linkage"
+	},
+	[201688] = {
+		id = 201688,
+		name = "VII=XIV Linkage"
+	},
+	[201689] = {
+		id = 201689,
+		name = "Target Down"
+	},
 	[1011540] = {
 		id = 1011540,
 		name = "Final Shot+"
@@ -19121,6 +19192,30 @@ pg.base.skill_data_display = {
 	[1012582] = {
 		id = 1012582,
 		name = "Don't Move An Inch!"
+	},
+	[1014990] = {
+		id = 1014990,
+		name = "Scorching Combo+"
+	},
+	[1014991] = {
+		id = 1014991,
+		name = "Scorching Combo I+"
+	},
+	[1014992] = {
+		id = 1014992,
+		name = "Scorching Combo II+"
+	},
+	[1014993] = {
+		id = 1014993,
+		name = "Scorching Combo II+"
+	},
+	[1014995] = {
+		id = 1014995,
+		name = "Scorching Combo+"
+	},
+	[1014996] = {
+		id = 1014996,
+		name = "Scorching Combo+"
 	},
 	[1090020] = {
 		id = 1090020,
