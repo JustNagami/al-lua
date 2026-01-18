@@ -6311,6 +6311,9 @@ function temp()
 		露 = {
 			this = true
 		},
+		鳳 = {
+			this = true
+		},
 		上 = {
 			フ = {
 				ブ = {
@@ -6637,6 +6640,9 @@ function temp()
 	var_0_1.水 = {
 		無 = {
 			月 = {
+				this = true
+			},
+			瀬 = {
 				this = true
 			}
 		},
@@ -7080,6 +7086,19 @@ end
 temp()
 
 function temp()
+	var_0_1.妙 = {
+		風 = {
+			this = true
+		},
+		高 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.五 = {
 		十 = {
 			鈴 = {
@@ -7304,16 +7323,6 @@ end
 temp()
 
 function temp()
-	var_0_1.妙 = {
-		高 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.足 = {
 		柄 = {
 			this = true
@@ -7396,6 +7405,16 @@ temp()
 function temp()
 	var_0_1.雲 = {
 		仙 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.浅 = {
+		間 = {
 			this = true
 		}
 	}
@@ -7568,15 +7587,15 @@ function temp()
 				this = true
 			}
 		},
-		吹 = {
-			this = true
-		},
 		["4"] = {
 			["0"] = {
 				["4"] = {
 					this = true
 				}
 			}
+		},
+		吹 = {
+			this = true
 		},
 		丽 = {
 			莎 = {
@@ -7660,6 +7679,16 @@ temp()
 function temp()
 	var_0_1.駿 = {
 		河 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.近 = {
+		江 = {
 			this = true
 		}
 	}
@@ -8548,6 +8577,19 @@ function temp()
 									}
 								}
 							}
+						},
+						圣 = {
+							座 = {
+								[" "] = {
+									前 = {
+										排 = {
+											） = {
+												this = true
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
@@ -8918,6 +8960,50 @@ function temp()
 		睦 = {
 			号 = {
 				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.基 = {
+		洛 = {
+			夫 = {
+				· = {
+					M = {
+						E = {
+							T = {
+								A = {
+									（ = {
+										后 = {
+											排 = {
+												） = {
+													this = true
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.拉 = {
+		菲 = {
+			I = {
+				I = {
+					this = true
+				}
 			}
 		}
 	}

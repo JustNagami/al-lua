@@ -3934,6 +3934,25 @@ pg.memory_template = setmetatable({
 		4903,
 		4904,
 		4905,
+		4906,
+		4907,
+		4908,
+		4909,
+		4910,
+		4911,
+		4912,
+		4913,
+		4914,
+		4915,
+		4916,
+		4917,
+		4918,
+		4919,
+		4920,
+		4921,
+		4922,
+		4923,
+		4924,
 		4931,
 		4932,
 		4933,
@@ -3945,6 +3964,13 @@ pg.memory_template = setmetatable({
 		4944,
 		4945,
 		4946,
+		4951,
+		4952,
+		4953,
+		4954,
+		4955,
+		4956,
+		4957,
 		10000,
 		10001,
 		10002,
@@ -63163,6 +63189,291 @@ pg.base.memory_template = {
 			"XIANGCHEYUTIANQIONGZHIYIN24"
 		}
 	},
+	[4906] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN25",
+		mask = "bg/bg_memory",
+		title = "実験場θ",
+		condition = "EP5-2をクリア",
+		number = 25,
+		id = 4906,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN25"
+		}
+	},
+	[4907] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN26",
+		mask = "bg/bg_memory",
+		title = "仲間集う",
+		condition = "EP6-1をクリア",
+		number = 26,
+		id = 4907,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN26"
+		}
+	},
+	[4908] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN27",
+		mask = "bg/bg_memory",
+		title = "火急の救援",
+		condition = "EP6-2をクリア",
+		number = 27,
+		id = 4908,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN27"
+		}
+	},
+	[4909] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN28",
+		mask = "bg/bg_memory",
+		title = "各々の力",
+		condition = "EP6-3をクリア",
+		number = 28,
+		id = 4909,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN28"
+		}
+	},
+	[4910] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN29",
+		mask = "bg/bg_memory",
+		title = "謎の来援",
+		condition = "EP6-4をクリア",
+		number = 29,
+		id = 4910,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN29"
+		}
+	},
+	[4911] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN30",
+		mask = "bg/bg_memory",
+		title = "リセットプロトコル",
+		condition = "EP6-5をクリア",
+		number = 30,
+		id = 4911,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN30"
+		}
+	},
+	[4912] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN31",
+		mask = "bg/bg_memory",
+		title = "作戦開始",
+		condition = "EP7-1をクリア",
+		number = 31,
+		id = 4912,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN31"
+		}
+	},
+	[4913] = {
+		type = 2,
+		subtitle = "",
+		story = "1996002",
+		mask = "bg/bg_memory",
+		title = "ヨークタウンたちの戦い",
+		condition = "EP7-2をクリア",
+		number = 32,
+		id = 4913,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"1996002"
+		}
+	},
+	[4914] = {
+		type = 2,
+		subtitle = "",
+		story = "1996003",
+		mask = "bg/bg_memory",
+		title = "余燼の今",
+		condition = "EP7-3をクリア",
+		number = 33,
+		id = 4914,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"1996003"
+		}
+	},
+	[4915] = {
+		type = 2,
+		subtitle = "",
+		story = "1996004",
+		mask = "bg/bg_memory",
+		title = "特別計画艦",
+		condition = "EP7-4をクリア",
+		number = 34,
+		id = 4915,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"1996004"
+		}
+	},
+	[4916] = {
+		type = 2,
+		subtitle = "",
+		story = "1996005",
+		mask = "bg/bg_memory",
+		title = "交錯する想い",
+		condition = "EP7-5をクリア",
+		number = 35,
+		id = 4916,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"1996005"
+		}
+	},
+	[4917] = {
+		type = 2,
+		subtitle = "",
+		story = "1996006",
+		mask = "bg/bg_memory",
+		title = "あまり重要じゃないこと",
+		condition = "EP7-6をクリア",
+		number = 36,
+		id = 4917,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"1996006"
+		}
+	},
+	[4918] = {
+		type = 2,
+		subtitle = "",
+		story = "1996007",
+		mask = "bg/bg_memory",
+		title = "ヴェールの中の戦い",
+		condition = "EP7-7をクリア",
+		number = 37,
+		id = 4918,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"1996007"
+		}
+	},
+	[4919] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN38",
+		mask = "bg/bg_memory",
+		title = "天穹に響く音謡",
+		condition = "EP8-1をクリア",
+		number = 38,
+		id = 4919,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN38"
+		}
+	},
+	[4920] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN39",
+		mask = "bg/bg_memory",
+		title = "二回目の別れ",
+		condition = "EP8-2をクリア",
+		number = 39,
+		id = 4920,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN39"
+		}
+	},
+	[4921] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN40",
+		mask = "bg/bg_memory",
+		title = "今、過去、未来",
+		condition = "EP8-3をクリア",
+		number = 40,
+		id = 4921,
+		icon = "memory_xiangcheyutianqiongzhiyin3",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN40"
+		}
+	},
+	[4922] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN41",
+		mask = "bg/bg_memory",
+		title = "逆位置のタワー",
+		condition = "EX-1をクリア",
+		number = 41,
+		id = 4922,
+		icon = "memory_xiangcheyutianqiongzhiyin4",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN41"
+		}
+	},
+	[4923] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN42",
+		mask = "bg/bg_memory",
+		title = "新しい時代",
+		condition = "EX-2をクリア",
+		number = 42,
+		id = 4923,
+		icon = "memory_xiangcheyutianqiongzhiyin4",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN42"
+		}
+	},
+	[4924] = {
+		type = 1,
+		subtitle = "",
+		story = "XIANGCHEYUTIANQIONGZHIYIN43",
+		mask = "bg/bg_memory",
+		title = "さざなみ",
+		condition = "EX-3をクリア",
+		number = 43,
+		id = 4924,
+		icon = "memory_xiangcheyutianqiongzhiyin4",
+		is_open = 0,
+		unlock_pre = {
+			"XIANGCHEYUTIANQIONGZHIYIN43"
+		}
+	},
 	[4931] = {
 		type = 1,
 		subtitle = "",
@@ -63326,6 +63637,111 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"SHISHANGTEKANZHUANSHUXINDONGSHIKEII6"
+		}
+	},
+	[4951] = {
+		type = 1,
+		subtitle = "",
+		story = "WEINEITUO1",
+		mask = "bg/bg_memory",
+		title = "執務室の「威光」プラン",
+		condition = "「威光ガイドツアー1」開始",
+		number = 0,
+		id = 4951,
+		icon = "memory_weineituo",
+		is_open = 0,
+		unlock_pre = {
+			"WEINEITUO1"
+		}
+	},
+	[4952] = {
+		type = 1,
+		subtitle = "",
+		story = "WEINEITUO2",
+		mask = "bg/bg_memory",
+		title = "庭園でのゴージャスタイム",
+		condition = "「威光ガイドツアー2」開始",
+		number = 0,
+		id = 4952,
+		icon = "memory_weineituo",
+		is_open = 0,
+		unlock_pre = {
+			"WEINEITUO2"
+		}
+	},
+	[4953] = {
+		type = 1,
+		subtitle = "",
+		story = "WEINEITUO3",
+		mask = "bg/bg_memory",
+		title = "芸術の共鳴",
+		condition = "「威光ガイドツアー3」開始",
+		number = 0,
+		id = 4953,
+		icon = "memory_weineituo",
+		is_open = 0,
+		unlock_pre = {
+			"WEINEITUO3"
+		}
+	},
+	[4954] = {
+		type = 1,
+		subtitle = "",
+		story = "WEINEITUO4",
+		mask = "bg/bg_memory",
+		title = "入浴の前準備",
+		condition = "「威光ガイドツアー4」開始",
+		number = 0,
+		id = 4954,
+		icon = "memory_weineituo",
+		is_open = 0,
+		unlock_pre = {
+			"WEINEITUO4"
+		}
+	},
+	[4955] = {
+		type = 1,
+		subtitle = "",
+		story = "WEINEITUO5",
+		mask = "bg/bg_memory",
+		title = "身に染みる温かさ",
+		condition = "「威光ガイドツアー5」開始",
+		number = 0,
+		id = 4955,
+		icon = "memory_weineituo",
+		is_open = 0,
+		unlock_pre = {
+			"WEINEITUO5"
+		}
+	},
+	[4956] = {
+		type = 1,
+		subtitle = "",
+		story = "WEINEITUO6",
+		mask = "bg/bg_memory",
+		title = "指先リズム",
+		condition = "「威光ガイドツアー6」開始",
+		number = 0,
+		id = 4956,
+		icon = "memory_weineituo",
+		is_open = 0,
+		unlock_pre = {
+			"WEINEITUO6"
+		}
+	},
+	[4957] = {
+		type = 1,
+		subtitle = "",
+		story = "WEINEITUO7",
+		mask = "bg/bg_memory",
+		title = "もう一歩進んで",
+		condition = "「威光ガイドツアー7」開始",
+		number = 0,
+		id = 4957,
+		icon = "memory_weineituo",
+		is_open = 0,
+		unlock_pre = {
+			"WEINEITUO7"
 		}
 	},
 	[10000] = {

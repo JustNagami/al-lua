@@ -1249,6 +1249,9 @@ _G.pg.base.gametip.battle_result_total_score = {
 _G.pg.base.gametip.battle_result_max_combo = {
 	tip = "最大コンボ：",
 }
+_G.pg.base.gametip.battle_result_boss_hp_lower = {
+	tip = "敵ボス残り耐久$1%以下",
+}
 _G.pg.base.gametip.battle_levelScene_0Oil = {
 	tip = "燃料ポイントが空になりました",
 }
@@ -2630,6 +2633,9 @@ _G.pg.base.gametip.ship_formationUI_fleetName11 = {
 }
 _G.pg.base.gametip.ship_formationUI_fleetName12 = {
 	tip = "第二潜水艦隊",
+}
+_G.pg.base.gametip.ship_formationUI_fleetName13 = {
+	tip = "支援艦隊",
 }
 _G.pg.base.gametip.ship_formationUI_exercise_fleetName = {
 	tip = "演習艦隊",
@@ -5949,7 +5955,7 @@ _G.pg.base.gametip.elite_warp_to_latest_map = {
 	tip = "最新章に切り替えました",
 }
 _G.pg.base.gametip.elite_fleet_confirm = {
-	tip = "$1が出撃条件に<color=#ff5c5c>満たしていません</color>ため、戦闘に参加できませんが、本当に出撃しますか？",
+	tip = "$1は<color=#ff5c5c>出撃条件を満たしていない</color>ため、戦闘に参加できません",
 }
 _G.pg.base.gametip.elite_condition_level = {
 	tip = "平均練度",
@@ -7930,7 +7936,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "期間限定建造を累計200回行うと「レキシントンⅡ」を確定で入手可能！（最大4隻まで）",
+	tip = "期間限定建造を累計200回行うと「グアム」を確定で入手可能！（最大4隻まで）",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "「ヨークタウンⅡ」「ノーザンプトンⅡ」常設実装！",
@@ -18923,11 +18929,73 @@ _G.pg.base.gametip.help_supportfleet = {
 		},
 	},
 }
+_G.pg.base.gametip.help_supportfleet_16 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/supportfleet_help1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/supportfleet_help_16",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.help_supportfleet_16_submarine = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/supportfleet_submarine_help1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/supportfleet_submarine_help2",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
 _G.pg.base.gametip.word_status_inSupportFleet = {
 	tip = "支援出撃中",
 }
 _G.pg.base.gametip.ship_formationMediator_request_replace_support = {
-	tip = "すでに支援艦隊に編成されています。編成を切り替えますか？",
+	tip = "支援艦隊に編成されている艦船がいます。編成から外しますか？",
 }
 _G.pg.base.gametip.tw_unsupport_tip = {
 	tip = "ツイッターアカウント連携は現在利用できません。Yostarアカウント連携を行ってください",
@@ -27277,5 +27345,38 @@ _G.pg.base.gametip.winterwish_20251225_tip1 = {
 }
 _G.pg.base.gametip.winterwish_20251225_tip2 = {
 	tip = "願い事可能回数",
+}
+_G.pg.base.gametip.battle_battleMediator_quest_exist_submarine_support = {
+	tip = "戦闘を中断すると、現在の敵ボスの耐久に応じてリザルトが集計されます。戦闘を中断しますか？",
+}
+_G.pg.base.gametip.island_survey_ui_1 = {
+	tip = "为了更好地收集指挥官的意见与建议,司令部在此为您准备了一份问卷。",
+}
+_G.pg.base.gametip.island_survey_ui_2 = {
+	tip = "问卷提交后将无法修改,请指挥官认真填写。",
+}
+_G.pg.base.gametip.island_survey_ui_award = {
+	tip = "作为感谢，完成问卷后可获得：",
+}
+_G.pg.base.gametip.island_survey_ui_button = {
+	tip = "打开问卷",
+}
+_G.pg.base.gametip.ANTTFFCoreActivity_subtitle_1 = {
+	tip = "天穹に響く音謡·F",
+}
+_G.pg.base.gametip.ANTTFFCoreActivity_title = {
+	tip = "天穹に響く音謡·F",
+}
+_G.pg.base.gametip.ANTTFFCoreActivity_title2 = {
+	tip = "event",
+}
+_G.pg.base.gametip.ANTTFFCoreActivityPtpage_title = {
+	tip = "天穹に響く音謡·F",
+}
+_G.pg.base.gametip.ANTTFFCoreActivityPtpage_title2 = {
+	tip = "event",
+}
+_G.pg.base.gametip.submarine_support_oil_consume_tip = {
+	tip = "潜水支援艦隊出撃は燃料を$1消費します。続けますか？",
 }
 

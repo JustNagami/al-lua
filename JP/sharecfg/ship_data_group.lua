@@ -986,6 +986,9 @@ pg.ship_data_group = setmetatable({
 		[30192] = {
 			704
 		},
+		[30194] = {
+			723
+		},
 		[30157] = {
 			296
 		},
@@ -2835,6 +2838,7 @@ pg.ship_data_group = setmetatable({
 			608,
 			663,
 			704,
+			723,
 			296,
 			297,
 			449,
@@ -3678,6 +3682,7 @@ pg.ship_data_group = setmetatable({
 		608,
 		663,
 		704,
+		723,
 		296,
 		297,
 		449,
@@ -19430,6 +19435,41 @@ pg.base.ship_data_group = {
 				"イベント：アマハラに舞い奉れ",
 				{
 					""
+				},
+				0
+			}
+		}
+	},
+	[723] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 3,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 330,
+		code = 723,
+		group_type = 30194,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"D",
+			"A",
+			"E",
+			"A",
+			"D",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"推奨入手海域16-4",
+				{
+					"LEVEL",
+					{
+						chapterid = 1604
+					}
 				},
 				0
 			}
