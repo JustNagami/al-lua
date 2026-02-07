@@ -1696,6 +1696,30 @@ pg.equip_skin_theme_template = {
 			4275
 		}
 	},
+	[79] = {
+		id = 79,
+		name = "Photo Vision",
+		ids = {
+			4276,
+			4277,
+			4278,
+			4279,
+			4280,
+			4281,
+			4282,
+			4283,
+			4284,
+			4285,
+			4286,
+			4287,
+			4288,
+			4289,
+			4290,
+			4291,
+			4292,
+			4293
+		}
+	},
 	[101] = {
 		id = 101,
 		name = "Power of the Stars",
@@ -1852,6 +1876,16 @@ pg.equip_skin_theme_template = {
 			2112
 		}
 	},
+	[109] = {
+		id = 109,
+		name = "Lost Ruins",
+		ids = {
+			2113,
+			2114,
+			2115,
+			2116
+		}
+	},
 	[199] = {
 		id = 199,
 		name = "Misc",
@@ -1928,7 +1962,8 @@ pg.equip_skin_theme_template = {
 			3064,
 			3065,
 			3066,
-			3067
+			3067,
+			3068
 		}
 	},
 	all = {
@@ -2007,6 +2042,7 @@ pg.equip_skin_theme_template = {
 		75,
 		77,
 		78,
+		79,
 		101,
 		102,
 		103,
@@ -2015,6 +2051,7 @@ pg.equip_skin_theme_template = {
 		106,
 		107,
 		108,
+		109,
 		199
 	}
 }

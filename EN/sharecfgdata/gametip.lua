@@ -7973,16 +7973,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points.",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Get Guam guaranteed with every 200 event builds (can be done up to 4 times)!",
+	tip = "Rate UP for Francesco Caracciolo and more!",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Yorktown II and Northampton II added to standard build pool!",
+	tip = "Implacable and Royal Oak added to standard build pool!",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Hammann II added to standard build pool!",
+	tip = "Scylla added to standard build pool!",
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Yorktown II and Hornet II added to standard build pool!",
+	tip = "Implacable and Argus added to standard build pool!",
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -20407,7 +20407,7 @@ _G.pg.base.gametip.adventure_record_grade_title = {
 	tip = "Adventurer Rank:",
 }
 _G.pg.base.gametip.adventure_award_end_tip = {
-	tip = "*Claimable until 4/17 23:59:59 (UTC-7)",
+	tip = "* Claimable until Feb. 18th",
 }
 _G.pg.base.gametip.guardian_select_title = {
 	tip = "Choose Blessing",
@@ -22492,7 +22492,7 @@ _G.pg.base.gametip.help_starLightAlbum = {
 			info = "- Commemorative Album -",
 		},
 		{
-			info = "1.  The Commemorative Album tab has been added to the Memories screen.\n2.  During the event, you can complete event missions to receive <color=#92fc63>commemorative stickers</color>. Finishing your collection will award you with a limited furniture piece and a medal.\n Note:   While the event is available, tapping the <color=#92fc63>Commemoration button on the event banner or the Commemorative Album tab under Memories</color> will bring you to the commemorative stickers menu.\n Note:   Following the end of the event, <color=#92fc63>you can only access the stickers menu from the Commemorative Album tab under Memories</color>.\n Note:   Commemorative stickers are earned by completing event missions.\n Note:   Rewards may be claimed until 1/14/2026 midnight.",
+			info = "1.  The Commemorative Album tab has been added to the Memories screen.\n2.  During the event, you can complete event missions to receive <color=#92fc63>commemorative stickers</color>. Finishing your collection will award you with a limited furniture piece and a medal.\n Note:   While the event is available, tapping the <color=#92fc63>Commemoration button on the event banner or the Commemorative Album tab under Memories</color> will bring you to the commemorative stickers menu.\n Note:   Following the end of the event, <color=#92fc63>you can only access the stickers menu from the Commemorative Album tab under Memories</color>.\n Note:   Commemorative stickers are earned by completing event missions.\n Note:   Rewards may be claimed for a short period after the event has ended.",
 		},
 	},
 }
@@ -24634,11 +24634,17 @@ _G.pg.base.gametip.island_season_charts_refresh = {
 _G.pg.base.gametip.island_season_charts_out = {
 	tip = "Not in Rank",
 }
+_G.pg.base.gametip.island_season_review_lv = {
+	tip = "Island Dev Lv",
+}
 _G.pg.base.gametip.island_season_review_charnum = {
 	tip = "No. of Characters",
 }
 _G.pg.base.gametip.island_season_review_projuctnum = {
-	tip = "Research Technology",
+	tip = "Research Slots",
+}
+_G.pg.base.gametip.island_season_review_titleone = {
+	tip = "Season",
 }
 _G.pg.base.gametip.island_season_review_ptnum = {
 	tip = "IDP",
@@ -24647,22 +24653,34 @@ _G.pg.base.gametip.island_season_review_ptrank = {
 	tip = "Development Rank",
 }
 _G.pg.base.gametip.island_season_review_produce = {
-	tip = "Island Production",
+	tip = "Production Statistics",
 }
 _G.pg.base.gametip.island_season_review_ordernum = {
-	tip = "Resources Delivered",
+	tip = "Order Count",
 }
 _G.pg.base.gametip.island_season_review_formulanum = {
-	tip = "Dishes Produced",
+	tip = "Produced",
 }
 _G.pg.base.gametip.island_season_review_relax = {
-	tip = "Minigame",
+	tip = "Achievement",
 }
 _G.pg.base.gametip.island_season_review_fishnum = {
-	tip = "Fish Obtained",
+	tip = "Achieved",
 }
 _G.pg.base.gametip.island_season_review_gamenum = {
-	tip = "Events Done",
+	tip = "Collection Pt.",
+}
+_G.pg.base.gametip.island_season_review_achi = {
+	tip = "Achievement",
+}
+_G.pg.base.gametip.island_season_review_achinum = {
+	tip = "Achieved",
+}
+_G.pg.base.gametip.island_season_review_guidenum = {
+	tip = "Collection Pt.",
+}
+_G.pg.base.gametip.island_season_review_blank = {
+	tip = "No participation in this season",
 }
 _G.pg.base.gametip.island_season_window_end = {
 	tip = "The season will end soon.",
@@ -24677,7 +24695,7 @@ _G.pg.base.gametip.island_season_window_transformtip = {
 	tip = "Do you want to convert the selected item(s)?",
 }
 _G.pg.base.gametip.island_season_window_pt = {
-	tip = "Obtained Through $1 Resource Conversion",
+	tip = "Obtained Through $1 \nResource Conversion",
 }
 _G.pg.base.gametip.island_season_window_ranking = {
 	tip = "Final Ranking",
@@ -25207,6 +25225,43 @@ _G.pg.base.gametip.island_help_character_info = {
 		},
 	},
 }
+_G.pg.base.gametip.island_help_fish = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish3",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
 _G.pg.base.gametip.island_skin_original_desc = {
 	tip = "Default",
 }
@@ -25395,6 +25450,9 @@ _G.pg.base.gametip.island_log_exit = {
 }
 _G.pg.base.gametip.island_log_gift = {
 	tip = "has invited you to collect resources.",
+}
+_G.pg.base.gametip.island_log_trade = {
+	tip = "has invited you to trade pearls",
 }
 _G.pg.base.gametip.island_item_type_res = {
 	tip = "Resources",
@@ -26035,6 +26093,9 @@ _G.pg.base.gametip.island_cancel_queue = {
 _G.pg.base.gametip.island_queue_display = {
 	tip = "The island has reached its visitor limit. You will enter a queue.\nPlace in Queue: $1",
 }
+_G.pg.base.gametip.island_season_label = {
+	tip = "Season $1",
+}
 _G.pg.base.gametip.island_first_season = {
 	tip = "Season I",
 }
@@ -26476,6 +26537,36 @@ _G.pg.base.gametip.island_spoperation_item_2509_3 = {
 _G.pg.base.gametip.island_spoperation_item_2509_4 = {
 	tip = "Matsutake",
 }
+_G.pg.base.gametip.island_spoperation_tip_2602_1 = {
+	tip = "During the event, Peary will issue requests for specialty products. Complete these orders to earn rewards such as Season Points.\nNote: Specialty products do not count toward your request completion limit, and they do not affect your rating level.",
+}
+_G.pg.base.gametip.island_spoperation_tip_2602_2 = {
+	tip = "During the event, unique items will appear within specific areas. Search the areas and gather the items quickly!",
+}
+_G.pg.base.gametip.island_spoperation_tip_2602_3 = {
+	tip = "During the event, you can produce corresponding specialty products at Newsprout Nursery, the Golden Koi Restaurant, the Polar Bear Teahouse, and the Base Factory.",
+}
+_G.pg.base.gametip.island_spoperation_btn_2602_1 = {
+	tip = "Gather Specialty Products",
+}
+_G.pg.base.gametip.island_spoperation_btn_2602_2 = {
+	tip = "Make Specialty Products",
+}
+_G.pg.base.gametip.island_spoperation_btn_2602_3 = {
+	tip = "Event Manager",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_1 = {
+	tip = "Spring Bamboo Shoots",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_2 = {
+	tip = "Shepherd's Purse",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_3 = {
+	tip = "Winter Jasmine",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_4 = {
+	tip = "Hyacinth",
+}
 _G.pg.base.gametip.island_follow_success = {
 	tip = "Followed",
 }
@@ -26656,6 +26747,9 @@ _G.pg.base.gametip.island_guide_help_npc = {
 _G.pg.base.gametip.island_guide_help_item = {
 	tip = "Unlocking resource-related content on the island gives you Collection Points. Once you accumulate enough points, your Collection Level will increase, and you'll receive the corresponding Collection Rewards: \n\n1. <color=#39bfff>Unlocking</color> Resources: Unlocking a resource in the Collection gives you <color=#39bfff>20</color> Collection points. \n2. <color=#39bfff>Obtaining</color> Resources: Getting a specific amount of a resource gives you Collection points. You can view the reward stages and the required amounts of each resource in the Collection.",
 }
+_G.pg.base.gametip.island_guide_help_fish = {
+	tip = "Unlocking fishing content on the island gives you Collection Points. Once you accumulate enough points, your Collection Level will increase, and you'll receive the corresponding Collection Rewards:\n\n1. When you <color=#39bfff>unlock a fish in the Fish Collection</color>, you'll receive <color=#39bfff>10</color> Collection Points per fish.\n2. <color=#39bfff>Achieving the biggest catch</color>: When you catch a fish that meets the weight requirement for its species, you'll receive additional Collection Points. The weight requirement differs from species to species.",
+}
 _G.pg.base.gametip.island_guide_character_help = {
 	tip = "Info",
 }
@@ -26682,6 +26776,12 @@ _G.pg.base.gametip.island_guide_item_en = {
 }
 _G.pg.base.gametip.island_guide_collectionpoint = {
 	tip = "Get Collection Points",
+}
+_G.pg.base.gametip.island_guide_fish_min_weight = {
+	tip = "Min. Amount",
+}
+_G.pg.base.gametip.island_guide_fish_max_weight = {
+	tip = "Max Amount",
 }
 _G.pg.base.gametip.island_get_collect_point_success = {
 	tip = "Receive $1 Collection Points",
@@ -26781,6 +26881,24 @@ _G.pg.base.gametip.island_3Dshop_lack_res = {
 }
 _G.pg.base.gametip.island_photo_fur_lock = {
 	tip = "You cannot use the camera right now.",
+}
+_G.pg.base.gametip.island_exchange_title = {
+	tip = "Crafting",
+}
+_G.pg.base.gametip.island_exchange_title_en = {
+	tip = "Crafting",
+}
+_G.pg.base.gametip.island_exchange_own_count = {
+	tip = "Amt. Owned",
+}
+_G.pg.base.gametip.island_exchange_btn_text = {
+	tip = "Crafting",
+}
+_G.pg.base.gametip.island_exchange_sure_tip = {
+	tip = "Craft this item?",
+}
+_G.pg.base.gametip.island_bag_max_tip = {
+	tip = "Your Island Warehouse is full",
 }
 _G.pg.base.gametip.graphi_api_switch_opengl = {
 	tip = "When rendering compatibility mode is toggled OFF, your screen may turn black under certain circumstances. You will need to restart the game when changing this setting. Would you like to change this setting?",
@@ -27325,8 +27443,23 @@ _G.pg.base.gametip.island_order_ship_exchange_tip = {
 _G.pg.base.gametip.island_order_ship_btn_replace = {
 	tip = "Change Jobs",
 }
+_G.pg.base.gametip.island_fishing_tip_hooked = {
+	tip = "A fish is on the hook!",
+}
+_G.pg.base.gametip.island_fishing_tip_escape = {
+	tip = "The fish got away...",
+}
+_G.pg.base.gametip.island_fishing_exit = {
+	tip = "Do you want to stop fishing?",
+}
+_G.pg.base.gametip.island_fishing_lure_empty = {
+	tip = "Select rarity",
+}
 _G.pg.base.gametip.island_order_ship_exchange_tip_2 = {
 	tip = "Insufficient number of transport job attempts",
+}
+_G.pg.base.gametip.island_follower_exiting_tip = {
+	tip = "The character is leaving...",
 }
 _G.pg.base.gametip.island_order_ship_exchange_tip_1 = {
 	tip = "Do you want to update the jobs list? (If you have submitted any materials, they will not be reimbursed, and your transport job attempt will be deducted.)",
@@ -27671,6 +27804,26 @@ _G.pg.base.gametip.winterwish_20251225_tip1 = {
 _G.pg.base.gametip.winterwish_20251225_tip2 = {
 	tip = "Wishes Left",
 }
+_G.pg.base.gametip.battlepass_main_tip_2602 = {
+	tip = "Complete Cruise Missions between 2/1/2026 - 3/31/2026, accumulate <icon name=pt w=0.5 h=0.5/>, and receive <color=#854747>Carabiniere META</color> and other rewards!",
+}
+_G.pg.base.gametip.battlepass_main_help_2602 = {
+	tip = {
+		{
+			info = "Cruise Missions Seasonal Campaign\n2026/2/1 00:00 – 2026/3/31 23:59\n\n- Overview -\n\"Cruise Missions\" is a seasonal campaign where you can complete special missions, collect Progress Pts., and obtain great rewards for reaching certain Progress milestones.\nAdditionally, you can unlock an additional set of \"Fair Winds Cruise\" rewards by purchasing the \"Fair Winds Cruise Pass\" item from Akashi's shop.\nCarabiniere META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for Z47, \"Batter ★ Home Run.\"\n\n- How to Play -\n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.\n· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).\n· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:\na) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.\nb) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.\n· When the campaign season ends, your Progress Pts will be reset.\n\n- Tips - \n· Play at your own pace\nCruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.\n\n· Fair Winds Cruise Pass\nIf you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.\n\n· Skipping Missions (not recommended)\nYou can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_task_help_2602 = {
+	tip = {
+		{
+			info = "- Regarding Cruise Missions - \n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts. for any missions you've completed.\n\n· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_title_2602 = {
+	tip = "Cruise Missions - S27",
+}
 _G.pg.base.gametip.battle_battleMediator_quest_exist_submarine_support = {
 	tip = "If you stop the battle, your result will be calculated based on the boss' remaining HP. Stop the battle?",
 }
@@ -27703,5 +27856,209 @@ _G.pg.base.gametip.ANTTFFCoreActivityPtpage_title2 = {
 }
 _G.pg.base.gametip.submarine_support_oil_consume_tip = {
 	tip = "Sending your supporting Submarine Fleet into battle will cost $1 Oil. Continue?",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_title = {
+	tip = "Event",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_subtitle_1 = {
+	tip = "Light & Shadow",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_subtitle_2 = {
+	tip = "Milestone",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_story_reward_count = {
+	tip = "Tap shipgirl, consume <icon name=65812 w=0.4 h=0.4/> <color=#10a7a9>($1 remaining)</color> to enter her feature page (event story chapter).\nComplete all stories to get special event gear skins <color=#10a7a9>($2/8)</color>",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_unlock = {
+	tip = "Locked",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_fleetconfirm = {
+	tip = "Current formation is empty. Do you want to import the formation from the previous stage?",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_help = {
+	tip = {
+		{
+			info = "- Overview -\nLight & Shadow Fashion Shoot! is available between <color=#92fc63>January 22nd and February 4th</color>!\nComplete missions, dispatch your fleets, and clear event stages to collect Camera Films and receive rewards!\n\n1. Tap the button in the bottom left corner to switch between Story Mode and Battle Mode.\n2. Battle Mode presents a series of stages which you can challenge with your fleets to earn Camera Films.\nBefore going into battle, you can decide whether you\\'d like to fight in a joint sortie or a solo sortie.\n· In a solo sortie, you will challenge each stage with only a single fleet. In this mode, all your shipgirls recover all their health at the start of the battle.\n· In a joint sortie, you will instead send out multiple fleets to battle on each stage. Completing the challenge in this mode will grant you additional rewards.\n3. You will receive rewards for collecting enough Camera Films, including <color=#92fc63>Elite DD Ugolino Vivaldi</color> and a <color=#92fc63>Prototype Triple 406mm Model 1940 Main Gun</color>.\n4. There are special missions available during the event. Complete these to receive additional rewards.\n5. There is a special story available in Story Mode. Read it in its entirety to receive a commemorative gear skin.\n",
+		},
+	},
+}
+_G.pg.base.gametip.island_post_event_label = {
+	tip = "Business Event",
+}
+_G.pg.base.gametip.island_post_event_close_label = {
+	tip = "Return",
+}
+_G.pg.base.gametip.island_post_event_open_label = {
+	tip = "Confirm",
+}
+_G.pg.base.gametip.island_post_event_addition_label = {
+	tip = "The following dishes receive a buff:",
+}
+_G.pg.base.gametip.island_addition_influence = {
+	tip = "Customer Appeal",
+}
+_G.pg.base.gametip.island_addition_sale = {
+	tip = "Price",
+}
+_G.pg.base.gametip.island_trade_title = {
+	tip = "Pearl Trade Spot",
+}
+_G.pg.base.gametip.island_trade_title2 = {
+	tip = "Pearl Trade Spot",
+}
+_G.pg.base.gametip.island_trade_sell_label = {
+	tip = "Pearl Trade",
+}
+_G.pg.base.gametip.island_trade_trend_label = {
+	tip = "Price Changes",
+}
+_G.pg.base.gametip.island_trade_purchase_label = {
+	tip = "Buy Pearls",
+}
+_G.pg.base.gametip.island_trade_rank_label = {
+	tip = "Friend Rankings",
+}
+_G.pg.base.gametip.island_trade_purchase_sub_label = {
+	tip = "Buy",
+}
+_G.pg.base.gametip.island_trade_sell_sub_label = {
+	tip = "Sell",
+}
+_G.pg.base.gametip.island_trade_rank_num_label = {
+	tip = "Development Rank",
+}
+_G.pg.base.gametip.island_trade_rank_info_label = {
+	tip = "Island Info",
+}
+_G.pg.base.gametip.island_trade_rank_price_label = {
+	tip = "Current Price",
+}
+_G.pg.base.gametip.island_trade_rank_level_label = {
+	tip = "Island Lv.",
+}
+_G.pg.base.gametip.island_trade_invite_label = {
+	tip = "Invite Player",
+}
+_G.pg.base.gametip.island_trade_tip_label = {
+	tip = "The selling price is updated at 03:00 every day",
+}
+_G.pg.base.gametip.island_trade_tip_label2 = {
+	tip = "The purchase price is updated at 03:00 every day",
+}
+_G.pg.base.gametip.island_trade_limit_label = {
+	tip = "$1 purchase chance(s) left this week",
+}
+_G.pg.base.gametip.island_trade_send_msg_label = {
+	tip = "<material=underline c=#006400 ><color=#006400>Today's Price: $2</color></material>",
+}
+_G.pg.base.gametip.island_trade_send_msg_match_label = {
+	tip = "Mystery Trader",
+}
+_G.pg.base.gametip.island_trade_sell_tip_label = {
+	tip = "$1 sell chance(s) left today on this island",
+}
+_G.pg.base.gametip.island_trade_purchase_failed_label = {
+	tip = "You have reached your weekly purchase limit",
+}
+_G.pg.base.gametip.island_trade_sell_failed_label = {
+	tip = "Cannot complete sale; amount owned is insufficient",
+}
+_G.pg.base.gametip.island_trade_sell_failed_label2 = {
+	tip = "Pearls are sold out on this island today.",
+}
+_G.pg.base.gametip.island_trade_bag_full_label = {
+	tip = "Cannot complete purchase; Warehouse space is insufficient",
+}
+_G.pg.base.gametip.island_trade_reset_label = {
+	tip = "The price has been updated",
+}
+_G.pg.base.gametip.island_trade_help_1 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help4",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.island_trade_help_2 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help3",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.island_trade_price_unrefresh = {
+	tip = "Cannot complete purchase; this island's price hasn't yet updated",
+}
+_G.pg.base.gametip.island_trade_msg_pop = {
+	tip = "You've received an invitation from $1. Their island's pearl selling price is $3",
+}
+_G.pg.base.gametip.island_trade_invite_success = {
+	tip = "Invitation successful",
+}
+_G.pg.base.gametip.island_trade_share_success = {
+	tip = "Invitation successful",
+}
+_G.pg.base.gametip.island_trade_activity_desc_1 = {
+	tip = "During the event, you can sell pearls to the mysterious trader who appears on Get-Together Island.",
+}
+_G.pg.base.gametip.island_trade_activity_desc_2 = {
+	tip = "Pearls can be bought from Peary. The selling and purchase price of pearls changes every day.",
+}
+_G.pg.base.gametip.island_trade_activity_unlock = {
+	tip = "Requirement: Reach Island Development Lv. 22",
+}
+_G.pg.base.gametip.island_bar_quick_game = {
+	tip = "Quick Game",
+}
+_G.pg.base.gametip.island_trade_cnt_inadequate = {
+	tip = "Insufficient Amount",
 }
 

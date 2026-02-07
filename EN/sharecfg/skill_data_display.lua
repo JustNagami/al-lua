@@ -1950,6 +1950,14 @@ pg.skill_data_display = setmetatable({
 		151923,
 		151926,
 		151941,
+		152011,
+		152021,
+		152031,
+		152040,
+		152050,
+		152051,
+		152052,
+		152054,
 		151963,
 		151964,
 		151971,
@@ -3419,6 +3427,11 @@ pg.skill_data_display = setmetatable({
 		802042,
 		802045,
 		802047,
+		802051,
+		802071,
+		802072,
+		802075,
+		802077,
 		902201,
 		1010140,
 		1010143,
@@ -3820,9 +3833,13 @@ pg.skill_data_display = setmetatable({
 		1012570,
 		1012571,
 		1012572,
+		1014660,
+		1014661,
+		1014662,
 		1012580,
 		1012581,
 		1012582,
+		1019160,
 		1014990,
 		1014991,
 		1014992,
@@ -11701,6 +11718,38 @@ pg.base.skill_data_display = {
 		id = 151941,
 		name = "Inexperienced Patroller"
 	},
+	[152011] = {
+		id = 152011,
+		name = "Binding Verdict"
+	},
+	[152021] = {
+		id = 152021,
+		name = "Pain, Pain, Fly Away"
+	},
+	[152031] = {
+		id = 152031,
+		name = "Towards Glory and Death"
+	},
+	[152040] = {
+		id = 152040,
+		name = "Gunfire Fouetté"
+	},
+	[152050] = {
+		id = 152050,
+		name = "Ti Sfido!"
+	},
+	[152051] = {
+		id = 152051,
+		name = "Ti Sfido!"
+	},
+	[152052] = {
+		id = 152052,
+		name = "Ti Sfido!"
+	},
+	[152054] = {
+		id = 152054,
+		name = "Ti Sfido!"
+	},
 	[151963] = {
 		id = 151963,
 		name = "Trend Setter"
@@ -17577,6 +17626,26 @@ pg.base.skill_data_display = {
 		id = 802047,
 		name = "Ashen Might - Cleveland II"
 	},
+	[802051] = {
+		id = 802051,
+		name = "Ricarica fiammeggiante"
+	},
+	[802071] = {
+		id = 802071,
+		name = "Cinders of Hope - Carabiniere I"
+	},
+	[802072] = {
+		id = 802072,
+		name = "Cinders of Hope - Carabiniere II"
+	},
+	[802075] = {
+		id = 802075,
+		name = "Cinders of Hope - Carabiniere I"
+	},
+	[802077] = {
+		id = 802077,
+		name = "Cinders of Hope - Carabiniere II"
+	},
 	[902201] = {
 		id = 902201,
 		name = "Fantastic Loop"
@@ -19181,6 +19250,18 @@ pg.base.skill_data_display = {
 		id = 1012572,
 		name = "Supporting Wings+"
 	},
+	[1014660] = {
+		id = 1014660,
+		name = "Strike Orders Received!+"
+	},
+	[1014661] = {
+		id = 1014661,
+		name = "Strike Orders Received!+"
+	},
+	[1014662] = {
+		id = 1014662,
+		name = "Strike Orders Received!+"
+	},
 	[1012580] = {
 		id = 1012580,
 		name = "Don't Move An Inch!"
@@ -19192,6 +19273,10 @@ pg.base.skill_data_display = {
 	[1012582] = {
 		id = 1012582,
 		name = "Don't Move An Inch!"
+	},
+	[1019160] = {
+		id = 1019160,
+		name = "Heavy Barrel Blaster +"
 	},
 	[1014990] = {
 		id = 1014990,
