@@ -3971,6 +3971,23 @@ pg.memory_template = setmetatable({
 		4955,
 		4956,
 		4957,
+		4961,
+		4962,
+		4963,
+		4964,
+		4965,
+		4966,
+		4967,
+		4968,
+		4969,
+		4970,
+		4971,
+		4972,
+		4973,
+		4974,
+		4975,
+		4976,
+		4977,
 		10000,
 		10001,
 		10002,
@@ -35657,7 +35674,7 @@ pg.base.memory_template = {
 		icon = "memory_yongzhedelvtu",
 		is_open = 0,
 		unlock_pre = {
-			"50003"
+			"51003"
 		}
 	},
 	[2361] = {
@@ -35702,7 +35719,7 @@ pg.base.memory_template = {
 		icon = "memory_weijiaoxiaosipeibojue",
 		is_open = 0,
 		unlock_pre = {
-			"50002"
+			"51002"
 		}
 	},
 	[2371] = {
@@ -63742,6 +63759,261 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"WEINEITUO7"
+		}
+	},
+	[4961] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG1",
+		mask = "bg/bg_memory",
+		title = "撮影、スタート！",
+		condition = "「特集写真――撮影進行中！」イベントに参加",
+		number = 0,
+		id = 4961,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG1"
+		}
+	},
+	[4962] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG2",
+		mask = "bg/bg_memory",
+		title = "あなたに捧げる真実",
+		condition = "対応特集ページを解放する",
+		number = 0,
+		id = 4962,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG2"
+		}
+	},
+	[4963] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG3",
+		mask = "bg/bg_memory",
+		title = "ときめき駆け引き",
+		condition = "対応特集ページを解放する",
+		number = 0,
+		id = 4963,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG3"
+		}
+	},
+	[4964] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG4",
+		mask = "bg/bg_memory",
+		title = "サプライズ・ゴージャスプライズ！",
+		condition = "対応特集ページを解放する",
+		number = 0,
+		id = 4964,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG4"
+		}
+	},
+	[4965] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG5",
+		mask = "bg/bg_memory",
+		title = "イレギュラーな修行指導",
+		condition = "対応特集ページを解放する",
+		number = 0,
+		id = 4965,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG5"
+		}
+	},
+	[4966] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG6",
+		mask = "bg/bg_memory",
+		title = "プライベートショットへの手ほどき",
+		condition = "対応特集ページを解放する",
+		number = 0,
+		id = 4966,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG6"
+		}
+	},
+	[4967] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG7",
+		mask = "bg/bg_memory",
+		title = "手取り足取りの個人レッスン",
+		condition = "対応特集ページを解放する",
+		number = 0,
+		id = 4967,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG7"
+		}
+	},
+	[4968] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG8",
+		mask = "bg/bg_memory",
+		title = "撮影三十六計",
+		condition = "対応特集ページを解放する",
+		number = 0,
+		id = 4968,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG8"
+		}
+	},
+	[4969] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG9",
+		mask = "bg/bg_memory",
+		title = "キメ姿は美しい露出にあり",
+		condition = "対応特集ページを解放する",
+		number = 0,
+		id = 4969,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG9"
+		}
+	},
+	[4970] = {
+		type = 1,
+		subtitle = "",
+		story = "GUANGYINGFENGSHANG10",
+		mask = "bg/bg_memory",
+		title = "ファッションの真髄",
+		condition = "写真特集を全て完成する",
+		number = 0,
+		id = 4970,
+		icon = "memory_guangyingfengshang",
+		is_open = 0,
+		unlock_pre = {
+			"GUANGYINGFENGSHANG10"
+		}
+	},
+	[4971] = {
+		type = 1,
+		subtitle = "",
+		story = "DINGAN1",
+		mask = "bg/bg_memory",
+		title = "危機意識",
+		condition = "「投資して、しかして破綻せよ1」開始",
+		number = 0,
+		id = 4971,
+		icon = "memory_dingan",
+		is_open = 0,
+		unlock_pre = {
+			"DINGAN1"
+		}
+	},
+	[4972] = {
+		type = 1,
+		subtitle = "",
+		story = "DINGAN2",
+		mask = "bg/bg_memory",
+		title = "考察対象は……？",
+		condition = "「投資して、しかして破綻せよ2」開始",
+		number = 0,
+		id = 4972,
+		icon = "memory_dingan",
+		is_open = 0,
+		unlock_pre = {
+			"DINGAN2"
+		}
+	},
+	[4973] = {
+		type = 1,
+		subtitle = "",
+		story = "DINGAN3",
+		mask = "bg/bg_memory",
+		title = "赤字確定！",
+		condition = "「投資して、しかして破綻せよ3」開始",
+		number = 0,
+		id = 4973,
+		icon = "memory_dingan",
+		is_open = 0,
+		unlock_pre = {
+			"DINGAN3"
+		}
+	},
+	[4974] = {
+		type = 1,
+		subtitle = "",
+		story = "DINGAN4",
+		mask = "bg/bg_memory",
+		title = "黒字の秘密は……？",
+		condition = "「投資して、しかして破綻せよ4」開始",
+		number = 0,
+		id = 4974,
+		icon = "memory_dingan",
+		is_open = 0,
+		unlock_pre = {
+			"DINGAN4"
+		}
+	},
+	[4975] = {
+		type = 1,
+		subtitle = "",
+		story = "DINGAN5",
+		mask = "bg/bg_memory",
+		title = "大損計画2.0",
+		condition = "「投資して、しかして破綻せよ5」開始",
+		number = 0,
+		id = 4975,
+		icon = "memory_dingan",
+		is_open = 0,
+		unlock_pre = {
+			"DINGAN5"
+		}
+	},
+	[4976] = {
+		type = 1,
+		subtitle = "",
+		story = "DINGAN6",
+		mask = "bg/bg_memory",
+		title = "売れた商品は……？",
+		condition = "「投資して、しかして破綻せよ6」開始",
+		number = 0,
+		id = 4976,
+		icon = "memory_dingan",
+		is_open = 0,
+		unlock_pre = {
+			"DINGAN6"
+		}
+	},
+	[4977] = {
+		type = 1,
+		subtitle = "",
+		story = "DINGAN7",
+		mask = "bg/bg_memory",
+		title = "真の「利益」",
+		condition = "「投資して、しかして破綻せよ7」開始",
+		number = 0,
+		id = 4977,
+		icon = "memory_dingan",
+		is_open = 0,
+		unlock_pre = {
+			"DINGAN7"
 		}
 	},
 	[10000] = {

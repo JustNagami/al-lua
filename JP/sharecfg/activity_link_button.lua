@@ -11,7 +11,7 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			50326
+			50371
 		}
 	},
 	{
@@ -37,9 +37,8 @@ pg.activity_link_button = {
 		order = 99
 	},
 	[10] = {
-		param = "0",
+		type = 2,
 		name = "event_map",
-		type = 0,
 		text_pic = "text_event_map",
 		id = 10,
 		group_id = 2,
@@ -47,7 +46,10 @@ pg.activity_link_button = {
 		order = 1,
 		time = {
 			"default",
-			50326
+			50371
+		},
+		param = {
+			"OTHERWORLD_MAP"
 		}
 	},
 	[11] = {
@@ -305,17 +307,17 @@ pg.activity_link_button = {
 		}
 	},
 	[109] = {
-		param = "ANTTFFCoreActivityUI",
+		param = "SardiniaSPCoreActivityUI",
 		name = "event_core",
 		type = 16,
-		text_pic = "text_event_core2",
+		text_pic = "text_event_core",
 		id = 109,
 		group_id = 1,
-		pic = "event_core2",
+		pic = "event_core",
 		order = 1,
 		time = {
 			"default",
-			50341
+			50353
 		}
 	},
 	[110] = {

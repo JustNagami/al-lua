@@ -7936,16 +7936,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "期間限定建造を累計200回行うと「グアム」を確定で入手可能！（最大4隻まで）",
+	tip = "「フランチェスコ・カラッチョロ」など出現率がUP!",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「ヨークタウンⅡ」「ノーザンプトンⅡ」常設実装！",
+	tip = "「インプラカブル」「ロイヤル・オーク」常設実装！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「ハムマンⅡ」常設実装！",
+	tip = "「シラ」常設実装！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "「ヨークタウンⅡ」「ホーネットⅡ」常設実装！",
+	tip = "「インプラカブル」「アーガス」常設実装！",
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -20100,7 +20100,7 @@ _G.pg.base.gametip.adventure_record_grade_title = {
 	tip = "冒険者ランク：",
 }
 _G.pg.base.gametip.adventure_award_end_tip = {
-	tip = "※4.17（水） 24時まで受取可能",
+	tip = "※2.18（水） 23:59まで受取可能",
 }
 _G.pg.base.gametip.guardian_select_title = {
 	tip = "加護選択",
@@ -24380,11 +24380,17 @@ _G.pg.base.gametip.island_season_charts_refresh = {
 _G.pg.base.gametip.island_season_charts_out = {
 	tip = "ランク外",
 }
+_G.pg.base.gametip.island_season_review_lv = {
+	tip = "離島開発LV",
+}
 _G.pg.base.gametip.island_season_review_charnum = {
 	tip = "仲間人数",
 }
 _G.pg.base.gametip.island_season_review_projuctnum = {
 	tip = "技術研究",
+}
+_G.pg.base.gametip.island_season_review_titleone = {
+	tip = "シーズン",
 }
 _G.pg.base.gametip.island_season_review_ptnum = {
 	tip = "開発PT",
@@ -24396,19 +24402,31 @@ _G.pg.base.gametip.island_season_review_produce = {
 	tip = "離島生産",
 }
 _G.pg.base.gametip.island_season_review_ordernum = {
-	tip = "輸送資源数",
+	tip = "依頼完了数",
 }
 _G.pg.base.gametip.island_season_review_formulanum = {
-	tip = "メニュー製作数",
+	tip = "資源製作数",
 }
 _G.pg.base.gametip.island_season_review_relax = {
-	tip = "ミニゲーム",
+	tip = "実績",
 }
 _G.pg.base.gametip.island_season_review_fishnum = {
-	tip = "釣り成果",
+	tip = "達成実績",
 }
 _G.pg.base.gametip.island_season_review_gamenum = {
-	tip = "イベント参加",
+	tip = "図鑑Pt",
+}
+_G.pg.base.gametip.island_season_review_achi = {
+	tip = "実績",
+}
+_G.pg.base.gametip.island_season_review_achinum = {
+	tip = "達成実績",
+}
+_G.pg.base.gametip.island_season_review_guidenum = {
+	tip = "図鑑Pt",
+}
+_G.pg.base.gametip.island_season_review_blank = {
+	tip = "シーズン未参加",
 }
 _G.pg.base.gametip.island_season_window_end = {
 	tip = "まもなくシーズンが終了します",
@@ -24953,6 +24971,43 @@ _G.pg.base.gametip.island_help_character_info = {
 		},
 	},
 }
+_G.pg.base.gametip.island_help_fish = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish3",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
 _G.pg.base.gametip.island_skin_original_desc = {
 	tip = "基本",
 }
@@ -25141,6 +25196,9 @@ _G.pg.base.gametip.island_log_exit = {
 }
 _G.pg.base.gametip.island_log_gift = {
 	tip = "が補給の受取を連絡しました",
+}
+_G.pg.base.gametip.island_log_trade = {
+	tip = "が真珠取引に招待しています",
 }
 _G.pg.base.gametip.island_item_type_res = {
 	tip = "資源",
@@ -25781,6 +25839,9 @@ _G.pg.base.gametip.island_cancel_queue = {
 _G.pg.base.gametip.island_queue_display = {
 	tip = "離島訪問数が上限になっています。待機リストに入ります\n指揮官の待機番号：$1",
 }
+_G.pg.base.gametip.island_season_label = {
+	tip = "シーズン$1",
+}
 _G.pg.base.gametip.island_first_season = {
 	tip = "シーズンI",
 }
@@ -26222,6 +26283,36 @@ _G.pg.base.gametip.island_spoperation_item_2509_3 = {
 _G.pg.base.gametip.island_spoperation_item_2509_4 = {
 	tip = "松茸",
 }
+_G.pg.base.gametip.island_spoperation_tip_2602_1 = {
+	tip = "イベント期間中、ピアリの特産品依頼が出現します。特産品依頼をこなすとシーズンPTなどの報酬を入手可能。\n*特産品依頼は依頼完成上限に影響せず、評価レベルを上昇させられません",
+}
+_G.pg.base.gametip.island_spoperation_tip_2602_2 = {
+	tip = "イベント期間中、特定の区域内に毎日イベント採集アイテムが出現します。早く探しに行きましょう！",
+}
+_G.pg.base.gametip.island_spoperation_tip_2602_3 = {
+	tip = "イベント期間内、【青々苗場】【有魚飯店】【白クマ茶房】【基地工場】で対応の特産品を生産可能",
+}
+_G.pg.base.gametip.island_spoperation_btn_2602_1 = {
+	tip = "特産品採集",
+}
+_G.pg.base.gametip.island_spoperation_btn_2602_2 = {
+	tip = "特産品制作",
+}
+_G.pg.base.gametip.island_spoperation_btn_2602_3 = {
+	tip = "イベント管理者",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_1 = {
+	tip = "春タケノコ",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_2 = {
+	tip = "ナズナ",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_3 = {
+	tip = "オウバイ",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_4 = {
+	tip = "ヒヤシンス",
+}
 _G.pg.base.gametip.island_follow_success = {
 	tip = "同伴成功",
 }
@@ -26402,6 +26493,9 @@ _G.pg.base.gametip.island_guide_help_npc = {
 _G.pg.base.gametip.island_guide_help_item = {
 	tip = "離島のキャラ関連のコンテンツを開放することで図鑑Ptを貯めることができます。図鑑Ptが貯まると図鑑Lvが上がり、対応の図鑑報酬を開放できます：\n\n1.資源<color=#39bfff>解放</color>：図鑑で資源を解放すると、図鑑Ptを<color=#39bfff>20</color>入手可能\n2.資源<color=#39bfff>入手</color>：報酬の入手条件に定められた数の資源を入手すると、図鑑Ptを入手可能。それぞれの資源の報酬段階と必要な入手数は図鑑で確認できます",
 }
+_G.pg.base.gametip.island_guide_help_fish = {
+	tip = "釣りのコンテンツを開放することで図鑑Ptを貯めることができます。図鑑Ptが貯まると図鑑Lvが上がり、対応の図鑑報酬を開放できます：\n\n1.魚の図鑑項目を<color=#39bfff>開放</color>すると、1項目につき図鑑Ptを<color=#39bfff>10</color>入手できます\n2.魚の種類別の<color=#39bfff>重量実績</color>を集める：重量条件を満たした重量の魚を釣り上げると、その魚の重量実績を達成することができ、図鑑Ptを入手できます。重量条件は魚の種類によって異なります",
+}
 _G.pg.base.gametip.island_guide_character_help = {
 	tip = "情報",
 }
@@ -26428,6 +26522,12 @@ _G.pg.base.gametip.island_guide_item_en = {
 }
 _G.pg.base.gametip.island_guide_collectionpoint = {
 	tip = "図鑑Pt入手",
+}
+_G.pg.base.gametip.island_guide_fish_min_weight = {
+	tip = "最小重量",
+}
+_G.pg.base.gametip.island_guide_fish_max_weight = {
+	tip = "最大重量",
 }
 _G.pg.base.gametip.island_get_collect_point_success = {
 	tip = "累計で図鑑Ptを$1入手",
@@ -26527,6 +26627,24 @@ _G.pg.base.gametip.island_3Dshop_lack_res = {
 }
 _G.pg.base.gametip.island_photo_fur_lock = {
 	tip = "現在カメラを使用できません",
+}
+_G.pg.base.gametip.island_exchange_title = {
+	tip = "加工",
+}
+_G.pg.base.gametip.island_exchange_title_en = {
+	tip = "Crafting",
+}
+_G.pg.base.gametip.island_exchange_own_count = {
+	tip = "所持数",
+}
+_G.pg.base.gametip.island_exchange_btn_text = {
+	tip = "加工",
+}
+_G.pg.base.gametip.island_exchange_sure_tip = {
+	tip = "加工を行いますか？",
+}
+_G.pg.base.gametip.island_bag_max_tip = {
+	tip = "離島倉庫がいっぱいです",
 }
 _G.pg.base.gametip.graphi_api_switch_opengl = {
 	tip = "一部の環境ではレンダリング互換性モードをOFFにすると、特定の状況下で画面が黒くなる場合があります。レンダリング互換性モードの設定を切り替えると、ゲームを再度起動する必要があります。レンダリング互換性モードを切り替えますか？",
@@ -27071,8 +27189,23 @@ _G.pg.base.gametip.island_order_ship_exchange_tip = {
 _G.pg.base.gametip.island_order_ship_btn_replace = {
 	tip = "委託更新",
 }
+_G.pg.base.gametip.island_fishing_tip_hooked = {
+	tip = "魚が食いついた！",
+}
+_G.pg.base.gametip.island_fishing_tip_escape = {
+	tip = "魚に逃げられた…",
+}
+_G.pg.base.gametip.island_fishing_exit = {
+	tip = "釣りをやめますか？",
+}
+_G.pg.base.gametip.island_fishing_lure_empty = {
+	tip = "ルアーを選択してください",
+}
 _G.pg.base.gametip.island_order_ship_exchange_tip_2 = {
 	tip = "輸送回数が不足しています",
+}
+_G.pg.base.gametip.island_follower_exiting_tip = {
+	tip = "キャラが離れています…",
 }
 _G.pg.base.gametip.island_order_ship_exchange_tip_1 = {
 	tip = "新しい委託に更新しますか？（受注中の資材がある場合、更新を行うと、輸送回数が1回消費され、消費資材は返還されません）",
@@ -27346,6 +27479,26 @@ _G.pg.base.gametip.winterwish_20251225_tip1 = {
 _G.pg.base.gametip.winterwish_20251225_tip2 = {
 	tip = "願い事可能回数",
 }
+_G.pg.base.gametip.battlepass_main_tip_2602 = {
+	tip = "2026/2/1-2026/3/31キャンペーン期間中、シーズン任務累計<icon name=pt w=0.5 h=0.5/>入手報酬で<color=#854747>「カラビニエーレ(META)」</color>などを入手可能",
+}
+_G.pg.base.gametip.battlepass_main_help_2602 = {
+	tip = {
+		{
+			info = "■キャンペーン開催期間\n 2026.2.1（日）0:00～2026.3.31（火）23:59\n\n■概要\n「シーズン任務」とは、キャンペーン開催中の任務をクリアし「進捗Pt」を集め、入手した進捗Ptに応じた累計獲得数報酬が手に入るキャンペーンになります。\nまた、通常の累計獲得数報酬に追加する形で「SP報酬」が存在し、ショップアイテム「クルーズパス」を購入すると、SP報酬も入手可能となります。\n通常報酬からは艦船「カラビニエーレ(META)」、SP報酬からは駆逐艦「Z47」の限定着せ替え「バッター★ホームラン」を入手できます。\n\n■遊び方\n・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。\n ①週次開放任務\n キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ\n ②全期間任務\n 最初から全開放される任務。全1グループ\n・上記「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。\n さらに「クルーズパス」を購入すると、15段階分の報酬（進捗Pt1500）が入手可能となります。\n・「進捗Pt」の累計入手数に応じて、進捗Pt累計獲得数報酬を入手できます。累計獲得数報酬は2種類存在します。\n ①通常報酬\n 「進捗Pt」の入手数に応じて獲得できる報酬。全100段階となります\n ②SP報酬\n 「クルーズパス」を購入すると開放される追加報酬。通常報酬と同じく全100段階存在し、通常報酬と同じ段階のSP報酬が入手できます。\n・キャンペーンが終了すると、入手済みの進捗Ptはリセットされます。\n\n■Tips\n・プレイスタイル\n シーズン任務は全100段階あり、いきなり最後まではクリアできない仕様になっております。いつものクエストをくり返しながら任務をこなしていくか、狙いの報酬を決めて最短ペースでクリアしていくかなど、自分のプレイスタイルに合わせてプレイすることをオススメします。\n\n・クルーズパス\n ショップで「クルーズパス」を購入すると、お得なアイテムとともに「進捗Pt」を1500Pt入手できます。また、追加の限定着せ替えは「クルーズパス」を購入して開放される「SP報酬」でのみ入手できます。要注意。\n\n・任務のスキップ（オススメしません）\n 「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。\n ダイヤを消費しますので、オススメしません。\n 「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_task_help_2602 = {
+	tip = {
+		{
+			info = "■シーズン任務について\n・「シーズン任務」キャンペーンの開始と同時に、2種類の任務が開放されます。\n ①週次開放任務\n キャンペーン開始時とキャンペーン期間中毎週月曜日0時に開放される任務。全8グループ\n ②全期間任務\n 最初から全開放される任務。全1グループ\n\n・「シーズン任務」はすべて自動受領済となり、また「シーズン任務」画面を開いた際、既に完成条件を満たしている任務はクリア状態となり、「進捗Pt」を自動で入手できます。\n\n・「シーズン任務」の「任務一覧」画面で、各任務の右側の矢印ボタンをタップすると、任務を自動でスキップ（クリア状態にする）し、進捗Ptを入手出来る「シーズン任務チケット」の購入・使用が可能です。\n ダイヤを消費しますので、オススメしません……\n 「シーズン任務チケット」はキャンペーン終了後も所持し続けることができます。",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_title_2602 = {
+	tip = "シーズン任務・27期",
+}
 _G.pg.base.gametip.battle_battleMediator_quest_exist_submarine_support = {
 	tip = "戦闘を中断すると、現在の敵ボスの耐久に応じてリザルトが集計されます。戦闘を中断しますか？",
 }
@@ -27378,5 +27531,209 @@ _G.pg.base.gametip.ANTTFFCoreActivityPtpage_title2 = {
 }
 _G.pg.base.gametip.submarine_support_oil_consume_tip = {
 	tip = "潜水支援艦隊出撃は燃料を$1消費します。続けますか？",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_title = {
+	tip = "イベント",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_subtitle_1 = {
+	tip = "特集写真",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_subtitle_2 = {
+	tip = "累計Pt",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_story_reward_count = {
+	tip = "キャラをタップし、<icon name=65812 w=0.4 h=0.4/><color=#10a7a9>(残り：$1)</color>を消費し特集ページ（イベントストーリー）を開放\n全ストーリー開放で限定装備外装を入手可能<color=#10a7a9>($2/8)</color>",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_unlock = {
+	tip = "未開放",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_fleetconfirm = {
+	tip = "艦隊が編成されていません。前のステージの編成を適用させますか？",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_help = {
+	tip = {
+		{
+			info = "遊び方：\n<color=#92fc63>1.22-2.5メンテ</color>まで、期間限定イベント「特集写真――撮影進行中！」が開催されます！\n限定任務をこなし、艦隊を編成しイベントステージをクリアすることで、「写真フィルム」を集めて報酬を手に入れましょう！\n\n①画面左下のボタンで「探索物語（ストーリー）」と「特別戦闘」画面を切り替えることができます。\n②「特別戦闘」では、艦隊を編成し特別ステージに挑戦でき、収集Ptアイテム「写真フィルム」を入手できます\n出撃の際に、出撃する艦隊数が異なる<color=#92fc63>「単独出撃」</color>、<color=#92fc63>「協同出撃」</color>を選択できます\n・単独出撃では、1個の艦隊のみで各ステージに連続して挑むことができます（戦闘開始時に艦隊の耐久が全回復します）\n・協同出撃では、ステージに応じてそれぞれ艦隊を編成し出撃させ、戦闘をそれぞれの艦隊で行います。協同出撃でクリアした場合、追加の報酬を入手できます\n③「写真フィルム」は累計入手数報酬でSR艦船<color=#92fc63>「ウゴリーノ・ヴィヴァルディ」</color>、<color=#92fc63>「試作型三連装406mm主砲Model1940」</color>などを入手できます\n④「限定任務」では、イベント開催期間に登場するイベント任務を確認し報酬を受け取ることができます。\n④「探索物語」では、イベント限定任務で入手できる「スタジオ予約票」を消費してイベントストーリーを開放することができます。また、全てのストーリーを読むと限定装備外装「ファッションフルーツ砲弾」を入手できます",
+		},
+	},
+}
+_G.pg.base.gametip.island_post_event_label = {
+	tip = "経営イベント",
+}
+_G.pg.base.gametip.island_post_event_close_label = {
+	tip = "戻る",
+}
+_G.pg.base.gametip.island_post_event_open_label = {
+	tip = "確認",
+}
+_G.pg.base.gametip.island_post_event_addition_label = {
+	tip = "下記メニューがバフを獲得する",
+}
+_G.pg.base.gametip.island_addition_influence = {
+	tip = "集客力",
+}
+_G.pg.base.gametip.island_addition_sale = {
+	tip = "価格",
+}
+_G.pg.base.gametip.island_trade_title = {
+	tip = "真珠取引商",
+}
+_G.pg.base.gametip.island_trade_title2 = {
+	tip = "真珠取引商",
+}
+_G.pg.base.gametip.island_trade_sell_label = {
+	tip = "真珠取引",
+}
+_G.pg.base.gametip.island_trade_trend_label = {
+	tip = "価格変動",
+}
+_G.pg.base.gametip.island_trade_purchase_label = {
+	tip = "真珠購入",
+}
+_G.pg.base.gametip.island_trade_rank_label = {
+	tip = "友達順位",
+}
+_G.pg.base.gametip.island_trade_purchase_sub_label = {
+	tip = "購入",
+}
+_G.pg.base.gametip.island_trade_sell_sub_label = {
+	tip = "売却",
+}
+_G.pg.base.gametip.island_trade_rank_num_label = {
+	tip = "開発順位",
+}
+_G.pg.base.gametip.island_trade_rank_info_label = {
+	tip = "離島情報",
+}
+_G.pg.base.gametip.island_trade_rank_price_label = {
+	tip = "現在価格",
+}
+_G.pg.base.gametip.island_trade_rank_level_label = {
+	tip = "離島Lv",
+}
+_G.pg.base.gametip.island_trade_invite_label = {
+	tip = "訪問招待",
+}
+_G.pg.base.gametip.island_trade_tip_label = {
+	tip = "毎日03:00に購入価格が更新されます",
+}
+_G.pg.base.gametip.island_trade_tip_label2 = {
+	tip = "毎日03:00に売却価格が更新されます",
+}
+_G.pg.base.gametip.island_trade_limit_label = {
+	tip = "今週の残り購入可能数$1",
+}
+_G.pg.base.gametip.island_trade_send_msg_label = {
+	tip = "<material=underline c=#006400 ><color=#006400>本日価格$2</color></material>",
+}
+_G.pg.base.gametip.island_trade_send_msg_match_label = {
+	tip = "謎の商人",
+}
+_G.pg.base.gametip.island_trade_sell_tip_label = {
+	tip = "この離島での本日残り売却可能数$1",
+}
+_G.pg.base.gametip.island_trade_purchase_failed_label = {
+	tip = "今週購入数が上限に達しています",
+}
+_G.pg.base.gametip.island_trade_sell_failed_label = {
+	tip = "所持数が足りないため売却できません",
+}
+_G.pg.base.gametip.island_trade_sell_failed_label2 = {
+	tip = "本日はこの離島でこれ以上真珠を売ることができません",
+}
+_G.pg.base.gametip.island_trade_bag_full_label = {
+	tip = "倉庫容量が不足のため購入できません",
+}
+_G.pg.base.gametip.island_trade_reset_label = {
+	tip = "価格が更新されました",
+}
+_G.pg.base.gametip.island_trade_help_1 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help4",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.island_trade_help_2 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help3",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.island_trade_price_unrefresh = {
+	tip = "この離島の価格がまだ更新されていないため、購入できません",
+}
+_G.pg.base.gametip.island_trade_msg_pop = {
+	tip = "$1からの訪問招待が届きました。当該離島の真珠売却価格は$3",
+}
+_G.pg.base.gametip.island_trade_invite_success = {
+	tip = "招待に成功しました",
+}
+_G.pg.base.gametip.island_trade_share_success = {
+	tip = "招待に成功しました",
+}
+_G.pg.base.gametip.island_trade_activity_desc_1 = {
+	tip = "　イベント期間中、集会島に現れる謎の商人に真珠を売却可能",
+}
+_G.pg.base.gametip.island_trade_activity_desc_2 = {
+	tip = "　真珠はシーズン管理人ピアリのところで購入でき、また真珠の購入・売却価格は毎日変動します",
+}
+_G.pg.base.gametip.island_trade_activity_unlock = {
+	tip = "解放条件：離島開発Lv22",
+}
+_G.pg.base.gametip.island_bar_quick_game = {
+	tip = "クイックゲーム",
+}
+_G.pg.base.gametip.island_trade_cnt_inadequate = {
+	tip = "数量が不足しています",
 }
 

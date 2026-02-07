@@ -12,8 +12,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					15
+					2,
+					5
 				},
 				{
 					0,
@@ -24,8 +24,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					21
+					2,
+					11
 				},
 				{
 					23,
@@ -50,8 +50,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					15
+					2,
+					5
 				},
 				{
 					0,
@@ -62,8 +62,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					22
+					2,
+					12
 				},
 				{
 					16,
@@ -74,7 +74,7 @@ pg.activity_banner = {
 		}
 	},
 	{
-		param = "50326",
+		param = "50371",
 		id = 3,
 		pic = "temp3",
 		type = 3,
@@ -82,8 +82,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					15
+					2,
+					5
 				},
 				{
 					0,
@@ -94,8 +94,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					22
+					2,
+					12
 				},
 				{
 					16,
@@ -108,37 +108,12 @@ pg.activity_banner = {
 	{
 		id = 4,
 		pic = "temp4",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene charge",
 			{
 				wrap = 4
-			}
-		},
-		time = {
-			{
-				{
-					2026,
-					1,
-					15
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					1,
-					21
-				},
-				{
-					23,
-					59,
-					59
-				}
 			}
 		}
 	},
@@ -156,8 +131,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					15
+					2,
+					5
 				},
 				{
 					0,
@@ -168,8 +143,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					21
+					2,
+					11
 				},
 				{
 					23,
@@ -182,66 +157,25 @@ pg.activity_banner = {
 	{
 		id = 6,
 		pic = "temp6",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene court yard"
-		},
-		time = {
-			{
-				{
-					2026,
-					1,
-					15
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					1,
-					21
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	},
 	{
 		id = 7,
 		pic = "temp7",
-		time = "stop",
 		type = 2,
 		param = {
-			"dorm 3d select"
-		}
-	},
-	{
-		id = 8,
-		pic = "temp8",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene level"
-		}
-	},
-	{
-		param = "50323",
-		id = 9,
-		pic = "temp9",
-		type = 3,
+			"crusing"
+		},
 		time = {
 			{
 				{
 					2026,
-					1,
-					15
+					2,
+					1
 				},
 				{
 					0,
@@ -252,13 +186,85 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					22
+					2,
+					12
 				},
 				{
 					16,
 					0,
 					0
+				}
+			}
+		}
+	},
+	{
+		id = 8,
+		pic = "temp8",
+		type = 2,
+		param = {
+			"scene equip",
+			{
+				designPage = 2,
+				warp = "WARP_TO_DESIGN"
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					2,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					2,
+					12
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		}
+	},
+	{
+		id = 9,
+		pic = "temp9",
+		type = 2,
+		param = {
+			"scene dailylevel"
+		},
+		time = {
+			{
+				{
+					2026,
+					2,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					2,
+					11
+				},
+				{
+					23,
+					59,
+					59
 				}
 			}
 		}
@@ -293,8 +299,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					15
+					2,
+					5
 				},
 				{
 					0,
@@ -305,8 +311,8 @@ pg.activity_banner = {
 			{
 				{
 					2026,
-					1,
-					21
+					2,
+					11
 				},
 				{
 					23,
@@ -416,11 +422,11 @@ pg.activity_banner = {
 			5,
 			6,
 			7,
-			8
+			8,
+			9
 		},
 		[3] = {
-			3,
-			9
+			3
 		},
 		[9] = {
 			90,

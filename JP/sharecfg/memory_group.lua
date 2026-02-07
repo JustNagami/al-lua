@@ -257,6 +257,7 @@ pg.memory_group = setmetatable({
 		351,
 		352,
 		353,
+		354,
 		501,
 		502,
 		503,
@@ -373,6 +374,7 @@ pg.memory_group = setmetatable({
 		616,
 		617,
 		618,
+		619,
 		1000,
 		1001,
 		1002,
@@ -6413,6 +6415,27 @@ pg.base.memory_group = {
 			4946
 		}
 	},
+	[354] = {
+		id = 354,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 50360,
+		title = "特集写真――撮影進行中！",
+		group_id = "",
+		memories = {
+			4961,
+			4962,
+			4963,
+			4964,
+			4965,
+			4966,
+			4967,
+			4968,
+			4969,
+			4970
+		}
+	},
 	[501] = {
 		id = 501,
 		subtype = 0,
@@ -8739,6 +8762,26 @@ pg.base.memory_group = {
 			4955,
 			4956,
 			4957
+		},
+		group_id = {
+			10000
+		}
+	},
+	[619] = {
+		id = 619,
+		subtype = 0,
+		icon = "title_chara_dingan",
+		type = 3,
+		link_event = 0,
+		title = "投資して、しかして破綻せよ",
+		memories = {
+			4971,
+			4972,
+			4973,
+			4974,
+			4975,
+			4976,
+			4977
 		},
 		group_id = {
 			10000

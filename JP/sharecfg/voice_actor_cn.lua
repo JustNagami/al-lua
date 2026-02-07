@@ -1875,5 +1875,17 @@ pg.voice_actor_CN = {
 	[493] = {
 		code = 493,
 		actor_name = "梅澤めぐ"
+	},
+	[494] = {
+		code = 494,
+		actor_name = "東内マリ子"
+	},
+	[495] = {
+		code = 495,
+		actor_name = "松永あかね"
+	},
+	[496] = {
+		code = 496,
+		actor_name = "永牟田萌"
 	}
 }
