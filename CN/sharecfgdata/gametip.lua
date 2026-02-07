@@ -7833,16 +7833,16 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "每累计建造200次可获得海上传奇舰船 关岛(最多4次)",
+	tip = "弗朗西斯科·卡拉乔洛 等角色建造概率UP！",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "约克城II、北安普敦II 建造追加！",
+	tip = "怨仇、皇家橡树 建造追加！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "哈曼II 建造追加！",
+	tip = "斯库拉 建造追加！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "约克城II、大黄蜂II 建造追加！",
+	tip = "怨仇、百眼巨人 建造追加！",
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -20325,7 +20325,7 @@ _G.pg.base.gametip.adventure_record_grade_title = {
 	tip = "冒险者评级：",
 }
 _G.pg.base.gametip.adventure_award_end_tip = {
-	tip = "※领取时间截止至4.17 24时",
+	tip = "※领取时间截止至2.18 24时",
 }
 _G.pg.base.gametip.guardian_select_title = {
 	tip = "守护神选择",
@@ -22510,7 +22510,7 @@ _G.pg.base.gametip.help_starLightAlbum = {
 			info = "纪念手册：",
 		},
 		{
-			info = "1. 回忆页面内新增「纪念手册」系统入口。\n2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动纪念章家具和活动勋章。\n ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；\n ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；\n ※ 「纪念贴纸」可以通过完成对应活动任务获取；\n ※ 奖励领取界面将延长至1月14日24时；",
+			info = "1. 回忆页面内新增「纪念手册」系统入口。\n2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动勋章。\n ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；\n ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；\n ※ 「纪念贴纸」可以通过完成对应活动任务获取；\n ※ 奖励领取界面将延长至2月11日24时；",
 		},
 	},
 }
@@ -24593,7 +24593,7 @@ _G.pg.base.gametip.island_season_help = {
 	tip = "1.新的岛屿开发季开启时，岛屿开发PT将会<color=#FD5650>自动重置</color>\n2.开发季持续时间内，可通过<color=#39bfff>资材转化</color>、<color=#39bfff>生产指定资材</color>、<color=#39bfff>参与岛屿活动</color>以及<color=#39bfff>在开发季商店购买商品</color>获得岛屿开发PT\n3.岛屿开发季结束后，临时仓库中的物品将直接清空，资材仓库中的资材将<color=#FD5650>自动转化</color>为岛屿开发PT并计入当前开发排行\n4.岛屿开发季结束后，正在进行的<color=#39bfff>岛屿订单、货运委托、角色委派、手动种植、店铺经营</color>等将清理重置\n5.岛屿开发季结束后，当前开发季未领取的开发计划奖励和累积PT奖励将<color=#FD5650>不再可领取</color>",
 }
 _G.pg.base.gametip.island_season_title = {
-	tip = "岛屿开发季",
+	tip = "开发季",
 }
 _G.pg.base.gametip.island_season_pt_hold = {
 	tip = "已获得",
@@ -24658,35 +24658,53 @@ _G.pg.base.gametip.island_season_charts_refresh = {
 _G.pg.base.gametip.island_season_charts_out = {
 	tip = "暂未上榜",
 }
+_G.pg.base.gametip.island_season_review_lv = {
+	tip = "岛屿开发等级",
+}
 _G.pg.base.gametip.island_season_review_charnum = {
 	tip = "角色数量",
 }
 _G.pg.base.gametip.island_season_review_projuctnum = {
-	tip = "研发项目",
+	tip = "研发项目数量",
+}
+_G.pg.base.gametip.island_season_review_titleone = {
+	tip = "开发季",
 }
 _G.pg.base.gametip.island_season_review_ptnum = {
 	tip = "开发PT",
 }
 _G.pg.base.gametip.island_season_review_ptrank = {
-	tip = "开发排名",
+	tip = "开发排行",
 }
 _G.pg.base.gametip.island_season_review_produce = {
-	tip = "岛与产出",
+	tip = "产出统计",
 }
 _G.pg.base.gametip.island_season_review_ordernum = {
-	tip = "资材交付数",
+	tip = "订单数量",
 }
 _G.pg.base.gametip.island_season_review_formulanum = {
-	tip = "餐品制作数",
+	tip = "生产数量",
 }
 _G.pg.base.gametip.island_season_review_relax = {
-	tip = "岛屿休闲",
+	tip = "成就",
 }
 _G.pg.base.gametip.island_season_review_fishnum = {
-	tip = "总渔获数",
+	tip = "成就数量",
 }
 _G.pg.base.gametip.island_season_review_gamenum = {
-	tip = "活动参与数",
+	tip = "总收集点",
+}
+_G.pg.base.gametip.island_season_review_achi = {
+	tip = "成就",
+}
+_G.pg.base.gametip.island_season_review_achinum = {
+	tip = "成就数量",
+}
+_G.pg.base.gametip.island_season_review_guidenum = {
+	tip = "总收集点",
+}
+_G.pg.base.gametip.island_season_review_blank = {
+	tip = "未参与该开发季",
 }
 _G.pg.base.gametip.island_season_window_end = {
 	tip = "岛屿开发季即将结束！",
@@ -25231,6 +25249,43 @@ _G.pg.base.gametip.island_help_character_info = {
 		},
 	},
 }
+_G.pg.base.gametip.island_help_fish = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_help_fish3",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
 _G.pg.base.gametip.island_skin_original_desc = {
 	tip = "默认",
 }
@@ -25419,6 +25474,9 @@ _G.pg.base.gametip.island_log_exit = {
 }
 _G.pg.base.gametip.island_log_gift = {
 	tip = " 邀请你领取补给",
+}
+_G.pg.base.gametip.island_log_trade = {
+	tip = " 邀请你交易珍珠",
 }
 _G.pg.base.gametip.island_item_type_res = {
 	tip = "资材",
@@ -26059,6 +26117,9 @@ _G.pg.base.gametip.island_cancel_queue = {
 _G.pg.base.gametip.island_queue_display = {
 	tip = "当前目标岛屿访客已达上限，进入等候队列中\n您在队列中的位置：$1",
 }
+_G.pg.base.gametip.island_season_label = {
+	tip = "开发季$1",
+}
 _G.pg.base.gametip.island_first_season = {
 	tip = "岛屿开发季I",
 }
@@ -26500,6 +26561,36 @@ _G.pg.base.gametip.island_spoperation_item_2509_3 = {
 _G.pg.base.gametip.island_spoperation_item_2509_4 = {
 	tip = "松茸",
 }
+_G.pg.base.gametip.island_spoperation_tip_2602_1 = {
+	tip = "活动期间，佩芮会连续发布特产订单，完成特产订单可获得开发季PT等奖励。\n*特产订单不占用岛屿订单完成上限、也不提升好评等级",
+}
+_G.pg.base.gametip.island_spoperation_tip_2602_2 = {
+	tip = "活动期间，岛屿特定区域中每天都会生长出新的活动采集物，快去寻找吧！",
+}
+_G.pg.base.gametip.island_spoperation_tip_2602_3 = {
+	tip = "活动期间，在【青芽苗圃】【白熊饮品】【有鱼餐馆】【手工制作设备】中可生产对应特产",
+}
+_G.pg.base.gametip.island_spoperation_btn_2602_1 = {
+	tip = "特产采集",
+}
+_G.pg.base.gametip.island_spoperation_btn_2602_2 = {
+	tip = "特产制作",
+}
+_G.pg.base.gametip.island_spoperation_btn_2602_3 = {
+	tip = "活动管理员",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_1 = {
+	tip = "春笋",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_2 = {
+	tip = "荠菜",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_3 = {
+	tip = "迎春花",
+}
+_G.pg.base.gametip.island_spoperation_item_2602_4 = {
+	tip = "风信子",
+}
 _G.pg.base.gametip.island_follow_success = {
 	tip = "跟随成功",
 }
@@ -26680,6 +26771,9 @@ _G.pg.base.gametip.island_guide_help_npc = {
 _G.pg.base.gametip.island_guide_help_item = {
 	tip = "积累收集点可以提升收藏等级，并解锁对应的收藏奖励。\n达成以下条件可以领取资材收集点：\n\n1.<color=#39bfff>获取</color>资材：每种资材解锁后可领取<color=#39bfff>20</color>收集点\n2.<color=#39bfff>累计获取某种资材达到一定数量</color>：获取某种资材的数量达到奖励阶段的目标数量后可领取收集点，每种资材都有各自的奖励阶段及其对应的目标数量，可在图鉴中查看",
 }
+_G.pg.base.gametip.island_guide_help_fish = {
+	tip = "积累收集点可以提升收藏等级，并解锁对应的收藏奖励。\n达成以下条件可以领取钓鱼收集点：\n\n1.<color=#39bfff>获取</color>鱼类：每种鱼类解锁后可领取<color=#39bfff>10</color>收集点\n2.<color=#39bfff>获取鱼类的大小皇冠</color>：获取某种鱼类的重量纪录满足大小皇冠的条件后可领取收集点，每种鱼类的大小皇冠重量条件各不相同，满足条件后会在重量纪录前显示皇冠",
+}
 _G.pg.base.gametip.island_guide_character_help = {
 	tip = "信息",
 }
@@ -26706,6 +26800,12 @@ _G.pg.base.gametip.island_guide_item_en = {
 }
 _G.pg.base.gametip.island_guide_collectionpoint = {
 	tip = "领取收集点",
+}
+_G.pg.base.gametip.island_guide_fish_min_weight = {
+	tip = "最小重量",
+}
+_G.pg.base.gametip.island_guide_fish_max_weight = {
+	tip = "最大重量",
 }
 _G.pg.base.gametip.island_get_collect_point_success = {
 	tip = "获得$1收集点",
@@ -26805,6 +26905,24 @@ _G.pg.base.gametip.island_3Dshop_lack_res = {
 }
 _G.pg.base.gametip.island_photo_fur_lock = {
 	tip = "当前无法使用相机",
+}
+_G.pg.base.gametip.island_exchange_title = {
+	tip = "加工",
+}
+_G.pg.base.gametip.island_exchange_title_en = {
+	tip = "Processing",
+}
+_G.pg.base.gametip.island_exchange_own_count = {
+	tip = "持有数量",
+}
+_G.pg.base.gametip.island_exchange_btn_text = {
+	tip = "加工",
+}
+_G.pg.base.gametip.island_exchange_sure_tip = {
+	tip = "是否确认进行加工？",
+}
+_G.pg.base.gametip.island_bag_max_tip = {
+	tip = "岛屿仓库已满",
 }
 _G.pg.base.gametip.graphi_api_switch_opengl = {
 	tip = "部分机型使用默认模式会出现黑屏的问题，切换模式后需要重新进入游戏，是否立即切换？",
@@ -27349,8 +27467,23 @@ _G.pg.base.gametip.island_order_ship_exchange_tip = {
 _G.pg.base.gametip.island_order_ship_btn_replace = {
 	tip = "更换委托",
 }
+_G.pg.base.gametip.island_fishing_tip_hooked = {
+	tip = "鱼儿咬钩了",
+}
+_G.pg.base.gametip.island_fishing_tip_escape = {
+	tip = "鱼儿逃脱了",
+}
+_G.pg.base.gametip.island_fishing_exit = {
+	tip = "是否停止钓鱼？",
+}
+_G.pg.base.gametip.island_fishing_lure_empty = {
+	tip = "鱼饵不能是空",
+}
 _G.pg.base.gametip.island_order_ship_exchange_tip_2 = {
 	tip = "无可运输次数",
+}
+_G.pg.base.gametip.island_follower_exiting_tip = {
+	tip = "该角色正在离开...",
 }
 _G.pg.base.gametip.island_order_ship_exchange_tip_1 = {
 	tip = "该委托已装载资材，更换将消耗一次运输次数且已装载资材无法取回，是否确认更换新的货运委托？",
@@ -27694,6 +27827,26 @@ _G.pg.base.gametip.winterwish_20251225_tip1 = {
 _G.pg.base.gametip.winterwish_20251225_tip2 = {
 	tip = "收获心愿有效次数",
 }
+_G.pg.base.gametip.battlepass_main_tip_2602 = {
+	tip = "2026/2/1-2026/3/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「龙骑兵·META 」</color>在内的丰富奖励",
+}
+_G.pg.base.gametip.battlepass_main_help_2602 = {
+	tip = {
+		{
+			info = "世界巡游(2026.2.1-2026.3.31)\n\n·<color=#92fc63>开放时间</color>\n 2026.2.1 0点 ~ 2026.3.31 23:59:59\n\n·<color=#92fc63>巡游进度说明</color>\n（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。\n（2）巡游任务随时间开放解锁。\n（3）每获取100点「巡游点数」即可增加1巡游进度\n（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。\n\n·<color=#92fc63>奖励规则</color>\n巡游进度奖励分为两种：\n（1）基础巡游奖励：包含<color=#ff5c5c>「龙骑兵·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·八期</color>等奖励；\n 当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。\n（2）特许巡游奖励：包含<color=#ff5c5c>希娜换装「击球手★全垒打 </color>」、<color=#ff5c5c>钻石</color>等奖励；\n 购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。\n 注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。\n\n·<color=#92fc63>「特许巡游凭证」说明</color>\n（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。\n（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即3.31 22:59:59停止)，请指挥官注意购买时间。\n\n·<color=#92fc63>任务说明</color>\n巡游任务分为两种：\n（1）每周任务 \n 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务\n（2）S.P.任务\n S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。\n（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。\n\n·<color=#92fc63>「巡游任务快速完成券」说明</color>\n（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务\n（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐\n（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关\n（4）「巡游任务快速完成券」不会随本期活动结束而消失\n\n·<color=#ff5c5c>特别提示</color>\n（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。\n（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_task_help_2602 = {
+	tip = {
+		{
+			info = "巡游任务说明\n\n·<color=#92fc63>开放时间</color>\n 2026.2.1 0点 ~ 2026.3.30 23:59:59\n\n·<color=#92fc63>巡游任务分为两种</color>\n（1）每周任务\n 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。\n（2）S.P.任务\n S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。\n（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励\n\n·<color=#92fc63>「巡游任务快速完成券」说明</color>\n（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务\n（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐\n（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关\n（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_title_2602 = {
+	tip = "世界巡游·二十七期",
+}
 _G.pg.base.gametip.battle_battleMediator_quest_exist_submarine_support = {
 	tip = "现在退出将按照BOSS当前剩余耐久进行战斗结算，您确定要退出吗？",
 }
@@ -27726,5 +27879,209 @@ _G.pg.base.gametip.ANTTFFCoreActivityPtpage_title2 = {
 }
 _G.pg.base.gametip.submarine_support_oil_consume_tip = {
 	tip = "潜艇支援舰队出击消耗$1点石油，是否继续？",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_title = {
+	tip = "活动汇总",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_subtitle_1 = {
+	tip = "风尚光影",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_subtitle_2 = {
+	tip = "光影补给站",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_story_reward_count = {
+	tip = "点击角色，消耗<icon name=65812 w=0.4 h=0.4/><color=#10a7a9>(剩余数量$1)</color>进入拍摄剧情\n完成全部剧情后可获得纪念外观<color=#10a7a9>($2/8)</color>",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_unlock = {
+	tip = "可解锁",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_fleetconfirm = {
+	tip = "当前编队为空，是否导入上一关编队？",
+}
+_G.pg.base.gametip.SardiniaSPCoreActivityUI_help = {
+	tip = {
+		{
+			info = "<b>活动时间：</b>\n·<color=#92fc63>1.22-2.5维护；</color>\n·活动期间开启限时活动「光影风尚——拍摄进行时！」。\n\n<b>活动说明：</b>\n·本次作战分为<color=#92fc63>【作战模式】</color>和<color=#92fc63>【剧情模式】</color>。\n·在【作战模式】中，指挥官可上阵多只队伍按照顺序分别挑战各个关卡，完成关卡内全部挑战后视为关卡通关并获得奖励。\n·同时，部分关卡可切换<color=#92fc63>「单队连战」</color>、<color=#92fc63>「多队出击」</color>两种模式：\n--「单队连战」为单只队伍挑战各个关卡。选择「单队连战」模式时，每个关卡开始前角色耐久值及各类状态均将重置。\n--「多队出击」为不同队伍挑战各个关卡。选择「多队出击」模式时，可获得额外奖励。\n\n·指挥官可以通过作战模式获取「摄影底片」，累计收集「摄影底片」可获得角色<color=#92fc63>「乌戈里诺·维瓦尔迪」</color>、装备<color=#92fc63>「试作型三联装406mm主炮Model1940」</color>在内的大量奖励。\n\n·完成【剧情模式】的全部内容后，可获得限定纪念外观<color=#92fc63>「爱之甜心炮弹」</color>。",
+		},
+	},
+}
+_G.pg.base.gametip.island_post_event_label = {
+	tip = "经营事件",
+}
+_G.pg.base.gametip.island_post_event_close_label = {
+	tip = "关闭",
+}
+_G.pg.base.gametip.island_post_event_open_label = {
+	tip = "查看",
+}
+_G.pg.base.gametip.island_post_event_addition_label = {
+	tip = "下列餐品获得加成",
+}
+_G.pg.base.gametip.island_addition_influence = {
+	tip = "吸引力",
+}
+_G.pg.base.gametip.island_addition_sale = {
+	tip = "售价",
+}
+_G.pg.base.gametip.island_trade_title = {
+	tip = "珍珠采购点",
+}
+_G.pg.base.gametip.island_trade_title2 = {
+	tip = "珍珠售卖点",
+}
+_G.pg.base.gametip.island_trade_sell_label = {
+	tip = "珍珠售卖",
+}
+_G.pg.base.gametip.island_trade_trend_label = {
+	tip = "价格曲线",
+}
+_G.pg.base.gametip.island_trade_purchase_label = {
+	tip = "珍珠采购",
+}
+_G.pg.base.gametip.island_trade_rank_label = {
+	tip = "好友排名",
+}
+_G.pg.base.gametip.island_trade_purchase_sub_label = {
+	tip = "采购",
+}
+_G.pg.base.gametip.island_trade_sell_sub_label = {
+	tip = "售卖",
+}
+_G.pg.base.gametip.island_trade_rank_num_label = {
+	tip = "开发排名",
+}
+_G.pg.base.gametip.island_trade_rank_info_label = {
+	tip = "岛屿信息",
+}
+_G.pg.base.gametip.island_trade_rank_price_label = {
+	tip = "今日价格",
+}
+_G.pg.base.gametip.island_trade_rank_level_label = {
+	tip = "岛屿等级",
+}
+_G.pg.base.gametip.island_trade_invite_label = {
+	tip = "邀请玩家",
+}
+_G.pg.base.gametip.island_trade_tip_label = {
+	tip = "每日03：00刷新采购价格",
+}
+_G.pg.base.gametip.island_trade_tip_label2 = {
+	tip = "每日03：00刷新售卖价格",
+}
+_G.pg.base.gametip.island_trade_limit_label = {
+	tip = "本周可采购数量$1",
+}
+_G.pg.base.gametip.island_trade_send_msg_label = {
+	tip = "<material=underline c=#006400 ><color=#006400>今日珍珠售价$2</color></material>",
+}
+_G.pg.base.gametip.island_trade_send_msg_match_label = {
+	tip = "神秘商人",
+}
+_G.pg.base.gametip.island_trade_sell_tip_label = {
+	tip = "今日可在该岛售卖数量$1",
+}
+_G.pg.base.gametip.island_trade_purchase_failed_label = {
+	tip = "本周珍珠采购数量已达上限",
+}
+_G.pg.base.gametip.island_trade_sell_failed_label = {
+	tip = "持有珍珠数量不足无法售卖",
+}
+_G.pg.base.gametip.island_trade_sell_failed_label2 = {
+	tip = "本日该岛珍珠可售卖数量已达上限",
+}
+_G.pg.base.gametip.island_trade_bag_full_label = {
+	tip = "仓库容量不足无法采购",
+}
+_G.pg.base.gametip.island_trade_reset_label = {
+	tip = "今日价格已重置",
+}
+_G.pg.base.gametip.island_trade_help_1 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help4",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.island_trade_help_2 = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/island_trade_help3",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.island_trade_price_unrefresh = {
+	tip = "岛主尚未更新价格无法交易",
+}
+_G.pg.base.gametip.island_trade_msg_pop = {
+	tip = "$1邀请你前往他的岛屿，该岛屿今日珍珠售价$3",
+}
+_G.pg.base.gametip.island_trade_invite_success = {
+	tip = "邀请成功",
+}
+_G.pg.base.gametip.island_trade_share_success = {
+	tip = "邀请成功",
+}
+_G.pg.base.gametip.island_trade_activity_desc_1 = {
+	tip = "　活动期间，神秘商人会出现在集会岛，在神秘商人处可进行珍珠售卖。",
+}
+_G.pg.base.gametip.island_trade_activity_desc_2 = {
+	tip = "　珍珠可从开发季管理员佩芮处采购，每日采购和售卖的价格会出现波动。",
+}
+_G.pg.base.gametip.island_trade_activity_unlock = {
+	tip = "开放等级：岛屿LV.22",
+}
+_G.pg.base.gametip.island_bar_quick_game = {
+	tip = "快速游戏",
+}
+_G.pg.base.gametip.island_trade_cnt_inadequate = {
+	tip = "数量不足",
 }
 
