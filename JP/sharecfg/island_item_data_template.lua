@@ -936,7 +936,7 @@ pg.base.island_item_data_template = {
 				{}
 			},
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			}
 		}
@@ -6574,7 +6574,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3114] = {
-		pt_num = 0,
+		pt_num = 30,
 		name = "フィッシュ&チップス",
 		group_max = 0,
 		type = 1,
@@ -6609,7 +6609,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[3115] = {
-		pt_num = 0,
+		pt_num = 60,
 		name = "レモンエビ",
 		group_max = 0,
 		type = 1,
@@ -6700,7 +6700,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10129
+			10131
 		},
 		sub_attribute = {},
 		jump_page = {
@@ -6732,7 +6732,7 @@ pg.base.island_item_data_template = {
 		have_max = 0,
 		filter = {
 			10113,
-			10126
+			10129
 		},
 		sub_attribute = {
 			2,
@@ -6841,7 +6841,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"マップで採集",
+				"秋の特産依頼-マップで採集",
 				{}
 			}
 		}
@@ -6872,7 +6872,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"マップで採集",
+				"秋の特産依頼-マップで採集",
 				{}
 			}
 		}
@@ -6903,7 +6903,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"マップで採集",
+				"秋の特産依頼-マップで採集",
 				{}
 			}
 		}
@@ -6934,7 +6934,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"マップで採集",
+				"秋の特産依頼-マップで採集",
 				{}
 			}
 		}
@@ -6966,7 +6966,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"薫る果樹園",
+				"秋の特産依頼-薫る果樹園",
 				{}
 			}
 		}
@@ -6997,7 +6997,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"ショップ購入",
+				"秋の特産依頼-ショップ購入",
 				{
 					"IslandShopPage",
 					{
@@ -7041,7 +7041,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"薫る果樹園",
+				"秋の特産依頼-薫る果樹園",
 				{}
 			}
 		}
@@ -7072,7 +7072,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"ショップ購入",
+				"秋の特産依頼-ショップ購入",
 				{
 					"IslandShopPage",
 					{
@@ -7119,7 +7119,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"有魚飯店",
+				"秋の特産依頼-有魚飯店",
 				{}
 			}
 		}
@@ -7154,7 +7154,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"有魚飯店",
+				"秋の特産依頼-有魚飯店",
 				{}
 			}
 		}
@@ -7189,7 +7189,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"手工作業台",
+				"秋の特産依頼-手工作業台",
 				{}
 			}
 		}
@@ -7224,7 +7224,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"手工作業台",
+				"秋の特産依頼-手工作業台",
 				{}
 			}
 		}
@@ -7259,7 +7259,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"白クマ茶房",
+				"秋の特産依頼-白クマ茶房",
 				{}
 			}
 		}
@@ -7294,7 +7294,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"白クマ茶房",
+				"秋の特産依頼-白クマ茶房",
 				{}
 			}
 		}
@@ -7325,7 +7325,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"マップ採集",
+				"秋の特産依頼-マップ採集",
 				{}
 			}
 		}
@@ -7356,7 +7356,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"マップ採集",
+				"秋の特産依頼-マップ採集",
 				{}
 			}
 		}
@@ -7387,7 +7387,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"マップ採集",
+				"秋の特産依頼-マップ採集",
 				{}
 			}
 		}
@@ -7418,7 +7418,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"マップ採集",
+				"秋の特産依頼-マップ採集",
 				{}
 			}
 		}
@@ -7450,7 +7450,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"青々苗場",
+				"秋の特産依頼-青々苗場",
 				{}
 			}
 		}
@@ -7481,7 +7481,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"ショップ購入",
+				"秋の特産依頼-ショップ購入",
 				{
 					"IslandShopPage",
 					{
@@ -7525,7 +7525,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"青々苗場",
+				"秋の特産依頼-青々苗場",
 				{}
 			}
 		}
@@ -7556,7 +7556,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"ショップ購入",
+				"秋の特産依頼-ショップ購入",
 				{
 					"IslandShopPage",
 					{
@@ -7603,7 +7603,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"白クマ茶房",
+				"秋の特産依頼-白クマ茶房",
 				{}
 			}
 		}
@@ -7638,7 +7638,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"白クマ茶房",
+				"秋の特産依頼-白クマ茶房",
 				{}
 			}
 		}
@@ -7673,7 +7673,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"有魚飯店",
+				"秋の特産依頼-有魚飯店",
 				{}
 			}
 		}
@@ -7708,7 +7708,7 @@ pg.base.island_item_data_template = {
 		},
 		jump_page = {
 			{
-				"有魚飯店",
+				"秋の特産依頼-有魚飯店",
 				{}
 			}
 		}
@@ -7740,7 +7740,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"手工製作設備",
+				"秋の特産依頼-手工製作設備",
 				{}
 			}
 		}
@@ -7772,13 +7772,13 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"手工製作設備",
+				"秋の特産依頼-手工製作設備",
 				{}
 			}
 		}
 	},
 	[5001] = {
-		pt_num = 12,
+		pt_num = 1,
 		name = "貝",
 		group_max = 0,
 		type = 1,
@@ -7810,7 +7810,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5002] = {
-		pt_num = 16,
+		pt_num = 2,
 		name = "ナマズ",
 		group_max = 0,
 		type = 1,
@@ -7842,7 +7842,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5003] = {
-		pt_num = 1,
+		pt_num = 16,
 		name = "コイ",
 		group_max = 0,
 		type = 1,
@@ -7874,7 +7874,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5004] = {
-		pt_num = 13,
+		pt_num = 11,
 		name = "フナ",
 		group_max = 0,
 		type = 1,
@@ -7906,7 +7906,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5005] = {
-		pt_num = 45,
+		pt_num = 12,
 		name = "川エビ",
 		group_max = 0,
 		type = 1,
@@ -7938,7 +7938,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5006] = {
-		pt_num = 162,
+		pt_num = 13,
 		name = "ザリガニ",
 		group_max = 0,
 		type = 1,
@@ -7970,7 +7970,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5007] = {
-		pt_num = 1,
+		pt_num = 16,
 		name = "スズキ",
 		group_max = 0,
 		type = 1,
@@ -8034,7 +8034,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5101] = {
-		pt_num = 27,
+		pt_num = 1,
 		name = "イカ",
 		group_max = 0,
 		type = 1,
@@ -8066,7 +8066,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5102] = {
-		pt_num = 104,
+		pt_num = 27,
 		name = "サワラ",
 		group_max = 0,
 		type = 1,
@@ -8098,7 +8098,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5103] = {
-		pt_num = 198,
+		pt_num = 104,
 		name = "マグロ",
 		group_max = 0,
 		type = 1,
@@ -8130,7 +8130,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5104] = {
-		pt_num = 2,
+		pt_num = 45,
 		name = "サーモン",
 		group_max = 0,
 		type = 1,
@@ -8162,7 +8162,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5105] = {
-		pt_num = 11,
+		pt_num = 1,
 		name = "マダイ",
 		group_max = 0,
 		type = 1,
@@ -8194,7 +8194,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5106] = {
-		pt_num = 16,
+		pt_num = 24,
 		name = "クロダイ",
 		group_max = 0,
 		type = 1,
@@ -8226,7 +8226,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5107] = {
-		pt_num = 1,
+		pt_num = 198,
 		name = "キハダ",
 		group_max = 0,
 		type = 1,
@@ -8258,7 +8258,7 @@ pg.base.island_item_data_template = {
 		}
 	},
 	[5108] = {
-		pt_num = 24,
+		pt_num = 162,
 		name = "ナマコ",
 		group_max = 0,
 		type = 1,
@@ -8346,7 +8346,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -8385,7 +8385,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -8424,7 +8424,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -8463,7 +8463,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -8502,7 +8502,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			}
 		}
@@ -8559,7 +8559,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -8598,7 +8598,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			}
 		}
@@ -8655,7 +8655,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -8694,7 +8694,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			}
 		}
@@ -8751,7 +8751,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -8790,7 +8790,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			}
 		}
@@ -8847,7 +8847,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -8886,7 +8886,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			}
 		}
@@ -8943,7 +8943,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -8982,7 +8982,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			}
 		}
@@ -9039,7 +9039,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -9078,7 +9078,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{
@@ -9117,7 +9117,7 @@ pg.base.island_item_data_template = {
 		sub_attribute = {},
 		jump_page = {
 			{
-				"累計PT",
+				"シーズン-累計PT",
 				{}
 			},
 			{

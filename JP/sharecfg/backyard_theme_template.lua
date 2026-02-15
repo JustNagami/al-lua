@@ -4089,7 +4089,7 @@ pg.backyard_theme_template = {
 	[107] = {
 		Cfg_1 = 5,
 		name = "龍舞新春",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 107,
 		comfortable = 0,
@@ -5077,6 +5077,46 @@ pg.backyard_theme_template = {
 			334302
 		}
 	},
+	[135] = {
+		Cfg_1 = 5,
+		name = "新春オークション",
+		hot = 1,
+		is_view = 1,
+		id = 135,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "オークションで、パドルを掲げる時の緊張感にハラハラ！",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "cj8themeicon",
+		deblocking = 1,
+		order = 135,
+		ids = {
+			335001,
+			335002,
+			335101,
+			335102,
+			335103,
+			335104,
+			335105,
+			335106,
+			335107,
+			335108,
+			335109,
+			335110,
+			335111,
+			335112,
+			335113,
+			335114,
+			335115,
+			335116,
+			335117,
+			335118,
+			335301,
+			335302
+		}
+	},
 	all = {
 		1,
 		2,
@@ -5197,6 +5237,7 @@ pg.backyard_theme_template = {
 		131,
 		132,
 		133,
-		134
+		134,
+		135
 	}
 }

@@ -97,6 +97,8 @@ pg.pay_data_display = setmetatable({
 		9008,
 		9009,
 		9010,
+		9011,
+		9012,
 		1000,
 		1001,
 		1002,
@@ -11773,6 +11775,274 @@ pg.base.pay_data_display = {
 			{
 				2,
 				86209,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			}
+		}
+	},
+	[9011] = {
+		limit_group = 0,
+		name = "春節福袋2026A",
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		second_text = "大量な報酬",
+		type_order = 2,
+		subject = "春節福袋2026A",
+		first_text = "ランダム着せ替えとダイヤ",
+		limit_arg = 1,
+		tip = "",
+		money = 3800,
+		tip_open = 0,
+		tag = 2,
+		id = 9011,
+		gem = 0,
+		name_display = "春節福袋2026A",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai32",
+		show_group = "",
+		skin_inquire_relation = 86224,
+		package_tag_open = 0,
+		id_str = "com.bilibili.blhx.zuanshi210",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond193",
+		extra_service_item = {
+			{
+				2,
+				86224,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			},
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					2,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					3,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81232,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86224,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			}
+		}
+	},
+	[9012] = {
+		limit_group = 0,
+		name = "春節福袋2025A(復刻)",
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		second_text = "大量な報酬",
+		type_order = 2,
+		subject = "春節福袋2025A(復刻)",
+		first_text = "ランダム着せ替えとダイヤ",
+		limit_arg = 1,
+		tip = "",
+		money = 3800,
+		tip_open = 0,
+		tag = 2,
+		id = 9012,
+		gem = 0,
+		name_display = "春節福袋2025A(復刻)",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai21",
+		show_group = "",
+		skin_inquire_relation = 86210,
+		package_tag_open = 0,
+		id_str = "com.bilibili.blhx.zuanshi211",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		airijp_id = "com.yostarjp.azurlane.diamond194",
+		extra_service_item = {
+			{
+				2,
+				86210,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					2,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					3,
+					4
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42066,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81210,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86210,
 				1
 			},
 			{

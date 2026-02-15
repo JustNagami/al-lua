@@ -3690,6 +3690,31 @@ pg.furniture_data_template = setmetatable({
 			334123,
 			334301,
 			334302
+		},
+		[135] = {
+			335001,
+			335002,
+			335101,
+			335102,
+			335103,
+			335104,
+			335105,
+			335106,
+			335107,
+			335108,
+			335109,
+			335110,
+			335111,
+			335112,
+			335113,
+			335114,
+			335115,
+			335116,
+			335117,
+			335118,
+			335119,
+			335301,
+			335302
 		}
 	},
 	get_id_list_by_tag = {
@@ -4176,7 +4201,8 @@ pg.furniture_data_template = setmetatable({
 			332113,
 			331309,
 			333119,
-			334123
+			334123,
+			335119
 		},
 		[4] = {
 			1001,
@@ -4297,7 +4323,8 @@ pg.furniture_data_template = setmetatable({
 			332001,
 			331001,
 			333001,
-			334001
+			334001,
+			335001
 		},
 		[3] = {
 			1002,
@@ -4419,7 +4446,8 @@ pg.furniture_data_template = setmetatable({
 			332002,
 			331002,
 			333002,
-			334002
+			334002,
+			335002
 		},
 		{
 			1101,
@@ -6611,7 +6639,25 @@ pg.furniture_data_template = setmetatable({
 			334119,
 			334120,
 			334121,
-			334122
+			334122,
+			335101,
+			335102,
+			335103,
+			335104,
+			335105,
+			335106,
+			335107,
+			335108,
+			335109,
+			335110,
+			335111,
+			335112,
+			335113,
+			335114,
+			335115,
+			335116,
+			335117,
+			335118
 		},
 		{
 			1108,
@@ -7156,7 +7202,9 @@ pg.furniture_data_template = setmetatable({
 			331308,
 			333301,
 			334301,
-			334302
+			334302,
+			335301,
+			335302
 		}
 	},
 	get_id_list_by_type = {
@@ -9567,7 +9615,24 @@ pg.furniture_data_template = setmetatable({
 			334120,
 			334121,
 			334122,
-			334123
+			334123,
+			335101,
+			335102,
+			335104,
+			335105,
+			335106,
+			335107,
+			335108,
+			335109,
+			335110,
+			335111,
+			335112,
+			335114,
+			335115,
+			335116,
+			335117,
+			335118,
+			335119
 		},
 		[11] = {
 			143,
@@ -9633,7 +9698,8 @@ pg.furniture_data_template = setmetatable({
 			100048,
 			303103,
 			303113,
-			321116
+			321116,
+			335113
 		},
 		[15] = {
 			251
@@ -10013,7 +10079,9 @@ pg.furniture_data_template = setmetatable({
 			331307,
 			333301,
 			334301,
-			334302
+			334302,
+			335301,
+			335302
 		},
 		[13] = {
 			100015,
@@ -10146,7 +10214,8 @@ pg.furniture_data_template = setmetatable({
 			332001,
 			331001,
 			333001,
-			334001
+			334001,
+			335001
 		},
 		{
 			1002,
@@ -10268,7 +10337,8 @@ pg.furniture_data_template = setmetatable({
 			332002,
 			331002,
 			333002,
-			334002
+			334002,
+			335002
 		},
 		[5] = {
 			1101,
@@ -10434,7 +10504,8 @@ pg.furniture_data_template = setmetatable({
 			331109,
 			331110,
 			333106,
-			334104
+			334104,
+			335103
 		},
 		[3] = {
 			1108,
@@ -14089,7 +14160,30 @@ pg.furniture_data_template = setmetatable({
 		334122,
 		334123,
 		334301,
-		334302
+		334302,
+		335001,
+		335002,
+		335101,
+		335102,
+		335103,
+		335104,
+		335105,
+		335106,
+		335107,
+		335108,
+		335109,
+		335110,
+		335111,
+		335112,
+		335113,
+		335114,
+		335115,
+		335116,
+		335117,
+		335118,
+		335119,
+		335301,
+		335302
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -173144,6 +173238,1083 @@ pg.base.furniture_data_template = {
 		canputonGrid = {},
 		can_trigger = {
 			0
+		},
+		interAction_group = {}
+	},
+	[335001] = {
+		spine_extra = "",
+		describe = "オークションで、パドルを掲げる時の緊張感にハラハラ！",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "オークションの床",
+		effect = "",
+		advice = 0,
+		tag = 4,
+		spine_action_replace = "",
+		picture = "cj8/dibancj8",
+		icon = "dibancj8icon",
+		canputon = 0,
+		comfortable = 4,
+		id = 335001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[335002] = {
+		spine_extra = "",
+		describe = "オークションで、パドルを掲げる時の緊張感にハラハラ！",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "オークションの壁",
+		effect = "",
+		advice = 0,
+		tag = 3,
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		icon = "qiangbicj8icon",
+		id = 335002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbicj8",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[335101] = {
+		spine_extra = "",
+		describe = "パドルを掲げる参加者饅頭、リアルタイムで競いに参加してくれる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "changyicj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション参加饅頭1",
+		canputon = 0,
+		id = 335101,
+		can_rotate = 0,
+		size = {
+			7,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"changyicj8",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[335102] = {
+		spine_extra = "",
+		describe = "整然に並べ立てられているソレに、珍品への情熱と期待が漂っている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "dengzicj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "cj8/dengzicj8",
+		name = "オークション通常客椅子",
+		canputon = 0,
+		id = 335102,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-10.5,
+					43.8
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[335103] = {
+		spine_extra = "",
+		describe = "錦織の絨毯を歩み、心惹かれるあの一品のもとへ",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "ditancj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		name = "オークション絨毯",
+		spine_action_replace = "",
+		picture = "cj8/ditancj8",
+		comfortable = 3,
+		canputon = 0,
+		id = 335103,
+		can_rotate = 0,
+		size = {
+			6,
+			24
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[335104] = {
+		spine_extra = "",
+		describe = "ゆらゆら揺らして、新しい一年も金運爆上げ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "facaishucj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークションの金ノナル木",
+		canputon = 0,
+		id = 335104,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"facaishucj8",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[335105] = {
+		spine_extra = "",
+		describe = "パドルを掲げる参加者饅頭、リアルタイムで競いに参加する",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "houpaijiucj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション参加饅頭2",
+		canputon = 0,
+		id = 335105,
+		can_rotate = 0,
+		size = {
+			3,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"houpaijiucj8",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[335106] = {
+		spine_extra = "",
+		describe = "どうぞこちらへ。上階のほうがよく見渡せるよ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "louticj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		name = "オークション階段",
+		spine_action_replace = "",
+		picture = "cj8/louticj8",
+		comfortable = 2,
+		canputon = 0,
+		id = 335106,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[335107] = {
+		spine_extra = "",
+		describe = "ふりふり揺すって、新春祝いのお年玉をゲットしよう",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "meihuashucj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークションの梅ノ木",
+		canputon = 0,
+		id = 335107,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"meihuashucj8",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[335108] = {
+		spine_extra = "",
+		describe = "1万ダイヤ――他にいませんね？落札ピョ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "paimaitaicj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークションステージ",
+		canputon = 0,
+		id = 335108,
+		can_rotate = 0,
+		size = {
+			11,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"paimaitaicj8",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[335109] = {
+		spine_extra = "",
+		describe = "整然に並べ立てられているソレに、珍品への情熱と期待が漂っている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "putongzhuocj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		name = "オークション通常客卓",
+		spine_action_replace = "",
+		picture = "cj8/putongzhuocj8",
+		comfortable = 2,
+		canputon = 0,
+		id = 335109,
+		can_rotate = 0,
+		size = {
+			3,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[335110] = {
+		spine_extra = "",
+		describe = "高く掲げられた灯籠に、ぐんぐん上がる福運",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "tiandengcj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション灯籠1",
+		canputon = 0,
+		id = 335110,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tiandengcj8",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[335111] = {
+		spine_extra = "",
+		describe = "喧騒が遠のくVIP席。溢れる気品と余裕はあなただけのもの",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "yizi1cj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		name = "オークション貴賓椅子1",
+		spine_action_replace = "",
+		picture = "cj8/yizi1cj8",
+		comfortable = 1,
+		canputon = 0,
+		id = 335111,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[335112] = {
+		spine_extra = "",
+		describe = "喧騒が遠のくVIP席。溢れる気品と余裕はあなただけのもの",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "yizi2cj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "cj8/yizi2cj8",
+		name = "オークション貴賓椅子2",
+		canputon = 0,
+		id = 335112,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sit",
+				{
+					-13.8,
+					9.9
+				},
+				{
+					-1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	},
+	[335113] = {
+		spine_extra = "",
+		describe = "競売品を運ぶ展示饅頭、リアルタイムでお宝を展示する",
+		gain_by = "",
+		type = 14,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "zhanshijiucj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション展示饅頭",
+		canputon = 0,
+		id = 335113,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhanshijiucj8",
+				"normal"
+			},
+			[3] = {
+				{
+					159.72,
+					42
+				},
+				"walk"
+			}
+		},
+		interAction_group = {}
+	},
+	[335114] = {
+		spine_extra = "",
+		describe = "一品一品に、唯一無二の輝き！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "zhanshitai1cj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション展示台1",
+		canputon = 0,
+		id = 335114,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhanshitai1cj8",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[335115] = {
+		spine_extra = "",
+		describe = "一品一品に、唯一無二の輝き！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "zhanshitai2cj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション展示台2",
+		canputon = 0,
+		id = 335115,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhanshitai2cj8",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[335116] = {
+		spine_extra = "",
+		describe = "喧騒が遠のくVIP席。溢れる気品と余裕はあなただけのもの",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "zhuozicj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション貴賓卓",
+		canputon = 0,
+		id = 335116,
+		can_rotate = 0,
+		size = {
+			3,
+			4
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zhuozicj8",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[335117] = {
+		spine_extra = "",
+		describe = "時間は待ってくれない、珍品もまた同じ！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "zuozhongcj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークションホールクロック",
+		canputon = 0,
+		id = 335117,
+		can_rotate = 0,
+		size = {
+			2,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zuozhongcj8",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	},
+	[335118] = {
+		spine_extra = "",
+		describe = "高く掲げられた灯籠に、ぐんぐん上がる福運",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "tiandeng2cj8icon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション灯籠2",
+		canputon = 0,
+		id = 335118,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"tiandeng2cj8",
+				"normal",
+				{
+					"action2",
+					true,
+					nil,
+					nil,
+					nil,
+					"action1"
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[335119] = {
+		gain_by = "",
+		name = "百宝錦嚢",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		comfortable = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "baibaodaicj8icon",
+		deblocking = 1,
+		level = 1,
+		describe = "乾坤を秘めた百宝の袋。紐解けば煌びやか品々が、心を濯ぐ泉のように、塵一つない光彩を解き放つ",
+		effect = "",
+		can_rotate = 0,
+		tag = 7,
+		spine_action_replace = "",
+		picture = "",
+		spine_extra = "",
+		canputon = 0,
+		id = 335119,
+		advice = 0,
+		size = {
+			8,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"baibaodaicj8B",
+				"normal"
+			},
+			{
+				"baibaodaicj8T"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"tuozhuai2"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					0
+				}
+			},
+			{
+				{
+					6.8,
+					88.1
+				},
+				{
+					250,
+					220
+				},
+				"cj8/baibaodaicj8_mask"
+			},
+			{
+				7,
+				-90
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	},
+	[335301] = {
+		spine_extra = "",
+		describe = "暖かな光は温かみを添え、会場を盛り上げてくれる",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 2,
+		count = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "bidengcj8icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		tag = 5,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション壁付照明",
+		canputon = 0,
+		id = 335301,
+		can_rotate = 0,
+		size = {
+			2,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"bidengcj8",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	},
+	[335302] = {
+		spine_extra = "",
+		describe = "新春の福をお裾分け！",
+		gain_by = "",
+		type = 6,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 2,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 135,
+		icon = "qiangshicj8icon",
+		deblocking = 1,
+		level = 5,
+		advice = 0,
+		effect = "",
+		tag = 5,
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "",
+		name = "オークション壁飾り",
+		canputon = 0,
+		id = 335302,
+		can_rotate = 0,
+		size = {
+			4,
+			0
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangshicj8",
+				"normal"
+			}
 		},
 		interAction_group = {}
 	}

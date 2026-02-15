@@ -258,6 +258,9 @@ pg.memory_group = setmetatable({
 		352,
 		353,
 		354,
+		355,
+		356,
+		357,
 		501,
 		502,
 		503,
@@ -6434,6 +6437,53 @@ pg.base.memory_group = {
 			4968,
 			4969,
 			4970
+		}
+	},
+	[355] = {
+		id = 355,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 50404,
+		title = "新春珠玉逸品会",
+		group_id = "",
+		memories = {
+			4981,
+			4982,
+			4983,
+			4984,
+			4985,
+			4986,
+			4987
+		}
+	},
+	[356] = {
+		id = 356,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 50401,
+		title = "バレンタイン――甘々大作戦！",
+		group_id = "",
+		memories = {
+			4991,
+			4992,
+			4993
+		}
+	},
+	[357] = {
+		id = 357,
+		subtype = 3,
+		icon = "title_event",
+		type = 2,
+		link_event = 50412,
+		title = "着せ替え特集 紅帳衣裳",
+		group_id = "",
+		memories = {
+			5001,
+			5002,
+			5003,
+			5004
 		}
 	},
 	[501] = {
