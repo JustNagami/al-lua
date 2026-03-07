@@ -6989,7 +6989,7 @@ _G.pg.base.gametip.activity_switch_award_pool_failed = {
 	tip = "次の段階は目玉報酬を全部交換したことで開放されます",
 }
 _G.pg.base.gametip.shop_street_activity_tip = {
-	tip = "※<color=#539b2c>$1</COLOR>では<color=#539b2c>装備外装箱</color>が100%出現します",
+	tip = "※<color=#539b2c>02.12-03.04</COLOR>では<color=#539b2c>装備外装箱(新春オークション)/装備外装箱(瑞光迎春)</color>が100%出現します\n※<color=#539b2c>02.26-03.11</COLOR>では<color=#539b2c>装備外装箱(春色旅籠)</color>が100%出現します",
 }
 _G.pg.base.gametip.shop_street_Equipment_skin_box_help = {
 	tip = "<color=#A1E400FF>$1</COLOR>\n販売期間：<color=#A1E400FF>$2</COLOR>",
@@ -7936,7 +7936,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "「フランチェスコ・カラッチョロ」など出現率がUP!",
+	tip = "期間限定建造を累計200回行うと「モスクワ」を確定で入手可能！（最大4隻まで）",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "「建武」常設実装！",
@@ -14011,7 +14011,7 @@ _G.pg.base.gametip.battlepass_acquire_attention = {
 	tip = "シーズン任務キャンペーン期間の残り時間は$1日$2時間です。下記のアイテムが未受領です。",
 }
 _G.pg.base.gametip.battlepass_pay_tip = {
-	tip = "シーズン任務報酬開放：",
+	tip = "パス任務報酬開放：",
 }
 _G.pg.base.gametip.battlepass_main_tip1 = {
 	tip = "キャンペーン期間中、任務をクリアし<icon name=pt w=1 h=1/>\nを集め、<color=#92fc63>扶桑(META)</color>、<color=#92fc63>強化ユニット</color>など\nの報酬を入手可能！",
@@ -19569,7 +19569,7 @@ _G.pg.base.gametip.commander_unsel_lock_flag_tip = {
 	tip = "保護確認設定は設定されていません。オフニャ訓練完了時に保護確認画面が表示されません",
 }
 _G.pg.base.gametip.skin_discount_timelimit = {
-	tip = "アイテム$1は$2メンテナンス後に削除されます。削除前に着せ替えショップで使用してください",
+	tip = "アイテム$1は$2 23:59:59後に削除されます。削除前に着せ替えショップで使用してください",
 }
 _G.pg.base.gametip.shan_luan_task_progress_tip = {
 	tip = "達成数：$1",
@@ -22536,6 +22536,13 @@ _G.pg.base.gametip.SkinDiscountHelp_School = {
 	tip = {
 		{
 			info = "1.キャンペーン期間中、<color=#92fc63>クーポンを使用せずに</color>「学園」シリーズ着せ替えを購入するか、着せ替えパック（学園）を購入した場合、キャンペーンページにて<color=#92fc63>着せ替えクーポン（学園）</color>を入手できます\n2.<color=#92fc63>着せ替えクーポン（学園）</color>は「学園」シリーズの着せ替えを購入する際に、ダイヤ×300分割引になります（お得パックを購入する時には使用できません）\n3.キャンペーン終了時【2025年4月9日（水）23:59:59】、未使用の<color=#92fc63>着せ替えクーポン（学園）</color>は削除されます",
+		},
+	},
+}
+_G.pg.base.gametip.SkinDiscountHelp_Winter = {
+	tip = {
+		{
+			info = "1.キャンペーン期間中、<color=#92fc63>元々の価格</color>（クーポンを使用しない）で迎春復刻着せ替えを購入するか、復刻L2D着せ替え福袋2026B・復刻L2D着せ替え福袋2026Aを購入すると、<color=#92fc63>着せ替えクーポン（迎春2026）</color>を入手できます\n2.<color=#92fc63>着せ替えクーポン（迎春2026）</color>は、迎春復刻着せ替えを購入する際に適用すると、着せ替えの価格がダイヤ300値引きされます。お得パックを購入する際には適用できません\n3.<color=#92fc63>着せ替えクーポン（迎春2026）</color>はイベント終了時2026年3月11日23:59後に削除されます",
 		},
 	},
 }
@@ -27223,6 +27230,18 @@ _G.pg.base.gametip.island_urgent_notice = {
 		},
 	},
 }
+_G.pg.base.gametip.general_activity_side_bar1 = {
+	tip = "迎春衣装復刻",
+}
+_G.pg.base.gametip.general_activity_side_bar2 = {
+	tip = "迎春特売任務",
+}
+_G.pg.base.gametip.general_activity_side_bar3 = {
+	tip = "BF Cruise Missions",
+}
+_G.pg.base.gametip.general_activity_side_bar4 = {
+	tip = "BF Ltd. Rerun Outfits",
+}
 _G.pg.base.gametip.black5_bundle_desc = {
 	tip = "対象着せ替え3着購入で誓いの指輪入手可能",
 }
@@ -27425,6 +27444,16 @@ _G.pg.base.gametip.HelenaCoreActivity_subtitle_2 = {
 _G.pg.base.gametip.HelenaCoreActivity_subtitle_3 = {
 	tip = "美しい世界へ",
 }
+_G.pg.base.gametip.battlepass_main_help_1211 = {
+	tip = {
+		{
+			info = "迎春特売 明石の贈り物(2026.2.26-2026.3.18)\n\n·<color=#92fc63>開催期間</color>\n 2026.2.26 メンテ後 ~ 2026.3.18 23:59:59\n\n·<color=#92fc63>特売任務について</color>\n（1）イベント期間中、特売任務をこなすと、「特売任務Pt」を入手できます。\n（2）特売任務は時間経過で順次開放されます。\n（3）「特売任務Pt」を100入手する度に、特売任務進捗を1進めることがですます。\n（4）特売任務進捗が進むと、その特売任務進捗に応じた報酬を入手できます（最大15まで）。\n\n·<color=#92fc63>報酬について</color>\n特売進捗報酬は2種類存在します：\n（1）基礎報酬：<color=#ff5c5c>着せ替えクーポン（特売パス2026）</color>、<color=#ff5c5c>指向型強化ユニット・Ⅷ期</color>などの報酬を入手できます；\n 特売任務進捗が特定のレベルに到達すると、そのレベルの報酬を入手できます。\n（2）特売パス報酬：<color=#ff5c5c>戦闘UI：迎春特売 </color>、<color=#ff5c5c>ダイヤ</color>などの報酬を入手できます；\n 「迎春特売パス」を購入済みで、特売任務進捗が特定のレベルに到達すると、そのレベルの特別報酬を入手できます。\n 注：「迎春特売パス」は基本報酬の受け取りに影響しません。\n\n·<color=#92fc63>「迎春特売パス」について</color>\n（1）「迎春特売」は「ショップ」-「お得パック」で購入でき、購入すると「特売任務Pt」<color=#ff5c5c>200点</color>が加算され、特売パス報酬が開放されます。\n（2）「迎春特売パス」はは<color=#ff5c5c>イベント終了1時間前</color>(3.18 23:59:59)に販売停止になります。\n\n·<color=#92fc63>任務説明</color>\n特売任務が2種類存在します：\n（1）毎日任務 \n 毎日特売任務は全部で12日分存在します。イベント開始時に1日目、その後毎日開放されます\n（2）S.P.任務\n S.P.任務は任務開始時に全部開放されます。\n（3）特売任務は開放された時点で実行でき、任務を完成すると報酬を入手できます。",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_title_1211 = {
+	tip = "迎春特売任務",
+}
 _G.pg.base.gametip.HelenaCoreActivity_subtitle_4 = {
 	tip = "天穹に響く音謡",
 }
@@ -27433,6 +27462,54 @@ _G.pg.base.gametip.HelenaCoreActivity_subtitle_5 = {
 }
 _G.pg.base.gametip.HelenaCoreActivity_subtitle_6 = {
 	tip = "UR交換",
+}
+_G.pg.base.gametip.winter_battlepass_proceed = {
+	tip = "確認",
+}
+_G.pg.base.gametip.winter_battlepass_main_time_title = {
+	tip = "残り：",
+}
+_G.pg.base.gametip.winter_cruise_title_1211 = {
+	tip = "迎春特売任務",
+}
+_G.pg.base.gametip.winter_cruise_task_tips = {
+	tip = "完了済",
+}
+_G.pg.base.gametip.winter_cruise_task_unlock = {
+	tip = "$1日$2時間後に開放",
+}
+_G.pg.base.gametip.winter_cruise_task_day = {
+	tip = "$1日目",
+}
+_G.pg.base.gametip.winter_battlepass_pay_acquire = {
+	tip = "購入で入手：",
+}
+_G.pg.base.gametip.winter_battlepass_pay_tip = {
+	tip = "購入で特別報酬開放：",
+}
+_G.pg.base.gametip.winter_battlepass_mission = {
+	tip = "任務",
+}
+_G.pg.base.gametip.winter_battlepass_rewards = {
+	tip = "報酬",
+}
+_G.pg.base.gametip.winter_cruise_btn_pay = {
+	tip = "特別報酬開放",
+}
+_G.pg.base.gametip.winter_cruise_pay_reward = {
+	tip = "入手報酬",
+}
+_G.pg.base.gametip.winter_luckybag_9005 = {
+	tip = "迎春特売2026対象の着せ替え（$1/$2）着を所持しています。対象の着せ替えをすでに全部入手済みの場合、着せ替えクーポン(迎春2026)は使用できません。また、お得パックで入手した着せ替えが入手済みの着せ替えである場合、自動でダイヤに変換されます。\nお得パックを購入しますか？",
+}
+_G.pg.base.gametip.winter_luckybag_9006 = {
+	tip = "迎春特売2026対象の着せ替え（$1/$2）着を所持しています。対象の着せ替えをすでに全部入手済みの場合、着せ替えクーポン(迎春2026)は使用できません。また、お得パックで入手した着せ替えが入手済みの着せ替えである場合、自動でダイヤ×1080に変換されます。\nお得パックを購入しますか？",
+}
+_G.pg.base.gametip.winter_cruise_btn_all = {
+	tip = "一括受取",
+}
+_G.pg.base.gametip.winter__battlepass_rewards = {
+	tip = "報酬",
 }
 _G.pg.base.gametip.fate_unlock_icon_desc = {
 	tip = "※竜骨編纂解放済み",
@@ -27788,6 +27865,12 @@ _G.pg.base.gametip.island_trade_activity_unlock = {
 _G.pg.base.gametip.island_bar_quick_game = {
 	tip = "クイックゲーム",
 }
+_G.pg.base.gametip.island_trade_cnt_inadequate = {
+	tip = "数量が不足しています",
+}
+_G.pg.base.gametip.drawdiary_ui_2026 = {
+	tip = "おえかき",
+}
 _G.pg.base.gametip.loveactivity_ui_1 = {
 	tip = "出撃で思い出Ptを入手",
 }
@@ -27798,16 +27881,16 @@ _G.pg.base.gametip.loveactivity_ui_3 = {
 	tip = "メッセージ",
 }
 _G.pg.base.gametip.loveactivity_ui_4 = {
-	tip = "$1に思い出Ptをあげますか？",
+	tip = "$1に思い出Ptを付与しますか？\n付与後は変更できません。",
 }
 _G.pg.base.gametip.loveactivity_ui_4_1 = {
-	tip = "毎日報酬の<color=#3DC6FFFF>500</color>思い出Ptを<color=#3DC6FFFF>$1</color>に付与しますか? 付与後は<color=#FF5C5CFF>変更できません。ご注意ください。</color>",
+	tip = "毎日報酬の<color=#3DC6FFFF>500</color>思い出Ptを<color=#3DC6FFFF>$1</color>に付与しますか?\n付与後は<color=#FF5C5CFF>変更できません。ご注意ください。</color>",
 }
 _G.pg.base.gametip.loveactivity_ui_4_2 = {
-	tip = "毎日報酬の<color=#3DC6FFFF>800</color>思い出Ptを<color=#3DC6FFFF>$1</color>に付与しますか? 付与後は<color=#FF5C5CFF>変更できません。ご注意ください。</color>",
+	tip = "毎日報酬の<color=#3DC6FFFF>800</color>思い出Ptを<color=#3DC6FFFF>$1</color>に付与しますか?\n付与後は<color=#FF5C5CFF>変更できません。ご注意ください。</color>",
 }
 _G.pg.base.gametip.loveactivity_ui_4_3 = {
-	tip = "毎日報酬の<color=#3DC6FFFF>1500</color>思い出Ptを<color=#3DC6FFFF>$1</color>に付与しますか? 付与後は<color=#FF5C5CFF>変更できません。ご注意ください。</color>",
+	tip = "毎日報酬の<color=#3DC6FFFF>1500</color>思い出Ptを<color=#3DC6FFFF>$1</color>に付与しますか?\n付与後は<color=#FF5C5CFF>変更できません。ご注意ください。</color>",
 }
 _G.pg.base.gametip.loveactivity_ui_5 = {
 	tip = "メッセージ解放",
@@ -27864,11 +27947,138 @@ _G.pg.base.gametip.help_chunjie_jiulou_2026 = {
 		},
 	},
 }
-_G.pg.base.gametip.island_trade_cnt_inadequate = {
-	tip = "数量が不足しています",
+_G.pg.base.gametip.island_gift_tip_title = {
+	tip = "体力",
 }
-_G.pg.base.gametip.drawdiary_ui_2026 = {
-	tip = "おえかき",
+_G.pg.base.gametip.island_gift_tip = {
+	tip = "贈り物をすると上限以上の体力が無効になります。贈り物を続けますか？",
+}
+_G.pg.base.gametip.island_chara_gather_tip = {
+	tip = "採集",
+}
+_G.pg.base.gametip.island_chara_gather_power = {
+	tip = "体力消費",
+}
+_G.pg.base.gametip.island_chara_gather_money = {
+	tip = "資金消費",
+}
+_G.pg.base.gametip.island_chara_gather_range = {
+	tip = "採集対象選択",
+}
+_G.pg.base.gametip.island_chara_gather_start = {
+	tip = "出発",
+}
+_G.pg.base.gametip.island_chara_gather_tag_1 = {
+	tip = "マップ採集",
+}
+_G.pg.base.gametip.island_chara_gather_tag_2 = {
+	tip = "鉱物と木材",
+}
+_G.pg.base.gametip.island_chara_gather_skill_effect = {
+	tip = "体力消費",
+}
+_G.pg.base.gametip.island_chara_gather_done = {
+	tip = "採集完了",
+}
+_G.pg.base.gametip.island_chara_gather_no_target = {
+	tip = "採集対象はありません",
+}
+_G.pg.base.gametip.island_quick_delegation = {
+	tip = "再度配置",
+}
+_G.pg.base.gametip.island_quick_delegation_notenough_encourage = {
+	tip = "$1の体力が不足しているため配置できません",
+}
+_G.pg.base.gametip.island_quick_delegation_notenough_onduty = {
+	tip = "$1は他の作業を行っているため、配置できません",
+}
+_G.pg.base.gametip.LiquorFloor_title = {
+	tip = "春色旅籠Online",
+}
+_G.pg.base.gametip.LiquorFloor_title_en = {
+	tip = "Springtide",
+}
+_G.pg.base.gametip.LiquorFloor_level = {
+	tip = "旅籠レベル",
+}
+_G.pg.base.gametip.LiquorFloor_story_title = {
+	tip = "旅籠物語",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_1 = {
+	tip = "経営日記",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_2 = {
+	tip = "客間逸話",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_3 = {
+	tip = "謎の邂逅",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_4 = {
+	tip = "旅\n籠\n物\n語",
+}
+_G.pg.base.gametip.LiquorFloor_story_go = {
+	tip = "確認",
+}
+_G.pg.base.gametip.LiquorFloor_story_get = {
+	tip = "受取",
+}
+_G.pg.base.gametip.LiquorFloor_story_got = {
+	tip = "受取済",
+}
+_G.pg.base.gametip.LiquorFloor_character_num = {
+	tip = "仲間容量",
+}
+_G.pg.base.gametip.LiquorFloor_character_unlock = {
+	tip = "レベル$1で開放",
+}
+_G.pg.base.gametip.LiquorFloor_character_tip = {
+	tip = "仲間を配置すると一定時間ごとに追加のゼニを入手可能。配置キャラの出撃時に入手する好感度が上昇",
+}
+_G.pg.base.gametip.LiquorFloor_gold_num = {
+	tip = "ゼニ容量",
+}
+_G.pg.base.gametip.LiquorFloor_gold = {
+	tip = "秒間収入",
+}
+_G.pg.base.gametip.LiquorFloor_update = {
+	tip = "強化",
+}
+_G.pg.base.gametip.LiquorFloor_update_unlock = {
+	tip = "旅籠レベルが$1に到達",
+}
+_G.pg.base.gametip.LiquorFloor_update_max = {
+	tip = "LvMAXです",
+}
+_G.pg.base.gametip.LiquorFloor_gold_max_tip = {
+	tip = "ゼニ容量が上限に達しています",
+}
+_G.pg.base.gametip.LiquorFloor_tip = {
+	tip = {
+		{
+			info = "イベント紹介：\n「春色旅籠Online」とは、旅籠施設を経営し仲間たちをもてなし、経営成果に応じて様々なコンテンツを開放し、報酬を入手するイベントになります。\n\n1.旅籠には様々な効果を持つ施設が存在し、施設を強化すると効果が上昇します。一部の強化には限定任務をこなすことで入手できる資源「宝貨」を消費します。\n2.施設「レストラン」「水辺の東屋」「庭園」「池」からは資源「ゼニ」を自動で生産でき、指揮官は手動で生産されたゼニを入手することができます。またこれらの施設を強化する（レベルを上げる）と資源の生産効率が上昇します。なお、各施設は6時間分の生産量のゼニを保存できます。\n3.施設「謎の倉庫」を強化すると、指揮官のゼニ最大所持数がアップします\n4.施設「客間」には仲間を配置することができます。仲間を配置すると、一定時間ごとに追加のゼニを入手することができます。また、「客間」に配置されている仲間が出撃した場合、その出撃で得られる好感度が上昇します。「客間」を強化すると、より多くのキャラを配置することができるようになります\n5.一定数量のゼニを貯めると、旅籠のレベルが上昇します\n6.旅籠や施設のレベルが一定レベルに到達すると、ストーリーなどのコンテンツが開放されます\n7.経営任務をこなすと、資源「宝貨」のほかに限定チャットアイコン、限定家具などの報酬を入手できます",
+		},
+	},
+}
+_G.pg.base.gametip.LiquorFloorTaskUI_title = {
+	tip = "経営任務",
+}
+_G.pg.base.gametip.LiquorFloorTaskUI_go = {
+	tip = "確認",
+}
+_G.pg.base.gametip.LiquorFloorTaskUI_get = {
+	tip = "受取",
+}
+_G.pg.base.gametip.LiquorFloorTaskUI_got = {
+	tip = "受取済",
+}
+_G.pg.base.gametip.LiquorFloor_gold_get = {
+	tip = "一括入手 ",
+}
+_G.pg.base.gametip.MoscowURCoreActivity_subtitle_1 = {
+	tip = "春色旅籠Online",
+}
+_G.pg.base.gametip.MoscowURCoreActivity_subtitle_2 = {
+	tip = "旅籠補給地",
 }
 _G.pg.base.gametip.loveactivity_help_tips = {
 	tip = {
@@ -27912,5 +28122,23 @@ _G.pg.base.gametip.loveactivity_help_tips = {
 			y = 1024,
 		},
 	},
+}
+_G.pg.base.gametip.spring_present_tips_btn = {
+	tip = "新春の想い",
+}
+_G.pg.base.gametip.spring_present_tips_time = {
+	tip = "開催期間:2.17 0時～3.3 23:59",
+}
+_G.pg.base.gametip.spring_present_tips0 = {
+	tip = "ランダム秘書艦機能をオフにしてからもう一度お試しください",
+}
+_G.pg.base.gametip.spring_present_tips1 = {
+	tip = "一番左の秘書艦枠に配置されている艦船の新春のお礼がメールボックスに送られます。続けますか？",
+}
+_G.pg.base.gametip.spring_present_tips2 = {
+	tip = "配置中の艦船から新春のお礼を受け取れません。秘書艦を変更して再度お試しください",
+}
+_G.pg.base.gametip.spring_present_tips3 = {
+	tip = "プレゼントがメールボックスに送られました！",
 }
 

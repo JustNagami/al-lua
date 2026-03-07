@@ -1167,6 +1167,8 @@ function updateItem(arg_103_0, arg_103_1, arg_103_2)
 		var_103_1 = "frame_design"
 	elseif arg_103_1:getConfig("type") == 100 then
 		var_103_1 = "frame_dorm"
+	elseif arg_103_1.id == 44004 then
+		var_103_1 = "frame8_1"
 	elseif arg_103_2.frame then
 		var_103_1 = arg_103_2.frame
 	end
@@ -5051,4 +5053,14 @@ function addSubLayer(arg_367_0, arg_367_1, arg_367_2, arg_367_3, arg_367_4)
 	var_367_0 = arg_367_4 and table.merge(var_367_0, arg_367_4) or var_367_0
 
 	pg.m02:sendNotification(GAME.LOAD_LAYERS, var_367_0)
+end
+
+function PackIntToString(arg_368_0, arg_368_1)
+	return tostring(arg_368_0) .. "," .. tostring(arg_368_1)
+end
+
+function UnpackIntFromString(arg_369_0)
+	local var_369_0, var_369_1 = string.match(arg_369_0, "(%-?%d+),(%-?%d+)")
+
+	return tonumber(var_369_0), tonumber(var_369_1)
 end
