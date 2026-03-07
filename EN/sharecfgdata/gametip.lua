@@ -7010,7 +7010,7 @@ _G.pg.base.gametip.activity_switch_award_pool_failed = {
 	tip = "The rewards from this phase have not been fully acquired yet, cannot enter next phase",
 }
 _G.pg.base.gametip.shop_street_activity_tip = {
-	tip = "※<color=#2E852C>Gear Skins</color> are purchasable during(<color=#2E852C>$1</COLOR>)!",
+	tip = "Gear Skin Box (Spring Festival Auction) & (Spring Auspices) are purchasable during (<color=#539b2c>02.12-03.04</COLOR>)\nGear Skin Box (Springtide Inn) are purchasable during (<color=#539b2c>02.26-03.11</COLOR>)",
 }
 _G.pg.base.gametip.shop_street_Equipment_skin_box_help = {
 	tip = "<color=#A1E400FF>$1</COLOR>Sale Period:<color=#A1E400FF>$2</COLOR>",
@@ -7973,7 +7973,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points.",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Rate UP for Francesco Caracciolo and more!",
+	tip = "Get Moskva guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "Chien Wu added to standard build pool!",
@@ -28113,6 +28113,12 @@ _G.pg.base.gametip.island_trade_activity_unlock = {
 _G.pg.base.gametip.island_bar_quick_game = {
 	tip = "Quick Game",
 }
+_G.pg.base.gametip.island_trade_cnt_inadequate = {
+	tip = "Insufficient Amount",
+}
+_G.pg.base.gametip.drawdiary_ui_2026 = {
+	tip = "Drawing Book",
+}
 _G.pg.base.gametip.loveactivity_ui_1 = {
 	tip = "Sweet Memories",
 }
@@ -28156,7 +28162,7 @@ _G.pg.base.gametip.loveactivity_ui_11 = {
 	tip = "Do you want to choose $1?",
 }
 _G.pg.base.gametip.loveactivity_ui_12 = {
-	tip = "* You can switch your character during the event ($1/$2 remaining switches today)",
+	tip = "* You can switch your character during the event ($1/$2 remaining switches)",
 }
 _G.pg.base.gametip.loveactivity_ui_13 = {
 	tip = "Valentine's Day message has been unlocked",
@@ -28189,11 +28195,138 @@ _G.pg.base.gametip.help_chunjie_jiulou_2026 = {
 		},
 	},
 }
-_G.pg.base.gametip.island_trade_cnt_inadequate = {
-	tip = "Insufficient Amount",
+_G.pg.base.gametip.island_gift_tip_title = {
+	tip = "Stamina",
 }
-_G.pg.base.gametip.drawdiary_ui_2026 = {
-	tip = "Drawing Book",
+_G.pg.base.gametip.island_gift_tip = {
+	tip = "Any excess stamina the gift recipient receives will be wasted. Do you still want to give the gift?",
+}
+_G.pg.base.gametip.island_chara_gather_tip = {
+	tip = "Gathering",
+}
+_G.pg.base.gametip.island_chara_gather_power = {
+	tip = "Stamina Cost",
+}
+_G.pg.base.gametip.island_chara_gather_money = {
+	tip = "Funds Cost",
+}
+_G.pg.base.gametip.island_chara_gather_range = {
+	tip = "Select Item to Gather",
+}
+_G.pg.base.gametip.island_chara_gather_start = {
+	tip = "Start",
+}
+_G.pg.base.gametip.island_chara_gather_tag_1 = {
+	tip = "Wild Gatherables",
+}
+_G.pg.base.gametip.island_chara_gather_tag_2 = {
+	tip = "Minerals & Wood",
+}
+_G.pg.base.gametip.island_chara_gather_skill_effect = {
+	tip = "Stamina Cost",
+}
+_G.pg.base.gametip.island_chara_gather_done = {
+	tip = "Gathering Complete",
+}
+_G.pg.base.gametip.island_chara_gather_no_target = {
+	tip = "No gatherable items found",
+}
+_G.pg.base.gametip.island_quick_delegation = {
+	tip = "Reassign",
+}
+_G.pg.base.gametip.island_quick_delegation_notenough_encourage = {
+	tip = "$1 can't be assigned due to not having sufficient stamina",
+}
+_G.pg.base.gametip.island_quick_delegation_notenough_onduty = {
+	tip = "$1 can't be assigned due to being busy with other work",
+}
+_G.pg.base.gametip.LiquorFloor_title = {
+	tip = "Springtide Inn Online",
+}
+_G.pg.base.gametip.LiquorFloor_title_en = {
+	tip = "Springtide",
+}
+_G.pg.base.gametip.LiquorFloor_level = {
+	tip = "Inn Lv.",
+}
+_G.pg.base.gametip.LiquorFloor_story_title = {
+	tip = "Inn Story",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_1 = {
+	tip = "Business Journal",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_2 = {
+	tip = "Parlor Anecdotes",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_3 = {
+	tip = "Random Encounters",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_4 = {
+	tip = "Inn Story",
+}
+_G.pg.base.gametip.LiquorFloor_story_go = {
+	tip = "Confirm",
+}
+_G.pg.base.gametip.LiquorFloor_story_get = {
+	tip = "Accept",
+}
+_G.pg.base.gametip.LiquorFloor_story_got = {
+	tip = "Claimed",
+}
+_G.pg.base.gametip.LiquorFloor_character_num = {
+	tip = "Char. Capacity",
+}
+_G.pg.base.gametip.LiquorFloor_character_unlock = {
+	tip = "Unlocks at Lv. $1",
+}
+_G.pg.base.gametip.LiquorFloor_character_tip = {
+	tip = "Assign shipgirls to get extra Old Coins. Assigned shipgirls gain extra Affinity on sorties.",
+}
+_G.pg.base.gametip.LiquorFloor_gold_num = {
+	tip = "Old Coins Capacity",
+}
+_G.pg.base.gametip.LiquorFloor_gold = {
+	tip = "earned per sec.",
+}
+_G.pg.base.gametip.LiquorFloor_update = {
+	tip = "Level Up",
+}
+_G.pg.base.gametip.LiquorFloor_update_unlock = {
+	tip = "Inn Lv. has been raised to $1",
+}
+_G.pg.base.gametip.LiquorFloor_update_max = {
+	tip = "Level Cap Reached",
+}
+_G.pg.base.gametip.LiquorFloor_gold_max_tip = {
+	tip = "Your Old Coins capacity has maxed out",
+}
+_G.pg.base.gametip.LiquorFloor_tip = {
+	tip = {
+		{
+			info = "- Event Overview -\nDuring the Springtide Inn Online event, manage your inn facilities, host guests, and unlock content based on the success of your management to earn rewards.\n\n1. Attached to the inn are various facilities with a range of effects that can be improved by leveling the facilities. Some level-ups require Sycees, a resource gained by completing event missions.\n2. The Restaurant, the Gazebo, the Garden, and the Pond automatically generate Old Coins, an event resource, which you can manually claim. Additionally, leveling up these facilities makes them produce more Old Coins. Each facility can store up to 6 hours' worth of Old Coins.\n3. Leveling up the Warehouse increases your maximum Old Coins capacity.\n4. You can assign your shipgirls to the Parlor. This will give you additional Old Coins at regular intervals. Furthermore, shipgirls assigned to the Parlor gain more Affinity from sorties. Leveling up the Parlor gives you more slots to assign shipgirls to.\n5. When you have enough Old Coins to reach certain thresholds, your Inn Level will go up.\n6. Once your Inn and its facilities reach certain levels, you will unlock additional content such as new story chapters.\n7. You can complete Business Missions to earn various rewards, including more Old Coins, a portrait frame, event-exclusive furniture, and more.",
+		},
+	},
+}
+_G.pg.base.gametip.LiquorFloorTaskUI_title = {
+	tip = "Business Missions",
+}
+_G.pg.base.gametip.LiquorFloorTaskUI_go = {
+	tip = "Confirm",
+}
+_G.pg.base.gametip.LiquorFloorTaskUI_get = {
+	tip = "Accept",
+}
+_G.pg.base.gametip.LiquorFloorTaskUI_got = {
+	tip = "Claimed",
+}
+_G.pg.base.gametip.LiquorFloor_gold_get = {
+	tip = "Collect Old Coins",
+}
+_G.pg.base.gametip.MoscowURCoreActivity_subtitle_1 = {
+	tip = "Springtide Inn Online",
+}
+_G.pg.base.gametip.MoscowURCoreActivity_subtitle_2 = {
+	tip = "Supply Station",
 }
 _G.pg.base.gametip.loveactivity_help_tips = {
 	tip = {
@@ -28237,5 +28370,23 @@ _G.pg.base.gametip.loveactivity_help_tips = {
 			y = 1024,
 		},
 	},
+}
+_G.pg.base.gametip.spring_present_tips_btn = {
+	tip = "New Year's Warmth",
+}
+_G.pg.base.gametip.spring_present_tips_time = {
+	tip = "Event Period: 00:00, February 17 - 23:59, March 3",
+}
+_G.pg.base.gametip.spring_present_tips0 = {
+	tip = "Please disable the Random Secretary feature and try again.",
+}
+_G.pg.base.gametip.spring_present_tips1 = {
+	tip = "The leftmost secretary shipgirl in your list will send a message to your mailbox. Continue?",
+}
+_G.pg.base.gametip.spring_present_tips2 = {
+	tip = "This shipgirl cannot send you a New Year gift. Please change your Secretary shipgirl and try again.",
+}
+_G.pg.base.gametip.spring_present_tips3 = {
+	tip = "A gift has been sent to your mailbox!",
 }
 
