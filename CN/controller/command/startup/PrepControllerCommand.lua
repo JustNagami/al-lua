@@ -659,6 +659,8 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	arg_1_0.facade:registerCommand(GAME.ISLAND_TRADE, IslandTradeCommand)
 	arg_1_0.facade:registerCommand(GAME.ISLAND_GET_FRIEND_TRADE_RANK, IslandGetFriendTradeRankCommand)
 	arg_1_0.facade:registerCommand(GAME.ISLAND_INVITE_TRADE, IslandInviteTradeCommand)
+	arg_1_0.facade:registerCommand(GAME.ISLAND_TAKE_AUTO_COLLECTION, IslandAutomaticCollectionCommand)
+	arg_1_0.facade:registerCommand(GAME.ISLAND_GET_AUTO_COLLECTION_DATA, IslandGetAutoCollectionCommand)
 	arg_1_0.facade:registerCommand(GAME.ACTIVITY_DRAW_AWARD_OPERATION, ActivityDrawAwardCommand)
 	arg_1_0.facade:registerCommand(GAME.COMMANDER_MANUAL_OP, CommanderManualCommand)
 	arg_1_0.facade:registerCommand(GAME.CITY_REBUILD, CityRebuildCommand)
@@ -668,6 +670,7 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	arg_1_0.facade:registerCommand(GAME.GET_LOVE_LETTER_REWARD, GetLoveLetterLevelRewardCommand)
 	arg_1_0.facade:registerCommand(GAME.REALIZE_LOVE_LETTER_GIFT, RealizeLoveLetterGiftCommand)
 	arg_1_0.facade:registerCommand(GAME.REQUEST_LOVE_LETTER_TEXT, RequestLoveLetterContentCommand)
+	arg_1_0.facade:registerCommand(GAME.ACCEPT_LOVE_LETTER_MAIL, AcceptLoveLetterMailCommand)
 end
 
 return var_0_0
