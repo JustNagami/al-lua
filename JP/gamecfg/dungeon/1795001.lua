@@ -87,7 +87,8 @@
 								50
 							},
 							buffList = {
-								200767
+								200767,
+								201738
 							},
 							bossData = {
 								hpBarNum = 100,

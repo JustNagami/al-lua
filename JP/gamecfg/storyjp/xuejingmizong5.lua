@@ -573,13 +573,14 @@
 			}
 		},
 		{
-			oldPhoto = true,
+			expression = 0,
 			side = 2,
 			bgName = "star_level_bg_170",
-			nameColor = "#A9F548FF",
+			oldPhoto = true,
 			dir = 1,
-			actor = 900407,
 			actorName = "？？？",
+			actor = 900407,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "それもそうですが、チャーター機まで持ち出したアンジュのほうもとんでもないですね",
 			painting = {
@@ -728,13 +729,14 @@
 			}
 		},
 		{
+			expression = 0,
+			side = 2,
+			bgName = "star_level_bg_170",
+			oldPhoto = true,
+			actorName = "？？？",
 			actor = 900407,
 			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_170",
 			hidePaintObj = true,
-			side = 2,
-			actorName = "？？？",
-			oldPhoto = true,
 			say = "電波が届かないエリアに出るまで約2時間程度は話せますね",
 			typewriter = {
 				speed = 0.05,

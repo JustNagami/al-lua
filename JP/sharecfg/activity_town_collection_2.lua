@@ -173,7 +173,7 @@ pg.activity_town_collection_2 = {
 		name = "春光のリラクゼーション",
 		type = 3,
 		id = 15,
-		icon = "506013",
+		icon = "206062",
 		luaID = "CHUNMANKEZHAN10",
 		unlock = {
 			6,

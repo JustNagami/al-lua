@@ -52,7 +52,7 @@ pg.activity_event_question = {
 	},
 	[90] = {
 		answer_right = "Oscar",
-		answer_false1 = "Oscar",
+		answer_false1 = "Ginger",
 		question = "「不沈のサム」と呼ばれる猫の名前は",
 		type = 1,
 		id = 90,

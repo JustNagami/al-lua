@@ -5800,7 +5800,20 @@ function temp()
 						ブ = {
 							ル = {
 								ク = {
-									this = true
+									this = true,
+									["("] = {
+										M = {
+											E = {
+												T = {
+													A = {
+														[")"] = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}

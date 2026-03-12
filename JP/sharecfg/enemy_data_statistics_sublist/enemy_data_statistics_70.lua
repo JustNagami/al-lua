@@ -1,5 +1,43 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_70 = {
+	[107009] = {
+		cannon = 155,
+		name = "シラツユ",
+		antiaircraft_growth = 0,
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 0,
+		air_growth = 0,
+		dodge = 43,
+		luck = 0,
+		antisub = 0,
+		cannon_growth = 0,
+		reload_growth = 0,
+		dodge_growth = 0,
+		reload = 150,
+		star = 4,
+		hit = 38,
+		antisub_growth = 0,
+		rarity = 3,
+		fog_fx = "",
+		base = 90165,
+		durability = 4500,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		antiaircraft = 425,
+		hit_growth = 0,
+		armor = 0,
+		speed = 36,
+		torpedo = 750,
+		id = 107009,
+		durability_growth = 27500,
+		luck_growth = 0,
+		battle_unit_type = 50,
+		equipment_list = {
+			317030,
+			100432
+		}
+	},
 	[107010] = {
 		cannon = 155,
 		name = "シグレ",
@@ -1519,46 +1557,6 @@ pg.enemy_data_statistics_70 = {
 		},
 		equipment_list = {
 			318109
-		}
-	},
-	[108023] = {
-		cannon = 180,
-		name = "量産型自爆ボート",
-		antiaircraft_growth = 0,
-		speed_growth = 0,
-		pilot_ai_template_id = 80000,
-		air = 0,
-		air_growth = 0,
-		dodge = 0,
-		luck = 0,
-		id = 108023,
-		cannon_growth = 0,
-		reload_growth = 0,
-		dodge_growth = 0,
-		reload = 150,
-		star = 2,
-		hit = 81,
-		antisub_growth = 0,
-		rarity = 1,
-		fog_fx = "",
-		base = 90080,
-		durability = 360,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		antiaircraft = 0,
-		hit_growth = 1200,
-		armor = 0,
-		speed = 30,
-		torpedo = 300,
-		antisub = 0,
-		durability_growth = 2550,
-		luck_growth = 0,
-		battle_unit_type = 15,
-		appear_fx = {
-			"appearsmall"
-		},
-		equipment_list = {
-			311095
 		}
 	}
 }

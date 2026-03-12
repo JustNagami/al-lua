@@ -1,5 +1,59 @@
 ﻿pg = pg or {}
 pg.enemy_data_statistics_258 = {
+	[16504203] = {
+		cannon = 210,
+		name = "ラ・ガリソニエール駒式統御武装「Blast」",
+		type = 5,
+		speed_growth = 0,
+		pilot_ai_template_id = 10001,
+		air = 0,
+		fog_fx = "",
+		dodge = 11,
+		speed = 20,
+		luck = 18,
+		antisub = 0,
+		reload_growth = 0,
+		dodge_growth = 156,
+		antiaircraft_growth = 3600,
+		reload = 150,
+		hit = 32,
+		antisub_growth = 0,
+		air_growth = 0,
+		cannon_growth = 2500,
+		base = 90442,
+		icon_type = 5,
+		armor_growth = 0,
+		torpedo_growth = 0,
+		antiaircraft = 235,
+		hit_growth = 210,
+		armor = 0,
+		durability = 23200,
+		torpedo = 0,
+		id = 16504203,
+		durability_growth = 368400,
+		luck_growth = 0,
+		battle_unit_type = 90,
+		specific_fx_scale = {
+			yuanchou_liandao = 0.04
+		},
+		appear_fx = {
+			"appearQ",
+			"yuanchou_liandao"
+		},
+		equipment_list = {
+			1101094,
+			1101114,
+			1101119,
+			1101124,
+			1101099
+		},
+		buff_list = {
+			{
+				ID = 50500,
+				LV = 5
+			}
+		}
+	},
 	[16504204] = {
 		cannon = 145,
 		name = "ル・マルス駒式統御武装「Moderate」",
@@ -1328,48 +1382,6 @@ pg.enemy_data_statistics_258 = {
 			1002141,
 			1002146,
 			1002151
-		}
-	},
-	[16511104] = {
-		cannon = 31,
-		reload = 150,
-		speed_growth = 0,
-		cannon_growth = 2592,
-		battle_unit_type = 65,
-		air = 0,
-		base = 90426,
-		dodge = 3,
-		durability_growth = 49600,
-		antiaircraft = 45,
-		speed = 18,
-		reload_growth = 0,
-		dodge_growth = 48,
-		luck = 0,
-		antiaircraft_growth = 3744,
-		hit = 18,
-		antisub_growth = 0,
-		air_growth = 0,
-		antisub = 0,
-		torpedo = 0,
-		durability = 1020,
-		armor_growth = 0,
-		torpedo_growth = 0,
-		luck_growth = 0,
-		hit_growth = 210,
-		armor = 0,
-		fog_fx = "",
-		id = 16511104,
-		equipment_list = {
-			1002156,
-			1002161,
-			1002166,
-			1002171
-		},
-		buff_list = {
-			{
-				ID = 50510,
-				LV = 1
-			}
 		}
 	}
 }

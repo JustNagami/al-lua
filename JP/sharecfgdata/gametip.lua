@@ -3623,7 +3623,7 @@ _G.pg.base.gametip.world_consume_carry_tips = {
 _G.pg.base.gametip.world_boss_help_meta = {
 	tip = {
 		{
-			info = "<color=#92fc63>2025.12.11-2026.3.12</color>\nMETA戦・ヨークタウン(META)が開催中です。META戦で解析Ptを集め、META艦船を手に入れましょう。\n（※<color=#ff5c5c>解析Pt並びに解析Pt累計獲得数報酬は開催期間終了後にリセットされます</color>）\n\n■META戦について\n■「META戦」とは、「META」艦船に挑戦し、「解析Pt」を含む報酬入手することができる共闘コンテンツです。\n「META戦」は下記の2つの要素によって構成されます。\n・META座標解析＝META艦船の挑戦権開放\n・META艦船との戦闘\n\n「META戦」システムはセイレーン作戦のストーリーを進めると開放されます。\n\n■META戦座標解析\n・「セイレーン作戦」では、戦闘などの方法で「META座標情報」を入手することができます。\n・「META座標情報」作戦海域マップ画面の右上に表示され、META座標情報所持数が所持可能上限に達する度に、META座標を全て消費して「META戦」の「情報解析」でMETA艦船の挑戦権を開放できます。\n・「情報解析」は1日2回しか行えません。また、毎日0時に情報解析可能回数のほかに、META座標所持数は一定数を残して初期所持数にリセットされます。\n\n■META戦について\n・「セイレーン作戦」海域マップ画面の右下にある「META戦」アイコンをタップすると、META艦船に挑戦できます。・META戦では、\n ①自分でMETA座標を解析することで開放される戦闘\n ②味方の「META戦援軍要請」を受け取った戦闘\n ⇨これらに挑戦するには「座標一覧」を確認する必要があります。\n・META戦では、味方の艦隊で挑戦することができます。また、潜水艦とオフニャは使用できません。\n・自分で解析したMETAを撃破した場合、次に開放されるMETAは強さが上がった（Lvが上昇）状態で出現します。\n・一度の戦闘で敵を撃破できなかった場合、戦闘終了時に「援軍要請」を行い、ほかのプレイヤーに戦闘を開放する事ができます。\n・META戦では上記①と②のいずれでも、敵が撃破された（HPが0になった）時、戦闘に参加した指揮官全員が「解析Pt」を入手することができます。\n\n■注意\n・開放された戦闘は24時間挑戦できます。24時間経過した場合META戦の表示が消失し、挑戦できなくなります。\n・自分で解放した戦闘に挑戦するには【燃料】を消費し、METAのHPが0になるまで何回も挑戦できます。\n・味方の救援要請を受け取った戦闘に挑戦するには【挑戦ポイント】を消費します。（挑戦ポイントは毎日回復します）\n・同じ戦闘は最大30人まで挑戦することができます。人数が上限いっぱいになった場合、表示されたMETA座標でも挑戦することができなくなります。\n・META戦では経験値を入手することができず、また士気コンディション/勝利数にも影響しません。\n・META戦の出現敵艦変更から31日経過すると、指揮官は自身が開放したMETA戦に挑戦する際に、一度の戦闘に一度だけ、味方支援火力によりMETA艦船にダメージ（直接ダメージとスリップダメージの2種類）を与えられるようになります。このダメージは出現敵艦の変更より時間が経つほど上昇していきます。",
+			info = "<color=#92fc63>2026.3.12-2026.6.5</color>\nMETA戦・レーゲンスブルク(META)が開催中です。META戦で解析Ptを集め、META艦船を手に入れましょう。\n（※<color=#ff5c5c>解析Pt並びに解析Pt累計獲得数報酬は開催期間終了後にリセットされます</color>）\n\n■META戦について\n■「META戦」とは、「META」艦船に挑戦し、「解析Pt」を含む報酬入手することができる共闘コンテンツです。\n「META戦」は下記の2つの要素によって構成されます。\n・META座標解析＝META艦船の挑戦権開放\n・META艦船との戦闘\n\n「META戦」システムはセイレーン作戦のストーリーを進めると開放されます。\n\n■META戦座標解析\n・「セイレーン作戦」では、戦闘などの方法で「META座標情報」を入手することができます。\n・「META座標情報」作戦海域マップ画面の右上に表示され、META座標情報所持数が所持可能上限に達する度に、META座標を全て消費して「META戦」の「情報解析」でMETA艦船の挑戦権を開放できます。\n・「情報解析」は1日2回しか行えません。また、毎日0時に情報解析可能回数のほかに、META座標所持数は一定数を残して初期所持数にリセットされます。\n\n■META戦について\n・「セイレーン作戦」海域マップ画面の右下にある「META戦」アイコンをタップすると、META艦船に挑戦できます。・META戦では、\n ①自分でMETA座標を解析することで開放される戦闘\n ②味方の「META戦援軍要請」を受け取った戦闘\n ⇨これらに挑戦するには「座標一覧」を確認する必要があります。\n・META戦では、味方の艦隊で挑戦することができます。また、潜水艦とオフニャは使用できません。\n・自分で解析したMETAを撃破した場合、次に開放されるMETAは強さが上がった（Lvが上昇）状態で出現します。\n・一度の戦闘で敵を撃破できなかった場合、戦闘終了時に「援軍要請」を行い、ほかのプレイヤーに戦闘を開放する事ができます。\n・META戦では上記①と②のいずれでも、敵が撃破された（HPが0になった）時、戦闘に参加した指揮官全員が「解析Pt」を入手することができます。\n\n■注意\n・開放された戦闘は24時間挑戦できます。24時間経過した場合META戦の表示が消失し、挑戦できなくなります。\n・自分で解放した戦闘に挑戦するには【燃料】を消費し、METAのHPが0になるまで何回も挑戦できます。\n・味方の救援要請を受け取った戦闘に挑戦するには【挑戦ポイント】を消費します。（挑戦ポイントは毎日回復します）\n・同じ戦闘は最大30人まで挑戦することができます。人数が上限いっぱいになった場合、表示されたMETA座標でも挑戦することができなくなります。\n・META戦では経験値を入手することができず、また士気コンディション/勝利数にも影響しません。\n・META戦の出現敵艦変更から31日経過すると、指揮官は自身が開放したMETA戦に挑戦する際に、一度の戦闘に一度だけ、味方支援火力によりMETA艦船にダメージ（直接ダメージとスリップダメージの2種類）を与えられるようになります。このダメージは出現敵艦の変更より時間が経つほど上昇していきます。",
 		},
 	},
 }
@@ -6989,7 +6989,7 @@ _G.pg.base.gametip.activity_switch_award_pool_failed = {
 	tip = "次の段階は目玉報酬を全部交換したことで開放されます",
 }
 _G.pg.base.gametip.shop_street_activity_tip = {
-	tip = "※<color=#539b2c>02.12-03.04</COLOR>では<color=#539b2c>装備外装箱(新春オークション)/装備外装箱(瑞光迎春)</color>が100%出現します\n※<color=#539b2c>02.26-03.11</COLOR>では<color=#539b2c>装備外装箱(春色旅籠)</color>が100%出現します",
+	tip = "※<color=#539b2c>$1</COLOR>では<color=#539b2c>装備外装箱</color>が100%出現します",
 }
 _G.pg.base.gametip.shop_street_Equipment_skin_box_help = {
 	tip = "<color=#A1E400FF>$1</COLOR>\n販売期間：<color=#A1E400FF>$2</COLOR>",
@@ -7936,7 +7936,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "期間限定建造を累計200回行うと「モスクワ」を確定で入手可能！（最大4隻まで）",
+	tip = "期間限定建造を累計200回行うと「ソビエツキー・ソユーズ」を確定で入手可能！（最大4隻まで）",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "「建武」常設実装！",
@@ -12774,6 +12774,9 @@ _G.pg.base.gametip.query_role_button = {
 _G.pg.base.gametip.query_role_fail = {
 	tip = "確認失敗",
 }
+_G.pg.base.gametip.query_role_fail_and_retry = {
+	tip = "一部のサーバーで情報の取得に失敗しました。もう一度お試しください。",
+}
 _G.pg.base.gametip.cumulative_victory_target_tip = {
 	tip = "目標勝利回数：",
 }
@@ -13047,7 +13050,7 @@ _G.pg.base.gametip.common_daily_limit = {
 _G.pg.base.gametip.meta_help = {
 	tip = {
 		{
-			info = "■メタラボとは\nメタラボとは、「META」艦船を入手・強化できる専用システムになります。\nメタラボでは、下記の操作を行うことができます。\n・「META」艦船別の入手情報の確認と、艦船の入手\n・「META」艦船別の解析Pt報酬を入手\n・「META」艦船の艤装強化、スキル習得、限界突破\n・「META艦船は1種類につき1隻しか所有できず、また「META」艦船は退役/強化素材にすることはできません。\n・同じ「META」艦船の2隻目を入手した場合、限界突破アイテム「結晶」に変換されます。\n\n■解析Ptについて\n・「セイレーン作戦」の「META戦」では、特定の「META」艦船に対応する「解析Pt」を入手することができます。\n・メタラボで当該艦船のタブ選択すると、その艦船の「解析Pt」に関する報酬を確認することができます。\n・解析Ptを一定数貯めると、「META艦船」を入手できます。\n・「META」艦船が入手済みの状態では、艦船の操作画面で「情報解析」で解析Pt関連の情報を確認することができます。\n\n※<color=#92fc63>2025.12.11-2026.3.12</color>ヨークタウン(META) META戦開放期間は「ヨークタウン(META)」の解析Ptを入手できます。\n 解析Ptおよび解析Pt累計入手数報酬は開催期間終了後にリセットされます。\n\n■「META」艦船の艤装強化について\n・入手済の「META」艦船画面の「艤装強化」をタップすると、艤装強化画面を確認することができます。\n・強化を行う際、砲撃/雷撃/航空/装填の任意の項目を選択して強化できます。\n・強化を行うと、対応のステータスが上昇します。さらに、強化を一定段階進めると、ステータスの追加ボーナスを得ることができます。\n・「META」艦船の「艤装強化」は特定の素材を消費するようになります。\n\n■「META」艦船の限界突破について\n・入手済の「META」艦船画面の「限界突破」をタップすると、限界突破画面を確認することができます。\n・限界突破を行うには、「ブリ」と異なりその艦船に対応するアイテム「結晶」を消費します。\n・「結晶」はメタラボの解析Pt報酬にて入手可能です。\n■「META」艦船のスキル習得について\n・「META」艦船のスキル習得と強化は「メタラボ」\nでのみ行うことができます。\n・入手済の「META」艦船画面の「限界突破」をタップすると、スキル習得画面を確認することができます。\n・「META」艦船のスキルの習得は素材を消費することで行え、強化は専用任務をこなし習得EXPを貯めることで行うことができます\n （習得EXPは1日に入手できる上限が存在します）\n・「META」艦船はそれぞれ1種類のスキルまでしか同時に強化できません。\n",
+			info = "■メタラボとは\nメタラボとは、「META」艦船を入手・強化できる専用システムになります。\nメタラボでは、下記の操作を行うことができます。\n・「META」艦船別の入手情報の確認と、艦船の入手\n・「META」艦船別の解析Pt報酬を入手\n・「META」艦船の艤装強化、スキル習得、限界突破\n・「META艦船は1種類につき1隻しか所有できず、また「META」艦船は退役/強化素材にすることはできません。\n・同じ「META」艦船の2隻目を入手した場合、限界突破アイテム「結晶」に変換されます。\n\n■解析Ptについて\n・「セイレーン作戦」の「META戦」では、特定の「META」艦船に対応する「解析Pt」を入手することができます。\n・メタラボで当該艦船のタブ選択すると、その艦船の「解析Pt」に関する報酬を確認することができます。\n・解析Ptを一定数貯めると、「META艦船」を入手できます。\n・「META」艦船が入手済みの状態では、艦船の操作画面で「情報解析」で解析Pt関連の情報を確認することができます。\n\n※<color=#92fc63>2026.3.12-2026.6.5</color>レーゲンスブルク(META) META戦開放期間は「レーゲンスブルク(META)」の解析Ptを入手できます。\n 解析Ptおよび解析Pt累計入手数報酬は開催期間終了後にリセットされます。\n\n■「META」艦船の艤装強化について\n・入手済の「META」艦船画面の「艤装強化」をタップすると、艤装強化画面を確認することができます。\n・強化を行う際、砲撃/雷撃/航空/装填の任意の項目を選択して強化できます。\n・強化を行うと、対応のステータスが上昇します。さらに、強化を一定段階進めると、ステータスの追加ボーナスを得ることができます。\n・「META」艦船の「艤装強化」は特定の素材を消費するようになります。\n\n■「META」艦船の限界突破について\n・入手済の「META」艦船画面の「限界突破」をタップすると、限界突破画面を確認することができます。\n・限界突破を行うには、「ブリ」と異なりその艦船に対応するアイテム「結晶」を消費します。\n・「結晶」はメタラボの解析Pt報酬にて入手可能です。\n■「META」艦船のスキル習得について\n・「META」艦船のスキル習得と強化は「メタラボ」\nでのみ行うことができます。\n・入手済の「META」艦船画面の「限界突破」をタップすると、スキル習得画面を確認することができます。\n・「META」艦船のスキルの習得は素材を消費することで行え、強化は専用任務をこなし習得EXPを貯めることで行うことができます\n （習得EXPは1日に入手できる上限が存在します）\n・「META」艦船はそれぞれ1種類のスキルまでしか同時に強化できません。\n",
 		},
 	},
 }
@@ -27947,118 +27950,6 @@ _G.pg.base.gametip.help_chunjie_jiulou_2026 = {
 		},
 	},
 }
-_G.pg.base.gametip.island_gift_tip_title = {
-	tip = "体力",
-}
-_G.pg.base.gametip.island_gift_tip = {
-	tip = "贈り物をすると上限以上の体力が無効になります。贈り物を続けますか？",
-}
-_G.pg.base.gametip.island_chara_gather_tip = {
-	tip = "採集",
-}
-_G.pg.base.gametip.island_chara_gather_power = {
-	tip = "体力消費",
-}
-_G.pg.base.gametip.island_chara_gather_money = {
-	tip = "資金消費",
-}
-_G.pg.base.gametip.island_chara_gather_range = {
-	tip = "採集対象選択",
-}
-_G.pg.base.gametip.island_chara_gather_start = {
-	tip = "出発",
-}
-_G.pg.base.gametip.island_chara_gather_tag_1 = {
-	tip = "マップ採集",
-}
-_G.pg.base.gametip.island_chara_gather_tag_2 = {
-	tip = "鉱物と木材",
-}
-_G.pg.base.gametip.island_chara_gather_skill_effect = {
-	tip = "体力消費",
-}
-_G.pg.base.gametip.island_chara_gather_done = {
-	tip = "採集完了",
-}
-_G.pg.base.gametip.island_chara_gather_no_target = {
-	tip = "採集対象はありません",
-}
-_G.pg.base.gametip.island_quick_delegation = {
-	tip = "再度配置",
-}
-_G.pg.base.gametip.island_quick_delegation_notenough_encourage = {
-	tip = "$1の体力が不足しているため配置できません",
-}
-_G.pg.base.gametip.island_quick_delegation_notenough_onduty = {
-	tip = "$1は他の作業を行っているため、配置できません",
-}
-_G.pg.base.gametip.LiquorFloor_title = {
-	tip = "春色旅籠Online",
-}
-_G.pg.base.gametip.LiquorFloor_title_en = {
-	tip = "Springtide",
-}
-_G.pg.base.gametip.LiquorFloor_level = {
-	tip = "旅籠レベル",
-}
-_G.pg.base.gametip.LiquorFloor_story_title = {
-	tip = "旅籠物語",
-}
-_G.pg.base.gametip.LiquorFloor_story_title_1 = {
-	tip = "経営日記",
-}
-_G.pg.base.gametip.LiquorFloor_story_title_2 = {
-	tip = "客間逸話",
-}
-_G.pg.base.gametip.LiquorFloor_story_title_3 = {
-	tip = "謎の邂逅",
-}
-_G.pg.base.gametip.LiquorFloor_story_title_4 = {
-	tip = "旅\n籠\n物\n語",
-}
-_G.pg.base.gametip.LiquorFloor_story_go = {
-	tip = "確認",
-}
-_G.pg.base.gametip.LiquorFloor_story_get = {
-	tip = "受取",
-}
-_G.pg.base.gametip.LiquorFloor_story_got = {
-	tip = "受取済",
-}
-_G.pg.base.gametip.LiquorFloor_character_num = {
-	tip = "仲間容量",
-}
-_G.pg.base.gametip.LiquorFloor_character_unlock = {
-	tip = "レベル$1で開放",
-}
-_G.pg.base.gametip.LiquorFloor_character_tip = {
-	tip = "仲間を配置すると一定時間ごとに追加のゼニを入手可能。配置キャラの出撃時に入手する好感度が上昇",
-}
-_G.pg.base.gametip.LiquorFloor_gold_num = {
-	tip = "ゼニ容量",
-}
-_G.pg.base.gametip.LiquorFloor_gold = {
-	tip = "秒間収入",
-}
-_G.pg.base.gametip.LiquorFloor_update = {
-	tip = "強化",
-}
-_G.pg.base.gametip.LiquorFloor_update_unlock = {
-	tip = "旅籠レベルが$1に到達",
-}
-_G.pg.base.gametip.LiquorFloor_update_max = {
-	tip = "LvMAXです",
-}
-_G.pg.base.gametip.LiquorFloor_gold_max_tip = {
-	tip = "ゼニ容量が上限に達しています",
-}
-_G.pg.base.gametip.LiquorFloor_tip = {
-	tip = {
-		{
-			info = "イベント紹介：\n「春色旅籠Online」とは、旅籠施設を経営し仲間たちをもてなし、経営成果に応じて様々なコンテンツを開放し、報酬を入手するイベントになります。\n\n1.旅籠には様々な効果を持つ施設が存在し、施設を強化すると効果が上昇します。一部の強化には限定任務をこなすことで入手できる資源「宝貨」を消費します。\n2.施設「レストラン」「水辺の東屋」「庭園」「池」からは資源「ゼニ」を自動で生産でき、指揮官は手動で生産されたゼニを入手することができます。またこれらの施設を強化する（レベルを上げる）と資源の生産効率が上昇します。なお、各施設は6時間分の生産量のゼニを保存できます。\n3.施設「謎の倉庫」を強化すると、指揮官のゼニ最大所持数がアップします\n4.施設「客間」には仲間を配置することができます。仲間を配置すると、一定時間ごとに追加のゼニを入手することができます。また、「客間」に配置されている仲間が出撃した場合、その出撃で得られる好感度が上昇します。「客間」を強化すると、より多くのキャラを配置することができるようになります\n5.一定数量のゼニを貯めると、旅籠のレベルが上昇します\n6.旅籠や施設のレベルが一定レベルに到達すると、ストーリーなどのコンテンツが開放されます\n7.経営任務をこなすと、資源「宝貨」のほかに限定チャットアイコン、限定家具などの報酬を入手できます",
-		},
-	},
-}
 _G.pg.base.gametip.LiquorFloorTaskUI_title = {
 	tip = "経営任務",
 }
@@ -28140,5 +28031,135 @@ _G.pg.base.gametip.spring_present_tips2 = {
 }
 _G.pg.base.gametip.spring_present_tips3 = {
 	tip = "プレゼントがメールボックスに送られました！",
+}
+_G.pg.base.gametip.island_gift_tip_title = {
+	tip = "体力",
+}
+_G.pg.base.gametip.island_gift_tip = {
+	tip = "贈り物をすると上限以上の体力が無効になります。贈り物を続けますか？",
+}
+_G.pg.base.gametip.island_chara_gather_tip = {
+	tip = "採集",
+}
+_G.pg.base.gametip.island_chara_gather_power = {
+	tip = "体力消費",
+}
+_G.pg.base.gametip.island_chara_gather_money = {
+	tip = "資金消費",
+}
+_G.pg.base.gametip.island_chara_gather_range = {
+	tip = "採集対象選択",
+}
+_G.pg.base.gametip.island_chara_gather_start = {
+	tip = "出発",
+}
+_G.pg.base.gametip.island_chara_gather_tag_1 = {
+	tip = "マップ採集",
+}
+_G.pg.base.gametip.island_chara_gather_tag_2 = {
+	tip = "鉱物と木材",
+}
+_G.pg.base.gametip.island_chara_gather_skill_effect = {
+	tip = "体力消費",
+}
+_G.pg.base.gametip.island_chara_gather_done = {
+	tip = "採集完了",
+}
+_G.pg.base.gametip.island_chara_gather_no_target = {
+	tip = "採集対象はありません",
+}
+_G.pg.base.gametip.island_quick_delegation = {
+	tip = "再度配置",
+}
+_G.pg.base.gametip.island_quick_delegation_notenough_encourage = {
+	tip = "$1の体力が不足しているため配置できません",
+}
+_G.pg.base.gametip.island_quick_delegation_notenough_onduty = {
+	tip = "$1は他の作業を行っているため、配置できません",
+}
+_G.pg.base.gametip.loveletter2018_ui_4 = {
+	tip = "$1のプレゼントを$2のプレゼントに変換しますか？",
+}
+_G.pg.base.gametip.loveletter2018_ui_5 = {
+	tip = "※一度だけ変換できます。すでに入手した思い出Ptも変換先の艦船のものに変更されます",
+}
+_G.pg.base.gametip.LiquorFloor_title = {
+	tip = "春色旅籠Online",
+}
+_G.pg.base.gametip.LiquorFloor_title_en = {
+	tip = "Springtide",
+}
+_G.pg.base.gametip.LiquorFloor_level = {
+	tip = "旅籠レベル",
+}
+_G.pg.base.gametip.LiquorFloor_story_title = {
+	tip = "旅籠物語",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_1 = {
+	tip = "経営日記",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_2 = {
+	tip = "客間逸話",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_3 = {
+	tip = "謎の邂逅",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_4 = {
+	tip = "旅\n籠\n物\n語",
+}
+_G.pg.base.gametip.LiquorFloor_story_go = {
+	tip = "確認",
+}
+_G.pg.base.gametip.LiquorFloor_story_get = {
+	tip = "受取",
+}
+_G.pg.base.gametip.LiquorFloor_story_got = {
+	tip = "受取済",
+}
+_G.pg.base.gametip.LiquorFloor_character_num = {
+	tip = "仲間容量",
+}
+_G.pg.base.gametip.LiquorFloor_character_unlock = {
+	tip = "レベル$1で開放",
+}
+_G.pg.base.gametip.LiquorFloor_character_tip = {
+	tip = "仲間を配置すると一定時間ごとに追加のゼニを入手可能。配置キャラの出撃時に入手する好感度が上昇",
+}
+_G.pg.base.gametip.LiquorFloor_gold_num = {
+	tip = "ゼニ容量",
+}
+_G.pg.base.gametip.LiquorFloor_gold = {
+	tip = "秒間収入",
+}
+_G.pg.base.gametip.LiquorFloor_update = {
+	tip = "強化",
+}
+_G.pg.base.gametip.LiquorFloor_update_unlock = {
+	tip = "旅籠レベルが$1に到達",
+}
+_G.pg.base.gametip.LiquorFloor_update_max = {
+	tip = "LvMAXです",
+}
+_G.pg.base.gametip.LiquorFloor_gold_max_tip = {
+	tip = "ゼニ容量が上限に達しています",
+}
+_G.pg.base.gametip.LiquorFloor_tip = {
+	tip = {
+		{
+			info = "イベント紹介：\n「春色旅籠Online」とは、旅籠施設を経営し仲間たちをもてなし、経営成果に応じて様々なコンテンツを開放し、報酬を入手するイベントになります。\n\n1.旅籠には様々な効果を持つ施設が存在し、施設を強化すると効果が上昇します。一部の強化には限定任務をこなすことで入手できる資源「宝貨」を消費します。\n2.施設「レストラン」「水辺の東屋」「庭園」「池」からは資源「ゼニ」を自動で生産でき、指揮官は手動で生産されたゼニを入手することができます。またこれらの施設を強化する（レベルを上げる）と資源の生産効率が上昇します。なお、各施設は6時間分の生産量のゼニを保存できます。\n3.施設「謎の倉庫」を強化すると、指揮官のゼニ最大所持数がアップします\n4.施設「客間」には仲間を配置することができます。仲間を配置すると、一定時間ごとに追加のゼニを入手することができます。また、「客間」に配置されている仲間が出撃した場合、その出撃で得られる好感度が上昇します。「客間」を強化すると、より多くのキャラを配置することができるようになります\n5.一定数量のゼニを貯めると、旅籠のレベルが上昇します\n6.旅籠や施設のレベルが一定レベルに到達すると、ストーリーなどのコンテンツが開放されます\n7.経営任務をこなすと、資源「宝貨」のほかに限定チャットアイコン、限定家具などの報酬を入手できます",
+		},
+	},
+}
+_G.pg.base.gametip.loveletter2018_ui_1 = {
+	tip = "艦船のバレンタインプレゼント（2018）に変換しますか？\n 一度だけ変換できます。変換されたプレゼントはメールに送られます",
+}
+_G.pg.base.gametip.loveletter2018_ui_2 = {
+	tip = "$1のプレゼントに変換しますか？",
+}
+_G.pg.base.gametip.loveletter2018_ui_3 = {
+	tip = "注意：プレゼントを1度変換すると再度変更できません",
+}
+_G.pg.base.gametip.loveletter2018_ui_tips = {
+	tip = "バレンタインプレゼント（2018）を変換しました",
 }
 
