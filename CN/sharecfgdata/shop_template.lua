@@ -29656,6 +29656,459 @@ _G.pg.base.shop_template[60750] = {
 		},
 	},
 }
+_G.pg.base.shop_template[60751] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "880钻石购买限时建造补给(0312苏盟复刻版本)",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60751,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 880,
+	resource_type = 14,
+	second_text = "",
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		40138,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[60752] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "120钻石购买限时攻略补给(0312苏盟复刻版本)",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60752,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 120,
+	resource_type = 14,
+	second_text = "",
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			5,
+		},
+	},
+	effect_args = {
+		40117,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[60753] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "500钻石购买家具币礼包(0312苏盟复刻版本)",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60753,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 500,
+	resource_type = 14,
+	second_text = "",
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2,
+		},
+	},
+	effect_args = {
+		40106,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[60754] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "300钻石购买心智单元礼包(0312苏盟复刻版本)",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60754,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 300,
+	resource_type = 14,
+	second_text = "",
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			2,
+		},
+	},
+	effect_args = {
+		40119,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[60755] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "300钻石购买换装抵扣礼包（260312苏维埃同盟复刻版本，{namecode:529}）",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60755,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 300,
+	resource_type = 14,
+	second_text = "",
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"level",
+			80,
+		},
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		68217,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[60756] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "300钻石购买换装抵扣礼包（260312苏维埃同盟复刻版本，艾伦·萨姆纳）",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60756,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 300,
+	resource_type = 14,
+	second_text = "",
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"level",
+			80,
+		},
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		68218,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[60757] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "300钻石购买换装抵扣礼包（260312苏维埃同盟复刻版本，火力）",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60757,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 300,
+	resource_type = 14,
+	second_text = "",
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"level",
+			80,
+		},
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		68219,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
 _G.pg.base.shop_template[61001] = {
 	akashi_pick = 0,
 	collaboration_skin_time = "",
@@ -80454,9 +80907,9 @@ _G.pg.base.shop_template[70979] = {
 	time = {
 		{
 			{
-				2025,
+				2026,
+				3,
 				12,
-				11,
 			},
 			{
 				0,
@@ -80466,14 +80919,14 @@ _G.pg.base.shop_template[70979] = {
 		},
 		{
 			{
-				2025,
-				12,
+				2026,
+				3,
 				18,
 			},
 			{
-				12,
-				0,
-				0,
+				23,
+				59,
+				59,
 			},
 		},
 	},
@@ -80512,9 +80965,9 @@ _G.pg.base.shop_template[70980] = {
 	time = {
 		{
 			{
-				2025,
+				2026,
+				3,
 				12,
-				11,
 			},
 			{
 				0,
@@ -80524,14 +80977,14 @@ _G.pg.base.shop_template[70980] = {
 		},
 		{
 			{
-				2025,
-				12,
+				2026,
+				3,
 				18,
 			},
 			{
-				12,
-				0,
-				0,
+				23,
+				59,
+				59,
 			},
 		},
 	},
@@ -80570,9 +81023,9 @@ _G.pg.base.shop_template[70981] = {
 	time = {
 		{
 			{
-				2025,
+				2026,
+				3,
 				12,
-				11,
 			},
 			{
 				0,
@@ -80582,14 +81035,14 @@ _G.pg.base.shop_template[70981] = {
 		},
 		{
 			{
-				2025,
-				12,
+				2026,
+				3,
 				18,
 			},
 			{
-				12,
-				0,
-				0,
+				23,
+				59,
+				59,
 			},
 		},
 	},
@@ -80628,9 +81081,9 @@ _G.pg.base.shop_template[70982] = {
 	time = {
 		{
 			{
-				2025,
+				2026,
+				3,
 				12,
-				11,
 			},
 			{
 				0,
@@ -80640,14 +81093,14 @@ _G.pg.base.shop_template[70982] = {
 		},
 		{
 			{
-				2025,
-				12,
+				2026,
+				3,
 				18,
 			},
 			{
-				12,
-				0,
-				0,
+				23,
+				59,
+				59,
 			},
 		},
 	},
@@ -80686,9 +81139,9 @@ _G.pg.base.shop_template[70983] = {
 	time = {
 		{
 			{
-				2025,
+				2026,
+				3,
 				12,
-				11,
 			},
 			{
 				0,
@@ -80698,14 +81151,14 @@ _G.pg.base.shop_template[70983] = {
 		},
 		{
 			{
-				2025,
-				12,
+				2026,
+				3,
 				18,
 			},
 			{
-				12,
-				0,
-				0,
+				23,
+				59,
+				59,
 			},
 		},
 	},
@@ -80744,9 +81197,9 @@ _G.pg.base.shop_template[70984] = {
 	time = {
 		{
 			{
-				2025,
+				2026,
+				3,
 				12,
-				11,
 			},
 			{
 				0,
@@ -80756,14 +81209,14 @@ _G.pg.base.shop_template[70984] = {
 		},
 		{
 			{
-				2025,
-				12,
+				2026,
+				3,
 				18,
 			},
 			{
-				12,
-				0,
-				0,
+				23,
+				59,
+				59,
 			},
 		},
 	},
@@ -80802,9 +81255,9 @@ _G.pg.base.shop_template[70985] = {
 	time = {
 		{
 			{
-				2025,
+				2026,
+				3,
 				12,
-				11,
 			},
 			{
 				0,
@@ -80814,14 +81267,14 @@ _G.pg.base.shop_template[70985] = {
 		},
 		{
 			{
-				2025,
-				12,
+				2026,
+				3,
 				18,
 			},
 			{
-				12,
-				0,
-				0,
+				23,
+				59,
+				59,
 			},
 		},
 	},
@@ -115314,6 +115767,180 @@ _G.pg.base.shop_template[90443] = {
 		},
 	},
 }
+_G.pg.base.shop_template[90447] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "250529限时皮肤体验：{namecode:529}（国服）",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "skin_shop_timelimit",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 90447,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 1,
+	resource_type = 639,
+	second_text = "",
+	tag = 0,
+	time_second = 172800,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		705021,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[90448] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "250529限时皮肤体验：艾伦·萨姆纳（国服）",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "skin_shop_timelimit",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 90448,
+	limit_args2 = "",
+	num = 1,
+	order = 2,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 1,
+	resource_type = 640,
+	second_text = "",
+	tag = 0,
+	time_second = 172800,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		101452,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[90449] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "250529限时皮肤体验：火力（国服）",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "skin_shop_timelimit",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 90449,
+	limit_args2 = "",
+	num = 1,
+	order = 3,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 1,
+	resource_type = 641,
+	second_text = "",
+	tag = 0,
+	time_second = 172800,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		701111,
+	},
+	time = {
+		{
+			{
+				2026,
+				3,
+				12,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				3,
+				18,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
 _G.pg.base.shop_template[90396] = {
 	akashi_pick = 0,
 	collaboration_skin_time = "",
@@ -121854,7 +122481,7 @@ _G.pg.base.shop_template[270205] = {
 _G.pg.base.shop_template[270601] = {
 	akashi_pick = 0,
 	collaboration_skin_time = "",
-	desc = "宿舍480钻石购买真红谧影 ",
+	desc = "宿舍480钻石购买真红谧影",
 	discount = 0,
 	first_icon = "",
 	first_text = "",
@@ -121888,6 +122515,45 @@ _G.pg.base.shop_template[270601] = {
 	},
 	effect_args = {
 		1461,
+	},
+}
+_G.pg.base.shop_template[270602] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "宿舍480钻石购买知韵沉思",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "dorm3d_gift",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 270602,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 480,
+	resource_type = 14,
+	second_text = "",
+	tag = 0,
+	time = "always",
+	time_second = 0,
+	type = 26,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"count",
+			0,
+			1,
+		},
+	},
+	effect_args = {
+		1462,
 	},
 }
 _G.pg.base.shop_template[270206] = {

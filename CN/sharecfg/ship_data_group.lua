@@ -2545,6 +2545,9 @@ pg.ship_data_group = setmetatable({
 		},
 		[970510] = {
 			30057
+		},
+		[970211] = {
+			30058
 		}
 	},
 	get_id_list_by_handbook_type = {
@@ -3402,7 +3405,8 @@ pg.ship_data_group = setmetatable({
 			30054,
 			30055,
 			30056,
-			30057
+			30057,
+			30058
 		}
 	},
 	all = {
@@ -4253,7 +4257,8 @@ pg.ship_data_group = setmetatable({
 		30054,
 		30055,
 		30056,
-		30057
+		30057,
+		30058
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -26777,6 +26782,16 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"舰队商店兑换",
+				{
+					"SHOP",
+					{
+						warp = "guild"
+					}
+				},
+				0
 			}
 		}
 	},
@@ -26821,6 +26836,16 @@ pg.base.ship_data_group = {
 				"限时活动：抚顺的大冒险II",
 				{
 					""
+				},
+				0
+			},
+			{
+				"舰队商店兑换",
+				{
+					"SHOP",
+					{
+						warp = "guild"
+					}
 				},
 				0
 			}
@@ -39210,6 +39235,41 @@ pg.base.ship_data_group = {
 				"限时活动：春满客栈Online",
 				{
 					""
+				},
+				0
+			}
+		}
+	},
+	[30058] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30058,
+		code = 30058,
+		group_type = 970211,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"A",
+			"E",
+			"B",
+			"B",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"限时活动：META研究室-资讯同步",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9702111
+					}
 				},
 				0
 			}

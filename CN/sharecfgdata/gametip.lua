@@ -3233,7 +3233,7 @@ _G.pg.base.gametip.world_consume_carry_tips = {
 _G.pg.base.gametip.world_boss_help_meta = {
 	tip = {
 		{
-			info = "信标·META功能说明\n\n1. <color=#92fc63>2025.12.11-2026.3.12</color>期间限时开放「约克城·META」的挑战，在此期间指挥官可挑战「约克城·META」累计其同步值获取<color=#92fc63>「约克城·META」角色</color>及其他丰厚奖励\n<color=#ff5c5c>注意：同步值将于时间结束后消失</color>\n\n2.「信标数据」获取与解析\n·指挥官可通过在大型作战中获取「信标数据」，达到指定数据量后进行解析并发现特定信标\n·每日最多可获取 <color=#92fc63>200</color>点，每日0点刷新可获取点数，尚未使用的「信标数据」将会保留。\n·每次解析「信标数据」所需量为<color=#92fc63>100</color>点\n\n3.挑战自己解析的信标\n·第一次挑战自己解析的信标不会消耗石油，从第二次开始，随着挑战次数的增加，每次挑战消耗的石油会从<color=#92fc63>40</color>点逐渐减少至<color=#92fc63>0</color>点。(不会消耗挑战次数)\n·当信标HP归零后视为战斗胜利，指挥官可以领取大量角色同步值奖励。\n·每个被解析的信标只会存在<color=#92fc63>24小时</color>，过期后将会消失，记得向其他指挥官请求支援哦。\n·每次挑战成功后，信标的强度将会提升1阶段，总计15阶段。随着阶段提升，战斗奖励也会提升。\n\n4.挑战其他信标\n·在信标列表界面可以挑战其他指挥官发起求助的信标，参与其他指挥官发布的信标战斗结束后，将会根据造成的伤害程度<color=#92fc63>立刻获得角色同步值奖励</color>。\n·每次挑战需要消耗1点挑战次数，不需要消耗石油\n·每日拥有总计<color=#92fc63>3</color>点挑战次数，每日0点重置\n·同一个信标最多能允许累计30位指挥官进行挑战\n\n5.战斗说明\n·挑战信标约克城·META暂不可使用指挥喵与潜艇\n·战斗结算时不会获得经验值，不会影响舰船心情值\n·战斗中不可中途退出，如果出现网络波动导致掉线的情况：\n①挑战自己解析的信标时将会消耗40点石油(非第一次挑战)，且不会计算已造成的伤害\n②挑战信标列表中的信标时将会消耗挑战次数且无法获得任何奖励\n <color=#92fc63>请在参与作战时保持网络环境畅通</color>\n\n6.火力支援\n随着信标约克城·META挑战的进行，从第31天开始，即2026.1.11~2026.3.12期间，舰队挑战「约克城·META」时将会获得一次额外火力支援。火力支援会对敌人造成伤害，并为敌人施加一个持续伤害的特殊状态（不受任何加成效果影响）。随着本期信标约克城·META开放的日期增加，火力支援提供的伤害也会增加。\n※此支援只会在指挥官自己发现的信标约克城·META战斗中出现，每次挑战均会触发。",
+			info = "信标·META功能说明\n\n1. <color=#92fc63>2026.3.12-2026.6.5</color>期间限时开放「{namecode:552}」的挑战，在此期间指挥官可挑战「{namecode:552}」累计其同步值获取<color=#92fc63>「{namecode:552}」角色</color>及其他丰厚奖励\n<color=#ff5c5c>注意：同步值将于时间结束后消失</color>\n\n2.「信标数据」获取与解析\n·指挥官可通过在大型作战中获取「信标数据」，达到指定数据量后进行解析并发现特定信标\n·每日最多可获取 <color=#92fc63>200</color>点，每日0点刷新可获取点数，尚未使用的「信标数据」将会保留。\n·每次解析「信标数据」所需量为<color=#92fc63>100</color>点\n\n3.挑战自己解析的信标\n·第一次挑战自己解析的信标不会消耗石油，从第二次开始，随着挑战次数的增加，每次挑战消耗的石油会从<color=#92fc63>40</color>点逐渐减少至<color=#92fc63>0</color>点。(不会消耗挑战次数)\n·当信标HP归零后视为战斗胜利，指挥官可以领取大量角色同步值奖励。\n·每个被解析的信标只会存在<color=#92fc63>24小时</color>，过期后将会消失，记得向其他指挥官请求支援哦。\n·每次挑战成功后，信标的强度将会提升1阶段，总计15阶段。随着阶段提升，战斗奖励也会提升。\n\n4.挑战其他信标\n·在信标列表界面可以挑战其他指挥官发起求助的信标，参与其他指挥官发布的信标战斗结束后，将会根据造成的伤害程度<color=#92fc63>立刻获得角色同步值奖励</color>。\n·每次挑战需要消耗1点挑战次数，不需要消耗石油\n·每日拥有总计<color=#92fc63>3</color>点挑战次数，每日0点重置\n·同一个信标最多能允许累计30位指挥官进行挑战\n\n5.战斗说明\n·挑战信标{namecode:552}暂不可使用指挥喵与潜艇\n·战斗结算时不会获得经验值，不会影响舰船心情值\n·战斗中不可中途退出，如果出现网络波动导致掉线的情况：\n①挑战自己解析的信标时将会消耗40点石油(非第一次挑战)，且不会计算已造成的伤害\n②挑战信标列表中的信标时将会消耗挑战次数且无法获得任何奖励\n <color=#92fc63>请在参与作战时保持网络环境畅通</color>\n\n6.火力支援\n随着信标{namecode:552}挑战的进行，从第31天开始，即2026.4.12~2026.6.5期间，舰队挑战「{namecode:552}」时将会获得一次额外火力支援。火力支援会对敌人造成伤害，并为敌人施加一个持续伤害的特殊状态（不受任何加成效果影响）。随着本期信标{namecode:552}开放的日期增加，火力支援提供的伤害也会增加。\n※此支援只会在指挥官自己发现的信标{namecode:552}战斗中出现，每次挑战均会触发。",
 		},
 	},
 }
@@ -6870,7 +6870,7 @@ _G.pg.base.gametip.help_activitypool_3 = {
 	},
 }
 _G.pg.base.gametip.shop_street_activity_tip = {
-	tip = "*活动期间(<color=#539b2c>02.12-03.04</COLOR>)每次刷新必定出现<color=#539b2c>外观装备箱(新春拍卖会)/外观装备箱(瑞光迎岁)</color>\n*活动期间(<color=#539b2c>02.26-03.11</COLOR>)每次刷新必定出现<color=#539b2c>外观装备箱(春满客栈)</color>",
+	tip = "*活动期间(<color=#539b2c>$1</COLOR>)每次刷新必定出现<color=#539b2c>外观装备箱</color>",
 }
 _G.pg.base.gametip.shop_street_Equipment_skin_box_help = {
 	tip = "<color=#A1E400FF>$1</COLOR> 出现时间为：<color=#A1E400FF>$2</COLOR>",
@@ -7833,7 +7833,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "每累计建造200次可获得海上传奇舰船 莫斯科(最多4次)",
+	tip = "每累计建造200次可获得海上传奇舰船 {namecode:529}(最多4次)",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "建武 建造追加！",
@@ -13011,6 +13011,9 @@ _G.pg.base.gametip.query_role_button = {
 _G.pg.base.gametip.query_role_fail = {
 	tip = "查询失败",
 }
+_G.pg.base.gametip.query_role_fail_and_retry = {
+	tip = "存在服务器查询失败，请重试...",
+}
 _G.pg.base.gametip.cumulative_victory_target_tip = {
 	tip = "目标胜利次数：",
 }
@@ -13290,7 +13293,7 @@ _G.pg.base.gametip.meta_help = {
 			info = "·META研究室是进行META角色获取、养成的专用系统\n·META角色拥有<color=#92fc63>「能量激活」</color>、<color=#92fc63>「战术研习」</color>、<color=#92fc63>「舰装强化」</color>、<color=#92fc63>「资讯同步」</color>4个系统模块\n·重复获取的META角色将会自动转换为1个对应的角色结晶，可用于在<color=#92fc63>「能量激活」</color>中使用。\n",
 		},
 		{
-			info = "1.<color=#92fc63>资讯同步</color>\n·<color=#92fc63>2025.12.11-2026.3.12</color>期间限时开放「约克城·META」的「资讯同步」，通过「信标约克城·META」战斗获取其同步值，达到一定同步值可以获取<color=#92fc63>「约克城·META」角色</color>\n·获得META角色后可以通过角色的<color=#92fc63>「资讯同步」</color>模块在<color=#92fc63>上述时间</color>内继续获取包含养成材料在内的丰厚奖励\n·注意：<color=#ff5c5c>「约克城·META」的「资讯同步」将于时间结束后暂时关闭,已累计的同步值也会消失。</color>\n\n2.<color=#92fc63>能量激活</color>\n·META角色达到指定等级后可以使用对应的角色结晶进行激活。激活后可以提升角色星级\n·角色结晶可以通过「资讯同步」奖励获取\n",
+			info = "1.<color=#92fc63>资讯同步</color>\n·<color=#92fc63>2026.3.12-2026.6.5</color>期间限时开放「{namecode:552}」的「资讯同步」，通过「信标{namecode:552}」战斗获取其同步值，达到一定同步值可以获取<color=#92fc63>「{namecode:552}」角色</color>\n·获得META角色后可以通过角色的<color=#92fc63>「资讯同步」</color>模块在<color=#92fc63>上述时间</color>内继续获取包含养成材料在内的丰厚奖励\n·注意：<color=#ff5c5c>「{namecode:552}」的「资讯同步」将于时间结束后暂时关闭,已累计的同步值也会消失。</color>\n\n2.<color=#92fc63>能量激活</color>\n·META角色达到指定等级后可以使用对应的角色结晶进行激活。激活后可以提升角色星级\n·角色结晶可以通过「资讯同步」奖励获取\n",
 		},
 		{
 			info = "3.<color=#92fc63>战术研习</color>\n·完成战术研习任务获得META角色的技能升级经验，部分任务可以重复完成\n·一名角色只能同时进行一项技能的战术研习任务，多名角色之间彼此独立，同时进行\n·一名角色每日最多获取<color=#92fc63>30000</color>点技能升级经验，其中前<color=#92fc63>60%</color>的技能升级经验拥有双倍任务完成效率\n（剩余次数不满2次时不生效）\n·任务类型和可完成次数会随着技能等级升级而刷新\n",
@@ -28218,118 +28221,6 @@ _G.pg.base.gametip.help_chunjie_jiulou_2026 = {
 		},
 	},
 }
-_G.pg.base.gametip.island_gift_tip_title = {
-	tip = "体力",
-}
-_G.pg.base.gametip.island_gift_tip = {
-	tip = "继续赠送该礼物将会超出体力上限，是否继续赠送",
-}
-_G.pg.base.gametip.island_chara_gather_tip = {
-	tip = "采集",
-}
-_G.pg.base.gametip.island_chara_gather_power = {
-	tip = "消耗体力",
-}
-_G.pg.base.gametip.island_chara_gather_money = {
-	tip = "消耗资金",
-}
-_G.pg.base.gametip.island_chara_gather_range = {
-	tip = "选择采集目标",
-}
-_G.pg.base.gametip.island_chara_gather_start = {
-	tip = "出发",
-}
-_G.pg.base.gametip.island_chara_gather_tag_1 = {
-	tip = "野外采集物",
-}
-_G.pg.base.gametip.island_chara_gather_tag_2 = {
-	tip = "矿物及木材",
-}
-_G.pg.base.gametip.island_chara_gather_skill_effect = {
-	tip = "体力消耗",
-}
-_G.pg.base.gametip.island_chara_gather_done = {
-	tip = "采集完成",
-}
-_G.pg.base.gametip.island_chara_gather_no_target = {
-	tip = "无剩余可采集目标",
-}
-_G.pg.base.gametip.island_quick_delegation = {
-	tip = "再次委派",
-}
-_G.pg.base.gametip.island_quick_delegation_notenough_encourage = {
-	tip = "$1体力不足，无法委派",
-}
-_G.pg.base.gametip.island_quick_delegation_notenough_onduty = {
-	tip = "$1正在进行其他工作，无法委派",
-}
-_G.pg.base.gametip.LiquorFloor_title = {
-	tip = "春满客栈Online",
-}
-_G.pg.base.gametip.LiquorFloor_title_en = {
-	tip = "Springtide",
-}
-_G.pg.base.gametip.LiquorFloor_level = {
-	tip = "客栈等级",
-}
-_G.pg.base.gametip.LiquorFloor_story_title = {
-	tip = "客栈故事",
-}
-_G.pg.base.gametip.LiquorFloor_story_title_1 = {
-	tip = "经营日记",
-}
-_G.pg.base.gametip.LiquorFloor_story_title_2 = {
-	tip = "檐下趣闻",
-}
-_G.pg.base.gametip.LiquorFloor_story_title_3 = {
-	tip = "神秘邂逅",
-}
-_G.pg.base.gametip.LiquorFloor_story_title_4 = {
-	tip = "客\n栈\n故\n事",
-}
-_G.pg.base.gametip.LiquorFloor_story_go = {
-	tip = "前往",
-}
-_G.pg.base.gametip.LiquorFloor_story_get = {
-	tip = "领取",
-}
-_G.pg.base.gametip.LiquorFloor_story_got = {
-	tip = "已领取",
-}
-_G.pg.base.gametip.LiquorFloor_character_num = {
-	tip = "角色容量",
-}
-_G.pg.base.gametip.LiquorFloor_character_unlock = {
-	tip = "等级达到$1后解锁",
-}
-_G.pg.base.gametip.LiquorFloor_character_tip = {
-	tip = "角色入住，每隔一段时间可以获得额外的金币，同时入住角色出击获得的好感度提升",
-}
-_G.pg.base.gametip.LiquorFloor_gold_num = {
-	tip = "金币容量",
-}
-_G.pg.base.gametip.LiquorFloor_gold = {
-	tip = "每秒产量",
-}
-_G.pg.base.gametip.LiquorFloor_update = {
-	tip = "升级",
-}
-_G.pg.base.gametip.LiquorFloor_update_unlock = {
-	tip = "客栈等级达到$1",
-}
-_G.pg.base.gametip.LiquorFloor_update_max = {
-	tip = "已达满级",
-}
-_G.pg.base.gametip.LiquorFloor_gold_max_tip = {
-	tip = "金币容量已达上限",
-}
-_G.pg.base.gametip.LiquorFloor_tip = {
-	tip = {
-		{
-			info = "活动简介：\n「春满客栈Online」：经营客栈，获得活动限定奖励\n1.酒楼、水榭楼台、花园、池塘提供金币产出，升级这四个建筑可以提高金币产出效率，每个建筑产出的金币最多留存6小时\n2.神秘仓库可以用来存放金币，升级建筑可以提升金币容量上限\n3.旅舍可以被用来邀请角色入住，角色入住期间每隔一段时间就会提供额外的金币产出，同时携带这些角色出击也将获得好感度提升。升级建筑后，可以邀请更多角色入住\n4.建筑达到一定等级时，继续升级需要消耗元宝。元宝可以通过完成经营要务中的通关活动关卡来获得\n5.客栈等级的提升，需要累积获得一定数量的金币\n6.客栈故事将在客栈等级或指定建筑升级至对应等级后解锁\n7.完成经营要务可以获得头像框、限定家具等活动奖励",
-		},
-	},
-}
 _G.pg.base.gametip.LiquorFloorTaskUI_title = {
 	tip = "经营要务",
 }
@@ -28411,5 +28302,135 @@ _G.pg.base.gametip.spring_present_tips2 = {
 }
 _G.pg.base.gametip.spring_present_tips3 = {
 	tip = "邮件收取成功，请指挥官前往邮箱查看并收取她为您准备的礼物。",
+}
+_G.pg.base.gametip.island_gift_tip_title = {
+	tip = "体力",
+}
+_G.pg.base.gametip.island_gift_tip = {
+	tip = "继续赠送该礼物将会超出体力上限，是否继续赠送",
+}
+_G.pg.base.gametip.island_chara_gather_tip = {
+	tip = "采集",
+}
+_G.pg.base.gametip.island_chara_gather_power = {
+	tip = "消耗体力",
+}
+_G.pg.base.gametip.island_chara_gather_money = {
+	tip = "消耗资金",
+}
+_G.pg.base.gametip.island_chara_gather_range = {
+	tip = "选择采集目标",
+}
+_G.pg.base.gametip.island_chara_gather_start = {
+	tip = "出发",
+}
+_G.pg.base.gametip.island_chara_gather_tag_1 = {
+	tip = "野外采集物",
+}
+_G.pg.base.gametip.island_chara_gather_tag_2 = {
+	tip = "矿物及木材",
+}
+_G.pg.base.gametip.island_chara_gather_skill_effect = {
+	tip = "体力消耗",
+}
+_G.pg.base.gametip.island_chara_gather_done = {
+	tip = "采集完成",
+}
+_G.pg.base.gametip.island_chara_gather_no_target = {
+	tip = "无剩余可采集目标",
+}
+_G.pg.base.gametip.island_quick_delegation = {
+	tip = "再次委派",
+}
+_G.pg.base.gametip.island_quick_delegation_notenough_encourage = {
+	tip = "$1体力不足，无法委派",
+}
+_G.pg.base.gametip.island_quick_delegation_notenough_onduty = {
+	tip = "$1正在进行其他工作，无法委派",
+}
+_G.pg.base.gametip.loveletter2018_ui_4 = {
+	tip = "确认将$1礼物切换$2礼物么？",
+}
+_G.pg.base.gametip.loveletter2018_ui_5 = {
+	tip = "※切换次数仅一次,2018礼物已兑换勋章等级同时切换。",
+}
+_G.pg.base.gametip.LiquorFloor_title = {
+	tip = "春满客栈Online",
+}
+_G.pg.base.gametip.LiquorFloor_title_en = {
+	tip = "Springtide",
+}
+_G.pg.base.gametip.LiquorFloor_level = {
+	tip = "客栈等级",
+}
+_G.pg.base.gametip.LiquorFloor_story_title = {
+	tip = "客栈故事",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_1 = {
+	tip = "经营日记",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_2 = {
+	tip = "檐下趣闻",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_3 = {
+	tip = "神秘邂逅",
+}
+_G.pg.base.gametip.LiquorFloor_story_title_4 = {
+	tip = "客\n栈\n故\n事",
+}
+_G.pg.base.gametip.LiquorFloor_story_go = {
+	tip = "前往",
+}
+_G.pg.base.gametip.LiquorFloor_story_get = {
+	tip = "领取",
+}
+_G.pg.base.gametip.LiquorFloor_story_got = {
+	tip = "已领取",
+}
+_G.pg.base.gametip.LiquorFloor_character_num = {
+	tip = "角色容量",
+}
+_G.pg.base.gametip.LiquorFloor_character_unlock = {
+	tip = "等级达到$1后解锁",
+}
+_G.pg.base.gametip.LiquorFloor_character_tip = {
+	tip = "角色入住，每隔一段时间可以获得额外的金币，同时入住角色出击获得的好感度提升",
+}
+_G.pg.base.gametip.LiquorFloor_gold_num = {
+	tip = "金币容量",
+}
+_G.pg.base.gametip.LiquorFloor_gold = {
+	tip = "每秒产量",
+}
+_G.pg.base.gametip.LiquorFloor_update = {
+	tip = "升级",
+}
+_G.pg.base.gametip.LiquorFloor_update_unlock = {
+	tip = "客栈等级达到$1",
+}
+_G.pg.base.gametip.LiquorFloor_update_max = {
+	tip = "已达满级",
+}
+_G.pg.base.gametip.LiquorFloor_gold_max_tip = {
+	tip = "金币容量已达上限",
+}
+_G.pg.base.gametip.LiquorFloor_tip = {
+	tip = {
+		{
+			info = "活动简介：\n「春满客栈Online」：经营客栈，获得活动限定奖励\n1.酒楼、水榭楼台、花园、池塘提供金币产出，升级这四个建筑可以提高金币产出效率，每个建筑产出的金币最多留存6小时\n2.神秘仓库可以用来存放金币，升级建筑可以提升金币容量上限\n3.旅舍可以被用来邀请角色入住，角色入住期间每隔一段时间就会提供额外的金币产出，同时携带这些角色出击也将获得好感度提升。升级建筑后，可以邀请更多角色入住\n4.建筑达到一定等级时，继续升级需要消耗元宝。元宝可以通过完成经营要务中的通关活动关卡来获得\n5.客栈等级的提升，需要累积获得一定数量的金币\n6.客栈故事将在客栈等级或指定建筑升级至对应等级后解锁\n7.完成经营要务可以获得头像框、限定家具等活动奖励",
+		},
+	},
+}
+_G.pg.base.gametip.loveletter2018_ui_1 = {
+	tip = "是否切换为其他角色的情人节礼物？\n切换次数仅一次，已兑换勋章等级将与2018年情人节礼物同时切换",
+}
+_G.pg.base.gametip.loveletter2018_ui_2 = {
+	tip = "确认要切换为<color=#92fc63>$1</color>的礼物么？",
+}
+_G.pg.base.gametip.loveletter2018_ui_3 = {
+	tip = "注意：切换次数仅一次，切换后不可更改",
+}
+_G.pg.base.gametip.loveletter2018_ui_tips = {
+	tip = "情人节礼物切换成功",
 }
 
