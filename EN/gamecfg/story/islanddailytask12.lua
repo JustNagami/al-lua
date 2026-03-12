@@ -20,7 +20,7 @@
 	scripts = {
 		{
 			animation = "nod",
-			characterId = 0,
+			characterId = 101100,
 			subName = "Manager of the Orchard",
 			say = "Bless your heart, Commander!",
 			face2Face = {
