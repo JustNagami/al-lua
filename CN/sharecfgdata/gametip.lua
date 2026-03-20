@@ -7836,10 +7836,10 @@ _G.pg.base.gametip.buildship_new_tip = {
 	tip = "每累计建造200次可获得海上传奇舰船 {namecode:529}(最多4次)",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "建武 建造追加！",
+	tip = "戈里齐亚、安德里亚·多利亚 建造追加！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "海容、长风 建造追加！",
+	tip = "阿蒂利奥·雷戈洛 建造追加！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "怨仇、百眼巨人 建造追加！",
@@ -19797,7 +19797,7 @@ _G.pg.base.gametip.commander_unsel_lock_flag_tip = {
 	tip = "当前未勾选询问锁定选项，指挥喵训练完成时将不会询问是否锁定指挥喵",
 }
 _G.pg.base.gametip.skin_discount_timelimit = {
-	tip = "道具$1将于$2维护后到期，请及时前往换装商店使用",
+	tip = "道具$1将于$2 24时后到期，请及时前往换装商店使用",
 }
 _G.pg.base.gametip.shan_luan_task_progress_tip = {
 	tip = "已达成: $1",
@@ -21847,17 +21847,17 @@ _G.pg.base.gametip.child2_site_drop_reduce = {
 _G.pg.base.gametip.child2_site_drop_item = {
 	tip = "获得状态「$1」",
 }
-_G.pg.base.gametip.child2_personal_tag1 = {
+_G.pg.base.gametip.child2_personal_id1_tag1 = {
 	tip = "乖巧",
 }
-_G.pg.base.gametip.child2_personal_tag2 = {
+_G.pg.base.gametip.child2_personal_id1_tag2 = {
 	tip = "叛逆",
 }
 _G.pg.base.gametip.child2_personal_change = {
 	tip = "性格改变",
 }
 _G.pg.base.gametip.child2_ship_upgrade_favor = {
-	tip = "娜比娅与$1的熟稔度提升到$2级",
+	tip = "与$1的熟稔度提升到$2级了",
 }
 _G.pg.base.gametip.child2_plan_title_front = {
 	tip = "第",
@@ -22836,7 +22836,7 @@ _G.pg.base.gametip.skin_original_price = {
 	tip = "原价",
 }
 _G.pg.base.gametip.SkinDiscount_Owned_Tips = {
-	tip = "当前已拥有换装（$1/$2）。若已经拥有换装，则对应的换装抵扣券不生效。\n如果已拥有礼盒内全部换装，则返还680钻石，此时不会掉落换装抵扣券。\n确认购买该礼包吗？",
+	tip = "当前已拥有活动返场换装（$1/$2）。若已拥有全部活动返场换装，则该活动掉落的换装抵扣券无法使用。\n是否确认购买该礼包？",
 }
 _G.pg.base.gametip.SkinDiscount_Last_Coupon = {
 	tip = "购买后的换装抵扣券数量将超过可使用换装的数量，部分换装抵扣券将无法使用。\n确认购买换装吗？",
@@ -23705,7 +23705,7 @@ _G.pg.base.gametip.grapihcs3d_setting_bloom_optionname1 = {
 _G.pg.base.gametip.SkinDiscountHelp_Carnival = {
 	tip = {
 		{
-			info = "1.活动期间，以<color=#92fc63>原价</color>（不使用换装折扣券）购买一件「运动时间」、「疾速狂热」系列换装或一个换装礼盒(疾速狂热)时，可领取一张<color=#92fc63>换装折扣券（疾速狂热）</color>\n2.<color=#92fc63>换装折扣券（疾速狂热）</color>可用于购买「运动时间」、「疾速狂热」系列内任意换装时抵扣300钻石（购买福袋时不可抵扣）\n3.未使用的<color=#92fc63>换装折扣券（疾速狂热）</color>将会在活动结束后（2025年10月22日23:59:59）消失",
+			info = "1.活动期间，以<color=#92fc63>原价</color>（不使用换装折扣券）购买一件「宴会礼服」系列换装或一个换装礼盒(宴会礼服)时，可领取一张<color=#92fc63>换装折扣券（宴会礼服）</color>\n2.<color=#92fc63>换装折扣券（宴会礼服）</color>可用于购买「宴会礼服」系列内任意换装时抵扣300钻石（购买福袋时不可抵扣）\n3.未使用的<color=#92fc63>换装折扣券（宴会礼服）</color>将会在活动结束后（2026年4月8日23:59:59）消失",
 		},
 	},
 }
@@ -28193,6 +28193,15 @@ _G.pg.base.gametip.loveactivity_ui_12 = {
 _G.pg.base.gametip.loveactivity_ui_13 = {
 	tip = "新的情人节信件已解锁",
 }
+_G.pg.base.gametip.child_cg_buy = {
+	tip = "确认消耗$1物资<icon name=gold w=0.4 h=0.4/>购买：$2？",
+}
+_G.pg.base.gametip.child_polaroid_buy = {
+	tip = "确认消耗$1物资<icon name=gold w=0.4 h=0.4/>购买：$2？",
+}
+_G.pg.base.gametip.child_could_buy = {
+	tip = "消耗<icon name=gold w=0.4 h=0.4/>解锁",
+}
 _G.pg.base.gametip.loveactivity_ui_14 = {
 	tip = "$1幸福共鸣勋章",
 }
@@ -28348,6 +28357,21 @@ _G.pg.base.gametip.island_quick_delegation_notenough_encourage = {
 _G.pg.base.gametip.island_quick_delegation_notenough_onduty = {
 	tip = "$1正在进行其他工作，无法委派",
 }
+_G.pg.base.gametip.child_plan_skip_event = {
+	tip = "跳过随机事件动画",
+}
+_G.pg.base.gametip.child_buy_memory_tip = {
+	tip = "一周目通关后可使用物资解锁记忆",
+}
+_G.pg.base.gametip.child_buy_polaroid_tip = {
+	tip = "一周目通关后可使用物资解锁瞬间",
+}
+_G.pg.base.gametip.child_buy_ending_tip = {
+	tip = "一周目通关后可使用物资解锁结局",
+}
+_G.pg.base.gametip.child_buy_collect_success = {
+	tip = "购买成功！",
+}
 _G.pg.base.gametip.loveletter2018_ui_4 = {
 	tip = "确认将$1礼物切换$2礼物么？",
 }
@@ -28432,5 +28456,306 @@ _G.pg.base.gametip.loveletter2018_ui_3 = {
 }
 _G.pg.base.gametip.loveletter2018_ui_tips = {
 	tip = "情人节礼物切换成功",
+}
+_G.pg.base.gametip.child2_choose_title = {
+	tip = "命运占卜",
+}
+_G.pg.base.gametip.child2_choose_help = {
+	tip = {
+		{
+			info = "命运占卜：\n\n·在养成计划中，指挥官可以为艾普洛选择一张<color=#ff5c5c>塔罗牌</color>和若干<color=#ff5c5c>“释义”</color>，塔罗牌可以提供<color=#ff5c5c>各项增益</color>，“释义”则可以配合塔罗牌实现<color=#ff5c5c>更为强力的组合效果</color>。\n\n·同一时间最多只可持有一张塔罗牌，如再获得其他塔罗牌时，指挥官可以选择新塔罗牌以<color=#ff5c5c>替换</color>当前塔罗牌，也可以<color=#ff5c5c>放弃选择</color>并获得金钱。\n\n·指挥官可以使用<color=#ff5c5c>重抽次数</color>来重抽可选的塔罗牌，<color=#ff5c5c>每张塔罗牌最多可重抽一次</color>。指挥官同样可以消耗重抽次数以重抽“释义”。\n\n·塔罗牌的各项效果仅在持有时生效，如果持有的塔罗牌被替换，那么其效果也将失效，但已获得的所有“释义”将<color=#ff5c5c>永久保留</color>。\n\n·塔罗牌可以解读出多个“释义”，这些“释义”的名字中会包含其归属的塔罗牌，一般情况下，依照当前塔罗牌收集对应的“释义”可以获得更强的组合效果。\n\n·在塔罗牌详情窗口内，您可以在页面下方确认塔罗牌加成的上下限。\n·<color=#ff5c5c>获取量加成下限</color>：所有已拥有的无条件生效的塔罗牌和释义提供的获取量增益数值之和。\n·<color=#ff5c5c>获取量加成上限</color>：不计塔罗牌和释义生效条件的前提下，所有已拥有的获取量增益数值之和，<color=#ff5c5c>（计算时对各类具有成长性的增益只取基础值。）</color>。\n",
+		},
+	},
+}
+_G.pg.base.gametip.child2_show_detail_desc = {
+	tip = "显示详细描述",
+}
+_G.pg.base.gametip.child2_tarot_empty = {
+	tip = "当前暂无塔罗牌",
+}
+_G.pg.base.gametip.child2_refresh_title = {
+	tip = "剩余重抽次数：",
+}
+_G.pg.base.gametip.child2_choose_hide = {
+	tip = "隐藏",
+}
+_G.pg.base.gametip.child2_choose_giveup = {
+	tip = "放弃选择",
+}
+_G.pg.base.gametip.child2_tarot_tag_current = {
+	tip = "当前塔罗牌 ",
+}
+_G.pg.base.gametip.child2_all_entry_title = {
+	tip = "已解读释义：",
+}
+_G.pg.base.gametip.child2_benefit_moeny_effect = {
+	tip = "当前金钱获取量加成： ",
+}
+_G.pg.base.gametip.child2_benefit_mood_effect = {
+	tip = "当前属性获取量加成： ",
+}
+_G.pg.base.gametip.child2_replace_sure_tip = {
+	tip = "确认替换为新塔罗牌？",
+}
+_G.pg.base.gametip.child2_tarot_title = {
+	tip = "啾啾塔罗牌",
+}
+_G.pg.base.gametip.child2_entry_summary = {
+	tip = "已解读释义数量：",
+}
+_G.pg.base.gametip.child2_benefit_result = {
+	tip = "获取量加成：",
+}
+_G.pg.base.gametip.child2_mood_benefit = {
+	tip = "额外收益：",
+}
+_G.pg.base.gametip.child2_mood_stage1 = {
+	tip = "当前心情阶段：郁郁寡欢",
+}
+_G.pg.base.gametip.child2_mood_stage2 = {
+	tip = "当前心情阶段：心情不佳",
+}
+_G.pg.base.gametip.child2_mood_stage3 = {
+	tip = "当前心情阶段：心平气和",
+}
+_G.pg.base.gametip.child2_mood_stage4 = {
+	tip = "当前心情阶段：心花怒放",
+}
+_G.pg.base.gametip.child2_mood_stage5 = {
+	tip = "当前心情阶段：心花怒放",
+}
+_G.pg.base.gametip.child2_entry_activated = {
+	tip = "生效的加成数量",
+}
+_G.pg.base.gametip.child2_collect_tarot_progress = {
+	tip = "已收集的啾啾塔罗牌：",
+}
+_G.pg.base.gametip.child2_collect_tarot = {
+	tip = "啾啾塔罗牌",
+}
+_G.pg.base.gametip.child2_collect_entry = {
+	tip = "释义",
+}
+_G.pg.base.gametip.child2_collect_talent = {
+	tip = "天赋",
+}
+_G.pg.base.gametip.child2_rank_toggle_attr = {
+	tip = "常规模式",
+}
+_G.pg.base.gametip.child2_rank_toggle_endless = {
+	tip = "长伴模式",
+}
+_G.pg.base.gametip.child2_rank_not_on = {
+	tip = "暂未上榜",
+}
+_G.pg.base.gametip.child2_rank_refresh_tip = {
+	tip = "排行榜每半小时更新一次",
+}
+_G.pg.base.gametip.child2_rank_header_rank = {
+	tip = "排名",
+}
+_G.pg.base.gametip.child2_rank_header_info = {
+	tip = "昵称",
+}
+_G.pg.base.gametip.child2_rank_header_attr = {
+	tip = "通关时总属性",
+}
+_G.pg.base.gametip.child2_replace_title = {
+	tip = "确认替换为新塔罗牌？",
+}
+_G.pg.base.gametip.child2_replace_tip = {
+	tip = "同一时间只能持有一张塔罗牌。获得新塔罗牌后，之前的塔罗牌将被替换。\n已获得的所有释义都将保留。",
+}
+_G.pg.base.gametip.child2_tarot_tag_replace = {
+	tip = "新塔罗牌",
+}
+_G.pg.base.gametip.child2_replace_cancel = {
+	tip = "取消",
+}
+_G.pg.base.gametip.child2_replace_sure = {
+	tip = "确认替换",
+}
+_G.pg.base.gametip.child2_nailing_game_tip = {
+	tip = "点击“敲！”按钮，，把黑色钉子砸入木板吧！",
+}
+_G.pg.base.gametip.child2_nailing_game_count = {
+	tip = "剩余机会：",
+}
+_G.pg.base.gametip.child2_nailing_game_score = {
+	tip = "当前得分：",
+}
+_G.pg.base.gametip.child2_benefit_summary = {
+	tip = "获取量加成下限：",
+}
+_G.pg.base.gametip.child2_word_giveup = {
+	tip = "放弃升级",
+}
+_G.pg.base.gametip.child2_rank_header_wave = {
+	tip = "最高陪伴回合",
+}
+_G.pg.base.gametip.child2_personal_id2_tag1 = {
+	tip = "内向",
+}
+_G.pg.base.gametip.child2_personal_id2_tag2 = {
+	tip = "外向",
+}
+_G.pg.base.gametip.child2_go_shop = {
+	tip = "前往占星馆",
+}
+_G.pg.base.gametip.child2_scratch_minigame_help = {
+	tip = {
+		{
+			info = " 滑动屏幕刮开图层可获取奖励。\n\n有机会获得释义和属性等各项奖励！\n\n<color=#ff5c5c>一等奖：</color>\n·随机释义、随机塔罗牌、大量属性、大量金钱、行动力、心情中的一项。\n\n<color=#ff5c5c>二等奖：</color>\n·随机释义、中量属性、中量金钱、行动力、心情中的一项。\n\n<color=#ff5c5c>三等奖：</color>\n·少量属性、少量金钱中的一项。",
+		},
+	},
+}
+_G.pg.base.gametip.child2_endless_sure_tip = {
+	tip = "在长伴模式中，指挥官可以与艾普洛在虚拟小镇中继续生活。\n\n长伴模式的<color=#ff5c5c>考核频率和难度将增加</color>，如果艾普洛<color=#ff5c5c>没能通过考核</color>则长伴模式将<color=#ff5c5c>终止</color>，并根据已伴随的最高回合数计入排行。",
+}
+_G.pg.base.gametip.child2_endless_stage = {
+	tip = "长伴模式",
+}
+_G.pg.base.gametip.child2_cur_wave = {
+	tip = "第$1回合",
+}
+_G.pg.base.gametip.child2_endless_attrs_value = {
+	tip = "当前总属性：$1",
+}
+_G.pg.base.gametip.child2_endless_boss_value = {
+	tip = "考核需求：$1",
+}
+_G.pg.base.gametip.child2_endless_assest_wave = {
+	tip = "长伴模式-第$1回合",
+}
+_G.pg.base.gametip.child2_endless_history_wave = {
+	tip = "最高长伴回合数：第$1回合",
+}
+_G.pg.base.gametip.child2_endless_current_wave = {
+	tip = "当前长伴回合数：第$1回合",
+}
+_G.pg.base.gametip.child2_endless_reset_tip = {
+	tip = "当前回合数已记录，是否确认重置养成？",
+}
+_G.pg.base.gametip.child2_hard = {
+	tip = "进阶模式",
+}
+_G.pg.base.gametip.child2_hard_enter = {
+	tip = "进入养成计划（进阶）",
+}
+_G.pg.base.gametip.child2_switch_sure = {
+	tip = "进阶模式下将解锁更多塔罗牌和释义，但挑战目标也会更高，是否确认切换模式？\n<color=#f37a86>当前模式的所有进度都将丢失，但已计入排行榜的数据不会重置。</color>",
+}
+_G.pg.base.gametip.child2_collect_entry_progress = {
+	tip = "已解读释义数量",
+}
+_G.pg.base.gametip.child2_collect_talent_progress = {
+	tip = "已获得天赋数量",
+}
+_G.pg.base.gametip.child2_word_upgrade = {
+	tip = "升级",
+}
+_G.pg.base.gametip.child2_nailing_minigame_help = {
+	tip = {
+		{
+			info = "在锤子移动到黑色钉子上方的瞬间按下“<color=#ff5c5c>敲！</color>”按钮，可将黑色钉子砸入木板，注意要避开红色钉子哦。\n\n下砸需要消耗机会，每砸下一颗钉子可+1分，砸到模板不加分，砸到红色钉子则-1分。次数用尽后将根据得分结算奖励。\n\n有机会获得释义和属性等各项奖励！\n\n<color=#ff5c5c>一等奖：</color>\n·限定释义、塔罗牌、大量属性、大量金钱、行动力、心情中的一项。\n\n<color=#ff5c5c>二等奖：</color>：\n·限定释义、中量属性、中量金钱、行动力、心情中的一项。\n\n<color=#ff5c5c>三等奖：</color>：\n·少量属性、少量金钱中的一项。",
+		},
+	},
+}
+_G.pg.base.gametip.child2_nailing_game_result2 = {
+	tip = "得分：",
+}
+_G.pg.base.gametip.child2_game_endless_cnt = {
+	tip = "长伴回合：$1",
+}
+_G.pg.base.gametip.cultivating_plant_task_title = {
+	tip = "完成一周目：",
+}
+_G.pg.base.gametip.cultivating_plant_island_task = {
+	tip = "前往岛屿完成计划",
+}
+_G.pg.base.gametip.cultivating_plant_part_1 = {
+	tip = "前往养成计划一期",
+}
+_G.pg.base.gametip.cultivating_plant_part_2 = {
+	tip = "前往养成计划二期",
+}
+_G.pg.base.gametip.cultivating_plant_part_3 = {
+	tip = "前往养成计划三期",
+}
+_G.pg.base.gametip.child2_priority_tip = {
+	tip = "请先选择塔罗牌或释义",
+}
+_G.pg.base.gametip.child2_cur_round_temp = {
+	tip = "临时回合",
+}
+_G.pg.base.gametip.child2_nailing_game_result = {
+	tip = "得分：",
+}
+_G.pg.base.gametip.child2_benefit_summary2 = {
+	tip = "获取量加成上限：",
+}
+_G.pg.base.gametip.child2_pool_exhausted = {
+	tip = "无可重抽内容",
+}
+_G.pg.base.gametip.child2_secretary_skin_confirm = {
+	tip = "尚未获得换装，前往换装商店购买？",
+}
+_G.pg.base.gametip.child2_secretary_skin_expire = {
+	tip = "当前不在换装售卖时间段内",
+}
+_G.pg.base.gametip.child2_explorer_main_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help13",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help14",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help15",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help16",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help17",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help18",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
 }
 
