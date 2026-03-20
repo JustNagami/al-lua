@@ -156,6 +156,84 @@ pg.island_skin_template = {
 		icon = "skin_5060101",
 		icon_normal = ""
 	},
+	[99000201] = {
+		ship_group = 990002,
+		name = "Time of Innocence",
+		desc = "Pure and straightforward, she explores her surroundings with uncertainty, feeling everything with her hands.",
+		model = 99000201,
+		shop_id = 0,
+		tech_id = 0,
+		shop_goods_id = 0,
+		jump_page = "",
+		id = 99000201,
+		icon = "skin_99000201",
+		icon_normal = ""
+	},
+	[99000202] = {
+		ship_group = 990002,
+		name = "Inexperienced Observer",
+		desc = "A neat and tidy dress. Her focused gaze quietly observes the world.",
+		model = 99000202,
+		shop_id = 0,
+		tech_id = 0,
+		shop_goods_id = 0,
+		jump_page = "",
+		id = 99000202,
+		icon = "skin_99000202",
+		icon_normal = ""
+	},
+	[99000101] = {
+		ship_group = 990001,
+		name = "Cheerful Route to School",
+		desc = "Fully geared up and ready to go! Let's see what kind of pranks she'll pull on her way to school today!",
+		model = 99000101,
+		shop_id = 0,
+		tech_id = 0,
+		shop_goods_id = 0,
+		jump_page = "",
+		id = 99000101,
+		icon = "skin_99000101",
+		icon_normal = ""
+	},
+	[99000102] = {
+		ship_group = 990001,
+		name = "Honor Student's Demeanor",
+		desc = "Her school uniform is a perfect fit. Even when dressed as an honor student, she can't hide the little devil on her shoulder.",
+		model = 99000102,
+		shop_id = 0,
+		tech_id = 0,
+		shop_goods_id = 0,
+		jump_page = "",
+		id = 99000102,
+		icon = "skin_99000102",
+		icon_normal = ""
+	},
+	[99000301] = {
+		ship_group = 990003,
+		name = "Pure White Whisper",
+		desc = "This singularly white outfit is wholly untarnished. It's almost like an extension of her quiet personality.",
+		model = 99000301,
+		shop_id = 0,
+		tech_id = 0,
+		shop_goods_id = 0,
+		jump_page = "",
+		id = 99000301,
+		icon = "skin_99000301",
+		icon_normal = ""
+	},
+	[99000302] = {
+		ship_group = 990003,
+		name = "Serene Dress",
+		desc = "A formal outfit complemented by a jumper skirt. It glows with shy, adorable charm.",
+		model = 99000302,
+		shop_id = 0,
+		tech_id = 0,
+		shop_goods_id = 0,
+		jump_page = "",
+		id = 99000302,
+		icon = "skin_99000302",
+		icon_normal = ""
+	},
 	get_id_list_by_ship_group = {
 		[10110] = {
 			1011001
@@ -192,6 +270,18 @@ pg.island_skin_template = {
 		},
 		[50601] = {
 			5060101
+		},
+		[990002] = {
+			99000201,
+			99000202
+		},
+		[990001] = {
+			99000101,
+			99000102
+		},
+		[990003] = {
+			99000301,
+			99000302
 		}
 	},
 	all = {
@@ -206,6 +296,12 @@ pg.island_skin_template = {
 		3120101,
 		4030301,
 		4990201,
-		5060101
+		5060101,
+		99000201,
+		99000202,
+		99000101,
+		99000102,
+		99000301,
+		99000302
 	}
 }
