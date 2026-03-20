@@ -2,8 +2,11 @@
 	id = "tb2_10",
 	events = {
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "お出かけ機能が解放されました",
 				mode = 2,
@@ -15,8 +18,11 @@
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "「お出かけ」をタップすると大地図に移動します",
 				mode = 2,
@@ -42,8 +48,11 @@
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "「観光旅行」と「生活体験」機能が解放されました",
 				mode = 2,
@@ -55,8 +64,11 @@
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "各ターンの予定を決定する前に、ナビィを街に連れて行くことができます",
 				mode = 2,
@@ -68,8 +80,11 @@
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "ナビィを「観光旅行」に連れて行くと、気分を大幅に上昇させられるだけでなく、貴重な「瞬間」を獲得するチャンスがあります",
 				mode = 2,
@@ -87,8 +102,11 @@
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
 			style = {
 				text = "一方、「生活体験」では、ナビィは労働を通じて報酬を得ることができます",
 				mode = 2,
@@ -106,8 +124,149 @@
 			}
 		},
 		{
-			is3dDorm = false,
 			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				1
+			},
+			style = {
+				text = "バーチャルタウンでの活動はすべて行動力を1ポイント消費します。行動力の上限は3ポイントで、各ターン自動的に補充されます",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "お出かけ機能が解放されました",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "「お出かけ」をタップすると大地図に移動します",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {
+					{
+						lineMode = 2,
+						path = "UICamera/Canvas/UIMain/NewEducateMainUI(Clone)/root/adapt/normal/map",
+						pathIndex = -1
+					}
+				}
+			},
+			ui = {
+				path = "UICamera/Canvas/UIMain/NewEducateMainUI(Clone)/root/adapt/normal/map",
+				pathIndex = -1,
+				fingerPos = {
+					posY = 50,
+					posX = -100
+				}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "「観光旅行」と「生活体験」機能が解放されました",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "各ターンの予定を決定する前に、ローラーを街に連れて行くことができます",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "ローラーを「観光旅行」に連れて行くと、気分を大幅に上昇させられるだけでなく、貴重な「瞬間」を獲得するチャンスがあります",
+				mode = 2,
+				dir = -1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {
+					{
+						lineMode = 2,
+						path = "UICamera/Canvas/UIMain/NewEducateMapUI(Clone)/map/content/travel",
+						pathIndex = -1
+					}
+				}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
+			style = {
+				text = "一方、「生活体験」では、ローラーは労働を通じて報酬を得ることができます",
+				mode = 2,
+				dir = 1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {
+					{
+						lineMode = 2,
+						path = "UICamera/Canvas/UIMain/NewEducateMapUI(Clone)/map/content/work",
+						pathIndex = -1
+					}
+				}
+			}
+		},
+		{
+			alpha = 0.4,
+			is3dDorm = false,
+			code = {
+				2
+			},
 			style = {
 				text = "バーチャルタウンでの活動はすべて行動力を1ポイント消費します。行動力の上限は3ポイントで、各ターン自動的に補充されます",
 				mode = 2,

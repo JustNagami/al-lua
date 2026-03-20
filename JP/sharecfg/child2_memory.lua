@@ -175,6 +175,209 @@ pg.child2_memory = {
 		pic = "bg_project_oceana_cg22",
 		lua = "LINGYANGZHEYANGCHENGJIHUA30"
 	},
+	[201] = {
+		desc = "スカベンジャー育成計画、始動！",
+		character = 2,
+		id = 201,
+		pic = "bg_project_explorer_cg33",
+		lua = "TANSUOZHEYANGCHENGJIHUA1"
+	},
+	[202] = {
+		desc = "初々しい登校日",
+		character = 2,
+		id = 202,
+		pic = "bg_project_explorer_cg38",
+		lua = "TANSUOZHEYANGCHENGJIHUA3"
+	},
+	[203] = {
+		desc = "メリーゴーラウンド",
+		character = 2,
+		id = 203,
+		pic = "bg_project_explorer_cg36",
+		lua = "TANSUOZHEYANGCHENGJIHUA4"
+	},
+	[204] = {
+		desc = "冬の温もり",
+		character = 2,
+		id = 204,
+		pic = "bg_project_explorer_cg37",
+		lua = "TANSUOZHEYANGCHENGJIHUA5"
+	},
+	[205] = {
+		desc = "うさぎたちとの一日",
+		character = 2,
+		id = 205,
+		pic = "bg_project_explorer_cg34",
+		lua = "TANSUOZHEYANGCHENGJIHUA6"
+	},
+	[206] = {
+		desc = "花咲く木の下",
+		character = 2,
+		id = 206,
+		pic = "bg_project_explorer_cg35",
+		lua = "TANSUOZHEYANGCHENGJIHUA7"
+	},
+	[207] = {
+		desc = "ブランコでの約束",
+		character = 2,
+		id = 207,
+		pic = "bg_project_explorer_cg39",
+		lua = "TANSUOZHEYANGCHENGJIHUA8"
+	},
+	[208] = {
+		desc = "軽やかな期待Ⅰ",
+		character = 2,
+		id = 208,
+		pic = "bg_project_explorer_cg9",
+		lua = "TANSUOZHEYANGCHENGJIHUA9"
+	},
+	[209] = {
+		desc = "軽やかな期待Ⅱ",
+		character = 2,
+		id = 209,
+		pic = "bg_project_explorer_cg9",
+		lua = "TANSUOZHEYANGCHENGJIHUA10"
+	},
+	[210] = {
+		desc = "真夏のスプラッシュバトル",
+		character = 2,
+		id = 210,
+		pic = "bg_project_explorer_cg2",
+		lua = "TANSUOZHEYANGCHENGJIHUA11"
+	},
+	[211] = {
+		desc = "カブトムシの味",
+		character = 2,
+		id = 211,
+		pic = "bg_project_explorer_cg6",
+		lua = "TANSUOZHEYANGCHENGJIHUA12"
+	},
+	[212] = {
+		desc = "深夜の修復作業",
+		character = 2,
+		id = 212,
+		pic = "bg_project_explorer_cg7",
+		lua = "TANSUOZHEYANGCHENGJIHUA13"
+	},
+	[213] = {
+		desc = "絵の中の風景",
+		character = 2,
+		id = 213,
+		pic = "bg_project_explorer_cg1",
+		lua = "TANSUOZHEYANGCHENGJIHUA14"
+	},
+	[214] = {
+		desc = "雨の中のひと時",
+		character = 2,
+		id = 214,
+		pic = "bg_project_explorer_cg4",
+		lua = "TANSUOZHEYANGCHENGJIHUA15"
+	},
+	[215] = {
+		desc = "美しき冬を残して",
+		character = 2,
+		id = 215,
+		pic = "bg_project_explorer_cg3",
+		lua = "TANSUOZHEYANGCHENGJIHUA16"
+	},
+	[216] = {
+		desc = "見習航海士日誌",
+		character = 2,
+		id = 216,
+		pic = "bg_project_explorer_cg5",
+		lua = "TANSUOZHEYANGCHENGJIHUA17"
+	},
+	[217] = {
+		desc = "最愛のあなたと、共に明日へⅠ",
+		character = 2,
+		id = 217,
+		pic = "bg_project_explorer_cg8",
+		lua = "TANSUOZHEYANGCHENGJIHUA18"
+	},
+	[218] = {
+		desc = "最愛のあなたと、共に明日へⅡ",
+		character = 2,
+		id = 218,
+		pic = "bg_project_explorer_cg8",
+		lua = "TANSUOZHEYANGCHENGJIHUA19"
+	},
+	[219] = {
+		desc = "オシャレへの第一歩Ⅰ",
+		character = 2,
+		id = 219,
+		pic = "bg_project_explorer_cg30",
+		lua = "TANSUOZHEYANGCHENGJIHUA20"
+	},
+	[220] = {
+		desc = "オシャレへの第一歩Ⅱ",
+		character = 2,
+		id = 220,
+		pic = "bg_project_explorer_cg30",
+		lua = "TANSUOZHEYANGCHENGJIHUA21"
+	},
+	[221] = {
+		desc = "少女の秘密",
+		character = 2,
+		id = 221,
+		pic = "bg_project_explorer_cg27",
+		lua = "TANSUOZHEYANGCHENGJIHUA22"
+	},
+	[222] = {
+		desc = "心に映る綺麗な品々",
+		character = 2,
+		id = 222,
+		pic = "bg_project_explorer_cg29",
+		lua = "TANSUOZHEYANGCHENGJIHUA23"
+	},
+	[223] = {
+		desc = "弦に込められた思い",
+		character = 2,
+		id = 223,
+		pic = "bg_project_explorer_cg28",
+		lua = "TANSUOZHEYANGCHENGJIHUA24"
+	},
+	[224] = {
+		desc = "この甘さをあなたに",
+		character = 2,
+		id = 224,
+		pic = "bg_project_explorer_cg24",
+		lua = "TANSUOZHEYANGCHENGJIHUA25"
+	},
+	[225] = {
+		desc = "写真に刻まれた春",
+		character = 2,
+		id = 225,
+		pic = "bg_project_explorer_cg25",
+		lua = "TANSUOZHEYANGCHENGJIHUA26"
+	},
+	[226] = {
+		desc = "初めての占い",
+		character = 2,
+		id = 226,
+		pic = "bg_project_explorer_cg26",
+		lua = "TANSUOZHEYANGCHENGJIHUA27"
+	},
+	[227] = {
+		desc = "共に歩む未来Ⅰ",
+		character = 2,
+		id = 227,
+		pic = "bg_project_explorer_cg31",
+		lua = "TANSUOZHEYANGCHENGJIHUA28"
+	},
+	[228] = {
+		desc = "共に歩む未来Ⅱ",
+		character = 2,
+		id = 228,
+		pic = "bg_project_explorer_cg31",
+		lua = "TANSUOZHEYANGCHENGJIHUA29"
+	},
+	[229] = {
+		desc = "新しいスタート",
+		character = 2,
+		id = 229,
+		pic = "bg_project_explorer_cg32",
+		lua = "TANSUOZHEYANGCHENGJIHUA30"
+	},
 	get_id_list_by_character = {
 		{
 			101,
@@ -202,6 +405,37 @@ pg.child2_memory = {
 			123,
 			124,
 			125
+		},
+		{
+			201,
+			202,
+			203,
+			204,
+			205,
+			206,
+			207,
+			208,
+			209,
+			210,
+			211,
+			212,
+			213,
+			214,
+			215,
+			216,
+			217,
+			218,
+			219,
+			220,
+			221,
+			222,
+			223,
+			224,
+			225,
+			226,
+			227,
+			228,
+			229
 		}
 	},
 	all = {
@@ -229,6 +463,35 @@ pg.child2_memory = {
 		122,
 		123,
 		124,
-		125
+		125,
+		201,
+		202,
+		203,
+		204,
+		205,
+		206,
+		207,
+		208,
+		209,
+		210,
+		211,
+		212,
+		213,
+		214,
+		215,
+		216,
+		217,
+		218,
+		219,
+		220,
+		221,
+		222,
+		223,
+		224,
+		225,
+		226,
+		227,
+		228,
+		229
 	}
 }

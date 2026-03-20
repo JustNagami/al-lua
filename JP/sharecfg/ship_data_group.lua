@@ -28578,6 +28578,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"小型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "light",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -29067,6 +29078,17 @@ pg.base.ship_data_group = {
 					""
 				},
 				0
+			},
+			{
+				"大型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "heavy",
+						page = 1
+					}
+				},
+				0
 			}
 		}
 	},
@@ -29319,6 +29341,17 @@ pg.base.ship_data_group = {
 				"イベント：緑地伽話",
 				{
 					""
+				},
+				0
+			},
+			{
+				"大型艦建造",
+				{
+					"GETBOAT",
+					{
+						projectName = "heavy",
+						page = 1
+					}
 				},
 				0
 			}
@@ -30158,7 +30191,7 @@ pg.base.ship_data_group = {
 		trans_skill = {},
 		description = {
 			{
-				"イベント：銀界遊廻",
+				"イベント：春色旅籠Online",
 				{
 					""
 				},
@@ -30274,7 +30307,7 @@ pg.base.ship_data_group = {
 		trans_skill = {},
 		description = {
 			{
-				"イベント：銀界遊廻",
+				"イベント：春色旅籠Online",
 				{
 					""
 				},
@@ -30585,7 +30618,7 @@ pg.base.ship_data_group = {
 		trans_skill = {},
 		description = {
 			{
-				"イベント：銀界遊廻",
+				"イベント：春色旅籠Online",
 				{
 					""
 				},
@@ -39503,7 +39536,7 @@ pg.base.ship_data_group = {
 		trans_skill = {},
 		description = {
 			{
-				"イベント：銀界遊廻",
+				"イベント：春色旅籠Online",
 				{
 					""
 				},

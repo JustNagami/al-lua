@@ -109,6 +109,7 @@ pg.pay_data_display = setmetatable({
 		9012,
 		9013,
 		9014,
+		9015,
 		1000,
 		1001,
 		1002,
@@ -13277,6 +13278,120 @@ pg.base.pay_data_display = {
 				1,
 				14,
 				2025
+			}
+		}
+	},
+	[9015] = {
+		limit_group = 0,
+		name = "着せ替えパック（ドレス）",
+		descrip_extra = "※福袋はメールボックスに送られます\n※全部所持している場合自動でダイヤ×680に変換されます",
+		type = 1,
+		second_text = "大量な報酬",
+		type_order = 2,
+		subject = "着せ替えパック（ドレス）",
+		first_text = "ランダム着せ替え",
+		limit_arg = 2,
+		tip = "",
+		money = 1000,
+		tip_open = 0,
+		tag = 2,
+		id = 9015,
+		gem = 0,
+		name_display = "着せ替えパック（ドレス）",
+		package_sort_id = 0,
+		limit_type = 2,
+		akashi_pick = 1,
+		extra_service = 3,
+		package_tag = "",
+		picture = "fudai34",
+		show_group = "",
+		skin_inquire_relation = 86226,
+		package_tag_open = 0,
+		id_str = "com.bilibili.blhx.zuanshi214",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "<size=18>下記着せ替え中の未所持着せ替えをランダムで1着（全部所持している場合自動でダイヤに変換されます）とその他アイテムを入手できます</size>",
+		airijp_id = "com.yostarjp.azurlane.diamond202",
+		extra_service_item = {
+			{
+				2,
+				86226,
+				1
+			},
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					3,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					4,
+					8
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				1000
+			},
+			{
+				2,
+				15008,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81234,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86226,
+				1
 			}
 		}
 	},

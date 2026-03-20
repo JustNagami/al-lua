@@ -35,6 +35,18 @@
 							skip = true
 						},
 						{
+							id = 2023,
+							name = "IK_desk02_idle01_fb01_ZZ",
+							type = "item_action"
+						},
+						{
+							param = "IK_desk02_idle01_fb01_book",
+							name = "furniture/Item/Book_01/pre_db_book_01_IK600510",
+							time = 0,
+							type = "extra_item_action",
+							skip = true
+						},
+						{
 							skip = true,
 							name = "Face_shame_start",
 							type = "action"

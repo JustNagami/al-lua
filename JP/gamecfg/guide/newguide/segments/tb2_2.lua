@@ -3,8 +3,11 @@
 	events = {
 		{
 			is3dDorm = false,
-			delay = 0.5,
 			alpha = 0.3,
+			delay = 0.5,
+			code = {
+				1
+			},
 			style = {
 				text = "獲得したアビリティはこちらで確認できます",
 				mode = 2,
@@ -15,7 +18,30 @@
 				uiset = {
 					{
 						lineMode = 1,
-						path = "OverlayCamera/Overlay/UIMain/NewEducateInfoPanel(Clone)/show_panel/content/talents/content",
+						path = "OverlayCamera/Overlay/UIMain/NewEducateInfoPanel(Clone)/show_panel/content/talent/talents/content",
+						pathIndex = -1
+					}
+				}
+			}
+		},
+		{
+			is3dDorm = false,
+			alpha = 0.3,
+			delay = 0.5,
+			code = {
+				2
+			},
+			style = {
+				text = "タップして今選択したタロットカードを確認しましょう",
+				mode = 2,
+				dir = -1,
+				char = 1,
+				posY = 0,
+				posX = 0,
+				uiset = {
+					{
+						lineMode = 1,
+						path = "OverlayCamera/Overlay/UIMain/NewEducateInfoPanel(Clone)/show_panel/content/talent/talents/content",
 						pathIndex = -1
 					}
 				}

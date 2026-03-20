@@ -256,7 +256,13 @@ pg.island_shop_goods = setmetatable({
 		471051701,
 		471011001,
 		475060101,
-		474030301
+		474030301,
+		99000101,
+		99000102,
+		99000201,
+		99000202,
+		99000301,
+		99000302
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -11034,6 +11040,252 @@ pg.base.island_shop_goods = {
 			{
 				47,
 				4030301,
+				1
+			}
+		}
+	},
+	[99000101] = {
+		desc = "ナビゲーターの離島キャラ用衣装着せ替え・「元気通学路」を入手可能",
+		goods_have = 0,
+		items_model = "",
+		pay_id = 0,
+		have_show = 1,
+		limited_num = 1,
+		limited_show = 0,
+		unlock = "",
+		goods_name = "元気通学路",
+		icon = "IslandGoodsIcon/skin_99000101",
+		goods_detail_type = 4,
+		time = "always",
+		remian_show = 1,
+		pt_award = 0,
+		discount = 0,
+		groups_detail_type = "",
+		id = 99000101,
+		weight = 0,
+		discount_time = "",
+		model_param = {
+			{
+				0,
+				0
+			},
+			0,
+			1
+		},
+		resource_consume = {
+			41,
+			1,
+			2000000
+		},
+		items = {
+			{
+				47,
+				99000101,
+				1
+			}
+		}
+	},
+	[99000102] = {
+		desc = "ナビゲーターの離島キャラ用衣装着せ替え・「優等生のフリ」を入手可能",
+		goods_have = 0,
+		items_model = "",
+		pay_id = 0,
+		have_show = 1,
+		limited_num = 1,
+		limited_show = 0,
+		unlock = "",
+		goods_name = "優等生のフリ",
+		icon = "IslandGoodsIcon/skin_99000102",
+		goods_detail_type = 4,
+		time = "always",
+		remian_show = 1,
+		pt_award = 0,
+		discount = 0,
+		groups_detail_type = "",
+		id = 99000102,
+		weight = 0,
+		discount_time = "",
+		model_param = {
+			{
+				0,
+				0
+			},
+			0,
+			1
+		},
+		resource_consume = {
+			41,
+			1,
+			2000000
+		},
+		items = {
+			{
+				47,
+				99000102,
+				1
+			}
+		}
+	},
+	[99000201] = {
+		desc = "TBの離島キャラ用衣装着せ替え・「幼い時間」を入手可能",
+		goods_have = 0,
+		items_model = "",
+		pay_id = 0,
+		have_show = 1,
+		limited_num = 1,
+		limited_show = 0,
+		unlock = "",
+		goods_name = "幼い時間",
+		icon = "IslandGoodsIcon/skin_99000201",
+		goods_detail_type = 4,
+		time = "always",
+		remian_show = 1,
+		pt_award = 0,
+		discount = 0,
+		groups_detail_type = "",
+		id = 99000201,
+		weight = 0,
+		discount_time = "",
+		model_param = {
+			{
+				0,
+				0
+			},
+			0,
+			1
+		},
+		resource_consume = {
+			41,
+			1,
+			2000000
+		},
+		items = {
+			{
+				47,
+				99000201,
+				1
+			}
+		}
+	},
+	[99000202] = {
+		desc = "TBの離島キャラ用衣装着せ替え・「未熟な観察者」を入手可能",
+		goods_have = 0,
+		items_model = "",
+		pay_id = 0,
+		have_show = 1,
+		limited_num = 1,
+		limited_show = 0,
+		unlock = "",
+		goods_name = "未熟な観察者",
+		icon = "IslandGoodsIcon/skin_99000202",
+		goods_detail_type = 4,
+		time = "always",
+		remian_show = 1,
+		pt_award = 0,
+		discount = 0,
+		groups_detail_type = "",
+		id = 99000202,
+		weight = 0,
+		discount_time = "",
+		model_param = {
+			{
+				0,
+				0
+			},
+			0,
+			1
+		},
+		resource_consume = {
+			41,
+			1,
+			2000000
+		},
+		items = {
+			{
+				47,
+				99000202,
+				1
+			}
+		}
+	},
+	[99000301] = {
+		desc = "スカベンジャーの離島キャラ用衣装着せ替え・「純真の囁き」を入手可能",
+		goods_have = 0,
+		items_model = "",
+		pay_id = 0,
+		have_show = 1,
+		limited_num = 1,
+		limited_show = 0,
+		unlock = "",
+		goods_name = "純白の囁き",
+		icon = "IslandGoodsIcon/skin_99000301",
+		goods_detail_type = 4,
+		time = "always",
+		remian_show = 1,
+		pt_award = 0,
+		discount = 0,
+		groups_detail_type = "",
+		id = 99000301,
+		weight = 0,
+		discount_time = "",
+		model_param = {
+			{
+				0,
+				0
+			},
+			0,
+			1
+		},
+		resource_consume = {
+			41,
+			1,
+			2000000
+		},
+		items = {
+			{
+				47,
+				99000301,
+				1
+			}
+		}
+	},
+	[99000302] = {
+		desc = "スカベンジャーの離島キャラ用衣装着せ替え・「沈静の礼装」を入手可能",
+		goods_have = 0,
+		items_model = "",
+		pay_id = 0,
+		have_show = 1,
+		limited_num = 1,
+		limited_show = 0,
+		unlock = "",
+		goods_name = "沈静の礼装",
+		icon = "IslandGoodsIcon/skin_99000302",
+		goods_detail_type = 4,
+		time = "always",
+		remian_show = 1,
+		pt_award = 0,
+		discount = 0,
+		groups_detail_type = "",
+		id = 99000302,
+		weight = 0,
+		discount_time = "",
+		model_param = {
+			{
+				0,
+				0
+			},
+			0,
+			1
+		},
+		resource_consume = {
+			41,
+			1,
+			2000000
+		},
+		items = {
+			{
+				47,
+				99000302,
 				1
 			}
 		}

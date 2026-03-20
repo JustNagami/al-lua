@@ -7939,10 +7939,10 @@ _G.pg.base.gametip.buildship_new_tip = {
 	tip = "期間限定建造を累計200回行うと「ソビエツキー・ソユーズ」を確定で入手可能！（最大4隻まで）",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「建武」常設実装！",
+	tip = "「ゴリツィア」「アンドレア・ドーリア」常設実装！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「海容」「長風」常設実装！",
+	tip = "「アッティリオ・レゴロ」常設実装！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "「インプラカブル」「アーガス」常設実装！",
@@ -21619,10 +21619,10 @@ _G.pg.base.gametip.child2_site_drop_reduce = {
 _G.pg.base.gametip.child2_site_drop_item = {
 	tip = "状態【$1】入手",
 }
-_G.pg.base.gametip.child2_personal_tag1 = {
+_G.pg.base.gametip.child2_personal_id1_tag1 = {
 	tip = "大人しい",
 }
-_G.pg.base.gametip.child2_personal_tag2 = {
+_G.pg.base.gametip.child2_personal_id1_tag2 = {
 	tip = "ワガママ",
 }
 _G.pg.base.gametip.child2_personal_change = {
@@ -23434,7 +23434,7 @@ _G.pg.base.gametip.grapihcs3d_setting_bloom_optionname1 = {
 _G.pg.base.gametip.SkinDiscountHelp_Carnival = {
 	tip = {
 		{
-			info = "1.キャンペーン期間中、<color=#92fc63>クーポンを使用せずに</color>キャンペーン対象の「スポーツ/レースクイーン」シリーズ着せ替えを購入するか、着せ替えパック（スポーツ/レースクイーン）を購入した場合、キャンペーンページにて<color=#92fc63>着せ替えクーポン（スポーツ/レースクイーン）</color>を入手できます\n 2.<color=#92fc63>着せ替えクーポン（スポーツ/レースクイーン）</color>はキャンペーン対象衣装の着せ替えを購入する際に、ダイヤ×300分割引になります（お得パックを購入する時には使用できません）\n 3.キャンペーン終了時【2025年10月22日(水)　23:59】、未使用の<color=#92fc63>着せ替えクーポン（スポーツ/レースクイーン）</color>は削除されます",
+			info = "1.キャンペーン期間中、<color=#92fc63>クーポンを使用せずに</color>キャンペーン対象の「ドレス」シリーズ着せ替えを購入するか、着せ替えパック（ドレス）を購入した場合、キャンペーンページにて<color=#92fc63>着せ替えクーポン（ドレス）</color>を入手できます\n 2.<color=#92fc63>着せ替えクーポン（ドレス）</color>はキャンペーン対象衣装の着せ替えを購入する際に、ダイヤ×300分割引になります（お得パックを購入する時には使用できません）\n 3.キャンペーン終了時【2026年4月8日(水)　23:59】、未使用の<color=#92fc63>着せ替えクーポン（ドレス）</color>は削除されます",
 		},
 	},
 }
@@ -27922,6 +27922,15 @@ _G.pg.base.gametip.loveactivity_ui_12 = {
 _G.pg.base.gametip.loveactivity_ui_13 = {
 	tip = "バレンタインメッセージ開放",
 }
+_G.pg.base.gametip.child_cg_buy = {
+	tip = "資金<icon name=gold w=0.4 h=0.4/>$1を消費し、回想$2を開放しますか？",
+}
+_G.pg.base.gametip.child_polaroid_buy = {
+	tip = "資金<icon name=gold w=0.4 h=0.4/>$1を消費し、回想$2を開放しますか？",
+}
+_G.pg.base.gametip.child_could_buy = {
+	tip = "<icon name=gold w=0.4 h=0.4/>で開放",
+}
 _G.pg.base.gametip.loveactivity_ui_14 = {
 	tip = "$1思い出勲章",
 }
@@ -28077,6 +28086,21 @@ _G.pg.base.gametip.island_quick_delegation_notenough_encourage = {
 _G.pg.base.gametip.island_quick_delegation_notenough_onduty = {
 	tip = "$1は他の作業を行っているため、配置できません",
 }
+_G.pg.base.gametip.child_plan_skip_event = {
+	tip = "ランダムイベント演出をスキップ",
+}
+_G.pg.base.gametip.child_buy_memory_tip = {
+	tip = "1周目クリア後に回想を解放可能",
+}
+_G.pg.base.gametip.child_buy_polaroid_tip = {
+	tip = "1周目クリア後に瞬間を解放可能",
+}
+_G.pg.base.gametip.child_buy_ending_tip = {
+	tip = "1周目クリア後に資金消費でエンディング回想購入可能",
+}
+_G.pg.base.gametip.child_buy_collect_success = {
+	tip = "開放しました！",
+}
 _G.pg.base.gametip.loveletter2018_ui_4 = {
 	tip = "$1のプレゼントを$2のプレゼントに変換しますか？",
 }
@@ -28161,5 +28185,306 @@ _G.pg.base.gametip.loveletter2018_ui_3 = {
 }
 _G.pg.base.gametip.loveletter2018_ui_tips = {
 	tip = "バレンタインプレゼント（2018）を変換しました",
+}
+_G.pg.base.gametip.child2_choose_title = {
+	tip = "運命占い",
+}
+_G.pg.base.gametip.child2_choose_help = {
+	tip = {
+		{
+			info = "運命占い：\n 所持している「タロットカード」と入手した「タロット解釈」でローラーは様々な強化効果を獲得します。「タロット解釈」は「タロットカード」と組み合わせて更に強力な効果を発揮します。\n タロットカードは同時に1枚しか所持できず、新しいカードを入手した場合、前のカードを捨てることができます。カードを捨てない場合、新しいカードを入手しない代わりに財貨を入手することができます。\n タロットカードは1枚につき、1度だけ引き直すことができます。また、タロット解釈も回数を消費して引き直すことができます。\n タロットカードの効果はカードを所持しているときのみ発揮しますが、そのカードを捨てても、すでに入手した解釈は無効になりません。\nタロットカードは複数の解釈を解放（入手）することができます。解釈の内容にはタロットのカード名が含まれ、そのカードと組み合わせると更に強力な効果を発揮します。\n\n  ·タロット（強化効果）画面では、画面下部に適用中の各種タロット/解釈強化効果の合計値を確認できます。\n ·<color=#ff5c5c>最小強化合計</color>：タロットカードと解釈の「無条件で適用できる効果」の合計強化値を表示します。\n ·<color=#ff5c5c>最大強化合計</color>：タロットカードと解釈の「適用条件を無視した、全効果を適用させる場合」の合計強化値を表示します。\n <color=#ff5c5c>（効果自体が強化される場合、その強化効果の初期効果のみ計算します）</color>。\n",
+		},
+	},
+}
+_G.pg.base.gametip.child2_show_detail_desc = {
+	tip = "詳細解釈確認",
+}
+_G.pg.base.gametip.child2_tarot_empty = {
+	tip = "タロットを所持していません",
+}
+_G.pg.base.gametip.child2_refresh_title = {
+	tip = "引き直し回数残り：",
+}
+_G.pg.base.gametip.child2_choose_hide = {
+	tip = "非表示",
+}
+_G.pg.base.gametip.child2_choose_giveup = {
+	tip = "諦める",
+}
+_G.pg.base.gametip.child2_tarot_tag_current = {
+	tip = "所持タロット",
+}
+_G.pg.base.gametip.child2_all_entry_title = {
+	tip = "適用中解釈：",
+}
+_G.pg.base.gametip.child2_benefit_moeny_effect = {
+	tip = "財貨入手量増加：",
+}
+_G.pg.base.gametip.child2_benefit_mood_effect = {
+	tip = "パラメータ成長増加：",
+}
+_G.pg.base.gametip.child2_replace_sure_tip = {
+	tip = "新しいタロットにしますか？",
+}
+_G.pg.base.gametip.child2_tarot_title = {
+	tip = "饅頭タロット",
+}
+_G.pg.base.gametip.child2_entry_summary = {
+	tip = "獲得済みの解釈数：",
+}
+_G.pg.base.gametip.child2_benefit_result = {
+	tip = "入手量追加：",
+}
+_G.pg.base.gametip.child2_mood_benefit = {
+	tip = "入手量追加：",
+}
+_G.pg.base.gametip.child2_mood_stage1 = {
+	tip = "現在の気分：絶不調",
+}
+_G.pg.base.gametip.child2_mood_stage2 = {
+	tip = "現在の気分：不調",
+}
+_G.pg.base.gametip.child2_mood_stage3 = {
+	tip = "現在の気分：普通",
+}
+_G.pg.base.gametip.child2_mood_stage4 = {
+	tip = "現在の気分：絶好調",
+}
+_G.pg.base.gametip.child2_mood_stage5 = {
+	tip = "現在の気分：絶好調",
+}
+_G.pg.base.gametip.child2_entry_activated = {
+	tip = "適用中効果数：",
+}
+_G.pg.base.gametip.child2_collect_tarot_progress = {
+	tip = "集めたタロット：",
+}
+_G.pg.base.gametip.child2_collect_tarot = {
+	tip = "饅頭タロット",
+}
+_G.pg.base.gametip.child2_collect_entry = {
+	tip = "解釈",
+}
+_G.pg.base.gametip.child2_collect_talent = {
+	tip = "アビリティ",
+}
+_G.pg.base.gametip.child2_rank_toggle_attr = {
+	tip = "ノーマル",
+}
+_G.pg.base.gametip.child2_rank_toggle_endless = {
+	tip = "エンドレス",
+}
+_G.pg.base.gametip.child2_rank_not_on = {
+	tip = "ランク外",
+}
+_G.pg.base.gametip.child2_rank_refresh_tip = {
+	tip = "順位は30分毎に更新されます",
+}
+_G.pg.base.gametip.child2_rank_header_rank = {
+	tip = "順位",
+}
+_G.pg.base.gametip.child2_rank_header_info = {
+	tip = "名前",
+}
+_G.pg.base.gametip.child2_rank_header_attr = {
+	tip = "クリア時パラメータ",
+}
+_G.pg.base.gametip.child2_replace_title = {
+	tip = "新しいタロットにしますか？",
+}
+_G.pg.base.gametip.child2_replace_tip = {
+	tip = "タロットカードは同時に1種類しか所持できません。新しいタロットを入手した場合、古いタロットが失われます。\n適用中の解釈効果は影響されません",
+}
+_G.pg.base.gametip.child2_tarot_tag_replace = {
+	tip = "新タロット",
+}
+_G.pg.base.gametip.child2_replace_cancel = {
+	tip = "戻る",
+}
+_G.pg.base.gametip.child2_replace_sure = {
+	tip = "確定",
+}
+_G.pg.base.gametip.child2_nailing_game_tip = {
+	tip = "タイミングよくハンマーを振り、黒い釘を打とう！",
+}
+_G.pg.base.gametip.child2_nailing_game_count = {
+	tip = "残り回数；",
+}
+_G.pg.base.gametip.child2_nailing_game_score = {
+	tip = "スコア：",
+}
+_G.pg.base.gametip.child2_benefit_summary = {
+	tip = "入手量追加：",
+}
+_G.pg.base.gametip.child2_word_giveup = {
+	tip = "強化を諦める",
+}
+_G.pg.base.gametip.child2_rank_header_wave = {
+	tip = "エンドレス記録",
+}
+_G.pg.base.gametip.child2_personal_id2_tag1 = {
+	tip = "内気",
+}
+_G.pg.base.gametip.child2_personal_id2_tag2 = {
+	tip = "陽気",
+}
+_G.pg.base.gametip.child2_go_shop = {
+	tip = "占い屋へ",
+}
+_G.pg.base.gametip.child2_scratch_minigame_help = {
+	tip = {
+		{
+			info = "スクラッチを削って報酬を手に入れよう！\nタロット解釈（強化効果）やパラメータ成長などの報酬が入手可能！\n報酬は下記になります：\n一等賞：\n·タロットカード、タロット解釈（効果）、パラメータ成長（大）、財貨、行動力、気分から1つを入手できます。\n\n二等賞：\n·タロット解釈（効果）、パラメータ成長（中）、財貨、行動力、気分から1つを入手できます。\n\n三等奖：\n·パラメータ成長（小）、財貨から1つを入手できます。",
+		},
+	},
+}
+_G.pg.base.gametip.child2_endless_sure_tip = {
+	tip = "エンドレスモードでは、ローラーとバーチャルタウンで引き続き生活できます。\nエンドレスモードでは判定の出現頻度と難易度が上昇し、判定を通過できなかった場合ゲームクリアになります。その際、到達したターン数がランキングに集計されます",
+}
+_G.pg.base.gametip.child2_endless_stage = {
+	tip = "エンドレス",
+}
+_G.pg.base.gametip.child2_cur_wave = {
+	tip = "$1ターン目",
+}
+_G.pg.base.gametip.child2_endless_attrs_value = {
+	tip = "パラメータ：$1",
+}
+_G.pg.base.gametip.child2_endless_boss_value = {
+	tip = "判定条件：$1",
+}
+_G.pg.base.gametip.child2_endless_assest_wave = {
+	tip = "エンドレス-$1ターン目",
+}
+_G.pg.base.gametip.child2_endless_history_wave = {
+	tip = "エンドレス記録：$1ターン",
+}
+_G.pg.base.gametip.child2_endless_current_wave = {
+	tip = "エンドレス-$1ターン目",
+}
+_G.pg.base.gametip.child2_endless_reset_tip = {
+	tip = "0",
+}
+_G.pg.base.gametip.child2_hard = {
+	tip = "ハードモード",
+}
+_G.pg.base.gametip.child2_hard_enter = {
+	tip = "ハードモードを開始",
+}
+_G.pg.base.gametip.child2_switch_sure = {
+	tip = "ハードモードではタロットカードやタロット解釈がもっと出現するほか、判定目標が高くなります。モードを切り替えますか？\n<color=#f37a86>現在モードの進捗が失われます。順位に集計されたデータはリセットされません。</color>",
+}
+_G.pg.base.gametip.child2_collect_entry_progress = {
+	tip = "解釈獲得数",
+}
+_G.pg.base.gametip.child2_collect_talent_progress = {
+	tip = "アビリティ獲得数",
+}
+_G.pg.base.gametip.child2_word_upgrade = {
+	tip = "強化",
+}
+_G.pg.base.gametip.child2_nailing_minigame_help = {
+	tip = {
+		{
+			info = "スクラッチを削って報酬を手に入れよう！\nタロット解釈（強化効果）やパラメータ成長などの報酬が入手可能！\n報酬は下記になります：\n一等賞：\n·タロットカード、タロット解釈（効果）、パラメータ成長（大）、財貨、行動力、気分から1つを入手できます。\n\n二等賞：\n·タロット解釈（効果）、パラメータ成長（中）、財貨、行動力、気分から1つを入手できます。\n\n三等奖：\n·パラメータ成長（小）、財貨から1つを入手できます。",
+		},
+	},
+}
+_G.pg.base.gametip.child2_nailing_game_result2 = {
+	tip = "スコア：",
+}
+_G.pg.base.gametip.child2_game_endless_cnt = {
+	tip = "エンドレス：$1ターン目",
+}
+_G.pg.base.gametip.cultivating_plant_task_title = {
+	tip = "一周目をクリア",
+}
+_G.pg.base.gametip.cultivating_plant_island_task = {
+	tip = "離島で該当任務をクリア",
+}
+_G.pg.base.gametip.cultivating_plant_part_1 = {
+	tip = "TB育成Ⅰ期へ",
+}
+_G.pg.base.gametip.cultivating_plant_part_2 = {
+	tip = "TB育成Ⅱ期へ",
+}
+_G.pg.base.gametip.cultivating_plant_part_3 = {
+	tip = "TB育成Ⅲ期へ",
+}
+_G.pg.base.gametip.child2_priority_tip = {
+	tip = "タロットか解釈を選んでください",
+}
+_G.pg.base.gametip.child2_cur_round_temp = {
+	tip = "追加ターン",
+}
+_G.pg.base.gametip.child2_nailing_game_result = {
+	tip = "得点：",
+}
+_G.pg.base.gametip.child2_benefit_summary2 = {
+	tip = "最大強化合計：",
+}
+_G.pg.base.gametip.child2_pool_exhausted = {
+	tip = "引き直せるものがありません",
+}
+_G.pg.base.gametip.child2_secretary_skin_confirm = {
+	tip = "尚未获得换装，前往换装商店购买？",
+}
+_G.pg.base.gametip.child2_secretary_skin_expire = {
+	tip = "販売期間外です",
+}
+_G.pg.base.gametip.child2_explorer_main_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help13",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help14",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help15",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help16",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help17",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/educate_tb_help18",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
 }
 

@@ -35,6 +35,11 @@
 							skip = true
 						},
 						{
+							id = 2023,
+							name = "IK_desk02_idle02_fb02_ZZ",
+							type = "item_action"
+						},
+						{
 							skip = true,
 							name = "Face_shame_start",
 							type = "action"

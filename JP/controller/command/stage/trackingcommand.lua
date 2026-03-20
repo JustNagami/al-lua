@@ -204,12 +204,16 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		end,
 		function(arg_9_0)
 			if var_1_8:IsSupportSubmarineStage() and #var_1_8:getSupportFleet() > 0 then
-				local var_9_0 = getGameset("submarine_support_oil_consume")[1]
+				if var_1_10 then
+					arg_9_0()
+				else
+					local var_9_0 = getGameset("submarine_support_oil_consume")[1]
 
-				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("submarine_support_oil_consume_tip", var_9_0),
-					onYes = arg_9_0
-				})
+					pg.MsgboxMgr.GetInstance():ShowMsgBox({
+						content = i18n("submarine_support_oil_consume_tip", var_9_0),
+						onYes = arg_9_0
+					})
+				end
 			else
 				arg_9_0()
 			end

@@ -1,6 +1,293 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_20 = {
+	[11500031] = {
+		ship_group = 1150003,
+		name = "水辺の女神",
+		hand_id = 13,
+		lover_kiss = "lip02",
+		bgm = "dal-az-theme",
+		illustrator2 = -1,
+		id = 11500031,
+		gyro = 0,
+		group_index = 1,
+		purchase_offset = "",
+		painting = "qinli_2",
+		lover_hand = "hand_2_02",
+		l2d_drag_rate = "",
+		prefab = "qinli_2",
+		shop_type_id = 6,
+		part_scale = "",
+		shop_id = 71239,
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_dynamic_hx = 0,
+		illustrator = -1,
+		bg = "",
+		double_char = 0,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		skeleton_default_skin = "",
+		skin_type = 0,
+		voice_lang = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_voice_calibrate = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "というわけで、水着に着替えてみたのだけど……何よ。言いたいことがあるならはっきり言いなさいよ。……え？ 可愛いし似合ってるから、もっとちゃんと見せてほしい？ ちょ……っ、そういう恥ずかしいことはっきり言わないでくれる！？",
+		voice_actor = 484,
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			6,
+			5
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		shop_offset = {
+			6.3,
+			-628.1,
+			0,
+			0.39
+		},
+		spine_offset_profile = {
+			67,
+			-619,
+			0,
+			0.38
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.162,
+					1.023,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.713,
+					2.49,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.681,
+							2.382,
+							0
+						}
+					}
+				}
+			}
+		},
+		spine_offset = {
+			147.3,
+			-745,
+			0,
+			0.44
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					-1007,
+					-483.75,
+					2,
+					0,
+					120,
+					2
+				},
+				{
+					-1206,
+					671,
+					2,
+					150,
+					0,
+					2
+				},
+				{
+					124,
+					-195,
+					2,
+					0,
+					-120,
+					2
+				}
+			}
+		}
+	},
+	[11500040] = {
+		ship_group = 1150004,
+		name = "四糸乃",
+		hand_id = 5,
+		lover_kiss = "lip01",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 11500040,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "sisinai",
+		lover_hand = "hand_3_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 0,
+		prefab = "sisinai",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		shop_dynamic_hx = 0,
+		bg = "",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "え…あ…あの…「わーお、スペクタクル。一体全体何がおきちゃったのかな？ ここはドコ？」あの…わ、私は…四糸乃……この子は…よしのんです。少しお話…してくれますか？",
+		voice_actor = 485,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					2.261,
+					2.157,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.998,
+					1.881,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					2.158,
+					3.609,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.824,
+							2.438,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[11500041] = {
 		ship_group = 1150004,
 		name = "シークレットベース",

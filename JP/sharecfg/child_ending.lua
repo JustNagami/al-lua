@@ -1,12 +1,17 @@
 ﻿pg = pg or {}
 pg.child_ending = {
 	{
-		group = 1,
-		name = "写真モデル",
 		pic = "bg_project_tb_cg26",
-		id = 1,
+		name = "写真モデル",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 1,
+		lock_name = "写真モデル",
 		polaroid_condition = 201,
 		level = 1,
+		id = 1,
+		pic_preview = "tb_ending1",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -33,12 +38,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 2,
-		name = "凄腕アーティスト",
 		pic = "bg_project_tb_cg27",
-		id = 2,
+		name = "凄腕アーティスト",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 2,
+		lock_name = "凄腕アーティスト",
 		polaroid_condition = 201,
 		level = 1,
+		id = 2,
+		pic_preview = "tb_ending2",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -70,12 +80,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 3,
-		name = "人気ミュージシャン",
 		pic = "bg_project_tb_cg28",
-		id = 3,
+		name = "人気ミュージシャン",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 3,
+		lock_name = "人気ミュージシャン",
 		polaroid_condition = 201,
 		level = 1,
+		id = 3,
+		pic_preview = "tb_ending3",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -97,12 +112,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 4,
-		name = "注目ニュースター",
 		pic = "bg_project_tb_cg29",
-		id = 4,
+		name = "注目ニュースター",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 4,
+		lock_name = "注目ニュースター",
 		polaroid_condition = 203,
 		level = 1,
+		id = 4,
+		pic_preview = "tb_ending4",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -134,12 +154,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 5,
-		name = "達人コック",
 		pic = "bg_project_tb_cg30",
-		id = 5,
+		name = "達人コック",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 5,
+		lock_name = "達人コック",
 		polaroid_condition = 203,
 		level = 1,
+		id = 5,
+		pic_preview = "tb_ending5",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -166,12 +191,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 6,
-		name = "有望ライター",
 		pic = "bg_project_tb_cg31",
-		id = 6,
+		name = "有望ライター",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 6,
+		lock_name = "有望ライター",
 		polaroid_condition = 203,
 		level = 1,
+		id = 6,
+		pic_preview = "tb_ending6",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -198,12 +228,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 7,
-		name = "期待アスリート",
 		pic = "bg_project_tb_cg32",
-		id = 7,
+		name = "期待アスリート",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 7,
+		lock_name = "期待アスリート",
 		polaroid_condition = 202,
 		level = 1,
+		id = 7,
+		pic_preview = "tb_ending7",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -225,12 +260,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 8,
-		name = "奇才ビジネスウーマン",
 		pic = "bg_project_tb_cg33",
-		id = 8,
+		name = "奇才ビジネスウーマン",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 8,
+		lock_name = "奇才ビジネスウーマン",
 		polaroid_condition = 202,
 		level = 1,
+		id = 8,
+		pic_preview = "tb_ending8",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -257,12 +297,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 9,
-		name = "溌剌ファーマー",
 		pic = "bg_project_tb_cg34",
-		id = 9,
+		name = "溌剌ファーマー",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 9,
+		lock_name = "溌剌ファーマー",
 		polaroid_condition = 202,
 		level = 1,
+		id = 9,
+		pic_preview = "tb_ending9",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -294,12 +339,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 10,
-		name = "日常は繰り返す",
 		pic = "bg_project_tb_cg35",
-		id = 10,
+		name = "日常は繰り返す",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 10,
+		lock_name = "日常は繰り返す",
 		polaroid_condition = 0,
 		level = 1,
+		id = 10,
+		pic_preview = "tb_ending10",
+		sp_bg = 2,
 		condition = {
 			{
 				1,
@@ -327,12 +377,17 @@ pg.child_ending = {
 		}
 	},
 	{
-		group = 11,
-		name = "外に出ることなく",
 		pic = "bg_project_tb_cg36",
-		id = 11,
+		name = "外に出ることなく",
+		unlock_desc = "開放可",
+		child_cg_basic_price = 2000,
+		group = 11,
+		lock_name = "外に出ることなく",
 		polaroid_condition = 0,
 		level = 1,
+		id = 11,
+		pic_preview = "tb_ending11",
+		sp_bg = 2,
 		condition = {},
 		performance = {
 			143
