@@ -214,9 +214,19 @@ function var_0_2.ChangeState(arg_18_0, arg_18_1)
 		local var_18_0 = arg_18_0._dataProxy._dungeonInfo.beginStoy
 
 		if var_18_0 then
-			pg.NewStoryMgr.GetInstance():ForceAutoPlay(var_18_0, function()
+			local var_18_1 = getProxy(ChapterProxy)
+
+			if var_18_1 then
+				if var_18_1:GetContinuousData(SYSTEM_SCENARIO) then
+					arg_18_0._battleCommand:DoPrologue()
+				else
+					pg.NewStoryMgr.GetInstance():ForceAutoPlay(var_18_0, function()
+						arg_18_0._battleCommand:DoPrologue()
+					end)
+				end
+			else
 				arg_18_0._battleCommand:DoPrologue()
-			end)
+			end
 		else
 			arg_18_0._battleCommand:DoPrologue()
 		end
