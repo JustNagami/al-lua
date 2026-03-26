@@ -137,6 +137,7 @@ pg.pay_data_display = setmetatable({
 		1024,
 		1025,
 		1026,
+		1027,
 		1303,
 		2001,
 		2002,
@@ -15684,6 +15685,91 @@ pg.base.pay_data_display = {
 		},
 		sub_display = {
 			7027,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	},
+	[1027] = {
+		limit_group = 0,
+		name = "クルーズパス(26春)",
+		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
+		type = 0,
+		second_text = "特別報酬開放",
+		type_order = 6,
+		subject = "クルーズパス(26春)",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 1200,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 1027,
+		name_display = "クルーズパス(26春)",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "battlepass_1",
+		extra_service = 4,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.bilibili.blhx.battlepass29",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "購入すると、シーズン任務進捗Pt1500を入手し、さらにSP報酬を開放",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.seasonpass28",
+		extra_service_item = {
+			{
+				1,
+				4028,
+				1500
+			},
+			{
+				8,
+				65116,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					4,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7028,
 			1500
 		},
 		ignorePlatform = {},

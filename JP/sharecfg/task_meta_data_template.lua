@@ -352,6 +352,11 @@ pg.task_meta_data_template = setmetatable({
 		100523,
 		100524,
 		100525,
+		100541,
+		100542,
+		100543,
+		100544,
+		100545,
 		100531,
 		100532,
 		100533,
@@ -529,6 +534,10 @@ pg.task_meta_data_template = setmetatable({
 		200432,
 		200433,
 		200434,
+		200451,
+		200452,
+		200453,
+		200454,
 		200441,
 		200442,
 		200443,
@@ -3337,6 +3346,46 @@ pg.base.task_meta_data_template = {
 		target_num = 1,
 		target_id = "100"
 	},
+	[100541] = {
+		target_id_2 = "970210",
+		sub_type = 180,
+		desc = "ケルン(META)を編成した艦隊で1回戦闘に勝利する",
+		id = 100541,
+		target_num = 1,
+		target_id = "0"
+	},
+	[100542] = {
+		target_id_2 = "970210",
+		sub_type = 180,
+		desc = "ケルン(META)を編成した艦隊でLV30+の敵艦隊を撃破する",
+		id = 100542,
+		target_num = 1,
+		target_id = "30"
+	},
+	[100543] = {
+		target_id_2 = "970210",
+		sub_type = 180,
+		desc = "ケルン(META)を編成した艦隊でLV55+の敵艦隊を撃破する",
+		id = 100543,
+		target_num = 1,
+		target_id = "55"
+	},
+	[100544] = {
+		target_id_2 = "970210",
+		sub_type = 180,
+		desc = "ケルン(META)を編成した艦隊でLV80+の敵艦隊を撃破する",
+		id = 100544,
+		target_num = 1,
+		target_id = "80"
+	},
+	[100545] = {
+		target_id_2 = "970210",
+		sub_type = 180,
+		desc = "ケルン(META)を編成した艦隊でLV100+の敵艦隊を撃破する",
+		id = 100545,
+		target_num = 1,
+		target_id = "100"
+	},
 	[100531] = {
 		target_id_2 = "970211",
 		sub_type = 180,
@@ -4750,6 +4799,38 @@ pg.base.task_meta_data_template = {
 		sub_type = 302,
 		desc = "セイレーン作戦でガングート(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200434,
+		target_num = 1,
+		target_id = "100"
+	},
+	[200451] = {
+		target_id_2 = "970210",
+		sub_type = 302,
+		desc = "セイレーン作戦でケルン(META)を含む艦隊で1回戦闘に勝利する",
+		id = 200451,
+		target_num = 1,
+		target_id = "0"
+	},
+	[200452] = {
+		target_id_2 = "970210",
+		sub_type = 302,
+		desc = "セイレーン作戦でケルン(META)を含む艦隊でLV70+の敵を撃破する",
+		id = 200452,
+		target_num = 1,
+		target_id = "70"
+	},
+	[200453] = {
+		target_id_2 = "970210",
+		sub_type = 302,
+		desc = "セイレーン作戦でケルン(META)を含む艦隊でLV90+の敵を撃破する",
+		id = 200453,
+		target_num = 1,
+		target_id = "90"
+	},
+	[200454] = {
+		target_id_2 = "970210",
+		sub_type = 302,
+		desc = "セイレーン作戦でケルン(META)を含む艦隊でLV100+の敵を撃破する",
+		id = 200454,
 		target_num = 1,
 		target_id = "100"
 	},

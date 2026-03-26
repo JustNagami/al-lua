@@ -2737,6 +2737,27 @@ pg.medal_template = {
 		target_num = 8,
 		target_id = "50441"
 	},
+	[200151] = {
+		explain1 = "「ワンダラー募集計画」",
+		name = "ワンダラー記念勲章",
+		explain2 = "イベント",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "頭上に光るネオンボード、眼下で流れるレインボーロード、眠れない街を歩むワンダラーソウル、感じる都市のビート＆ノート\n——ソーンシティへようこそ～",
+		next = 0,
+		icon = "9151",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9151",
+		condition = "「ワンダラー募集計画」記念ステッカーを8つ集める",
+		rank = 1,
+		id = 200151,
+		target_num = 8,
+		target_id = "50482"
+	},
 	all = {
 		10011,
 		10012,
@@ -2862,6 +2883,7 @@ pg.medal_template = {
 		200111,
 		200121,
 		200131,
-		200141
+		200141,
+		200151
 	}
 }
