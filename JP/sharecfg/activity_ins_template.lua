@@ -25883,7 +25883,7 @@ pg.activity_ins_template = {
 	},
 	[635] = {
 		ship_group = 30228,
-		name = "Nayoro",
+		name = "Kizu",
 		oalist_pic_persist = "",
 		type = 1,
 		picture_persist = "",
@@ -25910,7 +25910,7 @@ pg.activity_ins_template = {
 	},
 	[636] = {
 		ship_group = 30229,
-		name = "Kizu",
+		name = "Nayoro",
 		oalist_pic_persist = "",
 		type = 1,
 		picture_persist = "",
