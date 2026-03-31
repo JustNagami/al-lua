@@ -22976,7 +22976,7 @@ _G.pg.base.gametip.SuperBulin2_tip9 = {
 _G.pg.base.gametip.SuperBulin2_help = {
 	tip = {
 		{
-			info = "活动说明：\n1.活动期间，在特定界面或关卡中可收集相应的线索\n2.当收集线索遇到困难时，可以点击线索格解锁提示\n注意：10分钟内只能解锁一个提示哦\n3.线索收集完成可以开启特别关卡，挑战特别关卡并取\n得胜利可以获得特殊奖励",
+			info = "活动说明：\n1.活动期间，在特定界面或关卡中可收集相应的密码\n2.当收集密码遇到困难时，可以点击密码格解锁提示\n注意：10分钟内只能解锁一个提示哦\n3.密码收集完成可以开启特别关卡，挑战特别关卡并取\n得胜利可以获得特殊奖励",
 		},
 	},
 }
@@ -28769,6 +28769,16 @@ _G.pg.base.gametip.spring_present_tips2 = {
 }
 _G.pg.base.gametip.spring_present_tips3 = {
 	tip = "邮件收取成功，请指挥官前往邮箱查看并收取她为您准备的礼物。",
+}
+_G.pg.base.gametip.aprilfool_2026_cd = {
+	tip = "冷却时间",
+}
+_G.pg.base.gametip.purplebulin_help_2026 = {
+	tip = {
+		{
+			info = "活动说明：\n1.活动期间，在特定界面或关卡中可收集相应的线索\n2.当收集线索遇到困难时，可以点击线索格解锁提示\n注意：10分钟内只能解锁一个提示哦\n3.线索收集完成可以开启特别关卡，挑战特别关卡并取\n得胜利可以获得特殊奖励",
+		},
+	},
 }
 _G.pg.base.gametip.battlepass_main_tip_2604 = {
 	tip = "2026/4/1-2026/5/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「克劳迪亚·META 」</color>在内的丰富奖励",
