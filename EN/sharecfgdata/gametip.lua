@@ -1154,7 +1154,7 @@ _G.pg.base.gametip.common_no_open = {
 	tip = "Not yet open",
 }
 _G.pg.base.gametip["common_already owned"] = {
-	tip = "Have",
+	tip = "Owned",
 }
 _G.pg.base.gametip.common_not_get_ship = {
 	tip = "Unowned Characters",
@@ -28746,6 +28746,16 @@ _G.pg.base.gametip.spring_present_tips2 = {
 }
 _G.pg.base.gametip.spring_present_tips3 = {
 	tip = "A gift has been sent to your mailbox!",
+}
+_G.pg.base.gametip.aprilfool_2026_cd = {
+	tip = "Cooldown",
+}
+_G.pg.base.gametip.purplebulin_help_2026 = {
+	tip = {
+		{
+			info = "How to Play:\n1. During the event, navigate to certain menus or stages to search for mysterious clues.\n2. If you're having difficulty finding the clue, tap the Clue icon to unlock the next phase of the clue search.\nNote: Clues can only be unlocked this way once every 10 minutes.\n3. Once all the clues have been collected, you will be able to challenge a secret stage. Complete it to obtain a special reward.",
+		},
+	},
 }
 _G.pg.base.gametip.battlepass_main_tip_2604 = {
 	tip = "Complete Cruise Missions between 4/1/2026 - 5/31/2026, accumulate <icon name=pt w=0.5 h=0.5/>, and receive <color=#854747>Köln META</color> and other rewards!",

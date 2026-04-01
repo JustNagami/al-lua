@@ -64,7 +64,7 @@
 			}
 		},
 		{
-			actor = 0,
+			actor = 30707,
 			side = 2,
 			nameColor = "#FFFFFF",
 			hidePaintObj = true,
