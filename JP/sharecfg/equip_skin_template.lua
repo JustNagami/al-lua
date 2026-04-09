@@ -62231,6 +62231,165 @@ pg.equip_skin_template = {
 			"wash"
 		}
 	},
+	[3073] = {
+		hit_sfx = "",
+		bullet_name = "paodan_tierruite",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		name = "チャリオットドローン砲弾",
+		themeid = 199,
+		desc = "2025年人気投票特別投票（セイレーン）優勝記念",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		double_char_bone = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "99192",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_ui_back = 0,
+		orbit_combat_bound = "",
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 3073,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	},
+	[3075] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "れいんぼーすたー",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 199,
+		orbit_combat = "shebei_xingxingguanghuan",
+		desc = "2025年人気投票特別投票（リトル）優勝記念",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_ui = "shebei_xingxingguanghuanui",
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "99194",
+		orbit_rotate = false,
+		orbit_ui_back = 1,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 3075,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				0.06,
+				-3.16,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-2.86,
+				-18
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	},
+	[3076] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "マンジュシャゲの舞扇",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 199,
+		orbit_combat = "shebei_bianhuazheshan",
+		desc = "2025年人気投票特別投票（META）優勝記念",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_ui = "shebei_bianhuazheshanui",
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "99195",
+		orbit_rotate = false,
+		orbit_ui_back = 1,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 3076,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-0.23,
+				-2.31,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				2,
+				32
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	},
 	all = {
 		1,
 		2,
@@ -63765,6 +63924,9 @@ pg.equip_skin_template = {
 		3066,
 		3067,
 		3068,
-		3069
+		3069,
+		3073,
+		3075,
+		3076
 	}
 }
