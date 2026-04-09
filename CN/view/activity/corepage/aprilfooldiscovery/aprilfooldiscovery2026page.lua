@@ -137,7 +137,7 @@ function var_0_0.OnFirstFlush(arg_9_0)
 	onButton(arg_9_0, arg_9_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip.purplebulin_help_2026.tip
+			helps = pg.gametip.SuperBulin2_help.tip
 		})
 	end, SFX_PANEL)
 

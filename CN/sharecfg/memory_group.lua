@@ -385,6 +385,7 @@ pg.memory_group = setmetatable({
 		618,
 		619,
 		620,
+		621,
 		1000,
 		1001,
 		1002,
@@ -9362,6 +9363,27 @@ pg.base.memory_group = {
 			5035,
 			5036,
 			5037
+		},
+		group_id = {
+			10000
+		}
+	},
+	[621] = {
+		auto_unlock = "",
+		subtype = 0,
+		title = "真实与伪饰的她",
+		type = 3,
+		link_event = 0,
+		icon = "title_chara_dewenjun",
+		id = 621,
+		memories = {
+			5071,
+			5072,
+			5073,
+			5074,
+			5075,
+			5076,
+			5077
 		},
 		group_id = {
 			10000
