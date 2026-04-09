@@ -123,4 +123,8 @@ function var_0_0.SetNeedNotLoadUI(arg_14_0)
 	arg_14_0.needLoadUI = false
 end
 
+function var_0_0.GetNeedHideUnlockShipFlag(arg_15_0)
+	return true
+end
+
 return var_0_0
