@@ -257,15 +257,20 @@ function var_0_0.handleNotification(arg_19_0, arg_19_1)
 
 		local function var_19_2()
 			arg_19_0.exitProcessing = true
+			var_19_1.id = _IslandCore:GetController():GetIsland().id
 
-			arg_19_0.viewComponent:ExitProcess(BaseUI.ON_HOME, function()
+			arg_19_0.viewComponent:ExitProcess("", function()
 				arg_19_0.exitProcessing = false
 
-				pg.m02:sendNotification(GAME.ISLAND_ENTER, var_19_1)
+				arg_19_0:sendNotification(GAME.ISLAND_CHANGE_ENTER, var_19_1)
 			end)
 		end
 
 		if _IslandCore and _IslandCore.state == IslandCore.STATE_INIT_FINISH then
+			if isa(_IslandCore, IslandMinigameCore) then
+				arg_19_0.viewComponent:GetIsland():GetCheaterTavernAgency():SetIsConnecting(false)
+			end
+
 			var_19_2()
 		else
 			arg_19_0.coreInitCallback = var_19_2
@@ -273,14 +278,10 @@ function var_0_0.handleNotification(arg_19_0, arg_19_1)
 	elseif var_19_0 == GAME.ISLAND_SELECT_GIFT_DONE then
 		arg_19_0.viewComponent:HandleAwardDisplay(var_19_1.dropData, var_19_1.callback, IslandAwardDisplayPage.TYPE_SIGN_GIFT)
 	elseif var_19_0 == GAME.ISLAND_CORE_STATE_CHANGED then
-		if var_19_1 == IslandCore.STATE_INIT_FINISH then
-			getProxy(IslandProxy):SetReconnectProcessing(false)
+		if var_19_1 == IslandCore.STATE_INIT_FINISH and arg_19_0.coreInitCallback then
+			arg_19_0.coreInitCallback()
 
-			if arg_19_0.coreInitCallback then
-				arg_19_0.coreInitCallback()
-
-				arg_19_0.coreInitCallback = nil
-			end
+			arg_19_0.coreInitCallback = nil
 		end
 	elseif var_19_0 == GAME.ISLAND_TRADE_DONE then
 		arg_19_0.viewComponent:HandleAwardDisplay(var_19_1.dropData, var_19_1.callback)

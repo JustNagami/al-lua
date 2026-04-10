@@ -29071,7 +29071,7 @@ _G.pg.base.gametip.bar_ui_end1 = {
 	tip = "Quit",
 }
 _G.pg.base.gametip.bar_ui_end2 = {
-	tip = "Resume spectating",
+	tip = "Resume",
 }
 _G.pg.base.gametip.bar_tips_game1 = {
 	tip = "$1: Challenge successful!",
