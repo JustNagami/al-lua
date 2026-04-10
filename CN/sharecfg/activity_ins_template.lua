@@ -25856,7 +25856,7 @@ pg.activity_ins_template = {
 	},
 	[635] = {
 		ship_group = 30228,
-		name = "Nayoro",
+		name = "Kizu",
 		oalist_pic_persist = "",
 		type = 1,
 		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260326_mujinD6EopPEDVIclQT47.png",
@@ -25897,7 +25897,7 @@ pg.activity_ins_template = {
 	},
 	[636] = {
 		ship_group = 30229,
-		name = "Kizu",
+		name = "Nayoro",
 		oalist_pic_persist = "",
 		type = 1,
 		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260326_mingjiO6qUqxkhGvob1lLw.png",

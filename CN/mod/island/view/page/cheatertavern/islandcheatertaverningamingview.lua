@@ -537,18 +537,25 @@ function var_0_0.StartRounCountDown(arg_39_0, arg_39_1)
 	end, 1, -1)
 
 	arg_39_0.randCoundDownTimer.func()
-	arg_39_0.randCoundDownTimer:Start()
+
+	if arg_39_0.randCoundDownTimer then
+		arg_39_0.randCoundDownTimer:Start()
+	end
 end
 
 function var_0_0.StopRoundCoundDown(arg_41_0)
 	if arg_41_0.randCoundDownTimer then
 		arg_41_0.randCoundDownTimer:Stop()
+
+		arg_41_0.randCoundDownTimer = nil
 	end
 end
 
 function var_0_0.RemoveRealCardTipShowTime(arg_42_0)
 	if arg_42_0.realCardTipShowTimer then
 		arg_42_0.realCardTipShowTimer:Stop()
+
+		arg_42_0.realCardTipShowTimer = nil
 	end
 end
 
