@@ -4,8 +4,8 @@ function var_0_0.OnInit(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_0.SetIsConnecting(arg_2_0)
-	arg_2_0.isConnecting = true
+function var_0_0.SetIsConnecting(arg_2_0, arg_2_1)
+	arg_2_0.isConnecting = arg_2_1
 end
 
 function var_0_0.IsConnecting(arg_3_0)

@@ -123,6 +123,10 @@ function var_0_0.UpdateMoveToTable(arg_11_0)
 		return
 	end
 
+	if not arg_11_0.isLoaded then
+		return
+	end
+
 	arg_11_0.deltaTime = Time.deltaTime + arg_11_0.deltaTime
 
 	local var_11_0 = arg_11_0.deltaTime / IslandCheaterTavernConst.moveToTableTime
@@ -161,6 +165,10 @@ function var_0_0.UpdateMoveToTable(arg_11_0)
 end
 
 function var_0_0.MoveToTable(arg_13_0, arg_13_1, arg_13_2)
+	if not arg_13_0.isLoaded then
+		return
+	end
+
 	setActive(arg_13_0.selectedCardTf, false)
 
 	arg_13_0.hasSend = true
