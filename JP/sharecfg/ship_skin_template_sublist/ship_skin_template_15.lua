@@ -1,6 +1,271 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_15 = {
+	[808010] = {
+		ship_group = 80801,
+		name = "シュルクーフ",
+		hand_id = 1,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 808010,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "xukufu",
+		lover_hand = "hand_1_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 0,
+		prefab = "xukufu",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		shop_dynamic_hx = 0,
+		bg = "",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "巡洋潜水艦シュルクーフ",
+		voice_actor = 85,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.21,
+					0.86,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.2,
+					0.83,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.76,
+					0.35,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.12,
+					0.81,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.6,
+							2.26,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[808011] = {
+		ship_group = 80801,
+		name = "ショッピングデイズ",
+		hand_id = 1,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 808011,
+		group_index = 1,
+		purchase_offset = "",
+		painting = "xukufu_2",
+		lover_hand = "hand_1_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 9,
+		prefab = "xukufu_2",
+		part_scale = "",
+		lip_smoothing = 0,
+		shop_id = 70249,
+		shop_dynamic_hx = 0,
+		illustrator = -1,
+		bg = "118",
+		double_char = 0,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		skeleton_default_skin = "",
+		bg_sp = "",
+		voice_actor_2 = -1,
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_voice_calibrate = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "おっ、指揮官も買い物？じゃあついでに私とこのコで一緒に回ってく？…ん？指揮官は乗れないよ？ルール違反だからね",
+		voice_actor = 85,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			20,
+			-140,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.951,
+					0.661,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.971,
+					0.727,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					-0.138,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.969,
+					0.906,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.6,
+							2.26,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_special",
+			"touch_head"
+		}
+	},
 	[808012] = {
 		ship_group = 80801,
 		name = "Loisirs balnéaires",
@@ -17313,247 +17578,6 @@ pg.base.ship_skin_template_15 = {
 						{
 							0.53,
 							0.21,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900195] = {
-		ship_group = 900195,
-		name = "北風",
-		hand_id = 6,
-		lover_kiss = "lip01",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 900195,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "beifeng",
-		lover_hand = "hand_3_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 0,
-		prefab = "beifeng",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		shop_dynamic_hx = 0,
-		bg = "",
-		illustrator = 1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "駆逐艦・北風",
-		voice_actor = 33,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.118,
-					0.774,
-					0
-				}
-			},
-			torpedo = {
-				{
-					-0.001,
-					0.076,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.081,
-					0.724,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.48,
-							2.389,
-							-0.16
-						}
-					}
-				}
-			}
-		}
-	},
-	[900197] = {
-		ship_group = 900196,
-		name = "ポーラ",
-		hand_id = 1,
-		lover_kiss = "lip03",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 900197,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "bola",
-		lover_hand = "hand_1_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 0,
-		prefab = "bola",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		shop_dynamic_hx = 0,
-		bg = "",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "波拉",
-		voice_actor = -1,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.221,
-					0.809,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.189,
-					0.76,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0.053,
-					0.019,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.209,
-					0.826,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.666,
-							2.169,
 							0
 						}
 					}

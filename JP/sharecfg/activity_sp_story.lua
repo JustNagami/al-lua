@@ -7399,6 +7399,259 @@ pg.activity_sp_story = {
 			}
 		}
 	},
+	[390] = {
+		story_type = 1,
+		pre_event = "",
+		label_key = "",
+		unlock_conditions = "",
+		change_prefab = "",
+		change_background = "bg_story_task_2",
+		name = "EPS-1 舞い戻ったヴィーナスたち",
+		story = "SHANYAOHAIBINGUANQIA1",
+		change_bgm = "doa_guanqia",
+		id = 390,
+		lock = ""
+	},
+	[391] = {
+		story_type = 1,
+		name = "EPS-2 大会準備",
+		label_key = "",
+		unlock_conditions = "EPS-1をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_103",
+		story = "SHANYAOHAIBINGUANQIA2",
+		change_bgm = "doa_story3",
+		id = 391,
+		pre_event = {
+			390
+		},
+		lock = {
+			{
+				4,
+				390
+			}
+		}
+	},
+	[392] = {
+		story_type = 1,
+		name = "EPS-3 きっちりかっちり",
+		label_key = "",
+		unlock_conditions = "EPS-2をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_572",
+		story = "SHANYAOHAIBINGUANQIA3",
+		change_bgm = "doa_story3",
+		id = 392,
+		pre_event = {
+			391
+		},
+		lock = {
+			{
+				4,
+				391
+			}
+		}
+	},
+	[393] = {
+		story_type = 1,
+		name = "EPS-4 コスプレイヤー？",
+		label_key = "",
+		unlock_conditions = "EPS-3をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_145",
+		story = "SHANYAOHAIBINGUANQIA4",
+		change_bgm = "doa_huanzhuang",
+		id = 393,
+		pre_event = {
+			392
+		},
+		lock = {
+			{
+				4,
+				392
+			}
+		}
+	},
+	[394] = {
+		story_type = 1,
+		name = "EPS-5 魅力を武器に",
+		label_key = "",
+		unlock_conditions = "EPS-4をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_106",
+		story = "SHANYAOHAIBINGUANQIA5",
+		change_bgm = "doa-az-story-1",
+		id = 394,
+		pre_event = {
+			393
+		},
+		lock = {
+			{
+				4,
+				393
+			}
+		}
+	},
+	[395] = {
+		story_type = 1,
+		name = "EPS-6 取材第一",
+		label_key = "",
+		unlock_conditions = "EPS-5をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_520",
+		story = "SHANYAOHAIBINGUANQIA6",
+		change_bgm = "doa_guanqia",
+		id = 395,
+		pre_event = {
+			394
+		},
+		lock = {
+			{
+				4,
+				394
+			}
+		}
+	},
+	[396] = {
+		story_type = 1,
+		name = "EPS-7 お宝探し大冒険",
+		label_key = "",
+		unlock_conditions = "EPS-6をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_171",
+		story = "SHANYAOHAIBINGUANQIA7",
+		change_bgm = "doa-az-story-1",
+		id = 396,
+		pre_event = {
+			395
+		},
+		lock = {
+			{
+				4,
+				395
+			}
+		}
+	},
+	[397] = {
+		story_type = 1,
+		name = "EPS-8 ファッショントレンド",
+		label_key = "",
+		unlock_conditions = "EPS-7をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_502",
+		story = "SHANYAOHAIBINGUANQIA8",
+		change_bgm = "doa_story1",
+		id = 397,
+		pre_event = {
+			396
+		},
+		lock = {
+			{
+				4,
+				396
+			}
+		}
+	},
+	[398] = {
+		story_type = 1,
+		name = "EPS-9 トレンドコーデ",
+		label_key = "",
+		unlock_conditions = "EPS-8をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_701",
+		story = "SHANYAOHAIBINGUANQIA9",
+		change_bgm = "doa-az-story-1",
+		id = 398,
+		pre_event = {
+			397
+		},
+		lock = {
+			{
+				4,
+				397
+			}
+		}
+	},
+	[399] = {
+		story_type = 1,
+		name = "EPS-10 温泉について",
+		label_key = "",
+		unlock_conditions = "EPS-9をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_306",
+		story = "SHANYAOHAIBINGUANQIA10",
+		change_bgm = "doa-az-story-1",
+		id = 399,
+		pre_event = {
+			398
+		},
+		lock = {
+			{
+				4,
+				398
+			}
+		}
+	},
+	[400] = {
+		story_type = 1,
+		name = "EPS-11 撮影チームについて",
+		label_key = "",
+		unlock_conditions = "EPS-10をクリア",
+		change_prefab = "",
+		change_background = "star_level_bg_528",
+		story = "SHANYAOHAIBINGUANQIA11",
+		change_bgm = "doa_guanqia",
+		id = 400,
+		pre_event = {
+			399
+		},
+		lock = {
+			{
+				4,
+				399
+			}
+		}
+	},
+	[401] = {
+		story_type = 1,
+		name = "EPS-12 中継チームについて",
+		label_key = "",
+		unlock_conditions = "EPS-11をクリア",
+		change_prefab = "",
+		change_background = "bg_doav3_1",
+		story = "SHANYAOHAIBINGUANQIA12",
+		change_bgm = "doa-az-pv-1",
+		id = 401,
+		pre_event = {
+			400
+		},
+		lock = {
+			{
+				4,
+				400
+			}
+		}
+	},
+	[402] = {
+		story_type = 1,
+		name = "EPS-13 大会開幕！",
+		label_key = "",
+		unlock_conditions = "EPS-12をクリア",
+		change_prefab = "map_2020001",
+		change_background = "bg_doav3_1",
+		story = "SHANYAOHAIBINGUANQIA13",
+		change_bgm = "doa-az-story-1",
+		id = 402,
+		pre_event = {
+			401
+		},
+		lock = {
+			{
+				4,
+				401
+			}
+		}
+	},
 	all = {
 		1,
 		2,
@@ -7758,6 +8011,19 @@ pg.activity_sp_story = {
 		386,
 		387,
 		388,
-		389
+		389,
+		390,
+		391,
+		392,
+		393,
+		394,
+		395,
+		396,
+		397,
+		398,
+		399,
+		400,
+		401,
+		402
 	}
 }

@@ -1,6 +1,247 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_16 = {
+	[900195] = {
+		ship_group = 900195,
+		name = "北風",
+		hand_id = 6,
+		lover_kiss = "lip01",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 900195,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "beifeng",
+		lover_hand = "hand_3_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 0,
+		prefab = "beifeng",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		shop_dynamic_hx = 0,
+		bg = "",
+		illustrator = 1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "駆逐艦・北風",
+		voice_actor = 33,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.118,
+					0.774,
+					0
+				}
+			},
+			torpedo = {
+				{
+					-0.001,
+					0.076,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.081,
+					0.724,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.48,
+							2.389,
+							-0.16
+						}
+					}
+				}
+			}
+		}
+	},
+	[900197] = {
+		ship_group = 900196,
+		name = "ポーラ",
+		hand_id = 1,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 900197,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "bola",
+		lover_hand = "hand_1_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 0,
+		prefab = "bola",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		shop_dynamic_hx = 0,
+		bg = "",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "波拉",
+		voice_actor = -1,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.221,
+					0.809,
+					0
+				}
+			},
+			vicegun = {
+				{
+					1.189,
+					0.76,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.053,
+					0.019,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.209,
+					0.826,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.666,
+							2.169,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[900198] = {
 		ship_group = 900195,
 		name = "ヴィットリオ・ヴェネト",
@@ -16536,240 +16777,6 @@ pg.base.ship_skin_template_16 = {
 		main_UI_FX = "",
 		special_effects = "",
 		desc = "NPC苏维埃同盟",
-		voice_actor = -1,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.7,
-					1.23,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.65,
-					1.23,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.69,
-							2.05,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900355] = {
-		ship_group = 900355,
-		name = "アビータ・Hermit・IX",
-		hand_id = 13,
-		lover_kiss = "lip02",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 900355,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "hermit_alter",
-		lover_hand = "hand_2_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 0,
-		prefab = "hermit_alter",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		shop_dynamic_hx = 0,
-		bg = "",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "アビータ・Hermit・IX",
-		voice_actor = -1,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.7,
-					1.23,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.65,
-					1.23,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.69,
-							2.05,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[900356] = {
-		ship_group = 900356,
-		name = "アビータ・Tower・XVI",
-		hand_id = 13,
-		lover_kiss = "lip02",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 900356,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "tower",
-		lover_hand = "hand_2_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 0,
-		prefab = "tower",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		shop_dynamic_hx = 0,
-		bg = "",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "アビータ・Tower・XVI",
 		voice_actor = -1,
 		spine_offset = "",
 		change_skin = "",

@@ -1,6 +1,269 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_9 = {
+	[303102] = {
+		ship_group = 30310,
+		name = "ナイトフォール・キャッチャー",
+		hand_id = 14,
+		lover_kiss = "lip02",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 303102,
+		group_index = 2,
+		purchase_offset = "",
+		painting = "yuhei_3",
+		lover_hand = "hand_2_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 9,
+		prefab = "yuhei_3",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 70820,
+		shop_dynamic_hx = 0,
+		bg = "108",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "た、助けてー……いや、別に好きでこんなところに入ったんじゃないっすよ？昨夜警備任務が終わってバレンタインのチョコをどう渡そうか考えてたら寝落ちして、目が覚めたらもうこの状況っす…",
+		voice_actor = 341,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.344,
+					0.888,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.991,
+					1.129,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0,
+					0,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					1.284,
+					1.499,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.4,
+							2.4,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[303110] = {
+		ship_group = 30311,
+		name = "高雄",
+		hand_id = 2,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 303110,
+		group_index = 0,
+		purchase_offset = "",
+		painting = "gaoxiong",
+		lover_hand = "hand_1_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 0,
+		prefab = "gaoxiong",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		shop_dynamic_hx = 0,
+		bg = "",
+		illustrator = 21,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = -1,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "高雄型重巡洋艦一番艦・高雄",
+		voice_actor = 8,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.89,
+					0.44,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.89,
+					0.44,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.23,
+					0.19,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.89,
+					0.44,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				70,
+				{
+					{
+						"smoke",
+						{
+							-0.81,
+							0.78,
+							0.26
+						}
+					}
+				}
+			},
+			{
+				30,
+				{
+					{
+						"smoke",
+						{
+							-0.68,
+							2.55,
+							-0.44
+						}
+					}
+				}
+			}
+		}
+	},
 	[303112] = {
 		ship_group = 30311,
 		name = "砂浜ラプソディ",
@@ -17266,252 +17529,6 @@ pg.base.ship_skin_template_9 = {
 						}
 					}
 				}
-			}
-		}
-	},
-	[307013] = {
-		ship_group = 30701,
-		name = "朱絹の余醺",
-		hand_id = 2,
-		lover_kiss = "lip03",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 307013,
-		group_index = 3,
-		purchase_offset = "",
-		painting = "Chicheng_4",
-		lover_hand = "hand_1_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 7,
-		prefab = "Chicheng_4",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 70423,
-		shop_dynamic_hx = 0,
-		bg = "136",
-		illustrator = 8,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 0,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "指揮官様～お待ちしておりましたわ。赤城を焦らせようとするなんて罪な人……ですが、これで終わり――指揮官様と赤城の逢瀬を阻む者はもはやおりませんわ…♡",
-		voice_actor = 44,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.215,
-					1.149,
-					0
-				}
-			},
-			plane = {
-				{
-					1.229,
-					1.184,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.3,
-							2.618,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[307014] = {
-		ship_group = 30701,
-		name = "朝凰来儀",
-		hand_id = 2,
-		lover_kiss = "lip03",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 307014,
-		group_index = 4,
-		purchase_offset = "",
-		painting = "chicheng_5",
-		lover_hand = "hand_1_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 3,
-		prefab = "chicheng_5",
-		part_scale = "",
-		lip_smoothing = 0,
-		shop_id = 70659,
-		shop_dynamic_hx = 0,
-		illustrator = -1,
-		bg = "152",
-		double_char = 0,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 0,
-		skeleton_default_skin = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		voice_lang = "",
-		l2d_ignore_drag = 1,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "この宴は指揮官様へのご褒美…そして指揮官様が来てくださることは赤城へのご褒美になりますわ～ええ、今日は酔いつぶれるまで帰しませんわ。ふふふ、ふふふふふ♡",
-		voice_actor = 44,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			1,
-			4
-		},
-		live2d_offset = {
-			40,
-			70,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			antiaircraft = {
-				{
-					1.135,
-					1.344,
-					0
-				}
-			},
-			plane = {
-				{
-					1.167,
-					1.184,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.327,
-							2.423,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_special",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		},
-		l2d_para_range = {
-			ParamBodyAngleY = {
-				0,
-				0
 			}
 		}
 	}

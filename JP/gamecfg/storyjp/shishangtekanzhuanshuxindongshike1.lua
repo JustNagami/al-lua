@@ -181,10 +181,10 @@
 			portrait = "zhihuiguan",
 			nameColor = "#A9F548FF",
 			optionFlag = 1,
+			hideRecordIco = true,
 			actor = 107161,
 			actorName = "{playername}",
 			live2d = true,
-			hiderecordico = true,
 			say = "――じゃあ一緒に掃除しよう",
 			typewriter = {
 				speed = 0.05,
@@ -213,10 +213,10 @@
 			portrait = "zhihuiguan",
 			nameColor = "#A9F548FF",
 			optionFlag = 2,
+			hideRecordIco = true,
 			actor = 107161,
 			actorName = "{playername}",
 			live2d = true,
-			hiderecordico = true,
 			say = "――いい「先生」になれるよう頑張るよ",
 			typewriter = {
 				speed = 0.05,

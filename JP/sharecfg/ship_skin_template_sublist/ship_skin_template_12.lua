@@ -1,6 +1,262 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_12 = {
+	[406011] = {
+		ship_group = 40601,
+		name = "彩り煌めく黒金の綉",
+		hand_id = 1,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 406011,
+		group_index = 1,
+		purchase_offset = "",
+		painting = "weixi_3",
+		lover_hand = "hand_1_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 2,
+		prefab = "weixi_3",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 70471,
+		shop_dynamic_hx = 0,
+		bg = "136",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		double_char = 0,
+		bg_sp = "1102",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "待ってたわ、指揮官。姉妹艦に勧められて重桜の「着物」っていうのを試してみたけど、着方が本当に複雑でね…とりあえずこんな感じでどうかしら？多分…問題ないかも？",
+		voice_actor = 259,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.113,
+					1.16,
+					0
+				}
+			},
+			plane = {
+				{
+					1.109,
+					1.144,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.364,
+							2.486,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
+	[406012] = {
+		ship_group = 40601,
+		name = "黒曜に輝くブラックダイヤ",
+		hand_id = 1,
+		lover_kiss = "lip03",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 406012,
+		group_index = 2,
+		purchase_offset = "",
+		painting = "weixi_2",
+		lover_hand = "hand_1_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 7,
+		prefab = "weixi_2",
+		part_scale = "",
+		lip_smoothing = 0,
+		shop_id = 70553,
+		shop_dynamic_hx = 0,
+		illustrator = -1,
+		bg = "146",
+		double_char = 0,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		skeleton_default_skin = "",
+		bg_sp = "1102",
+		voice_actor_2 = -1,
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "あっ、待たせちゃったわね。まさかここまで身支度に時間がかかるとは指揮官も思ってなかったわよね、ごめんなさい。さて、ジェントルマンとしてこの階段を降りるのをエスコートしてもらえないかしら？",
+		voice_actor = 259,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			1,
+			2
+		},
+		live2d_offset = {
+			-20,
+			-30,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			antiaircraft = {
+				{
+					1.22,
+					1.2,
+					0
+				}
+			},
+			plane = {
+				{
+					1.32,
+					1.26,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.57,
+							2.52,
+							0
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_special",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			login = 17.8,
+			propose = 0.5,
+			main_1 = 0.5,
+			mail = 0.5,
+			expedition = 0.5,
+			mission_complete = 0.5,
+			mission = 0.5,
+			touch2 = 0.5,
+			main_2 = 0.5,
+			touch = 0.5,
+			main_3 = 0.5
+		},
+		l2d_se = {
+			login = {
+				"yinxiao",
+				0.01
+			}
+		}
+	},
 	[406013] = {
 		ship_group = 40601,
 		name = "美波の楽園",
@@ -16372,293 +16628,6 @@ pg.base.ship_skin_template_12 = {
 						{
 							-0.356,
 							2.542,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[502092] = {
-		ship_group = 50209,
-		name = "異域の夢想郷",
-		hand_id = 9,
-		lover_kiss = "lip03",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 502092,
-		group_index = 2,
-		purchase_offset = "",
-		painting = "jian_3",
-		lover_hand = "hand_1_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 27,
-		prefab = "jian_3",
-		part_scale = "",
-		lip_smoothing = 0,
-		shop_id = 71118,
-		shop_dynamic_hx = 0,
-		illustrator = -1,
-		bg = "303",
-		double_char = 0,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 0,
-		skeleton_default_skin = "",
-		bg_sp = "",
-		voice_actor_2 = -1,
-		voice_lang = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "ふぅ……目覚めたばかりのときに、夢が示してくれた運命の殿方に出会えるなんて～。うふふ、定めの導きとなれば…ねえ旅人さん、しばし足を止めて、ここで長旅の疲れを癒やしてはいかが…？",
-		voice_actor = 395,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		show_skin = "stand",
-		tag = {
-			1,
-			2
-		},
-		live2d_offset = {
-			60,
-			-145,
-			0
-		},
-		live2d_offset_profile = {
-			80,
-			-110,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.793,
-					1.545,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.781,
-					1.547,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.892,
-					3.27,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.014,
-							3.531,
-							0
-						}
-					}
-				}
-			}
-		},
-		l2d_animations = {
-			"idle",
-			"main_1",
-			"main_2",
-			"main_3",
-			"mission",
-			"mission_complete",
-			"complete",
-			"login",
-			"home",
-			"mail",
-			"touch_body",
-			"touch_special",
-			"touch_head"
-		},
-		l2d_voice_calibrate = {
-			use_event = true
-		},
-		l2d_para_range = {
-			ParamAngleX = {
-				-10,
-				10
-			},
-			ParamAngleY = {
-				-10,
-				10
-			}
-		},
-		ship_l2d_id = {
-			50209201,
-			50209202,
-			50209203,
-			50209204,
-			50209205,
-			50209206
-		}
-	},
-	[502100] = {
-		ship_group = 50210,
-		name = "海容",
-		hand_id = 9,
-		lover_kiss = "lip03",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 502100,
-		group_index = 0,
-		purchase_offset = "",
-		painting = "hairong",
-		lover_hand = "hand_1_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 0,
-		prefab = "hairong",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 0,
-		shop_dynamic_hx = 0,
-		bg = "",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = -1,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "海容級防護巡洋艦-海容",
-		voice_actor = 440,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.446,
-					0.881,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.443,
-					0.883,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					0.638,
-					2.367,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.29,
-							2.41,
 							0
 						}
 					}

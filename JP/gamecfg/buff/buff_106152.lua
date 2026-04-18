@@ -5,6 +5,12 @@
 			trigger = {
 				"onAttach"
 			},
+			pop = {
+				displayID = 106150,
+				trigger = {
+					"onAttach"
+				}
+			},
 			arg_list = {
 				buff_id = 106153,
 				target = "TargetSelf"
@@ -14,6 +20,12 @@
 			type = "BattleBuffAddBuff",
 			trigger = {
 				"onStack"
+			},
+			pop = {
+				displayID = 106150,
+				trigger = {
+					"onStack"
+				}
 			},
 			arg_list = {
 				buff_id = 106154,

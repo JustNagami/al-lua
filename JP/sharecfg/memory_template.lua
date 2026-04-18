@@ -4056,6 +4056,26 @@ pg.memory_template = setmetatable({
 		5075,
 		5076,
 		5077,
+		5081,
+		5082,
+		5083,
+		5084,
+		5085,
+		5086,
+		5087,
+		5088,
+		5089,
+		5090,
+		5091,
+		5092,
+		5093,
+		5101,
+		5102,
+		5103,
+		5104,
+		5105,
+		5106,
+		5107,
 		10000,
 		10001,
 		10002,
@@ -65169,6 +65189,306 @@ pg.base.memory_template = {
 		is_open = 0,
 		unlock_pre = {
 			"DEWENJUN7"
+		}
+	},
+	[5081] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA1",
+		mask = "bg/bg_memory",
+		title = "舞い戻ったヴィーナスたち",
+		condition = "EPS-1開始",
+		number = 0,
+		id = 5081,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA1"
+		}
+	},
+	[5082] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA2",
+		mask = "bg/bg_memory",
+		title = "大会準備",
+		condition = "EPS-2開始",
+		number = 0,
+		id = 5082,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA2"
+		}
+	},
+	[5083] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA3",
+		mask = "bg/bg_memory",
+		title = "きっちりかっちり",
+		condition = "EPS-3開始",
+		number = 0,
+		id = 5083,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA3"
+		}
+	},
+	[5084] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA4",
+		mask = "bg/bg_memory",
+		title = "コスプレイヤー？",
+		condition = "EPS-4開始",
+		number = 0,
+		id = 5084,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA4"
+		}
+	},
+	[5085] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA5",
+		mask = "bg/bg_memory",
+		title = "魅力を武器に",
+		condition = "EPS-5開始",
+		number = 0,
+		id = 5085,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA5"
+		}
+	},
+	[5086] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA6",
+		mask = "bg/bg_memory",
+		title = "取材第一",
+		condition = "EPS-6開始",
+		number = 0,
+		id = 5086,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA6"
+		}
+	},
+	[5087] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA7",
+		mask = "bg/bg_memory",
+		title = "お宝探し大冒険",
+		condition = "EPS-7開始",
+		number = 0,
+		id = 5087,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA7"
+		}
+	},
+	[5088] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA8",
+		mask = "bg/bg_memory",
+		title = "ファッショントレンド",
+		condition = "EPS-8開始",
+		number = 0,
+		id = 5088,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA8"
+		}
+	},
+	[5089] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA9",
+		mask = "bg/bg_memory",
+		title = "トレンドコーデ",
+		condition = "EPS-9開始",
+		number = 0,
+		id = 5089,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA9"
+		}
+	},
+	[5090] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA10",
+		mask = "bg/bg_memory",
+		title = "温泉について",
+		condition = "EPS-10開始",
+		number = 0,
+		id = 5090,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA10"
+		}
+	},
+	[5091] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA11",
+		mask = "bg/bg_memory",
+		title = "撮影チームについて",
+		condition = "EPS-11開始",
+		number = 0,
+		id = 5091,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA11"
+		}
+	},
+	[5092] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA12",
+		mask = "bg/bg_memory",
+		title = "中継チームについて",
+		condition = "EPS-12開始",
+		number = 0,
+		id = 5092,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA12"
+		}
+	},
+	[5093] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINGUANQIA13",
+		mask = "bg/bg_memory",
+		title = "大会開幕！",
+		condition = "EPS-13開始",
+		number = 0,
+		id = 5093,
+		icon = "memory_shanyaohaibin1",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINGUANQIA13"
+		}
+	},
+	[5101] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG1",
+		mask = "bg/bg_memory",
+		title = "より仕事に打ち込むために",
+		condition = "「バケーションレーン・きらめく砂浜」エリーゼのストーリーを解放",
+		number = 0,
+		id = 5101,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG1"
+		}
+	},
+	[5102] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG2",
+		mask = "bg/bg_memory",
+		title = "浜辺のひと時",
+		condition = "「バケーションレーン・きらめく砂浜」しずくのストーリーを解放",
+		number = 0,
+		id = 5102,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG2"
+		}
+	},
+	[5103] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG3",
+		mask = "bg/bg_memory",
+		title = "心酔わせるレシピ",
+		condition = "「バケーションレーン・きらめく砂浜」シャンディのストーリーを解放",
+		number = 0,
+		id = 5103,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG3"
+		}
+	},
+	[5104] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG4",
+		mask = "bg/bg_memory",
+		title = "没入型漫画家",
+		condition = "「バケーションレーン・きらめく砂浜」つくしのストーリーを解放",
+		number = 0,
+		id = 5104,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG4"
+		}
+	},
+	[5105] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG5",
+		mask = "bg/bg_memory",
+		title = "あなたのラッキーバニー ",
+		condition = "「バケーションレーン・きらめく砂浜」パディのストーリーを解放",
+		number = 0,
+		id = 5105,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG5"
+		}
+	},
+	[5106] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG6",
+		mask = "bg/bg_memory",
+		title = "プリティビーストにご用心",
+		condition = "「バケーションレーン・きらめく砂浜」ゆきののストーリーを解放",
+		number = 0,
+		id = 5106,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG6"
+		}
+	},
+	[5107] = {
+		type = 1,
+		subtitle = "",
+		story = "SHANYAOHAIBINRICHANG7",
+		mask = "bg/bg_memory",
+		title = "打ち上げ花火",
+		condition = "「バケーションレーン・きらめく砂浜」みさきのストーリーを解放",
+		number = 0,
+		id = 5107,
+		icon = "memory_shanyaohaibin2",
+		is_open = 0,
+		unlock_pre = {
+			"SHANYAOHAIBINRICHANG7"
 		}
 	},
 	[10000] = {

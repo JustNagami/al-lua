@@ -1,6 +1,125 @@
 ﻿pg = pg or {}
 pg.base = pg.base or {}
 pg.base.ship_skin_template_6 = {
+	[205016] = {
+		ship_group = 20501,
+		name = "シーサイドオーダーズ",
+		hand_id = 13,
+		lover_kiss = "lip02",
+		bgm = "",
+		illustrator2 = -1,
+		shop_offset = "",
+		id = 205016,
+		group_index = 6,
+		purchase_offset = "",
+		painting = "yilishabai_7",
+		lover_hand = "hand_2_02",
+		gyro = 0,
+		l2d_drag_rate = "",
+		shop_type_id = 6,
+		prefab = "yilishabai_7",
+		part_scale = "",
+		lip_smoothing = 0,
+		l2d_animations = "",
+		shop_id = 0,
+		shop_dynamic_hx = 0,
+		bg = "117",
+		illustrator = -1,
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 4,
+		double_char = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		l2d_para_range = "",
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		l2d_voice_calibrate = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "もう、そこで何をしているのこの下僕！仕事なんてしてないで早く海に入って羽を伸ばしてきなさい！せっかく海辺に来てやったんだから、がっかりさせないでよねっ！",
+		voice_actor = 28,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		get_showing = "",
+		lip_sync_gain = 0,
+		live2d_offset_profile = "",
+		show_skin = "stand",
+		ship_l2d_id = "",
+		tag = {
+			2
+		},
+		live2d_offset = {
+			0,
+			0,
+			0
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					1.17,
+					1.08,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.688,
+					1.12,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.688,
+					1.12,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.41,
+							2.35,
+							0
+						}
+					}
+				}
+			}
+		}
+	},
 	[205020] = {
 		ship_group = 20502,
 		name = "ウォースパイト",
@@ -5691,6 +5810,244 @@ pg.base.ship_skin_template_6 = {
 							-0.55
 						}
 					}
+				}
+			}
+		}
+	},
+	[206023] = {
+		ship_group = 20602,
+		name = "威厳ある水着特訓",
+		hand_id = 13,
+		lover_kiss = "lip02",
+		bgm = "doa-az-story-1",
+		illustrator2 = -1,
+		id = 206023,
+		gyro = 0,
+		group_index = 3,
+		prefab = "baiyanjuren_4",
+		painting = "baiyanjuren_4",
+		lover_hand = "hand_2_02",
+		part_scale = "",
+		shop_id = 71332,
+		shop_type_id = 6,
+		shop_dynamic_hx = 0,
+		illustrator = 1,
+		lip_smoothing = 0,
+		double_char = 0,
+		skeleton_default_skin = "",
+		voice_lang = "",
+		bg = "539",
+		spine_use_live2d = 0,
+		spine_action_offset = false,
+		spine_offset_profile = "",
+		skin_type = 0,
+		bg_sp = "",
+		voice_actor_2 = -1,
+		l2d_ignore_drag = 0,
+		l2d_se = "",
+		main_UI_FX = "",
+		special_effects = "",
+		desc = "「威厳ある者が偉業を成すには、我が身を晒すのを恥ずかしがってはならない」――特訓のために準備した水着ですけど……これに着替えるだけでも、結構……勇気が要りますね…",
+		voice_actor = 350,
+		spine_offset = "",
+		change_skin = "",
+		rarity_bg = "",
+		time = "",
+		l2d_para_range = "",
+		lip_sync_gain = 0,
+		show_skin = "stand",
+		tag = {
+			9,
+			2,
+			5
+		},
+		live2d_offset = {
+			-10,
+			6.5,
+			0,
+			86.3
+		},
+		shop_offset = {
+			103,
+			6.5,
+			0,
+			86.3
+		},
+		purchase_offset = {
+			103,
+			6.5,
+			0,
+			86.3
+		},
+		live2d_offset_profile = {
+			140,
+			6.5,
+			0,
+			86.3
+		},
+		fx_container = {
+			{
+				0,
+				1.99185,
+				1.15
+			},
+			{
+				0,
+				0,
+				0
+			},
+			{
+				0,
+				0.75,
+				-1.299
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		bound_bone = {
+			cannon = {
+				{
+					0.773,
+					0.894,
+					0
+				}
+			},
+			vicegun = {
+				{
+					0.792,
+					1.087,
+					0
+				}
+			},
+			torpedo = {
+				{
+					0.001,
+					0.006,
+					0
+				}
+			},
+			antiaircraft = {
+				{
+					0.844,
+					2.318,
+					0
+				}
+			},
+			plane = {
+				{
+					1.387,
+					1.139,
+					0
+				}
+			}
+		},
+		smoke = {
+			{
+				50,
+				{
+					{
+						"smoke",
+						{
+							-0.723,
+							2.347,
+							-0.55
+						}
+					}
+				}
+			}
+		},
+		l2d_animations = {
+			"idle",
+			"main_1",
+			"main_2",
+			"main_3",
+			"main_5",
+			"mission",
+			"mission_complete",
+			"complete",
+			"login",
+			"home",
+			"mail",
+			"touch_body",
+			"touch_head"
+		},
+		l2d_voice_calibrate = {
+			use_event = true
+		},
+		ship_l2d_id = {
+			20602301,
+			20602302,
+			20602303,
+			20602304,
+			20602305,
+			20602306,
+			20602307,
+			20602308,
+			20602309,
+			20602310,
+			20602311,
+			20602312,
+			20602313,
+			20602314,
+			20602315,
+			20602316,
+			20602317,
+			20602318,
+			20602319,
+			20602320,
+			20602321,
+			20602322,
+			20602323,
+			20602324,
+			20602325,
+			20602326,
+			20602327,
+			20602328,
+			20602329,
+			20602330,
+			20602331,
+			20602332,
+			20602333,
+			20602334,
+			20602335,
+			20602336,
+			20602337,
+			20602338
+		},
+		l2d_drag_rate = {
+			0.5,
+			0.5,
+			0.5
+		},
+		get_showing = {
+			show = 1,
+			data = {
+				{
+					1309,
+					220,
+					2,
+					0,
+					159,
+					2
+				},
+				{
+					-353,
+					538,
+					2,
+					-153,
+					0,
+					2
+				},
+				{
+					234,
+					-310,
+					2,
+					0,
+					-140,
+					2
 				}
 			}
 		}
@@ -17188,258 +17545,6 @@ pg.base.ship_skin_template_6 = {
 						{
 							-0.4,
 							2.4,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[301041] = {
-		ship_group = 30104,
-		name = "ショッピング・ランデブー",
-		hand_id = 14,
-		lover_kiss = "lip02",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 301041,
-		group_index = 1,
-		purchase_offset = "",
-		painting = "shenxue_2",
-		lover_hand = "hand_2_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 17,
-		prefab = "shenxue_2",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 70743,
-		shop_dynamic_hx = 0,
-		bg = "160",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 0,
-		double_char = 0,
-		bg_sp = "1101",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "指揮官さん、こっちの方が安かったりしないかな…？ええと、予算が余っているからもっと色々買えるよ？そ、それに深雪も指揮官さんともっとお買い物を楽しみた…いや、なんでもないっ…///",
-		voice_actor = 342,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.629,
-					1.327,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.482,
-					1.189,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.353,
-					0.897,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.391,
-							2.297,
-							0
-						}
-					}
-				}
-			}
-		}
-	},
-	[301042] = {
-		ship_group = 30104,
-		name = "青空とクレープ",
-		hand_id = 14,
-		lover_kiss = "lip02",
-		bgm = "",
-		illustrator2 = -1,
-		shop_offset = "",
-		id = 301042,
-		group_index = 2,
-		purchase_offset = "",
-		painting = "shenxue_3",
-		lover_hand = "hand_2_02",
-		gyro = 0,
-		l2d_drag_rate = "",
-		shop_type_id = 9,
-		prefab = "shenxue_3",
-		part_scale = "",
-		lip_smoothing = 0,
-		l2d_animations = "",
-		shop_id = 70963,
-		shop_dynamic_hx = 0,
-		bg = "529",
-		illustrator = -1,
-		spine_use_live2d = 0,
-		spine_action_offset = false,
-		spine_offset_profile = "",
-		skin_type = 0,
-		double_char = 0,
-		bg_sp = "",
-		voice_actor_2 = -1,
-		skeleton_default_skin = "",
-		voice_lang = "",
-		l2d_para_range = "",
-		l2d_ignore_drag = 0,
-		l2d_se = "",
-		l2d_voice_calibrate = "",
-		main_UI_FX = "",
-		special_effects = "",
-		desc = "し、指揮官さん、深雪、いつでも大丈夫だよ…今日の格好がかわいいって…？あ、ありがとう…えへへ、実は指揮官さんとのデートのために用意したんだ…ええと、包帯をうまく隠せたら、深雪の不幸もどこかに行ってくれるかもと思って…",
-		voice_actor = 342,
-		spine_offset = "",
-		change_skin = "",
-		rarity_bg = "",
-		time = "",
-		get_showing = "",
-		lip_sync_gain = 0,
-		live2d_offset_profile = "",
-		show_skin = "stand",
-		ship_l2d_id = "",
-		tag = {
-			2
-		},
-		live2d_offset = {
-			0,
-			0,
-			0
-		},
-		fx_container = {
-			{
-				0,
-				1.99185,
-				1.15
-			},
-			{
-				0,
-				0,
-				0
-			},
-			{
-				0,
-				0.75,
-				-1.299
-			},
-			{
-				0,
-				0,
-				0
-			}
-		},
-		bound_bone = {
-			cannon = {
-				{
-					1.53,
-					1.24,
-					0
-				}
-			},
-			vicegun = {
-				{
-					1.56,
-					1.26,
-					0
-				}
-			},
-			torpedo = {
-				{
-					0,
-					0,
-					0
-				}
-			},
-			antiaircraft = {
-				{
-					1.45,
-					1.46,
-					0
-				}
-			}
-		},
-		smoke = {
-			{
-				50,
-				{
-					{
-						"smoke",
-						{
-							-0.391,
-							2.2,
 							0
 						}
 					}
