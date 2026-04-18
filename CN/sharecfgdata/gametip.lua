@@ -7833,13 +7833,13 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "天赋点不足",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "每累计建造200次可获得海上传奇舰船 {namecode:529}(最多4次)",
+	tip = "伊莉丝、香迪、千乃 建造概率UP！",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "{namecode:462}、{namecode:450} 建造追加！",
+	tip = "戈里齐亚、安德里亚·多利亚 建造追加！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "{namecode:442} 建造追加！",
+	tip = "阿蒂利奥·雷戈洛 建造追加！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "怨仇、百眼巨人 建造追加！",
@@ -16839,17 +16839,17 @@ _G.pg.base.gametip.hotspring_tip1 = {
 	tip = "温泉可以提高入浴角色的心情回复速度",
 }
 _G.pg.base.gametip.hotspring_tip2 = {
-	tip = "温泉币不足~",
+	tip = "温泉手牌不足~",
 }
 _G.pg.base.gametip.hotspring_help = {
 	tip = {
 		{
-			info = "活动规则：\n<color=#92fc63>9.14-10.4 24时</color>期间开启限时活动「啾啾温泉」\n1.指挥官可以邀请角色泡温泉，温泉可以提高入浴角色的心情回复速度\n2.长按入浴角色可拖动调整入浴位置\n3.指挥官可通过完成「度假村神秘事件调查」来获取<color=#92fc63>温泉手牌</color>，最多可使用4个<color=#92fc63>温泉手牌</color>扩建4个入浴位置~",
+			info = "活动规则：\n<color=#92fc63>4.17-5.1 24时</color>期间开启限时活动「啾啾温泉」\n1.指挥官可以邀请角色泡温泉，温泉可以提高入浴角色的心情回复速度\n2.长按入浴角色可拖动调整入浴位置\n3.指挥官可依次通关「假日航线・闪耀海滨」SP1至SP4，获取最多4个<color=#92fc63>温泉手牌</color>，最多可使用4个<color=#92fc63>温泉手牌</color>扩建4个入浴位置~",
 		},
 	},
 }
 _G.pg.base.gametip.hotspring_expand = {
-	tip = "是否消耗$1温泉币<icon name=wenquanbi w=0.7 h=0.7/>扩展温泉",
+	tip = "是否消耗$1温泉手牌<icon name=wenquanshoupai w=0.7 h=0.7/>扩展温泉",
 }
 _G.pg.base.gametip.hotspring_shop_help = {
 	tip = {
@@ -28873,6 +28873,34 @@ _G.pg.base.gametip.add_friend_fail_tip9 = {
 _G.pg.base.gametip.juusoa_title = {
 	tip = "啾啾热点频道",
 }
+_G.pg.base.gametip.doa3_activityPageUI_1 = {
+	tip = "累计假日闪耀回忆",
+}
+_G.pg.base.gametip.doa3_activityPageUI_2 = {
+	tip = "解锁剧情并阅读后\n可获得奖励",
+}
+_G.pg.base.gametip.doa3_activityPageUI_3 = {
+	tip = "前往解锁",
+}
+_G.pg.base.gametip.doa3_activityPageUI_4 = {
+	tip = "阅读角色故事获得活动限定外观奖励",
+}
+_G.pg.base.gametip.doa3_activityPageUI_5 = {
+	tip = "阅读剧情后获得",
+}
+_G.pg.base.gametip.doa3_activityPageUI_6 = {
+	tip = "查看\n奖励",
+}
+_G.pg.base.gametip.doa3_activityPageUI_7 = {
+	tip = "友好度",
+}
+_G.pg.base.gametip.cut_fruit_minigame_help = {
+	tip = {
+		{
+			info = "活动规则：\n1.每日0点开放<color=#92fc63>1</color>回新游戏，总计<color=#92fc63>7</color>回，可累计。完成7回游戏可以获得丰富奖励。\n游戏规则：\n1.每局游戏限时60秒，输出正确指令可靠近西瓜进行劈砍。\n2.输入错误指令原地等待。\n3.劈砍到西瓜后，完成游戏~",
+		},
+	},
+}
 _G.pg.base.gametip.story_recrewed = {
 	tip = "已招募",
 }
@@ -29007,7 +29035,7 @@ _G.pg.base.gametip.match_ui_room_startgame = {
 	tip = "开始游戏",
 }
 _G.pg.base.gametip.match_ui_matching_invitation = {
-	tip = "匹配邀请",
+	tip = "好友邀请",
 }
 _G.pg.base.gametip.match_ui_matching_consent = {
 	tip = "同意",
@@ -29034,7 +29062,7 @@ _G.pg.base.gametip.match_ui_ranking_list4 = {
 	tip = "暂未上榜",
 }
 _G.pg.base.gametip.match_ui_punishment1 = {
-	tip = "最近有战斗意外退出,造成他人体验影响较差\n本次匹配需等待$1秒后可继续进行游戏",
+	tip = "检测到最近有战斗提前退出，因频繁退出会破坏其他指挥官体验\n本次匹配需等待$1秒后才可继续进行游戏。",
 }
 _G.pg.base.gametip.match_ui_punishment2 = {
 	tip = "我已知晓",
