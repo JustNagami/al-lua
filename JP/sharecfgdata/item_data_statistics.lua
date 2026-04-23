@@ -112443,6 +112443,97 @@ _G.pg.base.item_data_statistics[60580] = {
 	combination_display = {},
 	limit = {},
 }
+_G.pg.base.item_data_statistics[70219] = {
+	compose_number = 0,
+	display = "<color=#ff5c5c>「交換チケット」は5月14日(木)メンテナンスまで使用可能です。 </color>「マリー・ローズ」「ほのか」「かすみ」「みさき」「なぎさ」「モニカ」から一体選んで入手可能。",
+	display_effect = "",
+	icon = "Props/70144",
+	id = 70219,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "ヴィーナス交換チケット",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 1,
+	type = 13,
+	usage = "usage_drop_appointed",
+	virtual_type = 0,
+	display_icon = {
+		{
+			4,
+			10600011,
+			1,
+		},
+		{
+			4,
+			10600021,
+			1,
+		},
+		{
+			4,
+			10600031,
+			1,
+		},
+		{
+			4,
+			10600041,
+			1,
+		},
+		{
+			4,
+			10600051,
+			1,
+		},
+		{
+			4,
+			10600071,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			4,
+			10600011,
+			1,
+		},
+		{
+			4,
+			10600021,
+			1,
+		},
+		{
+			4,
+			10600031,
+			1,
+		},
+		{
+			4,
+			10600041,
+			1,
+		},
+		{
+			4,
+			10600051,
+			1,
+		},
+		{
+			4,
+			10600071,
+			1,
+		},
+	},
+	limit = {},
+}
 _G.pg.base.item_data_statistics[81200] = {
 	compose_number = 0,
 	display = "ランダムな（母港ナイト①の）着せ替え衣装、上級指向型強化ユニット・六期目×2、ダイヤ×2024、メンタルユニット×50、キューブ×20、家具コイン×100、高速建造材×10が入手できます",
