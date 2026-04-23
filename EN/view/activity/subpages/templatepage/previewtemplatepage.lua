@@ -39,20 +39,13 @@ function var_0_0.initBtn(arg_4_0)
 				})
 			end)
 		end,
-		academy = function(arg_8_0)
+		shop = function(arg_8_0)
 			onButton(arg_4_0, arg_8_0, function()
-				arg_4_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE, {
-					page = "activity"
-				})
-			end)
-		end,
-		shop = function(arg_10_0)
-			onButton(arg_4_0, arg_10_0, function()
-				local var_11_0 = var_4_1.shopLinkActID and getProxy(ActivityProxy):getActivitiesById(var_4_1.shopLinkActID) or underscore.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg_12_0)
-					return not arg_12_0:isEnd()
+				local var_9_0 = var_4_1.shopLinkActID and getProxy(ActivityProxy):getActivitiesById(var_4_1.shopLinkActID) or underscore.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg_10_0)
+					return not arg_10_0:isEnd()
 				end)
 
-				if not var_11_0 or var_11_0:isEnd() then
+				if not var_9_0 or var_9_0:isEnd() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 					return
@@ -60,12 +53,12 @@ function var_0_0.initBtn(arg_4_0)
 
 				arg_4_0:emit(ActivityMediator.GO_SHOPS_LAYER, {
 					warp = NewShopsScene.TYPE_ACTIVITY,
-					actId = var_11_0.id
+					actId = var_9_0.id
 				})
 			end)
 		end,
-		build = function(arg_13_0)
-			onButton(arg_4_0, arg_13_0, function()
+		build = function(arg_11_0)
+			onButton(arg_4_0, arg_11_0, function()
 				if var_4_1.buildLinkActID and var_4_0(var_4_1.buildLinkActID) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
@@ -78,19 +71,25 @@ function var_0_0.initBtn(arg_4_0)
 				})
 			end)
 		end,
-		fight = function(arg_15_0)
-			onButton(arg_4_0, arg_15_0, function()
-				if var_4_1.fightLinkActID and var_4_0(var_4_1.fightLinkActID) then
+		fight = function(arg_13_0)
+			onButton(arg_4_0, arg_13_0, function()
+				local var_14_0 = var_4_1.fightLinkActID
+
+				if var_14_0 and var_4_0(var_14_0) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 					return
 				end
 
-				arg_4_0:emit(ActivityMediator.BATTLE_OPERA)
+				if var_14_0 then
+					arg_4_0:emit(ActivityMediator.SKIP_ACTIVITY_MAP, var_14_0)
+				else
+					arg_4_0:emit(ActivityMediator.BATTLE_OPERA)
+				end
 			end)
 		end,
-		lottery = function(arg_17_0)
-			onButton(arg_4_0, arg_17_0, function()
+		lottery = function(arg_15_0)
+			onButton(arg_4_0, arg_15_0, function()
 				if var_4_1.lotteryLinkActID and var_4_0(var_4_1.lotteryLinkActID) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
@@ -100,17 +99,17 @@ function var_0_0.initBtn(arg_4_0)
 				arg_4_0:emit(ActivityMediator.GO_LOTTERY)
 			end)
 		end,
-		memory = function(arg_19_0)
+		memory = function(arg_17_0)
 			return
 		end,
-		activity = function(arg_20_0)
+		activity = function(arg_18_0)
 			return
 		end,
-		mountain = function(arg_21_0)
+		mountain = function(arg_19_0)
 			return
 		end,
-		skinshop = function(arg_22_0)
-			onButton(arg_4_0, arg_22_0, function()
+		skinshop = function(arg_20_0)
+			onButton(arg_4_0, arg_20_0, function()
 				arg_4_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 			end)
 		end
