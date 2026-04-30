@@ -1,6 +1,96 @@
 ﻿pg = pg or {}
-pg.activity_dreamland_explore = {
+pg.activity_dreamland_explore = rawget(pg, "activity_dreamland_explore") or setmetatable({
+	__name = "activity_dreamland_explore"
+}, confNEO)
+pg.activity_dreamland_explore.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	27,
+	28,
+	29
+}
+pg.activity_dreamland_explore.get_id_list_by_group = {
 	{
+		1,
+		2,
+		3
+	},
+	{
+		4
+	},
+	{
+		5,
+		6,
+		7
+	},
+	{
+		8,
+		9,
+		10,
+		11,
+		12,
+		13
+	},
+	{
+		14,
+		15,
+		16
+	},
+	{
+		17
+	},
+	{
+		18,
+		19,
+		20
+	},
+	{
+		21,
+		22
+	},
+	{
+		23,
+		24,
+		25
+	},
+	{
+		27
+	},
+	{
+		28
+	},
+	{
+		29
+	}
+}
+pg.base = pg.base or {}
+pg.base.activity_dreamland_explore = {}
+
+;(function()
+	pg.base.activity_dreamland_explore[1] = {
 		dispaly_desc = "お城に来たが、鳩時計がずっと動かないことに気づいた。\nシェフィールドに聞いたところ、人がいると鳩時計は時間を知らせてくれなくなるようだが…\n銃砲を一発でも撃てば元に戻るらしい。\n一体どういう作りなのか、気になる……",
 		id = 1,
 		tip_special_effect = "",
@@ -25,8 +115,8 @@ pg.activity_dreamland_explore = {
 				"一体どういう作りなのか、気になる……"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[2] = {
 		dispaly_desc = "お城に来たが、鳩時計がずっと動かないことに気づいた。\nシェフィールドに聞いたところ、人がいると鳩時計は時間を知らせてくれなくなるようだが…\n銃砲を一発でも撃てば元に戻るらしい。\n一体どういう作りなのか、気になる……",
 		id = 2,
 		tip_special_effect = "",
@@ -51,8 +141,8 @@ pg.activity_dreamland_explore = {
 				"一体どういう作りなのか、気になる……"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[3] = {
 		dispaly_desc = "お城に来たが、鳩時計がずっと動かないことに気づいた。\nシェフィールドに聞いたところ、人がいると鳩時計は時間を知らせてくれなくなるようだが…\n銃砲を一発でも撃てば元に戻るらしい。\n一体どういう作りなのか、気になる……",
 		id = 3,
 		tip_special_effect = "",
@@ -77,8 +167,8 @@ pg.activity_dreamland_explore = {
 				"一体どういう作りなのか、気になる……"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[4] = {
 		dispaly_desc = "花火ショーで予定にない形の花火があった。\nショーが終わった後、皆で花火の製造過程と発射手順を点検したが特に異常はなかった。\n「夢だから不思議なことが起きてもおかしいことではありません。どうか心配なさらず」\nと、天城は説明してくれた。",
 		id = 4,
 		tip_special_effect = "",
@@ -105,8 +195,8 @@ pg.activity_dreamland_explore = {
 				"と、天城は説明してくれた。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[5] = {
 		dispaly_desc = "願いの噴水の近くで、願い事をしている龍鳳と会った。\n彼女曰く、コインを投げ入れてみたが、水しぶきが上がるどころかコインがすぐ消えてしまったようだ。\n通りかかったリヴァプールがカラフルな光を反射している泉を見て、「きっと龍鳳さんの願いが叶う予兆だよ」と興奮気味に言った。",
 		id = 5,
 		tip_special_effect = "",
@@ -128,8 +218,8 @@ pg.activity_dreamland_explore = {
 				"通りかかったリヴァプールがカラフルな光を反射している泉を見て、「きっと龍鳳さんの願いが叶う予兆だよ」と興奮気味に言った。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[6] = {
 		dispaly_desc = "願いの噴水の近くで、願い事をしている龍鳳と会った。\n彼女曰く、コインを投げ入れてみたが、水しぶきが上がるどころかコインがすぐ消えてしまったようだ。\n通りかかったリヴァプールがカラフルな光を反射している泉を見て、「きっと龍鳳さんの願いが叶う予兆だよ」と興奮気味に言った。",
 		id = 6,
 		tip_special_effect = "",
@@ -151,8 +241,8 @@ pg.activity_dreamland_explore = {
 				"通りかかったリヴァプールがカラフルな光を反射している泉を見て、「きっと龍鳳さんの願いが叶う予兆だよ」と興奮気味に言った。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[7] = {
 		dispaly_desc = "願いの噴水の近くで、願い事をしている龍鳳と会った。\n彼女曰く、コインを投げ入れてみたが、水しぶきが上がるどころかコインがすぐ消えてしまったようだ。\n通りかかったリヴァプールがカラフルな光を反射している泉を見て、「きっと龍鳳さんの願いが叶う予兆だよ」と興奮気味に言った。",
 		id = 7,
 		tip_special_effect = "",
@@ -174,8 +264,8 @@ pg.activity_dreamland_explore = {
 				"通りかかったリヴァプールがカラフルな光を反射している泉を見て、「きっと龍鳳さんの願いが叶う予兆だよ」と興奮気味に言った。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[8] = {
 		dispaly_desc = "パラソルの近くでソワソワしているリノを見た。\n誰も触っていないのに勝手に閉じたり開いたりするパラソルがあるようだ。\n「こ、これはリノの覚醒したヒーローパワー？！」\nと、自らのヒーローネームを「パラソル」にしたリノ。\n……夢だし、好きにさせてあげよう。",
 		id = 8,
 		tip_special_effect = "",
@@ -203,8 +293,8 @@ pg.activity_dreamland_explore = {
 				"……夢だし、好きにさせてあげよう。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[9] = {
 		dispaly_desc = "パラソルの近くでソワソワしているリノを見た。\n誰も触っていないのに勝手に閉じたり開いたりするパラソルがあるようだ。\n「こ、これはリノの覚醒したヒーローパワー？！」\nと、自らのヒーローネームを「パラソル」にしたリノ。\n……夢だし、好きにさせてあげよう。",
 		id = 9,
 		tip_special_effect = "",
@@ -232,8 +322,8 @@ pg.activity_dreamland_explore = {
 				"……夢だし、好きにさせてあげよう。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[10] = {
 		dispaly_desc = "パラソルの近くでソワソワしているリノを見た。\n誰も触っていないのに勝手に閉じたり開いたりするパラソルがあるようだ。\n「こ、これはリノの覚醒したヒーローパワー？！」\nと、自らのヒーローネームを「パラソル」にしたリノ。\n……夢だし、好きにさせてあげよう。",
 		id = 10,
 		tip_special_effect = "",
@@ -261,8 +351,8 @@ pg.activity_dreamland_explore = {
 				"……夢だし、好きにさせてあげよう。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[11] = {
 		dispaly_desc = "パラソルの近くでソワソワしているリノを見た。\n誰も触っていないのに勝手に閉じたり開いたりするパラソルがあるようだ。\n「こ、これはリノの覚醒したヒーローパワー？！」\nと、自らのヒーローネームを「パラソル」にしたリノ。\n……夢だし、好きにさせてあげよう。",
 		id = 11,
 		tip_special_effect = "",
@@ -290,8 +380,8 @@ pg.activity_dreamland_explore = {
 				"……夢だし、好きにさせてあげよう。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[12] = {
 		dispaly_desc = "パラソルの近くでソワソワしているリノを見た。\n誰も触っていないのに勝手に閉じたり開いたりするパラソルがあるようだ。\n「こ、これはリノの覚醒したヒーローパワー？！」\nと、自らのヒーローネームを「パラソル」にしたリノ。\n……夢だし、好きにさせてあげよう。",
 		id = 12,
 		tip_special_effect = "",
@@ -319,8 +409,8 @@ pg.activity_dreamland_explore = {
 				"……夢だし、好きにさせてあげよう。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[13] = {
 		dispaly_desc = "パラソルの近くでソワソワしているリノを見た。\n誰も触っていないのに勝手に閉じたり開いたりするパラソルがあるようだ。\n「こ、これはリノの覚醒したヒーローパワー？！」\nと、自らのヒーローネームを「パラソル」にしたリノ。\n……夢だし、好きにさせてあげよう。",
 		id = 13,
 		tip_special_effect = "",
@@ -348,8 +438,8 @@ pg.activity_dreamland_explore = {
 				"……夢だし、好きにさせてあげよう。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[14] = {
 		dispaly_desc = "観覧車の近くで悩んでいる瑞鳳に話を聞くと、どうやら風船が飛び上がると観覧車が止まるらしい。\n夕張に連絡してわかったことだが、観覧車の安全装置が風船を艦載機だと勘違いしたようだ。\n自分の風船のせいじゃないと分かった瑞鳳は、「チュンチュン♪」と幸運風船を自分と夕張にプレゼントしてくれた。",
 		id = 14,
 		tip_special_effect = "",
@@ -371,8 +461,8 @@ pg.activity_dreamland_explore = {
 				"自分の風船のせいじゃないと分かった瑞鳳は、「チュンチュン♪」と幸運風船を自分と夕張にプレゼントしてくれた。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[15] = {
 		dispaly_desc = "観覧車の近くで悩んでいる瑞鳳に話を聞くと、どうやら風船が飛び上がると観覧車が止まるらしい。\n夕張に連絡してわかったことだが、観覧車の安全装置が風船を艦載機だと勘違いしたようだ。\n自分の風船のせいじゃないと分かった瑞鳳は、「チュンチュン♪」と幸運風船を自分と夕張にプレゼントしてくれた。",
 		id = 15,
 		tip_special_effect = "",
@@ -394,8 +484,8 @@ pg.activity_dreamland_explore = {
 				"自分の風船のせいじゃないと分かった瑞鳳は、「チュンチュン♪」と幸運風船を自分と夕張にプレゼントしてくれた。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[16] = {
 		dispaly_desc = "観覧車の近くで悩んでいる瑞鳳に話を聞くと、どうやら風船が飛び上がると観覧車が止まるらしい。\n夕張に連絡してわかったことだが、観覧車の安全装置が風船を艦載機だと勘違いしたようだ。\n自分の風船のせいじゃないと分かった瑞鳳は、「チュンチュン♪」と幸運風船を自分と夕張にプレゼントしてくれた。",
 		id = 16,
 		tip_special_effect = "",
@@ -417,8 +507,8 @@ pg.activity_dreamland_explore = {
 				"自分の風船のせいじゃないと分かった瑞鳳は、「チュンチュン♪」と幸運風船を自分と夕張にプレゼントしてくれた。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[17] = {
 		dispaly_desc = "屋台街でアーク・ロイヤルたちと会った。\nワタアメが盗まれたとプンプンしている睦月だが、アーク・ロイヤルによると近くに誰もいなかったそうだ。\n「幽霊だ！きっと幽霊が睦月ちゃんのワタアメを盗んだ！」と急に盛り上がるブリストル。\n皆で頑張って探したが、幽霊の痕跡は発見できなかった。",
 		id = 17,
 		tip_special_effect = "",
@@ -443,8 +533,8 @@ pg.activity_dreamland_explore = {
 				"皆で頑張って探したが、幽霊の痕跡は発見できなかった。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[18] = {
 		dispaly_desc = "スライダーの出口で困っている大鳳を見かけた。\n滑る度にスライダーがヌルヌルになり、滑る速度もどんどん速くなっていったらしい。\n点検してみたら、どうやら大鳳が塗った日焼け止めが原因のようだ。\n一体どれだけ塗ったんだ……？",
 		id = 18,
 		tip_special_effect = "",
@@ -469,8 +559,8 @@ pg.activity_dreamland_explore = {
 				"一体どれだけ塗ったんだ……？"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[19] = {
 		dispaly_desc = "スライダーの出口で困っている大鳳を見かけた。\n滑る度にスライダーがヌルヌルになり、滑る速度もどんどん速くなっていったらしい。\n点検してみたら、どうやら大鳳が塗った日焼け止めが原因のようだ。\n一体どれだけ塗ったんだ……？",
 		id = 19,
 		tip_special_effect = "",
@@ -495,8 +585,8 @@ pg.activity_dreamland_explore = {
 				"一体どれだけ塗ったんだ……？"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[20] = {
 		dispaly_desc = "スライダーの出口で困っている大鳳を見かけた。\n滑る度にスライダーがヌルヌルになり、滑る速度もどんどん速くなっていったらしい。\n点検してみたら、どうやら大鳳が塗った日焼け止めが原因のようだ。\n一体どれだけ塗ったんだ……？",
 		id = 20,
 		tip_special_effect = "",
@@ -521,8 +611,8 @@ pg.activity_dreamland_explore = {
 				"一体どれだけ塗ったんだ……？"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[21] = {
 		dispaly_desc = "午後、ウォーターエリアに虹がかかった。\nアルフレードが言うには一度目ではなく、最初の虹はなんと普通の虹と色の配列が真逆だったらしい。\nジャーナリスト魂でずっとここで張り込んでいたが、撮れた虹は全て普通の虹だった。\nちょっと凹んだアルフレード。しかし己を決して曲げなかった。",
 		id = 21,
 		tip_special_effect = "",
@@ -548,8 +638,8 @@ pg.activity_dreamland_explore = {
 				"ちょっと凹んだアルフレード。しかし己を決して曲げなかった。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[22] = {
 		dispaly_desc = "午後、ウォーターエリアに虹がかかった。\nアルフレードが言うには一度目ではなく、最初の虹はなんと普通の虹と色の配列が真逆だったらしい。\nジャーナリスト魂でずっとここで張り込んでいたが、撮れた虹は全て普通の虹だった。\nちょっと凹んだアルフレード。しかし己を決して曲げなかった。",
 		id = 22,
 		tip_special_effect = "",
@@ -574,8 +664,8 @@ pg.activity_dreamland_explore = {
 				"ちょっと凹んだアルフレード。しかし己を決して曲げなかった。"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[23] = {
 		dispaly_desc = "サーカスキャンプを通りかかった時、興味津々に観察してる初月と会った。\n聞けばキャンプの道化饅頭は顔が変わるとのことだが…他の子に気づかせようとすると、すぐ元の顔に戻るようだ。\n……ホラー映画を見すぎていないか？",
 		id = 23,
 		tip_special_effect = "",
@@ -597,8 +687,8 @@ pg.activity_dreamland_explore = {
 				"……ホラー映画を見すぎていないか？"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[24] = {
 		dispaly_desc = "サーカスキャンプを通りかかった時、興味津々に観察してる初月と会った。\n聞けばキャンプの道化饅頭は顔が変わるとのことだが…他の子に気づかせようとすると、すぐ元の顔に戻るようだ。\n……ホラー映画を見すぎていないか？",
 		id = 24,
 		tip_special_effect = "",
@@ -620,8 +710,8 @@ pg.activity_dreamland_explore = {
 				"……ホラー映画を見すぎていないか？"
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_dreamland_explore[25] = {
 		dispaly_desc = "サーカスキャンプを通りかかった時、興味津々に観察してる初月と会った。\n聞けばキャンプの道化饅頭は顔が変わるとのことだが…他の子に気づかせようとすると、すぐ元の顔に戻るようだ。\n……ホラー映画を見すぎていないか？",
 		id = 25,
 		tip_special_effect = "",
@@ -643,8 +733,8 @@ pg.activity_dreamland_explore = {
 				"……ホラー映画を見すぎていないか？"
 			}
 		}
-	},
-	[27] = {
+	}
+	pg.base.activity_dreamland_explore[27] = {
 		dispaly_desc = "ステージの近くで頭を抱えている夕張の姿を見かけた。\nなんと電気がなくても電飾ボードが光り、しかも表示される内容も勝手に変わっていた。\nどういう仕組みか気になって一つ分解した夕張だが、解明するどころか電球を元に戻せなくなったようだ。\nとにかく天城に連絡するように薦めた。\n",
 		id = 27,
 		tip_special_effect = "",
@@ -672,8 +762,8 @@ pg.activity_dreamland_explore = {
 				""
 			}
 		}
-	},
-	[28] = {
+	}
+	pg.base.activity_dreamland_explore[28] = {
 		dispaly_desc = "霧の迷路にやってくると霞がぼーっとしていた。\n「ふわりん、裏山に仲間がいるって……うん、あそこ」\n彼女の指差す方向を見たが、なにも見えなかった。",
 		id = 28,
 		tip_special_effect = "",
@@ -695,8 +785,8 @@ pg.activity_dreamland_explore = {
 				"彼女の指差す方向を見たが、なにも見えなかった。"
 			}
 		}
-	},
-	[29] = {
+	}
+	pg.base.activity_dreamland_explore[29] = {
 		dispaly_desc = "お化け屋敷にやってくると、入口で撫順がためらっていた。\nドアノブに手を掛けようとすると、なんだか妙な感じなってそれができなかったようだ。\n「きっと冒険王撫順への呪いだ！」と叫ぶ撫順。\nしかし天城のヒントで得られた事実では、それはただの静電気だったようだ。",
 		id = 29,
 		tip_special_effect = "",
@@ -721,89 +811,5 @@ pg.activity_dreamland_explore = {
 				"しかし天城のヒントで得られた事実では、それはただの静電気だったようだ。"
 			}
 		}
-	},
-	get_id_list_by_group = {
-		{
-			1,
-			2,
-			3
-		},
-		{
-			4
-		},
-		{
-			5,
-			6,
-			7
-		},
-		{
-			8,
-			9,
-			10,
-			11,
-			12,
-			13
-		},
-		{
-			14,
-			15,
-			16
-		},
-		{
-			17
-		},
-		{
-			18,
-			19,
-			20
-		},
-		{
-			21,
-			22
-		},
-		{
-			23,
-			24,
-			25
-		},
-		{
-			27
-		},
-		{
-			28
-		},
-		{
-			29
-		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		27,
-		28,
-		29
 	}
-}
+end)()

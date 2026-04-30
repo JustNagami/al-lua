@@ -1,6 +1,35 @@
 ﻿pg = pg or {}
-pg.item_data_battleui = {
-	[0] = {
+pg.item_data_battleui = rawget(pg, "item_data_battleui") or setmetatable({
+	__name = "item_data_battleui"
+}, confNEO)
+pg.item_data_battleui.all = {
+	0,
+	101,
+	102,
+	103,
+	104,
+	105,
+	106,
+	107,
+	108,
+	109,
+	111,
+	112,
+	113,
+	114,
+	201,
+	202,
+	203,
+	204,
+	205,
+	206,
+	207
+}
+pg.base = pg.base or {}
+pg.base.item_data_battleui = {}
+
+;(function()
+	pg.base.item_data_battleui[0] = {
 		key = "Standard",
 		name = "オリジナル",
 		desc = "思い出溢れるオリジナル戦闘UI。数え切れない戦いを一緒に経験してきただけあって、実用性は十分",
@@ -12,8 +41,8 @@ pg.item_data_battleui = {
 		icon = "0",
 		scene = {},
 		rare_display = {}
-	},
-	[101] = {
+	}
+	pg.base.item_data_battleui[101] = {
 		key = "SkinNormal_20240701",
 		name = "リメイク",
 		desc = "カラーリングやデザインを工夫したリメイクUI、より躍動感ある体験を指揮官にお届け",
@@ -25,8 +54,8 @@ pg.item_data_battleui = {
 		icon = "101",
 		scene = {},
 		rare_display = {}
-	},
-	[102] = {
+	}
+	pg.base.item_data_battleui[102] = {
 		key = "SkinNormal_20240912",
 		name = "サイバー",
 		desc = "サイバー風のUI。アニメーションやライティングなどの演出が随所にあり、SF好きな指揮官に没入体験を提供する",
@@ -40,8 +69,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[103] = {
+	}
+	pg.base.item_data_battleui[103] = {
 		key = "SkinNormal_20240913",
 		name = "レインボー",
 		desc = "表現力豊かで調和の取れた色合いのUI。リズムに合わせて躍動する指揮画面は、ポップな雰囲気を好む指揮官に最適",
@@ -57,8 +86,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[104] = {
+	}
+	pg.base.item_data_battleui[104] = {
 		key = "SkinNormal_20241107",
 		name = "ネオン",
 		desc = "煌めくネオンにリズミックなビーム演出で流れるような体験をもたらす",
@@ -72,8 +101,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[105] = {
+	}
+	pg.base.item_data_battleui[105] = {
 		key = "SkinNormal_20250123",
 		name = "ライト",
 		desc = "神聖、重厚、煌びやか。指揮官の全ての戦闘をよりエピックに",
@@ -87,8 +116,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[106] = {
+	}
+	pg.base.item_data_battleui[106] = {
 		key = "SkinNormal_20250327",
 		name = "デビル",
 		desc = "悪魔的な雰囲気が溢れ出る指揮インターフェイス。血色のフレームと魔法陣がデンジャラスでダークな世界へと誘う",
@@ -102,8 +131,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[107] = {
+	}
+	pg.base.item_data_battleui[107] = {
 		key = "SkinNormal_20250529",
 		name = "ステラ",
 		desc = "星々の輝きが煌き、ミステリアスな模様が銀河の輪郭を映し出し、一つ一つの細部が宇宙への探求と冒険を物語っている。",
@@ -117,8 +146,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[108] = {
+	}
+	pg.base.item_data_battleui[108] = {
 		key = "SkinNormal_20250724",
 		name = "ネイチャー",
 		desc = "樹海を飛ぶ鳥たち、そして流れる水が織りなす生き生きとしたネイチャーの律動",
@@ -132,8 +161,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[109] = {
+	}
+	pg.base.item_data_battleui[109] = {
 		key = "SkinNormal_20250925",
 		name = "墨と竹",
 		desc = "墨絵風のインターフェイス。白黒の中で広がる墨と、揺れているように描かれている竹の影が、雅の雰囲気を醸し出す",
@@ -147,8 +176,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[111] = {
+	}
+	pg.base.item_data_battleui[111] = {
 		key = "SkinNormal_20251120",
 		name = "影絵",
 		desc = "シンプルな影絵は無限の幻想を描き出し、簡単な物語は素晴らしい希望を与える",
@@ -162,8 +191,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[112] = {
+	}
+	pg.base.item_data_battleui[112] = {
 		key = "SkinNormal_20251211",
 		name = "迎春特売",
 		desc = "ショッピング好きの指揮官のためのUI。買い物を満喫しながら、圧倒的なプレゼントの波で相手を飲み込め！ ",
@@ -177,8 +206,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[113] = {
+	}
+	pg.base.item_data_battleui[113] = {
 		key = "SkinNormal_20260129",
 		name = "古代王朝",
 		desc = "画面に聳え立つは古の石柱。まだらな模様が失われし秩序を語り、戦いに時空を越えた荘厳と悲嘆を添えてくれる",
@@ -192,8 +221,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[114] = {
+	}
+	pg.base.item_data_battleui[114] = {
 		key = "SkinNormal_20260326",
 		name = "アイビー",
 		desc = "画面端から生え茂るアイビーの隙間に幻想的な光が輝く。全ての戦いに、古の森のミステリアスさと生命力を添えてくれる",
@@ -207,8 +236,8 @@ pg.item_data_battleui = {
 		rare_display = {
 			1
 		}
-	},
-	[201] = {
+	}
+	pg.base.item_data_battleui[201] = {
 		key = "SkinNormal_20241209",
 		name = "クリスマス",
 		desc = "舞い散る雪と霜が描き出すおとぎ話の景色。冬の雰囲気を愛する指揮官にもたらす戦場のウィンターロマンス",
@@ -224,8 +253,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[202] = {
+	}
+	pg.base.item_data_battleui[202] = {
 		key = "SkinNormal_20250227",
 		name = "ファラオ",
 		desc = "古の文字に黄金の模様。ナイル文明の悠久なる伝説を物語っている",
@@ -241,8 +270,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[203] = {
+	}
+	pg.base.item_data_battleui[203] = {
 		key = "SkinElite_20250327",
 		name = "ジーン",
 		desc = "未来的な指揮インターフェイス。白いパネルと血色の回路が緻密的かつ緊張感あふれる雰囲気を醸し出す",
@@ -258,8 +287,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[204] = {
+	}
+	pg.base.item_data_battleui[204] = {
 		key = "SkinElite_20250520",
 		name = "シーサイド",
 		desc = "砂浜に立てられた木の板、貝殻に飾られる白波――海辺でのバカンスはゆったり、のんびり",
@@ -275,8 +304,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[205] = {
+	}
+	pg.base.item_data_battleui[205] = {
 		key = "SkinElite_20250912",
 		name = "シノビ",
 		desc = "ニンジャ大好きな指揮官にお届け！スリケンとクナイでニンジャの城を大暴れ！",
@@ -292,8 +321,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[206] = {
+	}
+	pg.base.item_data_battleui[206] = {
 		key = "SkinElite_20251218",
 		name = "メイドカフェ",
 		desc = "甘やかしメイドの甘いお菓子を食べながら、甘々なチャレンジに挑んでみよう！",
@@ -309,8 +338,8 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	[207] = {
+	}
+	pg.base.item_data_battleui[207] = {
 		key = "SkinElite_20260226",
 		name = "春色旅籠",
 		desc = "旅籠の賑わいとぬくもり、花火や提灯、爆竹の音に包まれながら、ひと味違う新春対決を楽しもう。 ",
@@ -326,28 +355,5 @@ pg.item_data_battleui = {
 			2,
 			3
 		}
-	},
-	all = {
-		0,
-		101,
-		102,
-		103,
-		104,
-		105,
-		106,
-		107,
-		108,
-		109,
-		111,
-		112,
-		113,
-		114,
-		201,
-		202,
-		203,
-		204,
-		205,
-		206,
-		207
 	}
-}
+end)()

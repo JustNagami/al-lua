@@ -1,6 +1,271 @@
 ﻿pg = pg or {}
-pg.island_dress_template = {
-	[1010001] = {
+pg.island_dress_template = rawget(pg, "island_dress_template") or setmetatable({
+	__name = "island_dress_template"
+}, confNEO)
+pg.island_dress_template.all = {
+	1010001,
+	1010002,
+	1010003,
+	1010004,
+	1010005,
+	1010006,
+	1010007,
+	1010008,
+	1010009,
+	1010010,
+	1010011,
+	1020001,
+	1020002,
+	1020003,
+	1020004,
+	1020005,
+	1020006,
+	1020007,
+	1020008,
+	1020009,
+	1020010,
+	1030001,
+	1030002,
+	1030003,
+	1030004,
+	1030005,
+	1030006,
+	1030007,
+	1030008,
+	1030009,
+	1030010,
+	1040001,
+	1040002,
+	1040003,
+	1050001,
+	1050002,
+	1050003,
+	1050004,
+	1050005,
+	1050006,
+	1060001,
+	1060002,
+	1060003,
+	1060004,
+	1060005,
+	1060006,
+	1060007,
+	1060008,
+	1060009,
+	1070001,
+	1070002,
+	1070003,
+	1070004,
+	1070005,
+	1070006,
+	1070007,
+	1070008,
+	1070009,
+	2010001,
+	2010002,
+	2010003,
+	2010004,
+	2020001,
+	2020002,
+	2020003,
+	2020004,
+	2020005,
+	2030001,
+	2030002,
+	2030003,
+	2030004,
+	2030005,
+	2030006
+}
+pg.island_dress_template.get_id_list_by_type = {
+	{
+		1010001,
+		1010002,
+		1010003,
+		1010004,
+		1010005,
+		1010006,
+		1010007,
+		1010008,
+		1010009,
+		1010010,
+		1010011,
+		2010001,
+		2010002,
+		2010003,
+		2010004
+	},
+	{
+		1020001,
+		1020002,
+		1020003,
+		1020004,
+		1020005,
+		1020006,
+		1020007,
+		1020008,
+		1020009,
+		1020010,
+		2020001,
+		2020002,
+		2020003,
+		2020004,
+		2020005
+	},
+	{
+		1030001,
+		1030002,
+		1030003,
+		1030004,
+		1030005,
+		1030006,
+		1030007,
+		1030008,
+		1030009,
+		1030010,
+		2030001,
+		2030002,
+		2030003,
+		2030004,
+		2030005,
+		2030006
+	},
+	{
+		1040001,
+		1040002,
+		1040003
+	},
+	{
+		1050001,
+		1050002,
+		1050003,
+		1050004,
+		1050005,
+		1050006
+	},
+	{
+		1060001,
+		1060002,
+		1060003,
+		1060004,
+		1060005,
+		1060006,
+		1060007,
+		1060008,
+		1060009
+	},
+	{
+		1070001,
+		1070002,
+		1070003,
+		1070004,
+		1070005,
+		1070006,
+		1070007,
+		1070008,
+		1070009
+	}
+}
+pg.island_dress_template.get_id_list_by_related_dress = {
+	[0] = {
+		1010001,
+		1010002,
+		1010003,
+		1010004,
+		1010005,
+		1010006,
+		1010007,
+		1010008,
+		1010009,
+		1010010,
+		1010011,
+		1020001,
+		1020002,
+		1020003,
+		1020004,
+		1020005,
+		1020006,
+		1020007,
+		1020008,
+		1020009,
+		1020010,
+		1030001,
+		1030002,
+		1030003,
+		1030004,
+		1030005,
+		1030006,
+		1030007,
+		1030008,
+		1030009,
+		1030010,
+		1040001,
+		1040002,
+		1040003,
+		1050001,
+		1050002,
+		1050003,
+		1050004,
+		1050005,
+		1050006,
+		1060001,
+		1060002,
+		1060003,
+		1060004,
+		1060005,
+		1060006,
+		1060007,
+		1060008,
+		1060009,
+		2010001,
+		2010002,
+		2010003,
+		2010004,
+		2020001,
+		2020002,
+		2020003,
+		2020004,
+		2020005,
+		2030001,
+		2030002,
+		2030003,
+		2030004,
+		2030005,
+		2030006
+	},
+	[1060001] = {
+		1070001
+	},
+	[1060002] = {
+		1070002
+	},
+	[1060003] = {
+		1070003
+	},
+	[1060004] = {
+		1070004
+	},
+	[1060005] = {
+		1070005
+	},
+	[1060006] = {
+		1070006
+	},
+	[1060007] = {
+		1070007
+	},
+	[1060008] = {
+		1070008
+	},
+	[1060009] = {
+		1070009
+	}
+}
+pg.base = pg.base or {}
+pg.base.island_dress_template = {}
+
+;(function()
+	pg.base.island_dress_template[1010001] = {
 		quality = 4,
 		related_dress = 0,
 		name = "波破り",
@@ -31,8 +296,8 @@ pg.island_dress_template = {
 			0.8
 		},
 		jump_page = {}
-	},
-	[1010002] = {
+	}
+	pg.base.island_dress_template[1010002] = {
 		quality = 4,
 		related_dress = 0,
 		name = "メガポテチ",
@@ -68,8 +333,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1010003] = {
+	}
+	pg.base.island_dress_template[1010003] = {
 		name = "精霊の旅荷物",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -103,8 +368,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1010004] = {
+	}
+	pg.base.island_dress_template[1010004] = {
 		quality = 4,
 		related_dress = 0,
 		name = "やんちゃ消しゴム",
@@ -135,8 +400,8 @@ pg.island_dress_template = {
 			0.9
 		},
 		jump_page = {}
-	},
-	[1010005] = {
+	}
+	pg.base.island_dress_template[1010005] = {
 		name = "浮き相棒",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -165,8 +430,8 @@ pg.island_dress_template = {
 			97
 		},
 		jump_page = {}
-	},
-	[1010006] = {
+	}
+	pg.base.island_dress_template[1010006] = {
 		name = "居眠り抱き枕",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -200,8 +465,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1010007] = {
+	}
+	pg.base.island_dress_template[1010007] = {
 		quality = 4,
 		related_dress = 0,
 		name = "草わらの影",
@@ -237,8 +502,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1010008] = {
+	}
+	pg.base.island_dress_template[1010008] = {
 		name = "即興ストリング",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -272,8 +537,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1010009] = {
+	}
+	pg.base.island_dress_template[1010009] = {
 		quality = 4,
 		related_dress = 0,
 		name = "構想コンパス",
@@ -309,8 +574,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1010010] = {
+	}
+	pg.base.island_dress_template[1010010] = {
 		quality = 4,
 		related_dress = 0,
 		name = "調整レンチ",
@@ -346,8 +611,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1010011] = {
+	}
+	pg.base.island_dress_template[1010011] = {
 		name = "低語ウォッチ",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -376,8 +641,8 @@ pg.island_dress_template = {
 			97.392
 		},
 		jump_page = {}
-	},
-	[1020001] = {
+	}
+	pg.base.island_dress_template[1020001] = {
 		name = "艦船ビット",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -411,8 +676,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1020002] = {
+	}
+	pg.base.island_dress_template[1020002] = {
 		name = "カップラーメン",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -446,8 +711,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1020003] = {
+	}
+	pg.base.island_dress_template[1020003] = {
 		name = "翠蓮浮影",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -481,8 +746,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1020004] = {
+	}
+	pg.base.island_dress_template[1020004] = {
 		name = "放浪する鉛筆",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -511,8 +776,8 @@ pg.island_dress_template = {
 			2.632
 		},
 		jump_page = {}
-	},
-	[1020005] = {
+	}
+	pg.base.island_dress_template[1020005] = {
 		name = "ステルスお供",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -541,8 +806,8 @@ pg.island_dress_template = {
 			0
 		},
 		jump_page = {}
-	},
-	[1020006] = {
+	}
+	pg.base.island_dress_template[1020006] = {
 		name = "お眠り漫符",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -576,8 +841,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1020007] = {
+	}
+	pg.base.island_dress_template[1020007] = {
 		name = "ポップンサボテン",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -611,8 +876,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1020008] = {
+	}
+	pg.base.island_dress_template[1020008] = {
 		name = "愛読の本",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -646,8 +911,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1020009] = {
+	}
+	pg.base.island_dress_template[1020009] = {
 		name = "万能ボックス",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -681,8 +946,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1020010] = {
+	}
+	pg.base.island_dress_template[1020010] = {
 		name = "星に花を",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -711,8 +976,8 @@ pg.island_dress_template = {
 			-2.981
 		},
 		jump_page = {}
-	},
-	[1030001] = {
+	}
+	pg.base.island_dress_template[1030001] = {
 		name = "波歩き",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -733,8 +998,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1030002] = {
+	}
+	pg.base.island_dress_template[1030002] = {
 		name = "タレステップ",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -760,8 +1025,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1030003] = {
+	}
+	pg.base.island_dress_template[1030003] = {
 		name = "コケの足跡",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -787,8 +1052,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1030004] = {
+	}
+	pg.base.island_dress_template[1030004] = {
 		name = "音符ニャンニャン",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -809,8 +1074,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1030005] = {
+	}
+	pg.base.island_dress_template[1030005] = {
 		name = "氷の足跡",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -831,8 +1096,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1030006] = {
+	}
+	pg.base.island_dress_template[1030006] = {
 		name = "星々の歩み",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -858,8 +1123,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1030007] = {
+	}
+	pg.base.island_dress_template[1030007] = {
 		name = "旅人の帰途",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -885,8 +1150,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1030008] = {
+	}
+	pg.base.island_dress_template[1030008] = {
 		name = "思想の足跡",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -912,8 +1177,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1030009] = {
+	}
+	pg.base.island_dress_template[1030009] = {
 		name = "オン・クロック",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -939,8 +1204,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1030010] = {
+	}
+	pg.base.island_dress_template[1030010] = {
 		name = "アイリスの紋章",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -961,8 +1226,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1040001] = {
+	}
+	pg.base.island_dress_template[1040001] = {
 		name = "クール",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -983,8 +1248,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1040002] = {
+	}
+	pg.base.island_dress_template[1040002] = {
 		name = "爽やか",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1005,8 +1270,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1040003] = {
+	}
+	pg.base.island_dress_template[1040003] = {
 		name = "大人しい",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1027,8 +1292,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1050001] = {
+	}
+	pg.base.island_dress_template[1050001] = {
 		name = "上の空",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1049,8 +1314,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "face_3",
 		jump_page = {}
-	},
-	[1050002] = {
+	}
+	pg.base.island_dress_template[1050002] = {
 		name = "歯ぎしり",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1071,8 +1336,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "face_2",
 		jump_page = {}
-	},
-	[1050003] = {
+	}
+	pg.base.island_dress_template[1050003] = {
 		name = "猫笑い",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1093,8 +1358,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "face_1",
 		jump_page = {}
-	},
-	[1050004] = {
+	}
+	pg.base.island_dress_template[1050004] = {
 		name = "優しめ",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1115,8 +1380,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1050005] = {
+	}
+	pg.base.island_dress_template[1050005] = {
 		name = "鋭い",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1137,8 +1402,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1050006] = {
+	}
+	pg.base.island_dress_template[1050006] = {
 		name = "冷静",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1159,8 +1424,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1060001] = {
+	}
+	pg.base.island_dress_template[1060001] = {
 		name = "制服",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1181,8 +1446,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1060002] = {
+	}
+	pg.base.island_dress_template[1060002] = {
 		name = "礼装",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1203,8 +1468,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1060003] = {
+	}
+	pg.base.island_dress_template[1060003] = {
 		name = "ぐっすりタイム",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1230,8 +1495,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1060004] = {
+	}
+	pg.base.island_dress_template[1060004] = {
 		name = "饅頭着ぐるみ",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1257,8 +1522,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1060005] = {
+	}
+	pg.base.island_dress_template[1060005] = {
 		name = "極地紳士スーツ",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1284,8 +1549,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1060006] = {
+	}
+	pg.base.island_dress_template[1060006] = {
 		name = "ラインアート",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1311,8 +1576,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1060007] = {
+	}
+	pg.base.island_dress_template[1060007] = {
 		name = "学園教師",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1338,8 +1603,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1060008] = {
+	}
+	pg.base.island_dress_template[1060008] = {
 		name = "修理屋",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1365,8 +1630,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1060009] = {
+	}
+	pg.base.island_dress_template[1060009] = {
 		name = "ウェスタンボーイ",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1392,8 +1657,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1070001] = {
+	}
+	pg.base.island_dress_template[1070001] = {
 		name = "制服帽子",
 		related_dress = 1060001,
 		exclusive_default_skin = "",
@@ -1414,8 +1679,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1070002] = {
+	}
+	pg.base.island_dress_template[1070002] = {
 		name = "礼装帽子",
 		related_dress = 1060002,
 		exclusive_default_skin = "",
@@ -1436,8 +1701,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[1070003] = {
+	}
+	pg.base.island_dress_template[1070003] = {
 		name = "ぐっすりタイム帽子",
 		related_dress = 1060003,
 		exclusive_default_skin = "",
@@ -1463,8 +1728,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1070004] = {
+	}
+	pg.base.island_dress_template[1070004] = {
 		name = "饅頭着ぐるみ帽子",
 		related_dress = 1060004,
 		exclusive_default_skin = "",
@@ -1490,8 +1755,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1070005] = {
+	}
+	pg.base.island_dress_template[1070005] = {
 		name = "極地紳士帽子",
 		related_dress = 1060005,
 		exclusive_default_skin = "",
@@ -1517,8 +1782,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1070006] = {
+	}
+	pg.base.island_dress_template[1070006] = {
 		name = "ラインアート帽子",
 		related_dress = 1060006,
 		exclusive_default_skin = "",
@@ -1544,8 +1809,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1070007] = {
+	}
+	pg.base.island_dress_template[1070007] = {
 		name = "学園教師のメガネ",
 		related_dress = 1060007,
 		exclusive_default_skin = "",
@@ -1571,8 +1836,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1070008] = {
+	}
+	pg.base.island_dress_template[1070008] = {
 		name = "修理屋の帽子",
 		related_dress = 1060008,
 		exclusive_default_skin = "",
@@ -1598,8 +1863,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[1070009] = {
+	}
+	pg.base.island_dress_template[1070009] = {
 		name = "ウェスタンボーイの帽子",
 		related_dress = 1060009,
 		exclusive_default_skin = "",
@@ -1625,8 +1890,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[2010001] = {
+	}
+	pg.base.island_dress_template[2010001] = {
 		quality = 4,
 		related_dress = 0,
 		name = "ロケットパック",
@@ -1660,8 +1925,8 @@ pg.island_dress_template = {
 			99000101
 		},
 		jump_page = {}
-	},
-	[2010002] = {
+	}
+	pg.base.island_dress_template[2010002] = {
 		quality = 4,
 		related_dress = 0,
 		name = "学園リュック",
@@ -1700,8 +1965,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[2010003] = {
+	}
+	pg.base.island_dress_template[2010003] = {
 		quality = 4,
 		related_dress = 0,
 		name = "釣りの趣",
@@ -1756,8 +2021,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[2010004] = {
+	}
+	pg.base.island_dress_template[2010004] = {
 		quality = 4,
 		related_dress = 0,
 		name = "純白リボンウィング",
@@ -1800,8 +2065,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[2020001] = {
+	}
+	pg.base.island_dress_template[2020001] = {
 		name = "ワタアメ雲",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1826,8 +2091,8 @@ pg.island_dress_template = {
 			-0.046
 		},
 		jump_page = {}
-	},
-	[2020002] = {
+	}
+	pg.base.island_dress_template[2020002] = {
 		name = "そよ風バルーン",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1857,8 +2122,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[2020003] = {
+	}
+	pg.base.island_dress_template[2020003] = {
 		name = "月華の貝飾",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1883,8 +2148,8 @@ pg.island_dress_template = {
 			-0.043
 		},
 		jump_page = {}
-	},
-	[2020004] = {
+	}
+	pg.base.island_dress_template[2020004] = {
 		name = "夢幻泡影",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1914,8 +2179,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[2020005] = {
+	}
+	pg.base.island_dress_template[2020005] = {
 		name = "拭き拭きはたき",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1949,8 +2214,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[2030001] = {
+	}
+	pg.base.island_dress_template[2030001] = {
 		name = "肉球の波紋",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1971,8 +2236,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[2030002] = {
+	}
+	pg.base.island_dress_template[2030002] = {
 		name = "饅頭ステップ",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -1993,8 +2258,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[2030003] = {
+	}
+	pg.base.island_dress_template[2030003] = {
 		name = "ミツバチルート",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -2015,8 +2280,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[2030004] = {
+	}
+	pg.base.island_dress_template[2030004] = {
 		name = "舞桜見物",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -2037,8 +2302,8 @@ pg.island_dress_template = {
 		scale = "",
 		face_clip = "",
 		jump_page = {}
-	},
-	[2030005] = {
+	}
+	pg.base.island_dress_template[2030005] = {
 		name = "密影遊魚",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -2064,8 +2329,8 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	[2030006] = {
+	}
+	pg.base.island_dress_template[2030006] = {
 		name = "メモリアルレース",
 		related_dress = 0,
 		exclusive_default_skin = "",
@@ -2091,264 +2356,5 @@ pg.island_dress_template = {
 				{}
 			}
 		}
-	},
-	get_id_list_by_type = {
-		{
-			1010001,
-			1010002,
-			1010003,
-			1010004,
-			1010005,
-			1010006,
-			1010007,
-			1010008,
-			1010009,
-			1010010,
-			1010011,
-			2010001,
-			2010002,
-			2010003,
-			2010004
-		},
-		{
-			1020001,
-			1020002,
-			1020003,
-			1020004,
-			1020005,
-			1020006,
-			1020007,
-			1020008,
-			1020009,
-			1020010,
-			2020001,
-			2020002,
-			2020003,
-			2020004,
-			2020005
-		},
-		{
-			1030001,
-			1030002,
-			1030003,
-			1030004,
-			1030005,
-			1030006,
-			1030007,
-			1030008,
-			1030009,
-			1030010,
-			2030001,
-			2030002,
-			2030003,
-			2030004,
-			2030005,
-			2030006
-		},
-		{
-			1040001,
-			1040002,
-			1040003
-		},
-		{
-			1050001,
-			1050002,
-			1050003,
-			1050004,
-			1050005,
-			1050006
-		},
-		{
-			1060001,
-			1060002,
-			1060003,
-			1060004,
-			1060005,
-			1060006,
-			1060007,
-			1060008,
-			1060009
-		},
-		{
-			1070001,
-			1070002,
-			1070003,
-			1070004,
-			1070005,
-			1070006,
-			1070007,
-			1070008,
-			1070009
-		}
-	},
-	get_id_list_by_related_dress = {
-		[0] = {
-			1010001,
-			1010002,
-			1010003,
-			1010004,
-			1010005,
-			1010006,
-			1010007,
-			1010008,
-			1010009,
-			1010010,
-			1010011,
-			1020001,
-			1020002,
-			1020003,
-			1020004,
-			1020005,
-			1020006,
-			1020007,
-			1020008,
-			1020009,
-			1020010,
-			1030001,
-			1030002,
-			1030003,
-			1030004,
-			1030005,
-			1030006,
-			1030007,
-			1030008,
-			1030009,
-			1030010,
-			1040001,
-			1040002,
-			1040003,
-			1050001,
-			1050002,
-			1050003,
-			1050004,
-			1050005,
-			1050006,
-			1060001,
-			1060002,
-			1060003,
-			1060004,
-			1060005,
-			1060006,
-			1060007,
-			1060008,
-			1060009,
-			2010001,
-			2010002,
-			2010003,
-			2010004,
-			2020001,
-			2020002,
-			2020003,
-			2020004,
-			2020005,
-			2030001,
-			2030002,
-			2030003,
-			2030004,
-			2030005,
-			2030006
-		},
-		[1060001] = {
-			1070001
-		},
-		[1060002] = {
-			1070002
-		},
-		[1060003] = {
-			1070003
-		},
-		[1060004] = {
-			1070004
-		},
-		[1060005] = {
-			1070005
-		},
-		[1060006] = {
-			1070006
-		},
-		[1060007] = {
-			1070007
-		},
-		[1060008] = {
-			1070008
-		},
-		[1060009] = {
-			1070009
-		}
-	},
-	all = {
-		1010001,
-		1010002,
-		1010003,
-		1010004,
-		1010005,
-		1010006,
-		1010007,
-		1010008,
-		1010009,
-		1010010,
-		1010011,
-		1020001,
-		1020002,
-		1020003,
-		1020004,
-		1020005,
-		1020006,
-		1020007,
-		1020008,
-		1020009,
-		1020010,
-		1030001,
-		1030002,
-		1030003,
-		1030004,
-		1030005,
-		1030006,
-		1030007,
-		1030008,
-		1030009,
-		1030010,
-		1040001,
-		1040002,
-		1040003,
-		1050001,
-		1050002,
-		1050003,
-		1050004,
-		1050005,
-		1050006,
-		1060001,
-		1060002,
-		1060003,
-		1060004,
-		1060005,
-		1060006,
-		1060007,
-		1060008,
-		1060009,
-		1070001,
-		1070002,
-		1070003,
-		1070004,
-		1070005,
-		1070006,
-		1070007,
-		1070008,
-		1070009,
-		2010001,
-		2010002,
-		2010003,
-		2010004,
-		2020001,
-		2020002,
-		2020003,
-		2020004,
-		2020005,
-		2030001,
-		2030002,
-		2030003,
-		2030004,
-		2030005,
-		2030006
 	}
-}
+end)()

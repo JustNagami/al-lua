@@ -1,230 +1,233 @@
 ﻿pg = pg or {}
-pg.pay_data_display = setmetatable({
-	__name = "pay_data_display",
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		26,
-		27,
-		28,
-		29,
-		30,
-		31,
-		32,
-		33,
-		34,
-		35,
-		36,
-		37,
-		38,
-		39,
-		40,
-		41,
-		44,
-		45,
-		46,
-		47,
-		48,
-		49,
-		50,
-		51,
-		52,
-		53,
-		55,
-		56,
-		57,
-		58,
-		59,
-		61,
-		62,
-		63,
-		64,
-		65,
-		66,
-		67,
-		68,
-		69,
-		70,
-		71,
-		72,
-		73,
-		74,
-		75,
-		76,
-		77,
-		78,
-		79,
-		82,
-		83,
-		84,
-		85,
-		86,
-		87,
-		88,
-		89,
-		90,
-		91,
-		92,
-		93,
-		94,
-		95,
-		96,
-		97,
-		98,
-		99,
-		9001,
-		9002,
-		9003,
-		9004,
-		9005,
-		9006,
-		9007,
-		9008,
-		9009,
-		9010,
-		9011,
-		9012,
-		9013,
-		9014,
-		9015,
-		1000,
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		1006,
-		1007,
-		1008,
-		1009,
-		1010,
-		1011,
-		1012,
-		1013,
-		1014,
-		1015,
-		1016,
-		1017,
-		1018,
-		1019,
-		1020,
-		1021,
-		1022,
-		1023,
-		1024,
-		1025,
-		1026,
-		1027,
-		1303,
-		2001,
-		2002,
-		2003,
-		2004,
-		2005,
-		2006,
-		2007,
-		2008,
-		2009,
-		2010,
-		2011,
-		2014,
-		2015,
-		2016,
-		2017,
-		2018,
-		2019,
-		2020,
-		2021,
-		2022,
-		2023,
-		2024,
-		2025,
-		2026,
-		2027,
-		2028,
-		2029,
-		2030,
-		2031,
-		2032,
-		2033,
-		2034,
-		2035,
-		2036,
-		2037,
-		2038,
-		2039,
-		2040,
-		2041,
-		2042,
-		2043,
-		2044,
-		2045,
-		2046,
-		2047,
-		2048,
-		2049,
-		2050,
-		2051,
-		2052,
-		2053,
-		2054,
-		2055,
-		2056,
-		2057,
-		2058,
-		2059,
-		2063,
-		2064,
-		2068,
-		2069,
-		2070,
-		2071,
-		2074,
-		2075,
-		2076,
-		2078,
-		5001,
-		5002,
-		5003,
-		5004,
-		5005,
-		5006,
-		5007,
-		5011,
-		5012,
-		5013,
-		5014,
-		5015,
-		5016,
-		5017
-	}
-}, confHX)
+pg.pay_data_display = rawget(pg, "pay_data_display") or setmetatable({
+	__name = "pay_data_display"
+}, confNEO)
+pg.pay_data_display.__namecode__ = true
+pg.pay_data_display.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39,
+	40,
+	41,
+	44,
+	45,
+	46,
+	47,
+	48,
+	49,
+	50,
+	51,
+	52,
+	53,
+	55,
+	56,
+	57,
+	58,
+	59,
+	61,
+	62,
+	63,
+	64,
+	65,
+	66,
+	67,
+	68,
+	69,
+	70,
+	71,
+	72,
+	73,
+	74,
+	75,
+	76,
+	77,
+	78,
+	79,
+	82,
+	83,
+	84,
+	85,
+	86,
+	87,
+	88,
+	89,
+	90,
+	91,
+	92,
+	93,
+	94,
+	95,
+	96,
+	97,
+	98,
+	99,
+	9001,
+	9002,
+	9003,
+	9004,
+	9005,
+	9006,
+	9007,
+	9008,
+	9009,
+	9010,
+	9011,
+	9012,
+	9013,
+	9014,
+	9015,
+	1000,
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	1006,
+	1007,
+	1008,
+	1009,
+	1010,
+	1011,
+	1012,
+	1013,
+	1014,
+	1015,
+	1016,
+	1017,
+	1018,
+	1019,
+	1020,
+	1021,
+	1022,
+	1023,
+	1024,
+	1025,
+	1026,
+	1027,
+	1303,
+	2001,
+	2002,
+	2003,
+	2004,
+	2005,
+	2006,
+	2007,
+	2008,
+	2009,
+	2010,
+	2011,
+	2014,
+	2015,
+	2016,
+	2017,
+	2018,
+	2019,
+	2020,
+	2021,
+	2022,
+	2023,
+	2024,
+	2025,
+	2026,
+	2027,
+	2028,
+	2029,
+	2030,
+	2031,
+	2032,
+	2033,
+	2034,
+	2035,
+	2036,
+	2037,
+	2038,
+	2039,
+	2040,
+	2041,
+	2042,
+	2043,
+	2044,
+	2045,
+	2046,
+	2047,
+	2048,
+	2049,
+	2050,
+	2051,
+	2052,
+	2053,
+	2054,
+	2055,
+	2056,
+	2057,
+	2058,
+	2059,
+	2063,
+	2064,
+	2068,
+	2069,
+	2070,
+	2071,
+	2074,
+	2075,
+	2076,
+	2078,
+	5001,
+	5002,
+	5003,
+	5004,
+	5005,
+	5006,
+	5007,
+	5011,
+	5012,
+	5013,
+	5014,
+	5015,
+	5016,
+	5017
+}
 pg.base = pg.base or {}
-pg.base.pay_data_display = {
-	{
+pg.base.pay_data_display = {}
+
+;(function()
+	pg.base.pay_data_display[1] = {
 		limit_group = 0,
 		name = "貿易許可証（30日間）",
 		descrip_extra = "",
@@ -317,8 +320,8 @@ pg.base.pay_data_display = {
 				500
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[2] = {
 		limit_group = 0,
 		name = "新規着任パック",
 		descrip_extra = "",
@@ -395,8 +398,8 @@ pg.base.pay_data_display = {
 				2
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[3] = {
 		limit_group = 0,
 		name = "ダイヤ一摘み",
 		descrip_extra = "",
@@ -435,8 +438,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[4] = {
 		limit_group = 0,
 		name = "ダイヤ一握り",
 		descrip_extra = "",
@@ -475,8 +478,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[5] = {
 		limit_group = 0,
 		name = "ダイヤ一袋",
 		descrip_extra = "",
@@ -515,8 +518,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[6] = {
 		limit_group = 0,
 		name = "ダイヤ小箱",
 		descrip_extra = "",
@@ -555,8 +558,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[7] = {
 		limit_group = 0,
 		name = "ダイヤ大箱",
 		descrip_extra = "",
@@ -595,8 +598,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[8] = {
 		limit_group = 0,
 		name = "ダイヤ一船",
 		descrip_extra = "",
@@ -635,8 +638,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	{
+	}
+	pg.base.pay_data_display[9] = {
 		limit_group = 0,
 		name = "福袋",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\n※すでに所有している衣装を入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -753,8 +756,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[10] = {
 		limit_group = 0,
 		name = "新生活キャンペｰン",
 		descrip_extra = "アプリストア新生活キャンペーン特典",
@@ -871,8 +874,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[11] = {
 		limit_group = 0,
 		name = "一周年福袋",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の初回割引販売時の価格分の無償ダイヤに変換されます。",
@@ -989,8 +992,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[12] = {
 		limit_group = 0,
 		name = "福袋2019",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -1107,8 +1110,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[13] = {
 		limit_group = 0,
 		name = "春節福袋",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -1225,8 +1228,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[14] = {
 		limit_group = 0,
 		name = "福袋",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -1343,8 +1346,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[15] = {
 		limit_group = 0,
 		name = "二週年福袋",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -1461,8 +1464,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[16] = {
 		limit_group = 0,
 		name = "新年福袋2020",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -1584,8 +1587,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[17] = {
 		limit_group = 0,
 		name = "新年福袋復刻(2019)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -1702,8 +1705,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[18] = {
 		limit_group = 0,
 		name = "春節福袋2020",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -1825,8 +1828,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[19] = {
 		limit_group = 0,
 		name = "春節福袋復刻(2019)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -1943,8 +1946,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[20] = {
 		limit_group = 0,
 		name = "着任応援パック・Ⅰ",
 		descrip_extra = "お得パックのアイテムはメールボックスに送られます ",
@@ -2052,8 +2055,8 @@ pg.base.pay_data_display = {
 				180
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[21] = {
 		limit_group = 0,
 		name = "着任応援パック・Ⅱ",
 		descrip_extra = "お得パックのアイテムはメールボックスに送られます ",
@@ -2186,8 +2189,8 @@ pg.base.pay_data_display = {
 				780
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[22] = {
 		limit_group = 0,
 		name = "着任応援パック・Ⅲ",
 		descrip_extra = "お得パックのアイテムはメールボックスに送られます ",
@@ -2325,8 +2328,8 @@ pg.base.pay_data_display = {
 				1680
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[23] = {
 		limit_group = 0,
 		name = "福袋（夏2020）",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\n既に所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -2448,8 +2451,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[24] = {
 		limit_group = 0,
 		name = "三周年福袋",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -2571,8 +2574,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[25] = {
 		limit_group = 0,
 		name = "新年福袋2021",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -2694,8 +2697,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[26] = {
 		limit_group = 0,
 		name = "新年福袋2020(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -2817,8 +2820,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[27] = {
 		limit_group = 0,
 		name = "春節福袋2021",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -2940,8 +2943,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[28] = {
 		limit_group = 0,
 		name = "春節福袋2020(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -3063,8 +3066,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[29] = {
 		limit_group = 0,
 		name = "福袋(夏2021)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -3186,8 +3189,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[30] = {
 		limit_group = 0,
 		name = "福袋(夏2020) (復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -3309,8 +3312,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[31] = {
 		limit_group = 0,
 		name = "着任応援パック・Ⅳ",
 		descrip_extra = "※購入されたパックはメールに送られます。ご注意ください",
@@ -3438,8 +3441,8 @@ pg.base.pay_data_display = {
 				1980
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[32] = {
 		limit_group = 0,
 		name = "四周年福袋",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -3561,8 +3564,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[33] = {
 		limit_group = 0,
 		name = "三周年福袋 (復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -3684,8 +3687,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[34] = {
 		limit_group = 0,
 		name = "新年福袋2022",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -3807,8 +3810,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[35] = {
 		limit_group = 0,
 		name = "新年福袋2021(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -3930,8 +3933,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[36] = {
 		limit_group = 0,
 		name = "春節福袋2022",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -4053,8 +4056,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[37] = {
 		limit_group = 0,
 		name = "春節福袋2021(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -4176,8 +4179,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[38] = {
 		limit_group = 0,
 		name = "福袋(夏2022)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -4299,8 +4302,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[39] = {
 		limit_group = 0,
 		name = "福袋(夏2021) (復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -4422,8 +4425,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[40] = {
 		limit_group = 0,
 		name = "五周年福袋",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -4545,8 +4548,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	{
+	}
+	pg.base.pay_data_display[41] = {
 		limit_group = 0,
 		name = "四周年福袋 (復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -4668,8 +4671,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[44] = {
+	}
+	pg.base.pay_data_display[44] = {
 		limit_group = 0,
 		name = "カムバックパック",
 		descrip_extra = "購入すると、アイテムはメールボックスに送られます",
@@ -4831,8 +4834,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[45] = {
+	}
+	pg.base.pay_data_display[45] = {
 		limit_group = 0,
 		name = "冬の水着福袋2023①",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -4954,8 +4957,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[46] = {
+	}
+	pg.base.pay_data_display[46] = {
 		limit_group = 0,
 		name = "冬の水着福袋2023②",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -5077,8 +5080,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[47] = {
+	}
+	pg.base.pay_data_display[47] = {
 		limit_group = 0,
 		name = "新年福袋2022(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -5200,8 +5203,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[48] = {
+	}
+	pg.base.pay_data_display[48] = {
 		limit_group = 0,
 		name = "春節福袋2023・Ⅰ ",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -5323,8 +5326,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[49] = {
+	}
+	pg.base.pay_data_display[49] = {
 		limit_group = 0,
 		name = "春節福袋2023・Ⅱ ",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -5446,8 +5449,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[50] = {
+	}
+	pg.base.pay_data_display[50] = {
 		limit_group = 0,
 		name = "春節福袋2022(復刻) ",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -5569,8 +5572,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[51] = {
+	}
+	pg.base.pay_data_display[51] = {
 		limit_group = 0,
 		name = "夏の水着福袋2023",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -5703,8 +5706,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[52] = {
+	}
+	pg.base.pay_data_display[52] = {
 		limit_group = 0,
 		name = "福袋(夏2023)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -5837,8 +5840,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[53] = {
+	}
+	pg.base.pay_data_display[53] = {
 		limit_group = 0,
 		name = "福袋(夏2022) (復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -5971,8 +5974,8 @@ pg.base.pay_data_display = {
 				2022
 			}
 		}
-	},
-	[55] = {
+	}
+	pg.base.pay_data_display[55] = {
 		limit_group = 0,
 		name = "六周年福袋②",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -6105,8 +6108,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[56] = {
+	}
+	pg.base.pay_data_display[56] = {
 		limit_group = 0,
 		name = "五周年福袋(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -6239,8 +6242,8 @@ pg.base.pay_data_display = {
 				2022
 			}
 		}
-	},
-	[57] = {
+	}
+	pg.base.pay_data_display[57] = {
 		limit_group = 0,
 		name = "六周年福袋①",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -6373,8 +6376,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[58] = {
+	}
+	pg.base.pay_data_display[58] = {
 		limit_group = 0,
 		name = "選べる迎春福袋①",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\n*選べるアイテムボックスは倉庫で使用でき、指定されたアイテムを入手できます。",
@@ -6506,8 +6509,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[59] = {
+	}
+	pg.base.pay_data_display[59] = {
 		limit_group = 0,
 		name = "選べる迎春福袋②",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\n*選べるアイテムボックス・Ⅱは倉庫にて使用できます。\n*キャンペーン着せ替え交換チケットは期間終了後に交換対象が変更されてしまいますので、ご注意ください。",
@@ -6634,8 +6637,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[61] = {
+	}
+	pg.base.pay_data_display[61] = {
 		limit_group = 0,
 		name = "新年福袋2024①",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -6768,8 +6771,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[62] = {
+	}
+	pg.base.pay_data_display[62] = {
 		limit_group = 0,
 		name = "冬の水着福袋2023①(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -6902,8 +6905,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[63] = {
+	}
+	pg.base.pay_data_display[63] = {
 		limit_group = 0,
 		name = "新年福袋2024②",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -7036,8 +7039,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[64] = {
+	}
+	pg.base.pay_data_display[64] = {
 		limit_group = 0,
 		name = "冬の水着福袋2023②(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -7170,8 +7173,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[65] = {
+	}
+	pg.base.pay_data_display[65] = {
 		limit_group = 0,
 		name = "春節福袋2024①",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -7304,8 +7307,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[66] = {
+	}
+	pg.base.pay_data_display[66] = {
 		limit_group = 0,
 		name = "春節福袋2023①(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -7438,8 +7441,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[67] = {
+	}
+	pg.base.pay_data_display[67] = {
 		limit_group = 0,
 		name = "春節福袋2024②",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -7572,8 +7575,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[68] = {
+	}
+	pg.base.pay_data_display[68] = {
 		limit_group = 0,
 		name = "春節福袋2023②(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -7706,8 +7709,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[69] = {
+	}
+	pg.base.pay_data_display[69] = {
 		limit_group = 0,
 		name = "夏の水着福袋2024",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -7840,8 +7843,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[70] = {
+	}
+	pg.base.pay_data_display[70] = {
 		limit_group = 0,
 		name = "夏の水着福袋2023(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -7974,8 +7977,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[71] = {
+	}
+	pg.base.pay_data_display[71] = {
 		limit_group = 0,
 		name = "福袋(夏2024)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -8108,8 +8111,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[72] = {
+	}
+	pg.base.pay_data_display[72] = {
 		limit_group = 0,
 		name = "福袋(夏2023)(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -8242,8 +8245,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[73] = {
+	}
+	pg.base.pay_data_display[73] = {
 		limit_group = 0,
 		name = "七周年福袋①",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -8376,8 +8379,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[74] = {
+	}
+	pg.base.pay_data_display[74] = {
 		limit_group = 0,
 		name = "六周年福袋①(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -8510,8 +8513,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[75] = {
+	}
+	pg.base.pay_data_display[75] = {
 		limit_group = 0,
 		name = "七周年福袋② ",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -8644,8 +8647,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[76] = {
+	}
+	pg.base.pay_data_display[76] = {
 		limit_group = 0,
 		name = "六周年福袋②(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -8778,8 +8781,8 @@ pg.base.pay_data_display = {
 				2023
 			}
 		}
-	},
-	[77] = {
+	}
+	pg.base.pay_data_display[77] = {
 		limit_group = 0,
 		name = "選べる迎春パック2025A",
 		descrip_extra = "※購入すると、アイテムはメールボックスに送られます ",
@@ -8886,8 +8889,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[78] = {
+	}
+	pg.base.pay_data_display[78] = {
 		limit_group = 0,
 		name = "選べる迎春パック2025B",
 		descrip_extra = "※購入すると、アイテムはメールボックスに送られます ",
@@ -8999,8 +9002,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[79] = {
+	}
+	pg.base.pay_data_display[79] = {
 		limit_group = 0,
 		name = "選べる迎春パック2025C",
 		descrip_extra = "※購入すると、アイテムはメールボックスに送られます ",
@@ -9127,8 +9130,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[82] = {
+	}
+	pg.base.pay_data_display[82] = {
 		limit_group = 0,
 		name = "新年福袋2025A",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -9261,8 +9264,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[83] = {
+	}
+	pg.base.pay_data_display[83] = {
 		limit_group = 0,
 		name = "新年福袋2024A(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -9395,8 +9398,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[84] = {
+	}
+	pg.base.pay_data_display[84] = {
 		limit_group = 0,
 		name = "新年福袋2025B",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -9529,8 +9532,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[85] = {
+	}
+	pg.base.pay_data_display[85] = {
 		limit_group = 0,
 		name = "新年福袋2024B(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -9663,8 +9666,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[86] = {
+	}
+	pg.base.pay_data_display[86] = {
 		limit_group = 0,
 		name = "春節福袋2025A",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -9797,8 +9800,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[87] = {
+	}
+	pg.base.pay_data_display[87] = {
 		limit_group = 0,
 		name = "春節福袋2025B",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -9931,8 +9934,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[88] = {
+	}
+	pg.base.pay_data_display[88] = {
 		limit_group = 0,
 		name = "春節福袋2024A(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -10065,8 +10068,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[89] = {
+	}
+	pg.base.pay_data_display[89] = {
 		limit_group = 0,
 		name = "春節福袋2024B(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -10199,8 +10202,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[90] = {
+	}
+	pg.base.pay_data_display[90] = {
 		limit_group = 0,
 		name = "着せ替えパック(学園)",
 		descrip_extra = "※福袋はメールボックスに送られます\n※全部所持している場合自動でダイヤ×680に変換されます",
@@ -10313,8 +10316,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[91] = {
+	}
+	pg.base.pay_data_display[91] = {
 		limit_group = 0,
 		name = "夏の水着福袋2025A",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -10447,8 +10450,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[92] = {
+	}
+	pg.base.pay_data_display[92] = {
 		limit_group = 0,
 		name = "夏の水着福袋2024(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -10581,8 +10584,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[93] = {
+	}
+	pg.base.pay_data_display[93] = {
 		limit_group = 0,
 		name = "夏の水着福袋2025B",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -10715,8 +10718,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[94] = {
+	}
+	pg.base.pay_data_display[94] = {
 		limit_group = 0,
 		name = "福袋(夏2024)(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -10849,8 +10852,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[95] = {
+	}
+	pg.base.pay_data_display[95] = {
 		limit_group = 0,
 		name = "着せ替えパック(バニー)",
 		descrip_extra = "※福袋はメールボックスに送られます\n※全部所持している場合自動でダイヤ×680に変換されます",
@@ -10963,8 +10966,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[96] = {
+	}
+	pg.base.pay_data_display[96] = {
 		limit_group = 0,
 		name = "八周年福袋A",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -11097,8 +11100,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[97] = {
+	}
+	pg.base.pay_data_display[97] = {
 		limit_group = 0,
 		name = "七周年福袋A(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -11231,8 +11234,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[98] = {
+	}
+	pg.base.pay_data_display[98] = {
 		limit_group = 0,
 		name = "八周年福袋B",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -11365,8 +11368,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[99] = {
+	}
+	pg.base.pay_data_display[99] = {
 		limit_group = 0,
 		name = "七周年福袋B(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -11499,8 +11502,8 @@ pg.base.pay_data_display = {
 				2024
 			}
 		}
-	},
-	[9001] = {
+	}
+	pg.base.pay_data_display[9001] = {
 		limit_group = 0,
 		name = "着せ替えパック(スポーツ、レースクイーン)",
 		descrip_extra = "※福袋はメールボックスに送られます\n※全部所持している場合自動でダイヤ×680に変換されます",
@@ -11613,8 +11616,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[9002] = {
+	}
+	pg.base.pay_data_display[9002] = {
 		limit_group = 0,
 		name = "選べる迎春パック2026A",
 		descrip_extra = "※購入すると、アイテムはメールボックスに送られます ",
@@ -11721,8 +11724,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[9003] = {
+	}
+	pg.base.pay_data_display[9003] = {
 		limit_group = 0,
 		name = "選べる迎春パック2026B",
 		descrip_extra = "※購入すると、アイテムはメールボックスに送られます ",
@@ -11834,8 +11837,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[9004] = {
+	}
+	pg.base.pay_data_display[9004] = {
 		limit_group = 0,
 		name = "選べる迎春パック2026C",
 		descrip_extra = "※購入すると、アイテムはメールボックスに送られます ",
@@ -11962,8 +11965,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[9005] = {
+	}
+	pg.base.pay_data_display[9005] = {
 		limit_group = 0,
 		name = "復刻L2D着せ替え福袋2026B",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -12096,8 +12099,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[9006] = {
+	}
+	pg.base.pay_data_display[9006] = {
 		limit_group = 0,
 		name = "復刻L2D着せ替え福袋2026A",
 		descrip_extra = "※福袋はメールボックスに贈られます\n※全部所持している場合自動でダイヤ×1080に変換されます",
@@ -12210,8 +12213,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[9007] = {
+	}
+	pg.base.pay_data_display[9007] = {
 		limit_group = 0,
 		name = "新年福袋2026A",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -12344,8 +12347,10 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[9008] = {
+	}
+end)()
+;(function()
+	pg.base.pay_data_display[9008] = {
 		limit_group = 0,
 		name = "新年福袋2025A・復刻",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -12478,8 +12483,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[9009] = {
+	}
+	pg.base.pay_data_display[9009] = {
 		limit_group = 0,
 		name = "新年福袋2026B",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -12612,8 +12617,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[9010] = {
+	}
+	pg.base.pay_data_display[9010] = {
 		limit_group = 0,
 		name = "新年福袋2025B・復刻",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -12746,8 +12751,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[9011] = {
+	}
+	pg.base.pay_data_display[9011] = {
 		limit_group = 0,
 		name = "春節福袋2026A",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -12880,8 +12885,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[9012] = {
+	}
+	pg.base.pay_data_display[9012] = {
 		limit_group = 0,
 		name = "春節福袋2025A(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -13014,8 +13019,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[9013] = {
+	}
+	pg.base.pay_data_display[9013] = {
 		limit_group = 0,
 		name = "春節福袋2026B",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -13148,8 +13153,8 @@ pg.base.pay_data_display = {
 				2026
 			}
 		}
-	},
-	[9014] = {
+	}
+	pg.base.pay_data_display[9014] = {
 		limit_group = 0,
 		name = "春節福袋2025B(復刻)",
 		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
@@ -13282,8 +13287,8 @@ pg.base.pay_data_display = {
 				2025
 			}
 		}
-	},
-	[9015] = {
+	}
+	pg.base.pay_data_display[9015] = {
 		limit_group = 0,
 		name = "着せ替えパック（ドレス）",
 		descrip_extra = "※福袋はメールボックスに送られます\n※全部所持している場合自動でダイヤ×680に変換されます",
@@ -13396,8 +13401,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[1000] = {
+	}
+	pg.base.pay_data_display[1000] = {
 		limit_group = 0,
 		name = "クルーズパス",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -13481,8 +13486,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1001] = {
+	}
+	pg.base.pay_data_display[1001] = {
 		limit_group = 0,
 		name = "クルーズパス(21初冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -13566,8 +13571,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1002] = {
+	}
+	pg.base.pay_data_display[1002] = {
 		limit_group = 0,
 		name = "クルーズパス(22冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -13651,8 +13656,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1003] = {
+	}
+	pg.base.pay_data_display[1003] = {
 		limit_group = 0,
 		name = "クルーズパス(22春)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -13736,8 +13741,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1004] = {
+	}
+	pg.base.pay_data_display[1004] = {
 		limit_group = 0,
 		name = "クルーズパス(22初夏)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -13821,8 +13826,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1005] = {
+	}
+	pg.base.pay_data_display[1005] = {
 		limit_group = 0,
 		name = "クルーズパス(22夏)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -13906,8 +13911,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1006] = {
+	}
+	pg.base.pay_data_display[1006] = {
 		limit_group = 0,
 		name = "クルーズパス(22秋)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -13991,8 +13996,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1007] = {
+	}
+	pg.base.pay_data_display[1007] = {
 		limit_group = 0,
 		name = "クルーズパス(22初冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14076,8 +14081,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1008] = {
+	}
+	pg.base.pay_data_display[1008] = {
 		limit_group = 0,
 		name = "クルーズパス(23冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14161,8 +14166,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1009] = {
+	}
+	pg.base.pay_data_display[1009] = {
 		limit_group = 0,
 		name = "クルーズパス(23春)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14246,8 +14251,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1010] = {
+	}
+	pg.base.pay_data_display[1010] = {
 		limit_group = 0,
 		name = "クルーズパス(23初夏)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14331,8 +14336,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1011] = {
+	}
+	pg.base.pay_data_display[1011] = {
 		limit_group = 0,
 		name = "クルーズパス(23夏)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14416,8 +14421,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1012] = {
+	}
+	pg.base.pay_data_display[1012] = {
 		limit_group = 0,
 		name = "クルーズパス(23秋)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14501,8 +14506,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1013] = {
+	}
+	pg.base.pay_data_display[1013] = {
 		limit_group = 0,
 		name = "クルーズパス(23初冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14586,8 +14591,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1014] = {
+	}
+	pg.base.pay_data_display[1014] = {
 		limit_group = 0,
 		name = "クルーズパス(24冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14671,8 +14676,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1015] = {
+	}
+	pg.base.pay_data_display[1015] = {
 		limit_group = 0,
 		name = "クルーズパス(24春)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14756,8 +14761,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1016] = {
+	}
+	pg.base.pay_data_display[1016] = {
 		limit_group = 0,
 		name = "クルーズパス(24初夏)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14841,8 +14846,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1017] = {
+	}
+	pg.base.pay_data_display[1017] = {
 		limit_group = 0,
 		name = "クルーズパス(24夏)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -14926,8 +14931,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1018] = {
+	}
+	pg.base.pay_data_display[1018] = {
 		limit_group = 0,
 		name = "クルーズパス(24秋)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15011,8 +15016,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1019] = {
+	}
+	pg.base.pay_data_display[1019] = {
 		limit_group = 0,
 		name = "クルーズパス(24初冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15096,8 +15101,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1020] = {
+	}
+	pg.base.pay_data_display[1020] = {
 		limit_group = 0,
 		name = "クルーズパス(25冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15181,8 +15186,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1021] = {
+	}
+	pg.base.pay_data_display[1021] = {
 		limit_group = 0,
 		name = "クルーズパス(25春)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15266,8 +15271,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1022] = {
+	}
+	pg.base.pay_data_display[1022] = {
 		limit_group = 0,
 		name = "クルーズパス(25初夏)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15351,8 +15356,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1023] = {
+	}
+	pg.base.pay_data_display[1023] = {
 		limit_group = 0,
 		name = "クルーズパス(25夏)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15436,8 +15441,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1024] = {
+	}
+	pg.base.pay_data_display[1024] = {
 		limit_group = 0,
 		name = "クルーズパス(25秋)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15521,8 +15526,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1025] = {
+	}
+	pg.base.pay_data_display[1025] = {
 		limit_group = 0,
 		name = "クルーズパス(25初冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15606,8 +15611,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1026] = {
+	}
+	pg.base.pay_data_display[1026] = {
 		limit_group = 0,
 		name = "クルーズパス(26冬)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15691,8 +15696,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1027] = {
+	}
+	pg.base.pay_data_display[1027] = {
 		limit_group = 0,
 		name = "クルーズパス(26春)",
 		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
@@ -15776,8 +15781,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[1303] = {
+	}
+	pg.base.pay_data_display[1303] = {
 		limit_group = 0,
 		name = "迎春特売パス2026",
 		descrip_extra = "※パス任務クリア時に追加の報酬を入手可能",
@@ -15861,8 +15866,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2001] = {
+	}
+	pg.base.pay_data_display[2001] = {
 		limit_group = 1,
 		name = "PR特別計画艦パック・Ⅰ期",
 		descrip_extra = "此处不会被看到",
@@ -15929,8 +15934,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2002] = {
+	}
+	pg.base.pay_data_display[2002] = {
 		limit_group = 1,
 		name = "PR艦船Ⅰ期交換アイテム＋強化ユニットセット",
 		descrip_extra = "既に特別計画艦Ⅰ期全艦船をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -16002,8 +16007,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2003] = {
+	}
+	pg.base.pay_data_display[2003] = {
 		limit_group = 1,
 		name = "PR艦船Ⅰ期交換アイテム",
 		descrip_extra = "既に特別計画艦Ⅰ期全艦船をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -16065,8 +16070,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2004] = {
+	}
+	pg.base.pay_data_display[2004] = {
 		limit_group = 1,
 		name = "PR特別計画艦Ⅰ期強化ユニットセット",
 		descrip_extra = "購入すると指向型強化ユニット・Ⅰ期×343個を入手可能",
@@ -16128,8 +16133,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2005] = {
+	}
+	pg.base.pay_data_display[2005] = {
 		limit_group = 2,
 		name = "PR特別計画艦パック・Ⅱ期",
 		descrip_extra = "此处不会被看到",
@@ -16196,8 +16201,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2006] = {
+	}
+	pg.base.pay_data_display[2006] = {
 		limit_group = 2,
 		name = "PR艦船Ⅱ期交換アイテム＋強化ユニットセット",
 		descrip_extra = "既にPR艦船・Ⅱ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -16269,8 +16274,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2007] = {
+	}
+	pg.base.pay_data_display[2007] = {
 		limit_group = 2,
 		name = "PR艦船Ⅱ期交換アイテム",
 		descrip_extra = "*既にPR艦船・Ⅱ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -16332,8 +16337,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2008] = {
+	}
+	pg.base.pay_data_display[2008] = {
 		limit_group = 2,
 		name = "PR特別計画艦Ⅱ期強化ユニットセット",
 		descrip_extra = "購入すると指向型強化ユニット・Ⅱ期×343個を入手可能",
@@ -16395,8 +16400,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2009] = {
+	}
+	pg.base.pay_data_display[2009] = {
 		limit_group = 0,
 		name = "指揮官レベルアップパック",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -16489,8 +16494,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2010] = {
+	}
+	pg.base.pay_data_display[2010] = {
 		limit_group = 0,
 		name = "教科書パック",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -16607,8 +16612,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2011] = {
+	}
+	pg.base.pay_data_display[2011] = {
 		limit_group = 0,
 		name = "教科書パック",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -16725,8 +16730,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2014] = {
+	}
+	pg.base.pay_data_display[2014] = {
 		limit_group = 0,
 		name = "教科書パック",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -16843,8 +16848,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2015] = {
+	}
+	pg.base.pay_data_display[2015] = {
 		limit_group = 3,
 		name = "PR特別計画艦パック・Ⅲ期",
 		descrip_extra = "此处不会被看到",
@@ -16911,8 +16916,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2016] = {
+	}
+	pg.base.pay_data_display[2016] = {
 		limit_group = 3,
 		name = "PR艦船Ⅲ期交換アイテム＋強化ユニットセット",
 		descrip_extra = "*既にPR艦船・Ⅲ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -16984,8 +16989,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2017] = {
+	}
+	pg.base.pay_data_display[2017] = {
 		limit_group = 3,
 		name = "PR艦船Ⅲ期交換アイテム",
 		descrip_extra = "*既にPR艦船・Ⅲ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -17047,8 +17052,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2018] = {
+	}
+	pg.base.pay_data_display[2018] = {
 		limit_group = 3,
 		name = "PR特別計画艦Ⅲ期強化ユニットセット",
 		descrip_extra = "購入すると指向型強化ユニット・Ⅲ期×343個を入手可能",
@@ -17110,8 +17115,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2019] = {
+	}
+	pg.base.pay_data_display[2019] = {
 		limit_group = 0,
 		name = "教科書パック",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -17228,8 +17233,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2020] = {
+	}
+	pg.base.pay_data_display[2020] = {
 		limit_group = 0,
 		name = "冬のお得福袋・2024",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -17346,8 +17351,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2021] = {
+	}
+	pg.base.pay_data_display[2021] = {
 		limit_group = 0,
 		name = "選べるUR着せ替え福袋①",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -17454,8 +17459,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2022] = {
+	}
+	pg.base.pay_data_display[2022] = {
 		limit_group = 0,
 		name = "キューブ補給パック①",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -17537,8 +17542,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2023] = {
+	}
+	pg.base.pay_data_display[2023] = {
 		limit_group = 0,
 		name = "キューブ補給パック②",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -17620,8 +17625,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2024] = {
+	}
+	pg.base.pay_data_display[2024] = {
 		limit_group = 0,
 		name = "キューブ補給パック③",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -17703,8 +17708,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2025] = {
+	}
+	pg.base.pay_data_display[2025] = {
 		limit_group = 0,
 		name = "お得パック(デイリー)",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -17771,8 +17776,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2026] = {
+	}
+	pg.base.pay_data_display[2026] = {
 		limit_group = 0,
 		name = "教科書パック ",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -17889,8 +17894,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2027] = {
+	}
+	pg.base.pay_data_display[2027] = {
 		limit_group = 4,
 		name = "PR特別計画艦パック·Ⅳ期",
 		descrip_extra = "此处不会被看到",
@@ -17957,8 +17962,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2028] = {
+	}
+	pg.base.pay_data_display[2028] = {
 		limit_group = 4,
 		name = "PR艦船Ⅳ期交換アイテム＋強化ユニットセット",
 		descrip_extra = "*既にPR艦船・Ⅳ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -18030,8 +18035,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2029] = {
+	}
+	pg.base.pay_data_display[2029] = {
 		limit_group = 4,
 		name = "PR艦船Ⅳ期交換アイテム",
 		descrip_extra = "*既にPR艦船・Ⅳ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -18093,8 +18098,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2030] = {
+	}
+	pg.base.pay_data_display[2030] = {
 		limit_group = 4,
 		name = "PR特別計画艦Ⅳ期強化ユニットセット",
 		descrip_extra = "購入すると指向型強化ユニット・Ⅳ期×343個を入手可能",
@@ -18156,8 +18161,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2031] = {
+	}
+	pg.base.pay_data_display[2031] = {
 		limit_group = 0,
 		name = "選べるUR着せ替え福袋②",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -18264,8 +18269,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2032] = {
+	}
+	pg.base.pay_data_display[2032] = {
 		limit_group = 101,
 		name = "戦闘UI・レインボー",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -18341,8 +18346,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2033] = {
+	}
+	pg.base.pay_data_display[2033] = {
 		limit_group = 101,
 		name = "戦闘UI・レインボー（単品）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -18424,8 +18429,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2034] = {
+	}
+	pg.base.pay_data_display[2034] = {
 		limit_group = 101,
 		name = "戦闘UI・レインボー（セット）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -18517,8 +18522,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2035] = {
+	}
+	pg.base.pay_data_display[2035] = {
 		limit_group = 0,
 		name = "選べるUR着せ替え福袋③",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -18625,8 +18630,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2036] = {
+	}
+	pg.base.pay_data_display[2036] = {
 		limit_group = 0,
 		name = "教科書パック",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -18743,8 +18748,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2037] = {
+	}
+	pg.base.pay_data_display[2037] = {
 		limit_group = 102,
 		name = "戦闘UI・クリスマス",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -18820,8 +18825,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2038] = {
+	}
+	pg.base.pay_data_display[2038] = {
 		limit_group = 102,
 		name = "戦闘UI・クリスマス（単品）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -18903,8 +18908,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2039] = {
+	}
+	pg.base.pay_data_display[2039] = {
 		limit_group = 102,
 		name = "戦闘UI・クリスマス（セット）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -18996,8 +19001,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2040] = {
+	}
+	pg.base.pay_data_display[2040] = {
 		limit_group = 0,
 		name = "冬のお得福袋・2025",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19114,8 +19119,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2041] = {
+	}
+	pg.base.pay_data_display[2041] = {
 		limit_group = 0,
 		name = "選べるUR着せ替え福袋D",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19222,8 +19227,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2042] = {
+	}
+	pg.base.pay_data_display[2042] = {
 		limit_group = 103,
 		name = "戦闘UI・ファラオ",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19299,8 +19304,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2043] = {
+	}
+	pg.base.pay_data_display[2043] = {
 		limit_group = 103,
 		name = "戦闘UI・ファラオ（単品）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19382,8 +19387,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2044] = {
+	}
+	pg.base.pay_data_display[2044] = {
 		limit_group = 103,
 		name = "戦闘UI・ファラオ（セット）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19475,8 +19480,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2045] = {
+	}
+	pg.base.pay_data_display[2045] = {
 		limit_group = 104,
 		name = "戦闘UI・ジーン",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19552,8 +19557,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2046] = {
+	}
+	pg.base.pay_data_display[2046] = {
 		limit_group = 104,
 		name = "戦闘UI・ジーン（単品）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19635,8 +19640,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2047] = {
+	}
+	pg.base.pay_data_display[2047] = {
 		limit_group = 104,
 		name = "戦闘UI・ジーン（セット）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19728,8 +19733,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2048] = {
+	}
+	pg.base.pay_data_display[2048] = {
 		limit_group = 0,
 		name = "選べるUR着せ替え福袋E",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19836,8 +19841,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2049] = {
+	}
+	pg.base.pay_data_display[2049] = {
 		limit_group = 0,
 		name = "教科書パック",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -19954,8 +19959,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2050] = {
+	}
+	pg.base.pay_data_display[2050] = {
 		limit_group = 105,
 		name = "戦闘UI・シーサイド",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -20031,8 +20036,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2051] = {
+	}
+	pg.base.pay_data_display[2051] = {
 		limit_group = 105,
 		name = "戦闘UI・シーサイド（単品）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -20124,8 +20129,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2052] = {
+	}
+	pg.base.pay_data_display[2052] = {
 		limit_group = 105,
 		name = "戦闘UI・シーサイド（セット）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -20217,8 +20222,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2053] = {
+	}
+	pg.base.pay_data_display[2053] = {
 		limit_group = 5,
 		name = "PR特別計画艦パック·Ⅴ期",
 		descrip_extra = "此处不会被看到",
@@ -20285,8 +20290,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2054] = {
+	}
+	pg.base.pay_data_display[2054] = {
 		limit_group = 5,
 		name = "PR艦船Ⅴ期交換アイテム＋強化ユニットセット",
 		descrip_extra = "*既にPR艦船・Ⅴ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -20358,8 +20363,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2055] = {
+	}
+	pg.base.pay_data_display[2055] = {
 		limit_group = 5,
 		name = "PR艦船Ⅴ期交換アイテム",
 		descrip_extra = "*既にPR艦船・Ⅴ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
@@ -20421,8 +20426,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2056] = {
+	}
+	pg.base.pay_data_display[2056] = {
 		limit_group = 5,
 		name = "PR特別計画艦Ⅴ期強化ユニットセット",
 		descrip_extra = "購入すると指向型強化ユニット・Ⅴ期×343個を入手可能",
@@ -20484,8 +20489,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2057] = {
+	}
+	pg.base.pay_data_display[2057] = {
 		limit_group = 106,
 		name = "戦闘UI・シノビ",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -20561,8 +20566,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2058] = {
+	}
+	pg.base.pay_data_display[2058] = {
 		limit_group = 106,
 		name = "戦闘UI・シノビ（単品）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -20654,8 +20659,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2059] = {
+	}
+	pg.base.pay_data_display[2059] = {
 		limit_group = 106,
 		name = "戦闘UI・シノビ（セット）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -20747,8 +20752,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2063] = {
+	}
+	pg.base.pay_data_display[2063] = {
 		limit_group = 0,
 		name = "選べるUR着せ替え福袋F",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -20855,8 +20860,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2064] = {
+	}
+	pg.base.pay_data_display[2064] = {
 		limit_group = 0,
 		name = "教科書パック",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -20973,8 +20978,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2068] = {
+	}
+	pg.base.pay_data_display[2068] = {
 		limit_group = 107,
 		name = "戦闘UI・メイドカフェ",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21050,8 +21055,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2069] = {
+	}
+	pg.base.pay_data_display[2069] = {
 		limit_group = 107,
 		name = "戦闘UI・メイドカフェ（単品）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21143,8 +21148,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2070] = {
+	}
+	pg.base.pay_data_display[2070] = {
 		limit_group = 107,
 		name = "戦闘UI・メイドカフェ（セット）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21236,8 +21241,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2071] = {
+	}
+	pg.base.pay_data_display[2071] = {
 		limit_group = 0,
 		name = "冬のお得福袋・2026",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21354,8 +21359,10 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2074] = {
+	}
+end)()
+;(function()
+	pg.base.pay_data_display[2074] = {
 		limit_group = 108,
 		name = "戦闘UI・春色旅籠",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21431,8 +21438,8 @@ pg.base.pay_data_display = {
 		ignorePlatform = {},
 		limit_args = {},
 		drop_item = {}
-	},
-	[2075] = {
+	}
+	pg.base.pay_data_display[2075] = {
 		limit_group = 108,
 		name = "戦闘UI・春色旅籠（単品）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21524,8 +21531,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2076] = {
+	}
+	pg.base.pay_data_display[2076] = {
 		limit_group = 108,
 		name = "戦闘UI・春色旅籠（セット）",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21617,8 +21624,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[2078] = {
+	}
+	pg.base.pay_data_display[2078] = {
 		limit_group = 0,
 		name = "教科書パック",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21735,8 +21742,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5001] = {
+	}
+	pg.base.pay_data_display[5001] = {
 		limit_group = 0,
 		name = "お得デイリーパック①",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21828,8 +21835,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5002] = {
+	}
+	pg.base.pay_data_display[5002] = {
 		limit_group = 0,
 		name = "お得デイリーパック②",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -21911,8 +21918,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5003] = {
+	}
+	pg.base.pay_data_display[5003] = {
 		limit_group = 0,
 		name = "お得デイリーパック③",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22004,8 +22011,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5004] = {
+	}
+	pg.base.pay_data_display[5004] = {
 		limit_group = 0,
 		name = "お得デイリーパック④",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22097,8 +22104,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5005] = {
+	}
+	pg.base.pay_data_display[5005] = {
 		limit_group = 0,
 		name = "お得デイリーパック⑤",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22180,8 +22187,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5006] = {
+	}
+	pg.base.pay_data_display[5006] = {
 		limit_group = 0,
 		name = "お得デイリーパック⑥",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22273,8 +22280,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5007] = {
+	}
+	pg.base.pay_data_display[5007] = {
 		limit_group = 0,
 		name = "お得デイリーパック⑦",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22366,8 +22373,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5011] = {
+	}
+	pg.base.pay_data_display[5011] = {
 		limit_group = 0,
 		name = "お得デイリーパック2025A",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22459,8 +22466,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5012] = {
+	}
+	pg.base.pay_data_display[5012] = {
 		limit_group = 0,
 		name = "お得デイリーパック2025B",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22542,8 +22549,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5013] = {
+	}
+	pg.base.pay_data_display[5013] = {
 		limit_group = 0,
 		name = "お得デイリーパック2025C",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22635,8 +22642,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5014] = {
+	}
+	pg.base.pay_data_display[5014] = {
 		limit_group = 0,
 		name = "お得デイリーパック2025D",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22728,8 +22735,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5015] = {
+	}
+	pg.base.pay_data_display[5015] = {
 		limit_group = 0,
 		name = "お得デイリーパック2025E",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22811,8 +22818,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5016] = {
+	}
+	pg.base.pay_data_display[5016] = {
 		limit_group = 0,
 		name = "お得デイリーパック2025F",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22904,8 +22911,8 @@ pg.base.pay_data_display = {
 				1
 			}
 		}
-	},
-	[5017] = {
+	}
+	pg.base.pay_data_display[5017] = {
 		limit_group = 0,
 		name = "お得デイリーパック2025G",
 		descrip_extra = "※購入したアイテムはメールボックスに送られます",
@@ -22998,4 +23005,4 @@ pg.base.pay_data_display = {
 			}
 		}
 	}
-}
+end)()

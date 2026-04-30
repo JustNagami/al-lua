@@ -1,30 +1,33 @@
 ﻿pg = pg or {}
-pg.island_card_diy = setmetatable({
-	__name = "island_card_diy",
-	all = {
-		4001,
-		4002,
-		4003,
-		4004,
-		4005,
-		4006,
-		4007,
-		4008,
-		4009,
-		4010,
-		4011,
-		4012,
-		4013,
-		4014,
-		4015,
-		4016,
-		4017,
-		4018
-	}
-}, confHX)
+pg.island_card_diy = rawget(pg, "island_card_diy") or setmetatable({
+	__name = "island_card_diy"
+}, confNEO)
+pg.island_card_diy.__namecode__ = true
+pg.island_card_diy.all = {
+	4001,
+	4002,
+	4003,
+	4004,
+	4005,
+	4006,
+	4007,
+	4008,
+	4009,
+	4010,
+	4011,
+	4012,
+	4013,
+	4014,
+	4015,
+	4016,
+	4017,
+	4018
+}
 pg.base = pg.base or {}
-pg.base.island_card_diy = {
-	[4001] = {
+pg.base.island_card_diy = {}
+
+;(function()
+	pg.base.island_card_diy[4001] = {
 		tech_id = 0,
 		name = "基本",
 		desc = "基本",
@@ -33,8 +36,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4001",
 		jump_page = {}
-	},
-	[4002] = {
+	}
+	pg.base.island_card_diy[4002] = {
 		tech_id = 0,
 		name = "ニュージャージー (イメージ)",
 		desc = "ニュージャージー (イメージ)",
@@ -43,8 +46,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4002",
 		jump_page = {}
-	},
-	[4003] = {
+	}
+	pg.base.island_card_diy[4003] = {
 		tech_id = 0,
 		name = "サラトガ (イメージ)",
 		desc = "サラトガ (イメージ)",
@@ -53,8 +56,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4003",
 		jump_page = {}
-	},
-	[4004] = {
+	}
+	pg.base.island_card_diy[4004] = {
 		tech_id = 0,
 		name = "フッド (イメージ)",
 		desc = "フッド (イメージ)",
@@ -63,8 +66,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4004",
 		jump_page = {}
-	},
-	[4005] = {
+	}
+	pg.base.island_card_diy[4005] = {
 		tech_id = 0,
 		name = "ユニコーン (イメージ)",
 		desc = "ユニコーン (イメージ)",
@@ -73,8 +76,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4005",
 		jump_page = {}
-	},
-	[4006] = {
+	}
+	pg.base.island_card_diy[4006] = {
 		tech_id = 0,
 		name = "チェシャー (イメージ)",
 		desc = "チェシャー (イメージ)",
@@ -83,8 +86,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4006",
 		jump_page = {}
-	},
-	[4007] = {
+	}
+	pg.base.island_card_diy[4007] = {
 		tech_id = 0,
 		name = "島風 (イメージ)",
 		desc = "島風 (イメージ)",
@@ -93,8 +96,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4007",
 		jump_page = {}
-	},
-	[4008] = {
+	}
+	pg.base.island_card_diy[4008] = {
 		tech_id = 0,
 		name = "天城ちゃん (イメージ)",
 		desc = "天城ちゃん (イメージ)",
@@ -103,8 +106,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4008",
 		jump_page = {}
-	},
-	[4009] = {
+	}
+	pg.base.island_card_diy[4009] = {
 		tech_id = 0,
 		name = "大鳳 (イメージ)",
 		desc = "大鳳 (イメージ)",
@@ -113,8 +116,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4009",
 		jump_page = {}
-	},
-	[4010] = {
+	}
+	pg.base.island_card_diy[4010] = {
 		tech_id = 0,
 		name = "明石 (イメージ)",
 		desc = "明石 (イメージ)",
@@ -123,8 +126,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4010",
 		jump_page = {}
-	},
-	[4011] = {
+	}
+	pg.base.island_card_diy[4011] = {
 		tech_id = 0,
 		name = "プリンツ・オイゲン (イメージ)",
 		desc = "プリンツ・オイゲン (イメージ)",
@@ -133,8 +136,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4011",
 		jump_page = {}
-	},
-	[4012] = {
+	}
+	pg.base.island_card_diy[4012] = {
 		tech_id = 0,
 		name = "応瑞 (イメージ)",
 		desc = "応瑞 (イメージ)",
@@ -143,8 +146,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4012",
 		jump_page = {}
-	},
-	[4013] = {
+	}
+	pg.base.island_card_diy[4013] = {
 		tech_id = 0,
 		name = "肇和 (イメージ)",
 		desc = "肇和 (イメージ)",
@@ -153,8 +156,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4013",
 		jump_page = {}
-	},
-	[4014] = {
+	}
+	pg.base.island_card_diy[4014] = {
 		tech_id = 0,
 		name = "レオナルド・ダ・ヴィンチ (イメージ)",
 		desc = "レオナルド・ダ・ヴィンチ (イメージ)",
@@ -163,8 +166,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4014",
 		jump_page = {}
-	},
-	[4015] = {
+	}
+	pg.base.island_card_diy[4015] = {
 		tech_id = 0,
 		name = "タシュケント (イメージ)",
 		desc = "タシュケント (イメージ)",
@@ -173,8 +176,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4015",
 		jump_page = {}
-	},
-	[4016] = {
+	}
+	pg.base.island_card_diy[4016] = {
 		tech_id = 0,
 		name = "ル・マラン (イメージ)",
 		desc = "ル・マラン (イメージ)",
@@ -183,8 +186,8 @@ pg.base.island_card_diy = {
 		icon = "islandprops/morensuipian",
 		resource = "islandphoto/4016",
 		jump_page = {}
-	},
-	[4017] = {
+	}
+	pg.base.island_card_diy[4017] = {
 		tech_id = 0,
 		name = "エリート模擬士",
 		desc = "模擬戦闘の新星の認証カード",
@@ -198,8 +201,8 @@ pg.base.island_card_diy = {
 				{}
 			}
 		}
-	},
-	[4018] = {
+	}
+	pg.base.island_card_diy[4018] = {
 		tech_id = 0,
 		name = "エース模擬士",
 		desc = "模擬戦闘の達人の認証カード",
@@ -214,4 +217,4 @@ pg.base.island_card_diy = {
 			}
 		}
 	}
-}
+end)()

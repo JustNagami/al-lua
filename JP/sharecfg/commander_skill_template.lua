@@ -1,6 +1,116 @@
 ﻿pg = pg or {}
-pg.commander_skill_template = {
-	[10011] = {
+pg.commander_skill_template = rawget(pg, "commander_skill_template") or setmetatable({
+	__name = "commander_skill_template"
+}, confNEO)
+pg.commander_skill_template.all = {
+	10011,
+	10012,
+	10013,
+	10021,
+	10022,
+	10023,
+	11011,
+	11012,
+	11013,
+	11021,
+	11022,
+	11023,
+	12011,
+	12012,
+	12013,
+	12021,
+	12022,
+	12023,
+	20011,
+	20012,
+	20013,
+	20021,
+	20022,
+	20023,
+	21011,
+	21012,
+	21013,
+	21021,
+	21022,
+	21023,
+	21031,
+	21032,
+	21033,
+	21041,
+	21042,
+	21043,
+	22011,
+	22012,
+	22013,
+	22021,
+	22022,
+	22023,
+	30011,
+	30012,
+	30013,
+	30021,
+	30022,
+	30023,
+	31011,
+	31012,
+	31013,
+	31021,
+	31022,
+	31023,
+	32011,
+	32012,
+	32013,
+	32021,
+	32022,
+	32023,
+	40011,
+	40012,
+	40013,
+	40021,
+	40022,
+	40023,
+	41011,
+	41012,
+	41013,
+	41021,
+	41022,
+	41023,
+	41031,
+	41032,
+	41033,
+	42011,
+	42012,
+	42013,
+	42021,
+	42022,
+	42023,
+	960011,
+	960012,
+	960013,
+	960021,
+	960022,
+	960023,
+	960031,
+	960032,
+	960033,
+	960041,
+	960042,
+	960043,
+	960051,
+	960052,
+	960053,
+	960061,
+	960062,
+	960063,
+	960071,
+	960072,
+	960073
+}
+pg.base = pg.base or {}
+pg.base.commander_skill_template = {}
+
+;(function()
+	pg.base.commander_skill_template[10011] = {
 		desc_world = "装備艦隊に駆逐艦が3隻存在している場合、前衛艦隊の雷装を上昇させる（効果中・効果は戦術補助ステータスによる）",
 		name = "31ぶんぶん",
 		next_id = 10012,
@@ -16,8 +126,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			9100111
 		}
-	},
-	[10012] = {
+	}
+	pg.base.commander_skill_template[10012] = {
 		desc_world = "指揮ニャとして装備され、戦闘開始時に前衛艦隊の2番目の艦船が駆逐艦である場合、1度だけ特殊弾幕Ⅰを展開する",
 		name = "31ぶんぶん",
 		next_id = 10013,
@@ -35,8 +145,8 @@ pg.commander_skill_template = {
 			9100111,
 			9100112
 		}
-	},
-	[10013] = {
+	}
+	pg.base.commander_skill_template[10013] = {
 		desc_world = "特殊弾幕Ⅰを特殊弾幕Ⅱに強化する",
 		name = "31ぶんぶん",
 		next_id = 0,
@@ -55,8 +165,8 @@ pg.commander_skill_template = {
 			9100111,
 			9100113
 		}
-	},
-	[10021] = {
+	}
+	pg.base.commander_skill_template[10021] = {
 		desc_world = "敵主力艦隊もしくは偵察艦隊と交戦時、艦隊の戦艦・巡洋戦艦・航空戦艦の命中がアップ（効果大・効果は戦術補助ステータスによる）",
 		name = "RDぼこぼこ ",
 		next_id = 10022,
@@ -72,8 +182,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			100211
 		}
-	},
-	[10022] = {
+	}
+	pg.base.commander_skill_template[10022] = {
 		desc_world = "所属艦隊の旗艦が戦艦・巡洋戦艦・航空戦艦である場合、旗艦の与えるダメージがアップ(効果は指揮補助ステータスによる)",
 		name = "RDぼこぼこ ",
 		next_id = 10023,
@@ -91,8 +201,8 @@ pg.commander_skill_template = {
 			100211,
 			100212
 		}
-	},
-	[10023] = {
+	}
+	pg.base.commander_skill_template[10023] = {
 		desc_world = "艦隊の戦艦・巡洋戦艦・航空戦艦の回避・対空がアップ(效果中・効果は指揮補助ステータスによる)",
 		name = "RDぼこぼこ ",
 		next_id = 0,
@@ -112,8 +222,8 @@ pg.commander_skill_template = {
 			100212,
 			100213
 		}
-	},
-	[11011] = {
+	}
+	pg.base.commander_skill_template[11011] = {
 		desc_world = "指揮ニャとして装備されている場合、装備艦隊の駆逐艦の雷装を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "SELFりみたー",
 		next_id = 11012,
@@ -129,8 +239,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			9110111
 		}
-	},
-	[11012] = {
+	}
+	pg.base.commander_skill_template[11012] = {
 		desc_world = "前衛艦隊の先頭が駆逐艦である場合、戦闘開始時に戦闘可能な先頭駆逐艦が敵艦に接近した時、一度だけオフニャ弾幕-Ⅰを発動する",
 		name = "SELFりみたー",
 		next_id = 11013,
@@ -148,8 +258,8 @@ pg.commander_skill_template = {
 			9110111,
 			110112
 		}
-	},
-	[11013] = {
+	}
+	pg.base.commander_skill_template[11013] = {
 		desc_world = "オフニャ弾幕Ⅰ　を　オフニャ弾幕Ⅱ　に強化する",
 		name = "SELFりみたー",
 		next_id = 0,
@@ -167,8 +277,8 @@ pg.commander_skill_template = {
 			9110111,
 			110113
 		}
-	},
-	[11021] = {
+	}
+	pg.base.commander_skill_template[11021] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽空母・空母の装填を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "LUCKばたばた",
 		next_id = 11022,
@@ -184,8 +294,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			110211
 		}
-	},
-	[11022] = {
+	}
+	pg.base.commander_skill_template[11022] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽空母・空母の回避・対空を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "LUCKばたばた",
 		next_id = 11023,
@@ -203,8 +313,8 @@ pg.commander_skill_template = {
 			110211,
 			9110212
 		}
-	},
-	[11023] = {
+	}
+	pg.base.commander_skill_template[11023] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽空母・空母の航空を上昇させる（効果中・効果は指揮補助ステータスによる）",
 		name = "LUCKばたばた",
 		next_id = 0,
@@ -224,8 +334,8 @@ pg.commander_skill_template = {
 			9110212,
 			110213
 		}
-	},
-	[12011] = {
+	}
+	pg.base.commander_skill_template[12011] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽空母・空母の装填を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "空母補給にゃ",
 		next_id = 12012,
@@ -241,8 +351,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			120111
 		}
-	},
-	[12012] = {
+	}
+	pg.base.commander_skill_template[12012] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽空母・空母の航空を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "空母補給にゃ",
 		next_id = 12013,
@@ -260,8 +370,8 @@ pg.commander_skill_template = {
 			120111,
 			120112
 		}
-	},
-	[12013] = {
+	}
+	pg.base.commander_skill_template[12013] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽空母・空母の命中を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "空母補給にゃ",
 		next_id = 0,
@@ -281,8 +391,8 @@ pg.commander_skill_template = {
 			120112,
 			120113
 		}
-	},
-	[12021] = {
+	}
+	pg.base.commander_skill_template[12021] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の回避を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "電探偵察にゃ",
 		next_id = 12022,
@@ -298,8 +408,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			9120121
 		}
-	},
-	[12022] = {
+	}
+	pg.base.commander_skill_template[12022] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の命中を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "電探偵察にゃ",
 		next_id = 12023,
@@ -317,8 +427,8 @@ pg.commander_skill_template = {
 			9120121,
 			120122
 		}
-	},
-	[12023] = {
+	}
+	pg.base.commander_skill_template[12023] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の火力を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "電探偵察にゃ",
 		next_id = 0,
@@ -338,8 +448,8 @@ pg.commander_skill_template = {
 			120122,
 			120123
 		}
-	},
-	[20011] = {
+	}
+	pg.base.commander_skill_template[20011] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の火力・対空を上昇させる（効果中・効果は指揮補助ステータスによる）",
 		name = "ロイヤルタッチ",
 		next_id = 20012,
@@ -355,8 +465,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			200111
 		}
-	},
-	[20012] = {
+	}
+	pg.base.commander_skill_template[20012] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の全員の火力を戦闘開始後30秒間上昇させる（効果中・効果は戦術補助ステータスによる）",
 		name = "ロイヤルタッチ",
 		next_id = 20013,
@@ -374,8 +484,8 @@ pg.commander_skill_template = {
 			200111,
 			9200112
 		}
-	},
-	[20013] = {
+	}
+	pg.base.commander_skill_template[20013] = {
 		desc_world = "装備艦隊の戦艦・巡洋戦艦・航空戦艦に与えるダメージを上昇させる（効果は戦術補助ステータスによる）",
 		name = "ロイヤルタッチ",
 		next_id = 0,
@@ -395,8 +505,8 @@ pg.commander_skill_template = {
 			9200112,
 			200113
 		}
-	},
-	[20021] = {
+	}
+	pg.base.commander_skill_template[20021] = {
 		desc_world = "指揮ニャとして装備されている場合、艦隊の戦艦・巡洋戦艦・航空戦艦の火力・対空がアップ（效果中・効果は指揮補助ステータスによる)",
 		name = "ロイヤルケーキ ",
 		next_id = 20022,
@@ -412,8 +522,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			200211
 		}
-	},
-	[20022] = {
+	}
+	pg.base.commander_skill_template[20022] = {
 		desc_world = "指揮ニャとして装備され、艦隊にロイヤル所属艦船が4隻以上ある場合、戦闘開始時発動：30秒間味方前衛艦隊の受けるダメージを軽減する（効果は兵站補助ステータスによる)",
 		name = "ロイヤルケーキ ",
 		next_id = 20023,
@@ -431,8 +541,8 @@ pg.commander_skill_template = {
 			200211,
 			200212
 		}
-	},
-	[20023] = {
+	}
+	pg.base.commander_skill_template[20023] = {
 		desc_world = "指揮ニャとして装備されている場合、味方ロイヤル艦船の回避がアップ（効果大・効果は兵站補助ステータスによる)",
 		name = "ロイヤルケーキ ",
 		next_id = 0,
@@ -452,8 +562,8 @@ pg.commander_skill_template = {
 			200212,
 			200213
 		}
-	},
-	[21011] = {
+	}
+	pg.base.commander_skill_template[21011] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の回避を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "マネーキャッチ",
 		next_id = 21012,
@@ -469,8 +579,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			210111
 		}
-	},
-	[21012] = {
+	}
+	pg.base.commander_skill_template[21012] = {
 		desc_world = "参謀ニャとして装備されている場合、輸送艦隊との戦闘で装備艦隊の軽巡・重巡・超巡の火力を上昇させる（効果大・効果は戦術補助ステータスによる）",
 		name = "マネーキャッチ",
 		next_id = 21013,
@@ -488,8 +598,8 @@ pg.commander_skill_template = {
 			210111,
 			210112
 		}
-	},
-	[21013] = {
+	}
+	pg.base.commander_skill_template[21013] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の雷装を上昇させる（効果中・効果は指揮補助ステータスによる）",
 		name = "マネーキャッチ",
 		next_id = 0,
@@ -509,8 +619,8 @@ pg.commander_skill_template = {
 			210112,
 			210113
 		}
-	},
-	[21021] = {
+	}
+	pg.base.commander_skill_template[21021] = {
 		desc_world = "参謀ニャとして装備されている場合、偵察艦隊との戦闘で装備艦隊の駆逐艦の命中を上昇させる（効果中・効果は戦術補助ステータスによる）",
 		name = "スカウトキャッチ",
 		next_id = 21022,
@@ -526,8 +636,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			210211
 		}
-	},
-	[21022] = {
+	}
+	pg.base.commander_skill_template[21022] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の駆逐艦の回避を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "スカウトキャッチ",
 		next_id = 21023,
@@ -545,8 +655,8 @@ pg.commander_skill_template = {
 			210211,
 			210212
 		}
-	},
-	[21023] = {
+	}
+	pg.base.commander_skill_template[21023] = {
 		desc_world = "敵偵察艦隊が装備艦隊周辺3マス以内に存在する場合、装備艦隊の駆逐艦の回避を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "スカウトキャッチ",
 		next_id = 0,
@@ -566,8 +676,8 @@ pg.commander_skill_template = {
 			210212,
 			9210213
 		}
-	},
-	[21031] = {
+	}
+	pg.base.commander_skill_template[21031] = {
 		desc_world = "参謀ニャとして装備されている場合、艦隊の軽空母・空母の命中がアップ（効果小・効果は戦術補助ステータスによる)",
 		name = "ウォッチキャッチ ",
 		next_id = 21032,
@@ -583,8 +693,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			210311
 		}
-	},
-	[21032] = {
+	}
+	pg.base.commander_skill_template[21032] = {
 		desc_world = "敵偵察艦隊が装備艦隊周辺2マス以内に存在する場合、装備艦隊の駆逐艦の回避を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "ウォッチキャッチ ",
 		next_id = 21033,
@@ -602,8 +712,8 @@ pg.commander_skill_template = {
 			210311,
 			9210312
 		}
-	},
-	[21033] = {
+	}
+	pg.base.commander_skill_template[21033] = {
 		desc_world = "参謀ニャとして装備されている場合、艦隊の軽空母・空母の航空がアップ(效果中・効果は指揮補助ステータスによる)",
 		name = "ウォッチキャッチ ",
 		next_id = 0,
@@ -623,8 +733,8 @@ pg.commander_skill_template = {
 			9210312,
 			210313
 		}
-	},
-	[21041] = {
+	}
+	pg.base.commander_skill_template[21041] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の回避を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "ドッジキャッチ ",
 		next_id = 21042,
@@ -640,8 +750,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			9210411
 		}
-	},
-	[21042] = {
+	}
+	pg.base.commander_skill_template[21042] = {
 		desc_world = "参謀ニャとして装備されている場合、艦隊の戦艦・巡洋戦艦・航空戦艦の装填がアップ(效果小・効果は指揮補助ステータスによる)",
 		name = "ドッジキャッチ ",
 		next_id = 21043,
@@ -659,8 +769,8 @@ pg.commander_skill_template = {
 			9210411,
 			210412
 		}
-	},
-	[21043] = {
+	}
+	pg.base.commander_skill_template[21043] = {
 		desc_world = "参謀ニャとして装備されている場合、艦隊のロイヤル艦船の火力がアップ(效果小・効果は戦術補助ステータスによる)",
 		name = "ドッジキャッチ ",
 		next_id = 0,
@@ -680,8 +790,8 @@ pg.commander_skill_template = {
 			210412,
 			210413
 		}
-	},
-	[22011] = {
+	}
+	pg.base.commander_skill_template[22011] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の装填を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "戦艦補給にゃ",
 		next_id = 22012,
@@ -697,8 +807,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			220111
 		}
-	},
-	[22012] = {
+	}
+	pg.base.commander_skill_template[22012] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の命中を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "戦艦補給にゃ",
 		next_id = 22013,
@@ -716,8 +826,8 @@ pg.commander_skill_template = {
 			220111,
 			220112
 		}
-	},
-	[22013] = {
+	}
+	pg.base.commander_skill_template[22013] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の火力を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "戦艦補給にゃ",
 		next_id = 0,
@@ -737,8 +847,8 @@ pg.commander_skill_template = {
 			220112,
 			220113
 		}
-	},
-	[22021] = {
+	}
+	pg.base.commander_skill_template[22021] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の火力を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "巡洋戦術にゃ",
 		next_id = 22022,
@@ -754,8 +864,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			220211
 		}
-	},
-	[22022] = {
+	}
+	pg.base.commander_skill_template[22022] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の命中を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "巡洋戦術にゃ",
 		next_id = 22023,
@@ -773,8 +883,8 @@ pg.commander_skill_template = {
 			220211,
 			220212
 		}
-	},
-	[22023] = {
+	}
+	pg.base.commander_skill_template[22023] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の回避を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "巡洋戦術にゃ",
 		next_id = 0,
@@ -794,8 +904,8 @@ pg.commander_skill_template = {
 			220212,
 			220213
 		}
-	},
-	[30011] = {
+	}
+	pg.base.commander_skill_template[30011] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽空母・空母の航空・装填を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "反撃毛玉拳",
 		next_id = 30012,
@@ -811,8 +921,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			300111
 		}
-	},
-	[30012] = {
+	}
+	pg.base.commander_skill_template[30012] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の空母・軽空母の回避を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "反撃毛玉拳",
 		next_id = 30013,
@@ -830,8 +940,8 @@ pg.commander_skill_template = {
 			300111,
 			9300112
 		}
-	},
-	[30013] = {
+	}
+	pg.base.commander_skill_template[30013] = {
 		desc_world = "戦闘開始時、装備艦隊の主力艦隊が空母（もしくは軽空母）一隻のみである場合、最初の航空攻撃の装填が8%アップし、一度だけ航空攻撃隊に雷撃機を追加する",
 		name = "反撃毛玉拳",
 		next_id = 0,
@@ -851,8 +961,8 @@ pg.commander_skill_template = {
 			9300112,
 			300113
 		}
-	},
-	[30021] = {
+	}
+	pg.base.commander_skill_template[30021] = {
 		desc_world = "指揮ニャとして装備されている場合、艦隊の軽巡・重巡・超甲巡の火力・雷装がアップ（効果中・効果は戦術補助ステータスによる）)",
 		name = "鉄底尻尾突 ",
 		next_id = 30022,
@@ -868,8 +978,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			300211
 		}
-	},
-	[30022] = {
+	}
+	pg.base.commander_skill_template[30022] = {
 		desc_world = "指揮ニャとして装備されている場合、艦隊周囲2マス内に敵主力艦隊が存在している場合、旗艦の受けるダメージを軽減する(効果は指揮補助ステータスによる)",
 		name = "鉄底尻尾突 ",
 		next_id = 30023,
@@ -887,8 +997,8 @@ pg.commander_skill_template = {
 			300211,
 			300212
 		}
-	},
-	[30023] = {
+	}
+	pg.base.commander_skill_template[30023] = {
 		desc_world = "指揮ニャとして装備されている場合、主力艦隊との戦闘開始後30秒間、艦隊の軽巡・重巡・超甲巡の命中・回避がアップ(效果大・効果は戦術補助ステータスによる)",
 		name = "鉄底尻尾突 ",
 		next_id = 0,
@@ -908,8 +1018,8 @@ pg.commander_skill_template = {
 			300212,
 			300213
 		}
-	},
-	[31011] = {
+	}
+	pg.base.commander_skill_template[31011] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽空母・空母の命中を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "必殺三段腹",
 		next_id = 31012,
@@ -925,8 +1035,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			310111
 		}
-	},
-	[31012] = {
+	}
+	pg.base.commander_skill_template[31012] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽空母・空母の航空を上昇させる（効果中・効果は指揮補助ステータスによる）",
 		name = "必殺三段腹",
 		next_id = 31013,
@@ -944,8 +1054,8 @@ pg.commander_skill_template = {
 			310111,
 			310112
 		}
-	},
-	[31013] = {
+	}
+	pg.base.commander_skill_template[31013] = {
 		desc_world = "装備艦隊の旗艦が軽空母・空母である場合、戦闘開始15秒後特殊先制航空攻撃を行う",
 		name = "必殺三段腹",
 		next_id = 0,
@@ -965,8 +1075,8 @@ pg.commander_skill_template = {
 			310112,
 			9310113
 		}
-	},
-	[31021] = {
+	}
+	pg.base.commander_skill_template[31021] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の駆逐艦の回避を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "直感野生勘",
 		next_id = 31022,
@@ -982,8 +1092,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			310211
 		}
-	},
-	[31022] = {
+	}
+	pg.base.commander_skill_template[31022] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の駆逐艦の雷装を上昇させる（効果中・効果は兵站補助ステータスによる）",
 		name = "直感野生勘",
 		next_id = 31023,
@@ -1001,8 +1111,8 @@ pg.commander_skill_template = {
 			310211,
 			310212
 		}
-	},
-	[31023] = {
+	}
+	pg.base.commander_skill_template[31023] = {
 		desc_world = "参謀ニャとして装備されていており、かつ前衛艦隊が駆逐艦一隻のみで編成されている場合、装備艦隊の駆逐艦の雷装を上昇させる（効果大・効果は指揮補助ステータスによる）",
 		name = "直感野生勘",
 		next_id = 0,
@@ -1022,8 +1132,8 @@ pg.commander_skill_template = {
 			310212,
 			310213
 		}
-	},
-	[32011] = {
+	}
+	pg.base.commander_skill_template[32011] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の火力を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "巡洋指揮にゃ",
 		next_id = 32012,
@@ -1039,8 +1149,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			320111
 		}
-	},
-	[32012] = {
+	}
+	pg.base.commander_skill_template[32012] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の雷装を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "巡洋指揮にゃ",
 		next_id = 32013,
@@ -1058,8 +1168,8 @@ pg.commander_skill_template = {
 			320111,
 			320112
 		}
-	},
-	[32013] = {
+	}
+	pg.base.commander_skill_template[32013] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の雷装を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "巡洋指揮にゃ",
 		next_id = 0,
@@ -1079,8 +1189,8 @@ pg.commander_skill_template = {
 			320112,
 			320113
 		}
-	},
-	[32021] = {
+	}
+	pg.base.commander_skill_template[32021] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の命中を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "戦艦補給にゃ",
 		next_id = 32022,
@@ -1096,8 +1206,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			320211
 		}
-	},
-	[32022] = {
+	}
+	pg.base.commander_skill_template[32022] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の対空を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "戦艦補給にゃ",
 		next_id = 32023,
@@ -1115,8 +1225,8 @@ pg.commander_skill_template = {
 			320211,
 			320212
 		}
-	},
-	[32023] = {
+	}
+	pg.base.commander_skill_template[32023] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の火力を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "戦艦補給にゃ",
 		next_id = 0,
@@ -1136,8 +1246,8 @@ pg.commander_skill_template = {
 			320212,
 			320213
 		}
-	},
-	[40011] = {
+	}
+	pg.base.commander_skill_template[40011] = {
 		desc_world = "装備艦隊の潜水艦・潜水空母の雷装を上昇させる（効果小・効果は指揮・兵站補助ステータスによる）",
 		name = "静寂のシュトース",
 		next_id = 40012,
@@ -1153,8 +1263,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			400111
 		}
-	},
-	[40012] = {
+	}
+	pg.base.commander_skill_template[40012] = {
 		desc_world = "指揮ニャとして装備されている場合、装備艦隊の潜水艦の潜航力が15アップ",
 		name = "静寂のシュトース",
 		next_id = 40013,
@@ -1172,8 +1282,8 @@ pg.commander_skill_template = {
 			400111,
 			9400112
 		}
-	},
-	[40013] = {
+	}
+	pg.base.commander_skill_template[40013] = {
 		desc_world = "指揮ニャとして装備されている場合、装備艦隊の潜水艦隊旗艦が戦場に到達した場合、特殊魚雷攻撃を行う",
 		name = "静寂のシュトース",
 		next_id = 0,
@@ -1193,8 +1303,8 @@ pg.commander_skill_template = {
 			9400112,
 			9400113
 		}
-	},
-	[40021] = {
+	}
+	pg.base.commander_skill_template[40021] = {
 		desc_world = "参謀ニャとして装備されている場合、艦隊の戦艦・巡洋戦艦・航空戦艦の火力・命中がアップ（効果中・効果は指揮補助ステータスによる)",
 		name = "根性のぐりゅっく ",
 		next_id = 40022,
@@ -1210,8 +1320,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			400211
 		}
-	},
-	[40022] = {
+	}
+	pg.base.commander_skill_template[40022] = {
 		desc_world = "参謀ニャとして装備され、装備艦隊の旗艦が戦艦・巡洋戦艦・航空戦艦である場合、戦闘開始後20秒のとき50％で特殊弾幕を展開する",
 		name = "根性のぐりゅっく ",
 		next_id = 40023,
@@ -1229,8 +1339,8 @@ pg.commander_skill_template = {
 			400211,
 			9400212
 		}
-	},
-	[40023] = {
+	}
+	pg.base.commander_skill_template[40023] = {
 		desc_world = "参謀ニャとして装備されている場合、主力艦隊と交戦時、艦隊の戦艦・巡洋戦艦・航空戦艦の受けるダメージを軽減し(効果は兵站補助ステータスによる)、装填をアップさせる（効果中・効果は兵站補助ステータスによる）",
 		name = "根性のぐりゅっく ",
 		next_id = 0,
@@ -1250,8 +1360,8 @@ pg.commander_skill_template = {
 			9400212,
 			400213
 		}
-	},
-	[41011] = {
+	}
+	pg.base.commander_skill_template[41011] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の回避を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "海のリッター",
 		next_id = 41012,
@@ -1267,8 +1377,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			410111
 		}
-	},
-	[41012] = {
+	}
+	pg.base.commander_skill_template[41012] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の戦艦・巡洋戦艦・航空戦艦の命中を上昇させる（効果中・効果は戦術補助ステータスによる）",
 		name = "海のリッター",
 		next_id = 41013,
@@ -1286,8 +1396,8 @@ pg.commander_skill_template = {
 			410111,
 			410112
 		}
-	},
-	[41013] = {
+	}
+	pg.base.commander_skill_template[41013] = {
 		desc_world = "敵主力艦隊と戦闘時、味方旗艦が受けるダメージを軽減させる（効果は戦術補助ステータスによる）",
 		name = "海のリッター",
 		next_id = 0,
@@ -1307,8 +1417,8 @@ pg.commander_skill_template = {
 			410112,
 			410113
 		}
-	},
-	[41021] = {
+	}
+	pg.base.commander_skill_template[41021] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の潜水艦・潜水空母の雷装を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "海のエードゥル",
 		next_id = 41022,
@@ -1324,8 +1434,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			410211
 		}
-	},
-	[41022] = {
+	}
+	pg.base.commander_skill_template[41022] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の潜水艦・潜水空母の命中を上昇させる（効果中・効果は指揮補助ステータスによる）",
 		name = "海のエードゥル",
 		next_id = 41023,
@@ -1343,8 +1453,8 @@ pg.commander_skill_template = {
 			410211,
 			410212
 		}
-	},
-	[41023] = {
+	}
+	pg.base.commander_skill_template[41023] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の潜水艦の潜航力が5アップ",
 		name = "海のエードゥル",
 		next_id = 0,
@@ -1364,8 +1474,8 @@ pg.commander_skill_template = {
 			410212,
 			9410213
 		}
-	},
-	[41031] = {
+	}
+	pg.base.commander_skill_template[41031] = {
 		desc_world = "参謀ニャとして装備されている場合、艦隊の潜水艦・潜水空母の雷装がアップ(效果小・効果は指揮補助ステータスによる)",
 		name = "海のヴェヒター ",
 		next_id = 41032,
@@ -1381,8 +1491,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			410311
 		}
-	},
-	[41032] = {
+	}
+	pg.base.commander_skill_template[41032] = {
 		desc_world = "参謀ニャとして装備されている場合、艦隊の潜水艦・潜水母艦の回避がアップ(效果中・効果は指揮補助ステータスによる)",
 		name = "海のヴェヒター ",
 		next_id = 41033,
@@ -1400,8 +1510,8 @@ pg.commander_skill_template = {
 			410311,
 			410312
 		}
-	},
-	[41033] = {
+	}
+	pg.base.commander_skill_template[41033] = {
 		desc_world = "潜水艦隊の参謀ニャとして装備されている場合、旗艦が戦艦・巡洋戦艦・航空戦の艦隊が装備艦隊の潜水支援を発動した時、味方潜水艦・潜水母艦の命中がアップ(效果中・効果は指揮補助ステータスによる)",
 		name = "海のヴェヒター ",
 		next_id = 0,
@@ -1421,8 +1531,8 @@ pg.commander_skill_template = {
 			410312,
 			410313
 		}
-	},
-	[42011] = {
+	}
+	pg.base.commander_skill_template[42011] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の回避を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "巡洋補給にゃ",
 		next_id = 42012,
@@ -1438,8 +1548,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			420111
 		}
-	},
-	[42012] = {
+	}
+	pg.base.commander_skill_template[42012] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の火力を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "巡洋補給にゃ",
 		next_id = 42013,
@@ -1457,8 +1567,8 @@ pg.commander_skill_template = {
 			420111,
 			420112
 		}
-	},
-	[42013] = {
+	}
+	pg.base.commander_skill_template[42013] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の軽巡・重巡・超巡の火力を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "巡洋補給にゃ",
 		next_id = 0,
@@ -1478,8 +1588,8 @@ pg.commander_skill_template = {
 			420112,
 			420113
 		}
-	},
-	[42021] = {
+	}
+	pg.base.commander_skill_template[42021] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の駆逐艦の回避を上昇させる（効果小・効果は指揮補助ステータスによる）",
 		name = "駆逐指揮にゃ",
 		next_id = 42022,
@@ -1495,8 +1605,8 @@ pg.commander_skill_template = {
 		effect_tactic_world = {
 			420211
 		}
-	},
-	[42022] = {
+	}
+	pg.base.commander_skill_template[42022] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の駆逐艦の命中を上昇させる（効果小・効果は戦術補助ステータスによる）",
 		name = "駆逐指揮にゃ",
 		next_id = 42023,
@@ -1514,8 +1624,8 @@ pg.commander_skill_template = {
 			420211,
 			420212
 		}
-	},
-	[42023] = {
+	}
+	pg.base.commander_skill_template[42023] = {
 		desc_world = "参謀ニャとして装備されている場合、装備艦隊の駆逐艦の雷装を上昇させる（効果小・効果は兵站補助ステータスによる）",
 		name = "駆逐指揮にゃ",
 		next_id = 0,
@@ -1535,8 +1645,8 @@ pg.commander_skill_template = {
 			420212,
 			420213
 		}
-	},
-	[960011] = {
+	}
+	pg.base.commander_skill_template[960011] = {
 		desc_world = "装備艦隊の戦艦・巡洋戦艦・航空戦艦・風帆Mの火力を上昇させる（効果中、効果は指揮ステータスによる）",
 		name = "果てへレッツゴー",
 		next_id = 960012,
@@ -1556,8 +1666,8 @@ pg.commander_skill_template = {
 			9600112,
 			9600113
 		}
-	},
-	[960012] = {
+	}
+	pg.base.commander_skill_template[960012] = {
 		desc_world = "装備艦隊に風帆艦船がいる場合、味方旗艦が受けるダメージを軽減する（効果は戦術ステータスによる）",
 		name = "果てへレッツゴー",
 		next_id = 960013,
@@ -1577,8 +1687,8 @@ pg.commander_skill_template = {
 			9600112,
 			9600113
 		}
-	},
-	[960013] = {
+	}
+	pg.base.commander_skill_template[960013] = {
 		desc_world = "装備艦隊の風帆V、風帆Mの回避を上昇させる（効果大、効果は戦術ステータスによる）",
 		name = "果てへレッツゴー",
 		next_id = 0,
@@ -1598,8 +1708,8 @@ pg.commander_skill_template = {
 			9600112,
 			9600113
 		}
-	},
-	[960021] = {
+	}
+	pg.base.commander_skill_template[960021] = {
 		desc_world = "装備艦隊の軽巡・重巡・超巡・風帆Vの命中を上昇させる（効果中、効果は指揮ステータスによる）",
 		name = "私掠らいせんしー",
 		next_id = 960022,
@@ -1619,8 +1729,8 @@ pg.commander_skill_template = {
 			99600212,
 			9600213
 		}
-	},
-	[960022] = {
+	}
+	pg.base.commander_skill_template[960022] = {
 		desc_world = "装備艦隊から3マス以内の距離に敵偵察艦隊がいる場合、装備艦隊の風帆Vの回避がアップ（効果小、効果は指揮ステータスによる）",
 		name = "私掠らいせんしー",
 		next_id = 960023,
@@ -1640,8 +1750,8 @@ pg.commander_skill_template = {
 			99600212,
 			9600213
 		}
-	},
-	[960023] = {
+	}
+	pg.base.commander_skill_template[960023] = {
 		desc_world = "装備艦隊に風帆艦船がいる場合、味方軽巡・重巡・風帆Vが受けるダメージを軽減する（効果は戦術ステータスによる）",
 		name = "私掠らいせんしー",
 		next_id = 0,
@@ -1661,8 +1771,8 @@ pg.commander_skill_template = {
 			99600212,
 			9600213
 		}
-	},
-	[960031] = {
+	}
+	pg.base.commander_skill_template[960031] = {
 		desc_world = "潜水艦隊の指揮ニャとして装備されている場合、装備艦隊の潜航力+5",
 		name = "さむ・ざ・らっしゅ",
 		next_id = 960032,
@@ -1682,8 +1792,8 @@ pg.commander_skill_template = {
 			9600312,
 			9600313
 		}
-	},
-	[960032] = {
+	}
+	pg.base.commander_skill_template[960032] = {
 		desc_world = "潜水艦隊の指揮ニャとして装備されている場合、戦闘開始時味方の風帆艦船の耐久が上限の2％分回復する",
 		name = "さむ・ざ・らっしゅ",
 		next_id = 960033,
@@ -1703,8 +1813,8 @@ pg.commander_skill_template = {
 			9600312,
 			9600313
 		}
-	},
-	[960033] = {
+	}
+	pg.base.commander_skill_template[960033] = {
 		desc_world = "潜水艦隊の指揮ニャとして装備されている場合、装備艦隊の潜水艦、潜水母艦、風帆Sの命中がアップ（効果中、効果は戦術ステータスによる）",
 		name = "さむ・ざ・らっしゅ",
 		next_id = 0,
@@ -1724,8 +1834,8 @@ pg.commander_skill_template = {
 			9600312,
 			9600313
 		}
-	},
-	[960041] = {
+	}
+	pg.base.commander_skill_template[960041] = {
 		desc_world = "艦隊に風帆艦船がいる場合、味方前衛艦隊が受けるダメージを軽減する（効果は指揮補助ステータスによる）",
 		name = "ファンシーりゃくだつー",
 		next_id = 960042,
@@ -1747,8 +1857,8 @@ pg.commander_skill_template = {
 			9600413,
 			9600414
 		}
-	},
-	[960042] = {
+	}
+	pg.base.commander_skill_template[960042] = {
 		desc_world = "指揮ニャとして装備されている場合、艦隊全員の火力がアップする（効果中・効果は戦術補助ステータスによる）",
 		name = "ファンシーりゃくだつー",
 		next_id = 960043,
@@ -1770,8 +1880,8 @@ pg.commander_skill_template = {
 			9600413,
 			9600414
 		}
-	},
-	[960043] = {
+	}
+	pg.base.commander_skill_template[960043] = {
 		desc_world = "艦隊メンバーが戦闘中ダメージを受け耐久が上限の30％を下回った場合に1度だけ、その艦の耐久を上限の5％分回復する",
 		name = "ファンシーりゃくだつー",
 		next_id = 0,
@@ -1793,8 +1903,8 @@ pg.commander_skill_template = {
 			9600413,
 			9600414
 		}
-	},
-	[960051] = {
+	}
+	pg.base.commander_skill_template[960051] = {
 		desc_world = "潜水艦隊の艦船に装備されている場合、艦隊の潜水艦の潜航力が5アップ",
 		name = "こつこつルール",
 		next_id = 960052,
@@ -1814,8 +1924,8 @@ pg.commander_skill_template = {
 			9600512,
 			9600513
 		}
-	},
-	[960052] = {
+	}
+	pg.base.commander_skill_template[960052] = {
 		desc_world = "潜水艦隊に装備されている場合、戦闘開始時艦隊の風帆Sの火力、潜水艦・潜水空母の雷装を上昇させる（効果中・効果は指揮補助ステータスによる）",
 		name = "こつこつルール",
 		next_id = 960053,
@@ -1835,8 +1945,8 @@ pg.commander_skill_template = {
 			9600512,
 			9600513
 		}
-	},
-	[960053] = {
+	}
+	pg.base.commander_skill_template[960053] = {
 		desc_world = "所属艦隊に「ロイヤル・フォーチュン」がいる場合、戦闘開始時に1度だけ特殊弾幕を展開する",
 		name = "こつこつルール",
 		next_id = 0,
@@ -1856,8 +1966,8 @@ pg.commander_skill_template = {
 			9600512,
 			9600513
 		}
-	},
-	[960061] = {
+	}
+	pg.base.commander_skill_template[960061] = {
 		desc_world = "装備艦隊の戦艦・巡洋戦艦・航空戦艦・風帆Mの火力を上昇させる（効果中、効果は戦術ステータスによる）",
 		name = "未了のれじぇんど",
 		next_id = 960062,
@@ -1877,8 +1987,8 @@ pg.commander_skill_template = {
 			9600612,
 			9600613
 		}
-	},
-	[960062] = {
+	}
+	pg.base.commander_skill_template[960062] = {
 		desc_world = "主力艦隊と交戦する時、装備艦隊の戦艦・正規空母・風帆Mの命中を上昇させる（効果中、効果は戦術ステータスによる）",
 		name = "未了のれじぇんど",
 		next_id = 960063,
@@ -1898,8 +2008,8 @@ pg.commander_skill_template = {
 			9600612,
 			9600613
 		}
-	},
-	[960063] = {
+	}
+	pg.base.commander_skill_template[960063] = {
 		desc_world = "装備艦隊にクイーン・アンズ・リベンジがいる場合、戦闘開始時に一度だけ特殊弾幕を展開する",
 		name = "未了のれじぇんど",
 		next_id = 0,
@@ -1919,8 +2029,8 @@ pg.commander_skill_template = {
 			9600612,
 			9600613
 		}
-	},
-	[960071] = {
+	}
+	pg.base.commander_skill_template[960071] = {
 		desc_world = "参謀にゃとして装備されている場合、装備艦隊の軽巡・重巡・超巡・風帆Vの回避を上昇させる（効果小、効果は補助ステータスによる）",
 		name = "海賊紳士の伝説",
 		next_id = 960072,
@@ -1940,8 +2050,10 @@ pg.commander_skill_template = {
 			9600712,
 			9600713
 		}
-	},
-	[960072] = {
+	}
+end)()
+;(function()
+	pg.base.commander_skill_template[960072] = {
 		desc_world = "参謀にゃとして装備されている場合、装備艦隊の前衛艦隊の火力を上昇させる（効果小、効果は補助ステータスによる）",
 		name = "海賊紳士の伝説",
 		next_id = 960073,
@@ -1961,8 +2073,8 @@ pg.commander_skill_template = {
 			9600712,
 			9600713
 		}
-	},
-	[960073] = {
+	}
+	pg.base.commander_skill_template[960073] = {
 		desc_world = "装備艦隊の旗艦か前衛艦隊先頭艦が戦闘中にダメージを受け、耐久が上限の50％を下回った場合に1度だけ、耐久が上限の5％分回復する",
 		name = "海賊紳士の伝説",
 		next_id = 0,
@@ -1982,109 +2094,5 @@ pg.commander_skill_template = {
 			9600712,
 			9600713
 		}
-	},
-	all = {
-		10011,
-		10012,
-		10013,
-		10021,
-		10022,
-		10023,
-		11011,
-		11012,
-		11013,
-		11021,
-		11022,
-		11023,
-		12011,
-		12012,
-		12013,
-		12021,
-		12022,
-		12023,
-		20011,
-		20012,
-		20013,
-		20021,
-		20022,
-		20023,
-		21011,
-		21012,
-		21013,
-		21021,
-		21022,
-		21023,
-		21031,
-		21032,
-		21033,
-		21041,
-		21042,
-		21043,
-		22011,
-		22012,
-		22013,
-		22021,
-		22022,
-		22023,
-		30011,
-		30012,
-		30013,
-		30021,
-		30022,
-		30023,
-		31011,
-		31012,
-		31013,
-		31021,
-		31022,
-		31023,
-		32011,
-		32012,
-		32013,
-		32021,
-		32022,
-		32023,
-		40011,
-		40012,
-		40013,
-		40021,
-		40022,
-		40023,
-		41011,
-		41012,
-		41013,
-		41021,
-		41022,
-		41023,
-		41031,
-		41032,
-		41033,
-		42011,
-		42012,
-		42013,
-		42021,
-		42022,
-		42023,
-		960011,
-		960012,
-		960013,
-		960021,
-		960022,
-		960023,
-		960031,
-		960032,
-		960033,
-		960041,
-		960042,
-		960043,
-		960051,
-		960052,
-		960053,
-		960061,
-		960062,
-		960063,
-		960071,
-		960072,
-		960073
 	}
-}
+end)()

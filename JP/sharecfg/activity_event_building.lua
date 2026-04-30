@@ -1,6 +1,50 @@
 ﻿pg = pg or {}
-pg.activity_event_building = {
-	{
+pg.activity_event_building = rawget(pg, "activity_event_building") or setmetatable({
+	__name = "activity_event_building"
+}, confNEO)
+pg.activity_event_building.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	31,
+	32,
+	33,
+	34,
+	35,
+	36,
+	37,
+	38,
+	39
+}
+pg.base = pg.base or {}
+pg.base.activity_event_building = {}
+
+;(function()
+	pg.base.activity_event_building[1] = {
 		id = 1,
 		name = "饅頭カフェ",
 		desc = "「指揮官様、いらっしゃいませですわ！」",
@@ -25,8 +69,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[2] = {
 		id = 2,
 		name = "饅頭中華",
 		desc = "「フフフ、ご注文はいかがでございましょうか？」",
@@ -51,8 +95,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[3] = {
 		id = 3,
 		name = "饅頭バーガー",
 		desc = "「す、スマイルは有料だぞこのヤロウ！」",
@@ -77,8 +121,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[4] = {
 		id = 4,
 		name = "饅頭茶屋",
 		desc = "「はいバオズお待ち！」",
@@ -103,8 +147,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[5] = {
 		id = 5,
 		name = "饅頭薄本屋",
 		desc = "「せ、先生はたまたま入っただけよ！別にわざわざこのような本を…」",
@@ -129,8 +173,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[6] = {
 		id = 6,
 		name = "饅頭据置屋",
 		desc = "「今月のラインナップはスゴイのー！幽霊さん、お財布が寒いの…」",
@@ -155,8 +199,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[7] = {
 		id = 7,
 		name = "饅頭遊具屋",
 		desc = "「殿！今度こそ絶対シークレット枠を当てて見せます！！！」",
@@ -181,8 +225,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[8] = {
 		id = 8,
 		name = "饅頭絵喫茶",
 		desc = "「あら、ダンケルクよりあなたが先に着いたの？ふふふ」",
@@ -207,8 +251,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[9] = {
 		id = 9,
 		name = "回転木饅頭",
 		desc = "最高スピードが第一宇宙速度……ピョ！？",
@@ -233,8 +277,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[10] = {
 		id = 10,
 		name = "ジェット饅頭",
 		desc = "スピードアンドマンジュウだピョ！",
@@ -259,8 +303,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[11] = {
 		id = 11,
 		name = "バンシー饅頭",
 		desc = "高所恐怖症は無理しないでピョ！",
@@ -285,8 +329,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[12] = {
 		id = 12,
 		name = "饅頭海賊船",
 		desc = "海賊となって海を征服するピョ！",
@@ -311,8 +355,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[13] = {
 		id = 13,
 		name = "波乗饅頭",
 		desc = "波とダンスだピョ！",
@@ -337,8 +381,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[14] = {
 		id = 14,
 		name = "飛込饅頭",
 		desc = "水しぶきが少ないほうが得点が高いピョ！",
@@ -363,8 +407,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[15] = {
 		id = 15,
 		name = "滑降饅頭",
 		desc = "スリリングなウォータースライドだピョ！",
@@ -389,8 +433,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[16] = {
 		id = 16,
 		name = "滝行饅頭",
 		desc = "スリリングなウォーターフォールだピョ！",
@@ -415,8 +459,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[17] = {
 		id = 17,
 		name = "ロイヤルカフェ",
 		desc = "ロイヤルカフェの模擬店。増築するといいことがあるかも…？",
@@ -457,8 +501,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[18] = {
 		id = 18,
 		name = "鉄血カフェ",
 		desc = "鉄血カフェの模擬店。増築するといいことがあるかも…？",
@@ -499,8 +543,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[19] = {
 		id = 19,
 		name = "饅頭教育棟",
 		desc = "「妙高姉さん、廊下は走っちゃダメってくらい分かってるっすよ…」――増築するとキャンペーン期間中、強化効果を入手可能！",
@@ -525,8 +569,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[20] = {
 		id = 20,
 		name = "饅頭占い館",
 		desc = "「ホラー、カードを勝手にめくってはダメよ」――増築するとキャンペーン期間中、強化効果を入手可能！",
@@ -551,8 +595,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[21] = {
 		id = 21,
 		name = "饅頭大舞台",
 		desc = "「シグニットったら！屋台はライブの後で行くわよ！」――増築するとキャンペーン期間中、強化効果を入手可能！",
@@ -577,8 +621,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[22] = {
 		id = 22,
 		name = "饅頭購買部",
 		desc = "「出張販売所でございます。ふふふ」――増築するとキャンペーン期間中、強化効果を入手可能！",
@@ -603,8 +647,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[23] = {
 		id = 23,
 		name = "饅頭補給隊",
 		desc = "国服六周年后山建筑",
@@ -637,8 +681,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[24] = {
 		id = 24,
 		name = "クラフト",
 		desc = "国服六周年后山建筑",
@@ -671,8 +715,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[25] = {
 		id = 25,
 		name = "饅頭探検隊",
 		desc = "国服六周年后山建筑",
@@ -705,8 +749,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[26] = {
 		id = 26,
 		name = "饅頭給食隊",
 		desc = "国服六周年后山建筑",
@@ -739,8 +783,8 @@ pg.activity_event_building = {
 				}
 			}
 		}
-	},
-	{
+	}
+	pg.base.activity_event_building[27] = {
 		id = 27,
 		name = "冒険拠点",
 		desc = "国服六周年后山据点",
@@ -768,8 +812,8 @@ pg.activity_event_building = {
 			8,
 			12
 		}
-	},
-	[31] = {
+	}
+	pg.base.activity_event_building[31] = {
 		id = 31,
 		name = "ユニオン技術モジュール",
 		buff = {
@@ -806,8 +850,8 @@ pg.activity_event_building = {
 			"戦闘中、味方キャラが累計で上限の30％分のダメージを受けた時に1度だけ、耐久が上限の3%分回復する（1キャラにつき1度まで）",
 			"戦闘中、味方キャラが累計で上限の20％分のダメージを受けた時に1度だけ、耐久が上限の3%分回復する（1キャラにつき1度まで）"
 		}
-	},
-	[32] = {
+	}
+	pg.base.activity_event_building[32] = {
 		id = 32,
 		name = "ロイヤル技術モジュール",
 		buff = {
@@ -844,8 +888,8 @@ pg.activity_event_building = {
 			"戦闘中、味方キャラの航空が4%アップ",
 			"戦闘中、味方キャラの航空が6%アップ"
 		}
-	},
-	[33] = {
+	}
+	pg.base.activity_event_building[33] = {
 		id = 33,
 		name = "アイリス技術モジュール",
 		buff = {
@@ -882,8 +926,8 @@ pg.activity_event_building = {
 			"戦闘中、味方キャラが受けるダメージを2%軽減する",
 			"戦闘中、味方キャラが受けるダメージを3%軽減する"
 		}
-	},
-	[34] = {
+	}
+	pg.base.activity_event_building[34] = {
 		id = 34,
 		name = "鉄血技術モジュール",
 		buff = {
@@ -920,8 +964,8 @@ pg.activity_event_building = {
 			"戦闘中、味方キャラの火力が4%アップ",
 			"戦闘中、味方キャラの火力が6%アップ"
 		}
-	},
-	[35] = {
+	}
+	pg.base.activity_event_building[35] = {
 		id = 35,
 		name = "東煌技術モジュール",
 		buff = {
@@ -958,8 +1002,8 @@ pg.activity_event_building = {
 			"戦闘中、味方キャラの命中が4%アップ",
 			"戦闘中、味方キャラの命中が6%アップ"
 		}
-	},
-	[36] = {
+	}
+	pg.base.activity_event_building[36] = {
 		id = 36,
 		name = "サディア技術モジュール",
 		buff = {
@@ -996,8 +1040,8 @@ pg.activity_event_building = {
 			"戦闘開始から15秒間、味方キャラの装填が15%アップ",
 			"戦闘開始から20秒間、味方キャラの装填が15%アップ"
 		}
-	},
-	[37] = {
+	}
+	pg.base.activity_event_building[37] = {
 		id = 37,
 		name = "チュリッパ技術モジュール",
 		buff = {
@@ -1034,8 +1078,8 @@ pg.activity_event_building = {
 			"戦闘中、味方キャラの速力が4アップ",
 			"戦闘中、味方キャラの速力が6アップ"
 		}
-	},
-	[38] = {
+	}
+	pg.base.activity_event_building[38] = {
 		id = 38,
 		name = "北方連合技術モジュール",
 		buff = {
@@ -1072,8 +1116,8 @@ pg.activity_event_building = {
 			"戦闘中、味方キャラが与えるダメージが2%アップ",
 			"戦闘中、味方キャラが与えるダメージが3%アップ"
 		}
-	},
-	[39] = {
+	}
+	pg.base.activity_event_building[39] = {
 		id = 39,
 		name = "重桜技術モジュール",
 		buff = {
@@ -1110,43 +1154,5 @@ pg.activity_event_building = {
 			"戦闘中、味方キャラの雷装が4%アップ",
 			"戦闘中、味方キャラの雷装が6%アップ"
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22,
-		23,
-		24,
-		25,
-		26,
-		27,
-		31,
-		32,
-		33,
-		34,
-		35,
-		36,
-		37,
-		38,
-		39
 	}
-}
+end)()

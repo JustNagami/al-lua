@@ -1,6 +1,36 @@
 ﻿pg = pg or {}
-pg.world_joint_boss_template = {
-	{
+pg.world_joint_boss_template = rawget(pg, "world_joint_boss_template") or setmetatable({
+	__name = "world_joint_boss_template"
+}, confNEO)
+pg.world_joint_boss_template.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22
+}
+pg.base = pg.base or {}
+pg.base.world_joint_boss_template = {}
+
+;(function()
+	pg.base.world_joint_boss_template[1] = {
 		state = "always",
 		name = "飛龍(META)",
 		painting = "feilong",
@@ -28,8 +58,8 @@ pg.world_joint_boss_template = {
 			411,
 			777
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[2] = {
 		state = "always",
 		name = "アーク・ロイヤル(META)",
 		painting = "huangjiafangzhou",
@@ -57,8 +87,8 @@ pg.world_joint_boss_template = {
 			411,
 			574
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[3] = {
 		state = "always",
 		name = "ヘレナ(META)",
 		painting = "hailunna",
@@ -90,8 +120,8 @@ pg.world_joint_boss_template = {
 			0.95,
 			0.95
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[4] = {
 		state = "always",
 		name = "蒼龍(META)",
 		painting = "canglong",
@@ -123,8 +153,8 @@ pg.world_joint_boss_template = {
 			0.95,
 			0.95
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[5] = {
 		state = "always",
 		name = "グナイゼナウ(META)",
 		painting = "genaisennao",
@@ -152,8 +182,8 @@ pg.world_joint_boss_template = {
 			480,
 			635
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[6] = {
 		state = "always",
 		name = "シャルンホルスト(META)",
 		painting = "shaenhuosite",
@@ -181,8 +211,8 @@ pg.world_joint_boss_template = {
 			480,
 			635
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[7] = {
 		state = "always",
 		name = "レパルス(META)",
 		painting = "fanji",
@@ -219,8 +249,8 @@ pg.world_joint_boss_template = {
 			0.95,
 			0.95
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[8] = {
 		state = "always",
 		name = "レナウン(META)",
 		painting = "shengwang",
@@ -262,8 +292,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[9] = {
 		state = "always",
 		name = "アリゾナ(META)",
 		painting = "yalisangna",
@@ -295,8 +325,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[10] = {
 		state = "always",
 		name = "クイーン・エリザベス(META)",
 		painting = "yilishabainvwang",
@@ -328,8 +358,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[11] = {
 		state = "always",
 		name = "アルジェリー(META)",
 		painting = "aerjiliya",
@@ -361,8 +391,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[12] = {
 		state = "always",
 		name = "神通(META)",
 		painting = "shentong",
@@ -399,8 +429,8 @@ pg.world_joint_boss_template = {
 			0.8,
 			0.8
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[13] = {
 		state = "always",
 		name = "キーロフ(META)",
 		painting = "jiluofu",
@@ -432,8 +462,8 @@ pg.world_joint_boss_template = {
 			0.8,
 			0.8
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[14] = {
 		state = "always",
 		name = "ロドニー(META)",
 		painting = "luodeni",
@@ -470,8 +500,8 @@ pg.world_joint_boss_template = {
 			1,
 			1
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[15] = {
 		state = "always",
 		name = "ウィチタ(META)",
 		painting = "weiqita",
@@ -508,8 +538,8 @@ pg.world_joint_boss_template = {
 			1,
 			1
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[16] = {
 		state = "always",
 		name = "長門(META)",
 		painting = "changmen",
@@ -541,8 +571,8 @@ pg.world_joint_boss_template = {
 			1,
 			1
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[17] = {
 		state = "stop",
 		name = "大鳳(META)",
 		painting = "dafeng",
@@ -574,8 +604,8 @@ pg.world_joint_boss_template = {
 			1,
 			1
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[18] = {
 		state = "stop",
 		name = "ホーネット(META)",
 		painting = "dahuangfeng",
@@ -607,8 +637,8 @@ pg.world_joint_boss_template = {
 			0.9,
 			0.9
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[19] = {
 		state = "stop",
 		name = "江風(META)",
 		painting = "jiangfeng",
@@ -640,8 +670,8 @@ pg.world_joint_boss_template = {
 			0.68,
 			0.68
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[20] = {
 		state = "stop",
 		name = "夕立(META)",
 		painting = "xili",
@@ -673,8 +703,8 @@ pg.world_joint_boss_template = {
 			0.68,
 			0.68
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[21] = {
 		state = "stop",
 		name = "ヨークタウン(META)",
 		painting = "yuekecheng",
@@ -711,8 +741,8 @@ pg.world_joint_boss_template = {
 			0.65,
 			0.65
 		}
-	},
-	{
+	}
+	pg.base.world_joint_boss_template[22] = {
 		item_id = 100000,
 		name = "レーゲンスブルク(META)",
 		painting = "leigensibao",
@@ -769,29 +799,5 @@ pg.world_joint_boss_template = {
 			0.65,
 			0.65
 		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		9,
-		10,
-		11,
-		12,
-		13,
-		14,
-		15,
-		16,
-		17,
-		18,
-		19,
-		20,
-		21,
-		22
 	}
-}
+end)()

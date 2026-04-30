@@ -1,404 +1,407 @@
 ﻿pg = pg or {}
-pg.memory_group = setmetatable({
-	__name = "memory_group",
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		98,
-		99,
-		100,
-		101,
-		102,
-		107,
-		108,
-		109,
-		110,
-		111,
-		112,
-		113,
-		114,
-		115,
-		116,
-		117,
-		118,
-		119,
-		120,
-		121,
-		122,
-		123,
-		124,
-		125,
-		126,
-		127,
-		128,
-		129,
-		130,
-		131,
-		132,
-		133,
-		134,
-		135,
-		136,
-		137,
-		138,
-		139,
-		140,
-		141,
-		142,
-		143,
-		144,
-		145,
-		146,
-		147,
-		148,
-		149,
-		150,
-		151,
-		152,
-		153,
-		154,
-		155,
-		156,
-		157,
-		158,
-		159,
-		160,
-		161,
-		162,
-		163,
-		164,
-		165,
-		166,
-		167,
-		168,
-		169,
-		170,
-		171,
-		172,
-		173,
-		174,
-		175,
-		176,
-		177,
-		178,
-		179,
-		180,
-		181,
-		182,
-		183,
-		184,
-		185,
-		186,
-		187,
-		188,
-		189,
-		190,
-		191,
-		192,
-		193,
-		194,
-		195,
-		196,
-		197,
-		198,
-		199,
-		200,
-		201,
-		202,
-		203,
-		204,
-		205,
-		206,
-		207,
-		208,
-		209,
-		210,
-		211,
-		212,
-		213,
-		214,
-		215,
-		216,
-		217,
-		218,
-		219,
-		220,
-		221,
-		222,
-		223,
-		224,
-		225,
-		226,
-		227,
-		228,
-		229,
-		230,
-		231,
-		232,
-		233,
-		234,
-		235,
-		236,
-		237,
-		238,
-		239,
-		240,
-		241,
-		242,
-		243,
-		244,
-		245,
-		246,
-		247,
-		248,
-		249,
-		250,
-		251,
-		252,
-		253,
-		254,
-		255,
-		256,
-		257,
-		258,
-		259,
-		260,
-		261,
-		262,
-		263,
-		264,
-		265,
-		266,
-		267,
-		268,
-		269,
-		270,
-		271,
-		272,
-		273,
-		274,
-		275,
-		276,
-		277,
-		278,
-		279,
-		280,
-		281,
-		282,
-		283,
-		284,
-		285,
-		286,
-		287,
-		288,
-		289,
-		290,
-		291,
-		292,
-		293,
-		294,
-		295,
-		296,
-		297,
-		298,
-		299,
-		300,
-		301,
-		302,
-		303,
-		304,
-		305,
-		306,
-		307,
-		309,
-		310,
-		311,
-		312,
-		313,
-		314,
-		315,
-		316,
-		317,
-		318,
-		319,
-		320,
-		321,
-		322,
-		323,
-		324,
-		325,
-		326,
-		327,
-		328,
-		329,
-		330,
-		331,
-		332,
-		333,
-		334,
-		335,
-		336,
-		337,
-		338,
-		339,
-		340,
-		341,
-		342,
-		343,
-		344,
-		345,
-		347,
-		348,
-		349,
-		350,
-		351,
-		352,
-		353,
-		354,
-		355,
-		356,
-		357,
-		358,
-		359,
-		360,
-		361,
-		362,
-		501,
-		502,
-		503,
-		504,
-		505,
-		506,
-		507,
-		508,
-		509,
-		510,
-		511,
-		512,
-		513,
-		515,
-		516,
-		517,
-		518,
-		519,
-		520,
-		521,
-		522,
-		523,
-		524,
-		525,
-		526,
-		527,
-		528,
-		529,
-		530,
-		531,
-		532,
-		533,
-		534,
-		535,
-		536,
-		537,
-		538,
-		539,
-		540,
-		542,
-		543,
-		544,
-		545,
-		546,
-		547,
-		548,
-		549,
-		550,
-		551,
-		552,
-		553,
-		554,
-		555,
-		556,
-		557,
-		558,
-		559,
-		560,
-		561,
-		562,
-		563,
-		564,
-		565,
-		566,
-		567,
-		568,
-		569,
-		570,
-		571,
-		572,
-		573,
-		574,
-		575,
-		576,
-		577,
-		578,
-		579,
-		580,
-		581,
-		582,
-		583,
-		584,
-		585,
-		586,
-		587,
-		588,
-		589,
-		590,
-		591,
-		592,
-		593,
-		594,
-		595,
-		596,
-		597,
-		598,
-		599,
-		600,
-		601,
-		602,
-		603,
-		604,
-		605,
-		606,
-		607,
-		608,
-		609,
-		610,
-		611,
-		612,
-		613,
-		614,
-		615,
-		616,
-		617,
-		618,
-		619,
-		620,
-		621,
-		1000,
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		1006,
-		1007,
-		1008
-	}
-}, confHX)
+pg.memory_group = rawget(pg, "memory_group") or setmetatable({
+	__name = "memory_group"
+}, confNEO)
+pg.memory_group.__namecode__ = true
+pg.memory_group.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	98,
+	99,
+	100,
+	101,
+	102,
+	107,
+	108,
+	109,
+	110,
+	111,
+	112,
+	113,
+	114,
+	115,
+	116,
+	117,
+	118,
+	119,
+	120,
+	121,
+	122,
+	123,
+	124,
+	125,
+	126,
+	127,
+	128,
+	129,
+	130,
+	131,
+	132,
+	133,
+	134,
+	135,
+	136,
+	137,
+	138,
+	139,
+	140,
+	141,
+	142,
+	143,
+	144,
+	145,
+	146,
+	147,
+	148,
+	149,
+	150,
+	151,
+	152,
+	153,
+	154,
+	155,
+	156,
+	157,
+	158,
+	159,
+	160,
+	161,
+	162,
+	163,
+	164,
+	165,
+	166,
+	167,
+	168,
+	169,
+	170,
+	171,
+	172,
+	173,
+	174,
+	175,
+	176,
+	177,
+	178,
+	179,
+	180,
+	181,
+	182,
+	183,
+	184,
+	185,
+	186,
+	187,
+	188,
+	189,
+	190,
+	191,
+	192,
+	193,
+	194,
+	195,
+	196,
+	197,
+	198,
+	199,
+	200,
+	201,
+	202,
+	203,
+	204,
+	205,
+	206,
+	207,
+	208,
+	209,
+	210,
+	211,
+	212,
+	213,
+	214,
+	215,
+	216,
+	217,
+	218,
+	219,
+	220,
+	221,
+	222,
+	223,
+	224,
+	225,
+	226,
+	227,
+	228,
+	229,
+	230,
+	231,
+	232,
+	233,
+	234,
+	235,
+	236,
+	237,
+	238,
+	239,
+	240,
+	241,
+	242,
+	243,
+	244,
+	245,
+	246,
+	247,
+	248,
+	249,
+	250,
+	251,
+	252,
+	253,
+	254,
+	255,
+	256,
+	257,
+	258,
+	259,
+	260,
+	261,
+	262,
+	263,
+	264,
+	265,
+	266,
+	267,
+	268,
+	269,
+	270,
+	271,
+	272,
+	273,
+	274,
+	275,
+	276,
+	277,
+	278,
+	279,
+	280,
+	281,
+	282,
+	283,
+	284,
+	285,
+	286,
+	287,
+	288,
+	289,
+	290,
+	291,
+	292,
+	293,
+	294,
+	295,
+	296,
+	297,
+	298,
+	299,
+	300,
+	301,
+	302,
+	303,
+	304,
+	305,
+	306,
+	307,
+	309,
+	310,
+	311,
+	312,
+	313,
+	314,
+	315,
+	316,
+	317,
+	318,
+	319,
+	320,
+	321,
+	322,
+	323,
+	324,
+	325,
+	326,
+	327,
+	328,
+	329,
+	330,
+	331,
+	332,
+	333,
+	334,
+	335,
+	336,
+	337,
+	338,
+	339,
+	340,
+	341,
+	342,
+	343,
+	344,
+	345,
+	347,
+	348,
+	349,
+	350,
+	351,
+	352,
+	353,
+	354,
+	355,
+	356,
+	357,
+	358,
+	359,
+	360,
+	361,
+	362,
+	501,
+	502,
+	503,
+	504,
+	505,
+	506,
+	507,
+	508,
+	509,
+	510,
+	511,
+	512,
+	513,
+	515,
+	516,
+	517,
+	518,
+	519,
+	520,
+	521,
+	522,
+	523,
+	524,
+	525,
+	526,
+	527,
+	528,
+	529,
+	530,
+	531,
+	532,
+	533,
+	534,
+	535,
+	536,
+	537,
+	538,
+	539,
+	540,
+	542,
+	543,
+	544,
+	545,
+	546,
+	547,
+	548,
+	549,
+	550,
+	551,
+	552,
+	553,
+	554,
+	555,
+	556,
+	557,
+	558,
+	559,
+	560,
+	561,
+	562,
+	563,
+	564,
+	565,
+	566,
+	567,
+	568,
+	569,
+	570,
+	571,
+	572,
+	573,
+	574,
+	575,
+	576,
+	577,
+	578,
+	579,
+	580,
+	581,
+	582,
+	583,
+	584,
+	585,
+	586,
+	587,
+	588,
+	589,
+	590,
+	591,
+	592,
+	593,
+	594,
+	595,
+	596,
+	597,
+	598,
+	599,
+	600,
+	601,
+	602,
+	603,
+	604,
+	605,
+	606,
+	607,
+	608,
+	609,
+	610,
+	611,
+	612,
+	613,
+	614,
+	615,
+	616,
+	617,
+	618,
+	619,
+	620,
+	621,
+	1000,
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	1006,
+	1007,
+	1008
+}
 pg.base = pg.base or {}
-pg.base.memory_group = {
-	{
+pg.base.memory_group = {}
+
+;(function()
+	pg.base.memory_group[1] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "序章",
@@ -415,8 +418,8 @@ pg.base.memory_group = {
 			5,
 			6
 		}
-	},
-	{
+	}
+	pg.base.memory_group[2] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "トラ！トラ！トラ！",
@@ -437,8 +440,8 @@ pg.base.memory_group = {
 			15,
 			16
 		}
-	},
-	{
+	}
+	pg.base.memory_group[3] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "初陣！珊瑚海",
@@ -452,8 +455,8 @@ pg.base.memory_group = {
 			18,
 			19
 		}
-	},
-	{
+	}
+	pg.base.memory_group[4] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "AF決戦",
@@ -473,8 +476,8 @@ pg.base.memory_group = {
 			27,
 			28
 		}
-	},
-	{
+	}
+	pg.base.memory_group[5] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ソロモン海にて・上",
@@ -498,8 +501,8 @@ pg.base.memory_group = {
 			1202,
 			1203
 		}
-	},
-	[98] = {
+	}
+	pg.base.memory_group[98] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "「竜骨編纂」開放 ",
@@ -540,8 +543,8 @@ pg.base.memory_group = {
 			4582,
 			4583
 		}
-	},
-	[99] = {
+	}
+	pg.base.memory_group[99] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "オフニャ、登場！",
@@ -556,8 +559,8 @@ pg.base.memory_group = {
 			459,
 			460
 		}
-	},
-	[100] = {
+	}
+	pg.base.memory_group[100] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "新機能「研究」開放！",
@@ -571,8 +574,8 @@ pg.base.memory_group = {
 			300,
 			715
 		}
-	},
-	[101] = {
+	}
+	pg.base.memory_group[101] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "「努力、希望と計画」",
@@ -594,8 +597,8 @@ pg.base.memory_group = {
 			10009,
 			10010
 		}
-	},
-	[102] = {
+	}
+	pg.base.memory_group[102] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "鏡写されし異色",
@@ -625,8 +628,8 @@ pg.base.memory_group = {
 			4002,
 			50
 		}
-	},
-	[107] = {
+	}
+	pg.base.memory_group[107] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "玉兎・月夜に酔う",
@@ -644,8 +647,8 @@ pg.base.memory_group = {
 			112,
 			113
 		}
-	},
-	[108] = {
+	}
+	pg.base.memory_group[108] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "紅染の来訪者",
@@ -674,8 +677,8 @@ pg.base.memory_group = {
 			130,
 			131
 		}
-	},
-	[109] = {
+	}
+	pg.base.memory_group[109] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "栄光なる最終戦",
@@ -696,8 +699,8 @@ pg.base.memory_group = {
 			140,
 			141
 		}
-	},
-	[110] = {
+	}
+	pg.base.memory_group[110] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "「魔女達」の前夜祭",
@@ -715,8 +718,8 @@ pg.base.memory_group = {
 			147,
 			148
 		}
-	},
-	[111] = {
+	}
+	pg.base.memory_group[111] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "星の歌姫と小さな勇気",
@@ -734,8 +737,8 @@ pg.base.memory_group = {
 			154,
 			155
 		}
-	},
-	[112] = {
+	}
+	pg.base.memory_group[112] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ワイワイお茶会",
@@ -753,8 +756,8 @@ pg.base.memory_group = {
 			161,
 			162
 		}
-	},
-	[113] = {
+	}
+	pg.base.memory_group[113] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "愛と平和の聖夜祭",
@@ -773,8 +776,8 @@ pg.base.memory_group = {
 			169,
 			170
 		}
-	},
-	[114] = {
+	}
+	pg.base.memory_group[114] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "謹賀新年",
@@ -792,8 +795,8 @@ pg.base.memory_group = {
 			176,
 			177
 		}
-	},
-	[115] = {
+	}
+	pg.base.memory_group[115] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "闇に堕ちた青き翼",
@@ -817,8 +820,8 @@ pg.base.memory_group = {
 			492,
 			493
 		}
-	},
-	[116] = {
+	}
+	pg.base.memory_group[116] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "夏(?)の大作戦",
@@ -836,8 +839,8 @@ pg.base.memory_group = {
 			194,
 			195
 		}
-	},
-	[117] = {
+	}
+	pg.base.memory_group[117] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "グラーフ・シュペー追撃戦",
@@ -857,8 +860,8 @@ pg.base.memory_group = {
 			203,
 			204
 		}
-	},
-	[118] = {
+	}
+	pg.base.memory_group[118] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "別次元からの来訪者・日常編",
@@ -876,8 +879,8 @@ pg.base.memory_group = {
 			10041,
 			10042
 		}
-	},
-	[119] = {
+	}
+	pg.base.memory_group[119] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "別次元からの来訪者・ステージ編",
@@ -896,8 +899,8 @@ pg.base.memory_group = {
 			10049,
 			10050
 		}
-	},
-	[120] = {
+	}
+	pg.base.memory_group[120] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "四天王大冒険・鞍山編",
@@ -913,8 +916,8 @@ pg.base.memory_group = {
 			208,
 			209
 		}
-	},
-	[121] = {
+	}
+	pg.base.memory_group[121] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "四天王大冒険・撫順編",
@@ -929,8 +932,8 @@ pg.base.memory_group = {
 			212,
 			213
 		}
-	},
-	[122] = {
+	}
+	pg.base.memory_group[122] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "春風の十字星",
@@ -948,8 +951,8 @@ pg.base.memory_group = {
 			219,
 			220
 		}
-	},
-	[123] = {
+	}
+	pg.base.memory_group[123] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "凛冽なりし冬の王冠",
@@ -978,8 +981,8 @@ pg.base.memory_group = {
 			237,
 			238
 		}
-	},
-	[124] = {
+	}
+	pg.base.memory_group[124] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "春のお花見大会",
@@ -997,8 +1000,8 @@ pg.base.memory_group = {
 			244,
 			245
 		}
-	},
-	[125] = {
+	}
+	pg.base.memory_group[125] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "桜華爛漫新学期",
@@ -1016,8 +1019,8 @@ pg.base.memory_group = {
 			258,
 			259
 		}
-	},
-	[126] = {
+	}
+	pg.base.memory_group[126] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "軍神の帰還",
@@ -1032,8 +1035,8 @@ pg.base.memory_group = {
 			10020,
 			10021
 		}
-	},
-	[127] = {
+	}
+	pg.base.memory_group[127] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "最近、綾波の様子が…？",
@@ -1051,8 +1054,8 @@ pg.base.memory_group = {
 			10027,
 			10028
 		}
-	},
-	[128] = {
+	}
+	pg.base.memory_group[128] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "36年Z組ニーミ先生",
@@ -1070,8 +1073,8 @@ pg.base.memory_group = {
 			10034,
 			10035
 		}
-	},
-	[129] = {
+	}
+	pg.base.memory_group[129] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "小さなめいどちょー",
@@ -1086,8 +1089,8 @@ pg.base.memory_group = {
 			297,
 			298
 		}
-	},
-	[130] = {
+	}
+	pg.base.memory_group[130] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "夏の鍋大会！？",
@@ -1104,8 +1107,8 @@ pg.base.memory_group = {
 			319,
 			320
 		}
-	},
-	[131] = {
+	}
+	pg.base.memory_group[131] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "墨染まりし鋼の桜",
@@ -1130,8 +1133,8 @@ pg.base.memory_group = {
 			10063,
 			10064
 		}
-	},
-	[132] = {
+	}
+	pg.base.memory_group[132] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "月夜の開幕曲 ",
@@ -1151,8 +1154,8 @@ pg.base.memory_group = {
 			10079,
 			10080
 		}
-	},
-	[133] = {
+	}
+	pg.base.memory_group[133] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "光と影のアイリス",
@@ -1174,8 +1177,8 @@ pg.base.memory_group = {
 			380,
 			381
 		}
-	},
-	[134] = {
+	}
+	pg.base.memory_group[134] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "白衣の天使or悪魔？",
@@ -1191,8 +1194,8 @@ pg.base.memory_group = {
 			385,
 			386
 		}
-	},
-	[135] = {
+	}
+	pg.base.memory_group[135] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "盛夏の射手座",
@@ -1209,8 +1212,8 @@ pg.base.memory_group = {
 			405,
 			406
 		}
-	},
-	[136] = {
+	}
+	pg.base.memory_group[136] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "三笠大先輩のミニ博物館",
@@ -1225,8 +1228,8 @@ pg.base.memory_group = {
 			409,
 			410
 		}
-	},
-	[137] = {
+	}
+	pg.base.memory_group[137] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "特別パーティー、開幕！",
@@ -1242,8 +1245,8 @@ pg.base.memory_group = {
 			435,
 			436
 		}
-	},
-	[138] = {
+	}
+	pg.base.memory_group[138] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港の特別宴会",
@@ -1260,8 +1263,8 @@ pg.base.memory_group = {
 			441,
 			442
 		}
-	},
-	[139] = {
+	}
+	pg.base.memory_group[139] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "輝く☆バトルスター！",
@@ -1276,8 +1279,8 @@ pg.base.memory_group = {
 			463,
 			464
 		}
-	},
-	[140] = {
+	}
+	pg.base.memory_group[140] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "戦え！ロイヤルメイド隊",
@@ -1293,8 +1296,8 @@ pg.base.memory_group = {
 			469,
 			470
 		}
-	},
-	[141] = {
+	}
+	pg.base.memory_group[141] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "悪戯ハロウィン",
@@ -1312,8 +1315,8 @@ pg.base.memory_group = {
 			499,
 			500
 		}
-	},
-	[142] = {
+	}
+	pg.base.memory_group[142] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "夢幻の邂逅・ステージ編",
@@ -1352,8 +1355,8 @@ pg.base.memory_group = {
 			548,
 			549
 		}
-	},
-	[143] = {
+	}
+	pg.base.memory_group[143] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "夢幻の邂逅・日常編",
@@ -1371,8 +1374,8 @@ pg.base.memory_group = {
 			555,
 			556
 		}
-	},
-	[144] = {
+	}
+	pg.base.memory_group[144] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "夢幻の邂逅・スペシャル",
@@ -1393,8 +1396,8 @@ pg.base.memory_group = {
 			565,
 			566
 		}
-	},
-	[145] = {
+	}
+	pg.base.memory_group[145] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "南洋に靡く硝煙",
@@ -1416,8 +1419,8 @@ pg.base.memory_group = {
 			583,
 			584
 		}
-	},
-	[146] = {
+	}
+	pg.base.memory_group[146] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "オペレーション・クリスマス！",
@@ -1435,8 +1438,8 @@ pg.base.memory_group = {
 			597,
 			598
 		}
-	},
-	[147] = {
+	}
+	pg.base.memory_group[147] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "正月の祝福",
@@ -1454,8 +1457,8 @@ pg.base.memory_group = {
 			618,
 			619
 		}
-	},
-	[148] = {
+	}
+	pg.base.memory_group[148] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "縹映る深緋の残響",
@@ -1488,8 +1491,8 @@ pg.base.memory_group = {
 			640,
 			641
 		}
-	},
-	[149] = {
+	}
+	pg.base.memory_group[149] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ワイワイ旧正月！",
@@ -1507,8 +1510,8 @@ pg.base.memory_group = {
 			682,
 			683
 		}
-	},
-	[150] = {
+	}
+	pg.base.memory_group[150] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "特別演習・超空強襲波",
@@ -1524,8 +1527,8 @@ pg.base.memory_group = {
 			687,
 			688
 		}
-	},
-	[151] = {
+	}
+	pg.base.memory_group[151] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "輝ける峡湾の星",
@@ -1548,8 +1551,8 @@ pg.base.memory_group = {
 			706,
 			707
 		}
-	},
-	[152] = {
+	}
+	pg.base.memory_group[152] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "「仮想繋げし共時性」-日常編",
@@ -1567,8 +1570,8 @@ pg.base.memory_group = {
 			733,
 			734
 		}
-	},
-	[153] = {
+	}
+	pg.base.memory_group[153] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "「仮想繋げし共時性」-スッキリ編",
@@ -1583,8 +1586,8 @@ pg.base.memory_group = {
 			737,
 			738
 		}
-	},
-	[154] = {
+	}
+	pg.base.memory_group[154] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "「仮想繋げし共時性」-ステージ編",
@@ -1619,8 +1622,8 @@ pg.base.memory_group = {
 			761,
 			762
 		}
-	},
-	[155] = {
+	}
+	pg.base.memory_group[155] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港脱出作戦！",
@@ -1636,8 +1639,8 @@ pg.base.memory_group = {
 			766,
 			767
 		}
-	},
-	[156] = {
+	}
+	pg.base.memory_group[156] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "小さな約束",
@@ -1651,8 +1654,8 @@ pg.base.memory_group = {
 			776,
 			777
 		}
-	},
-	[157] = {
+	}
+	pg.base.memory_group[157] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "理科実験タイム！",
@@ -1668,8 +1671,8 @@ pg.base.memory_group = {
 			795,
 			796
 		}
-	},
-	[158] = {
+	}
+	pg.base.memory_group[158] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "黒鉄の楽章、誓いの海",
@@ -1701,8 +1704,8 @@ pg.base.memory_group = {
 			816,
 			817
 		}
-	},
-	[159] = {
+	}
+	pg.base.memory_group[159] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "平和に祈りを",
@@ -1720,8 +1723,8 @@ pg.base.memory_group = {
 			823,
 			824
 		}
-	},
-	[160] = {
+	}
+	pg.base.memory_group[160] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "月刊マンガJavelin",
@@ -1737,8 +1740,8 @@ pg.base.memory_group = {
 			828,
 			829
 		}
-	},
-	[161] = {
+	}
+	pg.base.memory_group[161] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "隅っこのヒマワリ",
@@ -1753,8 +1756,8 @@ pg.base.memory_group = {
 			842,
 			843
 		}
-	},
-	[162] = {
+	}
+	pg.base.memory_group[162] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "迫りくる嵐",
@@ -1775,8 +1778,8 @@ pg.base.memory_group = {
 			838,
 			839
 		}
-	},
-	[163] = {
+	}
+	pg.base.memory_group[163] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "開かれし紺碧の砂箱",
@@ -1820,8 +1823,8 @@ pg.base.memory_group = {
 			882,
 			883
 		}
-	},
-	[164] = {
+	}
+	pg.base.memory_group[164] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "青い海のアイドル",
@@ -1837,8 +1840,8 @@ pg.base.memory_group = {
 			887,
 			888
 		}
-	},
-	[165] = {
+	}
+	pg.base.memory_group[165] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "みんなの夏祭り",
@@ -1851,8 +1854,8 @@ pg.base.memory_group = {
 			889,
 			890
 		}
-	},
-	[166] = {
+	}
+	pg.base.memory_group[166] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "SPストーリー",
@@ -1875,8 +1878,8 @@ pg.base.memory_group = {
 			4833,
 			4836
 		}
-	},
-	[167] = {
+	}
+	pg.base.memory_group[167] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "悲歎せし焔海の詩",
@@ -1910,8 +1913,8 @@ pg.base.memory_group = {
 			928,
 			929
 		}
-	},
-	[168] = {
+	}
+	pg.base.memory_group[168] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "シンプルパーティー？",
@@ -1926,8 +1929,8 @@ pg.base.memory_group = {
 			932,
 			933
 		}
-	},
-	[169] = {
+	}
+	pg.base.memory_group[169] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "交錯する新たな波",
@@ -1943,8 +1946,8 @@ pg.base.memory_group = {
 			937,
 			938
 		}
-	},
-	[170] = {
+	}
+	pg.base.memory_group[170] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "鉄血鮫とエニグマ",
@@ -1965,8 +1968,8 @@ pg.base.memory_group = {
 			948,
 			949
 		}
-	},
-	[171] = {
+	}
+	pg.base.memory_group[171] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "カオティック・ハロウィンナイト",
@@ -1982,8 +1985,8 @@ pg.base.memory_group = {
 			953,
 			954
 		}
-	},
-	[172] = {
+	}
+	pg.base.memory_group[172] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "激奏のポラリス",
@@ -2018,8 +2021,8 @@ pg.base.memory_group = {
 			982,
 			983
 		}
-	},
-	[173] = {
+	}
+	pg.base.memory_group[173] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "ある日のポラリス",
@@ -2033,8 +2036,8 @@ pg.base.memory_group = {
 			991,
 			992
 		}
-	},
-	[174] = {
+	}
+	pg.base.memory_group[174] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "「幻想と真実の二重奏」-ステージ編",
@@ -2096,8 +2099,8 @@ pg.base.memory_group = {
 			1044,
 			1045
 		}
-	},
-	[175] = {
+	}
+	pg.base.memory_group[175] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "「幻想と真実の二重奏」-日常編",
@@ -2118,8 +2121,8 @@ pg.base.memory_group = {
 			1054,
 			1055
 		}
-	},
-	[176] = {
+	}
+	pg.base.memory_group[176] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "クリスマスパーティー！",
@@ -2135,8 +2138,8 @@ pg.base.memory_group = {
 			1059,
 			1060
 		}
-	},
-	[177] = {
+	}
+	pg.base.memory_group[177] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "翳りし満ちる影の華",
@@ -2175,8 +2178,8 @@ pg.base.memory_group = {
 			1087,
 			1088
 		}
-	},
-	[178] = {
+	}
+	pg.base.memory_group[178] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "あけおめ2020",
@@ -2192,8 +2195,8 @@ pg.base.memory_group = {
 			1094,
 			1095
 		}
-	},
-	[179] = {
+	}
+	pg.base.memory_group[179] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "戦え！ロイヤルメイド2nd",
@@ -2209,8 +2212,8 @@ pg.base.memory_group = {
 			1099,
 			1100
 		}
-	},
-	[180] = {
+	}
+	pg.base.memory_group[180] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "新春パーティー",
@@ -2225,8 +2228,8 @@ pg.base.memory_group = {
 			1103,
 			1104
 		}
-	},
-	[181] = {
+	}
+	pg.base.memory_group[181] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "凍絶の北海",
@@ -2269,8 +2272,8 @@ pg.base.memory_group = {
 			1140,
 			1141
 		}
-	},
-	[182] = {
+	}
+	pg.base.memory_group[182] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "闇靄接近",
@@ -2285,8 +2288,8 @@ pg.base.memory_group = {
 			1151,
 			1152
 		}
-	},
-	[183] = {
+	}
+	pg.base.memory_group[183] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "闇靄払う銀翼 ",
@@ -2332,8 +2335,8 @@ pg.base.memory_group = {
 			1186,
 			1187
 		}
-	},
-	[184] = {
+	}
+	pg.base.memory_group[184] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ブリと黄金の秘宝",
@@ -2348,8 +2351,8 @@ pg.base.memory_group = {
 			1190,
 			1588
 		}
-	},
-	[185] = {
+	}
+	pg.base.memory_group[185] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "帰路は海色の陰りへと",
@@ -2369,8 +2372,8 @@ pg.base.memory_group = {
 			1218,
 			1219
 		}
-	},
-	[186] = {
+	}
+	pg.base.memory_group[186] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "神穹を衝く聖歌",
@@ -2415,8 +2418,8 @@ pg.base.memory_group = {
 			1263,
 			1264
 		}
-	},
-	[187] = {
+	}
+	pg.base.memory_group[187] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "峡湾間の反撃",
@@ -2440,8 +2443,8 @@ pg.base.memory_group = {
 			1276,
 			1277
 		}
-	},
-	[188] = {
+	}
+	pg.base.memory_group[188] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "極夜照らす幻光  ",
@@ -2492,8 +2495,8 @@ pg.base.memory_group = {
 			1319,
 			1320
 		}
-	},
-	[189] = {
+	}
+	pg.base.memory_group[189] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "刹那觀る胡蝶の夢",
@@ -2546,8 +2549,8 @@ pg.base.memory_group = {
 			1381,
 			1382
 		}
-	},
-	[190] = {
+	}
+	pg.base.memory_group[190] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "奔る彩帆の青",
@@ -2568,8 +2571,8 @@ pg.base.memory_group = {
 			1394,
 			1395
 		}
-	},
-	[191] = {
+	}
+	pg.base.memory_group[191] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "激唱のユニバース",
@@ -2602,8 +2605,8 @@ pg.base.memory_group = {
 			1431,
 			1432
 		}
-	},
-	[192] = {
+	}
+	pg.base.memory_group[192] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "バケーションレーン-ステージ",
@@ -2630,8 +2633,8 @@ pg.base.memory_group = {
 			1450,
 			1451
 		}
-	},
-	[193] = {
+	}
+	pg.base.memory_group[193] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "バケーションレーン-日常編",
@@ -2646,8 +2649,8 @@ pg.base.memory_group = {
 			1454,
 			1455
 		}
-	},
-	[194] = {
+	}
+	pg.base.memory_group[194] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "虚畳なりし限象",
@@ -2693,8 +2696,8 @@ pg.base.memory_group = {
 			1514,
 			1515
 		}
-	},
-	[195] = {
+	}
+	pg.base.memory_group[195] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "暁射す氷華の嵐",
@@ -2736,8 +2739,8 @@ pg.base.memory_group = {
 			1559,
 			1560
 		}
-	},
-	[196] = {
+	}
+	pg.base.memory_group[196] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "讃える復興の迷路",
@@ -2783,8 +2786,10 @@ pg.base.memory_group = {
 			1634,
 			1635
 		}
-	},
-	[197] = {
+	}
+end)()
+;(function()
+	pg.base.memory_group[197] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "再現記録",
@@ -2799,8 +2804,8 @@ pg.base.memory_group = {
 			1663,
 			1664
 		}
-	},
-	[198] = {
+	}
+	pg.base.memory_group[198] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "照らす螺旋の鏡海",
@@ -2844,8 +2849,8 @@ pg.base.memory_group = {
 			1712,
 			1713
 		}
-	},
-	[199] = {
+	}
+	pg.base.memory_group[199] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "海に響くアイドルの歌-日常編",
@@ -2860,8 +2865,8 @@ pg.base.memory_group = {
 			1748,
 			1749
 		}
-	},
-	[200] = {
+	}
+	pg.base.memory_group[200] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "海に響くアイドルの歌-ステージ編",
@@ -2888,8 +2893,8 @@ pg.base.memory_group = {
 			1765,
 			1766
 		}
-	},
-	[201] = {
+	}
+	pg.base.memory_group[201] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "『装甲騎兵ボトムズ』コラボシナリオ",
@@ -2907,8 +2912,8 @@ pg.base.memory_group = {
 			10070,
 			10071
 		}
-	},
-	[202] = {
+	}
+	pg.base.memory_group[202] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "駆けよ 碧海の吹き風",
@@ -2954,8 +2959,8 @@ pg.base.memory_group = {
 			1834,
 			1835
 		}
-	},
-	[203] = {
+	}
+	pg.base.memory_group[203] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "燈火のシニエ",
@@ -2978,8 +2983,8 @@ pg.base.memory_group = {
 			1891,
 			1892
 		}
-	},
-	[204] = {
+	}
+	pg.base.memory_group[204] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "弧光は交わる世界にて-ステージ編",
@@ -3015,8 +3020,8 @@ pg.base.memory_group = {
 			1919,
 			1920
 		}
-	},
-	[205] = {
+	}
+	pg.base.memory_group[205] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "弧光は交わる世界にて-日常編",
@@ -3031,8 +3036,8 @@ pg.base.memory_group = {
 			1923,
 			1924
 		}
-	},
-	[206] = {
+	}
+	pg.base.memory_group[206] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "炭酸と紅茶",
@@ -3055,8 +3060,8 @@ pg.base.memory_group = {
 			1936,
 			1937
 		}
-	},
-	[207] = {
+	}
+	pg.base.memory_group[207] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "遡望せし虹彩の塔",
@@ -3104,8 +3109,8 @@ pg.base.memory_group = {
 			1976,
 			1977
 		}
-	},
-	[208] = {
+	}
+	pg.base.memory_group[208] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "名状しがたき演習事件",
@@ -3121,8 +3126,8 @@ pg.base.memory_group = {
 			1983,
 			1984
 		}
-	},
-	[209] = {
+	}
+	pg.base.memory_group[209] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "春節遊園撮影会",
@@ -3140,8 +3145,8 @@ pg.base.memory_group = {
 			1990,
 			1991
 		}
-	},
-	[210] = {
+	}
+	pg.base.memory_group[210] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "絶海前話",
@@ -3156,8 +3161,8 @@ pg.base.memory_group = {
 			2004,
 			2005
 		}
-	},
-	[211] = {
+	}
+	pg.base.memory_group[211] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "鳴動せし星霜の淵",
@@ -3201,8 +3206,8 @@ pg.base.memory_group = {
 			2037,
 			2038
 		}
-	},
-	[212] = {
+	}
+	pg.base.memory_group[212] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "幻像の塔・発見編",
@@ -3224,8 +3229,8 @@ pg.base.memory_group = {
 			2059,
 			2060
 		}
-	},
-	[213] = {
+	}
+	pg.base.memory_group[213] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ブリの誓い",
@@ -3238,8 +3243,8 @@ pg.base.memory_group = {
 			2061,
 			2062
 		}
-	},
-	[214] = {
+	}
+	pg.base.memory_group[214] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "永き城の麗しき影",
@@ -3257,8 +3262,8 @@ pg.base.memory_group = {
 			2076,
 			2077
 		}
-	},
-	[215] = {
+	}
+	pg.base.memory_group[215] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "吟ずる瑠璃の楽章",
@@ -3303,8 +3308,8 @@ pg.base.memory_group = {
 			2113,
 			2114
 		}
-	},
-	[216] = {
+	}
+	pg.base.memory_group[216] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "慶弔と帰路",
@@ -3319,8 +3324,8 @@ pg.base.memory_group = {
 			2118,
 			2119
 		}
-	},
-	[217] = {
+	}
+	pg.base.memory_group[217] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "風変わりなメイドたち",
@@ -3334,8 +3339,8 @@ pg.base.memory_group = {
 			2129,
 			2130
 		}
-	},
-	[218] = {
+	}
+	pg.base.memory_group[218] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "誠閃の剣　搖光の城",
@@ -3382,8 +3387,8 @@ pg.base.memory_group = {
 			2165,
 			2166
 		}
-	},
-	[219] = {
+	}
+	pg.base.memory_group[219] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "雅なる宴",
@@ -3398,8 +3403,8 @@ pg.base.memory_group = {
 			2169,
 			2170
 		}
-	},
-	[220] = {
+	}
+	pg.base.memory_group[220] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "御伽の森冒険記",
@@ -3416,8 +3421,8 @@ pg.base.memory_group = {
 			2185,
 			2186
 		}
-	},
-	[221] = {
+	}
+	pg.base.memory_group[221] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "アイリスの天使",
@@ -3435,8 +3440,8 @@ pg.base.memory_group = {
 			2196,
 			2197
 		}
-	},
-	[222] = {
+	}
+	pg.base.memory_group[222] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "開け！世界博覧会",
@@ -3454,8 +3459,8 @@ pg.base.memory_group = {
 			2216,
 			2217
 		}
-	},
-	[223] = {
+	}
+	pg.base.memory_group[223] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "鋼鷲の冒険譚",
@@ -3503,8 +3508,8 @@ pg.base.memory_group = {
 			2256,
 			2257
 		}
-	},
-	[224] = {
+	}
+	pg.base.memory_group[224] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "結像点作戦",
@@ -3531,8 +3536,8 @@ pg.base.memory_group = {
 			2285,
 			2286
 		}
-	},
-	[225] = {
+	}
+	pg.base.memory_group[225] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "静海遠雷",
@@ -3550,8 +3555,8 @@ pg.base.memory_group = {
 			2296,
 			2297
 		}
-	},
-	[226] = {
+	}
+	pg.base.memory_group[226] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "赫の涙月　菫の暁風",
@@ -3601,8 +3606,8 @@ pg.base.memory_group = {
 			2338,
 			2339
 		}
-	},
-	[227] = {
+	}
+	pg.base.memory_group[227] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "勇者の旅路",
@@ -3618,8 +3623,8 @@ pg.base.memory_group = {
 			2354,
 			2355
 		}
-	},
-	[228] = {
+	}
+	pg.base.memory_group[228] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "シュペーちゃん追撃戦？",
@@ -3633,8 +3638,8 @@ pg.base.memory_group = {
 			2362,
 			2363
 		}
-	},
-	[229] = {
+	}
+	pg.base.memory_group[229] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "戦え！ロイヤルメイド隊？",
@@ -3650,8 +3655,8 @@ pg.base.memory_group = {
 			2381,
 			2382
 		}
-	},
-	[230] = {
+	}
+	pg.base.memory_group[230] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "ハロウィンの遭遇",
@@ -3668,8 +3673,8 @@ pg.base.memory_group = {
 			2387,
 			2388
 		}
-	},
-	[231] = {
+	}
+	pg.base.memory_group[231] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "錬金術士と謎の遺跡群島-「日常編」",
@@ -3687,8 +3692,8 @@ pg.base.memory_group = {
 			2406,
 			2407
 		}
-	},
-	[232] = {
+	}
+	pg.base.memory_group[232] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "錬金術士と謎の遺跡群島-「ステージ編」",
@@ -3725,8 +3730,8 @@ pg.base.memory_group = {
 			2435,
 			2436
 		}
-	},
-	[233] = {
+	}
+	pg.base.memory_group[233] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "分極する空想の因果",
@@ -3744,8 +3749,8 @@ pg.base.memory_group = {
 			2446,
 			2447
 		}
-	},
-	[234] = {
+	}
+	pg.base.memory_group[234] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "水辺の休日",
@@ -3763,8 +3768,8 @@ pg.base.memory_group = {
 			2466,
 			2467
 		}
-	},
-	[235] = {
+	}
+	pg.base.memory_group[235] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "積重なる事象の幻界",
@@ -3810,8 +3815,8 @@ pg.base.memory_group = {
 			2504,
 			2505
 		}
-	},
-	[236] = {
+	}
+	pg.base.memory_group[236] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ウィンター・パスファインダー",
@@ -3827,8 +3832,8 @@ pg.base.memory_group = {
 			2524,
 			2525
 		}
-	},
-	[237] = {
+	}
+	pg.base.memory_group[237] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "春節2023",
@@ -3843,8 +3848,8 @@ pg.base.memory_group = {
 			2533,
 			2534
 		}
-	},
-	[238] = {
+	}
+	pg.base.memory_group[238] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "華彩舞い上がる新春",
@@ -3858,8 +3863,8 @@ pg.base.memory_group = {
 			2542,
 			2543
 		}
-	},
-	[239] = {
+	}
+	pg.base.memory_group[239] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "女王の一日",
@@ -3877,8 +3882,8 @@ pg.base.memory_group = {
 			2556,
 			2557
 		}
-	},
-	[240] = {
+	}
+	pg.base.memory_group[240] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "黙示の遺構",
@@ -3919,8 +3924,8 @@ pg.base.memory_group = {
 			2599,
 			2600
 		}
-	},
-	[241] = {
+	}
+	pg.base.memory_group[241] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "星霜海嵐",
@@ -3950,8 +3955,8 @@ pg.base.memory_group = {
 			2628,
 			2629
 		}
-	},
-	[242] = {
+	}
+	pg.base.memory_group[242] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "雪見温泉の招待状",
@@ -3967,8 +3972,8 @@ pg.base.memory_group = {
 			2634,
 			2635
 		}
-	},
-	[243] = {
+	}
+	pg.base.memory_group[243] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "一撃！PURIN！",
@@ -3982,8 +3987,8 @@ pg.base.memory_group = {
 			2642,
 			2643
 		}
-	},
-	[244] = {
+	}
+	pg.base.memory_group[244] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "凶兆のアクム",
@@ -4001,8 +4006,8 @@ pg.base.memory_group = {
 			2666,
 			2667
 		}
-	},
-	[245] = {
+	}
+	pg.base.memory_group[245] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "覆天せし万象の塵",
@@ -4050,8 +4055,8 @@ pg.base.memory_group = {
 			2706,
 			2707
 		}
-	},
-	[246] = {
+	}
+	pg.base.memory_group[246] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "潮風と夏の無人島",
@@ -4096,8 +4101,8 @@ pg.base.memory_group = {
 			2743,
 			2744
 		}
-	},
-	[247] = {
+	}
+	pg.base.memory_group[247] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "清茶馥郁",
@@ -4109,8 +4114,8 @@ pg.base.memory_group = {
 		memories = {
 			2751
 		}
-	},
-	[248] = {
+	}
+	pg.base.memory_group[248] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "飛仙にあやかりて",
@@ -4122,8 +4127,8 @@ pg.base.memory_group = {
 		memories = {
 			2781
 		}
-	},
-	[249] = {
+	}
+	pg.base.memory_group[249] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "緑地伽話",
@@ -4139,8 +4144,8 @@ pg.base.memory_group = {
 			2794,
 			2795
 		}
-	},
-	[250] = {
+	}
+	pg.base.memory_group[250] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "オフィス・ドリーム",
@@ -4154,8 +4159,8 @@ pg.base.memory_group = {
 			2802,
 			2803
 		}
-	},
-	[251] = {
+	}
+	pg.base.memory_group[251] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "燃ゆる聖都の回想曲",
@@ -4176,8 +4181,8 @@ pg.base.memory_group = {
 			2828,
 			2829
 		}
-	},
-	[252] = {
+	}
+	pg.base.memory_group[252] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "博覧会の夜",
@@ -4195,8 +4200,8 @@ pg.base.memory_group = {
 			2846,
 			2847
 		}
-	},
-	[253] = {
+	}
+	pg.base.memory_group[253] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "パーティー・ウィズ・アイリス",
@@ -4224,8 +4229,8 @@ pg.base.memory_group = {
 			2866,
 			2867
 		}
-	},
-	[254] = {
+	}
+	pg.base.memory_group[254] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "愚者の天秤",
@@ -4281,8 +4286,8 @@ pg.base.memory_group = {
 			2914,
 			2915
 		}
-	},
-	[255] = {
+	}
+	pg.base.memory_group[255] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "薫風の招待状",
@@ -4296,8 +4301,8 @@ pg.base.memory_group = {
 			2922,
 			2923
 		}
-	},
-	[256] = {
+	}
+	pg.base.memory_group[256] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "暁夜半宵",
@@ -4315,8 +4320,8 @@ pg.base.memory_group = {
 			2956,
 			2957
 		}
-	},
-	[257] = {
+	}
+	pg.base.memory_group[257] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "須臾望月抄",
@@ -4361,8 +4366,8 @@ pg.base.memory_group = {
 			2993,
 			2994
 		}
-	},
-	[258] = {
+	}
+	pg.base.memory_group[258] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港着せ替え特集！その①",
@@ -4378,8 +4383,8 @@ pg.base.memory_group = {
 			3004,
 			3005
 		}
-	},
-	[259] = {
+	}
+	pg.base.memory_group[259] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "温泉街神隠し事件",
@@ -4402,8 +4407,8 @@ pg.base.memory_group = {
 			3021,
 			3022
 		}
-	},
-	[260] = {
+	}
+	pg.base.memory_group[260] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港着せ替え特集！その②",
@@ -4417,8 +4422,8 @@ pg.base.memory_group = {
 			3032,
 			3033
 		}
-	},
-	[261] = {
+	}
+	pg.base.memory_group[261] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "レーシング・ステージ！",
@@ -4434,8 +4439,8 @@ pg.base.memory_group = {
 			3044,
 			3045
 		}
-	},
-	[262] = {
+	}
+	pg.base.memory_group[262] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "ロイヤル・フォーチュンの秘密造船所",
@@ -4454,8 +4459,8 @@ pg.base.memory_group = {
 			3067,
 			3068
 		}
-	},
-	[263] = {
+	}
+	pg.base.memory_group[263] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "テンペスタと若返りの泉",
@@ -4494,8 +4499,8 @@ pg.base.memory_group = {
 			3097,
 			3098
 		}
-	},
-	[264] = {
+	}
+	pg.base.memory_group[264] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "嵐夜綺譚",
@@ -4534,8 +4539,8 @@ pg.base.memory_group = {
 			3127,
 			3128
 		}
-	},
-	[265] = {
+	}
+	pg.base.memory_group[265] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "今日の一押しは？",
@@ -4549,8 +4554,8 @@ pg.base.memory_group = {
 			3142,
 			3143
 		}
-	},
-	[266] = {
+	}
+	pg.base.memory_group[266] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "蒼閃忍法帖-ステージ",
@@ -4585,8 +4590,8 @@ pg.base.memory_group = {
 			3173,
 			3174
 		}
-	},
-	[267] = {
+	}
+	pg.base.memory_group[267] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "蒼閃忍法帖-日常",
@@ -4604,8 +4609,8 @@ pg.base.memory_group = {
 			3186,
 			3187
 		}
-	},
-	[268] = {
+	}
+	pg.base.memory_group[268] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "人気投票2023",
@@ -4633,8 +4638,8 @@ pg.base.memory_group = {
 			3206,
 			3207
 		}
-	},
-	[269] = {
+	}
+	pg.base.memory_group[269] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "星凪の空",
@@ -4652,8 +4657,8 @@ pg.base.memory_group = {
 			3226,
 			3227
 		}
-	},
-	[270] = {
+	}
+	pg.base.memory_group[270] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "光追う星の海",
@@ -4701,8 +4706,8 @@ pg.base.memory_group = {
 			3263,
 			3264
 		}
-	},
-	[271] = {
+	}
+	pg.base.memory_group[271] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港ナイト",
@@ -4717,8 +4722,8 @@ pg.base.memory_group = {
 			3274,
 			3275
 		}
-	},
-	[272] = {
+	}
+	pg.base.memory_group[272] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港着せ替え特集！その③",
@@ -4732,8 +4737,8 @@ pg.base.memory_group = {
 			3282,
 			3283
 		}
-	},
-	[273] = {
+	}
+	pg.base.memory_group[273] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "新春宴会狂騒曲",
@@ -4749,8 +4754,8 @@ pg.base.memory_group = {
 			3304,
 			3305
 		}
-	},
-	[274] = {
+	}
+	pg.base.memory_group[274] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "スプリング冒険キング",
@@ -4764,8 +4769,8 @@ pg.base.memory_group = {
 			3312,
 			3313
 		}
-	},
-	[275] = {
+	}
+	pg.base.memory_group[275] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "着せ替え特集　春節2023　①",
@@ -4779,8 +4784,8 @@ pg.base.memory_group = {
 			3332,
 			3333
 		}
-	},
-	[276] = {
+	}
+	pg.base.memory_group[276] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "着せ替え特集　春節2023　②",
@@ -4794,8 +4799,8 @@ pg.base.memory_group = {
 			3342,
 			3343
 		}
-	},
-	[277] = {
+	}
+	pg.base.memory_group[277] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "銀嶺烟霞",
@@ -4814,8 +4819,8 @@ pg.base.memory_group = {
 			3367,
 			3368
 		}
-	},
-	[278] = {
+	}
+	pg.base.memory_group[278] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "銀界遊廻",
@@ -4860,8 +4865,8 @@ pg.base.memory_group = {
 			3402,
 			3403
 		}
-	},
-	[279] = {
+	}
+	pg.base.memory_group[279] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "電影不夜城",
@@ -4880,8 +4885,8 @@ pg.base.memory_group = {
 			3417,
 			3418
 		}
-	},
-	[280] = {
+	}
+	pg.base.memory_group[280] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "バードの詩",
@@ -4897,8 +4902,8 @@ pg.base.memory_group = {
 			3434,
 			3435
 		}
-	},
-	[281] = {
+	}
+	pg.base.memory_group[281] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "ゼロから頑張る魔王討伐",
@@ -4937,8 +4942,8 @@ pg.base.memory_group = {
 			3467,
 			3468
 		}
-	},
-	[282] = {
+	}
+	pg.base.memory_group[282] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "蘇るゴールデン",
@@ -4952,8 +4957,8 @@ pg.base.memory_group = {
 			3472,
 			3473
 		}
-	},
-	[283] = {
+	}
+	pg.base.memory_group[283] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "彼岸のレドレント",
@@ -4971,8 +4976,8 @@ pg.base.memory_group = {
 			3496,
 			3497
 		}
-	},
-	[284] = {
+	}
+	pg.base.memory_group[284] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "共鳴のパッション",
@@ -5000,8 +5005,8 @@ pg.base.memory_group = {
 			3515,
 			3516
 		}
-	},
-	[285] = {
+	}
+	pg.base.memory_group[285] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "着せ替え特集  一味違う日常",
@@ -5015,8 +5020,8 @@ pg.base.memory_group = {
 			3521,
 			3522
 		}
-	},
-	[286] = {
+	}
+	pg.base.memory_group[286] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "出航せよ母港クルーズ",
@@ -5032,8 +5037,8 @@ pg.base.memory_group = {
 			3544,
 			3545
 		}
-	},
-	[287] = {
+	}
+	pg.base.memory_group[287] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "彼方の響",
@@ -5051,8 +5056,8 @@ pg.base.memory_group = {
 			3556,
 			3557
 		}
-	},
-	[288] = {
+	}
+	pg.base.memory_group[288] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "トキメク休日大航海",
@@ -5109,8 +5114,8 @@ pg.base.memory_group = {
 			3605,
 			3606
 		}
-	},
-	[289] = {
+	}
+	pg.base.memory_group[289] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "赫輝のマルティリウム",
@@ -5156,8 +5161,8 @@ pg.base.memory_group = {
 			3643,
 			3644
 		}
-	},
-	[290] = {
+	}
+	pg.base.memory_group[290] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "翠園佳繍",
@@ -5169,8 +5174,8 @@ pg.base.memory_group = {
 		memories = {
 			3651
 		}
-	},
-	[291] = {
+	}
+	pg.base.memory_group[291] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "悠然碧海行",
@@ -5182,8 +5187,8 @@ pg.base.memory_group = {
 		memories = {
 			3661
 		}
-	},
-	[292] = {
+	}
+	pg.base.memory_group[292] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "リトル学園へようこそ",
@@ -5204,8 +5209,8 @@ pg.base.memory_group = {
 			3689,
 			3690
 		}
-	},
-	[293] = {
+	}
+	pg.base.memory_group[293] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "夢幻の間奏曲",
@@ -5226,8 +5231,8 @@ pg.base.memory_group = {
 			3709,
 			3710
 		}
-	},
-	[294] = {
+	}
+	pg.base.memory_group[294] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "着せ替え特集  サマーレース",
@@ -5241,8 +5246,8 @@ pg.base.memory_group = {
 			3712,
 			3713
 		}
-	},
-	[295] = {
+	}
+	pg.base.memory_group[295] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "朱染断章",
@@ -5260,8 +5265,8 @@ pg.base.memory_group = {
 			3736,
 			3737
 		}
-	},
-	[296] = {
+	}
+	pg.base.memory_group[296] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "錬翼空翔",
@@ -5309,8 +5314,10 @@ pg.base.memory_group = {
 			3776,
 			3777
 		}
-	},
-	[297] = {
+	}
+end)()
+;(function()
+	pg.base.memory_group[297] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "荒野休日開拓記",
@@ -5339,8 +5346,8 @@ pg.base.memory_group = {
 			3797,
 			3798
 		}
-	},
-	[298] = {
+	}
+	pg.base.memory_group[298] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "徒花咲かす彼岸",
@@ -5364,8 +5371,8 @@ pg.base.memory_group = {
 			3822,
 			3823
 		}
-	},
-	[299] = {
+	}
+	pg.base.memory_group[299] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "風塵積もる此岸",
@@ -5383,8 +5390,8 @@ pg.base.memory_group = {
 			3836,
 			3837
 		}
-	},
-	[300] = {
+	}
+	pg.base.memory_group[300] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "楽園の開始符",
@@ -5400,8 +5407,8 @@ pg.base.memory_group = {
 			3844,
 			3845
 		}
-	},
-	[301] = {
+	}
+	pg.base.memory_group[301] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "ドリームランド・ドリームデイズ",
@@ -5431,8 +5438,8 @@ pg.base.memory_group = {
 			3868,
 			3869
 		}
-	},
-	[302] = {
+	}
+	pg.base.memory_group[302] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "絳染む丹華の詠歌",
@@ -5480,8 +5487,8 @@ pg.base.memory_group = {
 			3906,
 			3907
 		}
-	},
-	[303] = {
+	}
+	pg.base.memory_group[303] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ハート・ダンシング",
@@ -5493,8 +5500,8 @@ pg.base.memory_group = {
 		memories = {
 			3908
 		}
-	},
-	[304] = {
+	}
+	pg.base.memory_group[304] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "寮舎新館計画だにゃ！",
@@ -5506,8 +5513,8 @@ pg.base.memory_group = {
 		memories = {
 			3921
 		}
-	},
-	[305] = {
+	}
+	pg.base.memory_group[305] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "艦船通信、新装テスト！",
@@ -5519,8 +5526,8 @@ pg.base.memory_group = {
 		memories = {
 			3941
 		}
-	},
-	[306] = {
+	}
+	pg.base.memory_group[306] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "テンペスタと眠りし海",
@@ -5553,8 +5560,8 @@ pg.base.memory_group = {
 			3971,
 			3972
 		}
-	},
-	[307] = {
+	}
+	pg.base.memory_group[307] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港休日ハロウィン",
@@ -5573,8 +5580,8 @@ pg.base.memory_group = {
 			3987,
 			3988
 		}
-	},
-	[309] = {
+	}
+	pg.base.memory_group[309] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "危険発明接近中！-ステージ編",
@@ -5602,8 +5609,8 @@ pg.base.memory_group = {
 			4036,
 			4037
 		}
-	},
-	[310] = {
+	}
+	pg.base.memory_group[310] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "危険発明接近中！-日常編",
@@ -5620,8 +5627,8 @@ pg.base.memory_group = {
 			4045,
 			4046
 		}
-	},
-	[311] = {
+	}
+	pg.base.memory_group[311] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "危険発明接近中！-依頼編",
@@ -5640,8 +5647,8 @@ pg.base.memory_group = {
 			4057,
 			4058
 		}
-	},
-	[312] = {
+	}
+	pg.base.memory_group[312] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "領域外からの帰還",
@@ -5661,8 +5668,8 @@ pg.base.memory_group = {
 			4078,
 			4079
 		}
-	},
-	[313] = {
+	}
+	pg.base.memory_group[313] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "星降る夕影の残光",
@@ -5706,8 +5713,8 @@ pg.base.memory_group = {
 			4112,
 			4113
 		}
-	},
-	[314] = {
+	}
+	pg.base.memory_group[314] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ゲーミング・ナイト！",
@@ -5724,8 +5731,8 @@ pg.base.memory_group = {
 			4125,
 			4126
 		}
-	},
-	[315] = {
+	}
+	pg.base.memory_group[315] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ゲーミング・ナイト！",
@@ -5741,8 +5748,8 @@ pg.base.memory_group = {
 			4134,
 			4135
 		}
-	},
-	[316] = {
+	}
+	pg.base.memory_group[316] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "新春華裳協奏曲",
@@ -5757,8 +5764,8 @@ pg.base.memory_group = {
 			4153,
 			4154
 		}
-	},
-	[317] = {
+	}
+	pg.base.memory_group[317] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "新春華裳協奏曲",
@@ -5774,8 +5781,8 @@ pg.base.memory_group = {
 			4164,
 			4165
 		}
-	},
-	[318] = {
+	}
+	pg.base.memory_group[318] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "新春華裳協奏曲",
@@ -5790,8 +5797,8 @@ pg.base.memory_group = {
 			4173,
 			4174
 		}
-	},
-	[319] = {
+	}
+	pg.base.memory_group[319] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "被選者の道",
@@ -5809,8 +5816,8 @@ pg.base.memory_group = {
 			4196,
 			4197
 		}
-	},
-	[320] = {
+	}
+	pg.base.memory_group[320] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "籠檻に囚われし神光",
@@ -5857,8 +5864,8 @@ pg.base.memory_group = {
 			4235,
 			4236
 		}
-	},
-	[321] = {
+	}
+	pg.base.memory_group[321] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ナイル文化展",
@@ -5873,8 +5880,8 @@ pg.base.memory_group = {
 			4243,
 			4244
 		}
-	},
-	[322] = {
+	}
+	pg.base.memory_group[322] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "病院探訪",
@@ -5896,8 +5903,8 @@ pg.base.memory_group = {
 			4270,
 			4271
 		}
-	},
-	[323] = {
+	}
+	pg.base.memory_group[323] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "ブリ戦隊と母港暗黒コーポ",
@@ -5911,8 +5918,8 @@ pg.base.memory_group = {
 			4282,
 			4283
 		}
-	},
-	[324] = {
+	}
+	pg.base.memory_group[324] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港着せ替え特集:春のんびり",
@@ -5927,8 +5934,8 @@ pg.base.memory_group = {
 			4303,
 			4304
 		}
-	},
-	[325] = {
+	}
+	pg.base.memory_group[325] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "チュリッパの海へ",
@@ -5947,8 +5954,8 @@ pg.base.memory_group = {
 			4317,
 			4318
 		}
-	},
-	[326] = {
+	}
+	pg.base.memory_group[326] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "リゾート準備中",
@@ -5964,8 +5971,8 @@ pg.base.memory_group = {
 			4334,
 			4335
 		}
-	},
-	[327] = {
+	}
+	pg.base.memory_group[327] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "太陽未だ沈まぬ",
@@ -5983,8 +5990,8 @@ pg.base.memory_group = {
 			4346,
 			4347
 		}
-	},
-	[328] = {
+	}
+	pg.base.memory_group[328] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "盛夏再び！リゾート再建計画！",
@@ -6022,8 +6029,8 @@ pg.base.memory_group = {
 			4376,
 			4377
 		}
-	},
-	[329] = {
+	}
+	pg.base.memory_group[329] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "高い塔の薔薇",
@@ -6070,8 +6077,8 @@ pg.base.memory_group = {
 			4415,
 			4416
 		}
-	},
-	[330] = {
+	}
+	pg.base.memory_group[330] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "碧玉勝りし天青",
@@ -6083,8 +6090,8 @@ pg.base.memory_group = {
 		memories = {
 			4417
 		}
-	},
-	[331] = {
+	}
+	pg.base.memory_group[331] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "幻影の迷い人",
@@ -6100,8 +6107,8 @@ pg.base.memory_group = {
 			4434,
 			4435
 		}
-	},
-	[332] = {
+	}
+	pg.base.memory_group[332] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "幻影の迷い人",
@@ -6114,8 +6121,8 @@ pg.base.memory_group = {
 			4421,
 			4422
 		}
-	},
-	[333] = {
+	}
+	pg.base.memory_group[333] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "ネオンシティの探索者",
@@ -6136,8 +6143,8 @@ pg.base.memory_group = {
 			4459,
 			4460
 		}
-	},
-	[334] = {
+	}
+	pg.base.memory_group[334] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "錬金術士と天空邂逅の塔-ステージ編",
@@ -6182,8 +6189,8 @@ pg.base.memory_group = {
 			4513,
 			4514
 		}
-	},
-	[335] = {
+	}
+	pg.base.memory_group[335] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "錬金術士と天空邂逅の塔-日常編",
@@ -6198,8 +6205,8 @@ pg.base.memory_group = {
 			4523,
 			4524
 		}
-	},
-	[336] = {
+	}
+	pg.base.memory_group[336] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "淵層界の秘密",
@@ -6239,8 +6246,8 @@ pg.base.memory_group = {
 			4568,
 			4569
 		}
-	},
-	[337] = {
+	}
+	pg.base.memory_group[337] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港ファッション　ホリデー",
@@ -6258,8 +6265,8 @@ pg.base.memory_group = {
 			4576,
 			4577
 		}
-	},
-	[338] = {
+	}
+	pg.base.memory_group[338] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "重桜の招待",
@@ -6277,8 +6284,8 @@ pg.base.memory_group = {
 			4596,
 			4597
 		}
-	},
-	[339] = {
+	}
+	pg.base.memory_group[339] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "アマハラに舞い奉れ",
@@ -6328,8 +6335,8 @@ pg.base.memory_group = {
 			4638,
 			4639
 		}
-	},
-	[340] = {
+	}
+	pg.base.memory_group[340] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "激戦！忍びの城！",
@@ -6360,8 +6367,8 @@ pg.base.memory_group = {
 			4659,
 			4660
 		}
-	},
-	[341] = {
+	}
+	pg.base.memory_group[341] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "青空の下で出会いを-ステージ編",
@@ -6387,8 +6394,8 @@ pg.base.memory_group = {
 			4684,
 			4685
 		}
-	},
-	[342] = {
+	}
+	pg.base.memory_group[342] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "青空の下で出会いを-日常編",
@@ -6401,8 +6408,8 @@ pg.base.memory_group = {
 			4691,
 			4692
 		}
-	},
-	[343] = {
+	}
+	pg.base.memory_group[343] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港の休日怪談集Ⅱ",
@@ -6421,8 +6428,8 @@ pg.base.memory_group = {
 			4717,
 			4718
 		}
-	},
-	[344] = {
+	}
+	pg.base.memory_group[344] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "テンペスタと自由群島",
@@ -6462,8 +6469,8 @@ pg.base.memory_group = {
 			4748,
 			4749
 		}
-	},
-	[345] = {
+	}
+	pg.base.memory_group[345] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港ファッション：ピット・スタンバイ",
@@ -6477,8 +6484,8 @@ pg.base.memory_group = {
 			4762,
 			4763
 		}
-	},
-	[347] = {
+	}
+	pg.base.memory_group[347] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "DATE A LANE-「ステージ編」",
@@ -6521,8 +6528,8 @@ pg.base.memory_group = {
 			4811,
 			4812
 		}
-	},
-	[348] = {
+	}
+	pg.base.memory_group[348] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "DATE A LANE-「日常編」",
@@ -6539,8 +6546,8 @@ pg.base.memory_group = {
 			4825,
 			4826
 		}
-	},
-	[349] = {
+	}
+	pg.base.memory_group[349] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "追憶の残響",
@@ -6570,8 +6577,8 @@ pg.base.memory_group = {
 			4858,
 			4859
 		}
-	},
-	[350] = {
+	}
+	pg.base.memory_group[350] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "美しい世界へ",
@@ -6591,8 +6598,8 @@ pg.base.memory_group = {
 			4878,
 			4879
 		}
-	},
-	[351] = {
+	}
+	pg.base.memory_group[351] = {
 		auto_unlock = "",
 		subtype = 1,
 		title = "天穹に響く音謡",
@@ -6647,8 +6654,8 @@ pg.base.memory_group = {
 			4923,
 			4924
 		}
-	},
-	[352] = {
+	}
+	pg.base.memory_group[352] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港ファッション",
@@ -6664,8 +6671,8 @@ pg.base.memory_group = {
 			4934,
 			4935
 		}
-	},
-	[353] = {
+	}
+	pg.base.memory_group[353] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "母港ファッション",
@@ -6682,8 +6689,8 @@ pg.base.memory_group = {
 			4945,
 			4946
 		}
-	},
-	[354] = {
+	}
+	pg.base.memory_group[354] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "特集写真――撮影進行中！",
@@ -6704,8 +6711,8 @@ pg.base.memory_group = {
 			4969,
 			4970
 		}
-	},
-	[355] = {
+	}
+	pg.base.memory_group[355] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "新春珠玉逸品会",
@@ -6723,8 +6730,8 @@ pg.base.memory_group = {
 			4986,
 			4987
 		}
-	},
-	[356] = {
+	}
+	pg.base.memory_group[356] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "バレンタイン――甘々大作戦！",
@@ -6738,8 +6745,8 @@ pg.base.memory_group = {
 			4992,
 			4993
 		}
-	},
-	[357] = {
+	}
+	pg.base.memory_group[357] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "着せ替え特集 紅帳衣裳",
@@ -6754,8 +6761,8 @@ pg.base.memory_group = {
 			5003,
 			5004
 		}
-	},
-	[358] = {
+	}
+	pg.base.memory_group[358] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "春色旅籠Online",
@@ -6786,8 +6793,8 @@ pg.base.memory_group = {
 			5029,
 			5030
 		}
-	},
-	[359] = {
+	}
+	pg.base.memory_group[359] = {
 		title = "ワンダラー招集計画",
 		subtype = 2,
 		id = 359,
@@ -6823,8 +6830,8 @@ pg.base.memory_group = {
 			5056,
 			5057
 		}
-	},
-	[360] = {
+	}
+	pg.base.memory_group[360] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "煌く★ブリ★大作戦",
@@ -6838,8 +6845,8 @@ pg.base.memory_group = {
 			5062,
 			5063
 		}
-	},
-	[361] = {
+	}
+	pg.base.memory_group[361] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "きらめく砂浜~ステージ編~",
@@ -6863,8 +6870,8 @@ pg.base.memory_group = {
 			5092,
 			5093
 		}
-	},
-	[362] = {
+	}
+	pg.base.memory_group[362] = {
 		auto_unlock = "",
 		subtype = 2,
 		title = "きらめく砂浜~ヴィーナス編~",
@@ -6882,8 +6889,8 @@ pg.base.memory_group = {
 			5106,
 			5107
 		}
-	},
-	[501] = {
+	}
+	pg.base.memory_group[501] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "明石のお願い",
@@ -6914,8 +6921,8 @@ pg.base.memory_group = {
 			80,
 			81
 		}
-	},
-	[502] = {
+	}
+	pg.base.memory_group[502] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "幽霊さんはガンバラナイ",
@@ -6935,8 +6942,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[503] = {
+	}
+	pg.base.memory_group[503] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "幸運の鶴",
@@ -6956,8 +6963,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[504] = {
+	}
+	pg.base.memory_group[504] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "佐世保生まれの幸運艦",
@@ -6977,8 +6984,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[505] = {
+	}
+	pg.base.memory_group[505] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "私の素晴らしい記憶",
@@ -6998,8 +7005,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[506] = {
+	}
+	pg.base.memory_group[506] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ハムマン観察記録",
@@ -7019,8 +7026,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[507] = {
+	}
+	pg.base.memory_group[507] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ヒガンバナの恋",
@@ -7040,8 +7047,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[508] = {
+	}
+	pg.base.memory_group[508] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ナイト＆アワード",
@@ -7061,8 +7068,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[509] = {
+	}
+	pg.base.memory_group[509] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "雨のち晴れ",
@@ -7082,8 +7089,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[510] = {
+	}
+	pg.base.memory_group[510] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "栄光なる間奏曲",
@@ -7103,8 +7110,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[511] = {
+	}
+	pg.base.memory_group[511] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ベストピクチャーズ！",
@@ -7124,8 +7131,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[512] = {
+	}
+	pg.base.memory_group[512] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "お姉さんと一日デート",
@@ -7145,8 +7152,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[513] = {
+	}
+	pg.base.memory_group[513] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "白き詩",
@@ -7166,8 +7173,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[515] = {
+	}
+	pg.base.memory_group[515] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "騎士姫の憂鬱",
@@ -7187,8 +7194,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[516] = {
+	}
+	pg.base.memory_group[516] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "踊り子天使エミール",
@@ -7208,8 +7215,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[517] = {
+	}
+	pg.base.memory_group[517] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ジュルネ・シュルクーフ！",
@@ -7229,8 +7236,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[518] = {
+	}
+	pg.base.memory_group[518] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "「Schmelzen」",
@@ -7250,8 +7257,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[519] = {
+	}
+	pg.base.memory_group[519] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "セントーと先輩たち",
@@ -7271,8 +7278,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[520] = {
+	}
+	pg.base.memory_group[520] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "御召艦の宴",
@@ -7292,8 +7299,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[521] = {
+	}
+	pg.base.memory_group[521] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "曇りの仮面",
@@ -7313,8 +7320,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[522] = {
+	}
+	pg.base.memory_group[522] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "サブマリン・トラップ！",
@@ -7334,8 +7341,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[523] = {
+	}
+	pg.base.memory_group[523] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "その女、賢妻につき",
@@ -7355,8 +7362,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[524] = {
+	}
+	pg.base.memory_group[524] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "先輩とわだかまり",
@@ -7376,8 +7383,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[525] = {
+	}
+	pg.base.memory_group[525] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ニンジャ暁参上！",
@@ -7397,8 +7404,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[526] = {
+	}
+	pg.base.memory_group[526] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "平穏を讃えて",
@@ -7418,8 +7425,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[527] = {
+	}
+	pg.base.memory_group[527] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "拗ねやすい彼女の小さなお話",
@@ -7439,8 +7446,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[528] = {
+	}
+	pg.base.memory_group[528] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ウサウサ星人の謎？",
@@ -7460,8 +7467,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[529] = {
+	}
+	pg.base.memory_group[529] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "万能店員シラヌイ",
@@ -7481,8 +7488,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[530] = {
+	}
+	pg.base.memory_group[530] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "シュガリーコンコード",
@@ -7502,8 +7509,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[531] = {
+	}
+	pg.base.memory_group[531] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "軽空母龍驤ここにあり",
@@ -7523,8 +7530,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[532] = {
+	}
+	pg.base.memory_group[532] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "大潮よりお届け♪",
@@ -7544,8 +7551,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[533] = {
+	}
+	pg.base.memory_group[533] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "足柄、すゝめ！",
@@ -7565,8 +7572,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[534] = {
+	}
+	pg.base.memory_group[534] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "蒼龍さんと一緒",
@@ -7586,8 +7593,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[535] = {
+	}
+	pg.base.memory_group[535] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "人見知りの黒猫",
@@ -7607,8 +7614,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[536] = {
+	}
+	pg.base.memory_group[536] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "妹の成長期？！",
@@ -7628,8 +7635,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[537] = {
+	}
+	pg.base.memory_group[537] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "銃弾と、愛を込めて",
@@ -7649,8 +7656,10 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[538] = {
+	}
+end)()
+;(function()
+	pg.base.memory_group[538] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "シリアス改造計画",
@@ -7670,8 +7679,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[539] = {
+	}
+	pg.base.memory_group[539] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ナイト・オブ・ロイヤル",
@@ -7691,8 +7700,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[540] = {
+	}
+	pg.base.memory_group[540] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "紀行のサフラン",
@@ -7712,8 +7721,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[542] = {
+	}
+	pg.base.memory_group[542] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "小さな出来事",
@@ -7733,8 +7742,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[543] = {
+	}
+	pg.base.memory_group[543] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "もうひとりのカリスマ？",
@@ -7754,8 +7763,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[544] = {
+	}
+	pg.base.memory_group[544] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "誓ってナイト！",
@@ -7775,8 +7784,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[545] = {
+	}
+	pg.base.memory_group[545] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "コドモじゃないもん！",
@@ -7796,8 +7805,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[546] = {
+	}
+	pg.base.memory_group[546] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ローザ・ストーリア",
@@ -7817,8 +7826,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[547] = {
+	}
+	pg.base.memory_group[547] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "アヴローラと愉快な仲間たち",
@@ -7838,8 +7847,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[548] = {
+	}
+	pg.base.memory_group[548] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "笑顔オーバーフロー！",
@@ -7859,8 +7868,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[549] = {
+	}
+	pg.base.memory_group[549] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "インディちゃんの笑顔のために！",
@@ -7880,8 +7889,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[550] = {
+	}
+	pg.base.memory_group[550] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ご令嬢の小さな提案",
@@ -7901,8 +7910,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[551] = {
+	}
+	pg.base.memory_group[551] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "笑顔なあの子の胸のウチ",
@@ -7922,8 +7931,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[552] = {
+	}
+	pg.base.memory_group[552] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "幸せテンプレート",
@@ -7943,8 +7952,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[553] = {
+	}
+	pg.base.memory_group[553] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "GO！ポジティブ・メイド！",
@@ -7964,8 +7973,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[554] = {
+	}
+	pg.base.memory_group[554] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "お嬢様とめぐるひとときを",
@@ -7985,8 +7994,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[555] = {
+	}
+	pg.base.memory_group[555] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "それは恋を呼ぶ季節",
@@ -8006,8 +8015,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[556] = {
+	}
+	pg.base.memory_group[556] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "颯爽の「白」",
@@ -8027,8 +8036,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[557] = {
+	}
+	pg.base.memory_group[557] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "デンバーの母港クエスト！",
@@ -8048,8 +8057,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[558] = {
+	}
+	pg.base.memory_group[558] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "3つ星プレミアム恋物語",
@@ -8069,8 +8078,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[559] = {
+	}
+	pg.base.memory_group[559] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "世話焼き娘はダテじゃない",
@@ -8090,8 +8099,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[560] = {
+	}
+	pg.base.memory_group[560] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "お嬢様学習帳",
@@ -8111,8 +8120,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[561] = {
+	}
+	pg.base.memory_group[561] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "やさしくて静かであたたかくて",
@@ -8132,8 +8141,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[562] = {
+	}
+	pg.base.memory_group[562] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "素直になれないキモチ",
@@ -8153,8 +8162,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[563] = {
+	}
+	pg.base.memory_group[563] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ティラミス・マーマレード",
@@ -8174,8 +8183,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[564] = {
+	}
+	pg.base.memory_group[564] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "桜流しの日のあとで",
@@ -8195,8 +8204,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[565] = {
+	}
+	pg.base.memory_group[565] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "凛として鬼の如く",
@@ -8216,8 +8225,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[566] = {
+	}
+	pg.base.memory_group[566] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "サンシャイン・デュエル！",
@@ -8237,8 +8246,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[567] = {
+	}
+	pg.base.memory_group[567] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ラブロマンスは突然に",
@@ -8258,8 +8267,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[568] = {
+	}
+	pg.base.memory_group[568] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "太陽のギャル",
@@ -8279,8 +8288,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[569] = {
+	}
+	pg.base.memory_group[569] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "急がば回れ！",
@@ -8300,8 +8309,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[570] = {
+	}
+	pg.base.memory_group[570] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "裏表魅力MAXガール",
@@ -8321,8 +8330,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[571] = {
+	}
+	pg.base.memory_group[571] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "essential.",
@@ -8342,8 +8351,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[572] = {
+	}
+	pg.base.memory_group[572] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "夏の日の「サプライズ」",
@@ -8363,8 +8372,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[573] = {
+	}
+	pg.base.memory_group[573] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "「ワタシ」にしかない価値を",
@@ -8384,8 +8393,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[574] = {
+	}
+	pg.base.memory_group[574] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "スイート・デイは二人の雨模様",
@@ -8405,8 +8414,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[575] = {
+	}
+	pg.base.memory_group[575] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "リベッチオ、全力でがんばるよ！",
@@ -8426,8 +8435,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[576] = {
+	}
+	pg.base.memory_group[576] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "好きを伝えよう！",
@@ -8447,8 +8456,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[577] = {
+	}
+	pg.base.memory_group[577] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "クーちゃんが秘書艦！",
@@ -8468,8 +8477,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[578] = {
+	}
+	pg.base.memory_group[578] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ネバダとの旅",
@@ -8489,8 +8498,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[579] = {
+	}
+	pg.base.memory_group[579] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "言の葉、空に舞う花びら",
@@ -8510,8 +8519,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[580] = {
+	}
+	pg.base.memory_group[580] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "大大大大好きアタック！",
@@ -8531,8 +8540,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[581] = {
+	}
+	pg.base.memory_group[581] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "母港ジャーナル・THE特別号！",
@@ -8552,8 +8561,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[582] = {
+	}
+	pg.base.memory_group[582] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "瞳に宿る光のために",
@@ -8573,8 +8582,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[583] = {
+	}
+	pg.base.memory_group[583] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "オール陣営パーティーナイト！",
@@ -8594,8 +8603,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[584] = {
+	}
+	pg.base.memory_group[584] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "日陰のトリチェリ",
@@ -8615,8 +8624,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[585] = {
+	}
+	pg.base.memory_group[585] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "青き海と仲間のための",
@@ -8636,8 +8645,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[586] = {
+	}
+	pg.base.memory_group[586] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "「いい子」とのおサボりタイム",
@@ -8657,8 +8666,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[587] = {
+	}
+	pg.base.memory_group[587] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ほころぶアイアンローズ",
@@ -8678,8 +8687,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[588] = {
+	}
+	pg.base.memory_group[588] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "あなたのためのインベンション",
@@ -8699,8 +8708,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[589] = {
+	}
+	pg.base.memory_group[589] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "あなたと共に見る風景",
@@ -8720,8 +8729,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[590] = {
+	}
+	pg.base.memory_group[590] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "守られし悪しき剣",
@@ -8741,8 +8750,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[591] = {
+	}
+	pg.base.memory_group[591] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "白に隠されしもの",
@@ -8762,8 +8771,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[592] = {
+	}
+	pg.base.memory_group[592] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "キャプテンポンペイにおまかせを！",
@@ -8783,8 +8792,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[593] = {
+	}
+	pg.base.memory_group[593] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "タレントキャスターセクレタリー！",
@@ -8804,8 +8813,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[594] = {
+	}
+	pg.base.memory_group[594] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "不思議に大ピンチ！？",
@@ -8825,8 +8834,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[595] = {
+	}
+	pg.base.memory_group[595] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "棋力を上達させる妙手",
@@ -8846,8 +8855,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[596] = {
+	}
+	pg.base.memory_group[596] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "疲労回復の秘訣とは⁉",
@@ -8867,8 +8876,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[597] = {
+	}
+	pg.base.memory_group[597] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "天使とのランデブー",
@@ -8888,8 +8897,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[598] = {
+	}
+	pg.base.memory_group[598] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "いざ出発！閃きを求める旅へ",
@@ -8909,8 +8918,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[599] = {
+	}
+	pg.base.memory_group[599] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "激動する荒海の主",
@@ -8930,8 +8939,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[600] = {
+	}
+	pg.base.memory_group[600] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "アルザス、オーバーヒート！",
@@ -8951,8 +8960,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[601] = {
+	}
+	pg.base.memory_group[601] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "今日はお休み相談屋",
@@ -8972,8 +8981,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[602] = {
+	}
+	pg.base.memory_group[602] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "タカオ・スタディー",
@@ -8993,8 +9002,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[603] = {
+	}
+	pg.base.memory_group[603] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "お出かけ！お宝探し！",
@@ -9014,8 +9023,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[604] = {
+	}
+	pg.base.memory_group[604] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "二人だけのスイートクッキー",
@@ -9035,8 +9044,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[605] = {
+	}
+	pg.base.memory_group[605] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "スイートドリームを取り戻せ",
@@ -9056,8 +9065,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[606] = {
+	}
+	pg.base.memory_group[606] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "それゆけグルメファーム！",
@@ -9077,8 +9086,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[607] = {
+	}
+	pg.base.memory_group[607] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "指揮官、ご飯の時間ですよ！",
@@ -9098,8 +9107,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[608] = {
+	}
+	pg.base.memory_group[608] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "ネッスル・イン・ストーム",
@@ -9119,8 +9128,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[609] = {
+	}
+	pg.base.memory_group[609] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "二人繋ぎ",
@@ -9140,8 +9149,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[610] = {
+	}
+	pg.base.memory_group[610] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "無効な省エネ",
@@ -9161,8 +9170,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[611] = {
+	}
+	pg.base.memory_group[611] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "魔女の運命の夜",
@@ -9182,8 +9191,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[612] = {
+	}
+	pg.base.memory_group[612] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "思い、酔いしれて",
@@ -9203,8 +9212,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[613] = {
+	}
+	pg.base.memory_group[613] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "花と剣の魔術師",
@@ -9224,8 +9233,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[614] = {
+	}
+	pg.base.memory_group[614] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "天衣結縁",
@@ -9245,8 +9254,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[615] = {
+	}
+	pg.base.memory_group[615] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "大海の音",
@@ -9266,8 +9275,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[616] = {
+	}
+	pg.base.memory_group[616] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "花咲く家電",
@@ -9287,8 +9296,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[617] = {
+	}
+	pg.base.memory_group[617] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "幸せは計算不可能数",
@@ -9308,8 +9317,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[618] = {
+	}
+	pg.base.memory_group[618] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "威光ガイドツアー",
@@ -9329,8 +9338,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[619] = {
+	}
+	pg.base.memory_group[619] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "投資して、しかして破綻せよ",
@@ -9350,8 +9359,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[620] = {
+	}
+	pg.base.memory_group[620] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "森の風と心の羅針盤",
@@ -9371,8 +9380,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[621] = {
+	}
+	pg.base.memory_group[621] = {
 		auto_unlock = "",
 		subtype = 0,
 		title = "真実と虚飾のカノジョ",
@@ -9392,8 +9401,8 @@ pg.base.memory_group = {
 		group_id = {
 			10000
 		}
-	},
-	[1000] = {
+	}
+	pg.base.memory_group[1000] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "TB育成計画",
@@ -9448,8 +9457,8 @@ pg.base.memory_group = {
 			20042,
 			20043
 		}
-	},
-	[1001] = {
+	}
+	pg.base.memory_group[1001] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "分かり合う心",
@@ -9468,8 +9477,8 @@ pg.base.memory_group = {
 			20050,
 			20051
 		}
-	},
-	[1002] = {
+	}
+	pg.base.memory_group[1002] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "耳を傾ければ",
@@ -9510,8 +9519,8 @@ pg.base.memory_group = {
 			20080,
 			20081
 		}
-	},
-	[1003] = {
+	}
+	pg.base.memory_group[1003] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ナビゲーター育成",
@@ -9568,8 +9577,8 @@ pg.base.memory_group = {
 			20126,
 			20127
 		}
-	},
-	[1004] = {
+	}
+	pg.base.memory_group[1004] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ナビィの心の声",
@@ -9589,8 +9598,8 @@ pg.base.memory_group = {
 			20135,
 			20136
 		}
-	},
-	[1005] = {
+	}
+	pg.base.memory_group[1005] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "仲間会話",
@@ -9613,8 +9622,8 @@ pg.base.memory_group = {
 			20148,
 			20149
 		}
-	},
-	[1006] = {
+	}
+	pg.base.memory_group[1006] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "スカベンジャー育成",
@@ -9671,8 +9680,8 @@ pg.base.memory_group = {
 			20194,
 			20195
 		}
-	},
-	[1007] = {
+	}
+	pg.base.memory_group[1007] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "ローラーの心の声",
@@ -9692,8 +9701,8 @@ pg.base.memory_group = {
 			20204,
 			20205
 		}
-	},
-	[1008] = {
+	}
+	pg.base.memory_group[1008] = {
 		auto_unlock = "",
 		subtype = 3,
 		title = "仲間会話",
@@ -9717,4 +9726,4 @@ pg.base.memory_group = {
 			20217
 		}
 	}
-}
+end)()

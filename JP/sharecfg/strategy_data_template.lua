@@ -1,403 +1,406 @@
 ﻿pg = pg or {}
-pg.strategy_data_template = setmetatable({
-	__name = "strategy_data_template",
-	all = {
-		1,
-		2,
-		3,
-		4,
-		9,
-		10,
-		11,
-		13,
-		14,
-		16,
-		17,
-		18,
-		47,
-		90,
-		91,
-		92,
-		93,
-		94,
-		95,
-		96,
-		97,
-		1000,
-		1001,
-		1002,
-		1003,
-		1004,
-		1005,
-		1006,
-		1007,
-		1008,
-		1009,
-		1010,
-		1011,
-		1012,
-		1013,
-		1014,
-		1015,
-		1016,
-		8650,
-		8732,
-		8744,
-		8745,
-		8746,
-		8750,
-		8801,
-		8802,
-		8803,
-		8806,
-		8809,
-		8812,
-		8815,
-		8832,
-		8841,
-		8842,
-		8843,
-		8846,
-		8849,
-		8852,
-		8855,
-		8858,
-		8863,
-		8864,
-		8865,
-		8867,
-		8869,
-		8874,
-		8877,
-		8880,
-		8882,
-		8884,
-		8909,
-		8910,
-		8911,
-		8912,
-		8913,
-		8914,
-		8915,
-		8916,
-		8917,
-		8918,
-		8919,
-		8920,
-		8941,
-		8942,
-		8943,
-		8944,
-		8945,
-		8946,
-		8953,
-		8955,
-		8957,
-		8959,
-		8974,
-		8975,
-		8976,
-		9211,
-		9212,
-		9213,
-		9216,
-		9219,
-		9222,
-		9225,
-		9231,
-		9232,
-		9233,
-		9236,
-		9239,
-		9242,
-		9245,
-		9251,
-		9252,
-		9253,
-		9256,
-		9259,
-		9262,
-		9265,
-		9271,
-		9272,
-		9273,
-		9276,
-		9279,
-		9282,
-		9285,
-		9391,
-		9392,
-		9393,
-		9394,
-		9395,
-		9401,
-		9403,
-		9406,
-		9409,
-		9412,
-		9415,
-		9421,
-		9423,
-		9426,
-		9429,
-		9432,
-		9435,
-		9441,
-		9443,
-		9446,
-		9449,
-		9452,
-		9455,
-		9461,
-		9463,
-		9466,
-		9469,
-		9472,
-		9475,
-		9481,
-		9483,
-		9486,
-		9489,
-		9492,
-		9495,
-		9500,
-		9502,
-		9505,
-		9508,
-		10001,
-		10002,
-		10011,
-		10012,
-		10013,
-		10014,
-		10015,
-		10021,
-		10031,
-		10032,
-		10033,
-		200000,
-		200003,
-		200006,
-		200009,
-		200011,
-		200012,
-		200013,
-		200015,
-		200016,
-		200019,
-		200023,
-		200024,
-		200025,
-		200052,
-		200054,
-		200057,
-		200060,
-		200063,
-		200067,
-		200070,
-		200074,
-		200078,
-		200079,
-		200080,
-		200081,
-		200082,
-		200083,
-		200084,
-		200085,
-		200086,
-		200087,
-		200088,
-		200239,
-		200240,
-		200241,
-		200242,
-		200327,
-		200330,
-		200333,
-		200336,
-		200338,
-		200392,
-		200394,
-		200396,
-		200401,
-		200406,
-		200411,
-		200416,
-		200432,
-		200433,
-		200434,
-		200511,
-		200535,
-		200536,
-		200538,
-		200541,
-		200544,
-		200545,
-		200546,
-		200583,
-		200585,
-		200589,
-		200592,
-		200595,
-		200618,
-		200620,
-		200622,
-		200624,
-		200627,
-		200630,
-		200633,
-		200645,
-		200646,
-		200647,
-		200648,
-		200649,
-		200655,
-		200658,
-		200661,
-		200664,
-		200667,
-		200670,
-		200673,
-		200676,
-		200679,
-		200732,
-		200735,
-		200770,
-		200774,
-		200777,
-		200780,
-		200783,
-		200902,
-		200903,
-		200905,
-		200907,
-		200908,
-		200925,
-		200926,
-		200928,
-		200930,
-		200931,
-		200932,
-		200979,
-		200980,
-		200983,
-		200984,
-		200987,
-		200990,
-		200999,
-		201021,
-		201022,
-		201024,
-		201027,
-		201029,
-		201090,
-		201094,
-		201097,
-		201100,
-		201149,
-		201152,
-		201155,
-		201157,
-		201158,
-		201193,
-		201194,
-		201197,
-		201198,
-		201199,
-		201250,
-		201270,
-		201276,
-		201281,
-		201287,
-		201301,
-		201302,
-		201303,
-		201304,
-		201305,
-		201306,
-		201307,
-		201308,
-		201309,
-		201310,
-		201311,
-		201312,
-		201313,
-		201314,
-		201315,
-		201316,
-		201317,
-		201318,
-		201319,
-		201320,
-		201321,
-		201327,
-		201361,
-		201365,
-		201377,
-		201378,
-		201382,
-		201386,
-		201410,
-		201411,
-		201461,
-		201462,
-		201463,
-		201464,
-		201515,
-		201516,
-		201517,
-		201519,
-		201525,
-		201530,
-		201531,
-		201532,
-		201547,
-		201550,
-		201551,
-		201552,
-		201650,
-		201651,
-		201654,
-		201655,
-		201701,
-		201705,
-		201706,
-		201707,
-		201741,
-		201742,
-		201743,
-		205001,
-		205002,
-		205003,
-		205004,
-		205005,
-		205006,
-		205007,
-		300001,
-		300002,
-		300003,
-		300004,
-		300005,
-		300006,
-		300007,
-		300008,
-		300009,
-		300010,
-		300011,
-		300012,
-		300013,
-		300014,
-		300015,
-		300016,
-		300017,
-		300018,
-		300019,
-		300020
-	}
-}, confHX)
+pg.strategy_data_template = rawget(pg, "strategy_data_template") or setmetatable({
+	__name = "strategy_data_template"
+}, confNEO)
+pg.strategy_data_template.__namecode__ = true
+pg.strategy_data_template.all = {
+	1,
+	2,
+	3,
+	4,
+	9,
+	10,
+	11,
+	13,
+	14,
+	16,
+	17,
+	18,
+	47,
+	90,
+	91,
+	92,
+	93,
+	94,
+	95,
+	96,
+	97,
+	1000,
+	1001,
+	1002,
+	1003,
+	1004,
+	1005,
+	1006,
+	1007,
+	1008,
+	1009,
+	1010,
+	1011,
+	1012,
+	1013,
+	1014,
+	1015,
+	1016,
+	8650,
+	8732,
+	8744,
+	8745,
+	8746,
+	8750,
+	8801,
+	8802,
+	8803,
+	8806,
+	8809,
+	8812,
+	8815,
+	8832,
+	8841,
+	8842,
+	8843,
+	8846,
+	8849,
+	8852,
+	8855,
+	8858,
+	8863,
+	8864,
+	8865,
+	8867,
+	8869,
+	8874,
+	8877,
+	8880,
+	8882,
+	8884,
+	8909,
+	8910,
+	8911,
+	8912,
+	8913,
+	8914,
+	8915,
+	8916,
+	8917,
+	8918,
+	8919,
+	8920,
+	8941,
+	8942,
+	8943,
+	8944,
+	8945,
+	8946,
+	8953,
+	8955,
+	8957,
+	8959,
+	8974,
+	8975,
+	8976,
+	9211,
+	9212,
+	9213,
+	9216,
+	9219,
+	9222,
+	9225,
+	9231,
+	9232,
+	9233,
+	9236,
+	9239,
+	9242,
+	9245,
+	9251,
+	9252,
+	9253,
+	9256,
+	9259,
+	9262,
+	9265,
+	9271,
+	9272,
+	9273,
+	9276,
+	9279,
+	9282,
+	9285,
+	9391,
+	9392,
+	9393,
+	9394,
+	9395,
+	9401,
+	9403,
+	9406,
+	9409,
+	9412,
+	9415,
+	9421,
+	9423,
+	9426,
+	9429,
+	9432,
+	9435,
+	9441,
+	9443,
+	9446,
+	9449,
+	9452,
+	9455,
+	9461,
+	9463,
+	9466,
+	9469,
+	9472,
+	9475,
+	9481,
+	9483,
+	9486,
+	9489,
+	9492,
+	9495,
+	9500,
+	9502,
+	9505,
+	9508,
+	10001,
+	10002,
+	10011,
+	10012,
+	10013,
+	10014,
+	10015,
+	10021,
+	10031,
+	10032,
+	10033,
+	200000,
+	200003,
+	200006,
+	200009,
+	200011,
+	200012,
+	200013,
+	200015,
+	200016,
+	200019,
+	200023,
+	200024,
+	200025,
+	200052,
+	200054,
+	200057,
+	200060,
+	200063,
+	200067,
+	200070,
+	200074,
+	200078,
+	200079,
+	200080,
+	200081,
+	200082,
+	200083,
+	200084,
+	200085,
+	200086,
+	200087,
+	200088,
+	200239,
+	200240,
+	200241,
+	200242,
+	200327,
+	200330,
+	200333,
+	200336,
+	200338,
+	200392,
+	200394,
+	200396,
+	200401,
+	200406,
+	200411,
+	200416,
+	200432,
+	200433,
+	200434,
+	200511,
+	200535,
+	200536,
+	200538,
+	200541,
+	200544,
+	200545,
+	200546,
+	200583,
+	200585,
+	200589,
+	200592,
+	200595,
+	200618,
+	200620,
+	200622,
+	200624,
+	200627,
+	200630,
+	200633,
+	200645,
+	200646,
+	200647,
+	200648,
+	200649,
+	200655,
+	200658,
+	200661,
+	200664,
+	200667,
+	200670,
+	200673,
+	200676,
+	200679,
+	200732,
+	200735,
+	200770,
+	200774,
+	200777,
+	200780,
+	200783,
+	200902,
+	200903,
+	200905,
+	200907,
+	200908,
+	200925,
+	200926,
+	200928,
+	200930,
+	200931,
+	200932,
+	200979,
+	200980,
+	200983,
+	200984,
+	200987,
+	200990,
+	200999,
+	201021,
+	201022,
+	201024,
+	201027,
+	201029,
+	201090,
+	201094,
+	201097,
+	201100,
+	201149,
+	201152,
+	201155,
+	201157,
+	201158,
+	201193,
+	201194,
+	201197,
+	201198,
+	201199,
+	201250,
+	201270,
+	201276,
+	201281,
+	201287,
+	201301,
+	201302,
+	201303,
+	201304,
+	201305,
+	201306,
+	201307,
+	201308,
+	201309,
+	201310,
+	201311,
+	201312,
+	201313,
+	201314,
+	201315,
+	201316,
+	201317,
+	201318,
+	201319,
+	201320,
+	201321,
+	201327,
+	201361,
+	201365,
+	201377,
+	201378,
+	201382,
+	201386,
+	201410,
+	201411,
+	201461,
+	201462,
+	201463,
+	201464,
+	201515,
+	201516,
+	201517,
+	201519,
+	201525,
+	201530,
+	201531,
+	201532,
+	201547,
+	201550,
+	201551,
+	201552,
+	201650,
+	201651,
+	201654,
+	201655,
+	201701,
+	201705,
+	201706,
+	201707,
+	201741,
+	201742,
+	201743,
+	205001,
+	205002,
+	205003,
+	205004,
+	205005,
+	205006,
+	205007,
+	300001,
+	300002,
+	300003,
+	300004,
+	300005,
+	300006,
+	300007,
+	300008,
+	300009,
+	300010,
+	300011,
+	300012,
+	300013,
+	300014,
+	300015,
+	300016,
+	300017,
+	300018,
+	300019,
+	300020
+}
 pg.base = pg.base or {}
-pg.base.strategy_data_template = {
-	{
+pg.base.strategy_data_template = {}
+
+;(function()
+	pg.base.strategy_data_template[1] = {
 		buff_id = 100,
 		name = "単縦陣",
 		iconSize = "",
@@ -407,8 +410,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "次の戦闘で、全艦火力・雷装+15%、回避-10%。",
 		arg = {}
-	},
-	{
+	}
+	pg.base.strategy_data_template[2] = {
 		buff_id = 110,
 		name = "複縦陣",
 		iconSize = "",
@@ -418,8 +421,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "次の戦闘で、全艦回避+30%、火力・雷装-5%。",
 		arg = {}
-	},
-	{
+	}
+	pg.base.strategy_data_template[3] = {
 		buff_id = 120,
 		name = "輪形陣",
 		iconSize = "",
@@ -429,8 +432,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "次の戦闘で、全艦対空+20%。",
 		arg = {}
-	},
-	{
+	}
+	pg.base.strategy_data_template[4] = {
 		buff_id = 0,
 		name = "緊急補修",
 		iconSize = "",
@@ -443,8 +446,8 @@ pg.base.strategy_data_template = {
 			healthy,
 			10
 		}
-	},
-	[9] = {
+	}
+	pg.base.strategy_data_template[9] = {
 		buff_id = 0,
 		name = "交換",
 		iconSize = "",
@@ -456,8 +459,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			exchange
 		}
-	},
-	[10] = {
+	}
+	pg.base.strategy_data_template[10] = {
 		buff_id = 0,
 		name = "範囲外支援 ",
 		iconSize = "",
@@ -469,8 +472,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			map_call
 		}
-	},
-	[11] = {
+	}
+	pg.base.strategy_data_template[11] = {
 		buff_id = 0,
 		name = "作戦範囲変更 ",
 		iconSize = "",
@@ -483,8 +486,8 @@ pg.base.strategy_data_template = {
 			sub_move,
 			1.1
 		}
-	},
-	[13] = {
+	}
+	pg.base.strategy_data_template[13] = {
 		buff_id = 9670,
 		name = "照明弾発射用意",
 		iconSize = "",
@@ -494,8 +497,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "照明弾補給を入手した。入手した艦隊は今後$1回の戦闘中に照明弾を発射する事が可能",
 		arg = {}
-	},
-	[14] = {
+	}
+	pg.base.strategy_data_template[14] = {
 		buff_id = 9600,
 		name = "探照灯照射用意",
 		iconSize = "",
@@ -505,8 +508,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "灯台を占拠した。戦闘中味方の探照灯支援が行われることがある",
 		arg = {}
-	},
-	[16] = {
+	}
+	pg.base.strategy_data_template[16] = {
 		buff_id = 0,
 		name = "悪天候",
 		iconSize = "",
@@ -516,8 +519,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "夜の海は悪天候に見舞われている。味方前衛艦隊・敵が「隠蔽範囲」が獲得し、攻撃から狙われにくくなる",
 		arg = {}
-	},
-	[17] = {
+	}
+	pg.base.strategy_data_template[17] = {
 		buff_id = 0,
 		name = "海霧",
 		iconSize = "",
@@ -527,8 +530,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "艦隊はスコールに覆われている。戦闘中、味方・敵の隠蔽範囲縮小速度が遅くなる",
 		arg = {}
-	},
-	[18] = {
+	}
+	pg.base.strategy_data_template[18] = {
 		buff_id = 0,
 		name = "ミサイル",
 		iconSize = "",
@@ -540,8 +543,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			missile
 		}
-	},
-	[47] = {
+	}
+	pg.base.strategy_data_template[47] = {
 		buff_id = 0,
 		name = "作戦効率化",
 		iconSize = "",
@@ -551,8 +554,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘時消費する燃料が100%アップし、指揮官・艦船・オフニャ経験値、信頼度の入手が100%アップ。戦闘終了時のアイテム・報酬入手回数が2回になる",
 		arg = {}
-	},
-	[90] = {
+	}
+	pg.base.strategy_data_template[90] = {
 		buff_id = 90,
 		name = "危機発生",
 		iconSize = "",
@@ -562,8 +565,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "次の戦闘中、おじゃまニセキズナアイが出現し、潜水支援/航空攻撃/魚雷攻撃/主砲攻撃が機能しなくなります。おじゃまニセキズナアイは連続タップで退治することができます",
 		arg = {}
-	},
-	[91] = {
+	}
+	pg.base.strategy_data_template[91] = {
 		buff_id = 91,
 		name = "危機回避～",
 		iconSize = "",
@@ -573,8 +576,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "危機回避～！戦闘中おじゃまニセキズナアイが出現しなくなります",
 		arg = {}
-	},
-	[92] = {
+	}
+	pg.base.strategy_data_template[92] = {
 		buff_id = 0,
 		name = "夜がやってきた！",
 		iconSize = "",
@@ -584,8 +587,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「夜状態」では、「待ち伏せマス」に敵が出現するようになります",
 		arg = {}
-	},
-	[93] = {
+	}
+	pg.base.strategy_data_template[93] = {
 		buff_id = 0,
 		name = "朝を迎えた！",
 		iconSize = "",
@@ -595,8 +598,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「昼状態」では、「待ち伏せマス」に敵は出現しません",
 		arg = {}
-	},
-	[94] = {
+	}
+	pg.base.strategy_data_template[94] = {
 		buff_id = 9727,
 		name = "航空支援（敵）",
 		iconSize = "",
@@ -606,8 +609,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "航空支援を担う敵艦隊の存在が確認された。戦闘中、敵は航空攻撃を仕掛けてくるだろう…",
 		arg = {}
-	},
-	[95] = {
+	}
+	pg.base.strategy_data_template[95] = {
 		buff_id = 0,
 		name = "航空支援（味方）",
 		iconSize = "",
@@ -617,8 +620,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "航空支援が可能な味方艦隊が指示を待っている。戦闘中、我々の敵に航空攻撃を仕掛けてくれるだろう…",
 		arg = {}
-	},
-	[96] = {
+	}
+	pg.base.strategy_data_template[96] = {
 		buff_id = 262,
 		name = "情報掌握",
 		iconSize = "",
@@ -628,8 +631,8 @@ pg.base.strategy_data_template = {
 		buff_type = 1,
 		desc = "味方艦隊の情報が敵中枢艦隊に知られた。当該艦隊は次の敵中枢艦隊との戦闘で、与えるダメージが30％ダウンし、受けるダメージが30％アップする",
 		arg = {}
-	},
-	[97] = {
+	}
+	pg.base.strategy_data_template[97] = {
 		buff_id = 0,
 		name = "情報掌握",
 		iconSize = "",
@@ -639,8 +642,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "味方艦隊の情報が敵中枢艦隊に知られた。当該艦隊は次の敵中枢艦隊との戦闘で、与えるダメージが30％ダウンし、受けるダメージが30％アップする",
 		arg = {}
-	},
-	[1000] = {
+	}
+	pg.base.strategy_data_template[1000] = {
 		buff_id = 0,
 		name = "航空攻撃",
 		iconSize = "",
@@ -652,8 +655,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			support_missile
 		}
-	},
-	[1001] = {
+	}
+	pg.base.strategy_data_template[1001] = {
 		buff_id = 0,
 		name = "敵艦駆逐",
 		iconSize = "",
@@ -665,8 +668,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			expel
 		}
-	},
-	[1002] = {
+	}
+	pg.base.strategy_data_template[1002] = {
 		buff_id = 9729,
 		name = "機先を制す",
 		iconSize = "",
@@ -676,8 +679,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "味方の【夜間隠蔽強度】が大幅アップし、敵の【夜間隠蔽強度】が大幅ダウン",
 		arg = {}
-	},
-	[1003] = {
+	}
+	pg.base.strategy_data_template[1003] = {
 		buff_id = 9733,
 		name = "狭路の遭遇戦Ⅰ",
 		iconSize = "",
@@ -687,8 +690,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "味方の【夜間隠蔽強度】がアップし、敵の【夜間隠蔽強度】がダウン",
 		arg = {}
-	},
-	[1004] = {
+	}
+	pg.base.strategy_data_template[1004] = {
 		buff_id = 9737,
 		name = "狭路の遭遇戦Ⅱ",
 		iconSize = "",
@@ -698,8 +701,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "味方の【夜間隠蔽強度】がややアップし、敵の【夜間隠蔽強度】がややダウン",
 		arg = {}
-	},
-	[1005] = {
+	}
+	pg.base.strategy_data_template[1005] = {
 		buff_id = 9741,
 		name = "狭路の遭遇戦Ⅲ",
 		iconSize = "",
@@ -709,8 +712,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "味方の【夜間隠蔽強度】がわずかにアップし、敵の【夜間隠蔽強度】がわずかにダウン",
 		arg = {}
-	},
-	[1006] = {
+	}
+	pg.base.strategy_data_template[1006] = {
 		buff_id = 9745,
 		name = "戦場の霧Ⅰ",
 		iconSize = "",
@@ -720,8 +723,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵の回避ステータスが15%アップ",
 		arg = {}
-	},
-	[1007] = {
+	}
+	pg.base.strategy_data_template[1007] = {
 		buff_id = 9748,
 		name = "戦場の霧Ⅱ",
 		iconSize = "",
@@ -731,8 +734,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵の回避ステータスが10%アップ",
 		arg = {}
-	},
-	[1008] = {
+	}
+	pg.base.strategy_data_template[1008] = {
 		buff_id = 9751,
 		name = "戦場の霧Ⅲ",
 		iconSize = "",
@@ -742,8 +745,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵の回避ステータスが5%アップ",
 		arg = {}
-	},
-	[1009] = {
+	}
+	pg.base.strategy_data_template[1009] = {
 		buff_id = 9754,
 		name = "空中支援Ⅰ（敵）",
 		iconSize = "",
@@ -753,8 +756,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、敵陸上航空基地からの航空支援が出現します",
 		arg = {}
-	},
-	[1010] = {
+	}
+	pg.base.strategy_data_template[1010] = {
 		buff_id = 9755,
 		name = "空中支援Ⅱ（敵）",
 		iconSize = "",
@@ -764,8 +767,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、敵残存陸上航空基地からの航空支援が出現します",
 		arg = {}
-	},
-	[1011] = {
+	}
+	pg.base.strategy_data_template[1011] = {
 		buff_id = 9756,
 		name = "空中支援Ⅲ（敵）",
 		iconSize = "",
@@ -775,8 +778,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵陸上航空基地が破壊され、敵の航空支援が弱体化しました",
 		arg = {}
-	},
-	[1012] = {
+	}
+	pg.base.strategy_data_template[1012] = {
 		buff_id = 9757,
 		name = "空中支援Ⅰ（敵）",
 		iconSize = "",
@@ -786,8 +789,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、敵陸上航空基地からの航空支援が出現します",
 		arg = {}
-	},
-	[1013] = {
+	}
+	pg.base.strategy_data_template[1013] = {
 		buff_id = 9758,
 		name = "空中支援Ⅱ（敵）",
 		iconSize = "",
@@ -797,8 +800,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、敵残存陸上航空基地からの航空支援が出現します",
 		arg = {}
-	},
-	[1014] = {
+	}
+	pg.base.strategy_data_template[1014] = {
 		buff_id = 9759,
 		name = "空中支援Ⅲ（敵）",
 		iconSize = "",
@@ -808,8 +811,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、敵残存陸上航空基地からの航空支援が出現します",
 		arg = {}
-	},
-	[1015] = {
+	}
+	pg.base.strategy_data_template[1015] = {
 		buff_id = 9760,
 		name = "空中支援Ⅳ（敵）",
 		iconSize = "",
@@ -819,8 +822,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵陸上航空基地が破壊され、敵の航空支援が弱体化しました",
 		arg = {}
-	},
-	[1016] = {
+	}
+	pg.base.strategy_data_template[1016] = {
 		buff_id = 9761,
 		name = "制空权较低",
 		iconSize = "",
@@ -830,8 +833,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[8650] = {
+	}
+	pg.base.strategy_data_template[8650] = {
 		buff_id = 8650,
 		name = "聚光灯",
 		iconSize = "",
@@ -841,8 +844,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "聚光灯效果",
 		arg = {}
-	},
-	[8732] = {
+	}
+	pg.base.strategy_data_template[8732] = {
 		buff_id = 8732,
 		name = "科野の神籤",
 		iconSize = "",
@@ -852,8 +855,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "信濃による支援航空攻撃を3回発動可能。発動すると、味方艦隊が順次「火力5%アップ」「雷装5%アップ」「航空5%アップ」を得る",
 		arg = {}
-	},
-	[8744] = {
+	}
+	pg.base.strategy_data_template[8744] = {
 		buff_id = 8744,
 		name = "科野の神籤",
 		iconSize = "",
@@ -863,8 +866,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "信濃による支援航空攻撃を3回発動可能。発動すると、味方艦隊が順次「火力5%アップ」「雷装5%アップ」「航空5%アップ」を得る",
 		arg = {}
-	},
-	[8745] = {
+	}
+	pg.base.strategy_data_template[8745] = {
 		buff_id = 8745,
 		name = "科野の神籤",
 		iconSize = "",
@@ -874,8 +877,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "信濃による支援航空攻撃を3回発動可能。発動すると、味方艦隊が順次「火力5%アップ」「雷装5%アップ」「航空5%アップ」を得る",
 		arg = {}
-	},
-	[8746] = {
+	}
+	pg.base.strategy_data_template[8746] = {
 		buff_id = 8746,
 		name = "科野の神籤",
 		iconSize = "",
@@ -885,8 +888,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "信濃による支援航空攻撃を3回発動可能。発動すると、味方艦隊が順次「火力5%アップ」「雷装5%アップ」「航空5%アップ」を得る",
 		arg = {}
-	},
-	[8750] = {
+	}
+	pg.base.strategy_data_template[8750] = {
 		buff_id = 8750,
 		name = "聚光灯",
 		iconSize = "",
@@ -896,8 +899,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "聚光灯效果",
 		arg = {}
-	},
-	[8801] = {
+	}
+	pg.base.strategy_data_template[8801] = {
 		buff_id = 8801,
 		name = "制御権喪失",
 		iconSize = "",
@@ -907,8 +910,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "浮島要塞の制御権が奪われた！戦闘中に敵航空機が出現してしまう",
 		arg = {}
-	},
-	[8802] = {
+	}
+	pg.base.strategy_data_template[8802] = {
 		buff_id = 8802,
 		name = "制御権確保",
 		iconSize = "",
@@ -918,8 +921,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "浮島要塞は我が手中にあり！戦闘中に味方航空機が出現し、敵を攻撃してくれる",
 		arg = {}
-	},
-	[8803] = {
+	}
+	pg.base.strategy_data_template[8803] = {
 		buff_id = 8803,
 		name = "味方要塞航空支援",
 		iconSize = "",
@@ -929,8 +932,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵要塞航空支援",
 		arg = {}
-	},
-	[8806] = {
+	}
+	pg.base.strategy_data_template[8806] = {
 		buff_id = 8806,
 		name = "味方要塞航空支援",
 		iconSize = "",
@@ -940,8 +943,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵要塞航空支援",
 		arg = {}
-	},
-	[8809] = {
+	}
+	pg.base.strategy_data_template[8809] = {
 		buff_id = 8809,
 		name = "味方要塞航空支援",
 		iconSize = "",
@@ -951,8 +954,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵要塞航空支援",
 		arg = {}
-	},
-	[8812] = {
+	}
+	pg.base.strategy_data_template[8812] = {
 		buff_id = 8812,
 		name = "味方要塞航空支援",
 		iconSize = "",
@@ -962,8 +965,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵要塞航空支援",
 		arg = {}
-	},
-	[8815] = {
+	}
+	pg.base.strategy_data_template[8815] = {
 		buff_id = 8815,
 		name = "味方要塞航空支援",
 		iconSize = "",
@@ -973,8 +976,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵要塞航空支援",
 		arg = {}
-	},
-	[8832] = {
+	}
+	pg.base.strategy_data_template[8832] = {
 		buff_id = 8832,
 		name = "未来を開く砲撃",
 		iconSize = "",
@@ -984,8 +987,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "味方からの支援砲撃を1回行い、さらに一定時間、敵に持続ダメージを与える。（META戦出現艦船変更から時間が経てば経つほどダメージUP）",
 		arg = {}
-	},
-	[8841] = {
+	}
+	pg.base.strategy_data_template[8841] = {
 		buff_id = 8841,
 		name = "フォトン・プリズム",
 		iconSize = "",
@@ -995,8 +998,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始時、味方艦隊から支援弾幕が展開される。",
 		arg = {}
-	},
-	[8842] = {
+	}
+	pg.base.strategy_data_template[8842] = {
 		buff_id = 8842,
 		name = "アフタグロー・アンブラ",
 		iconSize = "",
@@ -1006,8 +1009,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "味方艦隊の支援弾幕が展開せず、敵艦隊に謎の個体が出現する。",
 		arg = {}
-	},
-	[8843] = {
+	}
+	pg.base.strategy_data_template[8843] = {
 		buff_id = 8843,
 		name = "璀璨支援弹幕LV1",
 		iconSize = "",
@@ -1017,8 +1020,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[8846] = {
+	}
+	pg.base.strategy_data_template[8846] = {
 		buff_id = 8846,
 		name = "璀璨支援弹幕LV2",
 		iconSize = "",
@@ -1028,8 +1031,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[8849] = {
+	}
+	pg.base.strategy_data_template[8849] = {
 		buff_id = 8849,
 		name = "璀璨支援弹幕LV3",
 		iconSize = "",
@@ -1039,8 +1042,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[8852] = {
+	}
+	pg.base.strategy_data_template[8852] = {
 		buff_id = 8852,
 		name = "璀璨支援弹幕LV4",
 		iconSize = "",
@@ -1050,8 +1053,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[8855] = {
+	}
+	pg.base.strategy_data_template[8855] = {
 		buff_id = 8855,
 		name = "璀璨支援弹幕LV5",
 		iconSize = "",
@@ -1061,8 +1064,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[8858] = {
+	}
+	pg.base.strategy_data_template[8858] = {
 		buff_id = 8858,
 		name = "アフタグロー・プリズム",
 		iconSize = "",
@@ -1072,8 +1075,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始時、味方艦隊から支援弾幕が展開され、敵艦隊に謎の個体が出現する",
 		arg = {}
-	},
-	[8863] = {
+	}
+	pg.base.strategy_data_template[8863] = {
 		buff_id = 0,
 		name = "迷路",
 		iconSize = "",
@@ -1083,8 +1086,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "セイレーンが作った迷路が海を覆っている。\n艦隊が3回行動する度に、迷路の構造が変化する",
 		arg = {}
-	},
-	[8864] = {
+	}
+	pg.base.strategy_data_template[8864] = {
 		buff_id = 8864,
 		name = "セイレーンの歌",
 		iconSize = "",
@@ -1094,8 +1097,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "強力なジャミング装置が作動している。\n戦闘中、敵のジャミング効果を与える特殊支援砲撃が味方を襲うことがある。",
 		arg = {}
-	},
-	[8865] = {
+	}
+	pg.base.strategy_data_template[8865] = {
 		buff_id = 8865,
 		name = "空中支援",
 		iconSize = "",
@@ -1105,8 +1108,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "アクィラの支援により、\n戦闘中味方からの特殊航空攻撃が出現する場合がある。",
 		arg = {}
-	},
-	[8867] = {
+	}
+	pg.base.strategy_data_template[8867] = {
 		buff_id = 8867,
 		name = "空中支援",
 		iconSize = "",
@@ -1116,8 +1119,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "アクィラの支援により、\n戦闘中味方からの特殊航空攻撃が出現する場合がある。",
 		arg = {}
-	},
-	[8869] = {
+	}
+	pg.base.strategy_data_template[8869] = {
 		buff_id = 8869,
 		name = "空中支援",
 		iconSize = "",
@@ -1127,8 +1130,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "アクィラの支援により、\n戦闘中味方からの特殊航空攻撃が出現する場合がある。",
 		arg = {}
-	},
-	[8874] = {
+	}
+	pg.base.strategy_data_template[8874] = {
 		buff_id = 8874,
 		name = "再現環境補正システム",
 		iconSize = "",
@@ -1138,8 +1141,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、重桜所属艦船が敵に与えるダメージが5%アップし、受けるダメージが5%増加する；ユニオン所属艦船が敵に与えるダメージが5%ダウンし、受けるダメージが5%軽減する",
 		arg = {}
-	},
-	[8877] = {
+	}
+	pg.base.strategy_data_template[8877] = {
 		buff_id = 8877,
 		name = "セイレーン海霧",
 		iconSize = "",
@@ -1149,8 +1152,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦場はセイレーンが作り出した海霧に覆われている。味方艦隊の命中が5%ダウンし、海域マップでは敵艦隊の種類を確認できない",
 		arg = {}
-	},
-	[8880] = {
+	}
+	pg.base.strategy_data_template[8880] = {
 		buff_id = 8880,
 		name = "ミラー・ハッキング",
 		iconSize = "",
@@ -1160,8 +1163,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "謎の友軍が支援してくれている。戦闘中、敵を攻撃する支援弾幕が発生する場合がある",
 		arg = {}
-	},
-	[8882] = {
+	}
+	pg.base.strategy_data_template[8882] = {
 		buff_id = 8882,
 		name = "ミラー・ハッキング",
 		iconSize = "",
@@ -1171,8 +1174,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "謎の友軍が支援してくれている。戦闘中、敵を攻撃する支援弾幕が発生する場合がある",
 		arg = {}
-	},
-	[8884] = {
+	}
+	pg.base.strategy_data_template[8884] = {
 		buff_id = 8884,
 		name = "ミラー・ハッキング",
 		iconSize = "",
@@ -1182,8 +1185,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "謎の友軍が支援してくれている。戦闘中、敵を攻撃する支援弾幕が発生する場合がある",
 		arg = {}
-	},
-	[8909] = {
+	}
+	pg.base.strategy_data_template[8909] = {
 		buff_id = 0,
 		name = "ハンティングプロトコル",
 		iconSize = "",
@@ -1193,8 +1196,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "海域内のセイレーン全艦隊が味方に向けて追撃してきます",
 		arg = {}
-	},
-	[8910] = {
+	}
+	pg.base.strategy_data_template[8910] = {
 		buff_id = 0,
 		name = "着弾予測エリア",
 		iconSize = "",
@@ -1204,8 +1207,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "海域全体がミサイルの攻撃範囲内になっています。ミサイルが着弾したマスにいる艦隊はダメージを受けます。\n着弾までの移動可能回数：3",
 		arg = {}
-	},
-	[8911] = {
+	}
+	pg.base.strategy_data_template[8911] = {
 		buff_id = 0,
 		name = "着弾予測エリア",
 		iconSize = "",
@@ -1215,8 +1218,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "海域全体がミサイルの攻撃範囲内になっています。ミサイルが着弾したマスにいる艦隊はダメージを受けます。\n着弾までの移動可能回数：2",
 		arg = {}
-	},
-	[8912] = {
+	}
+	pg.base.strategy_data_template[8912] = {
 		buff_id = 0,
 		name = "着弾予測エリア",
 		iconSize = "",
@@ -1226,8 +1229,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "海域全体がミサイルの攻撃範囲内になっています。ミサイルが着弾したマスにいる艦隊はダメージを受けます。\n着弾までの移動可能回数：1",
 		arg = {}
-	},
-	[8913] = {
+	}
+	pg.base.strategy_data_template[8913] = {
 		buff_id = 0,
 		name = "ディザスタープロトコル",
 		iconSize = "",
@@ -1237,8 +1240,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "セイレーンによる気象操作装置が危険エリアを作り出しています。艦隊が移動する度に危険エリアが拡大していきます。ご注意ください",
 		arg = {}
-	},
-	[8914] = {
+	}
+	pg.base.strategy_data_template[8914] = {
 		buff_id = 0,
 		name = "着弾予測エリア",
 		iconSize = "",
@@ -1248,8 +1251,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "海域全体がミサイルの攻撃範囲内になっています。ミサイルが着弾したマスにいる敵艦隊はダメージを受けます。\n着弾までの移動可能回数：3",
 		arg = {}
-	},
-	[8915] = {
+	}
+	pg.base.strategy_data_template[8915] = {
 		buff_id = 0,
 		name = "着弾予測エリア",
 		iconSize = "",
@@ -1259,8 +1262,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "海域全体がミサイルの攻撃範囲内になっています。ミサイルが着弾したマスにいる敵艦隊はダメージを受けます。\n着弾までの移動可能回数：2",
 		arg = {}
-	},
-	[8916] = {
+	}
+	pg.base.strategy_data_template[8916] = {
 		buff_id = 0,
 		name = "着弾予測エリア",
 		iconSize = "",
@@ -1270,8 +1273,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "海域全体がミサイルの攻撃範囲内になっています。ミサイルが着弾したマスにいる敵艦隊はダメージを受けます。\n着弾までの移動可能回数：1",
 		arg = {}
-	},
-	[8917] = {
+	}
+	pg.base.strategy_data_template[8917] = {
 		buff_id = 0,
 		name = "絶海氷層",
 		iconSize = "",
@@ -1281,8 +1284,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "艦隊の移動を阻む氷の壁が出現している。対応する守備艦隊を撃破すると除去可能",
 		arg = {}
-	},
-	[8918] = {
+	}
+	pg.base.strategy_data_template[8918] = {
 		buff_id = 8918,
 		name = "演算式シンクロナイズⅠ",
 		iconSize = "",
@@ -1292,8 +1295,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "隕石接続によって演算された幻像。\n戦闘中、無差別で敵味方を攻撃する弾幕が出現します",
 		arg = {}
-	},
-	[8919] = {
+	}
+	pg.base.strategy_data_template[8919] = {
 		buff_id = 8918,
 		name = "演算式シンクロナイズⅡ",
 		iconSize = "",
@@ -1303,8 +1306,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "隕石接続によって演算された幻像。\n戦闘中、無差別で敵味方を攻撃する弾幕が出現します",
 		arg = {}
-	},
-	[8920] = {
+	}
+	pg.base.strategy_data_template[8920] = {
 		buff_id = 8918,
 		name = "演算式シンクロナイズⅢ",
 		iconSize = "",
@@ -1314,8 +1317,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "隕石接続によって演算された幻像。\n戦闘中、無差別で敵味方を攻撃する弾幕が出現します",
 		arg = {}
-	},
-	[8941] = {
+	}
+	pg.base.strategy_data_template[8941] = {
 		buff_id = 0,
 		name = "鉄血ジャミング",
 		iconSize = "",
@@ -1325,8 +1328,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "鉄血によるジャミングで、敵艦隊の規模と種類が海域マップ上で判別不可能になっている。注意！",
 		arg = {}
-	},
-	[8942] = {
+	}
+	pg.base.strategy_data_template[8942] = {
 		buff_id = 8942,
 		name = "特異点の波動",
 		iconSize = "",
@@ -1336,8 +1339,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特異点の特殊環境により、戦闘中味方の主砲が与えるダメージが20%アップ、味方の航空攻撃が与えるダメージが20%ダウン、さらに味方戦艦主砲の散布が5アップ",
 		arg = {}
-	},
-	[8943] = {
+	}
+	pg.base.strategy_data_template[8943] = {
 		buff_id = 0,
 		name = "セイレーンジャミング",
 		iconSize = "",
@@ -1347,8 +1350,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "セイレーンの特殊施設によるジャミングが戦場全域に影響を及ぼしている。注意！",
 		arg = {}
-	},
-	[8944] = {
+	}
+	pg.base.strategy_data_template[8944] = {
 		buff_id = 8944,
 		name = "セイレーンジャミング・誘爆",
 		iconSize = "",
@@ -1358,8 +1361,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中の艦隊は炎上ダメージを受け続ける",
 		arg = {}
-	},
-	[8945] = {
+	}
+	pg.base.strategy_data_template[8945] = {
 		buff_id = 8945,
 		name = "セイレーンジャミング・遅滞",
 		iconSize = "",
@@ -1369,8 +1372,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中の艦隊の速力が大幅ダウン",
 		arg = {}
-	},
-	[8946] = {
+	}
+	pg.base.strategy_data_template[8946] = {
 		buff_id = 8946,
 		name = "セイレーンジャミング・撹乱",
 		iconSize = "",
@@ -1380,8 +1383,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中の艦隊は一定の間隔で電磁ジャミングの影響を受ける",
 		arg = {}
-	},
-	[8953] = {
+	}
+	pg.base.strategy_data_template[8953] = {
 		buff_id = 8953,
 		name = "鉄血艦隊支援",
 		iconSize = "",
@@ -1391,8 +1394,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "鉄血艦隊による支援が展開される。敵ジャミング効果が無効になり、さらに戦闘中味方による支援弾幕が出現する",
 		arg = {}
-	},
-	[8955] = {
+	}
+	pg.base.strategy_data_template[8955] = {
 		buff_id = 8955,
 		name = "鉄血艦隊支援",
 		iconSize = "",
@@ -1402,8 +1405,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "鉄血艦隊による支援が展開される。敵ジャミング効果が無効になり、さらに戦闘中味方による支援弾幕が出現する",
 		arg = {}
-	},
-	[8957] = {
+	}
+	pg.base.strategy_data_template[8957] = {
 		buff_id = 8957,
 		name = "鉄血艦隊支援",
 		iconSize = "",
@@ -1413,8 +1416,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "鉄血艦隊による支援が展開される。敵ジャミング効果が無効になり、さらに戦闘中味方による支援弾幕が出現する",
 		arg = {}
-	},
-	[8959] = {
+	}
+	pg.base.strategy_data_template[8959] = {
 		buff_id = 8959,
 		name = "鉄血艦隊支援",
 		iconSize = "",
@@ -1424,8 +1427,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "鉄血艦隊による支援が展開される。敵ジャミング効果が無効になり、さらに戦闘中味方による支援弾幕が出現する",
 		arg = {}
-	},
-	[8974] = {
+	}
+	pg.base.strategy_data_template[8974] = {
 		buff_id = 8942,
 		name = "特異点の波動TYPE-A",
 		iconSize = "",
@@ -1435,8 +1438,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特異点の特殊環境により、戦闘中味方の砲撃が与えるダメージが20%アップ、味方の航空攻撃が与えるダメージが20%ダウン、さらに味方戦艦主砲の散布が5アップ",
 		arg = {}
-	},
-	[8975] = {
+	}
+	pg.base.strategy_data_template[8975] = {
 		buff_id = 8975,
 		name = "特異点の波動TYPE-B",
 		iconSize = "",
@@ -1446,8 +1449,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特異点の特殊環境により、味方の航空攻撃が与えるダメージが20%アップし、味方の砲撃が与えるダメージが20%ダウン",
 		arg = {}
-	},
-	[8976] = {
+	}
+	pg.base.strategy_data_template[8976] = {
 		buff_id = 8918,
 		name = "演算式シンクロナイズⅠ",
 		iconSize = "",
@@ -1457,8 +1460,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「敵」の精神干渉によって演算された幻像。\n戦闘中、無差別に敵味方を攻撃する弾幕が出現",
 		arg = {}
-	},
-	[9211] = {
+	}
+	pg.base.strategy_data_template[9211] = {
 		buff_id = 9211,
 		name = "竜宮仕掛-白浪",
 		iconSize = "",
@@ -1468,8 +1471,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "竜宮仕掛により、戦闘中敵の支援弾幕が出現します",
 		arg = {}
-	},
-	[9212] = {
+	}
+	pg.base.strategy_data_template[9212] = {
 		buff_id = 9212,
 		name = "竜宮仕掛-白浪",
 		iconSize = "",
@@ -1479,8 +1482,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "確保した竜宮仕掛により、戦闘中味方の支援弾幕が出現します",
 		arg = {}
-	},
-	[9213] = {
+	}
+	pg.base.strategy_data_template[9213] = {
 		buff_id = 9213,
 		name = "白浪弾幕支援Lv1",
 		iconSize = "",
@@ -1490,8 +1493,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9216] = {
+	}
+	pg.base.strategy_data_template[9216] = {
 		buff_id = 9216,
 		name = "白浪弾幕支援Lv2",
 		iconSize = "",
@@ -1501,8 +1504,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9219] = {
+	}
+	pg.base.strategy_data_template[9219] = {
 		buff_id = 9219,
 		name = "白浪弾幕支援Lv3",
 		iconSize = "",
@@ -1512,8 +1515,10 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9222] = {
+	}
+end)()
+;(function()
+	pg.base.strategy_data_template[9222] = {
 		buff_id = 9222,
 		name = "白浪弾幕支援Lv4",
 		iconSize = "",
@@ -1523,8 +1528,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9225] = {
+	}
+	pg.base.strategy_data_template[9225] = {
 		buff_id = 9225,
 		name = "白浪弾幕支援Lv5",
 		iconSize = "",
@@ -1534,8 +1539,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9231] = {
+	}
+	pg.base.strategy_data_template[9231] = {
 		buff_id = 9231,
 		name = "竜宮仕掛-朱焔",
 		iconSize = "",
@@ -1545,8 +1550,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "竜宮仕掛により、戦闘中敵の支援弾幕が出現します",
 		arg = {}
-	},
-	[9232] = {
+	}
+	pg.base.strategy_data_template[9232] = {
 		buff_id = 9232,
 		name = "竜宮仕掛-朱焔",
 		iconSize = "",
@@ -1556,8 +1561,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "確保した竜宮仕掛により、戦闘中味方の支援弾幕が出現します ",
 		arg = {}
-	},
-	[9233] = {
+	}
+	pg.base.strategy_data_template[9233] = {
 		buff_id = 9233,
 		name = "朱焔弾幕支援Lv1",
 		iconSize = "",
@@ -1567,8 +1572,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9236] = {
+	}
+	pg.base.strategy_data_template[9236] = {
 		buff_id = 9236,
 		name = "朱焔弾幕支援Lv2",
 		iconSize = "",
@@ -1578,8 +1583,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9239] = {
+	}
+	pg.base.strategy_data_template[9239] = {
 		buff_id = 9239,
 		name = "朱焔弾幕支援Lv3",
 		iconSize = "",
@@ -1589,8 +1594,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9242] = {
+	}
+	pg.base.strategy_data_template[9242] = {
 		buff_id = 9242,
 		name = "朱焔弾幕支援Lv4",
 		iconSize = "",
@@ -1600,8 +1605,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9245] = {
+	}
+	pg.base.strategy_data_template[9245] = {
 		buff_id = 9245,
 		name = "朱焔弾幕支援Lv5",
 		iconSize = "",
@@ -1611,8 +1616,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9251] = {
+	}
+	pg.base.strategy_data_template[9251] = {
 		buff_id = 9251,
 		name = "竜宮仕掛-青渦",
 		iconSize = "",
@@ -1622,8 +1627,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "竜宮仕掛により、戦闘中敵の支援弾幕が出現し、更に敵はシールドを獲得します",
 		arg = {}
-	},
-	[9252] = {
+	}
+	pg.base.strategy_data_template[9252] = {
 		buff_id = 9252,
 		name = "竜宮仕掛-青渦",
 		iconSize = "",
@@ -1633,8 +1638,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "確保した竜宮仕掛により、戦闘中味方の支援弾幕が出現し、更に味方はシールドを獲得します ",
 		arg = {}
-	},
-	[9253] = {
+	}
+	pg.base.strategy_data_template[9253] = {
 		buff_id = 9253,
 		name = "青渦弾幕支援Lv1",
 		iconSize = "",
@@ -1644,8 +1649,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9256] = {
+	}
+	pg.base.strategy_data_template[9256] = {
 		buff_id = 9256,
 		name = "青渦弾幕支援Lv2",
 		iconSize = "",
@@ -1655,8 +1660,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9259] = {
+	}
+	pg.base.strategy_data_template[9259] = {
 		buff_id = 9259,
 		name = "青渦弾幕支援Lv3",
 		iconSize = "",
@@ -1666,8 +1671,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9262] = {
+	}
+	pg.base.strategy_data_template[9262] = {
 		buff_id = 9262,
 		name = "青渦弾幕支援Lv4",
 		iconSize = "",
@@ -1677,8 +1682,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9265] = {
+	}
+	pg.base.strategy_data_template[9265] = {
 		buff_id = 9265,
 		name = "青渦弾幕支援Lv5",
 		iconSize = "",
@@ -1688,8 +1693,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9271] = {
+	}
+	pg.base.strategy_data_template[9271] = {
 		buff_id = 9271,
 		name = "竜宮仕掛-緑風",
 		iconSize = "",
@@ -1699,8 +1704,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "竜宮仕掛により、戦闘中敵の支援弾幕が出現し、更に敵の耐久が回復することがあります",
 		arg = {}
-	},
-	[9272] = {
+	}
+	pg.base.strategy_data_template[9272] = {
 		buff_id = 9272,
 		name = "竜宮仕掛-緑風",
 		iconSize = "",
@@ -1710,8 +1715,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "確保した竜宮仕掛により、戦闘中味方の支援弾幕が出現し、さらに味方の耐久が回復することがあります",
 		arg = {}
-	},
-	[9273] = {
+	}
+	pg.base.strategy_data_template[9273] = {
 		buff_id = 9273,
 		name = "緑風弾幕支援Lv1",
 		iconSize = "",
@@ -1721,8 +1726,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9276] = {
+	}
+	pg.base.strategy_data_template[9276] = {
 		buff_id = 9276,
 		name = "緑風弾幕支援Lv2",
 		iconSize = "",
@@ -1732,8 +1737,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9279] = {
+	}
+	pg.base.strategy_data_template[9279] = {
 		buff_id = 9279,
 		name = "緑風弾幕支援Lv3",
 		iconSize = "",
@@ -1743,8 +1748,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9282] = {
+	}
+	pg.base.strategy_data_template[9282] = {
 		buff_id = 9282,
 		name = "緑風弾幕支援Lv4",
 		iconSize = "",
@@ -1754,8 +1759,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9285] = {
+	}
+	pg.base.strategy_data_template[9285] = {
 		buff_id = 9285,
 		name = "緑風弾幕支援Lv5",
 		iconSize = "",
@@ -1765,8 +1770,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "特殊支援弾幕",
 		arg = {}
-	},
-	[9391] = {
+	}
+	pg.base.strategy_data_template[9391] = {
 		buff_id = 0,
 		name = "制御奪取 ",
 		buff_type = 0,
@@ -1779,8 +1784,8 @@ pg.base.strategy_data_template = {
 			64,
 			84
 		}
-	},
-	[9392] = {
+	}
+	pg.base.strategy_data_template[9392] = {
 		buff_id = 0,
 		name = "制御奪取 ",
 		buff_type = 0,
@@ -1793,8 +1798,8 @@ pg.base.strategy_data_template = {
 			64,
 			84
 		}
-	},
-	[9393] = {
+	}
+	pg.base.strategy_data_template[9393] = {
 		buff_id = 0,
 		name = "制御奪取 ",
 		buff_type = 0,
@@ -1807,8 +1812,8 @@ pg.base.strategy_data_template = {
 			64,
 			84
 		}
-	},
-	[9394] = {
+	}
+	pg.base.strategy_data_template[9394] = {
 		buff_id = 0,
 		name = "制御奪取 ",
 		buff_type = 0,
@@ -1821,8 +1826,8 @@ pg.base.strategy_data_template = {
 			64,
 			84
 		}
-	},
-	[9395] = {
+	}
+	pg.base.strategy_data_template[9395] = {
 		buff_id = 0,
 		name = "制御奪取 ",
 		buff_type = 0,
@@ -1835,8 +1840,8 @@ pg.base.strategy_data_template = {
 			64,
 			84
 		}
-	},
-	[9401] = {
+	}
+	pg.base.strategy_data_template[9401] = {
 		buff_id = 0,
 		name = "メカ支援 ",
 		iconSize = "",
@@ -1846,8 +1851,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "メカ支援ゲージ充填完了！戦闘中、味方による支援弾幕が展開されます",
 		arg = {}
-	},
-	[9403] = {
+	}
+	pg.base.strategy_data_template[9403] = {
 		buff_id = 9403,
 		name = "宝多六花支援弹幕LV1",
 		iconSize = "",
@@ -1857,8 +1862,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9406] = {
+	}
+	pg.base.strategy_data_template[9406] = {
 		buff_id = 9406,
 		name = "宝多六花支援弹幕LV2",
 		iconSize = "",
@@ -1868,8 +1873,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9409] = {
+	}
+	pg.base.strategy_data_template[9409] = {
 		buff_id = 9409,
 		name = "宝多六花支援弹幕LV3",
 		iconSize = "",
@@ -1879,8 +1884,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9412] = {
+	}
+	pg.base.strategy_data_template[9412] = {
 		buff_id = 9412,
 		name = "宝多六花支援弹幕LV4",
 		iconSize = "",
@@ -1890,8 +1895,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9415] = {
+	}
+	pg.base.strategy_data_template[9415] = {
 		buff_id = 9415,
 		name = "宝多六花支援弹幕LV5",
 		iconSize = "",
@@ -1901,8 +1906,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9421] = {
+	}
+	pg.base.strategy_data_template[9421] = {
 		buff_id = 0,
 		name = "メカ支援 ",
 		iconSize = "",
@@ -1912,8 +1917,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "メカ支援ゲージ充填完了！戦闘中、味方による支援弾幕が展開されます",
 		arg = {}
-	},
-	[9423] = {
+	}
+	pg.base.strategy_data_template[9423] = {
 		buff_id = 9423,
 		name = "梦芽支援弹幕LV1",
 		iconSize = "",
@@ -1923,8 +1928,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9426] = {
+	}
+	pg.base.strategy_data_template[9426] = {
 		buff_id = 9426,
 		name = "梦芽支援弹幕LV2",
 		iconSize = "",
@@ -1934,8 +1939,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9429] = {
+	}
+	pg.base.strategy_data_template[9429] = {
 		buff_id = 9429,
 		name = "梦芽支援弹幕LV3",
 		iconSize = "",
@@ -1945,8 +1950,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9432] = {
+	}
+	pg.base.strategy_data_template[9432] = {
 		buff_id = 9432,
 		name = "梦芽支援弹幕LV4",
 		iconSize = "",
@@ -1956,8 +1961,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9435] = {
+	}
+	pg.base.strategy_data_template[9435] = {
 		buff_id = 9435,
 		name = "梦芽支援弹幕LV5",
 		iconSize = "",
@@ -1967,8 +1972,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9441] = {
+	}
+	pg.base.strategy_data_template[9441] = {
 		buff_id = 0,
 		name = "メカ支援 ",
 		iconSize = "",
@@ -1978,8 +1983,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "メカ支援ゲージ充填完了！戦闘中、味方による支援弾幕が展開されます",
 		arg = {}
-	},
-	[9443] = {
+	}
+	pg.base.strategy_data_template[9443] = {
 		buff_id = 9443,
 		name = "千濑支援弹幕LV1",
 		iconSize = "",
@@ -1989,8 +1994,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9446] = {
+	}
+	pg.base.strategy_data_template[9446] = {
 		buff_id = 9446,
 		name = "千濑支援弹幕LV2",
 		iconSize = "",
@@ -2000,8 +2005,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9449] = {
+	}
+	pg.base.strategy_data_template[9449] = {
 		buff_id = 9449,
 		name = "千濑支援弹幕LV3",
 		iconSize = "",
@@ -2011,8 +2016,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9452] = {
+	}
+	pg.base.strategy_data_template[9452] = {
 		buff_id = 9452,
 		name = "千濑支援弹幕LV4",
 		iconSize = "",
@@ -2022,8 +2027,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9455] = {
+	}
+	pg.base.strategy_data_template[9455] = {
 		buff_id = 9455,
 		name = "千濑支援弹幕LV5",
 		iconSize = "",
@@ -2033,8 +2038,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9461] = {
+	}
+	pg.base.strategy_data_template[9461] = {
 		buff_id = 0,
 		name = "怪獣支援",
 		iconSize = "",
@@ -2044,8 +2049,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「怪獣」支援ゲージ充填完了！戦闘中、味方による支援弾幕が展開されます",
 		arg = {}
-	},
-	[9463] = {
+	}
+	pg.base.strategy_data_template[9463] = {
 		buff_id = 9463,
 		name = "新条茜支援弹幕LV1",
 		iconSize = "",
@@ -2055,8 +2060,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9466] = {
+	}
+	pg.base.strategy_data_template[9466] = {
 		buff_id = 9466,
 		name = "新条茜支援弹幕LV2",
 		iconSize = "",
@@ -2066,8 +2071,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9469] = {
+	}
+	pg.base.strategy_data_template[9469] = {
 		buff_id = 9469,
 		name = "新条茜支援弹幕LV3",
 		iconSize = "",
@@ -2077,8 +2082,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9472] = {
+	}
+	pg.base.strategy_data_template[9472] = {
 		buff_id = 9472,
 		name = "新条茜支援弹幕LV4",
 		iconSize = "",
@@ -2088,8 +2093,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9475] = {
+	}
+	pg.base.strategy_data_template[9475] = {
 		buff_id = 9475,
 		name = "新条茜支援弹幕LV5",
 		iconSize = "",
@@ -2099,8 +2104,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9481] = {
+	}
+	pg.base.strategy_data_template[9481] = {
 		buff_id = 0,
 		name = "怪獣支援",
 		iconSize = "",
@@ -2110,8 +2115,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「怪獣」支援ゲージ充填完了！戦闘中、味方による支援弾幕が展開されます",
 		arg = {}
-	},
-	[9483] = {
+	}
+	pg.base.strategy_data_template[9483] = {
 		buff_id = 9483,
 		name = "貉支援弹幕LV1",
 		iconSize = "",
@@ -2121,8 +2126,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9486] = {
+	}
+	pg.base.strategy_data_template[9486] = {
 		buff_id = 9486,
 		name = "貉支援弹幕LV2",
 		iconSize = "",
@@ -2132,8 +2137,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9489] = {
+	}
+	pg.base.strategy_data_template[9489] = {
 		buff_id = 9489,
 		name = "貉支援弹幕LV3",
 		iconSize = "",
@@ -2143,8 +2148,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9492] = {
+	}
+	pg.base.strategy_data_template[9492] = {
 		buff_id = 9492,
 		name = "貉支援弹幕LV4",
 		iconSize = "",
@@ -2154,8 +2159,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9495] = {
+	}
+	pg.base.strategy_data_template[9495] = {
 		buff_id = 9495,
 		name = "貉支援弹幕LV5",
 		iconSize = "",
@@ -2165,8 +2170,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[9500] = {
+	}
+	pg.base.strategy_data_template[9500] = {
 		buff_id = 9500,
 		name = "キューブ活性化 ",
 		iconSize = "",
@@ -2176,8 +2181,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "メンタルキューブ活性化により、味方艦隊全員の与えるダメージ・受けるダメージが20%アップ ",
 		arg = {}
-	},
-	[9502] = {
+	}
+	pg.base.strategy_data_template[9502] = {
 		buff_id = 9502,
 		name = "海霧襲来",
 		iconSize = "",
@@ -2187,8 +2192,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不気味な海霧が戦場を覆っている…味方艦隊全員の命中が5%ダウン",
 		arg = {}
-	},
-	[9505] = {
+	}
+	pg.base.strategy_data_template[9505] = {
 		buff_id = 9505,
 		name = "鉄血航空支援",
 		iconSize = "",
@@ -2198,8 +2203,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵航空支援展開中！ステージ内に敵航空攻撃隊が出現し、更に敵の航空攻撃で受けるダメージが10%アップ",
 		arg = {}
-	},
-	[9508] = {
+	}
+	pg.base.strategy_data_template[9508] = {
 		buff_id = 9508,
 		name = "極夜",
 		iconSize = "",
@@ -2209,8 +2214,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "極夜状態では、敵艦隊の「艦隊編成タイプ」を視認確認できません",
 		arg = {}
-	},
-	[10001] = {
+	}
+	pg.base.strategy_data_template[10001] = {
 		buff_id = 200,
 		name = "完全補給",
 		iconSize = "",
@@ -2220,8 +2225,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "弾薬満タン、艦隊ダメージ+10%。",
 		arg = {}
-	},
-	[10002] = {
+	}
+	pg.base.strategy_data_template[10002] = {
 		buff_id = 210,
 		name = "弾薬不足",
 		iconSize = "",
@@ -2231,8 +2236,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "弾切れ寸前、艦隊ダメージ-50%。",
 		arg = {}
-	},
-	[10011] = {
+	}
+	pg.base.strategy_data_template[10011] = {
 		buff_id = 220,
 		name = "制空権確保",
 		iconSize = "",
@@ -2244,8 +2249,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			800
 		}
-	},
-	[10012] = {
+	}
+	pg.base.strategy_data_template[10012] = {
 		buff_id = 230,
 		name = "制空権優勢",
 		iconSize = "",
@@ -2257,8 +2262,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			500
 		}
-	},
-	[10013] = {
+	}
+	pg.base.strategy_data_template[10013] = {
 		buff_id = 240,
 		name = "制空拮抗中",
 		iconSize = "",
@@ -2270,8 +2275,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			0
 		}
-	},
-	[10014] = {
+	}
+	pg.base.strategy_data_template[10014] = {
 		buff_id = 250,
 		name = "制空権劣勢",
 		iconSize = "",
@@ -2283,8 +2288,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			0
 		}
-	},
-	[10015] = {
+	}
+	pg.base.strategy_data_template[10015] = {
 		buff_id = 260,
 		name = "制空権喪失",
 		iconSize = "",
@@ -2296,8 +2301,8 @@ pg.base.strategy_data_template = {
 		arg = {
 			0
 		}
-	},
-	[10021] = {
+	}
+	pg.base.strategy_data_template[10021] = {
 		buff_id = 8761,
 		name = "FEVERモード",
 		iconSize = "",
@@ -2307,8 +2312,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "味方艦隊戦闘開始時、自身の耐久値が最大値の2%回復する",
 		arg = {}
-	},
-	[10031] = {
+	}
+	pg.base.strategy_data_template[10031] = {
 		buff_id = 8765,
 		name = "特別アピール",
 		iconSize = "",
@@ -2318,8 +2323,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始時、味方全員の耐久が2%回復する",
 		arg = {}
-	},
-	[10032] = {
+	}
+	pg.base.strategy_data_template[10032] = {
 		buff_id = 8767,
 		name = "特別アピール",
 		iconSize = "",
@@ -2329,8 +2334,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方全員の敵に与えるダメージが5％アップ",
 		arg = {}
-	},
-	[10033] = {
+	}
+	pg.base.strategy_data_template[10033] = {
 		buff_id = 8769,
 		name = "特別アピール",
 		iconSize = "",
@@ -2340,8 +2345,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方全員の敵から受けるダメージが5%ダウン",
 		arg = {}
-	},
-	[200000] = {
+	}
+	pg.base.strategy_data_template[200000] = {
 		buff_id = 200000,
 		name = "飛行船団支援",
 		iconSize = "",
@@ -2351,8 +2356,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "こちら艦長アルフレード、これより支援砲撃開始！パシャリ！――戦闘中飛行船団による砲撃支援が出現する",
 		arg = {}
-	},
-	[200003] = {
+	}
+	pg.base.strategy_data_template[200003] = {
 		buff_id = 200003,
 		name = "飛行船団支援",
 		iconSize = "",
@@ -2362,8 +2367,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "こちら艦長アルフレード、これより支援砲撃開始！パシャリ！――戦闘中飛行船団による砲撃支援が出現する",
 		arg = {}
-	},
-	[200006] = {
+	}
+	pg.base.strategy_data_template[200006] = {
 		buff_id = 200006,
 		name = "飛行船団支援",
 		iconSize = "",
@@ -2373,8 +2378,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "こちら艦長アルフレード、これより支援砲撃開始！パシャリ！――戦闘中飛行船団による砲撃支援が出現する",
 		arg = {}
-	},
-	[200009] = {
+	}
+	pg.base.strategy_data_template[200009] = {
 		buff_id = 200009,
 		name = "ミニマム鏡面海域",
 		iconSize = "",
@@ -2384,8 +2389,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "サディア所属の艦船の戦闘中に与えるダメージが20%アップし、受けるダメージが20％ダウンする",
 		arg = {}
-	},
-	[200011] = {
+	}
+	pg.base.strategy_data_template[200011] = {
 		buff_id = 200011,
 		name = "神祖の力",
 		iconSize = "",
@@ -2395,8 +2400,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "嵐のような猛攻――戦闘中味方艦船の火力・航空が10%アップ",
 		arg = {}
-	},
-	[200012] = {
+	}
+	pg.base.strategy_data_template[200012] = {
 		buff_id = 200012,
 		name = "至尊者の力",
 		iconSize = "",
@@ -2406,8 +2411,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "響かせる角笛の軍勢――戦闘中味方艦船の装填が15％アップ",
 		arg = {}
-	},
-	[200013] = {
+	}
+	pg.base.strategy_data_template[200013] = {
 		buff_id = 200013,
 		name = "威厳者の力",
 		iconSize = "",
@@ -2417,8 +2422,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "燃ゆる太陽の光――戦闘開始時、味方艦船の耐久が上限の3%回復する",
 		arg = {}
-	},
-	[200015] = {
+	}
+	pg.base.strategy_data_template[200015] = {
 		buff_id = 200015,
 		name = "最善者の力",
 		iconSize = "",
@@ -2428,8 +2433,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "広げる極盛の地平――戦闘中味方艦船の回避が10％アップ",
 		arg = {}
-	},
-	[200016] = {
+	}
+	pg.base.strategy_data_template[200016] = {
 		buff_id = 200016,
 		name = "正規者の力",
 		iconSize = "",
@@ -2439,8 +2444,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "流転せし運命の波――戦闘中敵はダメージを受け続ける",
 		arg = {}
-	},
-	[200019] = {
+	}
+	pg.base.strategy_data_template[200019] = {
 		buff_id = 200019,
 		name = "背教者の力",
 		iconSize = "",
@@ -2450,8 +2455,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "夕闇の残光の余熱――戦闘開始時、味方旗艦の主砲攻撃・航空攻撃が1回装填完了にする",
 		arg = {}
-	},
-	[200023] = {
+	}
+	pg.base.strategy_data_template[200023] = {
 		buff_id = 0,
 		name = "空襲",
 		iconSize = "",
@@ -2461,8 +2466,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "実験作戦ルール：海域での行動中、敵空襲に遭遇する場合がある。艦隊の索敵値が上がると敵空襲に遭遇する確率が低減する",
 		arg = {}
-	},
-	[200024] = {
+	}
+	pg.base.strategy_data_template[200024] = {
 		buff_id = 0,
 		name = "待ち伏せ",
 		iconSize = "",
@@ -2472,8 +2477,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "実験作戦ルール：海域での行動中、敵待ち伏せに遭遇する場合がある。艦隊の索敵値が上がると敵待ち伏せに遭遇する確率が低減する",
 		arg = {}
-	},
-	[200025] = {
+	}
+	pg.base.strategy_data_template[200025] = {
 		buff_id = 0,
 		name = "敵追撃",
 		iconSize = "",
@@ -2483,8 +2488,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "実験作戦ルール：海域での行動中、一部の敵部隊はこちらの行動を追跡する場合がある",
 		arg = {}
-	},
-	[200052] = {
+	}
+	pg.base.strategy_data_template[200052] = {
 		buff_id = 200052,
 		name = "結界碁盤",
 		iconSize = "",
@@ -2494,8 +2499,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "イベントストーリーでの「部下」艦船の全ステータスが3％アップ",
 		arg = {}
-	},
-	[200054] = {
+	}
+	pg.base.strategy_data_template[200054] = {
 		buff_id = 200054,
 		name = "霧隠れの真意",
 		iconSize = "",
@@ -2505,8 +2510,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、互いの空母以外の艦船の命中が5%ダウン",
 		arg = {}
-	},
-	[200057] = {
+	}
+	pg.base.strategy_data_template[200057] = {
 		buff_id = 200057,
 		name = "変革目指す先見",
 		iconSize = "",
@@ -2516,8 +2521,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、互いの速力が5%アップ",
 		arg = {}
-	},
-	[200060] = {
+	}
+	pg.base.strategy_data_template[200060] = {
 		buff_id = 200060,
 		name = "孤高なりし未来像",
 		iconSize = "",
@@ -2527,8 +2532,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、互いが受けるダメージが5%アップ",
 		arg = {}
-	},
-	[200063] = {
+	}
+	pg.base.strategy_data_template[200063] = {
 		buff_id = 200063,
 		name = "朗らかく正々堂々",
 		iconSize = "",
@@ -2538,8 +2543,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、互いの戦艦・巡洋戦艦の火力・回避が5%アップ、駆逐艦の火力・回避が5％ダウン",
 		arg = {}
-	},
-	[200067] = {
+	}
+	pg.base.strategy_data_template[200067] = {
 		buff_id = 200067,
 		name = "皆既無用の野望",
 		iconSize = "",
@@ -2549,8 +2554,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、互い戦艦・巡洋戦艦の主砲散布範囲が2アップし、火力が5％アップ",
 		arg = {}
-	},
-	[200070] = {
+	}
+	pg.base.strategy_data_template[200070] = {
 		buff_id = 200070,
 		name = "激動の雷鳴",
 		iconSize = "",
@@ -2560,8 +2565,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中に雷撃が発生し、範囲内の味方と敵に現在耐久の一定の割合のダメージを与える",
 		arg = {}
-	},
-	[200074] = {
+	}
+	pg.base.strategy_data_template[200074] = {
 		buff_id = 200074,
 		name = "相争わぬ誓い",
 		iconSize = "",
@@ -2571,8 +2576,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中一定時間毎に、互いの艦船が少し回復する",
 		arg = {}
-	},
-	[200078] = {
+	}
+	pg.base.strategy_data_template[200078] = {
 		buff_id = 200078,
 		name = "守りたい決意",
 		iconSize = "",
@@ -2582,8 +2587,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中互いが受けるダメージを3％ダウン。一定時間ごとに、互いの艦船に弾を防ぐシールドを付与するか少し回復させる",
 		arg = {}
-	},
-	[200079] = {
+	}
+	pg.base.strategy_data_template[200079] = {
 		buff_id = 0,
 		name = "始まりの地",
 		iconSize = "",
@@ -2593,8 +2598,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "風属性の素材が採取可能：ナナシ草、ウィングプラント、ブラッドトーン（採取道具-サイレントシックルが必要）",
 		arg = {}
-	},
-	[200080] = {
+	}
+	pg.base.strategy_data_template[200080] = {
 		buff_id = 0,
 		name = "異界の森",
 		iconSize = "",
@@ -2604,8 +2609,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "雷属性の素材が採取可能：イナズマ鉱、導きの星の欠片、セプトリエン（採取道具-ゴールデンアックスが必要）",
 		arg = {}
-	},
-	[200081] = {
+	}
+	pg.base.strategy_data_template[200081] = {
 		buff_id = 0,
 		name = "紛争の城",
 		iconSize = "",
@@ -2615,8 +2620,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "火属性の素材が採取可能：小さな晶石、燃える砂、マグマパウダー（採取道具-ブルーフラムロッドが必要）",
 		arg = {}
-	},
-	[200082] = {
+	}
+	pg.base.strategy_data_template[200082] = {
 		buff_id = 0,
 		name = "滅失の都",
 		iconSize = "",
@@ -2626,8 +2631,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "氷属性の素材が採取可能：プルムル、サルディン、湖底のぬし（採取道具-神竿バルムヘルが必要）",
 		arg = {}
-	},
-	[200083] = {
+	}
+	pg.base.strategy_data_template[200083] = {
 		buff_id = 0,
 		name = "中枢の拠",
 		iconSize = "",
@@ -2637,8 +2642,10 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "セイレーン素材が採取可能：謎の結晶鉱、謎の装甲材、謎のエナジーコア（採取道具-レーザーアームが必要）",
 		arg = {}
-	},
-	[200084] = {
+	}
+end)()
+;(function()
+	pg.base.strategy_data_template[200084] = {
 		buff_id = 0,
 		name = "サイレントシックル",
 		iconSize = "",
@@ -2648,8 +2655,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "採取しやすいように改良されたこの鎌は、まるで風のように静かに軽やかに草や花を刈り取る",
 		arg = {}
-	},
-	[200085] = {
+	}
+	pg.base.strategy_data_template[200085] = {
 		buff_id = 0,
 		name = "ゴールデンアックス",
 		iconSize = "",
@@ -2659,8 +2666,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "切れ味や重さを細かく調整し改良を施されたため、普通の斧よりもラクに木材も薪も作れる",
 		arg = {}
-	},
-	[200086] = {
+	}
+	pg.base.strategy_data_template[200086] = {
 		buff_id = 0,
 		name = "ブルーフラムロッド",
 		iconSize = "",
@@ -2670,8 +2677,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "フラムロッドの強化版。先端の宝玉を青い物に変えたため、以前よりも効率的に岩や水晶を破壊することが可能となった",
 		arg = {}
-	},
-	[200087] = {
+	}
+	pg.base.strategy_data_template[200087] = {
 		buff_id = 0,
 		name = "神竿バルムヘル",
 		iconSize = "",
@@ -2681,8 +2688,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "釣り竿の強化版。強化したことにより、魚が警戒せずに寄ってくるように改良されている",
 		arg = {}
-	},
-	[200088] = {
+	}
+	pg.base.strategy_data_template[200088] = {
 		buff_id = 0,
 		name = "レーザーアーム",
 		iconSize = "",
@@ -2692,8 +2699,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "強大な握力と推力、そして灼熱の採掘レーザーを発射できるセイレーンのメカニカルアーム――錬金術の素材を採取するのに使えるかも？",
 		arg = {}
-	},
-	[200239] = {
+	}
+	pg.base.strategy_data_template[200239] = {
 		buff_id = 200239,
 		name = "自律型支援ドローン",
 		iconSize = "",
@@ -2703,8 +2710,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "アンチエックスボディの戦闘サポートにより、戦闘中味方火力・雷装・航空が10%アップ",
 		arg = {}
-	},
-	[200240] = {
+	}
+	pg.base.strategy_data_template[200240] = {
 		buff_id = 200240,
 		name = "アビータの脅威・予兆",
 		iconSize = "",
@@ -2714,8 +2721,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「何かがおかしい…」戦闘中無差別攻撃する弾幕が出現する",
 		arg = {}
-	},
-	[200241] = {
+	}
+	pg.base.strategy_data_template[200241] = {
 		buff_id = 200240,
 		name = "アビータの脅威・肉迫",
 		iconSize = "",
@@ -2725,8 +2732,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「黒い靄に覆われるものは…」戦闘中無差別攻撃する弾幕が出現する",
 		arg = {}
-	},
-	[200242] = {
+	}
+	pg.base.strategy_data_template[200242] = {
 		buff_id = 200242,
 		name = "空间净化系统",
 		iconSize = "",
@@ -2736,8 +2743,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「空间净化系统正在启动中」——\n每隔一段时间，场上敌我双方所有单位均会根据百分比损失一定耐久值。",
 		arg = {}
-	},
-	[200327] = {
+	}
+	pg.base.strategy_data_template[200327] = {
 		buff_id = 200327,
 		name = "聖堂施設制御装置-制御不能",
 		iconSize = "",
@@ -2747,8 +2754,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "聖堂施設の制御装置が制御不能状態にある。\n戦闘中一定時間毎に特殊弾幕が出現し、戦場にいるすべてを対象に耐久最大値に比例するダメージを与える。",
 		arg = {}
-	},
-	[200330] = {
+	}
+	pg.base.strategy_data_template[200330] = {
 		buff_id = 200330,
 		name = "聖堂施設制御装置-制御回復",
 		iconSize = "",
@@ -2758,8 +2765,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "聖堂施設の制御装置が回復しつつある。\n戦闘中一定時間毎に特殊弾幕が出現し、戦場にいるすべての敵に耐久最大値に比例するダメージを与える。",
 		arg = {}
-	},
-	[200333] = {
+	}
+	pg.base.strategy_data_template[200333] = {
 		buff_id = 200333,
 		name = "聖堂施設制御装置-制御安定",
 		iconSize = "",
@@ -2769,8 +2776,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "聖堂施設の制御装置が安定状態にある。\n戦闘中一定時間毎に特殊弾幕が出現し、戦場にいるすべての敵に耐久最大値に比例するダメージを与え、さらにすべての味方艦船の耐久を回復させる",
 		arg = {}
-	},
-	[200336] = {
+	}
+	pg.base.strategy_data_template[200336] = {
 		buff_id = 200336,
 		name = "信仰心象の加護-アイリス",
 		iconSize = "",
@@ -2780,8 +2787,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "アイリスへの祈りが届き、篤い心象が現実に影響する——\n戦闘中、味方アイリス艦船の火力・雷装・航空・対空・装填・命中・回避が3％アップ",
 		arg = {}
-	},
-	[200338] = {
+	}
+	pg.base.strategy_data_template[200338] = {
 		buff_id = 200338,
 		name = "信仰心象の加護-ロイヤル",
 		iconSize = "",
@@ -2791,8 +2798,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "？？？への祈りが届き、篤い心象が現実に影響する——\n戦闘中、味方ロイヤル艦船の火力・雷装・航空・対空・装填・命中・回避が3％アップ",
 		arg = {}
-	},
-	[200392] = {
+	}
+	pg.base.strategy_data_template[200392] = {
 		buff_id = 0,
 		name = "追撃戦術",
 		iconSize = "",
@@ -2802,8 +2809,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "敵艦隊がこちらの艦隊に追撃を仕掛ける",
 		arg = {}
-	},
-	[200394] = {
+	}
+	pg.base.strategy_data_template[200394] = {
 		buff_id = 200394,
 		name = "侵食空間",
 		iconSize = "",
@@ -2813,8 +2820,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "現在の侵食レベル：0\n味方艦隊が戦闘を行うと、戦闘終了時侵食レベルが1アップ（最大5まで）。侵食レベルに応じて、味方艦隊は戦闘中での与えるダメージ・受けるダメージがアップする。\n侵食レベル5の場合、戦闘中味方艦船の速力・命中がダウンする。\nMETA艦船など一部の艦船は侵食レベルによる被ダメージアップ・命中速力ダウン効果を受けない",
 		arg = {}
-	},
-	[200396] = {
+	}
+	pg.base.strategy_data_template[200396] = {
 		buff_id = 200396,
 		name = "侵食空間",
 		iconSize = "",
@@ -2824,8 +2831,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "現在の侵食レベル：1\n味方艦隊が戦闘を行うと、戦闘終了時侵食レベルが1アップ（最大5まで）。侵食レベルに応じて、味方艦隊は戦闘中での与えるダメージ・受けるダメージがアップする。\n侵食レベル5の場合、戦闘中味方艦船の速力・命中がダウンする。\nMETA艦船など一部の艦船は侵食レベルによる被ダメージアップ・命中速力ダウン効果を受けない",
 		arg = {}
-	},
-	[200401] = {
+	}
+	pg.base.strategy_data_template[200401] = {
 		buff_id = 200401,
 		name = "侵食空間",
 		iconSize = "",
@@ -2835,8 +2842,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "現在の侵食レベル：2\n味方艦隊が戦闘を行うと、戦闘終了時侵食レベルが1アップ（最大5まで）。侵食レベルに応じて、味方艦隊は戦闘中での与えるダメージ・受けるダメージがアップする。\n侵食レベル5の場合、戦闘中味方艦船の速力・命中がダウンする。\nMETA艦船など一部の艦船は侵食レベルによる被ダメージアップ・命中速力ダウン効果を受けない",
 		arg = {}
-	},
-	[200406] = {
+	}
+	pg.base.strategy_data_template[200406] = {
 		buff_id = 200406,
 		name = "侵食空間",
 		iconSize = "",
@@ -2846,8 +2853,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "現在の侵食レベル：3\n味方艦隊が戦闘を行うと、戦闘終了時侵食レベルが1アップ（最大5まで）。侵食レベルに応じて、味方艦隊は戦闘中での与えるダメージ・受けるダメージがアップする。\n侵食レベル5の場合、戦闘中味方艦船の速力・命中がダウンする。\nMETA艦船など一部の艦船は侵食レベルによる被ダメージアップ・命中速力ダウン効果を受けない",
 		arg = {}
-	},
-	[200411] = {
+	}
+	pg.base.strategy_data_template[200411] = {
 		buff_id = 200411,
 		name = "侵食空間",
 		iconSize = "",
@@ -2857,8 +2864,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "現在の侵食レベル：4\n味方艦隊が戦闘を行うと、戦闘終了時侵食レベルが1アップ（最大5まで）。侵食レベルに応じて、味方艦隊は戦闘中での与えるダメージ・受けるダメージがアップする。\n侵食レベル5の場合、戦闘中味方艦船の速力・命中がダウンする。\nMETA艦船など一部の艦船は侵食レベルによる被ダメージアップ・命中速力ダウン効果を受けない",
 		arg = {}
-	},
-	[200416] = {
+	}
+	pg.base.strategy_data_template[200416] = {
 		buff_id = 200416,
 		name = "侵食空間",
 		iconSize = "",
@@ -2868,8 +2875,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "現在の侵食レベル：5\n味方艦隊が戦闘を行うと、戦闘終了時侵食レベルが1アップ（最大5まで）。侵食レベルに応じて、味方艦隊は戦闘中での与えるダメージ・受けるダメージがアップする。\n侵食レベル5の場合、戦闘中味方艦船の速力・命中がダウンする。\nMETA艦船など一部の艦船は侵食レベルによる被ダメージアップ・命中速力ダウン効果を受けない",
 		arg = {}
-	},
-	[200432] = {
+	}
+	pg.base.strategy_data_template[200432] = {
 		buff_id = 200432,
 		name = "構造の理・援護",
 		iconSize = "",
@@ -2879,8 +2886,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "艦船のサポートで侵食レベル上限が下がり、戦闘中一定時間毎に味方の耐久が回復し、更にステータスが上昇する。\nステージの侵食レベル上限：1",
 		arg = {}
-	},
-	[200433] = {
+	}
+	pg.base.strategy_data_template[200433] = {
 		buff_id = 200432,
 		name = "構造の理・援護",
 		iconSize = "",
@@ -2890,8 +2897,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "艦船のサポートで侵食レベル上限が下がり、戦闘中一定時間毎に味方の耐久が回復し、更にステータスが上昇する。\nステージの侵食レベル上限：2",
 		arg = {}
-	},
-	[200434] = {
+	}
+	pg.base.strategy_data_template[200434] = {
 		buff_id = 200432,
 		name = "構造の理・援護",
 		iconSize = "",
@@ -2901,8 +2908,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "艦船のサポートで侵食レベル上限が下がり、戦闘中一定時間毎に味方の耐久が回復し、更にステータスが上昇する。\nステージの侵食レベル上限：3",
 		arg = {}
-	},
-	[200511] = {
+	}
+	pg.base.strategy_data_template[200511] = {
 		buff_id = 200511,
 		name = "古立特联动复刻弹幕支援",
 		iconSize = "",
@@ -2912,8 +2919,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "不显示图标及说明",
 		arg = {}
-	},
-	[200535] = {
+	}
+	pg.base.strategy_data_template[200535] = {
 		buff_id = 200535,
 		name = "連合艦隊",
 		iconSize = "",
@@ -2923,8 +2930,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方艦船の所属陣営が合計2つ以上の場合、所属陣営1つにつき味方艦船全員の全ステータスが1%アップ",
 		arg = {}
-	},
-	[200536] = {
+	}
+	pg.base.strategy_data_template[200536] = {
 		buff_id = 0,
 		name = "侵食性錯体",
 		iconSize = "",
@@ -2934,8 +2941,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「世界を覆う謎の物質…これは一体？」\n一部の敵が撃破された時に謎の物質を放出し、周囲の敵の耐久を回復し、同時に味方艦船にダメージを与える",
 		arg = {}
-	},
-	[200538] = {
+	}
+	pg.base.strategy_data_template[200538] = {
 		buff_id = 200538,
 		name = "審判廷支援",
 		iconSize = "",
@@ -2945,8 +2952,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「指揮官、私の次の一手はこれよ」\n戦闘中、味方の審判型量産艦と審判型武装機構による支援弾幕が出現する",
 		arg = {}
-	},
-	[200541] = {
+	}
+	pg.base.strategy_data_template[200541] = {
 		buff_id = 200541,
 		name = "審判廷支援",
 		iconSize = "",
@@ -2956,8 +2963,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「指揮官、私の次の一手はこれよ」\n戦闘中、味方の審判型量産艦と審判型武装機構による支援弾幕が出現する",
 		arg = {}
-	},
-	[200544] = {
+	}
+	pg.base.strategy_data_template[200544] = {
 		buff_id = 200544,
 		name = "偽神の領域Ⅰ",
 		iconSize = "",
@@ -2967,8 +2974,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「かの者が降臨せん」——\n偽神の領域内の艦船はすべてのステータスがダウン\nまた、戦闘中に敵の支援攻撃が出現する",
 		arg = {}
-	},
-	[200545] = {
+	}
+	pg.base.strategy_data_template[200545] = {
 		buff_id = 200545,
 		name = "偽神の領域Ⅱ",
 		iconSize = "",
@@ -2978,8 +2985,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「かの▅▇は降▇▅せん」——\n偽神の領域内の艦船はすべてのステータスがさらにダウン\nまた、戦闘中に敵の強力な支援攻撃が出現する",
 		arg = {}
-	},
-	[200546] = {
+	}
+	pg.base.strategy_data_template[200546] = {
 		buff_id = 200546,
 		name = "偽神の領域Ⅲ",
 		iconSize = "",
@@ -2989,8 +2996,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「▇▆▇▊▇▇▆▅▇▆」——\n偽神の領域内の艦船はすべてのステータスが大幅にダウン\nまた、戦闘中に敵のより強力な支援攻撃が出現する",
 		arg = {}
-	},
-	[200583] = {
+	}
+	pg.base.strategy_data_template[200583] = {
 		buff_id = 200583,
 		name = "闇靄の侵食",
 		iconSize = "",
@@ -3000,8 +3007,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "災いの闇靄の侵食が、最恐の敵を凝華させる。\n戦闘中一定時間ごとに、味方を襲ってくる弾幕が出現する",
 		arg = {}
-	},
-	[200585] = {
+	}
+	pg.base.strategy_data_template[200585] = {
 		buff_id = 200585,
 		name = "神木の加護",
 		iconSize = "",
@@ -3011,8 +3018,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ワタツミの封印の加護が闇靄を弱らせ始めている。\n戦闘中一定時間ごとに、味方艦船に耐久上限の一定の割合のダメージを無効にできるシールドを生成する",
 		arg = {}
-	},
-	[200589] = {
+	}
+	pg.base.strategy_data_template[200589] = {
 		buff_id = 200589,
 		name = "心象の霊河",
 		iconSize = "",
@@ -3022,8 +3029,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "願いの力で難局を乗り越えていけ。\n戦闘中一定時間ごとに、味方艦船を援護する特殊弾幕が出現する",
 		arg = {}
-	},
-	[200592] = {
+	}
+	pg.base.strategy_data_template[200592] = {
 		buff_id = 200592,
 		name = "心象の霊河",
 		iconSize = "",
@@ -3033,8 +3040,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "願いの力で難局を乗り越えていけ。\n戦闘中一定時間ごとに、味方艦船を援護する特殊弾幕が出現する",
 		arg = {}
-	},
-	[200595] = {
+	}
+	pg.base.strategy_data_template[200595] = {
 		buff_id = 200595,
 		name = "心象の霊河",
 		iconSize = "",
@@ -3044,8 +3051,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "願いの力で難局を乗り越えていけ。\n戦闘中一定時間ごとに、味方艦船を援護する特殊弾幕が出現する",
 		arg = {}
-	},
-	[200618] = {
+	}
+	pg.base.strategy_data_template[200618] = {
 		buff_id = 200618,
 		name = "レジェンド旗艦",
 		iconSize = "",
@@ -3055,8 +3062,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「偉大なるロイヤル・フォーチュン号」出撃！\n戦闘中、味方艦隊を援護してくれる、偉大なる旗艦の砲撃が出現する",
 		arg = {}
-	},
-	[200620] = {
+	}
+	pg.base.strategy_data_template[200620] = {
 		buff_id = 200620,
 		name = "レジェンド旗艦",
 		iconSize = "",
@@ -3066,8 +3073,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「偉大なるロイヤル・フォーチュン号」出撃！\n戦闘中、味方艦隊を援護してくれる、偉大なる旗艦の砲撃が出現する",
 		arg = {}
-	},
-	[200622] = {
+	}
+	pg.base.strategy_data_template[200622] = {
 		buff_id = 200622,
 		name = "レジェンド旗艦",
 		iconSize = "",
@@ -3077,8 +3084,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「偉大なるロイヤル・フォーチュン号」出撃！\n戦闘中、味方艦隊を援護してくれる、偉大なる旗艦の砲撃が出現する",
 		arg = {}
-	},
-	[200624] = {
+	}
+	pg.base.strategy_data_template[200624] = {
 		buff_id = 200624,
 		name = "異常気象:嵐",
 		iconSize = "",
@@ -3088,8 +3095,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "猛り狂う嵐の中で戦い続ける……\nテンペスタ所属艦船が受けるダメージが3％ダウンする",
 		arg = {}
-	},
-	[200627] = {
+	}
+	pg.base.strategy_data_template[200627] = {
 		buff_id = 200627,
 		name = "異常気象:台風の目",
 		iconSize = "",
@@ -3099,8 +3106,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "凪の台風の目で戦い続ける……\nテンペスタ所属艦船が与えるダメージが3％アップする",
 		arg = {}
-	},
-	[200630] = {
+	}
+	pg.base.strategy_data_template[200630] = {
 		buff_id = 200630,
 		name = "メテオミサイル",
 		iconSize = "",
@@ -3110,8 +3117,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、作戦支援端末「たーみなる」が制御するミサイル支援攻撃が出現する",
 		arg = {}
-	},
-	[200633] = {
+	}
+	pg.base.strategy_data_template[200633] = {
 		buff_id = 200633,
 		name = "メテオミサイル",
 		iconSize = "",
@@ -3121,8 +3128,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、作戦支援端末「たーみなる」が制御するミサイル支援攻撃が出現する",
 		arg = {}
-	},
-	[200645] = {
+	}
+	pg.base.strategy_data_template[200645] = {
 		buff_id = 200645,
 		name = "地脈仕掛-陰",
 		iconSize = "",
@@ -3132,8 +3139,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛が敵に制御されている。戦闘中、敵の支援弾幕が出現する",
 		arg = {}
-	},
-	[200646] = {
+	}
+	pg.base.strategy_data_template[200646] = {
 		buff_id = 200646,
 		name = "地脈仕掛-陽",
 		iconSize = "",
@@ -3143,8 +3150,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛が敵に制御されている。戦闘中、敵の支援弾幕が出現する",
 		arg = {}
-	},
-	[200647] = {
+	}
+	pg.base.strategy_data_template[200647] = {
 		buff_id = 200647,
 		name = "地脈仕掛-閃",
 		iconSize = "",
@@ -3154,8 +3161,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛が敵に制御されている。戦闘中、敵の支援弾幕・敵はダメージを軽減できるシールドをもつ",
 		arg = {}
-	},
-	[200648] = {
+	}
+	pg.base.strategy_data_template[200648] = {
 		buff_id = 200648,
 		name = "地脈仕掛-繚",
 		iconSize = "",
@@ -3165,8 +3172,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛が敵に制御されている。戦闘中、敵の支援弾幕が出現する他、敵に耐久回復効果が付与される",
 		arg = {}
-	},
-	[200649] = {
+	}
+	pg.base.strategy_data_template[200649] = {
 		buff_id = 200649,
 		name = "地脈仕掛-絢",
 		iconSize = "",
@@ -3176,8 +3183,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛が敵に制御されている。戦闘中、敵の支援弾幕が出現し、命中した艦船は中毒状態になり、持続ダメージを受ける",
 		arg = {}
-	},
-	[200655] = {
+	}
+	pg.base.strategy_data_template[200655] = {
 		buff_id = 200655,
 		name = "地脈仕掛-陰",
 		iconSize = "",
@@ -3187,8 +3194,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛を味方が制御している。戦闘中、味方の支援弾幕が出現する",
 		arg = {}
-	},
-	[200658] = {
+	}
+	pg.base.strategy_data_template[200658] = {
 		buff_id = 200658,
 		name = "地脈仕掛-陽",
 		iconSize = "",
@@ -3198,8 +3205,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛を味方が制御している。戦闘中、味方の支援弾幕が出現する",
 		arg = {}
-	},
-	[200661] = {
+	}
+	pg.base.strategy_data_template[200661] = {
 		buff_id = 200661,
 		name = "地脈仕掛-閃",
 		iconSize = "",
@@ -3209,8 +3216,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛を味方が制御している。戦闘中、味方の支援弾幕・味方はダメージを軽減できるシールドをもつ",
 		arg = {}
-	},
-	[200664] = {
+	}
+	pg.base.strategy_data_template[200664] = {
 		buff_id = 200664,
 		name = "地脈仕掛-繚",
 		iconSize = "",
@@ -3220,8 +3227,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛を味方が制御している。戦闘中、味方の支援弾幕が出現する他、味方に耐久回復効果が付与される",
 		arg = {}
-	},
-	[200667] = {
+	}
+	pg.base.strategy_data_template[200667] = {
 		buff_id = 200667,
 		name = "地脈仕掛-陰",
 		iconSize = "",
@@ -3231,8 +3238,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛を味方が制御している。戦闘中、味方の支援弾幕が出現する",
 		arg = {}
-	},
-	[200670] = {
+	}
+	pg.base.strategy_data_template[200670] = {
 		buff_id = 200670,
 		name = "地脈仕掛-陽",
 		iconSize = "",
@@ -3242,8 +3249,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛を味方が制御している。戦闘中、敵味方支援弾幕が出現する",
 		arg = {}
-	},
-	[200673] = {
+	}
+	pg.base.strategy_data_template[200673] = {
 		buff_id = 200673,
 		name = "地脈仕掛-閃",
 		iconSize = "",
@@ -3253,8 +3260,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛を味方が制御している。戦闘中、味方の支援弾幕・味方はダメージを軽減できるシールドをもつ",
 		arg = {}
-	},
-	[200676] = {
+	}
+	pg.base.strategy_data_template[200676] = {
 		buff_id = 200676,
 		name = "地脈仕掛-繚",
 		iconSize = "",
@@ -3264,8 +3271,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛を味方が制御している。戦闘中、味方の支援弾幕が出現する他、味方に耐久回復効果が付与される",
 		arg = {}
-	},
-	[200679] = {
+	}
+	pg.base.strategy_data_template[200679] = {
 		buff_id = 200679,
 		name = "地脈仕掛-絢",
 		iconSize = "",
@@ -3275,8 +3282,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "地脈仕掛を味方が制御している。戦闘中、味方の支援弾幕が出現し、命中した敵を中毒状態にして持続ダメージを与える",
 		arg = {}
-	},
-	[200732] = {
+	}
+	pg.base.strategy_data_template[200732] = {
 		buff_id = 200732,
 		name = "浮遊艦隊制圧",
 		iconSize = "",
@@ -3286,8 +3293,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "謎の浮遊艦隊によるジャミングを受けている。戦闘中味方の命中・回避が5％ダウンし、さらに受けるダメージが5%アップ",
 		arg = {}
-	},
-	[200735] = {
+	}
+	pg.base.strategy_data_template[200735] = {
 		buff_id = 200735,
 		name = "理事会艦隊支援",
 		iconSize = "",
@@ -3297,8 +3304,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "理事会艦隊による電子戦闘支援を受けている。戦闘中敵の命中・回避が5%ダウンし、さらに受けるダメージが5%アップ",
 		arg = {}
-	},
-	[200770] = {
+	}
+	pg.base.strategy_data_template[200770] = {
 		buff_id = 200770,
 		name = "極寒の氷原",
 		iconSize = "",
@@ -3308,8 +3315,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "南極の極寒環境で味方の速力が3ダウンし、回避が10%ダウンする。戦闘中戦場に無差別で被害をもたらす雪嵐が出現する",
 		arg = {}
-	},
-	[200774] = {
+	}
+	pg.base.strategy_data_template[200774] = {
 		buff_id = 200774,
 		name = "指揮サポート・「ヘレナ」",
 		iconSize = "",
@@ -3319,8 +3326,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「ヘレナ」の戦術指揮ネットワークへのサポートにより、各艦隊を思うように指揮し連携させることが可能。\n海域の特定回数の戦闘では、連合艦隊による支援弾幕が出現する",
 		arg = {}
-	},
-	[200777] = {
+	}
+	pg.base.strategy_data_template[200777] = {
 		buff_id = 200777,
 		name = "指揮サポート・「ヘレナ」",
 		iconSize = "",
@@ -3330,8 +3337,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「ヘレナ」の戦術指揮ネットワークへのサポートにより、各艦隊を思うように指揮し連携させることが可能。\n海域の特定回数の戦闘では、連合艦隊による支援弾幕が出現する",
 		arg = {}
-	},
-	[200780] = {
+	}
+	pg.base.strategy_data_template[200780] = {
 		buff_id = 200780,
 		name = "実験型爆撃機支援",
 		iconSize = "",
@@ -3341,8 +3348,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "サラトガの秘密航空兵器の支援により、戦闘中味方の特殊航空弾幕が出現する",
 		arg = {}
-	},
-	[200783] = {
+	}
+	pg.base.strategy_data_template[200783] = {
 		buff_id = 200783,
 		name = "実験型爆撃機支援",
 		iconSize = "",
@@ -3352,8 +3359,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "サラトガの秘密航空兵器の支援により、戦闘中味方の特殊航空弾幕が出現する",
 		arg = {}
-	},
-	[200902] = {
+	}
+	pg.base.strategy_data_template[200902] = {
 		buff_id = 200902,
 		name = "ソング・オブ・アリザリン",
 		iconSize = "",
@@ -3363,8 +3370,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ユニット「Alizarin」のステージ！戦闘開始から15秒間、歌声に励まされて味方全員の火力・雷装・航空・装填が5%アップ",
 		arg = {}
-	},
-	[200903] = {
+	}
+	pg.base.strategy_data_template[200903] = {
 		buff_id = 200903,
 		name = "ソング・オブ・シアニジン",
 		iconSize = "",
@@ -3374,8 +3381,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ユニット「Cyanidin」のステージ！戦闘開始から15秒間、歌声に励まされて味方全員にそれぞれの耐久上限の2％分のダメージを無効にできるシールドを生成し、さらに15秒間その艦船が受けるダメージを5％軽減する",
 		arg = {}
-	},
-	[200905] = {
+	}
+	pg.base.strategy_data_template[200905] = {
 		buff_id = 200905,
 		name = "スポットライト-アリザリン",
 		iconSize = "",
@@ -3385,8 +3392,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "注目効果",
 		arg = {}
-	},
-	[200907] = {
+	}
+	pg.base.strategy_data_template[200907] = {
 		buff_id = 200907,
 		name = "スポットライト-シアニジン",
 		iconSize = "",
@@ -3396,8 +3403,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "注目効果",
 		arg = {}
-	},
-	[200908] = {
+	}
+	pg.base.strategy_data_template[200908] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -3407,8 +3414,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始時味方前衛艦隊に艦船が1隻のみ存在する場合、戦闘はチャレンジモードに入り難易度が上昇するが、クリアするとより高いスコアが狙えるようになります。\n\nチャレンジモードの特徴：\n敵が与えるダメージが大幅に上昇し、生成される回転シールドの耐久が無限になる；\n時間経過で敵が与えるダメージがさらに上昇する\n装備・スキル【スクランブル】【ウサウサラストスタンド】が無効になる",
 		arg = {}
-	},
-	[200925] = {
+	}
+	pg.base.strategy_data_template[200925] = {
 		buff_id = 200925,
 		name = "デスブリッジ",
 		iconSize = "",
@@ -3418,8 +3425,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "デスブリッジが有効化された。\n戦闘中、敵の「デスシャドウ」からの支援攻撃が出現する",
 		arg = {}
-	},
-	[200926] = {
+	}
+	pg.base.strategy_data_template[200926] = {
 		buff_id = 0,
 		name = "偽相体",
 		iconSize = "",
@@ -3429,8 +3436,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "/*偽相体*/が撃破されると分裂し、周囲の/*偽相体*/の数を増やす。\n\nーー/*偽相体*/の存在が確認された。/*偽相体*/とは一体…？",
 		arg = {}
-	},
-	[200928] = {
+	}
+	pg.base.strategy_data_template[200928] = {
 		buff_id = 200928,
 		name = "「死」のマルティリウム",
 		iconSize = "",
@@ -3440,8 +3447,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「死」の概念を係留し、基盤の上でマルティリウムとしてそれを具現化する。\n戦闘中、任意の味方が敵を撃破した場合、その味方の全ステータスが1%アップ（最大5層まで）",
 		arg = {}
-	},
-	[200930] = {
+	}
+	pg.base.strategy_data_template[200930] = {
 		buff_id = 200930,
 		name = "「輝ける犠牲」のマルティリウム",
 		iconSize = "",
@@ -3451,8 +3458,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「死」の概念が昇華し、マルティリウムは尊き犠牲を讃頌する。\n戦闘中、任意の味方が敵を撃破した場合、その味方の全ステータスが1%アップ（最大5層まで）。任意の味方が敵を累計10体撃破した場合、特殊支援弾幕が出現する",
 		arg = {}
-	},
-	[200931] = {
+	}
+	pg.base.strategy_data_template[200931] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -3462,8 +3469,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始時味方艦船が【謎のD装置】を装備している場合、戦闘はチャレンジモードに入り難易度が上昇しますが、クリアするとより高いスコアが狙えるようになります。\n\n  チャレンジモードの特徴：\n 敵が与えるダメージが大幅に上昇し、生成される回転シールドの耐久が無限になる；\n 時間経過で敵が与えるダメージがさらに上昇する\n 装備・スキル【スクランブル】【ウサウサラストスタンド】が無効になる",
 		arg = {}
-	},
-	[200932] = {
+	}
+	pg.base.strategy_data_template[200932] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -3473,8 +3480,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始時、味方前衛艦隊に「ビーバーズエムブレム」を装備中の艦船がいる場合、戦闘はチャレンジモードに入り難易度が上昇する代わりに、クリアするとより高いスコアが狙えるようになります。\n\n  チャレンジモードの特徴：\n 敵が与えるダメージが大幅に上昇。敵弾がシールドを無視し、射線上の全ての味方艦船にダメージを与える；\n 味方が装備している【精鋭ダメコン饅頭(ユニオン)】の効果が陣営で制限されなくなり、攻撃回避効果の持続時間が3秒になる代わりに、効果終了後対象艦船の耐久が0にならなくなる。\n\n装備・スキル【スクランブル】【ウサウサラストスタンド】が無効になる",
 		arg = {}
-	},
-	[200979] = {
+	}
+	pg.base.strategy_data_template[200979] = {
 		buff_id = 200979,
 		name = "蒼紅の幻境",
 		iconSize = "",
@@ -3484,8 +3491,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——戦場は蒼紅の幻境に包まれている。\n戦闘開始15秒間、味方が受ける回復効果が10％ダウン、敵が与えるダメージが5％アップ。",
 		arg = {}
-	},
-	[200980] = {
+	}
+	pg.base.strategy_data_template[200980] = {
 		buff_id = 200980,
 		name = "「嵐」",
 		iconSize = "",
@@ -3495,8 +3502,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「嵐」が吹き荒れている。\n戦闘中お互いの命中率が5％ダウンし、速力が3ダウンする。",
 		arg = {}
-	},
-	[200983] = {
+	}
+	pg.base.strategy_data_template[200983] = {
 		buff_id = 0,
 		name = "蒼紅の影",
 		iconSize = "",
@@ -3506,8 +3513,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——蒼紅の穢れの影がこちらを見つめている。\n戦闘中、一定の間隔で敵の特殊支援弾幕が出現する。",
 		arg = {}
-	},
-	[200984] = {
+	}
+	pg.base.strategy_data_template[200984] = {
 		buff_id = 200984,
 		name = "凍雨ロケット支援",
 		iconSize = "",
@@ -3517,8 +3524,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「凍雨」アーセナルシップ、支援攻撃を開始する！\n戦闘中、一定の間隔で敵を凍らせる味方の特殊支援弾幕が出現する。",
 		arg = {}
-	},
-	[200987] = {
+	}
+	pg.base.strategy_data_template[200987] = {
 		buff_id = 200987,
 		name = "凍雨ロケット支援",
 		iconSize = "",
@@ -3528,8 +3535,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「凍雨」アーセナルシップ、支援攻撃を開始する！\n戦闘中、一定の間隔で敵を凍らせる味方の特殊支援弾幕が出現する。",
 		arg = {}
-	},
-	[200990] = {
+	}
+	pg.base.strategy_data_template[200990] = {
 		buff_id = 200990,
 		name = "凍雨ロケット支援",
 		iconSize = "",
@@ -3539,8 +3546,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「凍雨」アーセナルシップ、支援攻撃を開始する！\n戦闘中、一定の間隔で敵を凍らせる味方の特殊支援弾幕が出現する。",
 		arg = {}
-	},
-	[200999] = {
+	}
+	pg.base.strategy_data_template[200999] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -3550,8 +3557,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始時味方艦船が【輸送用高速ドローン】を装備している場合、戦闘はチャレンジモードに入り難易度が上昇しますが、クリアするとより高いスコアが狙えるようになります。\n\n  チャレンジモードの特徴：\n 敵が与えるダメージが大幅に上昇。敵弾がシールドを無視し、射線上の全ての味方艦船にダメージを与える；\n 敵の耐久が一定値以上の場合、味方を支援する「凍雨」アーセナルシップが画面左側に出現する。アーセナルシップは独自の耐久を持ち、一部の敵弾幕には非常に弱いが、敵に高火力の支援攻撃を行う。",
 		arg = {}
-	},
-	[201021] = {
+	}
+	pg.base.strategy_data_template[201021] = {
 		buff_id = 201021,
 		name = "深緋の秘境",
 		iconSize = "",
@@ -3561,8 +3568,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "――「天城姉さま、もうすぐ会えますわ」\n戦闘開始15秒間、味方艦船の装填が5％ダウンし、敵の装填が10%アップ",
 		arg = {}
-	},
-	[201022] = {
+	}
+	pg.base.strategy_data_template[201022] = {
 		buff_id = 0,
 		name = "深緋の秘境",
 		iconSize = "",
@@ -3572,8 +3579,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "――「天城姉さま、もうすぐ会えますわ」\n戦闘開始15秒間、味方艦船の装填が5％ダウンし、敵の装填が10%アップ",
 		arg = {}
-	},
-	[201024] = {
+	}
+	pg.base.strategy_data_template[201024] = {
 		buff_id = 201024,
 		name = "武蔵の雷鳴",
 		iconSize = "",
@@ -3583,8 +3590,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "――「鏡湖に映されし雷雲、我が天剣と共に紫電を放たん」\n戦闘中、敵に耐久最大値に比例するダメージを与える味方の支援弾幕が出現する",
 		arg = {}
-	},
-	[201027] = {
+	}
+	pg.base.strategy_data_template[201027] = {
 		buff_id = 201027,
 		name = "三笠の覚悟",
 		iconSize = "",
@@ -3594,8 +3601,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "――「我は最後の砦、これ以上近づかせはせん！」\n戦闘中、味方の命中・回避が5%アップ、さらに一定の頻度で味方の支援弾幕が出現する",
 		arg = {}
-	},
-	[201029] = {
+	}
+	pg.base.strategy_data_template[201029] = {
 		buff_id = 201029,
 		name = "加賀の使命",
 		iconSize = "",
@@ -3605,8 +3612,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "――「例え地獄に堕ちようとも、お前のことを守る」\n戦闘中、一定の頻度で味方の支援弾幕が出現する。さらに「深緋の秘境」効果を無効にする",
 		arg = {}
-	},
-	[201090] = {
+	}
+	pg.base.strategy_data_template[201090] = {
 		buff_id = 201090,
 		name = "世界サンプル",
 		iconSize = "",
@@ -3616,8 +3623,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方主力艦隊艦船が受ける炎上ダメージを20％軽減し、回避が5％アップ。\n味方艦隊に重桜艦船が4隻以上いる場合、戦闘開始15秒後、味方の特殊支援弾幕が出現する",
 		arg = {}
-	},
-	[201094] = {
+	}
+	pg.base.strategy_data_template[201094] = {
 		buff_id = 201094,
 		name = "ナラクの淵",
 		iconSize = "",
@@ -3627,8 +3634,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方「META」艦船が与えるダメージが10％アップし、受ける回復効果が10％アップする；それ以外の艦船が受けるダメージが5％アップし、受ける回復効果が8％ダウンする",
 		arg = {}
-	},
-	[201097] = {
+	}
+	pg.base.strategy_data_template[201097] = {
 		buff_id = 201097,
 		name = "蒼紅の炎",
 		iconSize = "",
@@ -3638,8 +3645,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中味方の特殊支援弾幕が出現し、命中した敵を特殊炎上状態にし、耐久上限に比例してダメージを与える",
 		arg = {}
-	},
-	[201100] = {
+	}
+	pg.base.strategy_data_template[201100] = {
 		buff_id = 0,
 		name = "チャレンジ説明",
 		iconSize = "",
@@ -3649,8 +3656,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ハードモード仕様：\n 敵が与えるダメージが大幅に上昇。敵弾がシールドを無視し、射線上の全ての味方艦船にダメージを与える；\n 敵の「青の影」「紅の影」が受ける徹甲弾/半徹甲弾/魚雷のダメージが大幅に減少するが、受ける炎上ダメージが上昇する。\n 敵耐久度が一定値を下回った場合、海域に味方の法陣が出現し、全ての法陣を起動すると味方の支援攻撃が出現する。\n\n 下記装備・スキルは無効になる：\n 【ウサウサラストスタンド】、【レインボー・プラン】",
 		arg = {}
-	},
-	[201149] = {
+	}
+	pg.base.strategy_data_template[201149] = {
 		buff_id = 201149,
 		name = "吹き荒れる嵐",
 		iconSize = "",
@@ -3660,8 +3667,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "船団が嵐に突入した。テンペスタ陣営を除く味方全員の速力が3・回避が5%ダウン。さらにテンペスタ陣営の艦船が与えるダメージが10％アップ",
 		arg = {}
-	},
-	[201152] = {
+	}
+	pg.base.strategy_data_template[201152] = {
 		buff_id = 201152,
 		name = "静寂の海",
 		iconSize = "",
@@ -3671,8 +3678,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "船団が静寂の海に突入した。テンペスタ陣営を除く味方が受ける回復効果が10％ダウン。さらにテンペスタ陣営の艦船が受けるダメージが10％ダウン",
 		arg = {}
-	},
-	[201155] = {
+	}
+	pg.base.strategy_data_template[201155] = {
 		buff_id = 201155,
 		name = "女神の憐れみ",
 		iconSize = "",
@@ -3682,8 +3689,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始25秒後味方艦隊の支援弾幕が出現し、さらに15秒間徐々に味方艦隊の耐久が回復する",
 		arg = {}
-	},
-	[201157] = {
+	}
+	pg.base.strategy_data_template[201157] = {
 		buff_id = 201157,
 		name = "ファンシーの力",
 		iconSize = "",
@@ -3693,8 +3700,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "船団はファンシーの支援を受けている。戦闘中一定時間ごとにランダムな敵1体はファンシーの触手に襲われ、装甲破壊効果が付与される",
 		arg = {}
-	},
-	[201158] = {
+	}
+	pg.base.strategy_data_template[201158] = {
 		buff_id = 0,
 		name = "チャレンジ説明",
 		iconSize = "",
@@ -3704,8 +3711,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ハードモード仕様：\n 敵が与えるダメージが大幅に上昇。敵弾がシールドを無視し、射線上の全ての味方艦船にダメージを与えるが、時間経過とともに敵が受けるダメージも上昇する。\n 一部の敵攻撃はクイズ形式になっている。\n\n 下記装備・スキルは無効になる：\n 【ウサウサラストスタンド】、【レインボー・プラン】",
 		arg = {}
-	},
-	[201193] = {
+	}
+	pg.base.strategy_data_template[201193] = {
 		buff_id = 201193,
 		name = "星空の下",
 		iconSize = "",
@@ -3715,8 +3722,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "星空の下、全てがはっきりと見える。\n味方艦隊の戦闘時に、不定期で高空から敵の支援攻撃が出現する",
 		arg = {}
-	},
-	[201194] = {
+	}
+	pg.base.strategy_data_template[201194] = {
 		buff_id = 201194,
 		name = "IB-50 プテラ",
 		iconSize = "",
@@ -3726,8 +3733,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、レジスタンス基地から「オーニソプター・プテラ」による支援が出現する",
 		arg = {}
-	},
-	[201197] = {
+	}
+	pg.base.strategy_data_template[201197] = {
 		buff_id = 201197,
 		name = "エターナル・スター",
 		iconSize = "",
@@ -3737,8 +3744,10 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、定期的に「エターナル・スター」による支援攻撃が出現する。弾幕が敵に命中した場合、ダメージを与え、さらに装甲破壊効果を与える",
 		arg = {}
-	},
-	[201198] = {
+	}
+end)()
+;(function()
+	pg.base.strategy_data_template[201198] = {
 		buff_id = 0,
 		name = "外なる獣の群れ",
 		iconSize = "",
@@ -3748,8 +3757,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "外なる獣の群れが現れり。その勢いは水天の境界線をも変える。\n「外なる獣」系の敵は炎上ダメージを受けない。また周回モード以外は敵が味方艦隊を追跡するようになる",
 		arg = {}
-	},
-	[201199] = {
+	}
+	pg.base.strategy_data_template[201199] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -3759,8 +3768,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ハードモード仕様：\n 敵が与えるダメージが大幅に上昇。敵弾がシールドを無視し、射線上の全ての味方艦船にダメージを与える；\n 敵が一部回避不能の攻撃を繰り出す時、「アドミラル・ヒッパー(META)」からの支援が出現する。\n\n 下記装備・スキルは無効になる：\n 【ウサウサラストスタンド】、【レインボー・プラン】",
 		arg = {}
-	},
-	[201250] = {
+	}
+	pg.base.strategy_data_template[201250] = {
 		buff_id = 201250,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -3770,8 +3779,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ハードモード仕様：\n敵が与えるダメージが大幅に上昇。敵の耐久が上限の40％を下回った時、攻撃パターンが変更し、3秒間ダメージを受けにくくなる；10％を下回った時、ラストモードになる。\n味方前衛艦隊の<color=#92fc63>当たり判定は前衛艦隊先頭艦だけになり、さらに当たり判定の大きさが大幅に小さくなる</color>。\n艦船が被弾した時、一定時間無敵になる。\n\n下記装備・スキルは無効になる：\n【ウサウサラストスタンド】、【レインボー・プラン】",
 		arg = {}
-	},
-	[201270] = {
+	}
+	pg.base.strategy_data_template[201270] = {
 		buff_id = 201270,
 		name = "神光の織網",
 		iconSize = "",
@@ -3781,8 +3790,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中に1度だけ、敵味方両方に影響する神光の衝撃が発生する。\nサディア所属の艦船・ユニット：耐久が少し回復する\nその他の艦船・ユニット：一定時間回避と速力がダウンする",
 		arg = {}
-	},
-	[201276] = {
+	}
+	pg.base.strategy_data_template[201276] = {
 		buff_id = 201276,
 		name = "永夜の領域",
 		iconSize = "",
@@ -3792,8 +3801,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、永夜の旗による影響が敵味方両方関係なく適用される。\nMETA艦船：与えるダメージが上昇する\nその他の艦船・ユニット：命中が少しダウン。受ける炎上ダメージが上昇する",
 		arg = {}
-	},
-	[201281] = {
+	}
+	pg.base.strategy_data_template[201281] = {
 		buff_id = 201281,
 		name = "戦車改造域",
 		iconSize = "",
@@ -3803,8 +3812,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "メカアービトレイター・チャリオットが戦場を支配している。\nセイレーン：「過熱射撃」を得る\nその他の艦船・ユニット：受けるダメージが少しアップする",
 		arg = {}
-	},
-	[201287] = {
+	}
+	pg.base.strategy_data_template[201287] = {
 		buff_id = 201287,
 		name = "飛空艇団支援",
 		iconSize = "",
@@ -3814,8 +3823,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方の飛空艇団の支援が出現する",
 		arg = {}
-	},
-	[201301] = {
+	}
+	pg.base.strategy_data_template[201301] = {
 		buff_id = 201315,
 		name = "定期巡回",
 		iconSize = "",
@@ -3825,8 +3834,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中追加の敵が出現する",
 		arg = {}
-	},
-	[201302] = {
+	}
+	pg.base.strategy_data_template[201302] = {
 		buff_id = 201316,
 		name = "怪しい影",
 		iconSize = "",
@@ -3836,8 +3845,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中敵の潜水艦が出現する",
 		arg = {}
-	},
-	[201303] = {
+	}
+	pg.base.strategy_data_template[201303] = {
 		buff_id = 201317,
 		name = "奇妙な音",
 		iconSize = "",
@@ -3847,8 +3856,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中一定時間経過する毎に味方の速力と命中がダウンする",
 		arg = {}
-	},
-	[201304] = {
+	}
+	pg.base.strategy_data_template[201304] = {
 		buff_id = 201322,
 		name = "来訪者制限",
 		iconSize = "",
@@ -3858,8 +3867,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始から30秒間、味方が与えるダメージが少しダウンする",
 		arg = {}
-	},
-	[201305] = {
+	}
+	pg.base.strategy_data_template[201305] = {
 		buff_id = 201323,
 		name = "特別問診",
 		iconSize = "",
@@ -3869,8 +3878,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中3秒毎に、味方の内、耐久が一番高いキャラの耐久が耐久上限の割合で少しダウンする",
 		arg = {}
-	},
-	[201306] = {
+	}
+	pg.base.strategy_data_template[201306] = {
 		buff_id = 201326,
 		name = "妖艶なる桜",
 		iconSize = "",
@@ -3880,8 +3889,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中敵の支援弾幕が出現する",
 		arg = {}
-	},
-	[201307] = {
+	}
+	pg.base.strategy_data_template[201307] = {
 		buff_id = 201327,
 		name = "セキュリティ警戒",
 		iconSize = "",
@@ -3891,8 +3900,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中敵の支援弾幕が出現する",
 		arg = {}
-	},
-	[201308] = {
+	}
+	pg.base.strategy_data_template[201308] = {
 		buff_id = 201328,
 		name = "無限ループ回廊",
 		iconSize = "",
@@ -3902,8 +3911,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "旗艦以外の敵は一定時間経過する毎に、耐久上限の割合で耐久が回復する。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201309] = {
+	}
+	pg.base.strategy_data_template[201309] = {
 		buff_id = 201332,
 		name = "地下区画探索",
 		iconSize = "",
@@ -3913,8 +3922,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201310] = {
+	}
+	pg.base.strategy_data_template[201310] = {
 		buff_id = 201401,
 		name = "ナースステーション探索",
 		iconSize = "",
@@ -3924,8 +3933,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201311] = {
+	}
+	pg.base.strategy_data_template[201311] = {
 		buff_id = 201402,
 		name = "病室探索",
 		iconSize = "",
@@ -3935,8 +3944,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201312] = {
+	}
+	pg.base.strategy_data_template[201312] = {
 		buff_id = 201403,
 		name = "森探索",
 		iconSize = "",
@@ -3946,8 +3955,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201313] = {
+	}
+	pg.base.strategy_data_template[201313] = {
 		buff_id = 201404,
 		name = "庭院探索",
 		iconSize = "",
@@ -3957,8 +3966,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201314] = {
+	}
+	pg.base.strategy_data_template[201314] = {
 		buff_id = 201332,
 		name = "研究所地下探索",
 		iconSize = "",
@@ -3968,8 +3977,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201315] = {
+	}
+	pg.base.strategy_data_template[201315] = {
 		buff_id = 201405,
 		name = "正門探索",
 		iconSize = "",
@@ -3979,8 +3988,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201316] = {
+	}
+	pg.base.strategy_data_template[201316] = {
 		buff_id = 201406,
 		name = "駐車場探索",
 		iconSize = "",
@@ -3990,8 +3999,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201317] = {
+	}
+	pg.base.strategy_data_template[201317] = {
 		buff_id = 201407,
 		name = "駐車場地下探索",
 		iconSize = "",
@@ -4001,8 +4010,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201318] = {
+	}
+	pg.base.strategy_data_template[201318] = {
 		buff_id = 201408,
 		name = "守衛室探索",
 		iconSize = "",
@@ -4012,8 +4021,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201319] = {
+	}
+	pg.base.strategy_data_template[201319] = {
 		buff_id = 201409,
 		name = "医師オフィス探索",
 		iconSize = "",
@@ -4023,8 +4032,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201320] = {
+	}
+	pg.base.strategy_data_template[201320] = {
 		buff_id = 201405,
 		name = "裏口探索",
 		iconSize = "",
@@ -4034,8 +4043,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "探索中により多くのエリアを探索した。探索回数+1、不利効果「エリア探索」を有効化する",
 		arg = {}
-	},
-	[201321] = {
+	}
+	pg.base.strategy_data_template[201321] = {
 		buff_id = 0,
 		name = "エリア探索",
 		iconSize = "",
@@ -4045,8 +4054,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "このステージの【探索回数】カウントに応じて下記の効果を発揮する：\n ≥1-味方艦船全員のステータスが15％ダウンし、敵旗艦が与えるダメージが20％アップ；\n ≥2-敵旗艦が「抗体」効果を得る：敵旗艦登場後、味方が主力艦隊砲撃・航空攻撃・魚雷攻撃を発動する度に、同攻撃で受けるダメージを10%/10%/5%軽減するようになる（それぞれのダメージ軽減効果は最大7回まで加算可能）；\n ≥3-味方艦船全員のステータスがさらに15％ダウンし、戦闘中5秒毎に落雷が出現し、耐久の上限を占める割合が一番高い味方艦船の耐久が上限の5％分失われる\n ≥4-味方艦船への回復効果はダメージ効果になり、戦場をゆっくり移動し、中にいる味方前衛艦隊が受けるダメージを50％増加させる渦が出現する",
 		arg = {}
-	},
-	[201327] = {
+	}
+	pg.base.strategy_data_template[201327] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4056,8 +4065,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ハードモード仕様：\n 敵が与えるダメージが<color=#ffc038>極大アップ</color>。大きなサイズの敵弾は航空攻撃・シールドによって消されない。\n 味方前衛艦隊の<color=#92fc63>当たり判定は前衛艦隊先頭艦だけになり、さらに当たり判定の大きさが大幅に小さくなる</color>。\n 艦船が被弾した時、一定時間無敵になる。\n\n 下記装備・スキルは無効になる：\n 【ウサウサラストスタンド】、【レインボー・プラン】、【絶対絶命】",
 		arg = {}
-	},
-	[201361] = {
+	}
+	pg.base.strategy_data_template[201361] = {
 		buff_id = 201361,
 		name = "チュリッパの海へ",
 		iconSize = "",
@@ -4067,8 +4076,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中一定時間ごとに、味方艦船に敵弾を一定回数無効にできる回転シールドを生成する。\n チュリッパ所属艦船がこのシールドを得た場合、耐久が少し回復する",
 		arg = {}
-	},
-	[201365] = {
+	}
+	pg.base.strategy_data_template[201365] = {
 		buff_id = 201365,
 		name = "堰堤防御システム",
 		iconSize = "",
@@ -4078,8 +4087,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、堰堤周辺の沿岸砲による支援弾幕が出現する",
 		arg = {}
-	},
-	[201377] = {
+	}
+	pg.base.strategy_data_template[201377] = {
 		buff_id = 0,
 		name = "第二類偽相",
 		iconSize = "",
@@ -4089,8 +4098,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「第二類偽相」が撃破された場合、「第二類偽相」が放出され、周りの「第二類偽相」に「第二類偽相」を提供する。\n\n 「第二類偽相」は気づかれた。「第二類偽相」とは一体？",
 		arg = {}
-	},
-	[201378] = {
+	}
+	pg.base.strategy_data_template[201378] = {
 		buff_id = 201378,
 		name = "支援・光翼の獅子",
 		iconSize = "",
@@ -4100,8 +4109,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、光翼の獅子による支援が出現する",
 		arg = {}
-	},
-	[201382] = {
+	}
+	pg.base.strategy_data_template[201382] = {
 		buff_id = 201382,
 		name = "支援・列車",
 		iconSize = "",
@@ -4111,8 +4120,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、「クイーンズライト号」による支援攻撃が出現する",
 		arg = {}
-	},
-	[201386] = {
+	}
+	pg.base.strategy_data_template[201386] = {
 		buff_id = 201386,
 		name = "支援・セイレーン",
 		iconSize = "",
@@ -4122,8 +4131,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、コンパイラーが配置したⅡ型標準量産型混成艦隊による支援が出現する",
 		arg = {}
-	},
-	[201410] = {
+	}
+	pg.base.strategy_data_template[201410] = {
 		buff_id = 201410,
 		name = "支援・薔薇の塔",
 		iconSize = "",
@@ -4133,8 +4142,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "薔薇の塔が防護バリアを展開した。戦闘中、味方艦隊が受けるダメージが少し軽減される",
 		arg = {}
-	},
-	[201411] = {
+	}
+	pg.base.strategy_data_template[201411] = {
 		buff_id = 201411,
 		name = "制圧・薔薇の塔",
 		iconSize = "",
@@ -4144,8 +4153,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "薔薇の塔は制圧バリアを展開した。戦闘中、味方艦隊が与えるダメージが少し低くなる",
 		arg = {}
-	},
-	[201461] = {
+	}
+	pg.base.strategy_data_template[201461] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4155,8 +4164,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "注意：戦闘中敵ボスが出現するまで<color=#ffc038>雑魚敵が出現する</color>。ボスの一定時間経過で出現するが、敵戦艦・敵空母を早期に撃破することで<color=#92fc63>ボスの出現時間を早めることができる</color>。敵が画面左側に到達しても、味方主力艦隊はダメージを受けない。",
 		arg = {}
-	},
-	[201462] = {
+	}
+	pg.base.strategy_data_template[201462] = {
 		buff_id = 0,
 		name = "EX説明",
 		iconSize = "",
@@ -4166,8 +4175,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "注意：戦闘中敵ボスが出現するまで<color=#ffc038>雑魚敵が出現する</color>。ボスの一定時間経過で出現するが、敵戦艦・敵空母を早期に撃破することで<color=#92fc63>ボスの出現時間を早めることができる</color>。敵が画面左側に到達しても、味方主力艦隊はダメージを受けない。\n\n ハードモード仕様：\n 敵が与えるダメージが<color=#ffc038>大幅に上昇</color>。敵弾がシールドを無視する。\n 味方前衛艦隊の<color=#92fc63>被弾判定が大幅に縮小され、同時に先頭位置の艦船のみが被弾判定を持ち</color>、その他の艦船は無敵状態になる。\n 艦船が被弾判定を受けた際、短時間の無敵がになる。\n\n 下記装備・スキルは無効になる：\n 【ウサウサラストスタンド】、【レインボー・プラン】、【絶対絶命】",
 		arg = {}
-	},
-	[201463] = {
+	}
+	pg.base.strategy_data_template[201463] = {
 		buff_id = 0,
 		name = "チャレンジ説明",
 		iconSize = "",
@@ -4177,8 +4186,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ボスは<color=#92fc63>黒と白の2つの形態があり</color>、それぞれに耐久と戦い方が存在する。黒形態では<color=#92fc63>受けるダメージが固定で1になる</color>。\n ボスの現在の形態がすべての攻撃を行い、もう一つの形態の耐久が0でない限り、その形態に切り替わる。また、ボスの現在の形態の耐久が0になった場合も、もう一つの形態に切り替わる；切り替わった時、切り替わった先の形態は<color=#92fc63>凶暴化</color>状態になり、与えるダメージと受けるダメージが100％アップ（黒形態が受けるダメージは固定で2になる）。",
 		arg = {}
-	},
-	[201464] = {
+	}
+	pg.base.strategy_data_template[201464] = {
 		buff_id = 0,
 		name = "チャレンジ説明",
 		iconSize = "",
@@ -4188,8 +4197,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ボスは<color=#92fc63>黒と白の2つの形態があり</color>、それぞれに耐久と戦い方が存在する。黒形態では<color=#92fc63>受けるダメージが固定で1になる</color>。\n ボスの現在の形態がすべての攻撃を行い、もう一つの形態の耐久が0でない限り、その形態に切り替わる。また、ボスの現在の形態の耐久が0になった場合も、もう一つの形態に切り替わる；切り替わった時、切り替わった先の形態は<color=#92fc63>凶暴化</color>状態になり、与えるダメージと受けるダメージが100％アップ（黒形態が受けるダメージは固定で2になる）。\n\n ハードモード仕様：\n 敵が与えるダメージが<color=#ffc038>極大アップ</color>。大きなサイズの敵弾は航空攻撃・シールドによって消されない。\n 味方前衛艦隊の<color=#92fc63>当たり判定は前衛艦隊先頭艦だけになり、さらに当たり判定の大きさが大幅に小さくなる</color>。\n 艦船が被弾した時、一定時間無敵になる。\n\n 下記装備・スキルは無効になる：\n 【ウサウサラストスタンド】、【レインボー・プラン】、【絶対絶命】",
 		arg = {}
-	},
-	[201515] = {
+	}
+	pg.base.strategy_data_template[201515] = {
 		buff_id = 201515,
 		name = "精神同調Ⅰ",
 		iconSize = "",
@@ -4199,8 +4208,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「███解除：22.8％」——\n視界に正体不明の幻像が現れ始めた。\n戦闘中、無差別に敵味方を攻撃する弾幕が出現する",
 		arg = {}
-	},
-	[201516] = {
+	}
+	pg.base.strategy_data_template[201516] = {
 		buff_id = 201515,
 		name = "精神同調Ⅱ",
 		iconSize = "",
@@ -4210,8 +4219,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「███解除：37.1％」——\n幻像と現実の境界が薄れ始めた。\n戦闘中、無差別に敵味方を攻撃する弾幕が出現します",
 		arg = {}
-	},
-	[201517] = {
+	}
+	pg.base.strategy_data_template[201517] = {
 		buff_id = 201515,
 		name = "精神同調Ⅲ",
 		iconSize = "",
@@ -4221,8 +4230,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "——「███解除：89.9％」——\n現実は幻、幻は現実。\n戦闘中、無差別に敵味方を攻撃する弾幕が出現します",
 		arg = {}
-	},
-	[201519] = {
+	}
+	pg.base.strategy_data_template[201519] = {
 		buff_id = 201519,
 		name = "アマハラ加護-蝶",
 		iconSize = "",
@@ -4232,8 +4241,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "アマハラ加護結界：蝶\n戦闘中、味方が投射砲撃・航空攻撃・魚雷攻撃を発動時、蝶の特殊弾幕が出現する",
 		arg = {}
-	},
-	[201525] = {
+	}
+	pg.base.strategy_data_template[201525] = {
 		buff_id = 201525,
 		name = "アマハラ加護-羽",
 		iconSize = "",
@@ -4243,8 +4252,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "アマハラ加護結界：羽\n戦闘中20秒毎に、味方を支援する白鳳凰が出現する",
 		arg = {}
-	},
-	[201530] = {
+	}
+	pg.base.strategy_data_template[201530] = {
 		buff_id = 201530,
 		name = "アマハラ加護-鱗",
 		iconSize = "",
@@ -4254,8 +4263,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "アマハラ加護結界：鱗\n戦闘開始後、味方を支援する竜が出現し、一定時間後に消滅する",
 		arg = {}
-	},
-	[201531] = {
+	}
+	pg.base.strategy_data_template[201531] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4265,8 +4274,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、ボスに随伴する赤い光の玉が出現する。光の玉はダメージを与えられないが、薫りの煙幕を散布し続ける。艦船が薫りの煙幕内にいる限り、その影響を受け、時間経過とともに速力がダウンし・受けるダメージがアップする；煙幕に累計で1秒間いると眩暈状態になり、受けるダメージが倍になり、煙幕が消えるまで攻撃・移動できなくなる。\n 煙幕から出ると、受けた煙幕の影響が半分の速さで消失する。",
 		arg = {}
-	},
-	[201532] = {
+	}
+	pg.base.strategy_data_template[201532] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4276,8 +4285,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、ボスに随伴する赤い光の玉が出現する。光の玉はダメージを与えられないが、薫りの煙幕を散布し続ける。当たり判定が有効な味方艦船が薫りの煙幕内にいる限り、時間経過とともに速力がダウンし・受けるダメージがアップする；煙幕に累計で1秒間いると眩暈状態になり、受けるダメージが倍になり、煙幕が消えるまで攻撃・移動できなくなる。\n 煙幕から出ると、受けた煙幕の影響が半分の速さで消失する。\n\n  ハードモード仕様：\n 敵が与えるダメージが<color=#ffc038>極大アップ</color>。大きなサイズの敵弾は航空攻撃・シールドによって消されない。\n 味方前衛艦隊の<color=#92fc63>当たり判定が前衛艦隊先頭艦だけになり、さらに当たり判定の大きさが大幅に小さくなる</color>。\n 艦船が被弾した時、一定時間無敵になる。\n\n 下記装備・スキルは無効になる：\n 【ウサウサラストスタンド】、【レインボー・プラン】、【絶対絶命】",
 		arg = {}
-	},
-	[201547] = {
+	}
+	pg.base.strategy_data_template[201547] = {
 		buff_id = 201547,
 		name = "群島遺跡支援",
 		iconSize = "",
@@ -4287,8 +4296,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中20秒毎に、味方に群島遺跡からの支援砲撃が出現する",
 		arg = {}
-	},
-	[201550] = {
+	}
+	pg.base.strategy_data_template[201550] = {
 		buff_id = 201550,
 		name = "群島遺跡支援",
 		iconSize = "",
@@ -4298,8 +4307,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中20秒毎に、味方に群島遺跡からの支援砲撃が出現する",
 		arg = {}
-	},
-	[201551] = {
+	}
+	pg.base.strategy_data_template[201551] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4309,8 +4318,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「真の決闘は公平でなければ！」\n ライムは戦いにおける「不公平」の要素を排除しようとする：\n 1.戦闘中敵味方共に<color=#92fc63>耐久を回復できない</color>。\n 2.いずれかの味方が【完全回避】または【無敵】効果を得た時、ライムも<color=#92fc63>受けたダメージを1にする</color>シールドを得る。\n 3.味方の航空攻撃で全画面の敵弾をクリアした場合、1.5秒後ライムも<color=#92fc63>全画面の弾をクリアし、その後反撃の弾幕を展開する</color>。味方が航空攻撃を発動した場合、この効果は5秒以内で2回以上発動できない",
 		arg = {}
-	},
-	[201552] = {
+	}
+	pg.base.strategy_data_template[201552] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4320,8 +4329,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "「真の決闘は公平でなければ！」\n ライムは戦いにおける「不公平」の要素を排除しようとする：\n 1.戦闘中敵味方共に<color=#92fc63>耐久を回復できない</color>。\n 2.いずれかの味方が【完全回避】または【無敵】効果を得た時、ライムも<color=#92fc63>受けたダメージを1にする</color>シールドを得る。\n 3.味方の航空攻撃で全画面の敵弾をクリアした場合、1.5秒後ライムも<color=#92fc63>全画面の弾をクリアし、その後反撃の弾幕を展開する</color>。味方が航空攻撃を発動した場合、この効果は5秒以内で2回以上発動できない\n\n   ハードモード仕様：\n 敵が与えるダメージが<color=#ffc038>極大アップ</color>。大きなサイズの敵弾は航空攻撃・シールドによって消されない。\n 味方前衛艦隊の<color=#92fc63>当たり判定が前衛艦隊先頭艦だけになり、さらに当たり判定の大きさが大幅に小さくなる</color>。\n 艦船が被弾した時、一定時間無敵になる。\n\n 下記装備・スキルは無効になる：\n 【ウサウサラストスタンド】",
 		arg = {}
-	},
-	[201650] = {
+	}
+	pg.base.strategy_data_template[201650] = {
 		buff_id = 0,
 		name = "スター・ヴェール",
 		iconSize = "",
@@ -4331,8 +4340,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "スター・ヴェールでは、一部の[第一種偽相体]が[第二種偽相体]になる。[第一種偽相体]の増援が抑制され、海域マップでの大規模敵艦隊の出現確率が低くなる",
 		arg = {}
-	},
-	[201651] = {
+	}
+	pg.base.strategy_data_template[201651] = {
 		buff_id = 201651,
 		name = "セーフティコントロール・エクスペリエンス",
 		iconSize = "",
@@ -4342,8 +4351,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、アビータのエンフォーサーによる支援が出現する",
 		arg = {}
-	},
-	[201654] = {
+	}
+	pg.base.strategy_data_template[201654] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4353,8 +4362,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ボスは現在の耐久に応じて（<color=#92fc63>71%以上・70%以下・40%以下</color>）3種類の敵に擬態することがある。擬態状態のボスは受けるダメージが<color=#92fc63>50%軽減される</color>。\n擬態状態のボスの耐久上限は固定であり、<color=#92fc63>耐久が0になると擬態状態を解除し、8秒後再度擬態する</color>。ボスの装甲タイプは擬態状態でない場合は軽装甲になり、艤装状態では重装甲になる",
 		arg = {}
-	},
-	[201655] = {
+	}
+	pg.base.strategy_data_template[201655] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4364,8 +4373,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ボスは現在の耐久に応じて（<color=#92fc63>71%以上・70%以下・40%以下</color>）3種類の敵に擬態することがある。擬態状態のボスは受けるダメージが<color=#92fc63>50%軽減される</color>。\n擬態状態のボスの耐久上限は固定であり、<color=#92fc63>耐久が0になると擬態状態を解除し、8秒後再度擬態する</color>。ボスの装甲タイプは擬態状態でない場合は軽装甲になり、艤装状態では重装甲になる\n\nハードモード仕様：\n敵が与えるダメージが<color=#ffc038>極大アップ</color>。大きなサイズの敵弾は航空攻撃・シールドによって消されない。\n味方前衛艦隊の<color=#92fc63>当たり判定が前衛艦隊先頭艦だけになり、さらに当たり判定の大きさが大幅に小さくなる</color>。\n艦船が被弾した時、一定時間無敵になる。\n\n下記装備・スキルは無効になる：\n【ウサウサラストスタンド】、【レインボー・プラン】、【絶対絶命】",
 		arg = {}
-	},
-	[201701] = {
+	}
+	pg.base.strategy_data_template[201701] = {
 		buff_id = 201701,
 		name = "金運上々",
 		iconSize = "",
@@ -4375,8 +4384,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中宝貨をモチーフとした支援攻撃が出現する ",
 		arg = {}
-	},
-	[201705] = {
+	}
+	pg.base.strategy_data_template[201705] = {
 		buff_id = 201705,
 		name = "光るメニュー！",
 		iconSize = "",
@@ -4386,8 +4395,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、ランダムなメニューの効果が発動します。\n1.戦闘開始時、味方全員の耐久が1％分回復する\n2.戦闘開始30秒間、味方速力が10％アップし、与えるダメージが3%アップ\n3.味方前衛艦隊がキラキラ輝く ",
 		arg = {}
-	},
-	[201706] = {
+	}
+	pg.base.strategy_data_template[201706] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4397,8 +4406,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、ボスは大量の碁石を発射する。碁石は破壊されない。\n白い碁石は軽装甲タイプの艦船に大ダメージを与え、黒い碁石は中装甲・重装甲タイプの艦船に大ダメージを与える ",
 		arg = {}
-	},
-	[201707] = {
+	}
+	pg.base.strategy_data_template[201707] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4408,8 +4417,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、ボスは大量の碁石を発射する。\n味方艦船が碁石に触れた時、自身が<color=#92fc63>「色標記」を持っていない</color>場合、その碁石の色の「色標記」が付与される；<color=#92fc63>持っている「色標記」がその碁石の色と異なる場合</color>、自身が持っている「色標記」がその碁石の色に変わる；自身が<color=#92fc63>碁石と同じ色の「色標記」を持っている場合</color>、極めて高い<color=#ffc038>固定ダメージ</color>を受ける（この固定ダメージは0.5秒に1度しか発生できない。ボスが発射した碁石は破壊されない。味方が航空攻撃を行った場合、全ての「色標記」を削除する。\n\nハードモード仕様：\n敵が与えるダメージが<color=#ffc038>極大アップ</color>。大きなサイズの敵弾は航空攻撃・シールドによって消されない。\n味方前衛艦隊の<color=#92fc63>当たり判定が前衛艦隊先頭艦だけになり、さらに当たり判定の大きさが大幅に小さくなる</color>。\n艦船が被弾した時、一定時間無敵になる。\n\n下記装備・スキルは無効になる：\n【ウサウサラストスタンド】、【レインボー・プラン】、【絶対絶命】 ",
 		arg = {}
-	},
-	[201741] = {
+	}
+	pg.base.strategy_data_template[201741] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4419,8 +4428,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ボスは自身から距離が20以上離れた相手から受けるダメージを軽減する<color=#92fc63>（距離が20より1離れる度に受けるダメージを1％軽減する。最大50％まで）</color>；距離が20以上離れた相手に与えるダメージが増加する<color=#92fc63>（距離が20より1離れる度に受けるダメージが2％増加する。最大100％まで）</color>。\nボスが<color=#92fc63>前衛艦隊から受ける砲撃ダメージが100％アップし、雷撃ダメージが50％アップする</color>。\nボスは接近してくる爆弾を投下できる艦載機を極めて速く撃墜できる。\n<color=#ddf700>ヒント：ボスの初期位置から味方前衛艦隊の移動できる範囲の最左端までの距離は約70</color>",
 		arg = {}
-	},
-	[201742] = {
+	}
+	pg.base.strategy_data_template[201742] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4430,8 +4439,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "ボスは自身から距離が20以上離れた相手から受けるダメージを軽減する<color=#92fc63>（距離が20より1長くなる度に受けるダメージを1％軽減する。最大50％まで）</color>；距離が20以上離れる相手に与えるダメージが増加する<color=#92fc63>（距離が20より1長くなる度に受けるダメージを2％増加する。最大100％まで）</color>。\nボスが<color=#92fc63>前衛艦隊から受ける砲撃ダメージが100％アップし、雷撃ダメージが50％アップする</color>。\nボスは接近してくる爆弾を投下できる艦載機を極めて速く撃墜できる。\n<color=#ddf700>ヒント：ボスの初期位置から味方前衛艦隊の移動できる範囲の最左端までの距離は約70</color>\n\nハードモード仕様：\n敵が与えるダメージが<color=#ffc038>極大アップ</color>。大きなサイズの敵弾は航空攻撃・シールドによって消されない。\n味方前衛艦隊の<color=#92fc63>当たり判定が前衛艦隊先頭艦だけになり、さらに当たり判定の大きさが大幅に小さくなる</color>。\n艦船が被弾した時、一定時間無敵になる。\n\n下記装備・スキルは無効になる：\n【ウサウサラストスタンド】、【レインボー・プラン】、【絶対絶命】、【決して屈さぬぞ！】",
 		arg = {}
-	},
-	[201743] = {
+	}
+	pg.base.strategy_data_template[201743] = {
 		buff_id = 0,
 		name = "チャレンジモード",
 		iconSize = "",
@@ -4441,8 +4450,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "任意のボスが撃破されると、もう一人のボスが【FEVER】モードになり、<color=#ffc038>攻撃方法が変更し、与えるダメージが大幅にアップ</color>。 ハードモード仕様：\n 敵が与えるダメージが<color=#ffc038>極大アップ</color>。大きなサイズの敵弾は航空攻撃・シールドによって消されない。\n 味方前衛艦隊の<color=#92fc63>当たり判定が前衛艦隊先頭艦だけになり、さらに当たり判定の大きさが大幅に小さくなる</color>。\n 艦船が被弾した時、一定時間無敵になる。\n\n 下記装備・スキルは無効になる：\n 【ウサウサラストスタンド】、【レインボー・プラン】、【絶対絶命】、【決して屈さぬぞ！】",
 		arg = {}
-	},
-	[205001] = {
+	}
+	pg.base.strategy_data_template[205001] = {
 		buff_id = 205001,
 		name = "活动关卡标志A",
 		iconSize = "",
@@ -4452,8 +4461,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "仅用作标记",
 		arg = {}
-	},
-	[205002] = {
+	}
+	pg.base.strategy_data_template[205002] = {
 		buff_id = 205002,
 		name = "活动关卡标志B",
 		iconSize = "",
@@ -4463,8 +4472,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "仅用作标记",
 		arg = {}
-	},
-	[205003] = {
+	}
+	pg.base.strategy_data_template[205003] = {
 		buff_id = 205003,
 		name = "活动关卡标志C",
 		iconSize = "",
@@ -4474,8 +4483,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "仅用作标记",
 		arg = {}
-	},
-	[205004] = {
+	}
+	pg.base.strategy_data_template[205004] = {
 		buff_id = 205004,
 		name = "活动关卡标志D",
 		iconSize = "",
@@ -4485,8 +4494,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "仅用作标记",
 		arg = {}
-	},
-	[205005] = {
+	}
+	pg.base.strategy_data_template[205005] = {
 		buff_id = 205005,
 		name = "活动关卡标志SP",
 		iconSize = "",
@@ -4496,8 +4505,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "仅用作标记",
 		arg = {}
-	},
-	[205006] = {
+	}
+	pg.base.strategy_data_template[205006] = {
 		buff_id = 205006,
 		name = "活动关卡标志B3",
 		iconSize = "",
@@ -4507,8 +4516,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "仅用作标记",
 		arg = {}
-	},
-	[205007] = {
+	}
+	pg.base.strategy_data_template[205007] = {
 		buff_id = 205007,
 		name = "活动关卡标志D3",
 		iconSize = "",
@@ -4518,8 +4527,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "仅用作标记",
 		arg = {}
-	},
-	[300001] = {
+	}
+	pg.base.strategy_data_template[300001] = {
 		buff_id = 0,
 		name = "コアレベルLv1",
 		iconSize = "",
@@ -4529,8 +4538,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方の火力・航空・雷装が3%アップ",
 		arg = {}
-	},
-	[300002] = {
+	}
+	pg.base.strategy_data_template[300002] = {
 		buff_id = 0,
 		name = "コアレベルLv2",
 		iconSize = "",
@@ -4540,8 +4549,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中15秒毎に、味方の耐久が上限を占める割合が一番低いキャラの耐久が上限の1％分回復する",
 		arg = {}
-	},
-	[300003] = {
+	}
+	pg.base.strategy_data_template[300003] = {
 		buff_id = 0,
 		name = "コアレベルLv3",
 		iconSize = "",
@@ -4551,8 +4560,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始後15秒及びその後20秒毎に支援弾幕を展開し、この弾幕が命中した敵は8秒間受けるダメージが3％アップする",
 		arg = {}
-	},
-	[300004] = {
+	}
+	pg.base.strategy_data_template[300004] = {
 		buff_id = 0,
 		name = "コアレベルLv4",
 		iconSize = "",
@@ -4562,8 +4571,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘で味方キャラが入手する好感度がアップする",
 		arg = {}
-	},
-	[300005] = {
+	}
+	pg.base.strategy_data_template[300005] = {
 		buff_id = 0,
 		name = "コアレベルLv1",
 		iconSize = "",
@@ -4573,8 +4582,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方の火力・航空・雷装が3%アップ",
 		arg = {}
-	},
-	[300006] = {
+	}
+	pg.base.strategy_data_template[300006] = {
 		buff_id = 0,
 		name = "コアレベルLv2",
 		iconSize = "",
@@ -4584,8 +4593,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中15秒毎に、味方の耐久が上限を占める割合が一番低いキャラの耐久が上限の1％分回復する",
 		arg = {}
-	},
-	[300007] = {
+	}
+	pg.base.strategy_data_template[300007] = {
 		buff_id = 0,
 		name = "コアレベルLv3",
 		iconSize = "",
@@ -4595,8 +4604,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始後15秒及びその後20秒毎に支援弾幕を展開し、この弾幕が命中した敵は8秒間受けるダメージが3％アップする",
 		arg = {}
-	},
-	[300008] = {
+	}
+	pg.base.strategy_data_template[300008] = {
 		buff_id = 0,
 		name = "コアレベルLv4",
 		iconSize = "",
@@ -4606,8 +4615,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘で味方キャラが入手する好感度がアップする",
 		arg = {}
-	},
-	[300009] = {
+	}
+	pg.base.strategy_data_template[300009] = {
 		buff_id = 0,
 		name = "コアレベルLv1",
 		iconSize = "",
@@ -4617,8 +4626,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方の火力・航空・雷装が3%アップ",
 		arg = {}
-	},
-	[300010] = {
+	}
+	pg.base.strategy_data_template[300010] = {
 		buff_id = 0,
 		name = "コアレベルLv2",
 		iconSize = "",
@@ -4628,8 +4637,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中15秒毎に、味方の耐久が上限を占める割合が一番低いキャラの耐久が上限の1％分回復する",
 		arg = {}
-	},
-	[300011] = {
+	}
+	pg.base.strategy_data_template[300011] = {
 		buff_id = 0,
 		name = "コアレベルLv3",
 		iconSize = "",
@@ -4639,8 +4648,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始後15秒及びその後20秒毎に支援弾幕を展開し、この弾幕が命中した敵は8秒間受けるダメージが3％アップする",
 		arg = {}
-	},
-	[300012] = {
+	}
+	pg.base.strategy_data_template[300012] = {
 		buff_id = 0,
 		name = "コアレベルLv4",
 		iconSize = "",
@@ -4650,8 +4659,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘で味方キャラが入手する好感度がアップする",
 		arg = {}
-	},
-	[300013] = {
+	}
+	pg.base.strategy_data_template[300013] = {
 		buff_id = 0,
 		name = "コアレベルLv1",
 		iconSize = "",
@@ -4661,8 +4670,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方の火力・航空・雷装が3%アップ",
 		arg = {}
-	},
-	[300014] = {
+	}
+	pg.base.strategy_data_template[300014] = {
 		buff_id = 0,
 		name = "コアレベルLv2",
 		iconSize = "",
@@ -4672,8 +4681,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中15秒毎に、味方の耐久が上限を占める割合が一番低いキャラの耐久が上限の1％分回復する",
 		arg = {}
-	},
-	[300015] = {
+	}
+	pg.base.strategy_data_template[300015] = {
 		buff_id = 0,
 		name = "コアレベルLv3",
 		iconSize = "",
@@ -4683,8 +4692,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始後15秒及びその後20秒毎に支援弾幕を展開し、この弾幕が命中した敵は8秒間受けるダメージが3％アップする",
 		arg = {}
-	},
-	[300016] = {
+	}
+	pg.base.strategy_data_template[300016] = {
 		buff_id = 0,
 		name = "コアレベルLv4",
 		iconSize = "",
@@ -4694,8 +4703,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘で味方キャラが入手する好感度がアップする",
 		arg = {}
-	},
-	[300017] = {
+	}
+	pg.base.strategy_data_template[300017] = {
 		buff_id = 0,
 		name = "コアレベルLv1",
 		iconSize = "",
@@ -4705,8 +4714,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中、味方の火力・航空・雷装が3%アップ",
 		arg = {}
-	},
-	[300018] = {
+	}
+	pg.base.strategy_data_template[300018] = {
 		buff_id = 0,
 		name = "コアレベルLv2",
 		iconSize = "",
@@ -4716,8 +4725,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘中15秒毎に、味方の耐久が上限を占める割合が一番低いキャラの耐久が上限の1％分回復する",
 		arg = {}
-	},
-	[300019] = {
+	}
+	pg.base.strategy_data_template[300019] = {
 		buff_id = 0,
 		name = "コアレベルLv3",
 		iconSize = "",
@@ -4727,8 +4736,8 @@ pg.base.strategy_data_template = {
 		buff_type = 0,
 		desc = "戦闘開始後15秒及びその後20秒毎に支援弾幕を展開し、この弾幕が命中した敵は8秒間受けるダメージが3％アップする",
 		arg = {}
-	},
-	[300020] = {
+	}
+	pg.base.strategy_data_template[300020] = {
 		buff_id = 0,
 		name = "コアレベルLv4",
 		iconSize = "",
@@ -4739,4 +4748,4 @@ pg.base.strategy_data_template = {
 		desc = "戦闘で味方キャラが入手する好感度がアップする",
 		arg = {}
 	}
-}
+end)()

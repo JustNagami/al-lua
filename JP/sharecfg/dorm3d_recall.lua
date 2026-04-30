@@ -1,6 +1,144 @@
 ﻿pg = pg or {}
-pg.dorm3d_recall = {
-	{
+pg.dorm3d_recall = rawget(pg, "dorm3d_recall") or setmetatable({
+	__name = "dorm3d_recall"
+}, confNEO)
+pg.dorm3d_recall.all = {
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	21,
+	22,
+	23,
+	31,
+	32,
+	41,
+	42,
+	43,
+	51,
+	52,
+	101,
+	102,
+	103,
+	104,
+	105,
+	121,
+	122,
+	123,
+	124,
+	125,
+	141,
+	142,
+	143,
+	144
+}
+pg.dorm3d_recall.get_id_list_by_story_id = {
+	[10010] = {
+		1
+	},
+	[10020] = {
+		2
+	},
+	[10030] = {
+		3
+	},
+	[10040] = {
+		4
+	},
+	[10050] = {
+		5
+	},
+	[10060] = {
+		6
+	},
+	[10070] = {
+		7
+	},
+	[10080] = {
+		8
+	},
+	[20500] = {
+		21
+	},
+	[20510] = {
+		22
+	},
+	[20520] = {
+		23
+	},
+	[20530] = {
+		32
+	},
+	[29991] = {
+		31
+	},
+	[30510] = {
+		51
+	},
+	[30520] = {
+		41
+	},
+	[30530] = {
+		42
+	},
+	[30540] = {
+		43
+	},
+	[30550] = {
+		52
+	},
+	[110510] = {
+		101
+	},
+	[110520] = {
+		102
+	},
+	[110530] = {
+		103
+	},
+	[110541] = {
+		104
+	},
+	[110551] = {
+		105
+	},
+	[120510] = {
+		121
+	},
+	[120520] = {
+		122
+	},
+	[120530] = {
+		123
+	},
+	[120541] = {
+		124
+	},
+	[120551] = {
+		125
+	},
+	[140510] = {
+		141
+	},
+	[140520] = {
+		142
+	},
+	[140530] = {
+		143
+	},
+	[140541] = {
+		144
+	}
+}
+pg.base = pg.base or {}
+pg.base.dorm3d_recall = {}
+
+;(function()
+	pg.base.dorm3d_recall[1] = {
 		story_id = 10010,
 		name = "ようこそ宿舎へ",
 		unlock_text = "親愛度Lv1で開放",
@@ -13,8 +151,8 @@ pg.dorm3d_recall = {
 			20220,
 			1
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_recall[2] = {
 		story_id = 10020,
 		name = "一時の憩い",
 		unlock_text = "親愛度Lv4で開放",
@@ -27,8 +165,8 @@ pg.dorm3d_recall = {
 			20220,
 			4
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_recall[3] = {
 		story_id = 10030,
 		name = "準備の気配り",
 		unlock_text = "親愛度Lv7で開放",
@@ -41,8 +179,8 @@ pg.dorm3d_recall = {
 			20220,
 			7
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_recall[4] = {
 		story_id = 10040,
 		name = "優しいお世話",
 		unlock_text = "親愛度Lv10で開放",
@@ -55,8 +193,8 @@ pg.dorm3d_recall = {
 			20220,
 			10
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_recall[5] = {
 		story_id = 10050,
 		name = "一緒に踊りを",
 		unlock_text = "親愛度Lv13で開放",
@@ -69,8 +207,8 @@ pg.dorm3d_recall = {
 			20220,
 			13
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_recall[6] = {
 		story_id = 10060,
 		name = "掃除の秘訣",
 		unlock_text = "「清掃ツールボックス」をプレゼントして開放",
@@ -82,8 +220,8 @@ pg.dorm3d_recall = {
 			3,
 			2022001
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_recall[7] = {
 		story_id = 10070,
 		name = "意外のトラブル",
 		unlock_text = "「ロイヤルティーセット」をプレゼントすることで解放",
@@ -95,8 +233,8 @@ pg.dorm3d_recall = {
 			3,
 			2022002
 		}
-	},
-	{
+	}
+	pg.base.dorm3d_recall[8] = {
 		story_id = 10080,
 		name = "目覚めの朝",
 		unlock_text = "『完璧なメイド心得』プレゼントで解放",
@@ -108,8 +246,8 @@ pg.dorm3d_recall = {
 			3,
 			2022003
 		}
-	},
-	[21] = {
+	}
+	pg.base.dorm3d_recall[21] = {
 		story_id = 20500,
 		name = "目隠しサプライズ",
 		unlock_text = "親愛度Lv4で開放",
@@ -122,8 +260,8 @@ pg.dorm3d_recall = {
 			30221,
 			4
 		}
-	},
-	[22] = {
+	}
+	pg.base.dorm3d_recall[22] = {
 		story_id = 20510,
 		name = "手のひらの暖かさ",
 		unlock_text = "親愛度Lv8で開放",
@@ -136,8 +274,8 @@ pg.dorm3d_recall = {
 			30221,
 			8
 		}
-	},
-	[23] = {
+	}
+	pg.base.dorm3d_recall[23] = {
 		story_id = 20520,
 		name = "ドキドキ触れ合い",
 		unlock_text = "親愛度Lv12で開放",
@@ -150,8 +288,8 @@ pg.dorm3d_recall = {
 			30221,
 			12
 		}
-	},
-	[31] = {
+	}
+	pg.base.dorm3d_recall[31] = {
 		story_id = 29991,
 		name = "素直な手伝い",
 		unlock_text = "「素直ローファー」をプレゼントして開放",
@@ -163,8 +301,8 @@ pg.dorm3d_recall = {
 			3,
 			3022101
 		}
-	},
-	[32] = {
+	}
+	pg.base.dorm3d_recall[32] = {
 		story_id = 20530,
 		name = "フットマッサージャー",
 		unlock_text = "「フットマッサージャー」をプレゼントして開放",
@@ -176,8 +314,8 @@ pg.dorm3d_recall = {
 			3,
 			3022102
 		}
-	},
-	[41] = {
+	}
+	pg.base.dorm3d_recall[41] = {
 		story_id = 30520,
 		name = "一緒に遊びたい",
 		unlock_text = "親愛度Lv4で開放",
@@ -190,8 +328,8 @@ pg.dorm3d_recall = {
 			19903,
 			4
 		}
-	},
-	[42] = {
+	}
+	pg.base.dorm3d_recall[42] = {
 		story_id = 30530,
 		name = "かくれんぼ",
 		unlock_text = "親愛度Lv8で開放",
@@ -204,8 +342,8 @@ pg.dorm3d_recall = {
 			19903,
 			8
 		}
-	},
-	[43] = {
+	}
+	pg.base.dorm3d_recall[43] = {
 		story_id = 30540,
 		name = "目覚めの朝",
 		unlock_text = "親愛度Lv12で開放",
@@ -218,8 +356,8 @@ pg.dorm3d_recall = {
 			19903,
 			12
 		}
-	},
-	[51] = {
+	}
+	pg.base.dorm3d_recall[51] = {
 		story_id = 30510,
 		name = "幸せを描き留めて",
 		unlock_text = "「キャンバス」をプレゼントして開放",
@@ -231,8 +369,8 @@ pg.dorm3d_recall = {
 			3,
 			1990301
 		}
-	},
-	[52] = {
+	}
+	pg.base.dorm3d_recall[52] = {
 		story_id = 30550,
 		name = "パッチワーク",
 		unlock_text = "精緻な額縁をプレゼントして解放",
@@ -244,8 +382,8 @@ pg.dorm3d_recall = {
 			3,
 			1990302
 		}
-	},
-	[101] = {
+	}
+	pg.base.dorm3d_recall[101] = {
 		story_id = 110510,
 		name = "魅力コーデ",
 		unlock_text = "親愛度Lv4で開放",
@@ -258,8 +396,8 @@ pg.dorm3d_recall = {
 			10517,
 			4
 		}
-	},
-	[102] = {
+	}
+	pg.base.dorm3d_recall[102] = {
 		story_id = 110520,
 		name = "甘いイタズラ",
 		unlock_text = "親愛度Lv8で開放",
@@ -272,8 +410,8 @@ pg.dorm3d_recall = {
 			10517,
 			8
 		}
-	},
-	[103] = {
+	}
+	pg.base.dorm3d_recall[103] = {
 		story_id = 110530,
 		name = "涼しい舌触り",
 		unlock_text = "親愛度Lv12で開放",
@@ -286,8 +424,8 @@ pg.dorm3d_recall = {
 			10517,
 			12
 		}
-	},
-	[104] = {
+	}
+	pg.base.dorm3d_recall[104] = {
 		story_id = 110541,
 		name = "味わうクリスタル",
 		unlock_text = "「水晶キャンディ」をプレゼントして開放",
@@ -299,8 +437,8 @@ pg.dorm3d_recall = {
 			3,
 			1051701
 		}
-	},
-	[105] = {
+	}
+	pg.base.dorm3d_recall[105] = {
 		story_id = 110551,
 		name = "ゲーム対決",
 		unlock_text = "ゲーミングパッドを贈ることで開放",
@@ -312,8 +450,8 @@ pg.dorm3d_recall = {
 			3,
 			1051702
 		}
-	},
-	[121] = {
+	}
+	pg.base.dorm3d_recall[121] = {
 		story_id = 120510,
 		name = "繋げられた愛",
 		unlock_text = "親愛度Lv4で開放",
@@ -326,8 +464,8 @@ pg.dorm3d_recall = {
 			30707,
 			4
 		}
-	},
-	[122] = {
+	}
+	pg.base.dorm3d_recall[122] = {
 		story_id = 120520,
 		name = "午後の寝言",
 		unlock_text = "親愛度Lv8で開放",
@@ -340,8 +478,8 @@ pg.dorm3d_recall = {
 			30707,
 			8
 		}
-	},
-	[123] = {
+	}
+	pg.base.dorm3d_recall[123] = {
 		story_id = 120530,
 		name = "唇のぬくもり",
 		unlock_text = "親愛度Lv12で開放",
@@ -354,8 +492,8 @@ pg.dorm3d_recall = {
 			30707,
 			12
 		}
-	},
-	[124] = {
+	}
+	pg.base.dorm3d_recall[124] = {
 		story_id = 120541,
 		name = "心を鎖で繋ぎ止めて",
 		unlock_text = "「繋げられた愛」をプレゼントして開放",
@@ -367,8 +505,21 @@ pg.dorm3d_recall = {
 			3,
 			3070701
 		}
-	},
-	[141] = {
+	}
+	pg.base.dorm3d_recall[125] = {
+		story_id = 120551,
+		name = "シルキーラブ",
+		unlock_text = "緋色の誘いプレゼントで解放",
+		type = 1,
+		id = 125,
+		image = "recall_125",
+		desc = "肌に触れるシルクの質感――着替えも甘い罠に？",
+		unlock = {
+			3,
+			3070702
+		}
+	}
+	pg.base.dorm3d_recall[141] = {
 		story_id = 140510,
 		name = "うたた寝の時間",
 		unlock_text = "エーギル親密度Lv4で解放",
@@ -381,8 +532,8 @@ pg.dorm3d_recall = {
 			49905,
 			4
 		}
-	},
-	[142] = {
+	}
+	pg.base.dorm3d_recall[142] = {
 		story_id = 140520,
 		name = "密着の折檻",
 		unlock_text = "エーギル親密度Lv8で解放",
@@ -395,8 +546,8 @@ pg.dorm3d_recall = {
 			49905,
 			8
 		}
-	},
-	[143] = {
+	}
+	pg.base.dorm3d_recall[143] = {
 		story_id = 140530,
 		name = "指先と毛先",
 		unlock_text = "エーギル親密度Lv12で解放",
@@ -409,8 +560,8 @@ pg.dorm3d_recall = {
 			49905,
 			12
 		}
-	},
-	[144] = {
+	}
+	pg.base.dorm3d_recall[144] = {
 		story_id = 140541,
 		name = "溶け込む優しさ",
 		unlock_text = "チューリップグラス購入で解放",
@@ -422,133 +573,5 @@ pg.dorm3d_recall = {
 			3,
 			4990501
 		}
-	},
-	get_id_list_by_story_id = {
-		[10010] = {
-			1
-		},
-		[10020] = {
-			2
-		},
-		[10030] = {
-			3
-		},
-		[10040] = {
-			4
-		},
-		[10050] = {
-			5
-		},
-		[10060] = {
-			6
-		},
-		[10070] = {
-			7
-		},
-		[10080] = {
-			8
-		},
-		[20500] = {
-			21
-		},
-		[20510] = {
-			22
-		},
-		[20520] = {
-			23
-		},
-		[29991] = {
-			31
-		},
-		[20530] = {
-			32
-		},
-		[30520] = {
-			41
-		},
-		[30530] = {
-			42
-		},
-		[30540] = {
-			43
-		},
-		[30510] = {
-			51
-		},
-		[30550] = {
-			52
-		},
-		[110510] = {
-			101
-		},
-		[110520] = {
-			102
-		},
-		[110530] = {
-			103
-		},
-		[110541] = {
-			104
-		},
-		[110551] = {
-			105
-		},
-		[120510] = {
-			121
-		},
-		[120520] = {
-			122
-		},
-		[120530] = {
-			123
-		},
-		[120541] = {
-			124
-		},
-		[140510] = {
-			141
-		},
-		[140520] = {
-			142
-		},
-		[140530] = {
-			143
-		},
-		[140541] = {
-			144
-		}
-	},
-	all = {
-		1,
-		2,
-		3,
-		4,
-		5,
-		6,
-		7,
-		8,
-		21,
-		22,
-		23,
-		31,
-		32,
-		41,
-		42,
-		43,
-		51,
-		52,
-		101,
-		102,
-		103,
-		104,
-		105,
-		121,
-		122,
-		123,
-		124,
-		141,
-		142,
-		143,
-		144
 	}
-}
+end)()
