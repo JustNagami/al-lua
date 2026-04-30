@@ -7,130 +7,231 @@ var_0_0.word_template_9 = {}
 local var_0_1 = var_0_0.word_template_9
 
 function temp()
-	var_0_1.高 = {
-		丽 = {
-			朴 = {
+	var_0_1.日 = {
+		你 = {
+			this = true,
+			媽 = {
 				this = true
 			},
-			棒 = {
+			爺 = {
+				爺 = {
+					this = true
+				}
+			},
+			妈 = {
 				this = true,
-				子 = {
-					this = true
-				}
-			},
-			邓 = {
-				楠 = {
-					this = true
-				}
-			},
-			樸 = {
-				this = true
-			}
-		},
-		治 = {
-			联 = {
-				this = true
-			},
-			聯 = {
-				this = true
-			}
-		},
-		自 = {
-			联 = {
-				this = true
-			},
-			聯 = {
-				this = true
-			}
-		},
-		清 = {
-			性 = {
-				愛 = {
-					this = true
-				}
-			},
-			["3"] = {
-				d = {
-					成 = {
-						人 = {
-							电 = {
-								视 = {
-									棒 = {
-										this = true
-									}
+				["="] = {
+					[">"] = {
+						我 = {
+							是 = {
+								猪 = {
+									this = true
 								}
 							}
 						}
 					}
 				}
 			},
-			成 = {
-				人 = {
+			娘 = {
+				this = true
+			}
+		},
+		死 = {
+			this = true,
+			你 = {
+				this = true
+			}
+		},
+		本 = {
+			this = true,
+			A = {
+				V = {
+					女 = {
+						this = true,
+						优 = {
+							this = true
+						},
+						優 = {
+							this = true
+						}
+					},
+					電 = {
+						影 = {
+							this = true
+						}
+					},
+					乱 = {
+						伦 = {
+							this = true
+						}
+					},
+					伦 = {
+						理 = {
+							this = true
+						}
+					},
+					片 = {
+						this = true
+					},
+					色 = {
+						导 = {
+							航 = {
+								this = true
+							}
+						},
+						片 = {
+							this = true
+						}
+					},
+					熟 = {
+						母 = {
+							this = true
+						}
+					},
+					素 = {
+						人 = {
+							this = true
+						}
+					},
+					无 = {
+						码 = {
+							this = true
+						}
+					},
+					有 = {
+						码 = {
+							this = true
+						}
+					},
+					在 = {
+						线 = {
+							this = true
+						}
+					}
+				},
+				v = {
+					色 = {
+						情 = {
+							this = true
+						}
+					}
+				},
+				片 = {
+					this = true,
 					电 = {
-						视 = {
-							棒 = {
+						影 = {
+							网 = {
+								this = true
+							}
+						}
+					}
+				},
+				级 = {
+					作 = {
+						爱 = {
+							片 = {
 								this = true
 							}
 						}
 					}
 				}
 			},
-			无 = {
-				马 = {
+			灌 = {
+				肠 = {
+					this = true
+				},
+				腸 = {
 					this = true
 				}
 			},
-			摳 = {
-				逼 = {
+			骚 = {
+				货 = {
 					this = true
 				}
 			},
-			电 = {
-				视 = {
-					棒 = {
-						this = true
-					}
-				}
-			},
-			在 = {
-				线 = {
+			熟 = {
+				母 = {
+					this = true
+				},
+				妇 = {
 					this = true
 				}
 			},
-			["9"] = {
-				["1"] = {
+			素 = {
+				人 = {
 					this = true
 				}
 			},
-			诚 = {
-				亻 = {
-					this = true,
-					福 = {
-						利 = {
-							视 = {
-								频 = {
-									this = true,
-									薇 = {
-										this = true
-									}
-								}
-							}
+			有 = {
+				码 = {
+					this = true
+				}
+			},
+			帝 = {
+				國 = {
+					this = true
+				},
+				国 = {
+					this = true
+				}
+			},
+			R = {
+				I = {
+					N = {
+						G = {
+							this = true
 						}
 					}
 				}
 			},
-			V = {
-				伊 = {
+			鬼 = {
+				子 = {
+					this = true
+				}
+			},
+			撸 = {
+				十 = {
+					次 = {
+						啦 = {
+							this = true
+						}
+					}
+				},
+				多 = {
+					宝 = {
+						this = true
+					}
+				}
+			},
+			伦 = {
+				理 = {
 					this = true,
-					[","] = {
-						高 = {
-							清 = {
-								V = {
-									伊 = {
-										视 = {
-											频 = {
-												薇 = {
-													玩 = {
+					片 = {
+						this = true
+					}
+				}
+			},
+			毛 = {
+				片 = {
+					this = true,
+					基 = {
+						地 = {
+							this = true
+						}
+					}
+				}
+			},
+			大 = {
+				使 = {
+					馆 = {
+						["0"] = {
+							R = {
+								["4"] = {
+									["0"] = {
+										["9"] = {
+											游 = {
+												行 = {
+													["*"] = {
 														this = true
 													}
 												}
@@ -141,3868 +242,381 @@ function temp()
 							}
 						}
 					}
-				}
-			},
-			点 = {
-				钞 = {
-					机 = {
-						this = true
-					}
-				}
-			},
-			["*"] = {
-				钞 = {
-					机 = {
-						this = true
-					}
-				}
-			}
-		},
-		潮 = {
-			this = true,
-			集 = {
-				锦 = {
-					this = true
 				},
-				錦 = {
-					this = true
-				}
-			},
-			白 = {
-				浆 = {
-					this = true
-				},
-				漿 = {
-					this = true
-				}
-			},
-			A = {
-				V = {
-					this = true
-				}
-			},
-			M = {
-				M = {
-					this = true
-				}
-			},
-			迭 = {
-				起 = {
-					this = true
-				}
-			},
-			妹 = {
-				this = true
-			},
-			喷 = {
-				潮 = {
-					this = true
-				}
-			},
-			射 = {
-				精 = {
-					this = true
-				}
-			},
-			洩 = {
-				尿 = {
-					this = true
-				}
-			},
-			性 = {
-				爱 = {
-					网 = {
-						this = true
-					}
-				}
-			},
-			液 = {
-				this = true,
-				催 = {
-					情 = {
-						水 = {
+				胆 = {
+					裸 = {
+						女 = {
 							this = true
 						}
 					}
 				}
 			},
-			直 = {
-				达 = {
-					云 = {
-						霄 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		级 = {
-			逼 = {
-				this = true
-			},
-			爆 = {
-				乳 = {
-					娘 = {
-						高 = {
-							清 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			比 = {
-				赛 = {
-					步 = {
-						枪 = {
-							this = true
-						}
-					}
-				}
-			},
-			仿 = {
-				真 = {
-					枪 = {
-						this = true
-					}
-				}
-			},
-			缓 = {
-				交 = {
-					妹 = {
-						this = true
-					}
-				}
-			},
-			灭 = {
-				火 = {
-					器 = {
-						this = true,
-						限 = {
-							量 = {
-								this = true
-							},
-							时 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			锁 = {
-				匠 = {
-					推 = {
-						荐 = {
-							this = true
-						}
-					}
-				}
-			},
-			修 = {
-				理 = {
-					箱 = {
-						this = true
-					}
-				}
-			},
-			应 = {
-				招 = {
-					女 = {
-						this = true
-					}
-				}
-			}
-		},
-		麗 = {
-			棒 = {
-				this = true,
-				子 = {
-					this = true
-				}
-			},
-			朴 = {
-				this = true
-			},
-			樸 = {
-				this = true
-			}
-		},
-		文 = {
-			謙 = {
-				this = true
-			},
-			谦 = {
-				this = true
-			}
-		},
-		薪 = {
-			養 = {
-				廉 = {
-					this = true
-				}
-			},
-			养 = {
-				廉 = {
-					this = true
-				}
-			},
-			招 = {
-				聘 = {
-					打 = {
-						字 = {
-							员 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		俊 = {
-			this = true
-		},
-		校 = {
-			暴 = {
-				乱 = {
+			小 = {
+				泉 = {
 					this = true,
 					["*"] = {
 						this = true
 					}
 				},
-				亂 = {
+				姐 = {
+					this = true
+				},
+				浪 = {
+					货 = {
+						this = true
+					}
+				},
+				妹 = {
 					this = true
 				}
 			},
-			群 = {
-				体 = {
-					事 = {
-						件 = {
-							this = true,
-							["*"] = {
+			变 = {
+				态 = {
+					嫖 = {
+						客 = {
+							this = true
+						}
+					},
+					小 = {
+						游 = {
+							戏 = {
 								this = true
 							}
 						}
 					}
 				}
 			},
-			骚 = {
-				乱 = {
-					this = true,
-					["*"] = {
-						this = true
-					}
-				}
-			},
-			罢 = {
-				餐 = {
+			万 = {
+				岁 = {
 					this = true
 				}
 			},
-			騷 = {
-				亂 = {
+			千 = {
+				岛 = {
+					片 = {
+						this = true
+					}
+				},
+				橡 = {
 					this = true
 				}
 			},
-			文 = {
-				凭 = {
-					this = true
-				}
-			},
-			学 = {
-				历 = {
-					证 = {
-						书 = {
-							this = true
-						}
-					}
-				},
-				生 = {
-					自 = {
-						治 = {
-							联 = {
-								合 = {
-									会 = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				}
-			},
-			临 = {
-				时 = {
-					学 = {
-						联 = {
-							this = true
-						}
-					}
-				}
-			},
-			學 = {
-				生 = {
-					自 = {
-						治 = {
-							聯 = {
-								郃 = {
-									會 = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				}
-			},
-			臨 = {
-				時 = {
-					學 = {
-						聯 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		压 = {
-			鸟 = {
-				枪 = {
-					this = true
-				}
-			},
-			步 = {
-				枪 = {
-					this = true,
-					直 = {
-						销 = {
-							this = true
-						}
-					},
-					专 = {
-						this = true
-					}
-				}
-			},
-			打 = {
-				鸟 = {
-					枪 = {
-						this = true,
-						专 = {
-							this = true
-						}
-					}
-				},
-				钢 = {
-					珠 = {
-						this = true
-					}
-				}
-			},
-			汽 = {
-				枪 = {
-					this = true,
-					[","] = {
-						汽 = {
-							枪 = {
-								["\""] = {
-									this = true
-								}
-							}
-						}
-					},
-					订 = {
-						购 = {
-							this = true
-						}
-					},
-					价 = {
-						格 = {
-							this = true
-						}
-					},
-					免 = {
-						定 = {
-							金 = {
-								this = true
-							}
-						}
-					},
-					配 = {
-						件 = {
-							this = true
-						}
-					},
-					气 = {
-						瓶 = {
-							this = true
-						}
-					},
-					网 = {
-						this = true
-					},
-					直 = {
-						销 = {
-							this = true
-						}
-					},
-					专 = {
-						this = true
-					},
-					转 = {
-						让 = {
-							this = true
-						}
-					},
-					子 = {
-						弹 = {
-							this = true
-						}
-					}
-				},
-				g = {
-					o = {
-						u = {
-							this = true
-						}
-					}
-				},
-				步 = {
-					狗 = {
-						专 = {
-							this = true
-						}
-					}
-				},
-				短 = {
-					狗 = {
-						this = true
-					}
-				},
-				狗 = {
-					this = true,
-					专 = {
-						this = true
-					}
-				},
-				抢 = {
-					this = true
-				},
-				长 = {
-					狗 = {
-						this = true
-					}
-				}
-			},
-			气 = {
-				this = true,
-				狗 = {
-					this = true,
-					可 = {
-						退 = {
-							壳 = {
-								this = true
-							}
-						}
-					},
-					供 = {
-						销 = {
-							this = true
-						}
-					},
-					枪 = {
-						油 = {
-							this = true
-						}
-					},
-					子 = {
-						弹 = {
-							this = true
-						}
-					}
-				},
-				瓶 = {
-					枪 = {
-						的 = {
-							分 = {
-								解 = {
-									图 = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				},
-				枪 = {
-					this = true,
-					[","] = {
-						气 = {
-							枪 = {
-								子 = {
-									弹 = {
-										["\""] = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					},
-					["|"] = {
-						电 = {
-							狗 = {
-								专 = {
-									卖 = {
-										this = true
-									}
-								}
-							}
-						},
-						气 = {
-							枪 = {
-								货 = {
-									到 = {
-										付 = {
-											款 = {
-												this = true
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					专 = {
-						this = true,
-						卖 = {
-							店 = {
-								this = true
-							}
-						},
-						店 = {
+			["0"] = {
+				["0"] = {
+					["1"] = {
+						男 = {
 							this = true
 						},
-						网 = {
+						女 = {
 							this = true
 						}
 					},
-					北 = {
-						京 = {
-							专 = {
-								this = true
-							}
-						}
-					},
-					出 = {
-						货 = {
+					["3"] = {
+						男 = {
 							this = true
-						}
-					},
-					到 = {
-						货 = {
-							this = true
-						}
-					},
-					的 = {
-						this = true
-					},
-					电 = {
-						狗 = {
-							专 = {
-								this = true
-							}
-						}
-					},
-					订 = {
-						购 = {
-							this = true
-						}
-					},
-					价 = {
-						格 = {
-							this = true
-						}
-					},
-					结 = {
-						构 = {
-							图 = {
-								this = true
-							}
-						}
-					},
-					猎 = {
-						枪 = {
-							this = true
-						}
-					},
-					配 = {
-						件 = {
-							this = true
-						}
-					},
-					铅 = {
-						弹 = {
-							this = true
-						}
-					},
-					枪 = {
-						管 = {
-							this = true
-						}
-					},
-					去 = {
-						this = true
-					},
-					手 = {
-						动 = {
-							哪 = {
-								this = true
-							}
-						}
-					},
-					图 = {
-						this = true,
-						纸 = {
-							this = true
-						}
-					},
-					网 = {
-						this = true
-					},
-					直 = {
-						销 = {
-							this = true
-						}
-					},
-					转 = {
-						让 = {
-							this = true
-						}
-					},
-					子 = {
-						弹 = {
-							this = true
-						}
-					}
-				},
-				["%"] = {
-					枪 = {
-						专 = {
-							网 = {
-								this = true
-							}
-						}
-					}
-				},
-				步 = {
-					枪 = {
-						this = true,
-						订 = {
-							购 = {
-								this = true
-							}
 						},
-						枪 = {
-							管 = {
-								this = true
-							}
-						},
-						直 = {
-							销 = {
-								this = true
-							}
-						},
-						专 = {
-							this = true
-						}
-					}
-				},
-				动 = {
-					枪 = {
-						this = true,
-						网 = {
-							this = true
-						}
-					}
-				},
-				短 = {
-					狗 = {
-						this = true
-					}
-				},
-				木 = {
-					仓 = {
-						this = true,
-						专 = {
-							this = true
-						}
-					}
-				},
-				槍 = {
-					this = true
-				},
-				手 = {
-					枪 = {
-						this = true
-					}
-				},
-				专 = {
-					网 = {
-						this = true
-					}
-				}
-			},
-			电 = {
-				警 = {
-					棍 = {
-						this = true,
-						出 = {
-							售 = {
-								this = true,
-								网 = {
-									this = true
-								}
-							}
-						},
-						专 = {
-							this = true,
-							卖 = {
-								网 = {
-									this = true
-								}
-							},
-							网 = {
-								this = true
-							}
-						},
-						销 = {
-							售 = {
-								网 = {
-									this = true
-								}
-							}
-						},
-						批 = {
-							发 = {
-								this = true,
-								网 = {
-									this = true
-								}
-							}
-						},
-						看 = {
-							货 = {
-								this = true
-							}
-						},
-						网 = {
+						特 = {
 							this = true
 						}
 					},
-					棒 = {
-						this = true,
-						供 = {
-							应 = {
-								this = true
-							}
-						}
-					}
-				},
-				棍 = {
-					this = true,
-					电 = {
-						击 = {
-							器 = {
-								专 = {
-									卖 = {
-										this = true
-									}
-								}
-							},
-							棒 = {
-								专 = {
-									卖 = {
-										this = true
-									}
-								}
-							}
+					["4"] = {
+						男 = {
+							this = true
+						},
+						女 = {
+							this = true
+						},
+						特 = {
+							this = true
 						}
 					},
-					专 = {
-						this = true
-					}
-				},
-				棒 = {
-					this = true,
-					电 = {
-						击 = {
-							棒 = {
-								专 = {
-									卖 = {
-										this = true
-									}
-								}
-							}
-						}
-					},
-					专 = {
-						卖 = {
-							网 = {
-								this = true
-							}
-						},
-						网 = {
-							this = true
-						}
-					}
-				},
-				井 = {
-					棍 = {
-						this = true,
-						网 = {
-							this = true
-						}
-					}
-				},
-				捧 = {
-					this = true
-				}
-			},
-			警 = {
-				棍 = {
-					this = true
-				},
-				用 = {
-					电 = {
-						棍 = {
-							this = true,
-							出 = {
-								售 = {
-									this = true
-								}
-							},
-							专 = {
-								this = true,
-								卖 = {
-									this = true
-								}
-							}
-						},
-						棒 = {
-							this = true
-						}
-					}
-				}
-			},
-			狗 = {
-				this = true,
-				Q = {
-					Q = {
-						this = true
-					}
-				}
-			},
-			一 = {
-				体 = {
-					阀 = {
-						this = true
-					}
-				}
-			},
-			锅 = {
-				炉 = {
-					this = true
-				}
-			},
-			击 = {
-				棒 = {
-					专 = {
-						卖 = {
-							网 = {
-								this = true
-							}
-						},
-						网 = {
-							this = true
-						}
-					}
-				}
-			},
-			["4"] = {
-				["."] = {
 					["5"] = {
-						M = {
-							M = {
+						男 = {
+							this = true
+						}
+					}
+				}
+			},
+			a = {
+				v = {
+					this = true,
+					a = {
+						女 = {
+							this = true
+						}
+					},
+					成 = {
+						人 = {
+							片 = {
 								this = true
 							}
+						}
+					},
+					电 = {
+						影 = {
+							this = true,
+							网 = {
+								this = true
+							}
+						}
+					},
+					高 = {
+						清 = {
+							this = true
+						}
+					},
+					激 = {
+						情 = {
+							片 = {
+								this = true
+							}
+						}
+					},
+					之 = {
+						旅 = {
+							this = true
+						}
+					}
+				},
+				片 = {
+					视 = {
+						频 = {
+							this = true
+						}
+					}
+				}
+			},
+			Ａ = {
+				Ｖ = {
+					电 = {
+						影 = {
+							this = true
 						}
 					}
 				}
 			},
 			g = {
-				o = {
-					u = {
-						this = true
-					}
-				}
-			},
-			低 = {
-				价 = {
-					狗 = {
-						this = true
-					}
-				}
-			},
-			防 = {
-				身 = {
-					电 = {
-						警 = {
-							棒 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			仿 = {
-				真 = {
-					枪 = {
-						this = true,
-						专 = {
+				v = {
+					资 = {
+						源 = {
 							this = true
 						}
-					}
-				}
-			},
-			钢 = {
-				珠 = {
-					狗 = {
-						this = true,
-						订 = {
-							购 = {
-								this = true
-							}
-						},
-						配 = {
-							件 = {
-								this = true
-							}
-						},
-						直 = {
-							销 = {
-								this = true
-							}
-						},
-						专 = {
-							this = true
-						},
-						转 = {
-							让 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			狙 = {
-				击 = {
-					气 = {
-						枪 = {
-							this = true
-						}
-					}
-				}
-			},
-			麻 = {
-				醉 = {
-					枪 = {
-						this = true
-					}
-				}
-			},
-			铅 = {
-				弹 = {
-					气 = {
-						狗 = {
-							this = true
-						},
-						枪 = {
-							this = true
-						}
-					}
-				}
-			},
-			枪 = {
-				this = true,
-				便 = {
-					宜 = {
-						this = true
 					}
 				},
-				送 = {
-					子 = {
-						弹 = {
-							this = true
-						}
-					}
-				}
-			},
-			三 = {
-				箭 = {
-					汽 = {
-						枪 = {
-							专 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			手 = {
-				狗 = {
+				片 = {
 					this = true
 				}
 			},
-			水 = {
-				枪 = {
+			H = {
+				电 = {
+					影 = {
+						this = true
+					}
+				},
+				动 = {
+					漫 = {
+						排 = {
+							行 = {
+								this = true
+							}
+						}
+					}
+				},
+				画 = {
+					漫 = {
+						b = {
+							t = {
+								this = true
+							}
+						}
+					}
+				},
+				漫 = {
+					画 = {
+						this = true
+					}
+				},
+				色 = {
 					this = true
-				}
-			},
-			小 = {
-				口 = {
-					径 = {
-						气 = {
-							枪 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		爆 = {
-			this = true,
-			炸 = {
-				药 = {
-					this = true,
-					的 = {
-						this = true,
-						基 = {
-							本 = {
-								配 = {
-									方 = {
-										this = true
-									}
-								}
-							}
-						}
-					},
-					基 = {
-						本 = {
-							配 = {
-								方 = {
-									this = true
-								}
-							}
-						}
-					},
-					专 = {
-						this = true
-					}
-				}
-			},
-			药 = {
-				this = true
-			},
-			弹 = {
-				this = true
-			},
-			雷 = {
-				管 = {
-					this = true
-				}
-			}
-		},
-		仿 = {
-			this = true,
-			警 = {
-				官 = {
-					证 = {
-						this = true
-					}
-				},
-				服 = {
-					this = true,
-					订 = {
-						购 = {
-							this = true
-						}
-					}
-				},
-				察 = {
-					证 = {
-						this = true
-					}
-				},
-				帽 = {
-					this = true
-				}
-			},
-			军 = {
-				官 = {
-					证 = {
-						this = true,
-						办 = {
-							理 = {
-								this = true
-							}
-						},
-						代 = {
-							办 = {
-								this = true
-							}
-						}
-					}
-				},
-				刺 = {
-					this = true
-				},
-				用 = {
-					枪 = {
-						支 = {
-							this = true
-						}
-					},
-					抢 = {
-						支 = {
-							this = true
-						}
-					}
-				}
-			},
-			学 = {
-				位 = {
-					证 = {
-						this = true,
-						多 = {
-							少 = {
-								钱 = {
-									this = true
-								}
-							}
-						},
-						办 = {
-							理 = {
-								this = true
-							}
-						},
-						代 = {
-							办 = {
-								this = true
-							}
-						},
-						书 = {
-							this = true
-						},
-						直 = {
-							销 = {
-								this = true
-							}
-						},
-						专 = {
-							this = true
-						}
-					},
-					办 = {
-						理 = {
-							this = true
-						}
-					}
-				},
-				历 = {
-					this = true,
-					办 = {
-						理 = {
-							this = true
-						}
-					},
-					证 = {
-						办 = {
-							理 = {
-								this = true
-							}
-						},
-						件 = {
-							this = true
-						},
-						书 = {
-							this = true
-						}
-					}
-				}
-			},
-			户 = {
-				口 = {
-					本 = {
-						this = true
-					}
-				}
-			},
-			身 = {
-				份 = {
-					证 = {
-						this = true,
-						办 = {
-							理 = {
-								this = true
-							}
-						},
-						订 = {
-							购 = {
-								this = true
-							}
-						},
-						直 = {
-							销 = {
-								this = true
-							}
-						}
-					},
-					證 = {
-						this = true
-					}
-				}
-			},
-			证 = {
-				this = true,
-				件 = {
-					this = true,
-					网 = {
-						this = true
-					},
-					办 = {
-						理 = {
-							this = true
-						}
-					},
-					代 = {
-						办 = {
-							this = true
-						}
-					},
-					服 = {
-						务 = {
-							网 = {
-								this = true
-							}
-						}
-					},
-					公 = {
-						司 = {
-							this = true
-						}
-					},
-					专 = {
-						网 = {
-							this = true
-						}
-					}
-				},
-				代 = {
-					办 = {
-						this = true
-					}
-				},
-				书 = {
-					this = true,
-					办 = {
-						理 = {
-							网 = {
-								this = true
-							}
-						}
-					},
-					代 = {
-						办 = {
-							网 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			人 = {
-				民 = {
-					币 = {
-						this = true,
-						交 = {
-							易 = {
-								this = true
-							}
-						},
-						直 = {
-							销 = {
-								this = true
-							}
-						}
-					},
-					B = {
-						this = true
-					},
-					β = {
-						this = true
-					}
-				},
-				皮 = {
-					this = true,
-					带 = {
-						仿 = {
-							声 = {
-								this = true
-							}
-						}
-					},
-					面 = {
-						具 = {
-							this = true,
-							专 = {
-								this = true
-							}
-						}
-					},
-					麵 = {
-						具 = {
-							專 = {
-								this = true
-							}
-						}
-					},
-					皮 = {
-						面 = {
-							具 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			钞 = {
-				this = true,
-				票 = {
-					this = true
-				}
-			},
-			真 = {
-				this = true,
-				人 = {
-					皮 = {
-						this = true,
-						面 = {
-							具 = {
-								this = true
-							}
-						}
-					},
-					民 = {
-						B = {
-							this = true
-						},
-						币 = {
-							this = true,
-							专 = {
-								this = true
-							}
-						},
-						钱 = {
-							币 = {
-								this = true
-							}
-						}
-					}
-				},
-				脸 = {
-					皮 = {
-						this = true
-					}
-				},
-				套 = {
-					打 = {
-						增 = {
-							值 = {
-								税 = {
-									普 = {
-										通 = {
-											发 = {
-												票 = {
-													this = true
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				},
-				[" "] = {
-					身 = {
-						份 = {
-							证 = {
-								电 = {
-									话 = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				},
-				假 = {
-					钞 = {
-						this = true,
-						出 = {
-							售 = {
-								this = true
-							}
-						},
-						假 = {
-							币 = {
-								this = true
-							}
-						}
-					},
-					币 = {
-						this = true,
-						订 = {
-							购 = {
-								this = true
-							}
-						},
-						交 = {
-							易 = {
-								this = true
-							}
-						},
-						直 = {
-							销 = {
-								this = true
-							}
-						},
-						专 = {
-							this = true
-						}
-					},
-					钱 = {
-						this = true,
-						币 = {
-							this = true
-						}
-					},
-					人 = {
-						民 = {
-							币 = {
-								this = true
-							}
-						}
-					},
-					硬 = {
-						币 = {
-							this = true
-						}
-					},
-					正 = {
-						件 = {
-							this = true
-						}
-					},
-					证 = {
-						件 = {
-							this = true
-						}
-					}
-				},
-				h = {
-					d = {
-						假 = {
-							钞 = {
-								this = true
-							}
-						}
-					}
-				},
-				版 = {
-					假 = {
-						币 = {
-							this = true
-						}
-					}
-				},
-				充 = {
-					气 = {
-						娃 = {
-							娃 = {
-								this = true
-							}
-						}
-					}
-				},
-				硅 = {
-					胶 = {
-						面 = {
-							具 = {
-								this = true
-							}
-						}
-					}
-				},
-				火 = {
-					箭 = {
-						筒 = {
-							this = true
-						}
-					}
-				},
-				机 = {
-					关 = {
-						枪 = {
-							this = true
-						}
-					}
-				},
-				狙 = {
-					击 = {
-						步 = {
-							枪 = {
-								this = true
-							}
-						}
-					}
-				},
-				臉 = {
-					皮 = {
-						this = true
-					}
-				},
-				面 = {
-					具 = {
-						this = true,
-						专 = {
-							this = true
-						}
-					},
-					皮 = {
-						this = true
-					}
-				},
-				木 = {
-					仓 = {
-						this = true
-					}
-				},
-				气 = {
-					步 = {
-						枪 = {
-							this = true,
-							专 = {
-								this = true
-							}
-						}
-					},
-					枪 = {
-						this = true,
-						订 = {
-							购 = {
-								this = true
-							}
-						},
-						直 = {
-							销 = {
-								this = true
-							}
-						},
-						专 = {
-							this = true
-						},
-						转 = {
-							让 = {
-								this = true
-							}
-						}
-					}
-				},
-				汽 = {
-					枪 = {
-						this = true
-					}
-				},
-				钱 = {
-					币 = {
-						this = true
-					}
-				},
-				枪 = {
-					this = true,
-					模 = {
-						this = true
-					},
-					网 = {
-						this = true
-					},
-					械 = {
-						专 = {
-							this = true
-						}
-					},
-					支 = {
-						this = true,
-						联 = {
-							系 = {
-								this = true
-							}
-						}
-					}
-				},
-				槍 = {
-					支 = {
-						this = true
-					}
-				},
-				乳 = {
-					胶 = {
-						面 = {
-							具 = {
-								this = true
-							}
-						}
-					}
-				},
-				绅 = {
-					士 = {
-						面 = {
-							具 = {
-								this = true
-							}
-						}
-					}
-				},
-				手 = {
-					气 = {
-						枪 = {
-							this = true
-						}
-					},
-					枪 = {
-						this = true,
-						密 = {
-							云 = {
-								this = true
-							}
-						},
-						有 = {
-							售 = {
-								this = true
-							}
-						}
-					},
-					槍 = {
-						this = true
-					}
-				},
-				帅 = {
-					哥 = {
-						面 = {
-							具 = {
-								this = true
-							}
-						}
-					}
-				},
-				伪 = {
-					钞 = {
-						this = true
-					}
-				},
-				易 = {
-					容 = {
-						面 = {
-							具 = {
-								this = true
-							}
-						}
-					}
-				},
-				硬 = {
-					币 = {
-						this = true
-					}
-				},
-				真 = {
-					钞 = {
-						真 = {
-							币 = {
-								this = true
-							}
-						}
-					}
-				},
-				证 = {
-					件 = {
-						this = true
-					}
-				},
-				纸 = {
-					B = {
-						this = true
-					},
-					币 = {
-						this = true
-					}
-				}
-			},
-			p = {
-				p = {
-					k = {
-						this = true
-					}
-				}
-			},
-			假 = {
-				币 = {
-					this = true,
-					[" "] = {
-						出 = {
-							售 = {
-								假 = {
-									币 = {
-										this = true
-									}
-								}
-							}
-						}
-					},
-					主 = {
-						营 = {
-							this = true
-						}
-					}
-				},
-				钞 = {
-					this = true,
-					假 = {
-						币 = {
-							this = true
-						}
-					},
-					直 = {
-						销 = {
-							this = true
-						}
-					},
-					主 = {
-						营 = {
-							this = true
-						}
-					},
-					专 = {
-						this = true
-					}
-				},
-				鈔 = {
-					this = true
-				},
-				吵 = {
-					假 = {
-						B = {
-							this = true
-						}
-					}
-				},
-				驾 = {
-					驶 = {
-						证 = {
-							this = true
-						}
-					}
-				},
-				钱 = {
-					this = true,
-					直 = {
-						销 = {
-							this = true
-						}
-					},
-					专 = {
-						this = true
-					}
-				},
-				人 = {
-					民 = {
-						币 = {
-							this = true
-						},
-						钱 = {
-							币 = {
-								this = true
-							}
-						}
-					}
-				},
-				硬 = {
-					币 = {
-						this = true
-					}
-				},
-				证 = {
-					this = true,
-					代 = {
-						办 = {
-							this = true
-						}
-					}
-				}
-			},
-			["#"] = {
-				真 = {
-					["$"] = {
-						枪 = {
-							支 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			["5"] = {
-				["4"] = {
-					this = true,
-					式 = {
-						手 = {
-							枪 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			["6"] = {
-				["6"] = {
-					刺 = {
-						刀 = {
-							this = true
-						}
-					}
-				}
-			},
-			["7"] = {
-				["7"] = {
-					式 = {
-						手 = {
-							槍 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			["9"] = {
-				["2"] = {
-					枪 = {
-						this = true
-					}
 				}
 			},
 			M = {
-				["4"] = {
-					A = {
-						["1"] = {
+				M = {
+					援 = {
+						交 = {
 							this = true
 						}
 					}
 				}
 			},
-			百 = {
-				元 = {
-					假 = {
-						钞 = {
+			白 = {
+				发 = {
+					魔 = {
+						女 = {
 							this = true
 						}
 					}
 				}
 			},
-			办 = {
-				证 = {
+			薄 = {
+				码 = {
+					this = true
+				}
+			},
+			暴 = {
+				淫 = {
 					网 = {
 						this = true
 					}
 				}
 			},
-			贝 = {
-				雷 = {
-					塔 = {
-						气 = {
-							枪 = {
-								this = true
-							}
-						}
+			被 = {
+				虐 = {
+					图 = {
+						this = true
 					}
 				}
 			},
-			本 = {
-				科 = {
-					证 = {
-						代 = {
-							办 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			毕 = {
-				业 = {
-					证 = {
-						this = true,
-						办 = {
-							理 = {
-								this = true
-							}
-						},
-						代 = {
-							办 = {
-								this = true
-							}
-						},
-						直 = {
-							销 = {
-								this = true
-							}
-						},
-						专 = {
-							this = true
-						}
-					}
-				}
-			},
-			刺 = {
-				刀 = {
+			波 = {
+				霸 = {
 					this = true
 				}
 			},
-			打 = {
-				鸟 = {
-					枪 = {
-						this = true
-					}
-				}
-			},
-			大 = {
-				专 = {
-					毕 = {
-						业 = {
-							证 = {
+			采 = {
+				精 = {
+					全 = {
+						过 = {
+							程 = {
 								this = true
 							}
 						}
-					},
-					文 = {
-						凭 = {
+					}
+				}
+			},
+			操 = {
+				逼 = {
+					写 = {
+						字 = {
 							this = true
 						}
 					}
 				}
 			},
-			等 = {
-				级 = {
-					证 = {
-						this = true
-					}
-				}
-			},
-			发 = {
-				票 = {
-					this = true
-				},
-				税 = {
-					票 = {
-						发 = {
-							票 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			法 = {
-				票 = {
+			插 = {
+				穴 = {
 					this = true
 				}
 			},
-			硅 = {
-				胶 = {
-					面 = {
-						具 = {
-							this = true,
-							q = {
+			超 = {
+				经 = {
+					典 = {
+						三 = {
+							级 = {
 								this = true
 							}
 						}
 					}
 				}
 			},
-			护 = {
-				照 = {
-					this = true,
-					办 = {
-						理 = {
-							this = true
-						}
-					},
-					代 = {
-						办 = {
-							this = true
-						}
-					}
-				}
-			},
-			会 = {
-				计 = {
-					证 = {
+			车 = {
+				内 = {
+					干 = {
 						this = true
-					}
-				}
-			},
-			火 = {
-				车 = {
-					票 = {
-						this = true
-					}
-				}
-			},
-			极 = {
-				真 = {
-					["6"] = {
-						["4"] = {
-							枪 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			驾 = {
-				驶 = {
-					证 = {
-						this = true,
-						办 = {
-							理 = {
-								this = true
-							}
-						},
-						代 = {
-							办 = {
-								this = true
-							}
-						},
-						专 = {
-							this = true
-						}
-					}
-				},
-				照 = {
-					this = true,
-					办 = {
-						理 = {
-							this = true
-						}
-					}
-				}
-			},
-			结 = {
-				婚 = {
-					证 = {
-						办 = {
-							理 = {
-								this = true
-							}
-						},
-						代 = {
-							办 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			金 = {
-				属 = {
-					枪 = {
-						this = true
-					}
-				}
-			},
-			酒 = {
-				this = true
-			},
-			狙 = {
-				this = true,
-				击 = {
-					步 = {
-						枪 = {
-							专 = {
-								this = true
-							}
-						}
-					},
-					枪 = {
-						专 = {
-							this = true
-						}
-					}
-				},
-				擊 = {
-					槍 = {
-						專 = {
-							this = true
-						}
-					}
-				}
-			},
-			拉 = {
-				菲 = {
-					this = true
-				}
-			},
-			脸 = {
-				皮 = {
-					this = true
-				}
-			},
-			臉 = {
-				皮 = {
-					this = true
-				}
-			},
-			美 = {
-				军 = {
-					手 = {
-						雷 = {
-							this = true
-						}
-					}
-				}
-			},
-			面 = {
-				具 = {
-					this = true
-				},
-				皮 = {
-					this = true
-				}
-			},
-			气 = {
-				枪 = {
-					this = true,
-					订 = {
-						购 = {
-							this = true
-						}
-					},
-					直 = {
-						销 = {
-							this = true
-						}
-					},
-					专 = {
-						this = true
-					}
-				}
-			},
-			汽 = {
-				枪 = {
-					this = true,
-					订 = {
-						购 = {
-							this = true
-						}
-					},
-					直 = {
-						销 = {
-							this = true
-						}
-					},
-					专 = {
-						this = true
-					},
-					转 = {
-						让 = {
-							this = true
-						}
-					}
-				}
-			},
-			枪 = {
-				this = true,
-				支 = {
-					this = true
-				},
-				专 = {
-					店 = {
-						this = true
-					}
-				}
-			},
-			槍 = {
-				專 = {
-					店 = {
-						this = true
-					}
-				}
-			},
-			全 = {
-				球 = {
-					真 = {
-						手 = {
-							枪 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			骚 = {
-				本 = {
-					套 = {
-						件 = {
-							专 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			手 = {
-				枪 = {
-					this = true,
-					直 = {
-						销 = {
-							this = true
-						}
-					},
-					专 = {
-						this = true
-					},
-					转 = {
-						让 = {
-							this = true
-						}
-					}
-				},
-				槍 = {
-					this = true
-				}
-			},
-			四 = {
-				级 = {
-					证 = {
-						this = true
-					}
-				}
-			},
-			土 = {
-				狗 = {
-					火 = {
-						狗 = {
-							this = true
-						}
-					}
-				}
-			},
-			文 = {
-				凭 = {
-					this = true,
-					办 = {
-						理 = {
-							this = true,
-							网 = {
-								this = true
-							}
-						}
-					},
-					代 = {
-						办 = {
-							this = true,
-							网 = {
-								this = true
-							}
-						}
-					},
-					网 = {
-						this = true
-					},
-					样 = {
-						本 = {
-							网 = {
-								this = true
-							}
-						}
-					},
-					证 = {
-						书 = {
-							this = true
-						}
-					},
-					专 = {
-						this = true,
-						网 = {
-							this = true
-						}
-					}
-				}
-			},
-			烟 = {
-				this = true
-			},
-			一 = {
-				元 = {
-					硬 = {
-						B = {
-							this = true
-						},
-						币 = {
-							this = true
-						},
-						钱 = {
-							币 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			易 = {
-				容 = {
-					面 = {
-						具 = {
-							this = true
-						}
-					}
-				}
-			},
-			硬 = {
-				B = {
-					this = true
-				},
-				币 = {
-					this = true
-				}
-			},
-			纸 = {
-				B = {
-					this = true
-				},
-				币 = {
-					this = true
-				},
-				钱 = {
-					币 = {
-						this = true
-					}
-				}
-			},
-			指 = {
-				挥 = {
-					官 = {
-						this = true
-					}
-				}
-			},
-			资 = {
-				格 = {
-					证 = {
-						this = true
-					}
-				}
-			},
-			阻 = {
-				击 = {
-					枪 = {
-						this = true
-					}
-				}
-			},
-			承 = {
-				兑 = {
-					汇 = {
-						票 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		考 = {
-			答 = {
-				案 = {
-					this = true,
-					["1"] = {
-						this = true
-					},
-					请 = {
-						联 = {
-							系 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			考 = {
-				前 = {
-					答 = {
-						案 = {
-							this = true
-						}
-					},
-					荅 = {
-						案 = {
-							this = true
-						}
-					}
-				},
-				中 = {
-					答 = {
-						案 = {
-							this = true
-						}
-					}
-				},
-				生 = {
-					this = true,
-					资 = {
-						料 = {
-							this = true
-						}
-					},
-					落 = {
-						榜 = {
-							名 = {
-								单 = {
-									出 = {
-										售 = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					},
-					复 = {
-						读 = {
-							名 = {
-								this = true
-							}
-						}
-					},
-					数 = {
-						据 = {
-							this = true
-						}
-					},
-					信 = {
-						息 = {
-							this = true
-						}
-					}
-				},
-				试 = {
-					答 = {
-						案 = {
-							this = true
-						}
-					},
-					作 = {
-						弊 = {
-							器 = {
-								this = true
-							}
-						}
-					}
-				},
-				题 = {
-					信 = {
-						息 = {
-							this = true
-						}
-					}
-				}
-			},
-			学 = {
-				生 = {
-					资 = {
-						料 = {
-							this = true
-						}
-					},
-					信 = {
-						息 = {
-							this = true
-						}
-					}
-				}
-			},
-			生 = {
-				名 = {
-					单 = {
-						this = true,
-						出 = {
-							售 = {
-								this = true
-							}
-						},
-						[" "] = {
-							Q = {
-								Q = {
-									this = true
-								}
-							}
-						}
-					}
-				},
-				信 = {
-					息 = {
-						this = true
-					}
-				}
-			},
-			落 = {
-				榜 = {
-					名 = {
-						单 = {
-							this = true,
-							[" "] = {
-								Q = {
-									Q = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				},
-				["."] = {
-					["."] = {
-						榜 = {
-							this = true
-						}
-					}
-				}
-			},
-			["&"] = {
-				代 = {
-					考 = {
-						this = true
-					}
-				}
-			},
-			保 = {
-				真 = {
-					答 = {
-						案 = {
-							this = true
-						}
 					}
 				}
 			},
 			成 = {
-				绩 = {
-					修 = {
-						改 = {
-							this = true
-						}
-					}
-				}
-			},
-			代 = {
-				this = true,
-				考 = {
-					this = true
-				}
-			},
-			名 = {
-				单 = {
-					this = true
-				}
-			},
-			枪 = {
-				手 = {
-					this = true
-				}
-			},
-			人 = {
-				员 = {
-					信 = {
-						息 = {
-							this = true
-						}
-					}
-				}
-			},
-			试 = {
-				题 = {
-					this = true
-				}
-			},
-			外 = {
-				语 = {
-					考 = {
-						试 = {
-							题 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			无 = {
-				线 = {
-					耳 = {
-						机 = {
-							this = true
-						}
-					},
-					作 = {
-						弊 = {
-							器 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			信 = {
-				息 = {
-					this = true
-				}
-			},
-			押 = {
-				题 = {
-					this = true
-				}
-			},
-			隐 = {
-				形 = {
-					耳 = {
-						机 = {
-							this = true
-						}
-					}
-				}
-			},
-			招 = {
-				生 = {
-					["~"] = {
-						this = true
-					}
-				}
-			},
-			真 = {
-				题 = {
-					this = true
-				}
-			},
-			助 = {
-				考 = {
-					this = true
-				}
-			},
-			作 = {
-				弊 = {
-					this = true,
-					代 = {
-						考 = {
-							this = true
-						}
-					},
-					工 = {
-						具 = {
-							this = true
-						}
-					},
-					器 = {
-						this = true
-					}
-				}
-			}
-		},
-		哌 = {
-			啶 = {
-				this = true
-			}
-		},
-		官 = {
-			this = true,
-			名 = {
-				录 = {
-					this = true
-				}
-			},
-			法 = {
-				拉 = {
-					利 = {
-						this = true
-					}
-				}
-			},
-			互 = {
-				调 = {
-					this = true
-				}
-			},
-			轮 = {
-				奸 = {
-					陈 = {
-						啸 = {
-							this = true
-						}
-					}
-				}
-			},
-			私 = {
-				生 = {
-					子 = {
-						this = true
-					}
-				}
-			},
-			退 = {
-				休 = {
-					待 = {
-						遇 = {
-							this = true
-						}
-					}
-				}
-			},
-			子 = {
-				女 = {
-					this = true
-				}
-			}
-		},
-		消 = {
-			费 = {
 				人 = {
-					群 = {
-						名 = {
-							录 = {
-								this = true
-							}
-						}
-					}
-				},
-				名 = {
-					录 = {
-						this = true
-					}
-				}
-			}
-		},
-		点 = {
-			娱 = {
-				乐 = {
-					城 = {
-						this = true
-					}
-				}
-			}
-		},
-		尔 = {
-			夫 = {
-				娱 = {
-					乐 = {
-						城 = {
-							this = true
-						}
-					}
-				},
-				澳 = {
-					门 = {
-						赌 = {
-							场 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		树 = {
-			三 = {
-				姐 = {
-					妹 = {
-						this = true,
-						["1"] = {
-							this = true
-						},
-						在 = {
-							线 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			玛 = {
-				利 = {
-					亚 = {
-						e = {
-							d = {
-								["2"] = {
-									k = {
-										[":"] = {
-											["/"] = {
-												["/"] = {
-													this = true
-												}
-											}
-										}
-									}
-								}
-							}
-						},
-						高 = {
-							清 = {
-								this = true
-							}
-						}
-					}
-				},
-				丽 = {
-					亚 = {
-						博 = {
-							客 = {
-								this = true
-							}
-						},
-						无 = {
-							码 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			圣 = {
-				良 = {
-					this = true
-				}
-			},
-			未 = {
-				来 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		芳 = {
-			枪 = {
-				this = true
-			}
-		},
-		辣 = {
-			文 = {
-				this = true
-			}
-		},
-		H = {
-			this = true,
-			慎 = {
-				this = true
-			}
-		},
-		氯 = {
-			酸 = {
-				铵 = {
-					this = true
-				}
-			}
-		},
-		皇 = {
-			娱 = {
-				乐 = {
-					this = true
-				}
-			}
-		},
-		干 = {
-			this = true,
-			子 = {
-				弟 = {
 					this = true,
-					["*"] = {
-						this = true
+					A = {
+						V = {
+							this = true
+						}
 					},
-					名 = {
-						单 = {
-							this = true,
-							["*"] = {
+					Ａ = {
+						片 = {
+							this = true
+						}
+					},
+					D = {
+						V = {
+							D = {
 								this = true
 							}
 						}
-					}
-				},
-				女 = {
-					this = true,
-					["*"] = {
-						this = true
-					}
-				}
-			},
-			新 = {
-				子 = {
-					弟 = {
-						this = true
-					}
-				}
-			},
-			疗 = {
-				养 = {
-					院 = {
-						this = true
-					}
-				}
-			},
-			文 = {
-				学 = {
-					照 = {
-						进 = {
-							现 = {
-								实 = {
-									之 = {
-										蓝 = {
-											色 = {
-												行 = {
-													动 = {
-														this = true
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		莺 = {
-			莺 = {
-				this = true,
-				["*"] = {
-					this = true
-				}
-			}
-		},
-		性 = {
-			能 = {
-				爆 = {
-					炸 = {
-						物 = {
-							质 = {
-								混 = {
-									合 = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				},
-				陀 = {
-					螺 = {
-						仪 = {
+					},
+					电 = {
+						影 = {
 							this = true
 						}
-					}
-				},
-				自 = {
+					},
 					动 = {
-						喷 = {
-							枪 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		立 = {
-			新 = {
-				this = true
-			}
-		},
-		品 = {
-			质 = {
-				香 = {
-					烟 = {
-						this = true
-					}
-				}
-			},
-			味 = {
-				的 = {
-					聊 = {
-						天 = {
-							室 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		低 = {
-			温 = {
-				交 = {
-					变 = {
-						湿 = {
-							热 = {
-								试 = {
-									验 = {
-										箱 = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		幹 = {
-			this = true,
-			子 = {
-				弟 = {
-					this = true
-				},
-				女 = {
-					this = true
-				}
-			}
-		},
-		价 = {
-			转 = {
-				让 = {
-					火 = {
-						车 = {
-							票 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			抱 = {
-				养 = {
-					婴 = {
-						儿 = {
-							this = true
-						}
-					}
-				}
-			},
-			仿 = {
-				真 = {
-					手 = {
-						狗 = {
-							this = true
-						}
-					}
-				}
-			},
-			购 = {
-				肾 = {
-					this = true,
-					脏 = {
-						this = true
-					}
-				}
-			},
-			回 = {
-				收 = {
-					肝 = {
-						脏 = {
+						画 = {
 							this = true
 						},
-						臟 = {
+						漫 = {
 							this = true
 						}
 					},
-					肾 = {
+					激 = {
+						情 = {
+							this = true
+						}
+					},
+					乱 = {
+						伦 = {
+							this = true
+						}
+					},
+					漫 = {
+						画 = {
+							this = true
+						}
+					},
+					片 = {
+						网 = {
+							址 = {
+								this = true
+							}
+						}
+					},
+					色 = {
+						this = true
+					},
+					视 = {
+						讯 = {
+							this = true
+						}
+					},
+					网 = {
 						this = true,
-						脏 = {
+						站 = {
 							this = true
-						}
-					},
-					腎 = {
-						脏 = {
-							this = true
-						}
-					}
-				}
-			},
-			角 = {
-				膜 = {
-					this = true
-				}
-			},
-			领 = {
-				养 = {
-					宝 = {
-						宝 = {
-							this = true
-						}
-					},
-					男 = {
-						宝 = {
-							宝 = {
-								this = true
-							}
-						},
-						儿 = {
-							this = true
-						},
-						娃 = {
-							this = true
-						},
-						婴 = {
-							this = true,
-							Q = {
-								this = true
-							},
-							儿 = {
-								this = true
-							}
-						}
-					},
-					女 = {
-						宝 = {
-							宝 = {
-								this = true
-							}
-						},
-						孩 = {
-							this = true
-						},
-						娃 = {
-							this = true
-						}
-					},
-					娃 = {
-						this = true
-					}
-				}
-			},
-			气 = {
-				枪 = {
-					子 = {
-						弹 = {
-							this = true
-						}
-					}
-				}
-			},
-			汽 = {
-				狗 = {
-					this = true,
-					狗 = {
-						粮 = {
-							this = true
-						}
-					}
-				}
-			},
-			求 = {
-				购 = {
-					眼 = {
-						角 = {
-							膜 = {
-								this = true
-							}
-						}
-					}
-				},
-				肾 = {
-					this = true
-				}
-			},
-			肾 = {
-				this = true,
-				器 = {
-					官 = {
-						this = true
-					}
-				},
-				源 = {
-					this = true
-				}
-			},
-			收 = {
-				肝 = {
-					this = true,
-					源 = {
-						this = true
-					},
-					脏 = {
-						this = true
-					}
-				},
-				购 = {
-					仿 = {
-						真 = {
-							枪 = {
-								this = true
-							}
-						}
-					},
-					肝 = {
-						源 = {
-							this = true
-						}
-					},
-					骨 = {
-						髓 = {
-							this = true
-						}
-					},
-					麻 = {
-						醉 = {
-							枪 = {
-								this = true
-							}
-						}
-					},
-					汽 = {
-						狗 = {
-							this = true
-						}
-					},
-					肾 = {
-						this = true,
-						源 = {
-							this = true
-						}
-					}
-				},
-				骨 = {
-					髓 = {
-						this = true
-					}
-				},
-				肾 = {
-					this = true,
-					源 = {
-						this = true
-					},
-					脏 = {
-						this = true
-					}
-				},
-				腎 = {
-					源 = {
-						this = true
-					},
-					脏 = {
-						this = true
-					}
-				},
-				售 = {
-					肾 = {
-						this = true
-					}
-				},
-				眼 = {
-					角 = {
-						膜 = {
-							this = true
-						}
-					}
-				},
-				养 = {
-					宝 = {
-						宝 = {
-							this = true
-						}
-					},
-					男 = {
-						婴 = {
-							儿 = {
-								this = true
-							}
-						}
-					},
-					女 = {
-						孩 = {
-							this = true
-						},
-						婴 = {
-							儿 = {
-								this = true
-							}
 						}
 					},
 					小 = {
-						孩 = {
-							this = true
-						}
-					},
-					婴 = {
-						儿 = {
-							this = true
-						}
-					}
-				},
-				药 = {
-					this = true
-				}
-			},
-			售 = {
-				肾 = {
-					this = true
-				}
-			},
-			西 = {
-				班 = {
-					牙 = {
-						气 = {
-							枪 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			眼 = {
-				角 = {
-					膜 = {
-						this = true
-					}
-				}
-			},
-			找 = {
-				处 = {
-					女 = {
-						this = true
-					}
-				}
-			}
-		},
-		效 = {
-			春 = {
-				药 = {
-					this = true
-				}
-			},
-			安 = {
-				眠 = {
-					药 = {
-						this = true
-					}
-				}
-			},
-			办 = {
-				理 = {
-					假 = {
-						证 = {
-							件 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			催 = {
-				情 = {
-					水 = {
-						this = true
-					}
-				}
-			},
-			电 = {
-				击 = {
-					棒 = {
-						this = true
-					},
-					枪 = {
-						this = true
-					}
-				}
-			},
-			迷 = {
-				奸 = {
-					粉 = {
-						this = true
-					}
-				}
-			},
-			拿 = {
-				正 = {
-					this = true
-				},
-				证 = {
-					this = true
-				}
-			},
-			汽 = {
-				车 = {
-					拦 = {
-						截 = {
-							器 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			燃 = {
-				油 = {
-					this = true
-				}
-			},
-			三 = {
-				唑 = {
-					仑 = {
-						this = true
-					}
-				}
-			},
-			删 = {
-				帖 = {
-					this = true
-				}
-			}
-		},
-		瞻 = {
-			this = true
-		},
-		智 = {
-			晟 = {
-				this = true
-			}
-		},
-		勤 = {
-			荣 = {
-				this = true
-			}
-		},
-		纯 = {
-			度 = {
-				this = true,
-				冰 = {
-					this = true,
-					毒 = {
-						this = true,
-						[" "] = {
-							甲 = {
-								基 = {
-									苯 = {
-										丙 = {
-											胺 = {
-												this = true
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					冰 = {
-						this = true
-					},
-					订 = {
-						购 = {
-							this = true
-						}
-					},
-					糖 = {
-						this = true
-					},
-					砖 = {
-						this = true
-					}
-				},
-				["9"] = {
-					["9"] = {
-						["%"] = {
-							冰 = {
-								this = true
-							}
-						},
-						冰 = {
-							this = true
-						}
-					}
-				},
-				K = {
-					粉 = {
-						this = true
-					}
-				},
-				白 = {
-					牙 = {
-						签 = {
-							this = true
-						}
-					}
-				},
-				订 = {
-					购 = {
-						this = true
-					}
-				},
-				奶 = {
-					油 = {
-						冰 = {
-							this = true
-						}
-					}
-				},
-				砒 = {
-					霜 = {
-						this = true
-					}
-				},
-				牙 = {
-					签 = {
-						订 = {
-							购 = {
-								this = true
-							}
-						}
-					}
-				},
-				植 = {
-					物 = {
-						冰 = {
-							this = true
-						}
-					}
-				}
-			},
-			h = {
-				i = {
-					g = {
-						h = {
-							冰 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			K = {
-				粉 = {
-					this = true
-				}
-			},
-			冰 = {
-				this = true,
-				低 = {
-					价 = {
-						现 = {
-							货 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			高 = {
-				嗨 = {
-					胡 = {
-						椒 = {
-							醛 = {
+						电 = {
+							影 = {
 								this = true
 							}
 						}
 					},
-					可 = {
-						可 = {
-							精 = {
-								this = true
-							}
-						}
-					},
-					麦 = {
-						角 = {
-							醇 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			海 = {
-				乐 = {
-					神 = {
-						this = true,
-						专 = {
-							this = true
-						}
-					}
-				},
-				螺 = {
-					神 = {
-						this = true
-					}
-				},
-				洛 = {
-					因 = {
-						this = true,
-						K = {
-							粉 = {
-								this = true
-							}
-						},
-						出 = {
-							货 = {
-								this = true
-							}
-						},
-						到 = {
-							货 = {
-								this = true
-							}
-						},
-						订 = {
-							购 = {
-								this = true
-							}
-						},
-						麻 = {
-							古 = {
-								this = true
-							}
-						},
-						配 = {
-							方 = {
-								this = true
-							}
-						},
-						有 = {
-							售 = {
-								this = true
-							}
-						}
-					},
-					茵 = {
-						this = true
-					},
-					洇 = {
-						this = true
-					}
-				}
-			},
-			氰 = {
-				化 = {
-					碘 = {
-						this = true
-					},
-					钙 = {
-						价 = {
-							格 = {
-								this = true
-							}
-						}
-					},
-					银 = {
-						钾 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		栗 = {
-			棒 = {
-				this = true
-			}
-		},
-		o = {
-			清 = {
-				this = true
-			}
-		},
-		安 = {
-			屯 = {
-				垃 = {
-					圾 = {
-						this = true
-					}
-				}
-			}
-		},
-		博 = {
-			发 = {
-				表 = {
-					网 = {
-						this = true
-					}
-				}
-			}
-		},
-		层 = {
-			分 = {
-				歧 = {
-					严 = {
-						重 = {
-							this = true
-						}
-					}
-				}
-			},
-			父 = {
-				子 = {
-					this = true
-				}
-			},
-			贿 = {
-				金 = {
-					[" "] = {
-						贺 = {
-							锦 = {
-								雷 = {
-									this = true
-								},
-								涛 = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			},
-			默 = {
-				契 = {
-					this = true
-				}
-			},
-			内 = {
-				参 = {
-					网 = {
-						this = true
-					}
-				},
-				斗 = {
-					不 = {
-						间 = {
-							断 = {
-								this = true
-							}
-						}
-					}
-				},
-				讧 = {
-					this = true
-				}
-			},
-			权 = {
-				斗 = {
-					this = true
-				}
-			},
-			人 = {
-				事 = {
-					变 = {
-						动 = {
-							this = true
-						}
-					}
-				}
-			},
-			生 = {
-				命 = {
-					this = true
-				}
-			}
-		},
-		層 = {
-			內 = {
-				參 = {
-					網 = {
-						this = true
-					}
-				}
-			}
-		},
-		偿 = {
-			领 = {
-				养 = {
-					this = true,
-					婴 = {
-						儿 = {
-							this = true
-						}
-					}
-				}
-			},
-			收 = {
-				养 = {
-					儿 = {
-						童 = {
+					影 = {
+						视 = {
 							this = true
 						}
 					},
-					婴 = {
-						儿 = {
+					游 = {
+						戏 = {
 							this = true
 						}
 					}
 				}
 			},
-			送 = {
-				养 = {
-					this = true,
-					加 = {
-						扣 = {
-							扣 = {
-								this = true
-							}
-						}
-					},
-					婴 = {
-						儿 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		亻 = {
-			方 = {
-				人 = {
-					皮 = {
-						面 = {
-							具 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		档 = {
-			车 = {
-				主 = {
-					信 = {
-						息 = {
-							this = true
-						}
+			吃 = {
+				精 = {
+					图 = {
+						this = true
 					}
 				}
 			},
@@ -4015,86 +629,564 @@ function temp()
 					}
 				}
 			},
-			客 = {
-				户 = {
-					资 = {
-						料 = {
-							this = true
-						}
-					}
-				}
-			},
-			业 = {
-				主 = {
-					数 = {
-						据 = {
-							this = true
-						}
-					}
-				}
-			},
-			珍 = {
-				珠 = {
-					加 = {
-						工 = {
-							this = true
-						}
-					}
-				}
-			},
-			珠 = {
-				宝 = {
+			春 = {
+				图 = {
 					this = true
 				}
-			}
-		},
-		檔 = {
-			客 = {
-				戶 = {
-					資 = {
-						料 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		度 = {
-			自 = {
-				治 = {
+			},
+			单 = {
+				勾 = {
 					this = true
 				}
-			}
-		},
-		端 = {
-			车 = {
-				主 = {
-					信 = {
-						息 = {
+			},
+			刀 = {
+				this = true
+			},
+			顶 = {
+				级 = {
+					淫 = {
+						女 = {
+							this = true
+						},
+						片 = {
 							this = true
 						}
 					}
 				}
 			},
-			客 = {
-				户 = {
-					名 = {
-						单 = {
-							this = true
-						}
-					}
-				}
-			},
-			名 = {
-				路 = {
-					网 = {
+			东 = {
+				京 = {
+					热 = {
 						this = true
 					}
 				}
 			},
-			气 = {
+			风 = {
+				骚 = {
+					女 = {
+						电 = {
+							影 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			夫 = {
+				妻 = {
+					自 = {
+						拍 = {
+							this = true
+						}
+					}
+				}
+			},
+			高 = {
+				清 = {
+					A = {
+						片 = {
+							this = true
+						}
+					},
+					毛 = {
+						片 = {
+							this = true
+						}
+					},
+					情 = {
+						色 = {
+							this = true
+						}
+					}
+				}
+			},
+			狗 = {
+				this = true
+			},
+			豪 = {
+				宅 = {
+					this = true
+				}
+			},
+			狠 = {
+				狠 = {
+					操 = {
+						this = true
+					}
+				}
+			},
+			互 = {
+				动 = {
+					性 = {
+						游 = {
+							戏 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			黄 = {
+				片 = {
+					大 = {
+						合 = {
+							集 = {
+								this = true
+							}
+						}
+					},
+					电 = {
+						影 = {
+							网 = {
+								this = true
+							}
+						}
+					}
+				},
+				色 = {
+					电 = {
+						影 = {
+							this = true
+						}
+					},
+					小 = {
+						电 = {
+							影 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			激 = {
+				情 = {
+					电 = {
+						影 = {
+							this = true
+						}
+					},
+					动 = {
+						漫 = {
+							this = true
+						}
+					},
+					片 = {
+						this = true,
+						电 = {
+							影 = {
+								this = true
+							}
+						},
+						论 = {
+							坛 = {
+								this = true
+							}
+						},
+						小 = {
+							说 = {
+								this = true
+							}
+						}
+					},
+					爽 = {
+						片 = {
+							this = true
+						}
+					},
+					淫 = {
+						this = true,
+						电 = {
+							影 = {
+								this = true
+							}
+						},
+						骚 = {
+							穴 = {
+								this = true
+							}
+						},
+						色 = {
+							this = true
+						},
+						穴 = {
+							this = true,
+							片 = {
+								this = true
+							}
+						},
+						影 = {
+							片 = {
+								this = true
+							},
+							院 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			吉 = {
+				村 = {
+					泰 = {
+						刀 = {
+							this = true
+						}
+					}
+				}
+			},
+			间 = {
+				谍 = {
+					枪 = {
+						this = true
+					}
+				}
+			},
+			金 = {
+				龙 = {
+					烧 = {
+						刃 = {
+							this = true
+						}
+					}
+				}
+			},
+			禁 = {
+				播 = {
+					this = true
+				}
+			},
+			巨 = {
+				乳 = {
+					淫 = {
+						女 = {
+							this = true
+						}
+					}
+				}
+			},
+			军 = {
+				刀 = {
+					this = true,
+					专 = {
+						this = true
+					}
+				},
+				舰 = {
+					this = true
+				}
+			},
+			恐 = {
+				怖 = {
+					分 = {
+						子 = {
+							this = true
+						}
+					}
+				}
+			},
+			口 = {
+				活 = {
+					this = true
+				}
+			},
+			快 = {
+				播 = {
+					色 = {
+						情 = {
+							片 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			领 = {
+				事 = {
+					馆 = {
+						this = true
+					}
+				}
+			},
+			漏 = {
+				逼 = {
+					this = true
+				}
+			},
+			乱 = {
+				伦 = {
+					片 = {
+						this = true
+					}
+				}
+			},
+			裸 = {
+				照 = {
+					this = true
+				}
+			},
+			美 = {
+				this = true,
+				眉 = {
+					this = true
+				},
+				乳 = {
+					this = true
+				}
+			},
+			妹 = {
+				被 = {
+					滴 = {
+						蜡 = {
+							this = true
+						}
+					}
+				},
+				妹 = {
+					this = true
+				}
+			},
+			免 = {
+				费 = {
+					黄 = {
+						站 = {
+							this = true
+						}
+					}
+				}
+			},
+			奶 = {
+				牛 = {
+					this = true
+				}
+			},
+			嫩 = {
+				妹 = {
+					this = true
+				}
+			},
+			女 = {
+				孩 = {
+					this = true
+				},
+				护 = {
+					士 = {
+						爽 = {
+							图 = {
+								this = true
+							}
+						}
+					}
+				},
+				同 = {
+					性 = {
+						恋 = {
+							this = true
+						},
+						片 = {
+							段 = {
+								this = true
+							}
+						}
+					}
+				},
+				小 = {
+					电 = {
+						影 = {
+							this = true
+						}
+					}
+				},
+				优 = {
+					this = true,
+					大 = {
+						集 = {
+							合 = {
+								this = true
+							}
+						},
+						片 = {
+							this = true
+						}
+					}
+				}
+			},
+			拍 = {
+				肩 = {
+					迷 = {
+						魂 = {
+							药 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			强 = {
+				力 = {
+					救 = {
+						心 = {
+							丹 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			情 = {
+				趣 = {
+					娃 = {
+						娃 = {
+							网 = {
+								this = true
+							}
+						}
+					}
+				},
+				色 = {
+					this = true
+				}
+			},
+			群 = {
+				交 = {
+					强 = {
+						奸 = {
+							this = true
+						}
+					}
+				}
+			},
+			三 = {
+				级 = {
+					片 = {
+						this = true
+					}
+				}
+			},
+			色 = {
+				片 = {
+					this = true
+				},
+				站 = {
+					this = true
+				}
+			},
+			山 = {
+				野 = {
+					柴 = {
+						刀 = {
+							this = true
+						}
+					}
+				}
+			},
+			少 = {
+				女 = {
+					艳 = {
+						情 = {
+							this = true
+						}
+					}
+				}
+			},
+			深 = {
+				水 = {
+					炸 = {
+						弹 = {
+							["6"] = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			使 = {
+				馆 = {
+					this = true
+				}
+			},
+			收 = {
+				购 = {
+					校 = {
+						内 = {
+							this = true
+						}
+					}
+				}
+			},
+			兽 = {
+				交 = {
+					内 = {
+						射 = {
+							this = true
+						}
+					}
+				}
+			},
+			爽 = {
+				图 = {
+					this = true
+				}
+			},
+			秃 = {
+				鹰 = {
+					this = true
+				}
+			},
+			图 = {
+				库 = {
+					this = true
+				}
+			},
+			脱 = {
+				脱 = {
+					this = true
+				}
+			},
+			网 = {
+				站 = {
+					this = true
+				}
+			},
+			慰 = {
+				安 = {
+					妇 = {
+						this = true
+					}
+				}
+			},
+			无 = {
+				码 = {
+					this = true,
+					视 = {
+						频 = {
+							this = true
+						}
+					}
+				},
+				修 = {
+					正 = {
+						this = true
+					}
+				}
+			},
+			武 = {
 				枪 = {
 					this = true
+				},
+				士 = {
+					this = true
+				}
+			},
+			香 = {
+				香 = {
+					this = true
+				}
+			},
+			兴 = {
+				奋 = {
+					剂 = {
+						this = true
+					}
 				}
 			},
 			性 = {
@@ -4102,632 +1194,732 @@ function temp()
 					this = true
 				}
 			},
-			洋 = {
+			淫 = {
+				电 = {
+					影 = {
+						this = true
+					}
+				},
 				妞 = {
 					this = true
 				}
 			},
-			莞 = {
-				式 = {
+			影 = {
+				片 = {
 					this = true
 				}
 			},
-			茶 = {
-				预 = {
-					约 = {
+			幼 = {
+				交 = {
+					this = true
+				}
+			},
+			原 = {
+				创 = {
+					裸 = {
+						聊 = {
+							网 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			援 = {
+				交 = {
+					this = true
+				},
+				助 = {
+					小 = {
+						姐 = {
+							this = true
+						}
+					}
+				}
+			},
+			做 = {
+				爱 = {
+					this = true
+				}
+			},
+			人 = {
+				牲 = {
+					交 = {
+						免 = {
+							费 = {
+								视 = {
+									频 = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				},
+				积 = {
+					极 = {
+						建 = {
+							设 = {
+								东 = {
+									北 = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				},
+				种 = {
+					就 = {
+						是 = {
+							比 = {
+								汉 = {
+									族 = {
+										人 = {
+											优 = {
+												秀 = {
+													this = true
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			一 = {
+				级 = {
+					特 = {
+						黄 = {
+							this = true
+						}
+					}
+				},
+				㚫 = {
+					片 = {
 						this = true
 					}
 				}
 			},
-			人 = {
+			工 = {
 				口 = {
 					this = true
 				}
-			}
-		},
-		防 = {
-			this = true,
-			人 = {
-				皮 = {
-					面 = {
-						具 = {
-							this = true
-						}
-					}
-				}
 			},
-			伪 = {
-				this = true
-			},
-			香 = {
-				烟 = {
-					this = true
-				}
-			}
-		},
-		飞 = {
-			车 = {
-				证 = {
-					券 = {
-						女 = {
-							人 = {
+			特 = {
+				级 = {
+					牲 = {
+						交 = {
+							片 = {
 								this = true
 							}
 						}
 					}
 				}
-			}
-		},
-		冈 = {
-			初 = {
-				美 = {
-					种 = {
-						子 = {
-							this = true
+			},
+			是 = {
+				世 = {
+					界 = {
+						一 = {
+							流 = {
+								的 = {
+									文 = {
+										明 = {
+											国 = {
+												家 = {
+													， = {
+														我 = {
+															们 = {
+																需 = {
+																	要 = {
+																		反 = {
+																			思 = {
+																				this = true
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
-				}
-			}
-		},
-		岗 = {
-			this = true,
-			遗 = {
-				孀 = {
-					曝 = {
-						光 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		高 = {
-			防 = {
-				防 = {
-					真 = {
-						手 = {
-							抢 = {
-								this = true
+				},
+				值 = {
+					得 = {
+						学 = {
+							习 = {
+								的 = {
+									亚 = {
+										洲 = {
+											民 = {
+												主 = {
+													典 = {
+														范 = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		},
-		跟 = {
-			家 = {
-				庭 = {
-					教 = {
-						师 = {
-							this = true
-						}
-					}
-				}
 			},
-			美 = {
-				腿 = {
-					this = true
-				}
-			},
-			肉 = {
-				丝 = {
-					this = true
-				}
-			},
-			丝 = {
-				袜 = {
-					this = true
-				}
-			},
-			鞋 = {
-				的 = {
-					诱 = {
-						惑 = {
-							this = true
-						}
-					},
-					誘 = {
-						惑 = {
-							this = true
-						}
-					}
-				}
-			},
-			影 = {
-				院 = {
-					this = true
-				}
-			}
-		},
-		功 = {
-			率 = {
-				声 = {
-					纳 = {
-						this = true
-					}
-				}
-			}
-		},
-		宫 = {
-			里 = {
-				子 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		管 = {
-			名 = {
-				录 = {
-					this = true
-				}
-			},
-			用 = {
-				户 = {
-					信 = {
-						息 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		贵 = {
-			气 = {
-				质 = {
-					结 = {
-						城 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		行 = {
-			美 = {
-				小 = {
-					姐 = {
-						this = true
-					}
-				}
-			}
-		},
-		虎 = {
-			城 = {
-				this = true
-			}
-		},
-		畫 = {
-			質 = {
-				["~"] = {
-					this = true
-				}
-			}
-		},
-		級 = {
-			逼 = {
-				this = true
-			}
-		},
-		技 = {
-			术 = {
-				电 = {
-					子 = {
-						盗 = {
-							车 = {
-								this = true
+			福 = {
+				利 = {
+					制 = {
+						度 = {
+							、 = {
+								消 = {
+									费 = {
+										电 = {
+											子 = {
+												、 = {
+													工 = {
+														业 = {
+															设 = {
+																备 = {
+																	、 = {
+																		工 = {
+																			匠 = {
+																				精 = {
+																					神 = {
+																						等 = {
+																							都 = {
+																								做 = {
+																									到 = {
+																										了 = {
+																											无 = {
+																												人 = {
+																													企 = {
+																														及 = {
+																															的 = {
+																																高 = {
+																																	度 = {
+																																		this = true
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		},
-		假 = {
-			仿 = {
-				人 = {
-					民 = {
-						币 = {
-							this = true
-						},
-						钱 = {
-							币 = {
-								this = true
+			},
+			核 = {
+				废 = {
+					水 = {
+						已 = {
+							达 = {
+								标 = {
+									， = {
+										不 = {
+											必 = {
+												担 = {
+													忧 = {
+														排 = {
+															海 = {
+																危 = {
+																	害 = {
+																		this = true
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
 				}
-			}
-		},
-		價 = {
-			售 = {
-				腎 = {
+			},
+			首 = {
+				相 = {
 					this = true
 				}
 			}
 		},
-		见 = {
-			凉 = {
-				种 = {
-					子 = {
-						this = true
-					}
-				}
-			},
-			美 = {
-				香 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		見 = {
-			涼 = {
-				種 = {
-					子 = {
-						this = true
-					}
-				}
-			},
-			美 = {
-				香 = {
-					種 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		建 = {
-			进 = {
-				this = true
-			}
-		},
-		脚 = {
-			橱 = {
-				this = true
-			},
-			炸 = {
-				弹 = {
-					this = true
-				}
-			}
-		},
-		珏 = {
+		屄 = {
 			this = true
 		},
-		抗 = {
-			震 = {
-				瞄 = {
-					准 = {
-						镜 = {
-							this = true,
-							["?"] = {
-								this = true
-							}
-						}
+		逼 = {
+			this = true
+		},
+		軍 = {
+			this = true
+		},
+		內 = {
+			瓦 = {
+				金 = {
+					融 = {
+						this = true
 					}
 				}
 			}
 		},
-		科 = {
-			技 = {
-				赌 = {
-					博 = {
-						仪 = {
-							器 = {
-								this = true
-							}
-						}
-					},
-					具 = {
-						this = true
-					}
-				},
-				賭 = {
-					具 = {
-						this = true
-					}
-				}
+		朱 = {
+			駿 = {
+				this = true
 			},
-			信 = {
-				息 = {
-					this = true
-				}
-			}
-		},
-		空 = {
-			礼 = {
-				花 = {
-					弹 = {
-						this = true
-					}
-				}
-			},
-			烟 = {
-				花 = {
-					this = true
-				}
-			},
-			尤 = {
-				物 = {
-					this = true
-				}
-			}
-		},
-		濑 = {
-			里 = {
-				奈 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		梨 = {
-			風 = {
-				花 = {
-					this = true
-				}
-			},
-			吉 = {
-				美 = {
-					无 = {
-						马 = {
-							this = true
-						},
-						码 = {
-							this = true
-						}
-					},
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		锰 = {
-			酸 = {
-				钾 = {
-					有 = {
-						货 = {
-							this = true
-						},
-						现 = {
-							货 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		密 = {
-			办 = {
-				会 = {
-					计 = {
-						师 = {
-							证 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			度 = {
-				橡 = {
-					胶 = {
-						棍 = {
-							棒 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		明 = {
-			刻 = {
-				章 = {
-					办 = {
-						证 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		模 = {
-			拟 = {
-				this = true,
-				假 = {
-					币 = {
-						this = true
-					},
-					钞 = {
-						this = true
-					},
-					正 = {
-						件 = {
-							this = true
-						}
-					}
-				},
-				人 = {
-					民 = {
-						币 = {
-							this = true
-						}
-					}
-				},
-				纸 = {
-					币 = {
-						this = true
-					}
-				}
-			},
-			擬 = {
-				槍 = {
-					支 = {
-						this = true
-					}
-				},
-				手 = {
-					槍 = {
-						this = true
-					}
-				}
-			}
-		},
-		木 = {
-			萌 = {
-				美 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					},
-					種 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		难 = {
-			度 = {
-				口 = {
-					交 = {
-						动 = {
-							作 = {
-								this = true
-							}
-						}
-					}
-				},
-				姿 = {
-					势 = {
-						this = true
-					}
-				}
-			}
-		},
-		楠 = {
-			乡 = {
+			骏 = {
 				this = true
 			}
 		},
-		能 = {
-			保 = {
-				健 = {
-					康 = {
-						寿 = {
-							功 = {
-								this = true
-							}
+		G = {
+			M = {
+				this = true
+			}
+		},
+		X = {
+			this = true,
+			妈 = {
+				this = true
+			}
+		},
+		他 = {
+			this = true,
+			娘 = {
+				this = true
+			}
+		},
+		夜 = {
+			肏 = {
+				this = true
+			},
+			射 = {
+				this = true
+			},
+			撸 = {
+				this = true
+			},
+			干 = {
+				this = true
+			}
+		},
+		韩 = {
+			撸 = {
+				片 = {
+					this = true
+				}
+			},
+			色 = {
+				色 = {
+					this = true
+				},
+				片 = {
+					this = true
+				}
+			},
+			a = {
+				v = {
+					this = true
+				}
+			},
+			A = {
+				片 = {
+					this = true
+				}
+			},
+			白 = {
+				虎 = {
+					this = true
+				}
+			},
+			成 = {
+				人 = {
+					this = true
+				}
+			},
+			电 = {
+				警 = {
+					棍 = {
+						专 = {
+							this = true
 						}
 					}
 				}
 			},
-			气 = {
+			黄 = {
+				片 = {
+					this = true
+				}
+			},
+			激 = {
+				情 = {
+					电 = {
+						影 = {
+							this = true
+						}
+					}
+				}
+			},
+			极 = {
+				品 = {
+					this = true
+				}
+			},
+			家 = {
+				庭 = {
+					乱 = {
+						伦 = {
+							this = true
+						}
+					}
+				}
+			},
+			禁 = {
+				片 = {
+					this = true
+				}
+			},
+			恋 = {
+				足 = {
+					this = true
+				}
+			},
+			漏 = {
+				逼 = {
+					this = true
+				}
+			},
+			乱 = {
+				伦 = {
+					this = true
+				}
+			},
+			毛 = {
+				片 = {
+					地 = {
+						址 = {
+							this = true
+						}
+					}
+				}
+			},
+			美 = {
+				逼 = {
+					女 = {
+						this = true
+					}
+				}
+			},
+			女 = {
+				同 = {
+					B = {
+						t = {
+							this = true
+						}
+					}
+				},
+				优 = {
+					快 = {
+						播 = {
+							this = true
+						}
+					}
+				}
+			},
+			炮 = {
+				图 = {
+					this = true
+				}
+			},
+			情 = {
+				色 = {
+					this = true,
+					电 = {
+						影 = {
+							this = true
+						}
+					}
+				}
+			},
+			群 = {
+				交 = {
+					this = true
+				}
+			},
+			人 = {
 				体 = {
-					压 = {
-						裂 = {
-							弹 = {
+					this = true
+				}
+			},
+			少 = {
+				妇 = {
+					this = true
+				}
+			},
+			套 = {
+				图 = {
+					套 = {
+						图 = {
+							this = true
+						}
+					}
+				}
+			},
+			无 = {
+				码 = {
+					this = true
+				},
+				套 = {
+					this = true
+				}
+			},
+			性 = {
+				爱 = {
+					视 = {
+						讯 = {
+							this = true
+						}
+					}
+				},
+				虐 = {
+					俱 = {
+						乐 = {
+							部 = {
 								this = true
 							}
 						}
 					}
+				},
+				生 = {
+					活 = {
+						this = true
+					}
+				}
+			},
+			淫 = {
+				女 = {
+					this = true
+				}
+			},
+			有 = {
+				码 = {
+					this = true
+				}
+			},
+			幼 = {
+				女 = {
+					this = true
+				}
+			},
+			原 = {
+				创 = {
+					this = true
 				}
 			}
 		},
-		鸟 = {
-			阳 = {
-				子 = {
-					无 = {
-						码 = {
+		加 = {
+			撸 = {
+				this = true
+			}
+		},
+		日 = {
+			爱 = {
+				this = true
+			},
+			色 = {
+				this = true,
+				影 = {
+					院 = {
+						this = true
+					}
+				}
+			},
+			夜 = {
+				夜 = {
+					this = true,
+					撸 = {
+						this = true
+					}
+				}
+			},
+			射 = {
+				this = true,
+				日 = {
+					一 = {
+						日 = {
 							this = true
 						}
-					},
-					种 = {
-						子 = {
+					}
+				}
+			},
+			嫂 = {
+				this = true
+			},
+			A = {
+				V = {
+					this = true
+				}
+			},
+			撸 = {
+				this = true
+			},
+			日 = {
+				色 = {
+					情 = {
+						网 = {
+							this = true
+						}
+					}
+				}
+			},
+			爽 = {
+				影 = {
+					院 = {
+						this = true
+					}
+				}
+			},
+			我 = {
+				影 = {
+					视 = {
+						this = true
+					}
+				}
+			},
+			摸 = {
+				天 = {
+					天 = {
+						摸 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		浓 = {
-			度 = {
-				迷 = {
-					药 = {
+		嫂 = {
+			嫂 = {
+				this = true
+			}
+		},
+		this = {
+			this = true
+		},
+		烂 = {
+			this = true
+		},
+		内 = {
+			瓦 = {
+				金 = {
+					融 = {
 						this = true
 					}
 				}
 			}
 		},
-		炮 = {
-			炮 = {
-				弹 = {
+		您 = {
+			this = true
+		},
+		批 = {
+			this = true
+		},
+		治 = {
+			this = true
+		},
+		A = {
+			V = {
+				B = {
+					B = {
+						this = true
+					}
+				}
+			}
+		},
+		a = {
+			在 = {
+				线 = {
 					this = true
 				}
 			}
 		},
-		漂 = {
-			纸 = {
-				币 = {
+		b = {
+			this = true
+		},
+		吧 = {
+			色 = {
+				情 = {
+					网 = {
+						this = true
+					}
+				}
+			}
+		},
+		博 = {
+			娱 = {
+				乐 = {
+					城 = {
+						this = true
+					}
+				}
+			}
+		},
+		不 = {
+			女 = {
+				优 = {
 					this = true
 				}
 			}
 		},
-		崎 = {
-			美 = {
-				奈 = {
-					高 = {
-						清 = {
-							this = true
-						}
-					}
+		穿 = {
+			this = true
+		},
+		大 = {
+			女 = {
+				优 = {
+					this = true
 				}
 			}
 		},
-		强 = {
-			弹 = {
-				弓 = {
-					正 = {
-						品 = {
-							this = true
-						}
-					}
-				}
-			},
-			度 = {
-				进 = {
-					口 = {
-						汽 = {
-							狗 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
+		蛋 = {
+			this = true
 		},
-		桥 = {
-			爱 = {
-				黄 = {
-					色 = {
+		翻 = {
+			this = true
+		},
+		高 = {
+			玛 = {
+				利 = {
+					亚 = {
 						种 = {
 							子 = {
 								this = true
@@ -4736,30 +1928,12 @@ function temp()
 					}
 				}
 			},
-			理 = {
-				沙 = {
-					无 = {
-						码 = {
-							this = true
-						}
-					},
-					种 = {
-						子 = {
-							this = true
-						}
+			司 = {
+				无 = {
+					码 = {
+						this = true
 					}
-				}
-			},
-			流 = {
-				树 = {
-					中 = {
-						出 = {
-							this = true
-						}
-					}
-				}
-			},
-			瞳 = {
+				},
 				种 = {
 					子 = {
 						this = true
@@ -4767,407 +1941,650 @@ function temp()
 				}
 			}
 		},
-		橋 = {
-			宏 = {
+		工 = {
+			刀 = {
+				this = true
+			}
+		},
+		光 = {
+			月 = {
 				美 = {
 					this = true
 				}
 			}
 		},
-		俅 = {
-			this = true
-		},
-		全 = {
-			健 = {
-				this = true,
-				跑 = {
-					官 = {
-						官 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		杉 = {
-			爱 = {
-				子 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
+		韓 = {
+			女 = {
+				尤 = {
+					this = true
 				}
 			},
-			绫 = {
-				美 = {
-					this = true,
-					高 = {
-						清 = {
+			無 = {
+				碼 = {
+					this = true
+				}
+			}
+		},
+		好 = {
+			色 = {
+				女 = {
+					成 = {
+						人 = {
+							網 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		后 = {
+			再 = {
+				说 = {
+					电 = {
+						影 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		射 = {
-			速 = {
-				机 = {
-					炮 = {
+		户 = {
+			爱 = {
+				b = {
+					t = {
 						this = true
 					}
 				}
 			}
 		},
-		升 = {
-			泰 = {
-				this = true
-			},
-			祥 = {
-				this = true
-			}
-		},
-		丝 = {
-			美 = {
-				this = true
-			}
-		},
-		絲 = {
-			美 = {
-				this = true
-			}
-		},
-		速 = {
-			点 = {
-				播 = {
-					this = true
-				}
-			},
-			突 = {
-				击 = {
-					this = true
-				}
-			},
-			下 = {
-				載 = {
-					this = true
-				}
-			},
-			鱼 = {
-				雷 = {
-					this = true
-				}
-			}
-		},
-		田 = {
-			纪 = {
-				子 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			},
-			礼 = {
-				子 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			},
-			禮 = {
-				子 = {
-					種 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		畑 = {
-			真 = {
-				美 = {
+		吉 = {
+			亚 = {
+				种 = {
 					子 = {
 						this = true
 					}
 				}
-			}
-		},
-		挑 = {
-			熟 = {
-				女 = {
-					嘉 = {
-						嘉 = {
+			},
+			亞 = {
+				衣 = {
+					全 = {
+						集 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		息 = {
-			不 = {
-				要 = {
+		记 = {
+			门 = {
+				this = true
+			}
+		},
+		九 = {
+			城 = {
+				this = true
+			}
+		},
+		军 = {
+			this = true
+		},
+		喀 = {
+			则 = {
+				Ｋ = {
+					粉 = {
+						this = true
+					}
+				},
+				假 = {
+					币 = {
+						this = true
+					}
+				}
+			}
+		},
+		了 = {
+			狗 = {
+				this = true
+			}
+		},
+		领 = {
+			馆 = {
+				this = true
+			}
+		},
+		妈 = {
+			的 = {
+				this = true
+			}
+		},
+		美 = {
+			眉 = {
+				this = true
+			},
+			性 = {
+				交 = {
+					强 = {
+						档 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		模 = {
+			this = true
+		},
+		女 = {
+			this = true
+		},
+		排 = {
+			行 = {
+				榜 = {
+					this = true
+				}
+			}
+		},
+		期 = {
+			已 = {
+				定 = {
+					this = true
+				}
+			}
+		},
+		奇 = {
+			艺 = {
+				this = true
+			}
+		},
+		式 = {
+			武 = {
+				士 = {
+					刀 = {
+						this = true
+					}
+				}
+			}
+		},
+		爽 = {
+			this = true
+		},
+		完 = {
+			软 = {
+				电 = {
+					影 = {
+						this = true
+					}
+				}
+			}
+		},
+		向 = {
+			亚 = {
+				美 = {
+					种 = {
+						子 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		学 = {
+			生 = {
+				妹 = {
+					this = true
+				}
+			}
+		},
+		迅 = {
+			雷 = {
+				this = true
+			}
+		},
+		尧 = {
+			三 = {
+				皮 = {
+					this = true
+				}
+			}
+		},
+		野 = {
+			美 = {
+				沙 = {
+					种 = {
+						子 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		优 = {
+			堀 = {
+				口 = {
 					this = true
 				}
 			},
+			葉 = {
+				山 = {
+					律 = {
+						子 = {
+							this = true
+						}
+					}
+				}
+			},
+			影 = {
+				视 = {
+					this = true
+				}
+			}
+		},
+		元 = {
 			贷 = {
 				款 = {
 					this = true
 				}
 			}
 		},
-		雄 = {
-			文 = {
-				殊 = {
-					讲 = {
-						堂 = {
-							this = true
-						}
-					},
-					講 = {
-						堂 = {
-							this = true
-						}
-					}
-				}
-			},
-			應 = {
-				召 = {
-					O = {
-						L = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		雪 = {
-			雅 = {
-				老 = {
-					师 = {
-						堕 = {
-							落 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		壓 = {
-			狗 = {
-				this = true
-			},
-			汽 = {
-				狗 = {
-					this = true
-				}
-			},
-			氣 = {
-				槍 = {
-					this = true,
-					供 = {
-						應 = {
-							this = true
-						}
-					},
-					联 = {
-						系 = {
-							this = true
-						}
-					},
-					專 = {
-						網 = {
-							this = true
-						}
-					},
-					子 = {
-						彈 = {
-							this = true
-						}
-					}
-				}
-			},
-			槍 = {
-				this = true
-			}
-		},
-		严 = {
-			李 = {
-				小 = {
-					琳 = {
+		月 = {
+			谷 = {
+				论 = {
+					坛 = {
 						this = true
 					}
 				}
 			},
-			通 = {
-				风 = {
-					报 = {
-						信 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		要 = {
-			溜 = {
-				冰 = {
-					毒 = {
-						this = true
-					}
-				}
-			}
-		},
-		野 = {
-			步 = {
-				种 = {
-					子 = {
-						this = true
-					},
-					紫 = {
-						this = true
-					}
-				}
-			},
-			蓝 = {
-				种 = {
-					子 = {
-						this = true
-					}
-				}
-			},
-			瞳 = {
-				合 = {
-					集 = {
-						this = true
-					}
-				}
-			}
-		},
-		瑜 = {
-			this = true,
-			七 = {
-				不 = {
-					讲 = {
-						this = true
-					}
-				}
-			}
-		},
-		原 = {
-			流 = {
+			光 = {
 				美 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					},
-					種 = {
-						子 = {
+					论 = {
+						坛 = {
 							this = true
 						}
 					}
 				}
 			},
-			奈 = {
-				美 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			},
-			珠 = {
-				里 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		沢 = {
-			沙 = {
-				耶 = {
-					this = true
-				}
-			}
-		},
-		真 = {
 			气 = {
-				狗 = {
+				功 = {
 					this = true
 				}
 			},
-			手 = {
-				枪 = {
+			图 = {
+				库 = {
 					this = true
 				}
 			}
 		},
-		质 = {
-			量 = {
-				仿 = {
-					真 = {
-						硅 = {
-							胶 = {
-								this = true
-							}
-						}
-					}
-				},
-				小 = {
-					妹 = {
-						陪 = {
-							您 = {
-								this = true
-							}
-						}
-					}
-				},
-				性 = {
-					生 = {
-						活 = {
+		制 = {
+			仿 = {
+				真 = {
+					this = true
+				}
+			}
+		},
+		资 = {
+			超 = {
+				市 = {
+					this = true
+				}
+			}
+		},
+		四 = {
+			月 = {
+				六 = {
+					this = true
+				}
+			}
+		},
+		["4"] = {
+			月 = {
+				["6"] = {
+					this = true
+				}
+			}
+		},
+		存 = {
+			送 = {
+				this = true
+			}
+		},
+		开 = {
+			宗 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.你 = {
+		妈 = {
+			this = true,
+			逼 = {
+				this = true
+			},
+			的 = {
+				this = true,
+				B = {
+					this = true
+				}
+			},
+			了 = {
+				妹 = {
+					this = true
+				}
+			},
+			B = {
+				的 = {
+					this = true
+				}
+			},
+			比 = {
+				this = true
+			},
+			铋 = {
+				this = true
+			},
+			靠 = {
+				this = true
+			}
+		},
+		娘 = {
+			this = true,
+			的 = {
+				this = true
+			},
+			卡 = {
+				好 = {
+					this = true
+				}
+			},
+			咧 = {
+				this = true
+			}
+		},
+		爸 = {
+			this = true
+		},
+		大 = {
+			爷 = {
+				this = true
+			},
+			爺 = {
+				this = true
+			}
+		},
+		色 = {
+			吗 = {
+				this = true
+			},
+			嗎 = {
+				this = true
+			}
+		},
+		媽 = {
+			this = true,
+			逼 = {
+				this = true
+			},
+			比 = {
+				this = true
+			},
+			的 = {
+				this = true
+			},
+			了 = {
+				妹 = {
+					this = true
+				}
+			}
+		},
+		說 = {
+			我 = {
+				說 = {
+					論 = {
+						壇 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		中 = {
-			生 = {
-				数 = {
-					据 = {
-						this = true
-					}
-				},
-				自 = {
-					慰 = {
-						this = true
-					}
-				}
-			}
-		},
-		州 = {
-			冰 = {
-				毒 = {
+		爺 = {
+			this = true,
+			爺 = {
+				的 = {
 					this = true
 				}
 			}
 		},
-		阝 = {
-			方 = {
-				人 = {
-					皮 = {
-						面 = {
-							具 = {
+		二 = {
+			大 = {
+				爷 = {
+					this = true
+				},
+				爺 = {
+					this = true
+				}
+			}
+		},
+		老 = {
+			母 = {
+				this = true,
+				的 = {
+					this = true
+				}
+			},
+			味 = {
+				this = true
+			},
+			妹 = {
+				this = true
+			}
+		},
+		姥 = {
+			this = true,
+			姥 = {
+				this = true,
+				的 = {
+					this = true
+				}
+			}
+		},
+		爷 = {
+			爷 = {
+				this = true,
+				的 = {
+					this = true
+				}
+			}
+		},
+		奶 = {
+			this = true,
+			奶 = {
+				this = true,
+				的 = {
+					this = true
+				}
+			}
+		},
+		弟 = {
+			撸 = {
+				this = true
+			}
+		},
+		懂 = {
+			的 = {
+				this = true,
+				种 = {
+					子 = {
+						this = true
+					}
+				},
+				网 = {
+					站 = {
+						this = true
+					}
+				},
+				论 = {
+					坛 = {
+						this = true
+					}
+				},
+				影 = {
+					视 = {
+						this = true
+					}
+				},
+				云 = {
+					点 = {
+						播 = {
+							this = true
+						}
+					}
+				},
+				资 = {
+					源 = {
+						论 = {
+							坛 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			得 = {
+				["6"] = {
+					this = true
+				}
+			}
+		},
+		习 = {
+			this = true,
+			书 = {
+				记 = {
+					this = true
+				}
+			}
+		},
+		全 = {
+			家 = {
+				this = true,
+				都 = {
+					是 = {
+						肉 = {
+							文 = {
+								女 = {
+									主 = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		他 = {
+			妈 = {
+				this = true,
+				的 = {
+					this = true
+				}
+			},
+			媽 = {
+				的 = {
+					this = true
+				}
+			},
+			马 = {
+				的 = {
+					this = true
+				}
+			},
+			馬 = {
+				的 = {
+					this = true
+				}
+			}
+		},
+		麻 = {
+			痹 = {
+				this = true
+			}
+		},
+		吗 = {
+			b = {
+				this = true
+			}
+		},
+		怎 = {
+			么 = {
+				用 = {
+					土 = {
+						办 = {
+							法 = {
+								做 = {
+									武 = {
+										器 = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		权 = {
+			家 = {
+				this = true
+			}
+		},
+		泉 = {
+			家 = {
+				this = true
+			}
+		},
+		拳 = {
+			家 = {
+				this = true
+			}
+		},
+		说 = {
+			我 = {
+				说 = {
+					论 = {
+						坛 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		退 = {
+			了 = {
+				吗 = {
+					this = true
+				}
+			}
+		},
+		办 = {
+			事 = {
+				我 = {
+					放 = {
+						心 = {
+							this = true
+						}
+					}
+				},
+				， = {
+					我 = {
+						放 = {
+							心 = {
 								this = true
 							}
 						}
@@ -5175,45 +2592,279 @@ function temp()
 				}
 			}
 		},
-		誌 = {
-			活 = {
-				this = true
+		["2"] = {
+			大 = {
+				爷 = {
+					this = true
+				}
 			}
 		},
-		志 = {
-			活 = {
-				this = true
-			}
-		},
-		堂 = {
-			之 = {
-				上 = {
-					的 = {
-						海 = {
+		操 = {
+			得 = {
+				我 = {
+					更 = {
+						爽 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		瑞 = {
-			欣 = {
+		的 = {
+			逼 = {
+				真 = {
+					紧 = {
+						this = true
+					}
+				}
+			},
+			大 = {
+				鸡 = {
+					巴 = {
+						好 = {
+							粗 = {
+								this = true
+							}
+						}
+					}
+				},
+				肉 = {
+					棒 = {
+						this = true,
+						好 = {
+							粗 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			二 = {
+				我 = {
+					懂 = {
+						this = true
+					}
+				}
+			},
+			鸡 = {
+				巴 = {
+					this = true
+				}
+			},
+			肉 = {
+				棒 = {
+					干 = {
+						this = true
+					}
+				}
+			},
+			小 = {
+				穴 = {
+					好 = {
+						紧 = {
+							this = true
+						},
+						深 = {
+							啊 = {
+								this = true
+							}
+						},
+						温 = {
+							暖 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			穴 = {
+				太 = {
+					紧 = {
+						了 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		好 = {
+			票 = {
+				this = true
+			},
+			泼 = {
+				嘌 = {
+					罗 = {
+						小 = {
+							姐 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		鸡 = {
+			动 = {
+				嘛 = {
+					this = true
+				}
+			}
+		},
+		就 = {
+			当 = {
+				姐 = {
+					是 = {
+						个 = {
+							鸡 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		来 = {
+			操 = {
 				this = true
 			}
 		},
-		举 = {
-			浩 = {
-				哥 = {
-					新 = {
-						时 = {
-							代 = {
-								思 = {
-									想 = {
-										伟 = {
-											大 = {
-												旗 = {
-													帜 = {
-														this = true
+		马 = {
+			的 = {
+				this = true
+			}
+		},
+		馬 = {
+			的 = {
+				this = true
+			}
+		},
+		弄 = {
+			的 = {
+				我 = {
+					好 = {
+						通 = {
+							啊 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		日 = {
+			我 = {
+				日 = {
+					A = {
+						V = {
+							网 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		是 = {
+			鸡 = {
+				this = true
+			},
+			雞 = {
+				this = true
+			},
+			我 = {
+				的 = {
+					情 = {
+						人 = {
+							this = true
+						}
+					}
+				}
+			},
+			鸭 = {
+				this = true
+			},
+			鴨 = {
+				this = true
+			}
+		},
+		它 = {
+			妈 = {
+				的 = {
+					this = true
+				}
+			},
+			媽 = {
+				的 = {
+					this = true
+				}
+			},
+			马 = {
+				的 = {
+					this = true
+				}
+			},
+			馬 = {
+				的 = {
+					this = true
+				}
+			}
+		},
+		她 = {
+			妈 = {
+				this = true
+			},
+			马 = {
+				的 = {
+					this = true
+				}
+			},
+			馬 = {
+				的 = {
+					this = true
+				}
+			}
+		},
+		我 = {
+			色 = {
+				this = true
+			}
+		},
+		在 = {
+			撸 = {
+				this = true
+			}
+		},
+		祖 = {
+			宗 = {
+				this = true
+			}
+		},
+		知 = {
+			我 = {
+				知 = {
+					this = true
+				}
+			}
+		},
+		和 = {
+			丈 = {
+				夫 = {
+					习 = {
+						近 = {
+							平 = {
+								一 = {
+									起 = {
+										带 = {
+											我 = {
+												去 = {
+													了 = {
+														你 = {
+															们 = {
+																家 = {
+																	this = true
+																}
+															}
+														}
 													}
 												}
 											}
@@ -5226,458 +2877,29 @@ function temp()
 				}
 			}
 		},
-		砖 = {
-			远 = {
-				瞩 = {
-					this = true
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.赵 = {
-		紫 = {
-			阳 = {
-				this = true,
-				["*"] = {
-					this = true
-				},
-				晚 = {
-					年 = {
-						谈 = {
-							话 = {
-								出 = {
-									笼 = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				},
-				最 = {
-					后 = {
-						的 = {
-							机 = {
-								会 = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		乐 = {
-			际 = {
-				this = true
-			},
-			坚 = {
-				this = true
-			}
-		},
-		洪 = {
-			祝 = {
-				this = true
-			}
-		},
-		氏 = {
-			弓 = {
-				弩 = {
-					this = true,
-					有 = {
-						限 = {
-							公 = {
-								司 = {
-									this = true
-								}
-							}
-						}
-					},
-					专 = {
-						卖 = {
-							this = true,
-							网 = {
-								this = true
-							},
-							店 = {
-								this = true
-							}
-						}
-					},
-					销 = {
-						售 = {
-							this = true
-						}
-					}
-				},
-				驽 = {
-					this = true
-				},
-				努 = {
-					this = true
-				}
-			},
-			猎 = {
-				鹰 = {
-					this = true,
-					弩 = {
-						官 = {
-							方 = {
-								网 = {
-									站 = {
-										this = true
-									}
-								}
-							}
-						}
-					}
-				}
-			},
-			钢 = {
-				珠 = {
-					弓 = {
-						努 = {
-							this = true
-						},
-						弩 = {
-							this = true
-						}
-					},
-					努 = {
-						this = true
-					},
-					弩 = {
-						this = true
-					}
-				}
-			},
-			黑 = {
-				蟒 = {
-					弩 = {
-						this = true
-					}
-				}
-			},
-			驽 = {
-				this = true
-			},
-			弩 = {
-				this = true
-			},
-			平 = {
-				反 = {
-					this = true
-				}
-			},
-			读 = {
-				书 = {
-					生 = {
-						活 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		海 = {
-			青 = {
-				this = true
-			},
-			通 = {
-				this = true
-			}
-		},
-		南 = {
-			this = true,
-			起 = {
-				this = true
-			}
-		},
-		品 = {
-			潞 = {
-				this = true
-			}
-		},
-		铁 = {
-			锤 = {
-				this = true
-			}
-		},
-		晓 = {
-			微 = {
-				this = true
-			}
-		},
-		["*"] = {
-			紫 = {
-				["*"] = {
-					阳 = {
-						this = true
-					}
-				}
-			}
-		},
-		z = {
-			i = {
-				阳 = {
-					this = true,
-					回 = {
-						忆 = {
-							录 = {
-								this = true
-							}
-						}
-					}
-				},
-				y = {
-					a = {
-						n = {
-							g = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			y = {
-				回 = {
-					忆 = {
-						录 = {
-							this = true
-						}
-					}
-				},
-				囚 = {
-					徒 = {
-						this = true
-					}
-				}
-			},
-			阳 = {
-				this = true
-			}
-		},
-		本 = {
-			山 = {
-				this = true,
-				江 = {
-					背 = {
-						景 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		公 = {
-			明 = {
-				this = true
-			}
-		},
-		国 = {
-			君 = {
-				六 = {
-					四 = {
-						this = true
-					}
-				}
-			},
-			周 = {
-				this = true
-			}
-		},
-		行 = {
-			德 = {
-				this = true
-			}
-		},
-		红 = {
-			霞 = {
-				this = true
-			}
-		},
-		回 = {
-			忆 = {
-				录 = {
-					曝 = {
-						光 = {
-							this = true
-						}
-					},
-					问 = {
-						世 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		家 = {
-			乡 = {
-				this = true
-			}
-		},
-		克 = {
-			石 = {
-				this = true
-			},
-			志 = {
-				this = true
-			}
-		},
-		录 = {
-			音 = {
-				回 = {
-					忆 = {
-						录 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		民 = {
-			运 = {
-				背 = {
-					黑 = {
-						锅 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		明 = {
-			诚 = {
-				this = true
-			}
-		},
-		铭 = {
-			喷 = {
-				血 = {
-					艳 = {
-						照 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		某 = {
-			人 = {
-				回 = {
-					忆 = {
-						录 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		千 = {
-			里 = {
-				this = true
-			}
-		},
-		钱 = {
-			孙 = {
-				this = true
-			}
-		},
-		庆 = {
-			this = true
-		},
-		实 = {
-			this = true
-		},
-		式 = {
-			弓 = {
-				弩 = {
-					专 = {
-						this = true
-					}
-				}
-			}
-		},
-		守 = {
-			将 = {
-				this = true
-			}
-		},
-		维 = {
-			山 = {
-				this = true
-			}
-		},
-		文 = {
-			件 = {
-				曝 = {
-					光 = {
-						this = true
-					}
-				}
-			}
-		},
-		五 = {
-			军 = {
-				this = true
-			}
-		},
-		县 = {
-			黑 = {
-				枪 = {
-					的 = {
-						this = true
-					}
-				}
-			},
-			秃 = {
-				鹰 = {
-					汽 = {
-						枪 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		小 = {
-			明 = {
-				this = true
-			},
-			乐 = {
-				this = true
-			}
-		},
-		正 = {
-			永 = {
-				this = true
-			}
-		},
-		志 = {
-			浩 = {
-				this = true
-			}
-		},
-		子 = {
-			骁 = {
-				this = true
-			},
-			y = {
-				["("] = {
-					a = {
-						n = {
-							g = {
-								[")"] = {
-									["?"] = {
-										["\\"] = {
-											b = {
-												this = true
+		们 = {
+			不 = {
+				像 = {
+					我 = {
+						们 = {
+							， = {
+								我 = {
+									们 = {
+										已 = {
+											经 = {
+												老 = {
+													了 = {
+														， = {
+															无 = {
+																所 = {
+																	谓 = {
+																		this = true
+																	}
+																}
+															}
+														}
+													}
+												}
 											}
 										}
 									}
@@ -5686,792 +2908,59 @@ function temp()
 						}
 					}
 				}
-			}
-		},
-		自 = {
-			白 = {
-				录 = {
-					音 = {
-						this = true
-					}
-				}
-			}
-		},
-		宗 = {
-			岐 = {
-				this = true
-			}
-		},
-		总 = {
-			改 = {
-				革 = {
-					历 = {
-						程 = {
-							this = true
-						}
-					}
-				}
 			},
-			理 = {
-				this = true
-			}
-		},
-		常 = {
-			青 = {
-				this = true
-			}
-		},
-		邦 = {
-			与 = {
-				优 = {
-					衣 = {
-						库 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		富 = {
-			强 = {
-				的 = {
-					红 = {
-						楼 = {
-							梦 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		？ = {
-			富 = {
-				强 = {
-					this = true
-				}
-			}
-		},
-		勒 = {
-			迹 = {
-				this = true
-			}
-		},
-		纸 = {
-			羊 = {
-				this = true
-			}
-		},
-		偷 = {
-			乐 = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.沃 = {
-		尔 = {
-			开 = {
-				西 = {
-					this = true
-				}
-			},
-			特 = {
-				诺 = {
-					沃 = {
-						特 = {
-							尼 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		儿 = {
-			开 = {
-				西 = {
-					this = true
-				}
-			},
-			凯 = {
-				西 = {
-					this = true
-				}
-			}
-		},
-		爾 = {
-			開 = {
-				西 = {
-					this = true
-				}
-			}
-		},
-		利 = {
-			贝 = {
-				尔 = {
-					继 = {
-						续 = {
-							担 = {
-								任 = {
-									this = true
-								}
-							}
-						}
-					},
-					九 = {
-						五 = {
-							之 = {
-								尊 = {
-									this = true
-								}
-							},
-							至 = {
-								尊 = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.赖 = {
-		昌 = {
-			星 = {
-				this = true,
-				背 = {
-					后 = {
-						是 = {
-							习 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		达 = {
-			this = true
-		},
-		介 = {
-			婷 = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.班 = {
-		禅 = {
-			this = true,
-			额 = {
-				尔 = {
-					德 = {
-						尼 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		禪 = {
-			this = true
-		},
-		缠 = {
-			this = true
-		},
-		蝉 = {
-			this = true
-		},
-		级 = {
-			： = {
-				信 = {
-					管 = {
-						["1"] = {
-							["7"] = {
-								["1"] = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.额 = {
-		尔 = {
-			this = true,
-			德 = {
-				尼 = {
-					this = true
-				}
-			},
-			古 = {
-				纳 = {
-					this = true
-				}
-			}
-		},
-		要 = {
-			撸 = {
-				this = true
-			}
-		},
-		来 = {
-			撸 = {
-				this = true
-			}
-		},
-		多 = {
-			撸 = {
-				this = true
-			}
-		},
-		去 = {
-			撸 = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.山 = {
-		本 = {
-			this = true,
-			五 = {
-				十 = {
-					六 = {
-						this = true
-					}
-				}
-			},
-			早 = {
-				纪 = {
-					无 = {
-						马 = {
-							this = true
-						},
-						码 = {
-							this = true
-						}
-					},
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			},
-			梓 = {
-				动 = {
-					作 = {
-						视 = {
-							频 = {
-								this = true
-							}
-						}
-					}
-				},
-				无 = {
-					码 = {
-						this = true
-					}
-				},
-				無 = {
-					碼 = {
-						下 = {
-							載 = {
-								this = true
-							}
-						}
-					}
-				},
-				种 = {
-					子 = {
-						this = true
-					}
-				}
-			}
-		},
-		口 = {
-			組 = {
-				this = true
-			},
-			玲 = {
-				子 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			},
-			直 = {
-				美 = {
-					种 = {
-						子 = {
-							this = true
-						}
-					}
-				}
-			},
-			组 = {
-				this = true
-			}
-		},
-		猫 = {
-			p = {
-				c = {
-					p = {
-						this = true
-					}
-				}
-			}
-		},
-		水 = {
-			狩 = {
-				猎 = {
-					论 = {
-						坛 = {
-							this = true
-						}
-					},
-					网 = {
-						this = true
-					}
-				}
-			},
-			郎 = {
-				中 = {
-					红 = {
-						鼻 = {
-							this = true
-						}
-					}
-				}
-			},
-			彩 = {
-				票 = {
-					this = true
-				}
-			}
-		},
-		奈 = {
-			this = true,
-			钾 = {
-				this = true
-			}
-		},
-		村 = {
-			猎 = {
-				艳 = {
-					this = true
-				}
-			},
-			美 = {
-				色 = {
-					this = true,
-					之 = {
-						韦 = {
-							小 = {
-								宝 = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			},
-			情 = {
-				事 = {
-					this = true
-				}
-			},
-			风 = {
-				流 = {
-					this = true
-				}
-			}
-		},
-		炮 = {
-			香 = {
-				艳 = {
-					this = true,
-					乡 = {
-						村 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		柳 = {
-			村 = {
-				的 = {
-					寡 = {
-						妇 = {
-							情 = {
-								史 = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		野 = {
-			孽 = {
-				债 = {
-					this = true
-				}
-			},
-			暧 = {
-				昧 = {
-					情 = {
-						this = true
-					}
-				}
-			},
-			情 = {
-				债 = {
-					this = true
-				}
-			}
-		},
-		西 = {
-			洪 = {
-				洞 = {
-					this = true,
-					["*"] = {
-						this = true
-					}
-				}
-			},
-			黑 = {
-				砖 = {
-					窑 = {
-						this = true,
-						["*"] = {
-							this = true
-						}
-					}
-				}
-			},
-			删 = {
-				贴 = {
-					公 = {
-						司 = {
-							this = true
-						}
-					}
-				}
-			},
-			负 = {
-				面 = {
-					信 = {
-						息 = {
-							处 = {
-								理 = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		不 = {
-			过 = {
-				来 = {
-					this = true,
-					["*"] = {
-						this = true
-					}
-				}
-			}
-		},
-		寨 = {
-			手 = {
-				机 = {
-					this = true
-				}
-			},
-			版 = {
-				改 = {
-					革 = {
-						this = true,
-						者 = {
-							this = true
-						}
-					}
-				}
-			},
-			警 = {
-				察 = {
-					证 = {
-						this = true
-					}
-				}
-			},
-			学 = {
-				生 = {
-					证 = {
-						this = true
-					}
-				}
-			}
-		},
-		东 = {
-			电 = {
-				警 = {
-					棍 = {
-						专 = {
-							this = true,
-							卖 = {
-								this = true
-							}
-						}
-					}
-				},
-				井 = {
-					棍 = {
-						专 = {
-							this = true
-						}
-					}
-				}
-			},
-			办 = {
-				毕 = {
-					业 = {
-						证 = {
-							this = true
-						}
-					}
-				},
-				真 = {
-					文 = {
-						凭 = {
-							this = true
-						}
-					}
-				}
-			},
-			帮 = {
-				总 = {
-					管 = {
-						王 = {
-							敏 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			本 = {
-				地 = {
-					办 = {
-						证 = {
-							this = true
-						}
-					}
-				}
-			},
-			代 = {
-				開 = {
-					发 = {
-						票 = {
-							this = true
-						}
-					}
-				},
-				考 = {
-					网 = {
-						this = true
-					}
-				}
-			},
-			东 = {
-				明 = {
-					敢 = {
-						死 = {
-							队 = {
-								this = true
-							}
-						}
-					},
-					起 = {
-						义 = {
-							this = true,
-							军 = {
-								this = true
-							}
-						}
-					},
-					事 = {
-						件 = {
-							this = true
-						}
-					}
-				}
-			},
-			短 = {
-				信 = {
-					this = true
-				}
-			},
-			开 = {
-				发 = {
-					票 = {
-						this = true
-					}
-				}
-			},
-			聊 = {
-				城 = {
-					警 = {
-						车 = {
-							this = true
-						}
-					},
-					撞 = {
-						人 = {
-							this = true
-						}
-					}
-				}
-			},
-			临 = {
-				沂 = {
-					王 = {
-						琳 = {
-							芳 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			民 = {
-				办 = {
-					大 = {
-						学 = {
-							this = true
-						}
-					}
-				}
-			},
-			汽 = {
-				枪 = {
-					this = true
-				}
-			},
-			小 = {
-				偷 = {
-					新 = {
-						疆 = {
-							this = true
-						}
-					}
-				}
-			},
-			新 = {
-				疆 = {
-					小 = {
-						偷 = {
-							this = true
-						}
-					}
-				},
-				闻 = {
-					网 = {
-						[" "] = {
-							泽 = {
-								民 = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			},
-			郓 = {
-				城 = {
-					[" "] = {
-						稗 = {
-							官 = {
-								野 = {
-									记 = {
-										this = true
+			还 = {
+				年 = {
+					轻 = {
+						， = {
+							来 = {
+								日 = {
+									方 = {
+										长 = {
+											this = true
+										}
 									}
 								}
 							}
-						},
-						彭 = {
-							雷 = {
-								this = true
-							},
-							蕾 = {
-								this = true
-							},
-							龙 = {
-								坤 = {
-									this = true
-								}
-							}
-						},
-						三 = {
-							舅 = {
+						}
+					}
+				}
+			},
+			就 = {
+				偷 = {
+					着 = {
+						乐 = {
+							吧 = {
 								this = true
 							}
 						}
 					}
 				}
 			},
-			建 = {
-				筑 = {
-					大 = {
-						学 = {
-							， = {
-								管 = {
-									理 = {
-										工 = {
-											程 = {
-												学 = {
-													院 = {
-														， = {
-															信 = {
-																管 = {
-																	["1"] = {
-																		["7"] = {
-																			["-"] = {
-																				["1"] = {
-																					班 = {
-																						this = true
+			俩 = {
+				有 = {
+					本 = {
+						事 = {
+							“ = {
+								清 = {
+									零 = {
+										” = {
+											了 = {
+												， = {
+													我 = {
+														对 = {
+															着 = {
+																["1"] = {
+																	["4"] = {
+																		亿 = {
+																			人 = {
+																				割 = {
+																					腕 = {
+																						谢 = {
+																							罪 = {
+																								this = true
+																							}
+																						}
 																					}
 																				}
 																			}
@@ -6492,127 +2981,522 @@ function temp()
 				}
 			}
 		},
-		川 = {
-			疫 = {
-				域 = {
-					this = true
-				}
-			}
-		},
-		埃 = {
-			this = true
-		},
-		场 = {
-			占 = {
-				地 = {
-					维 = {
-						权 = {
-							this = true
+		要 = {
+			说 = {
+				我 = {
+					叛 = {
+						国 = {
+							， = {
+								我 = {
+									就 = {
+										叛 = {
+											国 = {
+												this = true
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
 			}
 		},
-		地 = {
-			斧 = {
-				头 = {
-					this = true
-				}
-			}
-		},
-		南 = {
-			假 = {
-				币 = {
-					this = true
-				}
-			}
-		},
-		鳥 = {
-			比 = {
-				奈 = {
-					子 = {
-						this = true
-					}
-				}
-			}
-		},
-		浦 = {
-			里 = {
-				奈 = {
-					种 = {
-						子 = {
-							this = true
+		不 = {
+			妨 = {
+				把 = {
+					话 = {
+						说 = {
+							得 = {
+								再 = {
+									明 = {
+										白 = {
+											点 = {
+												this = true
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
 			}
-		},
-		崎 = {
-			华 = {
-				奈 = {
-					种 = {
-						子 = {
-							this = true
-						},
-						紫 = {
-							this = true
-						}
-					}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.T = {
+		N = {
+			N = {
+				D = {
+					this = true
 				}
 			},
-			纪 = {
-				美 = {
-					子 = {
-						种 = {
-							子 = {
+			T = {
+				this = true,
+				炸 = {
+					药 = {
+						this = true,
+						制 = {
+							作 = {
+								方 = {
+									法 = {
+										this = true
+									}
+								}
+							}
+						}
+					},
+					弹 = {
+						制 = {
+							作 = {
+								this = true,
+								方 = {
+									法 = {
+										this = true
+									}
+								}
+							}
+						}
+					},
+					彈 = {
+						this = true
+					}
+				},
+				[" "] = {
+					炸 = {
+						弹 = {
+							的 = {
+								制 = {
+									作 = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				},
+				教 = {
+					程 = {
+						this = true
+					}
+				},
+				烈 = {
+					性 = {
+						炸 = {
+							药 = {
+								this = true
+							},
+							藥 = {
 								this = true
 							}
 						}
 					}
 				}
 			},
-			亚 = {
-				美 = {
+			D = {
+				this = true
+			}
+		},
+		E = {
+			s = {
+				T = {
 					this = true
 				}
 			},
-			亜 = {
-				彌 = {
-					高 = {
-						清 = {
-							this = true
+			S = {
+				T = {
+					this = true
+				}
+			},
+			N = {
+				G = {
+					R = {
+						E = {
+							N = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		h = {
+			e = {
+				["9"] = {
+					this = true,
+					C = {
+						i = {
+							t = {
+								y = {
+									this = true
+								}
+							}
+						}
+					}
+				},
+				["3"] = {
+					F = {
+						e = {
+							e = {
+								l = {
+									O = {
+										n = {
+											l = {
+												i = {
+													n = {
+														e = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				[" "] = {
+					B = {
+						e = {
+							i = {
+								j = {
+									i = {
+										n = {
+											g = {
+												[" "] = {
+													C = {
+														o = {
+															n = {
+																s = {
+																	p = {
+																		i = {
+																			r = {
+																				a = {
+																					c = {
+																						y = {
+																							this = true
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					},
-					迅 = {
-						雷 = {
-							this = true
+					G = {
+						h = {
+							o = {
+								s = {
+									t = {
+										[" "] = {
+											W = {
+												a = {
+													r = {
+														this = true
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					P = {
+						e = {
+							o = {
+								p = {
+									l = {
+										e = {
+											s = {
+												[" "] = {
+													R = {
+														e = {
+															p = {
+																u = {
+																	b = {
+																		l = {
+																			i = {
+																				c = {
+																					[" "] = {
+																						o = {
+																							f = {
+																								[" "] = {
+																									A = {
+																										m = {
+																											n = {
+																												e = {
+																													s = {
+																														i = {
+																															a = {
+																																this = true
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				y = {
+					[" "] = {
+						d = {
+							o = {
+								n = {
+									["'"] = {
+										t = {
+											[" "] = {
+												c = {
+													a = {
+														r = {
+															e = {
+																[" "] = {
+																	a = {
+																		b = {
+																			o = {
+																				u = {
+																					t = {
+																						[" "] = {
+																							u = {
+																								s = {
+																									this = true
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				T = {
+					h = {
+						r = {
+							e = {
+								e = {
+									R = {
+										e = {
+											p = {
+												r = {
+													e = {
+														s = {
+															e = {
+																n = {
+																	t = {
+																		s = {
+																			this = true
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
 			},
-			亞 = {
-				美 = {
-					下 = {
-						載 = {
-							this = true
+			i = {
+				r = {
+					t = {
+						y = {
+							o = {
+								n = {
+									e = {
+										y = {
+											e = {
+												a = {
+													r = {
+														s = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
-			},
-			由 = {
-				纪 = {
-					恵 = {
-						种 = {
-							子 = {
+			}
+		},
+		M = {
+			D = {
+				this = true,
+				["="] = {
+					[">"] = {
+						真 = {
+							美 = {
+								妙 = {
+									this = true
+								}
+							}
+						}
+					}
+				},
+				靠 = {
+					this = true
+				}
+			}
+		},
+		r = {
+			i = {
+				n = {
+					g = {
+						e = {
+							l = {
 								this = true
 							}
 						}
 					}
 				},
-				紀 = {
-					恵 = {
-						種 = {
-							子 = {
+				a = {
+					z = {
+						o = {
+							l = {
+								a = {
+									m = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		["."] = {
+			M = {
+				["."] = {
+					D = {
+						this = true,
+						靠 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		A = {
+			T = {
+				P = {
+					this = true,
+					制 = {
+						作 = {
+							this = true,
+							工 = {
+								艺 = {
+									this = true
+								}
+							}
+						},
+						备 = {
+							this = true
+						}
+					},
+					炸 = {
+						药 = {
+							的 = {
+								研 = {
+									制 = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			N = {
+				K = {
+					碾 = {
+						this = true
+					},
+					压 = {
+						this = true
+					}
+				}
+			}
+		},
+		T = {
+			娱 = {
+				乐 = {
+					城 = {
+						this = true
+					}
+				}
+			},
+			网 = {
+				投 = {
+					this = true
+				}
+			},
+			手 = {
+				槍 = {
+					this = true
+				}
+			},
+			真 = {
+				人 = {
+					娱 = {
+						乐 = {
+							城 = {
 								this = true
 							}
 						}
@@ -6620,84 +3504,225 @@ function temp()
 				}
 			}
 		},
-		田 = {
-			麻 = {
-				衣 = {
-					种 = {
-						子 = {
-							this = true
+		大 = {
+			校 = {
+				花 = {
+					沉 = {
+						沦 = {
+							记 = {
+								this = true
+							}
 						}
 					}
 				}
-			},
-			泉 = {
-				种 = {
-					子 = {
+			}
+		},
+		K = {
+			发 = {
+				射 = {
+					器 = {
 						this = true
 					}
 				}
 			}
 		},
-		停 = {
-			爱 = {
-				子 = {
-					电 = {
-						驴 = {
+		。 = {
+			M = {
+				。 = {
+					D = {
+						this = true,
+						靠 = {
 							this = true
 						}
-					},
-					全 = {
-						集 = {
+					}
+				}
+			}
+		},
+		["2"] = {
+			["5"] = {
+				的 = {
+					枪 = {
+						管 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		["4"] = {
+			["4"] = {
+				步 = {
+					枪 = {
+						加 = {
+							盟 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		["7"] = {
+			["5"] = {
+				手 = {
+					槍 = {
+						this = true
+					}
+				}
+			}
+		},
+		a = {
+			i = {
+				w = {
+					a = {
+						n = {
+							国 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			n = {
+				k = {
+					r = {
+						this = true
+					}
+				}
+			}
+		},
+		B = {
+			F = {
+				["1"] = {
+					博 = {
+						格 = {
+							this = true
+						}
+					}
+				},
+				["3"] = {
+					独 = {
+						立 = {
 							this = true
 						}
 					},
 					无 = {
-						码 = {
-							this = true
-						}
-					}
-				}
-			},
-			愛 = {
-				子 = {
-					電 = {
-						驢 = {
+						畏 = {
 							this = true
 						}
 					},
-					全 = {
-						集 = {
-							this = true
-						}
-					},
-					無 = {
-						碼 = {
-							this = true
+					中 = {
+						途 = {
+							岛 = {
+								this = true
+							}
 						}
 					}
 				}
 			}
 		},
-		下 = {
-			光 = {
-				惠 = {
-					种 = {
-						子 = {
-							this = true
+		e = {
+			l = {
+				高 = {
+					压 = {
+						气 = {
+							枪 = {
+								this = true
+							}
+						}
+					}
+				},
+				假 = {
+					币 = {
+						this = true
+					},
+					钞 = {
+						this = true
+					}
+				}
+			}
+		},
+		i = {
+			a = {
+				n = {
+					a = {
+						n = {
+							m = {
+								e = {
+									n = {
+										[" "] = {
+											R = {
+												e = {
+													v = {
+														i = {
+															s = {
+																i = {
+																	t = {
+																		e = {
+																			d = {
+																				this = true
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
 			},
-			由 = {
-				美 = {
-					子 = {
-						种 = {
-							子 = {
+			b = {
+				e = {
+					t = {
+						this = true,
+						独 = {
+							立 = {
 								this = true
 							}
 						},
-						種 = {
-							子 = {
+						国 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		I = {
+			A = {
+				N = {
+					朝 = {
+						this = true
+					}
+				}
+			}
+		},
+		J = {
+			["5"] = {
+				["5"] = {
+					正 = {
+						品 = {
+							this = true
+						}
+					}
+				}
+			},
+			["8"] = {
+				["8"] = {
+					版 = {
+						假 = {
+							币 = {
+								this = true
+							}
+						},
+						真 = {
+							币 = {
 								this = true
 							}
 						}
@@ -6705,46 +3730,676 @@ function temp()
 				}
 			}
 		},
-		咲 = {
-			理 = {
-				香 = {
-					种 = {
-						子 = {
+		n = {
+			爆 = {
+				子 = {
+					this = true
+				}
+			}
+		},
+		O = {
+			M = {
+				在 = {
+					线 = {
+						this = true
+					}
+				}
+			}
+		},
+		U = {
+			B = {
+				E = {
+					影 = {
+						院 = {
 							this = true
 						}
 					}
 				}
+			}
+		},
+		u = {
+			r = {
+				b = {
+					o = {
+						涡 = {
+							喷 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		V = {
+			棒 = {
+				this = true
 			},
-			萌 = {
-				种 = {
-					子 = {
+			电 = {
+				视 = {
+					棒 = {
+						this = true,
+						转 = {
+							让 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			電 = {
+				視 = {
+					棒 = {
+						this = true,
+						轉 = {
+							讓 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			梦 = {
+				工 = {
+					厂 = {
 						this = true
 					}
 				}
 			},
-			树 = {
-				里 = {
-					种 = {
-						子 = {
+			套 = {
+				件 = {
+					this = true
+				}
+			}
+		},
+		W = {
+			版 = {
+				假 = {
+					B = {
+						this = true
+					},
+					币 = {
+						this = true
+					}
+				}
+			}
+		},
+		裤 = {
+			this = true
+		},
+		型 = {
+			钥 = {
+				玛 = {
+					强 = {
+						开 = {
 							this = true
-						},
-						紫 = {
+						}
+					}
+				}
+			}
+		},
+		字 = {
+			A = {
+				B = {
+					无 = {
+						敌 = {
 							this = true
 						}
 					}
 				}
 			},
-			舞 = {
+			黑 = {
+				头 = {
+					this = true
+				}
+			},
+			十 = {
+				字 = {
+					无 = {
+						敌 = {
+							this = true
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.幼 = {
+		齿 = {
+			this = true,
+			极 = {
+				品 = {
+					this = true
+				}
+			},
+			口 = {
+				交 = {
+					this = true
+				}
+			},
+			爽 = {
+				干 = {
+					this = true
+				}
+			},
+			小 = {
+				电 = {
+					影 = {
+						this = true
+					}
+				}
+			},
+			性 = {
+				交 = {
+					this = true
+				}
+			},
+			援 = {
+				交 = {
+					this = true
+				}
+			}
+		},
+		圖 = {
+			this = true
+		},
+		香 = {
+			阁 = {
+				this = true,
+				地 = {
+					址 = {
+						this = true
+					}
+				},
+				美 = {
+					幼 = {
+						专 = {
+							区 = {
+								this = true
+							}
+						}
+					}
+				},
+				论 = {
+					坛 = {
+						this = true
+					}
+				}
+			},
+			帝 = {
+				国 = {
+					this = true
+				}
+			},
+			閣 = {
+				this = true
+			}
+		},
+		交 = {
+			this = true,
+			视 = {
+				频 = {
+					this = true
+				}
+			}
+		},
+		逼 = {
+			this = true
+		},
+		男 = {
+			this = true,
+			搞 = {
+				幼 = {
+					女 = {
+						this = true
+					}
+				}
+			}
+		},
+		女 = {
+			this = true,
+			全 = {
+				集 = {
+					this = true
+				}
+			},
+			写 = {
+				真 = {
+					this = true
+				}
+			}
+		},
+		妓 = {
+			this = true
+		},
+		齒 = {
+			this = true,
+			女 = {
+				學 = {
+					生 = {
+						this = true
+					}
+				}
+			}
+		},
+		龍 = {
+			this = true
+		},
+		童 = {
+			this = true
+		},
+		人 = {
+			阁 = {
+				this = true
+			}
+		},
+		幼 = {
+			this = true,
+			论 = {
+				坛 = {
+					this = true
+				}
+			},
+			合 = {
+				集 = {
+					this = true
+				}
+			},
+			集 = {
 				this = true
 			},
-			亞 = {
-				香 = {
-					里 = {
-						种 = {
-							子 = {
+			自 = {
+				拍 = {
+					this = true
+				}
+			},
+			["$"] = {
+				["$"] = {
+					电 = {
+						影 = {
+							this = true
+						}
+					}
+				}
+			},
+			j = {
+				i = {
+					品 = {
+						this = true
+					}
+				}
+			},
+			S = {
+				M = {
+					this = true
+				}
+			},
+			操 = {
+				电 = {
+					影 = {
+						this = true
+					}
+				}
+			},
+			成 = {
+				人 = {
+					贴 = {
+						图 = {
+							this = true
+						}
+					}
+				}
+			},
+			电 = {
+				影 = {
+					this = true,
+					集 = {
+						锦 = {
+							this = true
+						}
+					}
+				}
+			},
+			電 = {
+				影 = {
+					this = true
+				}
+			},
+			黄 = {
+				色 = {
+					电 = {
+						影 = {
+							this = true
+						}
+					}
+				}
+			},
+			极 = {
+				品 = {
+					this = true,
+					集 = {
+						锦 = {
+							this = true
+						}
+					},
+					在 = {
+						线 = {
+							this = true
+						}
+					}
+				}
+			},
+			極 = {
+				品 = {
+					this = true
+				}
+			},
+			开 = {
+				苞 = {
+					this = true
+				}
+			},
+			美 = {
+				图 = {
+					区 = {
+						this = true
+					}
+				}
+			},
+			秘 = {
+				书 = {
+					this = true,
+					任 = {
+						你 = {
+							玩 = {
 								this = true
-							},
-							紫 = {
+							}
+						}
+					}
+				},
+				書 = {
+					this = true
+				}
+			},
+			女 = {
+				this = true
+			},
+			片 = {
+				this = true
+			},
+			色 = {
+				情 = {
+					this = true,
+					电 = {
+						影 = {
+							this = true
+						}
+					}
+				},
+				图 = {
+					this = true
+				}
+			},
+			兽 = {
+				交 = {
+					电 = {
+						影 = {
+							this = true
+						}
+					},
+					图 = {
+						this = true
+					}
+				}
+			},
+			调 = {
+				教 = {
+					this = true
+				}
+			},
+			同 = {
+				志 = {
+					this = true,
+					集 = {
+						锦 = {
+							this = true
+						}
+					}
+				}
+			},
+			网 = {
+				站 = {
+					this = true
+				}
+			},
+			无 = {
+				码 = {
+					电 = {
+						影 = {
+							this = true
+						}
+					}
+				}
+			},
+			现 = {
+				场 = {
+					this = true
+				}
+			},
+			性 = {
+				事 = {
+					this = true
+				}
+			},
+			淫 = {
+				图 = {
+					this = true
+				}
+			},
+			影 = {
+				片 = {
+					this = true
+				}
+			},
+			诱 = {
+				あ = {
+					this = true
+				},
+				囡 = {
+					this = true
+				},
+				女 = {
+					this = true,
+					M = {
+						Y = {
+							this = true
+						}
+					},
+					集 = {
+						锦 = {
+							this = true
+						}
+					},
+					扣 = {
+						扣 = {
+							this = true
+						}
+					},
+					密 = {
+						云 = {
+							this = true
+						}
+					}
+				}
+			},
+			誘 = {
+				女 = {
+					this = true,
+					扣 = {
+						扣 = {
+							this = true
+						}
+					}
+				}
+			},
+			之 = {
+				家 = {
+					论 = {
+						坛 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		色 = {
+			窝 = {
+				this = true
+			},
+			网 = {
+				this = true
+			}
+		},
+		木 = {
+			耳 = {
+				this = true,
+				福 = {
+					利 = {
+						this = true
+					}
+				}
+			}
+		},
+		穴 = {
+			插 = {
+				this = true
+			},
+			贴 = {
+				图 = {
+					this = true
+				}
+			}
+		},
+		奸 = {
+			this = true,
+			网 = {
+				this = true
+			},
+			视 = {
+				频 = {
+					this = true
+				}
+			}
+		},
+		B = {
+			this = true
+		},
+		儿 = {
+			园 = {
+				行 = {
+					凶 = {
+						this = true
+					}
+				},
+				杀 = {
+					人 = {
+						this = true
+					}
+				}
+			}
+		},
+		谷 = {
+			川 = {
+				爱 = {
+					this = true
+				}
+			}
+		},
+		穀 = {
+			川 = {
+				愛 = {
+					this = true
+				}
+			}
+		},
+		嫩 = {
+			a = {
+				v = {
+					this = true
+				}
+			}
+		},
+		师 = {
+			女 = {
+				this = true
+			}
+		},
+		图 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.作 = {
+		爱 = {
+			this = true
+		},
+		秀 = {
+			this = true,
+			温 = {
+				this = true
+			}
+		},
+		愛 = {
+			this = true
+		},
+		弊 = {
+			this = true,
+			器 = {
+				this = true,
+				材 = {
+					this = true
+				}
+			}
+		},
+		["&"] = {
+			训 = {
+				["$"] = {
+					器 = {
+						材 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		a = {
+			i = {
+				this = true
+			}
+		},
+		g = {
+			训 = {
+				器 = {
+					材 = {
+						this = true
+					}
+				}
+			}
+		},
+		恶 = {
+			得 = {
+				势 = {
+					有 = {
+						人 = {
+							怕 = {
 								this = true
 							}
 						}
@@ -6752,51 +4407,2859 @@ function temp()
 				}
 			}
 		},
-		心 = {
-			恨 = {
-				b = {
-					t = {
+		训 = {
+			["$"] = {
+				器 = {
+					材 = {
+						this = true
+					}
+				}
+			},
+			服 = {
+				j = {
+					用 = {
+						this = true
+					}
+				},
+				警 = {
+					用 = {
+						this = true
+					}
+				}
+			},
+			器 = {
+				材 = {
+					this = true
+				}
+			},
+			用 = {
+				器 = {
+					材 = {
+						this = true
+					}
+				}
+			}
+		},
+		訓 = {
+			器 = {
+				材 = {
+					this = true
+				}
+			}
+		},
+		炸 = {
+			弹 = {
+				this = true
+			},
+			药 = {
+				this = true
+			}
+		},
+		为 = {
+			中 = {
+				国 = {
+					领 = {
+						导 = {
+							人 = {
+								， = {
+									我 = {
+										能 = {
+											够 = {
+												为 = {
+													["1"] = {
+														["4"] = {
+															亿 = {
+																中 = {
+																	国 = {
+																		人 = {
+																			民 = {
+																				服 = {
+																					务 = {
+																						this = true
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.阝 = {
+		月 = {
+			this = true
+		},
+		this = {
+			this = true
+		},
+		方 = {
+			电 = {
+				子 = {
+					犭 = {
+						句 = {
+							this = true
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.歇 = {
+		逼 = {
+			this = true
+		},
+		b = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.蛤 = {
+		蟆 = {
+			this = true,
+			转 = {
+				世 = {
+					this = true
+				}
+			},
+			不 = {
+				鸣 = {
+					则 = {
+						罢 = {
+							this = true
+						}
+					}
+				}
+			},
+			打 = {
+				气 = {
+					this = true
+				}
+			},
+			帝 = {
+				this = true
+			},
+			江 = {
+				this = true,
+				是 = {
+					谁 = {
+						this = true
+					}
+				},
+				系 = {
+					this = true
+				},
+				泽 = {
+					民 = {
+						this = true,
+						站 = {
+							台 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			漏 = {
+				气 = {
+					this = true
+				}
+			},
+			亲 = {
+				江 = {
+					系 = {
+						媒 = {
+							体 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			是 = {
+				谁 = {
+					this = true
+				}
+			},
+			图 = {
+				this = true,
+				["&"] = {
+					江 = {
+						泽 = {
+							民 = {
+								this = true
+							}
+						}
+					}
+				},
+				打 = {
+					气 = {
+						this = true
+					}
+				},
+				江 = {
+					泽 = {
+						民 = {
+							this = true
+						}
+					}
+				}
+			},
+			圖 = {
+				this = true
+			},
+			完 = {
+				结 = {
+					说 = {
+						this = true
+					}
+				},
+				結 = {
+					說 = {
+						this = true
+					}
+				}
+			},
+			终 = {
+				结 = {
+					this = true
+				}
+			},
+			終 = {
+				結 = {
+					this = true
+				}
+			},
+			上 = {
+				泰 = {
+					山 = {
+						this = true
+					}
+				}
+			}
+		},
+		不 = {
+			去 = {
+				镇 = {
+					江 = {
+						this = true
+					}
+				}
+			}
+		},
+		参 = {
+			观 = {
+				this = true
+			}
+		},
+		诞 = {
+			节 = {
+				this = true
+			}
+		},
+		帝 = {
+			this = true
+		},
+		蛤 = {
+			this = true,
+			活 = {
+				不 = {
+					长 = {
+						this = true
+					}
+				},
+				着 = {
+					this = true
+				}
+			},
+			没 = {
+				死 = {
+					this = true
+				}
+			},
+			早 = {
+				已 = {
+					this = true
+				}
+			}
+		},
+		视 = {
+			察 = {
+				this = true
+			}
+		},
+		题 = {
+			词 = {
+				this = true
+			}
+		},
+		挺 = {
+			傅 = {
+				this = true
+			}
+		},
+		王 = {
+			早 = {
+				已 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.发 = {
+		骚 = {
+			this = true
+		},
+		浪 = {
+			this = true
+		},
+		抡 = {
+			this = true,
+			功 = {
+				this = true
+			}
+		},
+		伦 = {
+			this = true,
+			功 = {
+				this = true
+			},
+			工 = {
+				this = true
+			}
+		},
+		轮 = {
+			this = true,
+			功 = {
+				this = true,
+				陈 = {
+					果 = {
+						this = true
+					}
+				}
+			}
+		},
+		论 = {
+			this = true,
+			公 = {
+				this = true
+			},
+			功 = {
+				this = true
+			},
+			工 = {
+				this = true
+			}
+		},
+		票 = {
+			this = true,
+			代 = {
+				开 = {
+					this = true,
+					保 = {
+						真 = {
+							this = true
+						}
+					}
+				},
+				["&"] = {
+					办 = {
+						this = true
+					}
+				},
+				办 = {
+					this = true,
+					M = {
+						Y = {
+							this = true
+						}
+					},
+					密 = {
+						云 = {
+							的 = {
+								this = true
+							}
+						}
+					}
+				},
+				理 = {
+					this = true
+				},
+				售 = {
+					this = true
+				}
+			},
+			[" "] = {
+				管 = {
+					理 = {
+						this = true
+					}
+				}
+			},
+			顾 = {
+				问 = {
+					有 = {
+						限 = {
+							公 = {
+								司 = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			},
+			、 = {
+				this = true
+			},
+			‖ = {
+				宜 = {
+					昌 = {
+						this = true
+					}
+				}
+			},
+			t = {
+				e = {
+					l = {
+						this = true
+					}
+				}
+			},
+			办 = {
+				理 = {
+					this = true
+				}
+			},
+			保 = {
+				真 = {
+					this = true,
+					代 = {
+						开 = {
+							this = true
+						}
+					}
+				}
+			},
+			北 = {
+				京 = {
+					this = true
+				}
+			},
+			查 = {
+				询 = {
+					代 = {
+						开 = {
+							this = true
+						}
+					}
+				}
+			},
+			亻 = {
+				呆 = {
+					真 = {
+						this = true
+					}
+				}
+			},
+			公 = {
+				司 = {
+					this = true,
+					代 = {
+						理 = {
+							this = true
+						}
+					}
+				}
+			},
+			规 = {
+				定 = {
+					this = true
+				}
+			},
+			货 = {
+				真 = {
+					价 = {
+						实 = {
+							this = true
+						}
+					}
+				}
+			},
+			开 = {
+				this = true
+			},
+			可 = {
+				验 = {
+					this = true
+				}
+			},
+			刻 = {
+				章 = {
+					车 = {
+						牌 = {
+							this = true
+						}
+					}
+				}
+			},
+			那 = {
+				里 = {
+					有 = {
+						this = true
+					}
+				}
+			},
+			全 = {
+				this = true
+			},
+			顺 = {
+				义 = {
+					this = true
+				}
+			},
+			团 = {
+				购 = {
+					this = true
+				}
+			},
+			需 = {
+				要 = {
+					this = true
+				}
+			},
+			业 = {
+				务 = {
+					this = true
+				}
+			},
+			印 = {
+				刷 = {
+					this = true
+				}
+			},
+			预 = {
+				订 = {
+					this = true
+				}
+			},
+			转 = {
+				让 = {
+					this = true
+				}
+			},
+			咨 = {
+				询 = {
+					this = true
+				}
+			}
+		},
+		射 = {
+			药 = {
+				this = true
+			},
+			钢 = {
+				珠 = {
+					B = {
+						B = {
+							打 = {
+								鸟 = {
+									this = true
+								}
+							}
+						}
+					},
+					玩 = {
+						具 = {
+							枪 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			干 = {
+				扰 = {
+					器 = {
+						this = true
+					}
+				}
+			}
+		},
+		漂 = {
+			this = true,
+			代 = {
+				开 = {
+					this = true,
+					保 = {
+						真 = {
+							this = true
+						}
+					}
+				},
+				理 = {
+					this = true
+				}
+			},
+			公 = {
+				司 = {
+					this = true
+				}
+			},
+			可 = {
+				验 = {
+					this = true
+				}
+			},
+			转 = {
+				让 = {
+					this = true
+				}
+			}
+		},
+		缥 = {
+			this = true
+		},
+		剽 = {
+			this = true,
+			代 = {
+				开 = {
+					this = true
+				}
+			}
+		},
+		嘌 = {
+			this = true
+		},
+		中 = {
+			发 = {
+				娱 = {
+					乐 = {
+						城 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		发 = {
+			操 = {
+				this = true
+			},
+			娱 = {
+				乐 = {
+					官 = {
+						方 = {
+							网 = {
+								站 = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		令 = {
+			狗 = {
+				this = true
+			},
+			枪 = {
+				this = true
+			}
+		},
+		改 = {
+			委 = {
+				this = true
+			}
+		},
+		展 = {
+			和 = {
+				改 = {
+					革 = {
+						委 = {
+							员 = {
+								会 = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			},
+			与 = {
+				改 = {
+					革 = {
+						委 = {
+							员 = {
+								会 = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		哥 = {
+			博 = {
+				彩 = {
+					this = true
+				}
+			}
+		},
+		正 = {
+			念 = {
+				this = true,
+				["*"] = {
+					this = true
+				}
+			}
+		},
+		生 = {
+			关 = {
+				系 = {
+					this = true
+				}
+			},
+			暴 = {
+				动 = {
+					this = true
+				}
+			}
+		},
+		情 = {
+			this = true,
+			摧 = {
+				眠 = {
+					术 = {
+						this = true
+					}
+				}
+			},
+			药 = {
+				this = true
+			}
+		},
+		国 = {
+			难 = {
+				财 = {
+					this = true
+				}
+			}
+		},
+		["{"] = {
+			["1"] = {
+				["0"] = {
+					["}"] = {
+						票 = {
+							["{"] = {
+								["2"] = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		["-"] = {
+			票 = {
+				this = true
+			}
+		},
+		["/"] = {
+			票 = {
+				["/"] = {
+					代 = {
+						["/"] = {
+							开 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		仑 = {
+			this = true,
+			d = {
+				a = {
+					发 = {
+						this = true
+					}
+				}
+			}
+		},
+		囵 = {
+			this = true
+		},
+		沦 = {
+			this = true
+		},
+		纶 = {
+			this = true
+		},
+		哨 = {
+			人 = {
+				艾 = {
+					芬 = {
+						this = true
+					}
+				}
+			}
+		},
+		["$"] = {
+			["$"] = {
+				抡 = {
+					this = true
+				},
+				仑 = {
+					this = true
+				},
+				伦 = {
+					this = true
+				},
+				沦 = {
+					this = true
+				},
+				纶 = {
+					this = true
+				},
+				轮 = {
+					this = true
+				},
+				论 = {
+					this = true
+				}
+			},
+			抡 = {
+				this = true
+			},
+			仑 = {
+				this = true
+			},
+			伦 = {
+				this = true
+			},
+			沦 = {
+				this = true
+			},
+			纶 = {
+				this = true
+			},
+			轮 = {
+				this = true
+			},
+			论 = {
+				this = true
+			}
+		},
+		["*"] = {
+			["*"] = {
+				抡 = {
+					this = true
+				},
+				仑 = {
+					this = true
+				},
+				伦 = {
+					this = true
+				},
+				沦 = {
+					this = true
+				},
+				纶 = {
+					this = true
+				},
+				轮 = {
+					this = true
+				},
+				论 = {
+					this = true
+				}
+			},
+			抡 = {
+				this = true
+			},
+			仑 = {
+				this = true
+			},
+			伦 = {
+				this = true
+			},
+			沦 = {
+				this = true
+			},
+			纶 = {
+				this = true
+			},
+			轮 = {
+				this = true
+			},
+			论 = {
+				this = true
+			}
+		},
+		["@"] = {
+			["@"] = {
+				抡 = {
+					this = true
+				},
+				仑 = {
+					this = true
+				},
+				伦 = {
+					this = true
+				},
+				沦 = {
+					this = true
+				},
+				纶 = {
+					this = true
+				},
+				轮 = {
+					this = true
+				},
+				论 = {
+					this = true
+				}
+			},
+			抡 = {
+				this = true
+			},
+			仑 = {
+				this = true
+			},
+			伦 = {
+				this = true
+			},
+			沦 = {
+				this = true
+			},
+			纶 = {
+				this = true
+			},
+			轮 = {
+				this = true
+			},
+			论 = {
+				this = true
+			}
+		},
+		["^"] = {
+			["^"] = {
+				抡 = {
+					this = true
+				},
+				仑 = {
+					this = true
+				},
+				伦 = {
+					this = true
+				},
+				沦 = {
+					this = true
+				},
+				纶 = {
+					this = true
+				},
+				轮 = {
+					this = true
+				},
+				论 = {
+					this = true
+				}
+			},
+			抡 = {
+				this = true
+			},
+			仑 = {
+				this = true
+			},
+			伦 = {
+				this = true
+			},
+			沦 = {
+				this = true
+			},
+			纶 = {
+				this = true
+			},
+			轮 = {
+				this = true
+			},
+			论 = {
+				this = true
+			}
+		},
+		["~"] = {
+			["~"] = {
+				抡 = {
+					this = true
+				},
+				仑 = {
+					this = true
+				},
+				伦 = {
+					this = true
+				},
+				沦 = {
+					this = true
+				},
+				纶 = {
+					this = true
+				},
+				轮 = {
+					this = true
+				},
+				论 = {
+					this = true
+				}
+			},
+			抡 = {
+				this = true
+			},
+			仑 = {
+				this = true
+			},
+			伦 = {
+				this = true
+			},
+			沦 = {
+				this = true
+			},
+			纶 = {
+				this = true
+			},
+			轮 = {
+				this = true
+			},
+			论 = {
+				this = true
+			},
+			票 = {
+				this = true
+			}
+		},
+		p = {
+			i = {
+				a = {
+					o = {
+						this = true
+					}
+				}
+			}
+		},
+		P = {
+			P = {
+				this = true
+			}
+		},
+		表 = {
+			声 = {
+				明 = {
+					[" "] = {
+						六 = {
+							四 = {
+								this = true
+							}
+						}
+					},
+					六 = {
+						四 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		假 = {
+			币 = {
+				this = true
+			},
+			钞 = {
+				this = true
+			},
+			钱 = {
+				this = true
+			},
+			人 = {
+				民 = {
+					币 = {
+						this = true
+					}
+				}
+			},
+			硬 = {
+				币 = {
+					this = true
+				}
+			}
+		},
+		奖 = {
+			使 = {
+				者 = {
+					this = true
+				}
+			}
+		},
+		课 = {
+			公 = {
+				司 = {
+					this = true
+				}
+			}
+		},
+		廊 = {
+			叫 = {
+				熟 = {
+					鸡 = {
+						this = true
+					}
+				}
+			},
+			小 = {
+				姐 = {
+					this = true
+				}
+			},
+			性 = {
+				息 = {
+					this = true
+				}
+			},
+			悠 = {
+				闲 = {
+					this = true
+				}
+			}
+		},
+		飘 = {
+			this = true,
+			代 = {
+				开 = {
+					this = true
+				}
+			}
+		},
+		售 = {
+			新 = {
+				版 = {
+					假 = {
+						币 = {
+							this = true
+						},
+						钱 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		税 = {
+			票 = {
+				发 = {
+					票 = {
+						this = true,
+						、 = {
+							this = true
+						},
+						保 = {
+							真 = {
+								this = true
+							}
+						},
+						代 = {
+							办 = {
+								this = true
+							},
+							开 = {
+								this = true
+							},
+							理 = {
+								this = true
+							}
+						},
+						公 = {
+							司 = {
+								this = true
+							}
+						},
+						可 = {
+							验 = {
+								this = true
+							}
+						},
+						转 = {
+							让 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		帖 = {
+			人 = {
+				招 = {
+					聘 = {
+						this = true
+					}
+				}
+			},
+			赚 = {
+				钱 = {
+					this = true
+				}
+			}
+		},
+		西 = {
+			示 = {
+				d = {
+					a = {
+						i = {
+							办 = {
+								this = true
+							}
+						}
+					}
+				},
+				代 = {
+					办 = {
+						this = true
+					}
+				}
+			}
+		},
+		现 = {
+			答 = {
+				案 = {
+					this = true
+				}
+			},
+			敌 = {
+				人 = {
+					this = true
+				}
+			},
+			考 = {
+				题 = {
+					this = true
+				}
+			}
+		},
+		烟 = {
+			弹 = {
+				this = true
+			}
+		},
+		彩 = {
+			彩 = {
+				票 = {
+					this = true
+				}
+			}
+		},
+		配 = {
+			二 = {
+				十 = {
+					五 = {
+						中 = {
+							this = true
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.招 = {
+		妓 = {
+			this = true,
+			自 = {
+				拍 = {
+					this = true,
+					女 = {
+						角 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		鶏 = {
+			this = true
+		},
+		聘 = {
+			鸭 = {
+				子 = {
+					少 = {
+						爷 = {
+							this = true
+						}
+					}
+				},
+				妓 = {
+					this = true
+				}
+			}
+		},
+		鸡 = {
+			this = true
+		},
+		沽 = {
+			案 = {
+				this = true
+			}
+		},
+		行 = {
+			提 = {
+				额 = {
+					this = true
+				}
+			}
+		},
+		雞 = {
+			this = true
+		},
+		警 = {
+			考 = {
+				试 = {
+					答 = {
+						案 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		看 = {
+			房 = {
+				公 = {
+					主 = {
+						this = true
+					}
+				}
+			}
+		},
+		嫖 = {
+			this = true,
+			联 = {
+				系 = {
+					this = true
+				}
+			}
+		},
+		血 = {
+			this = true
+		},
+		玉 = {
+			芳 = {
+				this = true
+			}
+		},
+		契 = {
+			池 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.精 = {
+		子 = {
+			this = true,
+			倍 = {
+				増 = {
+					this = true,
+					高 = {
+						清 = {
+							this = true
+						}
+					}
+				}
+			},
+			内 = {
+				射 = {
+					this = true
+				}
+			}
+		},
+		液 = {
+			this = true,
+			榨 = {
+				取 = {
+					this = true
+				}
+			},
+			浴 = {
+				this = true
+			},
+			的 = {
+				妙 = {
+					用 = {
+						this = true
+					}
+				}
+			},
+			喷 = {
+				入 = {
+					穴 = {
+						this = true
+					}
+				},
+				射 = {
+					小 = {
+						穴 = {
+							this = true
+						}
+					}
+				},
+				涌 = {
+					而 = {
+						出 = {
+							this = true
+						}
+					}
+				}
+			},
+			片 = {
+				this = true
+			},
+			射 = {
+				入 = {
+					花 = {
+						心 = {
+							this = true
+						}
+					},
+					穴 = {
+						中 = {
+							this = true
+						}
+					}
+				}
+			},
+			小 = {
+				穴 = {
+					this = true
+				}
+			},
+			颜 = {
+				射 = {
+					this = true
+				}
+			},
+			中 = {
+				出 = {
+					a = {
+						v = {
+							i = {
+								this = true
+							}
+						}
+					},
+					b = {
+						t = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		选 = {
+			this = true,
+			明 = {
+				星 = {
+					扒 = {
+						b = {
+							图 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		诚 = {
+			枪 = {
+				械 = {
+					网 = {
+						this = true
+					}
+				},
+				戒 = {
+					网 = {
+						this = true
+					}
+				},
+				支 = {
+					this = true
+				}
+			},
+			抢 = {
+				械 = {
+					网 = {
+						this = true
+					}
+				}
+			}
+		},
+		品 = {
+			刀 = {
+				this = true,
+				剑 = {
+					this = true,
+					网 = {
+						this = true
+					}
+				},
+				蝴 = {
+					蝶 = {
+						刀 = {
+							this = true
+						}
+					}
+				},
+				具 = {
+					this = true,
+					蝴 = {
+						蝶 = {
+							刀 = {
+								this = true
+							}
+						}
+					},
+					军 = {
+						刀 = {
+							this = true
+						}
+					},
+					网 = {
+						this = true
+					}
+				}
+			},
+			弓 = {
+				弩 = {
+					this = true,
+					网 = {
+						this = true
+					},
+					专 = {
+						this = true
+					}
+				},
+				努 = {
+					this = true
+				}
+			},
+			席 = {
+				this = true
+			},
+			蓆 = {
+				this = true
+			},
+			["*"] = {
+				枪 = {
+					this = true
+				}
+			},
+			a = {
+				k = {
+					this = true
+				}
+			},
+			h = {
+				文 = {
+					合 = {
+						集 = {
+							this = true
+						}
+					}
+				}
+			},
+			波 = {
+				浪 = {
+					钩 = {
+						全 = {
+							套 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			弹 = {
+				弓 = {
+					this = true
+				}
+			},
+			忉 = {
+				蝴 = {
+					蝶 = {
+						忉 = {
+							this = true
+						}
+					}
+				}
+			},
+			电 = {
+				影 = {
+					this = true,
+					集 = {
+						锦 = {
+							this = true
+						}
+					},
+					在 = {
+						线 = {
+							看 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			電 = {
+				影 = {
+					this = true
+				}
+			},
+			仿 = {
+				真 = {
+					枪 = {
+						专 = {
+							this = true
+						}
+					}
+				}
+			},
+			费 = {
+				洛 = {
+					蒙 = {
+						this = true
+					}
+				}
+			},
+			佛 = {
+				裸 = {
+					蒙 = {
+						this = true
+					}
+				}
+			},
+			夫 = {
+				妻 = {
+					this = true,
+					网 = {
+						this = true
+					}
+				}
+			},
+			钢 = {
+				珠 = {
+					枪 = {
+						this = true
+					}
+				}
+			},
+			古 = {
+				巴 = {
+					军 = {
+						刀 = {
+							this = true
+						}
+					},
+					軍 = {
+						刀 = {
+							this = true
+						},
+						忉 = {
+							this = true
+						}
+					}
+				}
+			},
+			蝴 = {
+				蝶 = {
+					刀 = {
+						this = true,
+						热 = {
+							销 = {
+								this = true
+							}
+						},
+						专 = {
+							this = true
+						}
+					}
+				}
+			},
+			军 = {
+				刺 = {
+					this = true
+				},
+				刀 = {
+					this = true,
+					正 = {
+						品 = {
+							this = true
+						}
+					}
+				},
+				事 = {
+					模 = {
+						型 = {
+							this = true
+						}
+					}
+				}
+			},
+			猎 = {
+				枪 = {
+					this = true
+				}
+			},
+			灭 = {
+				火 = {
+					枪 = {
+						this = true
+					}
+				}
+			},
+			弩 = {
+				this = true
+			},
+			炮 = {
+				图 = {
+					this = true
+				}
+			},
+			气 = {
+				狗 = {
+					this = true,
+					专 = {
+						this = true
+					}
+				},
+				枪 = {
+					this = true,
+					网 = {
+						this = true
+					}
+				}
+			},
+			汽 = {
+				狗 = {
+					this = true
+				},
+				枪 = {
+					this = true
+				},
+				抢 = {
+					this = true
+				}
+			},
+			枪 = {
+				["*"] = {
+					枪 = {
+						this = true
+					}
+				},
+				具 = {
+					蝴 = {
+						蝶 = {
+							枪 = {
+								this = true
+							}
+						}
+					},
+					军 = {
+						枪 = {
+							this = true
+						}
+					}
+				}
+			},
+			手 = {
+				狗 = {
+					this = true
+				}
+			},
+			套 = {
+				图 = {
+					this = true,
+					系 = {
+						列 = {
+							this = true
+						}
+					}
+				}
+			},
+			网 = {
+				站 = {
+					合 = {
+						集 = {
+							this = true
+						}
+					},
+					排 = {
+						行 = {
+							榜 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			无 = {
+				码 = {
+					精 = {
+						品 = {
+							this = true
+						}
+					}
+				}
+			},
+			性 = {
+				交 = {
+					图 = {
+						this = true
+					}
+				}
+			},
+			阳 = {
+				江 = {
+					刀 = {
+						this = true
+					}
+				}
+			},
+			幼 = {
+				交 = {
+					电 = {
+						影 = {
+							this = true
+						}
+					}
+				}
+			},
+			折 = {
+				刀 = {
+					系 = {
+						列 = {
+							this = true
+						}
+					}
+				},
+				枪 = {
+					支 = {
+						系 = {
+							列 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			直 = {
+				刀 = {
+					系 = {
+						列 = {
+							this = true
+						}
+					}
+				},
+				枪 = {
+					支 = {
+						系 = {
+							列 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			国 = {
+				产 = {
+					高 = {
+						清 = {
+							自 = {
+								在 = {
+									线 = {
+										看 = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			双 = {
+				飞 = {
+					this = true
+				}
+			}
+		},
+		英 = {
+			联 = {
+				盟 = {
+					A = {
+						货 = {
+							this = true
+						}
+					}
+				}
+			},
+			代 = {
+				考 = {
+					this = true
+				}
+			},
+			刀 = {
+				剑 = {
+					this = true
+				}
+			},
+			彩 = {
+				票 = {
+					this = true
+				}
+			}
+		},
+		雕 = {
+			氮 = {
+				化 = {
+					母 = {
+						鸡 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		刀 = {
+			商 = {
+				城 = {
+					this = true
+				}
+			}
+		},
+		准 = {
+			企 = {
+				业 = {
+					名 = {
+						录 = {
+							网 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			名 = {
+				录 = {
+					数 = {
+						据 = {
+							网 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			输 = {
+				送 = {
+					病 = {
+						毒 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		密 = {
+			减 = {
+				速 = {
+					器 = {
+						this = true
+					}
+				}
+			},
+			刻 = {
+				章 = {
+					服 = {
+						务 = {
+							部 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			武 = {
+				器 = {
+					区 = {
+						this = true
+					}
+				}
+			},
+			证 = {
+				件 = {
+					this = true
+				}
+			}
+		},
+		确 = {
+			答 = {
+				案 = {
+					this = true
+				}
+			},
+			射 = {
+				手 = {
+					步 = {
+						枪 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		神 = {
+			药 = {
+				品 = {
+					this = true
+				}
+			},
+			病 = {
+				this = true
+			},
+			分 = {
+				裂 = {
+					this = true
+				}
+			},
+			黄 = {
+				纳 = {
+					this = true
+				}
+			}
+		},
+		慎 = {
+			细 = {
+				腻 = {
+					this = true
+				}
+			},
+			細 = {
+				膩 = {
+					this = true
+				}
+			}
+		},
+		this = {
+			this = true
+		},
+		彩 = {
+			夫 = {
+				妻 = {
+					this = true
+				}
+			},
+			内 = {
+				容 = {
+					推 = {
+						荐 = {
+							this = true
+						}
+					}
+				}
+			},
+			视 = {
+				频 = {
+					this = true
+				}
+			},
+			脱 = {
+				衣 = {
+					钢 = {
+						管 = {
+							舞 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			娱 = {
+				乐 = {
+					平 = {
+						台 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		城 = {
+			枪 = {
+				械 = {
+					网 = {
+						this = true
+					}
+				}
+			}
+		},
+		虫 = {
+			上 = {
+				脑 = {
+					this = true
+				}
+			}
+		},
+		蟲 = {
+			this = true
+		},
+		防 = {
+			战 = {
+				术 = {
+					枪 = {
+						this = true
+					}
+				},
+				術 = {
+					枪 = {
+						this = true
+					},
+					突 = {
+						击 = {
+							枪 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		仿 = {
+			this = true,
+			贝 = {
+				枪 = {
+					this = true
+				}
+			},
+			弹 = {
+				簧 = {
+					刀 = {
+						this = true
+					}
+				}
+			},
+			彈 = {
+				簧 = {
+					刀 = {
+						this = true
+					}
+				}
+			},
+			刀 = {
+				this = true
+			},
+			国 = {
+				防 = {
+					刺 = {
+						this = true
+					}
+				}
+			},
+			海 = {
+				军 = {
+					突 = {
+						击 = {
+							刀 = {
+								this = true
+							},
+							枪 = {
+								this = true
+							}
+						}
+					}
+				},
+				軍 = {
+					突 = {
+						击 = {
+							枪 = {
+								this = true
+							}
+						},
+						擊 = {
+							刀 = {
+								this = true
+							}
+						}
+					}
+				},
+				云 = {
+					枪 = {
+						this = true
+					}
+				},
+				雲 = {
+					this = true
+				}
+			},
+			解 = {
+				放 = {
+					现 = {
+						役 = {
+							刀 = {
+								this = true
+							},
+							忉 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			警 = {
+				匕 = {
+					this = true,
+					刀 = {
+						this = true
+					},
+					忉 = {
+						this = true
+					}
+				},
+				斧 = {
+					this = true
+				},
+				甪 = {
+					匕 = {
+						首 = {
+							this = true
+						}
+					}
+				},
+				用 = {
+					B = {
+						手 = {
+							this = true
+						}
+					},
+					匕 = {
+						首 = {
+							this = true
+						}
+					},
+					枪 = {
+						this = true
+					}
+				}
+			},
+			军 = {
+				刀 = {
+					this = true
+				},
+				刃 = {
+					this = true,
+					手 = {
+						枪 = {
+							this = true
+						}
+					},
+					正 = {
+						品 = {
+							this = true
+						}
+					}
+				},
+				用 = {
+					B = {
+						手 = {
+							this = true
+						}
+					},
+					匕 = {
+						首 = {
+							this = true
+						}
+					},
+					斧 = {
+						this = true
+					},
+					枪 = {
+						this = true
+					}
+				}
+			},
+			軍 = {
+				甪 = {
+					匕 = {
+						首 = {
+							this = true
+						}
+					}
+				}
+			},
+			蘭 = {
+				博 = {
+					this = true
+				}
+			},
+			冷 = {
+				钢 = {
+					枪 = {
+						this = true
+					}
+				}
+			},
+			美 = {
+				军 = {
+					骑 = {
+						兵 = {
+							刀 = {
+								this = true
+							},
+							枪 = {
+								this = true
+							}
+						}
+					}
+				},
+				軍 = {
+					騎 = {
+						兵 = {
+							刀 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			媄 = {
+				軍 = {
+					騎 = {
+						兵 = {
+							刀 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			枪 = {
+				this = true
+			},
+			忍 = {
+				者 = {
+					刺 = {
+						this = true
+					},
+					刀 = {
+						this = true
+					}
+				}
+			},
+			三 = {
+				棱 = {
+					刺 = {
+						this = true
+					},
+					军 = {
+						刺 = {
+							this = true
+						}
+					}
+				}
+			},
+			身 = {
+				份 = {
+					证 = {
+						this = true
+					},
+					證 = {
+						this = true
+					}
+				}
+			},
+			收 = {
+				枪 = {
+					this = true
+				}
+			},
+			手 = {
+				狗 = {
+					this = true
+				},
+				枪 = {
+					this = true
+				}
+			},
+			唐 = {
+				刀 = {
+					this = true
+				},
+				斧 = {
+					this = true
+				},
+				枪 = {
+					this = true
+				}
+			},
+			特 = {
+				警 = {
+					B = {
+						手 = {
+							this = true
+						}
+					},
+					匕 = {
+						首 = {
+							this = true
+						}
+					},
+					短 = {
+						匕 = {
+							首 = {
+								this = true
+							}
+						}
+					},
+					斧 = {
+						this = true
+					},
+					枪 = {
+						支 = {
+							this = true
+						}
+					}
+				}
+			},
+			野 = {
+				战 = {
+					刀 = {
+						this = true,
+						正 = {
+							品 = {
+								this = true
+							}
+						}
+					},
+					斧 = {
+						this = true
+					},
+					枪 = {
+						this = true,
+						支 = {
+							this = true
+						}
+					}
+				},
+				戰 = {
+					d = {
+						a = {
+							o = {
+								this = true
+							}
+						}
+					},
+					刺 = {
+						this = true
+					},
+					刀 = {
+						this = true,
+						正 = {
+							品 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			战 = {
+				术 = {
+					枪 = {
+						this = true
+					},
+					突 = {
+						击 = {
+							刀 = {
+								this = true
+							}
+						}
+					},
+					折 = {
+						刀 = {
+							this = true,
+							专 = {
+								this = true
+							}
+						},
+						枪 = {
+							支 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			戰 = {
+				ポ = {
+					突 = {
+						擊 = {
+							刀 = {
+								this = true
+							}
+						}
+					}
+				},
+				術 = {
+					突 = {
+						擊 = {
+							刀 = {
+								this = true
+							},
+							枪 = {
+								this = true
+							}
+						}
+					},
+					折 = {
+						刀 = {
+							this = true,
+							专 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			折 = {
+				刀 = {
+					this = true
+				}
+			}
+		},
+		钢 = {
+			刺 = {
+				this = true
+			}
+		},
+		工 = {
+			d = {
+				["8"] = {
+					["0"] = {
+						军 = {
+							刀 = {
+								this = true
+							},
+							忉 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			气 = {
+				枪 = {
+					this = true
+				}
+			}
+		},
+		良 = {
+			证 = {
+				务 = {
+					this = true
+				}
+			}
+		},
+		灵 = {
+			乐 = {
+				章 = {
+					this = true
+				}
+			}
+		},
+		美 = {
+			枪 = {
+				包 = {
+					this = true
+				}
+			},
+			收 = {
+				藏 = {
+					版 = {
+						手 = {
+							枪 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		榀 = {
+			電 = {
+				影 = {
+					this = true
+				}
+			},
+			夫 = {
+				萋 = {
+					this = true
+				}
+			}
+		},
+		锐 = {
+			教 = {
+				育 = {
+					机 = {
+						构 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		水 = {
+			this = true
+		},
+		童 = {
+			this = true,
+			欲 = {
+				女 = {
+					this = true
+				}
+			}
+		},
+		卫 = {
+			仙 = {
+				子 = {
+					this = true
+				}
+			}
+		},
+		武 = {
+			世 = {
+				界 = {
+					this = true
+				}
+			}
+		},
+		益 = {
+			论 = {
+				文 = {
+					网 = {
 						this = true
 					}
 				}
 			}
 		},
 		鹰 = {
-			弓 = {
-				努 = {
-					this = true
-				},
-				弩 = {
-					this = true,
-					网 = {
-						this = true,
-						站 = {
+			汽 = {
+				狗 = {
+					专 = {
+						网 = {
 							this = true
 						}
 					}
 				}
+			}
+		},
+		制 = {
+			大 = {
+				麻 = {
+					this = true
+				}
 			},
-			弩 = {
-				弓 = {
+			猎 = {
+				槍 = {
+					五 = {
+						连 = {
+							发 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			气 = {
+				狗 = {
+					this = true
+				}
+			}
+		},
+		致 = {
+			被 = {
+				奸 = {
+					this = true
+				}
+			},
+			汽 = {
+				枪 = {
 					网 = {
+						this = true
+					}
+				}
+			},
+			小 = {
+				美 = {
+					人 = {
 						this = true
 					}
 				}
 			}
 		},
-		贼 = {
-			头 = {
-				领 = {
-					this = true
+		娤 = {
+			２ = {
+				０ = {
+					合 = {
+						匙 = {
+							this = true
+						}
+					}
+				}
+			},
+			防 = {
+				裑 = {
+					噴 = {
+						霧 = {
+							this = true
+						}
+					}
 				}
 			}
 		},
-		珍 = {
-			海 = {
-				鲜 = {
-					加 = {
-						鱼 = {
-							丸 = {
+		装 = {
+			２ = {
+				０ = {
+					合 = {
+						匙 = {
+							this = true
+						}
+					}
+				}
+			},
+			["9"] = {
+				["5"] = {
+					式 = {
+						步 = {
+							枪 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			M = {
+				["6"] = {
+					["0"] = {
+						步 = {
+							枪 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			防 = {
+				身 = {
+					喷 = {
+						雾 = {
+							this = true
+						}
+					}
+				}
+			},
+			军 = {
+				用 = {
+					匕 = {
+						this = true
+					}
+				}
+			},
+			榴 = {
+				弹 = {
+					发 = {
+						射 = {
+							器 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			消 = {
+				音 = {
+					手 = {
+						枪 = {
+							this = true
+						}
+					}
+				}
+			},
+			亚 = {
+				马 = {
+					逊 = {
+						this = true,
+						代 = {
+							理 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			阻 = {
+				击 = {
+					枪 = {
+						this = true,
+						代 = {
+							理 = {
 								this = true
 							}
 						}
@@ -6804,33 +7267,52 @@ function temp()
 				}
 			}
 		},
-		猪 = {
-			气 = {
-				枪 = {
-					this = true
-				},
-				手 = {
-					枪 = {
-						this = true
+		做 = {
+			汽 = {
+				车 = {
+					件 = {
+						套 = {
+							this = true
+						}
 					}
 				}
 			}
 		},
-		城 = {
-			破 = {
-				落 = {
-					不 = {
-						再 = {
-							有 = {
-								， = {
-									重 = {
-										庆 = {
-											辉 = {
-												煌 = {
-													即 = {
-														开 = {
-															来 = {
-																this = true
+		["."] = {
+			["{"] = {
+				["0"] = {
+					[","] = {
+						["1"] = {
+							["5"] = {
+								["}"] = {
+									甚 = {
+										["."] = {
+											["{"] = {
+												["0"] = {
+													[","] = {
+														["1"] = {
+															["5"] = {
+																["}"] = {
+																	细 = {
+																		["."] = {
+																			["{"] = {
+																				["0"] = {
+																					[","] = {
+																						["1"] = {
+																							["5"] = {
+																								["}"] = {
+																									腻 = {
+																										this = true
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
 															}
 														}
 													}
@@ -6845,17 +7327,272 @@ function temp()
 				}
 			}
 		},
-		再 = {
-			高 = {
-				["."] = {
-					["{"] = {
-						["0"] = {
-							[","] = {
-								["5"] = {
-									["}"] = {
-										往 = {
-											上 = {
-												攀 = {
+		走 = {
+			X = {
+				this = true
+			}
+		},
+		肾 = {
+			细 = {
+				腻 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.奸 = {
+		淫 = {
+			this = true,
+			电 = {
+				车 = {
+					this = true
+				},
+				影 = {
+					this = true
+				}
+			},
+			抽 = {
+				插 = {
+					this = true
+				}
+			},
+			好 = {
+				舒 = {
+					服 = {
+						this = true
+					}
+				}
+			},
+			护 = {
+				士 = {
+					this = true,
+					穴 = {
+						this = true
+					}
+				}
+			},
+			姐 = {
+				姐 = {
+					this = true,
+					["?"] = {
+						this = true
+					}
+				}
+			},
+			空 = {
+				姐 = {
+					this = true
+				}
+			},
+			老 = {
+				师 = {
+					this = true
+				}
+			},
+			女 = {
+				老 = {
+					师 = {
+						this = true
+					}
+				},
+				同 = {
+					事 = {
+						this = true
+					},
+					学 = {
+						this = true
+					}
+				}
+			},
+			俏 = {
+				媳 = {
+					妇 = {
+						this = true
+					}
+				}
+			},
+			肉 = {
+				棒 = {
+					this = true
+				}
+			},
+			嫂 = {
+				嫂 = {
+					this = true
+				}
+			},
+			少 = {
+				妇 = {
+					穴 = {
+						this = true
+					}
+				}
+			},
+			小 = {
+				女 = {
+					护 = {
+						士 = {
+							this = true
+						}
+					}
+				}
+			},
+			阳 = {
+				具 = {
+					this = true
+				}
+			}
+		},
+		幼 = {
+			this = true,
+			穴 = {
+				this = true
+			},
+			女 = {
+				this = true
+			}
+		},
+		情 = {
+			this = true
+		},
+		this = {
+			this = true
+		},
+		夫 = {
+			this = true,
+			淫 = {
+				妇 = {
+					this = true
+				}
+			}
+		},
+		你 = {
+			this = true
+		},
+		暴 = {
+			this = true
+		},
+		他 = {
+			this = true
+		},
+		她 = {
+			this = true
+		},
+		一 = {
+			奸 = {
+				this = true
+			}
+		},
+		杀 = {
+			this = true,
+			["*"] = {
+				this = true
+			},
+			案 = {
+				this = true
+			},
+			大 = {
+				学 = {
+					生 = {
+						this = true
+					}
+				}
+			}
+		},
+		魔 = {
+			Ⅱ = {
+				this = true
+			}
+		},
+		["1"] = {
+			奸 = {
+				this = true
+			}
+		},
+		爸 = {
+			爹 = {
+				成 = {
+					人 = {
+						贴 = {
+							图 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		染 = {
+			this = true
+		},
+		殺 = {
+			this = true
+		},
+		商 = {
+			this = true
+		},
+		尸 = {
+			this = true
+		},
+		屍 = {
+			this = true
+		},
+		水 = {
+			this = true
+		},
+		污 = {
+			this = true
+		},
+		相 = {
+			[" "] = {
+				亡 = {
+					国 = {
+						之 = {
+							兆 = {
+								this = true
+							}
+						}
+					}
+				},
+				掌 = {
+					军 = {
+						权 = {
+							this = true
+						}
+					}
+				}
+			},
+			当 = {
+				权 = {
+					this = true,
+					[" "] = {
+						天 = {
+							下 = {
+								焉 = {
+									得 = {
+										不 = {
+											乱 = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					[","] = {
+						天 = {
+							下 = {
+								焉 = {
+									得 = {
+										不 = {
+											乱 = {
+												["\""] = {
 													this = true
 												}
 											}
@@ -6866,11 +7603,29 @@ function temp()
 						}
 					}
 				}
+			},
+			掌 = {
+				军 = {
+					权 = {
+						this = true,
+						是 = {
+							亡 = {
+								国 = {
+									之 = {
+										兆 = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		},
-		花 = {
-			诗 = {
-				田 = {
+		邪 = {
+			据 = {
+				庙 = {
 					this = true
 				}
 			}
@@ -6881,225 +7636,76 @@ end
 temp()
 
 function temp()
-	var_0_1.热 = {
-		那 = {
-			亚 = {
+	var_0_1.菜 = {
+		逼 = {
+			this = true
+		},
+		B = {
+			this = true
+		},
+		鸟 = {
+			产 = {
+				业 = {
+					联 = {
+						盟 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		囧 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.奶 = {
+		奶 = {
+			的 = {
 				this = true
 			}
 		},
-		卖 = {
+		子 = {
 			this = true,
-			f = {
-				x = {
-					季 = {
-						候 = {
-							风 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		兵 = {
-			器 = {
+			酥 = {
 				this = true
 			}
 		},
-		销 = {
-			this = true,
-			贝 = {
-				尔 = {
-					求 = {
-						生 = {
-							刀 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			匕 = {
-				首 = {
-					刀 = {
-						具 = {
-							this = true
-						}
-					}
-				}
-			},
-			丛 = {
-				林 = {
-					刀 = {
-						this = true
-					}
-				}
-			},
-			弹 = {
-				簧 = {
-					跳 = {
-						刀 = {
-							this = true
-						}
-					}
-				}
-			},
-			短 = {
-				狗 = {
-					狗 = {
-						粮 = {
-							this = true
-						}
-					}
-				}
-			},
-			蝴 = {
-				蝶 = {
-					甩 = {
-						刀 = {
-							this = true
-						}
-					}
-				}
-			},
-			进 = {
-				口 = {
-					匕 = {
-						首 = {
-							this = true
-						}
-					}
-				}
-			},
-			军 = {
-				刀 = {
-					军 = {
-						刺 = {
-							this = true
-						}
-					}
-				},
-				品 = {
-					刺 = {
-						刀 = {
-							this = true
-						}
-					}
-				}
-			},
-			频 = {
-				道 = {
+		大 = {
+			屄 = {
+				肥 = {
 					this = true
 				}
-			},
-			三 = {
-				棱 = {
-					刺 = {
-						刀 = {
-							this = true
-						}
-					}
-				}
-			},
-			跳 = {
-				刀 = {
+			}
+		},
+		挺 = {
+			臀 = {
+				翘 = {
+					this = true
+				},
+				翹 = {
 					this = true
 				}
-			},
-			冷 = {
-				钢 = {
-					大 = {
-						狗 = {
-							腿 = {
-								this = true
-							}
-						}
-					}
-				}
 			}
 		},
-		热 = {
-			色 = {
-				原 = {
-					this = true,
-					站 = {
-						this = true
-					},
-					网 = {
-						站 = {
-							this = true
-						}
-					}
-				},
-				网 = {
-					this = true
-				}
-			},
-			鲁 = {
-				this = true
-			},
-			撸 = {
-				this = true,
-				网 = {
-					this = true,
-					站 = {
-						this = true
-					}
-				}
-			},
-			网 = {
-				this = true
-			}
+		this = {
+			this = true
 		},
-		比 = {
-			娅 = {
-				this = true,
-				大 = {
-					厦 = {
-						this = true
-					}
-				},
-				哭 = {
-					this = true,
-					、 = {
-						this = true
-					}
-				},
-				泪 = {
-					this = true,
-					、 = {
-						this = true
-					}
-				},
-				商 = {
-					厦 = {
-						this = true
-					}
-				},
-				中 = {
-					共 = {
-						汉 = {
-							人 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			亚 = {
-				this = true
-			}
+		頭 = {
+			this = true
 		},
-		中 = {
-			文 = {
-				热 = {
-					国 = {
-						产 = {
-							热 = {
-								综 = {
-									合 = {
-										this = true
-									}
+		妈 = {
+			论 = {
+				坛 = {
+					内 = {
+						部 = {
+							照 = {
+								片 = {
+									this = true
 								}
 							}
 						}
@@ -7107,225 +7713,3152 @@ function temp()
 				}
 			}
 		},
-		武 = {
-			器 = {
+		娘 = {
+			this = true
+		},
+		水 = {
+			this = true,
+			吧 = {
 				this = true,
-				Q = {
-					Q = {
+				论 = {
+					坛 = {
 						this = true
 					}
 				}
-			}
-		},
-		售 = {
-			英 = {
-				语 = {
-					四 = {
-						六 = {
-							级 = {
-								考 = {
-									试 = {
-										答 = {
-											案 = {
-												this = true
-											}
-										}
-									}
-								}
-							}
-						}
-					}
+			},
+			四 = {
+				射 = {
+					this = true
 				}
 			}
 		},
-		血 = {
-			江 = {
-				湖 = {
-					this = true,
-					私 = {
-						服 = {
+		粉 = {
+			里 = {
+				都 = {
+					有 = {
+						毒 = {
 							this = true
 						}
 					}
 				}
 			},
-			传 = {
-				奇 = {
+			有 = {
+				毒 = {
 					this = true
 				}
-			},
-			球 = {
-				迷 = {
-					网 = {
-						this = true
-					}
-				}
-			},
-			英 = {
-				豪 = {
+			}
+		},
+		头 = {
+			this = true,
+			真 = {
+				红 = {
 					this = true
 				}
 			},
 			与 = {
-				光 = {
-					荣 = {
-						this = true,
-						中 = {
-							国 = {
-								人 = {
-									的 = {
-										希 = {
-											望 = {
-												this = true
-											}
-										}
-									}
-								}
+				嫩 = {
+					苞 = {
+						this = true
+					}
+				}
+			}
+		},
+		处 = {
+			女 = {
+				this = true
+			}
+		},
+		妞 = {
+			激 = {
+				情 = {
+					夜 = {
+						总 = {
+							会 = {
+								this = true
 							}
 						}
 					}
 				}
 			}
 		},
-		站 = {
-			政 = {
-				论 = {
-					网 = {
+		推 = {
+			双 = {
+				飞 = {
+					this = true
+				}
+			}
+		},
+		油 = {
+			吧 = {
+				this = true
+			},
+			冰 = {
+				this = true,
+				出 = {
+					货 = {
+						this = true
+					}
+				},
+				到 = {
+					货 = {
+						this = true
+					}
+				},
+				订 = {
+					购 = {
+						this = true
+					}
+				},
+				教 = {
+					程 = {
+						this = true
+					}
+				},
+				配 = {
+					方 = {
+						this = true
+					}
+				},
+				手 = {
+					机 = {
+						this = true
+					}
+				},
+				送 = {
+					货 = {
+						上 = {
+							门 = {
+								this = true
+							}
+						}
+					}
+				},
+				验 = {
+					货 = {
+						付 = {
+							款 = {
+								this = true
+							}
+						}
+					}
+				},
+				直 = {
+					销 = {
+						this = true
+					}
+				}
+			},
+			栤 = {
+				this = true
+			}
+		},
+		罩 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.贱 = {
+		人 = {
+			this = true
+		},
+		逼 = {
+			this = true
+		},
+		this = {
+			this = true
+		},
+		货 = {
+			this = true,
+			吴 = {
+				敏 = {
+					this = true
+				}
+			}
+		},
+		女 = {
+			淫 = {
+				心 = {
+					this = true
+				}
+			},
+			人 = {
+				淫 = {
+					护 = {
+						士 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		比 = {
+			this = true
+		},
+		b = {
+			this = true,
+			i = {
+				this = true
+			}
+		},
+		妇 = {
+			this = true,
+			汤 = {
+				加 = {
+					丽 = {
 						this = true
 					}
 				}
 			}
 		},
-		敷 = {
-			敏 = {
-				纸 = {
+		男 = {
+			本 = {
+				色 = {
 					this = true
 				}
 			}
 		},
-		× = {
-			视 = {
-				频 = {
+		种 = {
+			this = true
+		},
+		B = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.肛 = {
+		交 = {
+			this = true,
+			A = {
+				片 = {
 					this = true
 				}
-			}
-		},
-		播 = {
+			},
+			白 = {
+				嫩 = {
+					妹 = {
+						妹 = {
+							this = true
+						}
+					}
+				}
+			},
 			电 = {
 				影 = {
 					this = true
 				}
-			}
-		},
-		点 = {
-			n = {
-				t = {
-					d = {
-						t = {
-							v = {
-								this = true
-							}
-						}
-					}
-				}
 			},
-			互 = {
-				动 = {
-					this = true,
-					动 = {
-						态 = {
-							网 = {
-								this = true
-							}
-						}
-					},
-					九 = {
-						评 = {
-							this = true
-						}
-					},
-					退 = {
-						党 = {
-							this = true
-						}
-					},
-					新 = {
-						唐 = {
-							人 = {
-								this = true
-							}
-						}
-					}
-				}
-			},
-			信 = {
-				用 = {
-					卡 = {
-						this = true
-					}
-				}
-			},
-			资 = {
-				讯 = {
-					天 = {
-						天 = {
-							网 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		缚 = {
-			纸 = {
-				假 = {
-					币 = {
-						this = true
-					},
-					钱 = {
-						币 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		感 = {
-			Q = {
-				视 = {
-					频 = {
-						this = true
-					}
-				}
-			}
-		},
-		贡 = {
-			this = true
-		},
-		核 = {
-			炸 = {
-				弹 = {
+			动 = {
+				漫 = {
 					this = true
 				}
-			}
-		},
-		辣 = {
-			this = true,
-			图 = {
-				库 = {
+			},
+			服 = {
+				务 = {
+					this = true
+				},
+				務 = {
+					this = true
+				}
+			},
+			后 = {
+				的 = {
+					特 = {
+						写 = {
+							this = true
+						}
+					}
+				}
+			},
+			巨 = {
+				乳 = {
+					妹 = {
+						this = true
+					}
+				}
+			},
+			口 = {
+				交 = {
+					this = true
+				}
+			},
+			美 = {
+				图 = {
+					this = true
+				},
+				臀 = {
+					["8"] = {
+						this = true
+					}
+				}
+			},
+			全 = {
+				套 = {
+					服 = {
+						务 = {
+							this = true
+						}
+					}
+				}
+			},
+			视 = {
+				频 = {
+					this = true
+				},
+				屏 = {
+					this = true
+				}
+			},
+			体 = {
+				位 = {
+					this = true
+				}
+			},
+			调 = {
+				教 = {
+					this = true
+				}
+			},
+			网 = {
+				this = true
+			},
+			无 = {
+				码 = {
+					this = true
+				}
+			},
+			尤 = {
+				物 = {
+					女 = {
+						this = true
+					}
+				}
+			},
+			诱 = {
+				惑 = {
+					this = true
+				}
+			},
+			在 = {
+				线 = {
+					观 = {
+						看 = {
+							this = true
+						}
+					}
+				}
+			},
+			中 = {
+				出 = {
+					this = true
+				}
+			},
+			专 = {
+				区 = {
 					this = true
 				}
 			}
 		},
 		门 = {
+			this = true,
+			喷 = {
+				水 = {
+					this = true
+				}
+			},
+			拳 = {
+				交 = {
+					this = true
+				}
+			},
+			["2"] = {
+				本 = {
+					插 = {
+						高 = {
+							清 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			潮 = {
+				吹 = {
+					this = true
+				}
+			},
+			调 = {
+				教 = {
+					this = true
+				}
+			},
+			D = {
+				P = {
+					this = true
+				}
+			}
+		},
+		屄 = {
+			this = true
+		},
+		門 = {
+			this = true,
+			噴 = {
+				水 = {
+					this = true
+				}
+			},
+			拳 = {
+				交 = {
+					this = true
+				}
+			}
+		},
+		this = {
+			this = true
+		},
+		栓 = {
+			母 = {
+				狗 = {
+					this = true
+				}
+			}
+		},
+		j = {
+			i = {
+				a = {
+					o = {
+						this = true
+					}
+				}
+			}
+		},
+		奸 = {
+			美 = {
+				少 = {
+					女 = {
+						this = true
+					}
+				}
+			}
+		},
+		塞 = {
+			this = true
+		},
+		周 = {
+			保 = {
+				养 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.破 = {
+		鞋 = {
+			this = true
+		},
+		处 = {
+			this = true,
+			的 = {
+				时 = {
+					分 = {
+						this = true
+					}
+				}
+			},
+			开 = {
+				苞 = {
+					this = true
+				}
+			},
+			门 = {
+				this = true,
+				视 = {
+					频 = {
+						this = true
+					}
+				}
+			},
+			视 = {
+				频 = {
+					this = true
+				}
+			},
+			偷 = {
+				拍 = {
+					this = true
+				}
+			},
+			自 = {
+				拍 = {
+					this = true
+				}
+			}
+		},
+		坏 = {
+			this = true,
+			奥 = {
+				运 = {
+					this = true
+				}
+			},
+			大 = {
+				法 = {
+					this = true
+				}
+			},
+			公 = {
+				有 = {
+					制 = {
+						this = true
+					}
+				}
+			},
+			王 = {
+				this = true
+			},
+			正 = {
+				法 = {
+					者 = {
+						this = true
+					}
+				}
+			}
+		},
+		解 = {
+			this = true,
+			保 = {
+				单 = {
+					分 = {
+						析 = {
+							仪 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			老 = {
+				虎 = {
+					机 = {
+						this = true
+					}
+				}
+			},
+			器 = {
+				this = true
+			},
+			银 = {
+				行 = {
+					卡 = {
+						this = true
+					}
+				}
+			},
+			銀 = {
+				行 = {
+					卡 = {
+						this = true
+					}
+				}
+			},
+			手 = {
+				机 = {
+					窃 = {
+						听 = {
+							软 = {
+								件 = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		网 = {
+			this = true,
+			软 = {
+				件 = {
+					this = true,
+					["*"] = {
+						this = true
+					}
+				}
+			}
+		},
+		碎 = {
+			机 = {
+				this = true
+			}
+		},
+		壁 = {
+			者 = {
+				this = true
+			}
+		},
+		拆 = {
+			工 = {
+				具 = {
+					this = true
+				}
+			}
+		},
+		嗔 = {
+			this = true
+		},
+		痴 = {
+			this = true
+		},
+		処 = {
+			冂 = {
+				this = true
+			}
+		},
+		處 = {
+			this = true,
+			門 = {
+				this = true
+			},
+			視 = {
+				頻 = {
+					this = true
+				}
+			}
+		},
+		壞 = {
+			仼 = {
+				this = true
+			}
+		},
+		军 = {
+			子 = {
+				this = true
+			}
+		},
+		迷 = {
+			与 = {
+				正 = {
+					心 = {
+						this = true
+					}
+				}
+			}
+		},
+		墙 = {
+			软 = {
+				件 = {
+					this = true
+				}
+			}
+		},
+		贪 = {
+			this = true
+		},
+		天 = {
+			弓 = {
+				this = true
+			},
+			一 = {
+				剑 = {
+					this = true
+				},
+				劍 = {
+					this = true
+				}
+			}
+		},
+		晓 = {
 			电 = {
 				影 = {
+					this = true
+				}
+			}
+		},
+		羞 = {
+			恥 = {
+				露 = {
+					this = true
+				}
+			}
+		},
+		氧 = {
+			毒 = {
+				素 = {
 					this = true,
-					推 = {
-						荐 = {
+					直 = {
+						销 = {
 							this = true
 						}
+					},
+					专 = {
+						this = true
+					}
+				}
+			}
+		},
+		颧 = {
+			纹 = {
+				this = true
+			}
+		},
+		四 = {
+			旧 = {
+				， = {
+					立 = {
+						四 = {
+							新 = {
+								！ = {
+									横 = {
+										扫 = {
+											一 = {
+												切 = {
+													牛 = {
+														鬼 = {
+															蛇 = {
+																神 = {
+																	！ = {
+																		兴 = {
+																			无 = {
+																				灭 = {
+																					资 = {
+																						， = {
+																							彻 = {
+																								底 = {
+																									砸 = {
+																										乱 = {
+																											封 = {
+																												资 = {
+																													修 = {
+																														， = {
+																															开 = {
+																																创 = {
+																																	一 = {
+																																		个 = {
+																																			新 = {
+																																				世 = {
+																																					界 = {
+																																						！ = {
+																																							this = true
+																																						}
+																																					}
+																																				}
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.娘 = {
+		的 = {
+			this = true
+		},
+		餓 = {
+			比 = {
+				this = true
+			}
+		},
+		西 = {
+			皮 = {
+				this = true
+			}
+		},
+		b = {
+			this = true
+		},
+		比 = {
+			this = true
+		},
+		饿 = {
+			比 = {
+				this = true
+			}
+		},
+		个 = {
+			比 = {
+				this = true
+			}
+		},
+		個 = {
+			比 = {
+				this = true
+			}
+		},
+		嬢 = {
+			様 = {
+				綾 = {
+					奈 = {
+						秘 = {
+							密 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.狗 = {
+		卵 = {
+			this = true,
+			子 = {
+				this = true
+			}
+		},
+		b = {
+			this = true,
+			新 = {
+				光 = {
+					明 = {
+						this = true
+					}
+				}
+			}
+		},
+		屎 = {
+			this = true
+		},
+		操 = {
+			this = true,
+			卖 = {
+				逼 = {
+					this = true
+				}
+			},
+			逼 = {
+				this = true
+			}
+		},
+		日 = {
+			this = true,
+			的 = {
+				this = true
+			},
+			靠 = {
+				this = true
+			}
+		},
+		娘 = {
+			this = true,
+			養 = {
+				的 = {
+					this = true
+				}
+			},
+			养 = {
+				this = true,
+				的 = {
+					this = true
+				}
+			}
+		},
+		誠 = {
+			this = true
+		},
+		狼 = {
+			養 = {
+				的 = {
+					this = true
+				}
+			},
+			养 = {
+				的 = {
+					this = true
+				}
+			}
+		},
+		養 = {
+			this = true
+		},
+		雜 = {
+			種 = {
+				this = true
+			}
+		},
+		屁 = {
+			this = true
+		},
+		男 = {
+			女 = {
+				this = true
+			}
+		},
+		配 = {
+			件 = {
+				this = true
+			}
+		},
+		管 = {
+			this = true,
+			配 = {
+				件 = {
+					this = true
+				}
+			},
+			价 = {
+				格 = {
+					this = true
+				}
+			},
+			专 = {
+				this = true
+			}
+		},
+		友 = {
+			枪 = {
+				this = true
+			},
+			网 = {
+				this = true
+			},
+			认 = {
+				证 = {
+					this = true,
+					专 = {
+						业 = {
+							诚 = {
+								信 = {
+									this = true
+								}
+							}
+						}
+					}
+				}
+			},
+			极 = {
+				地 = {
+					this = true
+				}
+			}
+		},
+		支 = {
+			this = true,
+			论 = {
+				坛 = {
+					this = true
+				}
+			}
+		},
+		腿 = {
+			this = true,
+			刀 = {
+				this = true,
+				精 = {
+					刀 = {
+						网 = {
+							this = true
+						}
+					}
+				}
+			},
+			弯 = {
+				刀 = {
+					this = true,
+					黑 = {
+						版 = {
+							this = true
+						}
+					}
+				}
+			},
+			精 = {
+				刀 = {
+					网 = {
+						this = true
+					}
+				}
+			},
+			大 = {
+				折 = {
+					刀 = {
+						this = true
+					}
+				}
+			},
+			砍 = {
+				刀 = {
+					this = true
+				}
+			}
+		},
+		粮 = {
+			this = true,
+			磨 = {
+				具 = {
+					this = true
+				}
+			},
+			一 = {
+				体 = {
+					钳 = {
+						this = true
+					}
+				}
+			},
+			模 = {
+				具 = {
+					this = true,
+					图 = {
+						this = true
+					},
+					网 = {
+						this = true
+					},
+					订 = {
+						购 = {
+							this = true
+						}
+					},
+					直 = {
+						销 = {
+							this = true
+						}
+					}
+				}
+			},
+			狗 = {
+				气 = {
+					枪 = {
+						this = true
+					}
+				}
+			},
+			耗 = {
+				材 = {
+					this = true
+				}
+			},
+			配 = {
+				件 = {
+					this = true
+				}
+			},
+			汽 = {
+				g = {
+					o = {
+						u = {
+							this = true
+						}
+					}
+				},
+				狗 = {
+					高 = {
+						价 = {
+							this = true
+						}
+					}
+				}
+			},
+			专 = {
+				this = true
+			}
+		},
+		气 = {
+			弹 = {
+				this = true
+			}
+		},
+		击 = {
+			针 = {
+				this = true
+			}
+		},
+		商 = {
+			this = true
+		},
+		子 = {
+			弹 = {
+				this = true
+			}
+		},
+		秃 = {
+			鹰 = {
+				this = true
+			}
+		},
+		干 = {
+			this = true
+		},
+		习 = {
+			this = true
+		},
+		弹 = {
+			this = true
+		},
+		产 = {
+			蛋 = {
+				this = true
+			}
+		},
+		草 = {
+			this = true
+		},
+		杂 = {
+			种 = {
+				this = true
+			}
+		},
+		逼 = {
+			this = true
+		},
+		爆 = {
+			商 = {
+				this = true
+			},
+			油 = {
+				this = true
+			}
+		},
+		比 = {
+			this = true
+		},
+		成 = {
+			this = true
+		},
+		诚 = {
+			this = true
+		},
+		城 = {
+			this = true
+		},
+		乘 = {
+			this = true
+		},
+		幹 = {
+			this = true
+		},
+		狗 = {
+			this = true
+		},
+		和 = {
+			狗 = {
+				粮 = {
+					this = true
+				}
+			}
+		},
+		糧 = {
+			this = true,
+			專 = {
+				this = true
+			}
+		},
+		母 = {
+			女 = {
+				this = true
+			}
+		},
+		奴 = {
+			this = true,
+			孽 = {
+				恋 = {
+					this = true
+				}
+			}
+		},
+		枪 = {
+			this = true
+		},
+		肉 = {
+			this = true
+		},
+		剩 = {
+			this = true
+		},
+		兽 = {
+			this = true
+		},
+		禿 = {
+			支 = {
+				this = true
+			}
+		},
+		养 = {
+			this = true
+		},
+		油 = {
+			this = true,
+			["1"] = {
+				["0"] = {
+					["0"] = {
+						毫 = {
+							升 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		力 = {
+			郭 = {
+				葭 = {
+					升 = {
+						死 = {
+							于 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		同 = {
+			富 = {
+				裕 = {
+					this = true
+				}
+			}
+		},
+		利 = {
+			家 = {
+				阔 = {
+					盛 = {
+						世 = {
+							宜 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		梨 = {
+			锅 = {
+				家 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.骚 = {
+		货 = {
+			this = true
+		},
+		姨 = {
+			妈 = {
+				this = true
+			}
+		},
+		浪 = {
+			this = true,
+			美 = {
+				女 = {
+					this = true
+				}
+			},
+			人 = {
+				妻 = {
+					this = true
+				}
+			},
+			熟 = {
+				女 = {
+					this = true
+				}
+			}
+		},
+		乳 = {
+			this = true
+		},
+		母 = {
+			this = true
+		},
+		姐 = {
+			姐 = {
+				this = true,
+				爽 = {
+					片 = {
+						this = true
+					}
+				},
+				影 = {
+					院 = {
+						this = true
+					}
+				}
+			},
+			乱 = {
+				伦 = {
+					this = true,
+					网 = {
+						this = true
+					}
+				}
+			}
+		},
+		妹 = {
+			this = true,
+			妹 = {
+				this = true,
+				成 = {
+					人 = {
+						导 = {
+							航 = {
+								this = true
+							}
+						}
+					}
+				},
+				电 = {
+					影 = {
+						快 = {
+							播 = {
+								this = true
+							}
+						}
+					}
+				},
+				裸 = {
+					聊 = {
+						网 = {
+							this = true
+						}
+					}
+				},
+				实 = {
+					干 = {
+						现 = {
+							场 = {
+								this = true
+							}
+						}
+					}
+				},
+				爽 = {
+					片 = {
+						this = true
+					}
+				},
+				影 = {
+					院 = {
+						this = true
+					}
+				},
+				用 = {
+					浪 = {
+						穴 = {
+							this = true
+						}
+					}
+				}
+			},
+			爽 = {
+				this = true,
+				图 = {
+					this = true
+				}
+			},
+			的 = {
+				逼 = {
+					this = true
+				}
+			},
+			激 = {
+				情 = {
+					电 = {
+						影 = {
+							this = true
+						}
+					}
+				}
+			},
+			裸 = {
+				聊 = {
+					this = true
+				}
+			},
+			性 = {
+				爱 = {
+					this = true,
+					X = {
+						B = {
+							图 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			阴 = {
+				道 = {
+					this = true
+				}
+			},
+			自 = {
+				拍 = {
+					this = true
+				}
+			}
+		},
+		女 = {
+			this = true,
+			叫 = {
+				春 = {
+					this = true
+				}
+			},
+			仿 = {
+				欧 = {
+					美 = {
+						叫 = {
+							床 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			服 = {
+				务 = {
+					this = true
+				}
+			},
+			露 = {
+				脸 = {
+					被 = {
+						操 = {
+							this = true
+						}
+					}
+				}
+			},
+			裸 = {
+				聊 = {
+					this = true
+				}
+			},
+			人 = {
+				this = true
+			},
+			视 = {
+				频 = {
+					服 = {
+						务 = {
+							this = true
+						}
+					}
+				}
+			},
+			淫 = {
+				频 = {
+					乐 = {
+						园 = {
+							this = true
+						}
+					}
+				},
+				照 = {
+					this = true
+				}
+			},
+			在 = {
+				线 = {
+					裸 = {
+						聊 = {
+							this = true
+						}
+					}
+				}
+			},
+			自 = {
+				拍 = {
+					this = true
+				},
+				慰 = {
+					this = true
+				}
+			}
+		},
+		水 = {
+			this = true
+		},
+		穴 = {
+			this = true,
+			怒 = {
+				放 = {
+					this = true
+				}
+			},
+			电 = {
+				影 = {
+					网 = {
+						this = true
+					}
+				}
+			},
+			狠 = {
+				扣 = {
+					this = true
+				}
+			},
+			扣 = {
+				this = true
+			},
+			贴 = {
+				图 = {
+					this = true
+				}
+			},
+			淫 = {
+				B = {
+					this = true
+				},
+				液 = {
+					this = true
+				}
+			}
+		},
+		B = {
+			this = true,
+			熟 = {
+				女 = {
+					this = true
+				},
+				妇 = {
+					this = true
+				}
+			},
+			贱 = {
+				this = true
+			},
+			日 = {
+				日 = {
+					日 = {
+						this = true
+					}
+				}
+			},
+			图 = {
+				this = true
+			}
+		},
+		妻 = {
+			this = true,
+			裸 = {
+				照 = {
+					this = true
+				}
+			},
+			淫 = {
+				穴 = {
+					this = true
+				}
+			},
+			足 = {
+				交 = {
+					this = true
+				}
+			}
+		},
+		屄 = {
+			this = true,
+			儿 = {
+				this = true
+			},
+			娘 = {
+				们 = {
+					儿 = {
+						this = true
+					}
+				}
+			},
+			塞 = {
+				莉 = {
+					拉 = {
+						this = true
+					}
+				}
+			},
+			贴 = {
+				图 = {
+					this = true
+				}
+			},
+			痒 = {
+				死 = {
+					了 = {
+						this = true
+					}
+				}
+			},
+			淫 = {
+				水 = {
+					泛 = {
+						滥 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		洞 = {
+			this = true
+		},
+		妇 = {
+			this = true,
+			露 = {
+				逼 = {
+					this = true
+				}
+			},
+			掰 = {
+				B = {
+					this = true
+				},
+				b = {
+					this = true
+				}
+			},
+			S = {
+				· = {
+					F = {
+						this = true
+					}
+				}
+			}
+		},
+		妈 = {
+			this = true,
+			的 = {
+				逼 = {
+					this = true
+				}
+			}
+		},
+		逼 = {
+			this = true,
+			小 = {
+				说 = {
+					黄 = {
+						色 = {
+							小 = {
+								说 = {
+									this = true
+								}
+							}
+						}
+					}
+				},
+				姨 = {
+					this = true
+				}
+			},
+			逼 = {
+				this = true
+			},
+			给 = {
+				我 = {
+					看 = {
+						this = true
+					}
+				}
+			},
+			老 = {
+				婆 = {
+					this = true
+				}
+			},
+			喷 = {
+				水 = {
+					this = true
+				}
+			},
+			情 = {
+				色 = {
+					this = true
+				}
+			},
+			痒 = {
+				死 = {
+					了 = {
+						this = true
+					}
+				}
+			},
+			要 = {
+				丢 = {
+					了 = {
+						this = true
+					}
+				}
+			},
+			综 = {
+				合 = {
+					H = {
+						网 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		this = {
+			this = true
+		},
+		本 = {
+			this = true,
+			套 = {
+				件 = {
+					this = true
+				}
+			},
+			气 = {
+				枪 = {
+					this = true,
+					便 = {
+						宜 = {
+							this = true
+						}
+					},
+					直 = {
+						销 = {
+							this = true
+						}
+					}
+				},
+				["$"] = {
+					狗 = {
+						专 = {
+							this = true
+						}
+					},
+					枪 = {
+						this = true
+					}
+				},
+				狗 = {
+					["$"] = {
+						专 = {
+							this = true
+						}
+					},
+					儿 = {
+						专 = {
+							this = true
+						}
+					},
+					专 = {
+						this = true,
+						["$"] = {
+							this = true
+						}
+					}
+				}
+			},
+			枪 = {
+				this = true
+			},
+			论 = {
+				坛 = {
+					this = true
+				}
+			},
+			内 = {
+				脏 = {
+					this = true
+				}
+			},
+			坐 = {
+				子 = {
+					this = true
+				}
+			},
+			P = {
+				C = {
+					P = {
+						this = true
+					}
+				}
+			},
+			b = {
+				["5"] = {
+					["0"] = {
+						this = true
+					}
+				}
+			},
+			订 = {
+				购 = {
+					this = true
+				}
+			},
+			仿 = {
+				真 = {
+					枪 = {
+						this = true
+					}
+				}
+			},
+			配 = {
+				件 = {
+					this = true,
+					订 = {
+						购 = {
+							this = true
+						}
+					},
+					直 = {
+						销 = {
+							this = true
+						}
+					}
+				}
+			},
+			汽 = {
+				狗 = {
+					this = true
+				},
+				木 = {
+					仓 = {
+						this = true
+					}
+				},
+				枪 = {
+					this = true,
+					直 = {
+						销 = {
+							this = true
+						}
+					},
+					转 = {
+						让 = {
+							this = true
+						}
+					}
+				}
+			},
+			手 = {
+				枪 = {
+					this = true
+				}
+			}
+		},
+		麦 = {
+			this = true
+		},
+		笨 = {
+			this = true
+		},
+		冰 = {
+			this = true
+		},
+		b = {
+			["*"] = {
+				this = true
+			},
+			学 = {
+				生 = {
+					妹 = {
+						this = true
+					}
+				}
+			},
+			熟 = {
+				女 = {
+					this = true
+				}
+			}
+		},
+		比 = {
+			this = true
+		},
+		乱 = {
+			this = true,
+			的 = {
+				流 = {
+					血 = {
+						冲 = {
+							突 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			霍 = {
+				城 = {
+					this = true
+				}
+			},
+			建 = {
+				政 = {
+					this = true
+				}
+			},
+			韶 = {
+				关 = {
+					this = true
+				}
+			},
+			世 = {
+				维 = {
+					大 = {
+						会 = {
+							this = true
+						}
+					}
+				}
+			},
+			事 = {
+				件 = {
+					["7"] = {
+						["5"] = {
+							this = true
+						}
+					}
+				}
+			},
+			视 = {
+				频 = {
+					this = true
+				}
+			},
+			维 = {
+				族 = {
+					人 = {
+						this = true
+					}
+				}
+			},
+			乌 = {
+				鲁 = {
+					木 = {
+						齐 = {
+							this = true
+						}
+					}
+				}
+			},
+			新 = {
+				疆 = {
+					this = true,
+					霍 = {
+						城 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		媚 = {
+			春 = {
+				情 = {
+					this = true
+				}
+			}
+		},
+		["1"] = {
+			["2"] = {
+				["3"] = {
+					色 = {
+						情 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		["6"] = {
+			["6"] = {
+				this = true
+			}
+		},
+		A = {
+			V = {
+				this = true
+			}
+		},
+		a = {
+			妹 = {
+				this = true
+			}
+		},
+		c = {
+			乱 = {
+				this = true
+			}
+		},
+		D = {
+			V = {
+				D = {
+					this = true
+				}
+			}
+		},
+		g = {
+			女 = {
+				this = true
+			}
+		},
+		s = {
+			媚 = {
+				春 = {
+					情 = {
+						this = true
+					}
+				}
+			},
+			女 = {
+				this = true
+			},
+			水 = {
+				this = true
+			}
+		},
+		z = {
+			货 = {
+				网 = {
+					this = true
+				}
+			}
+		},
+		棒 = {
+			this = true
+		},
+		包 = {
+			this = true,
+			黑 = {
+				鸡 = {
+					巴 = {
+						this = true,
+						["?"] = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		宝 = {
+			贝 = {
+				俱 = {
+					乐 = {
+						部 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		夲 = {
+			氚 = {
+				枪 = {
+					絀 = {
+						售 = {
+							this = true
+						}
+					}
+				}
+			},
+			氣 = {
+				狗 = {
+					專 = {
+						this = true
+					}
+				}
+			}
+		},
+		波 = {
+			妹 = {
+				影 = {
+					视 = {
+						this = true
+					}
+				}
+			}
+		},
+		导 = {
+			航 = {
+				this = true
+			}
+		},
+		的 = {
+			风 = {
+				韵 = {
+					this = true
+				}
+			}
+		},
+		动 = {
+			this = true
+		},
+		棍 = {
+			this = true
+		},
+		狐 = {
+			导 = {
+				航 = {
+					网 = {
+						this = true
+					}
+				}
+			}
+		},
+		护 = {
+			士 = {
+				this = true
+			}
+		},
+		鸡 = {
+			this = true
+		},
+		鶏 = {
+			this = true
+		},
+		快 = {
+			this = true
+		},
+		老 = {
+			婆 = {
+				this = true,
+				被 = {
+					朋 = {
+						友 = {
+							干 = {
+								this = true
+							}
+						}
+					}
+				},
+				的 = {
+					屄 = {
+						this = true
+					}
+				},
+				电 = {
+					影 = {
+						this = true
+					}
+				}
+			},
+			师 = {
+				A = {
+					V = {
+						this = true
+					}
+				}
+			}
+		},
+		卵 = {
+			this = true
+		},
+		美 = {
+			腿 = {
+				阿 = {
+					姨 = {
+						this = true
+					}
+				}
+			}
+		},
+		内 = {
+			衣 = {
+				丝 = {
+					袜 = {
+						this = true
+					}
+				}
+			}
+		},
+		嫩 = {
+			逼 = {
+				this = true
+			}
+		},
+		妞 = {
+			this = true
+		},
+		批 = {
+			this = true
+		},
+		情 = {
+			久 = {
+				蕴 = {
+					this = true
+				}
+			}
+		},
+		扰 = {
+			习 = {
+				近 = {
+					平 = {
+						this = true
+					}
+				}
+			}
+		},
+		人 = {
+			妻 = {
+				this = true
+			},
+			体 = {
+				艺 = {
+					术 = {
+						this = true
+					}
+				}
+			}
+		},
+		骚 = {
+			狐 = {
+				与 = {
+					乖 = {
+						乖 = {
+							兔 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		色 = {
+			激 = {
+				情 = {
+					站 = {
+						this = true
+					}
+				}
+			},
+			无 = {
+				边 = {
+					this = true
+				}
+			}
+		},
+		少 = {
+			妇 = {
+				裸 = {
+					聊 = {
+						色 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		首 = {
+			弄 = {
+				肢 = {
+					this = true
+				}
+			}
+		},
+		熟 = {
+			女 = {
+				this = true
+			}
+		},
+		丝 = {
+			来 = {
+				袭 = {
+					this = true
+				}
+			}
+		},
+		网 = {
+			this = true
+		},
+		五 = {
+			月 = {
+				["3"] = {
+					["6"] = {
+						站 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		小 = {
+			妹 = {
+				影 = {
+					院 = {
+						this = true
+					}
+				}
+			}
+		},
+		性 = {
+			大 = {
+				发 = {
+					this = true
+				}
+			}
+		},
+		眼 = {
+			this = true
+		},
+		样 = {
+			this = true
+		},
+		医 = {
+			生 = {
+				this = true,
+				护 = {
+					士 = {
+						this = true
+					}
+				}
+			}
+		},
+		淫 = {
+			电 = {
+				影 = {
+					this = true
+				}
+			},
+			女 = {
+				论 = {
+					坛 = {
+						this = true
+					}
+				}
+			}
+		},
+		中 = {
+			骚 = {
+				影 = {
+					院 = {
+						this = true
+					}
+				}
+			}
+		},
+		度 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.龟 = {
+		公 = {
+			this = true
+		},
+		头 = {
+			this = true,
+			插 = {
+				花 = {
+					心 = {
+						深 = {
+							处 = {
+								this = true
+							}
+						}
+					}
+				},
+				进 = {
+					this = true,
+					了 = {
+						小 = {
+							穴 = {
+								this = true
+							}
+						}
+					}
+				},
+				入 = {
+					蜜 = {
+						穴 = {
+							this = true
+						}
+					},
+					肉 = {
+						洞 = {
+							里 = {
+								this = true
+							}
+						},
+						縫 = {
+							this = true
+						}
+					},
+					少 = {
+						妇 = {
+							this = true
+						}
+					},
+					阴 = {
+						唇 = {
+							this = true
+						}
+					}
+				},
+				小 = {
+					穴 = {
+						this = true
+					}
+				}
+			},
+			抽 = {
+				插 = {
+					小 = {
+						穴 = {
+							this = true
+						}
+					}
+				}
+			},
+			粗 = {
+				壮 = {
+					赤 = {
+						红 = {
+							this = true
+						}
+					}
+				}
+			},
+			顶 = {
+				开 = {
+					阴 = {
+						户 = {
+							this = true
+						}
+					}
+				}
+			},
+			对 = {
+				准 = {
+					菊 = {
+						门 = {
+							this = true
+						}
+					},
+					阴 = {
+						道 = {
+							this = true
+						}
+					}
+				}
+			},
+			狂 = {
+				插 = {
+					肉 = {
+						洞 = {
+							this = true
+						}
+					}
+				}
+			},
+			碰 = {
+				到 = {
+					子 = {
+						宫 = {
+							口 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			肉 = {
+				洞 = {
+					this = true
+				}
+			},
+			压 = {
+				挤 = {
+					阴 = {
+						道 = {
+							this = true
+						}
+					}
+				}
+			},
+			淫 = {
+				液 = {
+					this = true
+				}
+			},
+			在 = {
+				阴 = {
+					户 = {
+						抽 = {
+							插 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			直 = {
+				抵 = {
+					子 = {
+						宫 = {
+							口 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		儿 = {
+			子 = {
+				this = true
+			}
+		},
+		孙 = {
+			子 = {
+				this = true
+			}
+		},
+		頭 = {
+			this = true
+		},
+		丞 = {
+			相 = {
+				this = true
+			}
+		},
+		毛 = {
+			this = true
+		},
+		奴 = {
+			this = true
+		},
+		投 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.穷 = {
+		逼 = {
+			this = true
+		},
+		b = {
+			this = true
+		},
+		奇 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.欠 = {
+		日 = {
+			this = true
+		},
+		操 = {
+			this = true,
+			的 = {
+				女 = {
+					文 = {
+						员 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		干 = {
+			this = true
+		},
+		骑 = {
+			this = true
+		},
+		人 = {
+			骑 = {
+				this = true
+			},
+			騎 = {
+				this = true
+			}
+		},
+		幹 = {
+			this = true
+		},
+		款 = {
+			追 = {
+				讨 = {
+					this = true
+				}
+			}
+		},
+		騎 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.装 = {
+		逼 = {
+			this = true,
+			靠 = {
+				this = true
+			},
+			呢 = {
+				this = true
+			}
+		},
+		B = {
+			this = true,
+			靠 = {
+				this = true
+			}
+		},
+		屄 = {
+			this = true,
+			呢 = {
+				this = true
+			}
+		},
+		修 = {
+			费 = {
+				发 = {
+					票 = {
+						电 = {
+							微 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		["1"] = {
+			["3"] = {
+				this = true
+			}
+		},
+		甲 = {
+			车 = {
+				this = true
+			},
+			强 = {
+				化 = {
+					this = true
+				}
+			}
+		},
+		帧 = {
+			枪 = {
+				this = true
+			}
+		},
+		服 = {
+			四 = {
+				六 = {
+					this = true
+				}
+			}
+		},
+		垫 = {
+			儿 = {
+				苔 = {
+					抬 = {
+						涨 = {
+							this = true
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.烂 = {
+		逼 = {
+			this = true
+		},
+		比 = {
+			this = true
+		},
+		B = {
+			this = true
+		},
+		屄 = {
+			this = true
+		},
+		屌 = {
+			this = true
+		},
+		货 = {
+			this = true
+		},
+		游 = {
+			戏 = {
+				this = true,
+				靠 = {
+					this = true
+				}
+			}
+		},
+		人 = {
+			this = true
+		},
+		鸟 = {
+			this = true
+		},
+		袋 = {
+			this = true
+		},
+		泥 = {
+			情 = {
+				人 = {
+					this = true
+				}
+			}
+		},
+		情 = {
+			门 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.屁 = {
+		眼 = {
+			this = true
+		},
+		股 = {
+			this = true,
+			按 = {
+				摩 = {
+					this = true,
+					小 = {
+						弟 = {
+							this = true
+						}
+					}
+				}
+			},
+			高 = {
+				跷 = {
+					this = true
+				}
+			},
+			管 = {
+				教 = {
+					的 = {
+						女 = {
+							人 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		屁 = {
+			熊 = {
+				和 = {
+					花 = {
+						花 = {
+							鸡 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.群 = {
+		奸 = {
+			this = true,
+			乱 = {
+				交 = {
+					this = true
+				}
+			},
+			轮 = {
+				射 = {
+					this = true
+				}
+			},
+			绝 = {
+				色 = {
+					荡 = {
+						妇 = {
+							this = true
+						}
+					}
+				}
+			},
+			亂 = {
+				交 = {
+					this = true
+				}
+			},
+			輪 = {
+				射 = {
+					this = true
+				}
+			}
+		},
+		阴 = {
+			this = true,
+			会 = {
+				this = true
+			}
+		},
+		交 = {
+			this = true,
+			亂 = {
+				舞 = {
+					this = true
+				}
+			},
+			大 = {
+				家 = {
+					族 = {
+						this = true
+					}
+				},
+				派 = {
+					对 = {
+						this = true
+					}
+				}
+			},
+			["?"] = {
+				y = {
+					舞 = {
+						this = true
+					}
+				}
+			},
+			A = {
+				V = {
+					this = true
+				}
+			},
+			暴 = {
+				力 = {
+					this = true
+				}
+			},
+			插 = {
+				入 = {
+					this = true,
+					影 = {
+						院 = {
+							this = true
+						}
+					}
+				}
+			},
+			电 = {
+				影 = {
+					网 = {
+						this = true
+					}
+				}
+			},
+			多 = {
+				P = {
+					this = true
+				}
+			},
+			黑 = {
+				妹 = {
+					this = true
+				}
+			},
+			集 = {
+				锦 = {
+					this = true
+				}
+			},
+			记 = {
+				this = true
+			},
+			乱 = {
+				交 = {
+					this = true
+				},
+				舞 = {
+					this = true
+				}
+			},
+			论 = {
+				坛 = {
+					this = true
+				}
+			},
+			免 = {
+				费 = {
+					this = true
+				}
+			},
+			派 = {
+				对 = {
+					this = true,
+					集 = {
+						锦 = {
+							this = true
+						}
+					}
+				},
+				對 = {
+					this = true
+				}
+			},
+			频 = {
+				this = true
+			},
+			强 = {
+				奸 = {
+					this = true
+				}
+			},
+			射 = {
+				精 = {
+					视 = {
+						频 = {
+							this = true
+						}
+					}
+				}
+			},
+			视 = {
+				频 = {
+					this = true,
+					地 = {
+						址 = {
+							this = true
+						}
+					},
+					集 = {
+						锦 = {
+							this = true
+						}
+					},
+					在 = {
+						线 = {
+							this = true
+						}
+					}
+				}
+			},
+			視 = {
+				頻 = {
+					this = true
+				}
+			},
+			贴 = {
+				图 = {
+					this = true
+				}
+			},
+			图 = {
+				this = true
+			},
+			网 = {
+				this = true
+			},
+			舞 = {
+				会 = {
+					this = true
+				}
+			},
+			淫 = {
+				乱 = {
+					this = true
+				}
+			},
+			影 = {
+				片 = {
+					this = true
+				}
+			}
+		},
+		魔 = {
+			色 = {
+				舞 = {
+					this = true
+				}
+			},
+			乱 = {
+				舞 = {
+					this = true
+				}
+			}
+		},
+		娇 = {
+			荟 = {
+				综 = {
+					合 = {
+						网 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		茭 = {
+			this = true
+		},
+		P = {
+			this = true,
+			图 = {
+				this = true
+			},
+			淫 = {
+				虐 = {
+					this = true
+				}
+			},
+			照 = {
+				片 = {
+					this = true
+				}
+			}
+		},
+		游 = {
+			论 = {
+				坛 = {
+					this = true
+				}
+			}
+		},
+		英 = {
+			堂 = {
+				娱 = {
+					乐 = {
+						官 = {
+							网 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			人 = {
+				才 = {
+					网 = {
+						this = true
+					}
+				}
+			},
+			足 = {
+				球 = {
+					吧 = {
+						this = true
+					}
+				}
+			}
+		},
+		发 = {
+			器 = {
+				this = true
+			},
+			短 = {
+				信 = {
+					this = true,
+					网 = {
+						this = true
+					}
+				}
+			}
+		},
+		發 = {
+			器 = {
+				this = true
+			}
+		},
+		砍 = {
+			血 = {
+				腥 = {
+					时 = {
+						间 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		射 = {
+			this = true
+		},
+		体 = {
+			灭 = {
+				绝 = {
+					this = true,
+					罪 = {
+						this = true
 					}
 				}
 			},
@@ -7334,53 +10867,472 @@ function temp()
 					this = true
 				}
 			},
-			自 = {
-				慰 = {
-					高 = {
-						清 = {
-							this = true
+			性 = {
+				事 = {
+					件 = {
+						this = true
+					}
+				}
+			},
+			斗 = {
+				殴 = {
+					this = true
+				}
+			},
+			回 = {
+				复 = {
+					this = true
+				}
+			}
+		},
+		體 = {
+			事 = {
+				件 = {
+					this = true
+				}
+			}
+		},
+		p = {
+			淫 = {
+				战 = {
+					this = true
+				}
+			}
+		},
+		爱 = {
+			之 = {
+				快 = {
+					乐 = {
+						人 = {
+							生 = {
+								this = true
+							}
 						}
 					}
 				}
 			}
 		},
-		情 = {
-			豪 = {
-				放 = {
+		芳 = {
+			记 = {
+				this = true
+			}
+		},
+		己 = {
+			权 = {
+				界 = {
+					this = true
+				}
+			}
+		},
+		鲛 = {
+			蒎 = {
+				対 = {
 					this = true
 				}
 			},
-			没 = {
-				有 = {
-					不 = {
-						高 = {
-							涨 = {
+			視 = {
+				頻 = {
+					this = true
+				}
+			}
+		},
+		鉸 = {
+			視 = {
+				频 = {
+					this = true
+				}
+			}
+		},
+		裸 = {
+			聊 = {
+				this = true
+			}
+		},
+		馬 = {
+			this = true
+		},
+		妹 = {
+			裸 = {
+				聊 = {
+					this = true
+				}
+			}
+		},
+		殴 = {
+			this = true,
+			藏 = {
+				人 = {
+					this = true
+				}
+			},
+			新 = {
+				疆 = {
+					this = true
+				}
+			}
+		},
+		一 = {
+			夜 = {
+				情 = {
+					this = true
+				}
+			}
+		},
+		蚁 = {
+			附 = {
+				膻 = {
+					抗 = {
+						潮 = {
+							流 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		益 = {
+			网 = {
+				this = true
+			}
+		},
+		陰 = {
+			會 = {
+				this = true
+			}
+		},
+		淫 = {
+			乱 = {
+				交 = {
+					的 = {
+						空 = {
+							间 = {
 								this = true
 							}
 						}
 					}
 				}
 			},
-			骚 = {
-				妇 = {
+			无 = {
+				码 = {
 					this = true
 				}
 			}
 		},
-		色 = {
-			播 = {
-				this = true
+		战 = {
+			男 = {
+				同 = {
+					聚 = {
+						会 = {
+							this = true
+						}
+					}
+				}
 			}
 		},
-		视 = {
-			频 = {
-				this = true
+		众 = {
+			城 = {
+				管 = {
+					this = true
+				}
+			},
+			疾 = {
+				苦 = {
+					不 = {
+						当 = {
+							事 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			没 = {
+				有 = {
+					不 = {
+						满 = {
+							意 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			面 = {
+				前 = {
+					说 = {
+						官 = {
+							话 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			演 = {
+				员 = {
+					作 = {
+						秀 = {
+							this = true
+						}
+					}
+				}
+			},
+			意 = {
+				见 = {
+					耳 = {
+						旁 = {
+							风 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			运 = {
+				动 = {
+					this = true
+				}
+			},
+			质 = {
+				问 = {
+					吹 = {
+						胡 = {
+							子 = {
+								this = true
+							}
+						}
+					}
+				}
 			}
 		},
-		图 = {
+		起 = {
+			反 = {
+				羽 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.喷 = {
+		你 = {
 			this = true
 		},
-		线 = {
+		精 = {
+			this = true,
+			的 = {
+				潮 = {
+					吹 = {
+						this = true
+					}
+				}
+			}
+		},
+		他 = {
+			佐 = {
+				辛 = {
+					this = true
+				}
+			}
+		},
+		雾 = {
+			型 = {
+				this = true,
+				迷 = {
+					this = true,
+					药 = {
+						this = true,
+						["*"] = {
+							this = true
+						},
+						专 = {
+							this = true
+						}
+					},
+					幻 = {
+						药 = {
+							this = true,
+							专 = {
+								this = true
+							}
+						}
+					},
+					昏 = {
+						药 = {
+							this = true
+						}
+					},
+					魂 = {
+						药 = {
+							this = true
+						}
+					},
+					藥 = {
+						this = true
+					}
+				},
+				赌 = {
+					博 = {
+						药 = {
+							this = true
+						}
+					}
+				},
+				听 = {
+					话 = {
+						水 = {
+							this = true
+						}
+					}
+				},
+				乙 = {
+					醚 = {
+						this = true
+					}
+				}
+			},
+			蒙 = {
+				汗 = {
+					药 = {
+						this = true,
+						订 = {
+							购 = {
+								this = true
+							}
+						},
+						直 = {
+							销 = {
+								this = true
+							}
+						},
+						专 = {
+							this = true,
+							售 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			迷 = {
+				药 = {
+					this = true,
+					订 = {
+						购 = {
+							this = true
+						}
+					},
+					直 = {
+						销 = {
+							this = true
+						}
+					}
+				},
+				幻 = {
+					药 = {
+						this = true,
+						订 = {
+							购 = {
+								this = true
+							}
+						},
+						直 = {
+							销 = {
+								this = true
+							}
+						}
+					}
+				},
+				昏 = {
+					药 = {
+						this = true
+					}
+				},
+				魂 = {
+					药 = {
+						this = true
+					}
+				},
+				情 = {
+					水 = {
+						this = true,
+						订 = {
+							购 = {
+								this = true
+							}
+						},
+						直 = {
+							销 = {
+								this = true
+							}
+						}
+					}
+				},
+				葯 = {
+					this = true,
+					密 = {
+						云 = {
+							this = true
+						}
+					}
+				},
+				藥 = {
+					this = true,
+					["?"] = {
+						this = true
+					}
+				}
+			},
+			下 = {
+				迷 = {
+					葯 = {
+						this = true
+					}
+				}
+			},
+			直 = {
+				流 = {
+					枪 = {
+						this = true
+					}
+				}
+			}
+		},
+		剂 = {
+			this = true
+		},
+		尿 = {
+			this = true
+		},
+		迷 = {
+			药 = {
+				this = true
+			}
+		},
+		射 = {
+			瞬 = {
+				间 = {
+					集 = {
+						锦 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		霧 = {
+			迷 = {
+				葯 = {
+					this = true
+				}
+			}
+		},
+		子 = {
 			this = true
 		}
 	}
@@ -7389,62 +11341,82 @@ end
 temp()
 
 function temp()
-	var_0_1.薄 = {
-		熙 = {
+	var_0_1.性 = {
+		欲 = {
 			this = true,
-			来 = {
-				this = true,
-				["1"] = {
-					["8"] = {
-						大 = {
-							this = true
-						}
-					}
-				},
-				十 = {
-					八 = {
-						大 = {
-							this = true
-						}
-					}
-				},
-				太 = {
-					子 = {
-						党 = {
-							this = true
-						}
-					}
-				},
-				为 = {
-					民 = {
-						打 = {
-							黑 = {
+			復 = {
+				活 = {
+					this = true
+				}
+			}
+		},
+		爱 = {
+			this = true,
+			图 = {
+				库 = {
+					this = true
+				}
+			},
+			擂 = {
+				台 = {
+					this = true
+				}
+			},
+			电 = {
+				影 = {
+					this = true
+				}
+			},
+			["*"] = {
+				this = true
+			},
+			教 = {
+				育 = {
+					this = true
+				}
+			},
+			日 = {
+				记 = {
+					this = true
+				}
+			},
+			文 = {
+				字 = {
+					this = true
+				}
+			},
+			片 = {
+				this = true
+			}
+		},
+		奴 = {
+			this = true,
+			会 = {
+				this = true
+			},
+			美 = {
+				母 = {
+					this = true
+				}
+			},
+			隶 = {
+				服 = {
+					务 = {
+						公 = {
+							司 = {
 								this = true
 							}
 						}
 					}
-				},
-				习 = {
-					近 = {
-						平 = {
-							this = true
-						}
-					}
-				},
-				下 = {
-					台 = {
-						this = true
-					}
-				},
-				政 = {
-					变 = {
-						this = true
-					}
-				},
-				朱 = {
-					镕 = {
-						基 = {
-							this = true
+				}
+			},
+			小 = {
+				洁 = {
+					的 = {
+						日 = {
+							记 = {
+								this = true
+							}
 						}
 					}
 				}
@@ -7452,379 +11424,100 @@ function temp()
 			["*"] = {
 				this = true
 			},
-			來 = {
+			营 = {
 				this = true
-			},
-			去 = {
-				了 = {
-					this = true
-				}
 			}
 		},
-		码 = {
+		交 = {
 			this = true,
-			D = {
-				V = {
-					D = {
-						this = true
-					}
-				}
-			}
-		},
-		一 = {
-			波 = {
-				this = true,
-				["*"] = {
+			课 = {
+				this = true
+			},
+			吞 = {
+				精 = {
 					this = true
-				},
-				肋 = {
-					骨 = {
-						this = true
-					}
+				}
+			},
+			图 = {
+				this = true
+			},
+			无 = {
+				码 = {
+					this = true
+				}
+			},
+			自 = {
+				拍 = {
+					this = true
+				}
+			},
+			["*"] = {
+				this = true
+			},
+			大 = {
+				赛 = {
+					this = true
+				}
+			},
+			片 = {
+				this = true
+			},
+			视 = {
+				频 = {
+					this = true
+				}
+			},
+			部 = {
+				门 = {
+					this = true
+				}
+			},
+			问 = {
+				题 = {
+					this = true
 				}
 			}
 		},
-		谷 = {
+		感 = {
 			this = true,
-			开 = {
-				来 = {
+			妖 = {
+				娆 = {
+					this = true
+				},
+				嬈 = {
 					this = true
 				}
 			},
-			情 = {
-				仇 = {
-					this = true
-				}
-			}
-		},
-		格 = {
-			this = true,
-			巴 = {
-				this = true
-			}
-		},
-		["1"] = {
-			["8"] = {
-				大 = {
-					this = true
-				}
-			}
-		},
-		百 = {
-			姓 = {
-				支 = {
-					持 = {
-						this = true
-					}
-				}
-			}
-		},
-		饼 = {
-			this = true
-		},
-		辞 = {
-			职 = {
-				this = true
-			}
-		},
-		党 = {
-			内 = {
-				斗 = {
-					争 = {
-						this = true
-					}
-				},
-				高 = {
-					层 = {
-						this = true
-					}
-				}
-			}
-		},
-		得 = {
-			罪 = {
-				this = true
-			}
-		},
-		督 = {
-			this = true
-		},
-		粉 = {
-			this = true
-		},
-		瓜 = {
-			瓜 = {
-				this = true
-			}
-		},
-		和 = {
-			温 = {
-				this = true
-			}
-		},
-		黑 = {
-			帮 = {
-				this = true
-			}
-		},
-		京 = {
-			瓜 = {
-				this = true
-			}
-		},
-		碼 = {
-			this = true
-		},
-		叛 = {
-			逃 = {
-				this = true
-			}
-		},
-		情 = {
-			郎 = {
-				this = true,
-				铁 = {
-					面 = {
-						王 = {
-							this = true
-						}
-					}
-				}
-			},
-			也 = {
-				好 = {
+			乳 = {
+				娘 = {
 					this = true
 				}
 			},
-			怎 = {
-				抵 = {
-					德 = {
-						满 = {
-							江 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		请 = {
-			辞 = {
-				this = true
-			}
-		},
-		人 = {
-			民 = {
-				怀 = {
-					念 = {
-						你 = {
-							this = true
-						}
-					}
+			肉 = {
+				丝 = {
+					this = true
 				},
-				记 = {
-					得 = {
-						你 = {
-							this = true
-						}
-					}
-				},
-				挺 = {
-					你 = {
-						this = true
-					}
-				},
-				心 = {
-					里 = {
-						永 = {
-							远 = {
-								this = true
-							}
-						}
-					}
-				},
-				拥 = {
-					护 = {
-						this = true
-					}
-				},
-				支 = {
-					持 = {
-						this = true
-					}
-				}
-			}
-		},
-		是 = {
-			好 = {
-				总 = {
-					理 = {
-						this = true
-					}
-				}
-			}
-		},
-		书 = {
-			记 = {
-				this = true,
-				辞 = {
-					职 = {
-						this = true
-					}
-				},
-				带 = {
-					领 = {
-						大 = {
-							家 = {
-								this = true
-							}
-						}
-					}
-				},
-				还 = {
-					我 = {
-						共 = {
-							this = true
-						}
-					}
-				},
-				你 = {
-					冤 = {
-						枉 = {
-							this = true
-						}
-					}
-				},
-				普 = {
-					京 = {
-						this = true
-					}
-				},
-				起 = {
-					义 = {
-						this = true
-					}
-				},
-				拥 = {
-					护 = {
-						this = true
-					}
-				},
-				周 = {
-					总 = {
-						理 = {
-							this = true
-						}
-					}
-				}
-			},
-			存 = {
-				this = true
-			}
-		},
-		王 = {
-			this = true,
-			不 = {
-				妙 = {
-					前 = {
-						景 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		望 = {
-			知 = {
-				this = true
-			}
-		},
-		为 = {
-			人 = {
-				民 = {
-					谋 = {
-						福 = {
-							this = true
-						}
-					},
-					造 = {
-						福 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		向 = {
-			中 = {
-				央 = {
-					请 = {
-						辞 = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		煦 = {
-			来 = {
-				this = true
-			}
-		},
-		已 = {
-			辞 = {
-				职 = {
+				絲 = {
 					this = true
 				}
-			}
-		},
-		与 = {
-			胡 = {
-				this = true
 			},
-			温 = {
-				this = true
-			}
-		},
-		造 = {
-			反 = {
-				this = true
-			}
-		},
-		政 = {
-			变 = {
-				this = true
-			},
-			治 = {
-				斗 = {
-					争 = {
+			诱 = {
+				惑 = {
+					this = true,
+					的 = {
 						this = true
 					}
 				}
-			}
-		},
-		主 = {
-			政 = {
-				this = true
-			}
-		},
-		_ = {
-			_ = {
-				来 = {
-					this = true
-				}
-			}
-		},
-		m = {
-			e = {
-				l = {
-					o = {
-						n = {
-							m = {
-								e = {
-									l = {
-										o = {
-											n = {
+			},
+			的 = {
+				美 = {
+					腿 = {
+						女 = {
+							神 = {
+								（ = {
+									合 = {
+										集 = {
+											） = {
 												this = true
 											}
 										}
@@ -7833,52 +11526,1132 @@ function temp()
 							}
 						}
 					}
+				},
+				按 = {
+					摩 = {
+						小 = {
+							姐 = {
+								this = true
+							}
+						}
+					}
+				},
+				丝 = {
+					袜 = {
+						this = true
+					}
+				},
+				嘴 = {
+					唇 = {
+						this = true
+					}
 				}
-			}
-		},
-		东 = {
-			往 = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.令 = {
-		计 = {
-			划 = {
-				this = true
-			}
-		},
-		狐 = {
-			安 = {
+			},
+			扑 = {
+				克 = {
+					this = true
+				}
+			},
+			撲 = {
+				克 = {
+					this = true
+				}
+			},
+			沙 = {
+				滩 = {
+					this = true,
+					["2"] = {
+						this = true
+					},
+					有 = {
+						料 = {
+							this = true
+						}
+					}
+				},
+				灘 = {
+					this = true
+				}
+			},
+			m = {
+				m = {
+					视 = {
+						频 = {
+							this = true
+						}
+					}
+				}
+			},
+			表 = {
+				妹 = {
+					和 = {
+						表 = {
+							姐 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			波 = {
+				霸 = {
+					辣 = {
+						人 = {
+							妻 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			超 = {
+				新 = {
+					妻 = {
+						this = true
+					}
+				}
+			},
+			大 = {
+				奶 = {
+					女 = {
+						教 = {
+							师 = {
+								this = true
+							}
+						}
+					}
+				},
+				胸 = {
+					乳 = {
+						娘 = {
+							this = true
+						}
+					},
+					诱 = {
+						惑 = {
+							this = true
+						}
+					}
+				}
+			},
+			店 = {
+				员 = {
+					的 = {
+						性 = {
+							福 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			丰 = {
+				满 = {
+					this = true
+				}
+			},
+			高 = {
+				跟 = {
+					鞋 = {
+						this = true
+					}
+				}
+			},
+			贵 = {
+				妇 = {
+					this = true
+				}
+			},
+			海 = {
+				滩 = {
+					this = true
+				}
+			},
+			黑 = {
+				丝 = {
+					this = true,
+					女 = {
+						教 = {
+							师 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			尖 = {
+				叫 = {
+					this = true
+				}
+			},
+			克 = {
 				this = true
 			},
-			计 = {
-				划 = {
+			裸 = {
+				聊 = {
+					this = true
+				}
+			},
+			美 = {
+				空 = {
+					姐 = {
+						this = true
+					}
+				},
+				图 = {
+					网 = {
+						this = true
+					}
+				},
+				臀 = {
+					this = true
+				}
+			},
+			妹 = {
+				妹 = {
+					玩 = {
+						大 = {
+							屌 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			女 = {
+				同 = {
+					事 = {
+						妖 = {
+							娆 = {
+								this = true
+							}
+						}
+					}
+				},
+				优 = {
+					this = true
+				},
+				友 = {
+					肉 = {
+						丝 = {
+							this = true
+						}
+					}
+				}
+			},
+			全 = {
+				裸 = {
+					诱 = {
+						惑 = {
+							this = true
+						}
+					}
+				}
+			},
+			骚 = {
+				B = {
+					this = true
+				},
+				妹 = {
+					this = true
+				},
+				女 = {
+					孩 = {
+						this = true
+					}
+				}
+			},
+			騷 = {
+				B = {
+					this = true
+				},
+				в = {
+					this = true
+				}
+			},
+			丝 = {
+				袜 = {
+					妹 = {
+						妹 = {
+							this = true
+						}
+					}
+				}
+			},
+			无 = {
+				限 = {
+					this = true
+				}
+			},
+			妩 = {
+				媚 = {
+					女 = {
+						人 = {
+							秀 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			西 = {
+				女 = {
+					this = true
+				}
+			},
+			小 = {
+				公 = {
+					主 = {
+						this = true
+					}
+				},
+				骚 = {
+					货 = {
+						this = true
+					}
+				},
+				说 = {
+					快 = {
+						墦 = {
+							this = true
+						}
+					}
+				}
+			},
+			艳 = {
+				舞 = {
+					this = true
+				}
+			},
+			野 = {
+				生 = {
+					图 = {
+						丝 = {
+							袜 = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			尤 = {
+				物 = {
+					this = true
+				}
+			},
+			誘 = {
+				惑 = {
 					this = true
 				}
 			}
 		},
-		家 = {
+		佣 = {
 			this = true
 		},
-		完 = {
-			成 = {
+		虎 = {
+			this = true,
+			色 = {
+				网 = {
+					this = true
+				},
+				網 = {
+					this = true
+				}
+			}
+		},
+		饥 = {
+			渴 = {
+				this = true
+			},
+			喝 = {
+				美 = {
+					少 = {
+						女 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		愛 = {
+			this = true,
+			圖 = {
+				片 = {
+					this = true
+				}
+			},
+			插 = {
+				穴 = {
+					this = true
+				}
+			},
+			電 = {
+				影 = {
+					this = true
+				}
+			}
+		},
+		之 = {
+			站 = {
+				this = true
+			},
+			谷 = {
+				this = true
+			},
+			双 = {
+				面 = {
+					佳 = {
+						人 = {
+							this = true
+						}
+					}
+				}
+			},
+			图 = {
+				吧 = {
+					this = true
+				}
+			},
+			圖 = {
+				吧 = {
+					this = true
+				}
+			}
+		},
+		战 = {
+			擂 = {
+				台 = {
+					this = true
+				}
+			}
+		},
+		息 = {
+			this = true,
+			平 = {
+				台 = {
+					this = true
+				}
+			},
+			大 = {
+				全 = {
+					this = true
+				}
+			},
+			楼 = {
+				this = true
+			},
+			谷 = {
+				this = true
+			},
+			["*"] = {
+				this = true
+			},
+			网 = {
 				this = true
 			}
 		},
-		政 = {
-			策 = {
+		虐 = {
+			this = true,
+			待 = {
+				this = true,
+				["*"] = {
+					this = true
+				}
+			}
+		},
+		無 = {
+			能 = {
 				this = true
 			}
 		},
-		王 = {
-			木 = {
-				此 = {
+		无 = {
+			能 = {
+				this = true
+			}
+		},
+		吧 = {
+			this = true,
+			之 = {
+				声 = {
+					this = true
+				}
+			},
+			网 = {
+				电 = {
+					this = true
+				}
+			},
+			杂 = {
+				志 = {
+					this = true
+				}
+			}
+		},
+		["8"] = {
+			春 = {
+				暖 = {
+					花 = {
+						开 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		乐 = {
+			this = true,
+			汇 = {
+				this = true
+			}
+		},
+		趣 = {
+			this = true,
+			阁 = {
+				this = true
+			}
+		},
+		都 = {
+			花 = {
+				花 = {
+					世 = {
+						界 = {
+							this = true,
+							网 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		绞 = {
+			this = true,
+			姿 = {
+				this = true
+			}
+		},
+		聊 = {
+			this = true,
+			服 = {
+				务 = {
+					this = true
+				}
+			},
+			妹 = {
+				this = true
+			}
+		},
+		服 = {
+			this = true,
+			务 = {
+				this = true
+			}
+		},
+		病 = {
+			this = true
+		},
+		事 = {
+			this = true
+		},
+		高 = {
+			潮 = {
+				this = true
+			}
+		},
+		盈 = {
+			盈 = {
+				在 = {
+					线 = {
+						影 = {
+							院 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		启 = {
+			蒙 = {
+				this = true,
+				["*"] = {
+					this = true
+				}
+			}
+		},
+		免 = {
+			费 = {
+				电 = {
+					影 = {
+						this = true,
+						["*"] = {
+							this = true
+						}
+					}
+				}
+			},
+			費 = {
+				電 = {
+					影 = {
+						this = true
+					}
+				}
+			}
+		},
+		器 = {
+			this = true,
+			官 = {
+				this = true,
+				["*"] = {
+					this = true
+				}
+			},
+			具 = {
+				this = true
+			}
+		},
+		生 = {
+			活 = {
+				this = true,
+				["*"] = {
+					this = true
+				}
+			}
+		},
+		伴 = {
+			侣 = {
+				this = true
+			}
+		},
+		技 = {
+			巧 = {
+				this = true
+			},
+			交 = {
+				流 = {
+					this = true
+				}
+			}
+		},
+		["{"] = {
+			["1"] = {
+				["0"] = {
+					["}"] = {
+						福 = {
+							this = true
+						}
+					}
+				},
+				["}"] = {
+					福 = {
+						this = true
+					}
+				}
+			}
+		},
+		福 = {
+			this = true,
+			人 = {
+				生 = {
+					this = true
+				}
+			}
+		},
+		学 = {
+			教 = {
+				授 = {
+					this = true
+				}
+			}
+		},
+		教 = {
+			官 = {
+				this = true
+			},
+			学 = {
+				电 = {
+					影 = {
+						this = true
+					}
+				}
+			}
+		},
+		网 = {
+			站 = {
+				this = true
+			}
+		},
+		網 = {
+			站 = {
+				this = true
+			}
+		},
+		信 = {
+			息 = {
+				this = true,
+				交 = {
+					友 = {
+						this = true
+					}
+				}
+			}
+		},
+		游 = {
+			戏 = {
+				this = true,
+				暗 = {
+					语 = {
+						代 = {
+							号 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		侵 = {
+			this = true,
+			女 = {
+				外 = {
+					劳 = {
+						this = true
+					}
+				}
+			}
+		},
+		this = {
+			this = true
+		},
+		["$"] = {
+			爱 = {
+				电 = {
+					影 = {
+						this = true
+					}
+				}
+			}
+		},
+		["&"] = {
+			高 = {
+				潮 = {
+					this = true
+				}
+			},
+			功 = {
+				能 = {
+					this = true
+				}
+			},
+			關 = {
+				係 = {
+					this = true
+				}
+			}
+		},
+		b = {
+			t = {
+				论 = {
+					坛 = {
+						this = true
+					}
+				}
+			}
+		},
+		h = {
+			感 = {
+				this = true
+			}
+		},
+		噯 = {
+			this = true
+		},
+		紦 = {
+			this = true
+		},
+		宝 = {
+			贝 = {
+				淫 = {
+					色 = {
+						导 = {
+							航 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		暴 = {
+			力 = {
+				this = true
+			}
+		},
+		博 = {
+			士 = {
+				推 = {
+					荐 = {
+						this = true
+					}
+				}
+			}
+		},
+		潮 = {
+			难 = {
+				抑 = {
+					this = true
+				}
+			}
+		},
+		春 = {
+			吧 = {
+				this = true
+			}
+		},
+		妲 = {
+			已 = {
+				this = true
+			}
+		},
+		电 = {
+			影 = {
+				this = true
+			}
+		},
+		房 = {
+			事 = {
+				this = true
+			}
+		},
+		冨 = {
+			綜 = {
+				合 = {
+					this = true,
+					論 = {
+						壇 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		工 = {
+			作 = {
+				者 = {
+					this = true
+				}
+			}
+		},
+		谷 = {
+			乐 = {
+				this = true
+			}
+		},
+		海 = {
+			浪 = {
+				子 = {
+					系 = {
+						列 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		行 = {
+			为 = {
+				this = true
+			}
+		},
+		幻 = {
+			想 = {
+				this = true
+			}
+		},
+		贿 = {
+			太 = {
+				多 = {
+					怀 = {
+						鬼 = {
+							胎 = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		飢 = {
+			渴 = {
+				this = true
+			}
+		},
+		饑 = {
+			渴 = {
+				this = true
+			}
+		},
+		家 = {
+			教 = {
+				this = true
+			}
+		},
+		奸 = {
+			this = true
+		},
+		经 = {
+			验 = {
+				this = true
+			}
+		},
+		酒 = {
+			吧 = {
+				this = true
+			}
+		},
+		俱 = {
+			乐 = {
+				i = {
+					t = {
+						部 = {
+							this = true
+						}
+					}
+				},
+				部 = {
+					this = true
+				}
+			},
+			楽 = {
+				蔀 = {
+					this = true
+				}
+			},
+			樂 = {
+				i = {
+					t = {
+						部 = {
+							this = true
+						}
+					}
+				},
+				部 = {
+					this = true
+				}
+			}
+		},
+		开 = {
+			放 = {
+				this = true
+			}
+		},
+		伦 = {
+			理 = {
+				this = true
+			},
+			乱 = {
+				this = true
+			}
+		},
+		论 = {
+			坛 = {
+				this = true
+			}
+		},
+		裸 = {
+			this = true
+		},
+		女 = {
+			叫 = {
+				春 = {
+					网 = {
+						this = true
+					}
+				}
+			}
+		},
+		派 = {
+			对 = {
+				this = true
+			},
+			對 = {
+				this = true
+			}
+		},
+		情 = {
+			操 = {
+				淫 = {
+					院 = {
+						this = true
+					}
+				}
+			},
+			玩 = {
+				偶 = {
+					this = true
+				}
+			},
+			中 = {
+				人 = {
+					this = true
+				}
+			}
+		},
+		骚 = {
+			扰 = {
+				this = true
+			}
+		},
+		色 = {
+			俱 = {
+				乐 = {
+					部 = {
+						this = true
+					}
+				}
+			},
+			社 = {
+				区 = {
+					this = true
+				}
+			}
+		},
+		视 = {
+			频 = {
+				this = true
+			}
+		},
+		太 = {
+			阳 = {
+				this = true
+			}
+		},
+		天 = {
+			堂 = {
+				this = true
+			}
+		},
+		图 = {
+			this = true
+		},
+		玩 = {
+			具 = {
+				this = true,
+				在 = {
+					线 = {
+						this = true
+					}
+				}
+			},
+			物 = {
+				this = true
+			}
+		},
+		文 = {
+			化 = {
+				this = true
+			}
+		},
+		心 = {
+			理 = {
+				this = true
+			}
+		},
+		药 = {
+			催 = {
+				情 = {
+					药 = {
+						网 = {
+							this = true
+						}
+					}
+				}
+			},
+			网 = {
+				this = true
+			}
+		},
+		葯 = {
+			this = true
+		},
+		医 = {
+			春 = {
+				歌 = {
+					this = true
+				}
+			}
+		},
+		影 = {
+			院 = {
+				this = true
+			}
+		},
+		傭 = {
+			this = true
+		},
+		用 = {
+			品 = {
+				this = true
+			},
+			色 = {
+				this = true
+			}
+		},
+		友 = {
+			this = true
+		},
+		娱 = {
+			情 = {
+				色 = {
+					导 = {
+						航 = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		慾 = {
+			之 = {
+				妻 = {
+					this = true
+				}
+			}
+		},
+		戰 = {
+			擂 = {
+				臺 = {
+					this = true
+				}
+			}
+		},
+		知 = {
+			识 = {
+				this = true
+			}
+		},
+		中 = {
+			性 = {
+				this = true
+			}
+		},
+		转 = {
+			换 = {
+				教 = {
+					室 = {
+						this = true
+					}
+				}
+			}
+		},
+		姿 = {
+			势 = {
+				实 = {
+					图 = {
+						this = true
+					}
+				},
+				图 = {
 					this = true
 				}
 			}
