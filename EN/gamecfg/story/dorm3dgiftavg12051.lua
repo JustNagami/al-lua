@@ -17,7 +17,7 @@
 			wait = 1,
 			hidePaintObj = true,
 			nameColor = "#FFFFFF",
-			say = "嗯？{dorm3d}！怎么走路没有声音呀~",
+			say = "Ah. My Commander! I didn't hear your footsteps, so you startled me.",
 			voice = "event:/dorm/drom3d_Taiho_gift_timeline03_voice1/drom3d_Taiho_gift_timeline03_voice1",
 			dispatcher = {
 				name = STORY_EVENT.TEST,
@@ -53,7 +53,7 @@
 			},
 			options = {
 				{
-					content = "你在收拾衣柜吗？",
+					content = "Are you cleaning out your closet?",
 					flag = 1
 				}
 			}
@@ -65,7 +65,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#FFFFFF",
-			say = "嘿嘿~呵呵~当然不是，{namecode:97}在拿新睡衣呢~",
+			say = "Haha, of course not. I'm just grabbing a new pair of pajamas.",
 			voice = "event:/dorm/drom3d_Taiho_gift_timeline03_voice2/drom3d_Taiho_gift_timeline03_voice2",
 			typewriter = {
 				speed = 0.05,
@@ -107,7 +107,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#FFFFFF",
-			say = "是{dorm3d}从没见过的一身，呵呵~",
+			say = "It's a new set that you've never seen before... Heehee.",
 			voice = "event:/dorm/drom3d_Taiho_gift_timeline03_voice3/drom3d_Taiho_gift_timeline03_voice3",
 			typewriter = {
 				speed = 0.05,
@@ -115,7 +115,7 @@
 			},
 			options = {
 				{
-					content = "？可以说……很期待？",
+					content = "Okay. Well, I look forward to that.",
 					flag = 1
 				}
 			}
@@ -127,7 +127,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#FFFFFF",
-			say = "当然要期待！因为……大凤要带指挥官大人参与到睡衣的换新仪式中呢♡",
+			say = "Please do! Also... I'd like you to join in the new pajama changing ceremony with me♡",
 			voice = "event:/dorm/drom3d_Taiho_gift_timeline03_voice4/drom3d_Taiho_gift_timeline03_voice4",
 			dispatcher = {
 				name = STORY_EVENT.TEST,

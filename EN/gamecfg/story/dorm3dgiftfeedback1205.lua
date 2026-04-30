@@ -13,7 +13,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 30707,
-			say = "哎呀……这是送给{namecode:97}的吗……",
+			say = "Goodness, is this for me?",
 			voice = "event:/dorm/drom3d_Taiho_gift3_voice1/drom3d_Taiho_gift3_voice1",
 			typewriter = {
 				speed = 0.05,
@@ -49,7 +49,7 @@
 		{
 			nameColor = "#FFFFFF",
 			actorName = 30707,
-			say = "原来如此……{namecode:97}明白{dorm3d}的心意了，{namecode:97}会好好报答您的~",
+			say = "Wow... I see how you feel, my Commander. Allow me to return the favor♡",
 			voice = "event:/dorm/drom3d_Taiho_gift3_voice2/drom3d_Taiho_gift3_voice2",
 			typewriter = {
 				speed = 0.05,
