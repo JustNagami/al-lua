@@ -204,6 +204,20 @@ pg.island_item_data_template.all = {
 	4026,
 	4027,
 	4028,
+	4029,
+	4030,
+	4031,
+	4032,
+	4033,
+	4034,
+	4035,
+	4036,
+	4037,
+	4038,
+	4039,
+	4040,
+	4041,
+	4042,
 	5001,
 	5002,
 	5003,
@@ -275,6 +289,12 @@ pg.island_item_data_template.all = {
 	200021,
 	200022,
 	200023,
+	200024,
+	200025,
+	200026,
+	200027,
+	200028,
+	200029,
 	300001,
 	300002,
 	300003,
@@ -494,6 +514,20 @@ pg.island_item_data_template.get_id_list_by_usage = {
 		4026,
 		4027,
 		4028,
+		4029,
+		4030,
+		4031,
+		4032,
+		4033,
+		4034,
+		4035,
+		4036,
+		4037,
+		4038,
+		4039,
+		4040,
+		4041,
+		4042,
 		5001,
 		5002,
 		5003,
@@ -559,6 +593,12 @@ pg.island_item_data_template.get_id_list_by_usage = {
 		200021,
 		200022,
 		200023,
+		200024,
+		200025,
+		200026,
+		200027,
+		200028,
+		200029,
 		300001,
 		300002,
 		300003,
@@ -753,6 +793,20 @@ pg.island_item_data_template.get_id_list_by_type = {
 		4026,
 		4027,
 		4028,
+		4029,
+		4030,
+		4031,
+		4032,
+		4033,
+		4034,
+		4035,
+		4036,
+		4037,
+		4038,
+		4039,
+		4040,
+		4041,
+		4042,
 		5001,
 		5002,
 		5003,
@@ -825,6 +879,12 @@ pg.island_item_data_template.get_id_list_by_type = {
 		200021,
 		200022,
 		200023,
+		200024,
+		200025,
+		200026,
+		200027,
+		200028,
+		200029,
 		300001,
 		300002,
 		300003,
@@ -7903,6 +7963,484 @@ end)()
 	}
 end)()
 ;(function()
+	pg.base.island_item_data_template[4029] = {
+		pt_num = 32,
+		name = "ジャスミン",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "夏の夕暮れに咲く、小さな白い花。遠くまで伝わる清らかな香りを持つそれは、お茶やフレグランスに使われる。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 315,
+		icon = "IslandProps/item_4029",
+		price = 1,
+		icon_normal = "",
+		rarity = 3,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4029,
+		have_max = 0,
+		filter = {
+			10111
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-マップ採集",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4030] = {
+		pt_num = 27,
+		name = "ヒマワリ",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "太陽を追いかける金色の花。成熟すると、花盤にぎっしりヒマワリの種を実らせる。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 270,
+		icon = "IslandProps/item_4030",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4030,
+		have_max = 0,
+		filter = {
+			10111
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-マップ採集",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4031] = {
+		pt_num = 54,
+		name = "スイカ",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "緑の皮に赤い果肉。果汁たっぷりで甘く、夏の暑さを癒やしてくれる。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 540,
+		icon = "IslandProps/item_4031",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4031,
+		have_max = 0,
+		filter = {
+			10111
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-マップ採集",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4032] = {
+		pt_num = 2,
+		name = "ヒユナ",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "紫がかった赤い葉の栄養野菜。薬用価値もある。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 225,
+		icon = "IslandProps/item_4032",
+		price = 1,
+		icon_normal = "",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4032,
+		have_max = 0,
+		filter = {
+			10111
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-マップ採集",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4033] = {
+		pt_num = 3,
+		name = "トマト",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "赤く熟したみずみずしいトマト。甘酸っぱくてジューシー。そのまま食べてもいいし料理にも向いている。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 30,
+		icon = "IslandProps/item_4033",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4033,
+		have_max = 0,
+		filter = {
+			10111,
+			10132
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-青々苗場",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4034] = {
+		pt_num = 1,
+		name = "トマトの種",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "土に埋めて水をやれば、赤くみずみずしいトマトが収穫できる。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4034",
+		price = 1,
+		icon_normal = "",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4034,
+		have_max = 0,
+		filter = {
+			10114
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-ショップ購入",
+				{
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
+				}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4035] = {
+		pt_num = 1,
+		name = "キュウリ",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "鮮やかな緑の夏野菜。歯ざわりがよく、さっぱりしていて、そのまま食べるのはもちろん和え物にもぴったり。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 20,
+		icon = "IslandProps/item_4035",
+		price = 1,
+		icon_normal = "",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4035,
+		have_max = 0,
+		filter = {
+			10111,
+			10132
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-青々苗場",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4036] = {
+		pt_num = 1,
+		name = "キュウリの種",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "平たい種を蒔いて、つるが伸びるのを待てば、新鮮なキュウリを収穫できる。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4036",
+		price = 1,
+		icon_normal = "",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4036,
+		have_max = 0,
+		filter = {
+			10114
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-ショップ購入",
+				{
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10028
+					}
+				}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4037] = {
+		pt_num = 1,
+		name = "キュウリジュース",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 250,
+		desc = "新鮮なキュウリを搾った緑の野菜ジュース。喉が潤うすっきりした夏の味覚。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 100,
+		icon = "IslandProps/item_4037",
+		price = 1,
+		icon_normal = "",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4037,
+		have_max = 0,
+		filter = {
+			10113,
+			10128
+		},
+		sub_attribute = {
+			1,
+			35
+		},
+		jump_page = {
+			{
+				"夏の特産依頼-白クマ茶房",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4038] = {
+		pt_num = 60,
+		name = "スイカジュース",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 250,
+		desc = "スイカの果肉を搾った赤いジュース。ひんやり甘く、心まで潤す。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 600,
+		icon = "IslandProps/item_4038",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4038,
+		have_max = 0,
+		filter = {
+			10113,
+			10128
+		},
+		sub_attribute = {
+			2,
+			35
+		},
+		jump_page = {
+			{
+				"夏の特産依頼-白クマ茶房",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4039] = {
+		pt_num = 8,
+		name = "ヒユナ入りおにぎり",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 250,
+		desc = "ヒユナの赤みが米粒を赤く染め上げる。安心できる味。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 800,
+		icon = "IslandProps/item_4039",
+		price = 1,
+		icon_normal = "",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4039,
+		have_max = 0,
+		filter = {
+			10113,
+			10127
+		},
+		sub_attribute = {
+			6,
+			35
+		},
+		jump_page = {
+			{
+				"夏の特産依頼-有魚飯店",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4040] = {
+		pt_num = 20,
+		name = "トマトと卵の炒め",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 250,
+		desc = "卵とトマトで作る、甘酸っぱく香ばしい人気の家庭料理。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 200,
+		icon = "IslandProps/item_4040",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4040,
+		have_max = 0,
+		filter = {
+			10113,
+			10127
+		},
+		sub_attribute = {
+			3,
+			35
+		},
+		jump_page = {
+			{
+				"夏の特産依頼-有魚飯店",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4041] = {
+		pt_num = 165,
+		name = "ジャスミン精油",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "新鮮なジャスミンから蒸留した精油。アロマやマッサージ、スキンケアに使える。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1100,
+		icon = "IslandProps/item_4041",
+		price = 1,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4041,
+		have_max = 0,
+		filter = {
+			10113,
+			10131
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-手工製作設備",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4042] = {
+		pt_num = 90,
+		name = "夏の花束",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "金色のヒマワリと白いジャスミンを組み合わせた花束。夏の太陽の華やかさと夏の夜の静けさを合わせ持つ。",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 900,
+		icon = "IslandProps/item_4042",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4042,
+		have_max = 0,
+		filter = {
+			10113,
+			10131
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"夏の特産依頼-手工製作設備",
+				{}
+			}
+		}
+	}
 	pg.base.island_item_data_template[5001] = {
 		pt_num = 1,
 		name = "貝",
@@ -10240,6 +10778,192 @@ end)()
 		jump_page = {
 			{
 				"イベント入手",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200024] = {
+		pt_num = 0,
+		name = "ジャベリン-離島権限認証",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "ジャベリンの離島権限認証。離島権限認証装置を使用すると、キャラに離島開発エリアの出入り権限を付与できる",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200024",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200024,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"開発ショップ",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200025] = {
+		pt_num = 0,
+		name = "ラフィー-離島権限認証",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "ラフィーの離島権限認証。離島権限認証装置を使用すると、キャラに離島開発エリアの出入り権限を付与できる",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200025",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200025,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"ショップ",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200026] = {
+		pt_num = 0,
+		name = "逸仙-離島権限認証",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "逸仙の離島権限認証。離島権限認証装置を使用すると、キャラに離島開発エリアの出入り権限を付与できる",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200026",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200026,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"星彩賞",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200027] = {
+		pt_num = 0,
+		name = "飛雲-離島権限認証",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "飛雲の離島権限認証。離島権限認証装置を使用すると、キャラに離島開発エリアの出入り権限を付与できる",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200027",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200027,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"星彩賞",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200028] = {
+		pt_num = 0,
+		name = "アウグスト・フォン・パーセヴァル-離島権限認証",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "アウグスト・フォン・パーセヴァルの離島権限認証。離島権限認証装置を使用すると、キャラに離島開発エリアの出入り権限を付与できる",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200028",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200028,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"星彩賞",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200029] = {
+		pt_num = 0,
+		name = "高雄-離島権限認証",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "高雄の離島権限認証。離島権限認証装置を使用すると、キャラに離島開発エリアの出入り権限を付与できる",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200029",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200029,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"技術",
 				{}
 			}
 		}

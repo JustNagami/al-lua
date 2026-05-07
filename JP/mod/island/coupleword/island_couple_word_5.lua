@@ -1,11 +1,11 @@
 ﻿return {
 	{
 		characterId = 10517,
-		say = "Honey！正准备去找你呢~"
+		say = "ハニー！ちょうど会いに行こうとしてたんだ～"
 	},
 	{
 		characterId = 10517,
-		say = "想和最大最强的“Black Dragon”来场约会吗？"
+		say = "最大最強のブラックドラゴンとデートしない？"
 	},
 	{
 		emoji = 2,

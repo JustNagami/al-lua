@@ -40,6 +40,7 @@ pg.island_technology_template.all = {
 	110310,
 	120006,
 	120007,
+	120008,
 	210101,
 	220101,
 	220501,
@@ -242,7 +243,8 @@ pg.island_technology_template.get_id_list_by_tech_belong = {
 		120005,
 		110310,
 		120006,
-		120007
+		120007,
+		120008
 	},
 	{
 		210101,
@@ -1594,6 +1596,40 @@ pg.base.island_technology_template = {}
 		axis = {
 			28,
 			2
+		}
+	}
+	pg.base.island_technology_template[120008] = {
+		tech_desc = "高雄の離島権限認証装置を生産する。もっと仲間を招待しよう！",
+		tech_chara = 1,
+		tech_level = "1",
+		complete_character_id = "",
+		tech_icon = "tech_120001",
+		auto_finish = 1,
+		tech_name = "認証追加",
+		complete_tips = "<color=#1E8FFE>離島権限認証装置</color>で仲間を加入させることができます",
+		formula_id = 7120008,
+		complete_title = "<color=#1E8FFE>離島権限認証装置</color>で仲間を加入させることができます",
+		tech_belong = 1,
+		id = 120008,
+		island_level = 50,
+		complete_map_id = 1007,
+		sys_unlock = {
+			{
+				3,
+				110310
+			},
+			{
+				3,
+				120007
+			}
+		},
+		tech_repeat = {
+			0,
+			0
+		},
+		axis = {
+			28,
+			3
 		}
 	}
 	pg.base.island_technology_template[210101] = {
@@ -3572,6 +3608,8 @@ pg.base.island_technology_template = {}
 			6
 		}
 	}
+end)()
+;(function()
 	pg.base.island_technology_template[440302] = {
 		tech_desc = "悠々牧場のメェメーヒツジの数を増やす",
 		tech_chara = 1,
@@ -3604,8 +3642,6 @@ pg.base.island_technology_template = {}
 			6
 		}
 	}
-end)()
-;(function()
 	pg.base.island_technology_template[420303] = {
 		tech_desc = "悠々牧場のブーブーブタの数を増やす",
 		tech_chara = 1,
@@ -6859,6 +6895,8 @@ end)()
 			9
 		}
 	}
+end)()
+;(function()
 	pg.base.island_technology_template[650203] = {
 		tech_desc = "水質浄化用フィルター装置コアを制作可能。",
 		tech_chara = 1,

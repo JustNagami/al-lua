@@ -24,17 +24,17 @@ pg.activity_banner.all = {
 	202
 }
 pg.activity_banner.get_id_list_by_type = {
-	[2] = {
+	{
+		7
+	},
+	{
 		1,
 		2,
+		3,
 		4,
 		5,
 		6,
-		7,
-		8
-	},
-	[3] = {
-		3,
+		8,
 		9
 	},
 	[9] = {
@@ -74,8 +74,8 @@ pg.base.activity_banner = {}
 			{
 				{
 					2026,
-					4,
-					30
+					5,
+					7
 				},
 				{
 					0,
@@ -87,7 +87,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					5,
-					6
+					13
 				},
 				{
 					23,
@@ -100,6 +100,7 @@ pg.base.activity_banner = {}
 	pg.base.activity_banner[2] = {
 		id = 2,
 		pic = "temp2",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene get boat",
@@ -107,199 +108,89 @@ pg.base.activity_banner = {}
 				projectName = "new",
 				page = 1
 			}
-		},
-		time = {
-			{
-				{
-					2026,
-					4,
-					30
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					5,
-					7
-				},
-				{
-					16,
-					0,
-					0
-				}
-			}
 		}
 	}
 	pg.base.activity_banner[3] = {
-		param = "50825",
 		id = 3,
 		pic = "temp3",
-		type = 3,
-		time = {
+		time = "stop",
+		type = 2,
+		param = {
+			"scene core activity",
 			{
-				{
-					2026,
-					4,
-					30
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					5,
-					7
-				},
-				{
-					16,
-					0,
-					0
-				}
+				coreName = "YunLongSPCoreActivityUI"
 			}
 		}
 	}
 	pg.base.activity_banner[4] = {
 		id = 4,
 		pic = "temp4",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene charge",
 			{
 				wrap = 4
 			}
-		},
-		time = {
-			{
-				{
-					2026,
-					4,
-					30
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					5,
-					6
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	}
 	pg.base.activity_banner[5] = {
 		id = 5,
 		pic = "temp5",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene shop",
 			{
 				warp = "shopstreet"
 			}
-		},
-		time = {
-			{
-				{
-					2026,
-					4,
-					30
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					5,
-					6
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	}
 	pg.base.activity_banner[6] = {
 		id = 6,
 		pic = "temp6",
+		time = "stop",
 		type = 2,
 		param = {
 			"scene court yard"
-		},
-		time = {
-			{
-				{
-					2026,
-					4,
-					30
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					5,
-					6
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	}
 	pg.base.activity_banner[7] = {
+		param = "https://game.bilibili.com/blhx/2026-ninth-anniversary/h5",
+		time = "stop",
+		type = 1,
 		id = 7,
-		pic = "temp7",
+		pic = "temp7"
+	}
+	pg.base.activity_banner[8] = {
+		id = 8,
+		pic = "temp8",
 		type = 2,
 		param = {
-			"dorm 3d select"
+			"scene equip",
+			{
+				designPage = 2,
+				warp = "WARP_TO_DESIGN"
+			}
 		},
 		time = {
-			{
-				{
-					2026,
-					4,
-					30
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
 			{
 				{
 					2026,
 					5,
 					7
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					14
 				},
 				{
 					16,
@@ -309,64 +200,35 @@ pg.base.activity_banner = {}
 			}
 		}
 	}
-	pg.base.activity_banner[8] = {
-		id = 8,
-		pic = "temp8",
+	pg.base.activity_banner[9] = {
+		id = 9,
+		pic = "temp9",
 		type = 2,
 		param = {
-			"scene Cryptolalia",
-			{}
+			"scene level",
+			{
+				open_remaster = true,
+				isSP = true
+			}
 		},
 		time = {
 			{
 				{
 					2026,
-					4,
-					30
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					5,
-					6
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
-	}
-	pg.base.activity_banner[9] = {
-		param = "50833",
-		id = 9,
-		pic = "temp9",
-		type = 3,
-		time = {
-			{
-				{
-					2026,
-					4,
-					30
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
 					5,
 					7
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					5,
+					14
 				},
 				{
 					16,
@@ -399,35 +261,10 @@ pg.base.activity_banner = {}
 	}
 	pg.base.activity_banner[99] = {
 		param = "",
-		id = 99,
-		pic = "limit_skin",
+		time = "stop",
 		type = 12,
-		time = {
-			{
-				{
-					2026,
-					4,
-					30
-				},
-				{
-					0,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2026,
-					5,
-					6
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
-		}
+		id = 99,
+		pic = "limit_skin"
 	}
 	pg.base.activity_banner[100] = {
 		param = "水餃子|東煌で有名な食べ物<color=#92fc63>（60分間寮舎経験値効率が5%アップ）</color>",
