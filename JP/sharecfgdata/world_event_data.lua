@@ -5906,8 +5906,7 @@ _G.pg.base.world_event_data[1401] = {
 	event_op = {},
 	effect = {
 		1406,
-		1416,
-		1417,
+		1444,
 	},
 	grid = {
 		{
@@ -6102,6 +6101,43 @@ _G.pg.base.world_event_data[1410] = {
 		1436,
 		1437,
 		1438,
+		1439,
+	},
+	grid = {
+		{
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {},
+}
+_G.pg.base.world_event_data[1411] = {
+	auto_pri = 0,
+	compass_index = 0,
+	discover_type = 2,
+	enemyicon = 0,
+	event_sight = -1,
+	expedition_icon = 0,
+	icon = "laohuji_pohuai",
+	icontype = 2,
+	id = 1411,
+	infection_value = 0,
+	is_guide = 0,
+	is_scanevent = 1,
+	name = "セイレーン走査装置（破損）",
+	object_icon = "",
+	obstacle = 2,
+	scale = 0,
+	scan_desc = "すでに破壊されているセイレーンの走査装置",
+	special_enemy = 0,
+	visuality = 0,
+	event_op = {},
+	effect = {
 		1439,
 	},
 	grid = {

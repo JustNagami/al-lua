@@ -512,52 +512,52 @@ _G.pg.base.world_effect_data[105] = {
 _G.pg.base.world_effect_data[106] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 106,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1200",
+		"隠された資材のサルベージに成功した。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[107] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 107,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1201",
+		"エリアを確保できた。戦いの戦利品を早く回収しよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[108] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 108,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1202",
+		"エリアを「安全エリア」として確保できた。…とはいっても、このエリアに戻る際にはまた「行動力」を消費しなければならないようだ",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[109] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 109,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1203",
+		"海域の敵反応が全て消滅したようだ…",
 	},
 	autoflag = {},
 }
@@ -707,13 +707,13 @@ _G.pg.base.world_effect_data[213] = {
 _G.pg.base.world_effect_data[214] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 214,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1240",
+		"工作艦による緊急修理を実施しました。艦隊全員の耐久が10％回復しました",
 	},
 	autoflag = {},
 }
@@ -994,13 +994,13 @@ _G.pg.base.world_effect_data[310] = {
 _G.pg.base.world_effect_data[311] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 311,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1230",
+		"艦隊整備が完了しました。士気及び耐久が回復し、さらに兵站部隊から補給物資を受領しました",
 	},
 	autoflag = {},
 }
@@ -1105,13 +1105,13 @@ _G.pg.base.world_effect_data[325] = {
 _G.pg.base.world_effect_data[326] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 326,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1042",
+		"エネルギー貯蔵装置の使用が失敗しましたようです。",
 	},
 	autoflag = {},
 }
@@ -1160,13 +1160,13 @@ _G.pg.base.world_effect_data[401] = {
 _G.pg.base.world_effect_data[402] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 402,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1220",
+		"港口的情况发生了一些变化......",
 	},
 	autoflag = {},
 }
@@ -1360,26 +1360,26 @@ _G.pg.base.world_effect_data[415] = {
 _G.pg.base.world_effect_data[431] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 431,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1221",
+		"在港口附近找到了补给。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[441] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 441,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1222",
+		"在残骸中找到了一些材料...",
 	},
 	autoflag = {},
 }
@@ -1444,13 +1444,13 @@ _G.pg.base.world_effect_data[461] = {
 _G.pg.base.world_effect_data[462] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 462,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1223",
+		"喵...算了不喵了我摊牌了...这里是港口随机剧情NPC测试员，恭喜你随机出了特殊事件，现在没有剧情，这个奖励你先拿着吧",
 	},
 	autoflag = {},
 }
@@ -3245,13 +3245,13 @@ _G.pg.base.world_effect_data[1100] = {
 _G.pg.base.world_effect_data[1106] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1106,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1000",
+		"このエリアの雰囲気が明らかに違う。気をつけて探索してみよう。",
 	},
 	autoflag = {},
 }
@@ -3455,13 +3455,13 @@ _G.pg.base.world_effect_data[1118] = {
 _G.pg.base.world_effect_data[1119] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1119,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1024",
+		"セイレーンの強化モジュールに基づいて艤装を調整しました",
 	},
 	autoflag = {},
 }
@@ -3528,26 +3528,26 @@ _G.pg.base.world_effect_data[1400] = {
 _G.pg.base.world_effect_data[1406] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1406,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1000",
+		"このエリアの雰囲気が明らかに違う。気をつけて探索してみよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[1407] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1407,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1001",
+		"スキャンモードに移行：セイレーン情報収集装置を発見しました\n……同じく、接近中のセイレーン艦隊を検知しました",
 	},
 	autoflag = {},
 }
@@ -3614,26 +3614,26 @@ _G.pg.base.world_effect_data[1408] = {
 _G.pg.base.world_effect_data[1414] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1414,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1002",
+		"戦場環境をスキャンしています。スキャンが完了しました\nセイレーン艦隊の反応がまだ残っています",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[1415] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1415,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1003",
+		"戦場環境をスキャンしました。敵性反応がありません。次の行動に移行できます",
 	},
 	autoflag = {},
 }
@@ -4097,13 +4097,13 @@ _G.pg.base.world_effect_data[1441] = {
 _G.pg.base.world_effect_data[1442] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1442,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1013",
+		"装置がまだ利用できるようだ。",
 	},
 	autoflag = {},
 }
@@ -4120,6 +4120,568 @@ _G.pg.base.world_effect_data[1443] = {
 		0.1,
 	},
 	autoflag = {},
+}
+_G.pg.base.world_effect_data[1444] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 27,
+	effective_num = 0,
+	id = 1444,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		"W1015",
+		{
+			{
+				1,
+				1445,
+			},
+			{
+				2,
+				1449,
+			},
+			{
+				3,
+				1452,
+			},
+			{
+				4,
+				1454,
+			},
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1445] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1445,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1446,
+		1447,
+		1448,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1446] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 24,
+	effective_num = 0,
+	id = 1446,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		101,
+		2,
+		"W1005",
+		true,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1447] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1447,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1501,
+			50,
+		},
+		{
+			1502,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1448] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1448,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1444,
+			50,
+		},
+		{
+			1456,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1449] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1449,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1450,
+		1451,
+		1448,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1450] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 24,
+	effective_num = 0,
+	id = 1450,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		110,
+		1,
+		"W1005",
+		true,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1451] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1451,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1521,
+			50,
+		},
+		{
+			1522,
+			50,
+		},
+		{
+			1523,
+			50,
+		},
+		{
+			1524,
+			5,
+		},
+		{
+			1525,
+			5,
+		},
+		{
+			1526,
+			5,
+		},
+		{
+			1527,
+			5,
+		},
+		{
+			1528,
+			5,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1452] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1452,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1446,
+		1447,
+		1453,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1453] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1453,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1452,
+			50,
+		},
+		{
+			1460,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1454] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1454,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1450,
+		1451,
+		1455,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1455] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1455,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1454,
+			50,
+		},
+		{
+			1462,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1456] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 27,
+	effective_num = 0,
+	id = 1456,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		"W1016",
+		{
+			{
+				1,
+				1457,
+			},
+			{
+				2,
+				1459,
+			},
+			{
+				3,
+				1460,
+			},
+			{
+				4,
+				1462,
+			},
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1457] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1457,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1446,
+		1447,
+		1458,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1458] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1458,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1456,
+			50,
+		},
+		{
+			1464,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1459] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1459,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1450,
+		1451,
+		1458,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1460] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1460,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1446,
+		1447,
+		1461,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1461] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1461,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1460,
+			50,
+		},
+		{
+			1468,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1462] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1462,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1450,
+		1451,
+		1463,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1463] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1463,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1462,
+			50,
+		},
+		{
+			1470,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1464] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 27,
+	effective_num = 0,
+	id = 1464,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		"W1017",
+		{
+			{
+				1,
+				1465,
+			},
+			{
+				2,
+				1467,
+			},
+			{
+				3,
+				1468,
+			},
+			{
+				4,
+				1470,
+			},
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1465] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1465,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1446,
+		1447,
+		1466,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1466] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1466,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1464,
+			50,
+		},
+		{
+			1472,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1467] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1467,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1450,
+		1451,
+		1466,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1468] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1468,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1446,
+		1447,
+		1469,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1469] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1469,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1468,
+			50,
+		},
+		{
+			1472,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1470] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 53,
+	effective_num = 0,
+	id = 1470,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1450,
+		1451,
+		1471,
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1471] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	effect_type = 36,
+	effective_num = 0,
+	id = 1471,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		{
+			1470,
+			50,
+		},
+		{
+			1472,
+			50,
+		},
+	},
+	autoflag = {},
+}
+_G.pg.base.world_effect_data[1472] = {
+	autoactivate = 0,
+	autocomplete = 0,
+	autoflag = "",
+	effect_type = 10,
+	effective_num = 0,
+	id = 1472,
+	log_text = "",
+	sound_effects = "",
+	effect_paramater = {
+		1411,
+	},
 }
 _G.pg.base.world_effect_data[1501] = {
 	autoactivate = 1,
@@ -4935,13 +5497,13 @@ _G.pg.base.world_effect_data[1801] = {
 _G.pg.base.world_effect_data[1802] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1802,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1210",
+		"这是......异次元空间？\n尝试着调查一下这些奇异的标记吧......\n不过，这个空间看起来非常不稳定的样子......指挥官请随时做好在空间崩坏前撤退的准备",
 	},
 	autoflag = {},
 }
@@ -4979,13 +5541,13 @@ _G.pg.base.world_effect_data[1810] = {
 _G.pg.base.world_effect_data[1811] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1811,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1211",
+		"空间似乎正在破碎......",
 	},
 	autoflag = {},
 }
@@ -5006,13 +5568,13 @@ _G.pg.base.world_effect_data[1812] = {
 _G.pg.base.world_effect_data[1820] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1820,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1212",
+		"不稳定空间出现了破碎的征兆，看起来要尽快撤离了",
 	},
 	autoflag = {},
 }
@@ -5078,13 +5640,13 @@ _G.pg.base.world_effect_data[1832] = {
 _G.pg.base.world_effect_data[1833] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1833,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1213",
+		"不稳定空间即将破碎，指挥官请立刻撤离回到安全海域！\n......",
 	},
 	autoflag = {},
 }
@@ -5111,13 +5673,13 @@ _G.pg.base.world_effect_data[1834] = {
 _G.pg.base.world_effect_data[1840] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 1840,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1214",
+		"随着空间崩碎，奇怪的物件增加了！",
 	},
 	autoflag = {},
 }
@@ -6464,13 +7026,13 @@ _G.pg.base.world_effect_data[5100] = {
 _G.pg.base.world_effect_data[5101] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5101,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1100",
+		"セイレーンの脅威を解除したが……エリアの雰囲気がまた変わったようだ。",
 	},
 	autoflag = {},
 }
@@ -7302,13 +7864,13 @@ _G.pg.base.world_effect_data[5135] = {
 _G.pg.base.world_effect_data[5136] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5136,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1101",
+		"スキャンが完了しました。セイレーンの気象操作装置を発見しました",
 	},
 	autoflag = {},
 }
@@ -7510,13 +8072,13 @@ _G.pg.base.world_effect_data[5200] = {
 _G.pg.base.world_effect_data[5201] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5201,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1100",
+		"セイレーンの脅威を解除したが……エリアの雰囲気がまた変わったようだ。",
 	},
 	autoflag = {},
 }
@@ -7933,13 +8495,13 @@ _G.pg.base.world_effect_data[5213] = {
 _G.pg.base.world_effect_data[5214] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5214,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1101",
+		"スキャンが完了しました。セイレーンの気象操作装置を発見しました",
 	},
 	autoflag = {},
 }
@@ -8267,13 +8829,13 @@ _G.pg.base.world_effect_data[5300] = {
 _G.pg.base.world_effect_data[5301] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5301,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1104",
+		"セイレーンの脅威が消え去り、隠された資材が海に現れた。",
 	},
 	autoflag = {},
 }
@@ -8308,13 +8870,13 @@ _G.pg.base.world_effect_data[5303] = {
 _G.pg.base.world_effect_data[5310] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5310,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1105",
+		"資材のサルベージを行っています。……セイレーンによるジャミングを受けています。お気をつけください",
 	},
 	autoflag = {},
 }
@@ -8396,13 +8958,13 @@ _G.pg.base.world_effect_data[5400] = {
 _G.pg.base.world_effect_data[5401] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5401,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1110",
+		"スキャンを終了しました。セイレーン操縦装置を発見しました",
 	},
 	autoflag = {},
 }
@@ -8465,13 +9027,13 @@ _G.pg.base.world_effect_data[5405] = {
 _G.pg.base.world_effect_data[5406] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5406,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1111",
+		"セイレーン待ち伏せ艦隊の反応です。お気をつけください",
 	},
 	autoflag = {},
 }
@@ -8502,13 +9064,13 @@ _G.pg.base.world_effect_data[5407] = {
 _G.pg.base.world_effect_data[5414] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5414,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1112",
+		"装置を起動するには2つの艦隊をスイッチに操作させる必要があるようだ。艦隊を動かそう。",
 	},
 	autoflag = {},
 }
@@ -8529,13 +9091,13 @@ _G.pg.base.world_effect_data[5415] = {
 _G.pg.base.world_effect_data[5416] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5416,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1113",
+		"スイッチが上手く作動したようだ。",
 	},
 	autoflag = {},
 }
@@ -8583,13 +9145,13 @@ _G.pg.base.world_effect_data[5419] = {
 _G.pg.base.world_effect_data[5420] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5420,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1114",
+		"セイレーンに隠された資源を見つけたようだ。",
 	},
 	autoflag = {},
 }
@@ -8637,13 +9199,13 @@ _G.pg.base.world_effect_data[5500] = {
 _G.pg.base.world_effect_data[5501] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5501,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1110",
+		"スキャンを終了しました。セイレーン操縦装置を発見しました",
 	},
 	autoflag = {},
 }
@@ -8664,13 +9226,13 @@ _G.pg.base.world_effect_data[5502] = {
 _G.pg.base.world_effect_data[5503] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5503,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1115",
+		"エネルギー供給装置をプラットフォームに置く必要があるようだ。",
 	},
 	autoflag = {},
 }
@@ -8751,13 +9313,13 @@ _G.pg.base.world_effect_data[5508] = {
 _G.pg.base.world_effect_data[5509] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5509,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1117",
+		"エネルギー供給が再開したようだ。これでエリアも安全になるだろう。",
 	},
 	autoflag = {},
 }
@@ -8777,13 +9339,13 @@ _G.pg.base.world_effect_data[5511] = {
 _G.pg.base.world_effect_data[5512] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5512,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1118",
+		"セイレーン待ち伏せ艦隊の反応です。お気をつけください",
 	},
 	autoflag = {},
 }
@@ -8859,13 +9421,13 @@ _G.pg.base.world_effect_data[5601] = {
 _G.pg.base.world_effect_data[5602] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1120",
+		"さらなるセイレーン待ち伏せ艦隊の出現を確認しました。セイレーンの罠に引っかかりましたようです。申し訳ございません",
 	},
 	autoflag = {},
 }
@@ -9087,13 +9649,13 @@ _G.pg.base.world_effect_data[5617] = {
 _G.pg.base.world_effect_data[5618] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5618,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1121",
+		"待ち伏せ艦隊の殲滅に成功しました",
 	},
 	autoflag = {},
 }
@@ -9113,13 +9675,13 @@ _G.pg.base.world_effect_data[5700] = {
 _G.pg.base.world_effect_data[5701] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5701,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1122",
+		"セイレーン通信装置が稼働中です。回りのエリアのセイレーンが続々とこのエリアに集結してきています",
 	},
 	autoflag = {},
 }
@@ -9154,13 +9716,13 @@ _G.pg.base.world_effect_data[5703] = {
 _G.pg.base.world_effect_data[5704] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5704,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1126",
+		"セイレーン通信装置を停止しました。これ以上増援が現れないはずです",
 	},
 	autoflag = {},
 }
@@ -9463,13 +10025,13 @@ _G.pg.base.world_effect_data[5723] = {
 _G.pg.base.world_effect_data[5724] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5724,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1123",
+		"セイレーンの増援が確認されました",
 	},
 	autoflag = {},
 }
@@ -9681,13 +10243,13 @@ _G.pg.base.world_effect_data[5800] = {
 _G.pg.base.world_effect_data[5801] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5801,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1125",
+		"強化型の「駒」の撃破に成功しました。強化型「駒」の増援が確認されました",
 	},
 	autoflag = {},
 }
@@ -9853,13 +10415,13 @@ _G.pg.base.world_effect_data[5808] = {
 _G.pg.base.world_effect_data[5809] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5809,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1104",
+		"セイレーンの脅威が消え去り、隠された資材が海に現れた。",
 	},
 	autoflag = {},
 }
@@ -9892,13 +10454,13 @@ _G.pg.base.world_effect_data[5900] = {
 _G.pg.base.world_effect_data[5901] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5901,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1130",
+		"強化型の「駒」の撃破に成功しました。隠されたセイレーンの機材を確認しました\n早めに回収しておこう",
 	},
 	autoflag = {},
 }
@@ -9988,13 +10550,13 @@ _G.pg.base.world_effect_data[5907] = {
 _G.pg.base.world_effect_data[5908] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 5908,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1131",
+		"資材が海の奥底に沈んでしまった。これ以上の回収が無理のようだ",
 	},
 	autoflag = {},
 }
@@ -10119,65 +10681,65 @@ _G.pg.base.world_effect_data[6006] = {
 _G.pg.base.world_effect_data[6007] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 6007,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1132",
+		"漂流物をサルベージし、情報の断片を手に入れた。……「このエリアの東に…」？",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[6008] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 6008,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1133",
+		"漂流物をサルベージし、情報の断片を手に入れた。……「このエリアの南に…」？",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[6009] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 6009,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1134",
+		"漂流物をサルベージし、情報の断片を手に入れた。……「このエリアの西に…」？",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[6010] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 6010,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1135",
+		"漂流物をサルベージし、情報の断片を手に入れた。……「このエリアの北に…」？",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[6011] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 6011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1136",
+		"スキャンが完了しました。セイレーンの資源スポットを発見しました",
 	},
 	autoflag = {},
 }
@@ -10213,13 +10775,13 @@ _G.pg.base.world_effect_data[6100] = {
 _G.pg.base.world_effect_data[6101] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 6101,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1137",
+		"スキャンが完了しました。セイレーンの資源スポットを発見しました。待ち伏せにはお気をつけください",
 	},
 	autoflag = {},
 }
@@ -10243,13 +10805,13 @@ _G.pg.base.world_effect_data[6102] = {
 _G.pg.base.world_effect_data[6103] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 6103,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1138",
+		"セイレーンの資源スポットに偽装した待ち伏せ艦隊です。戦闘に備えてください",
 	},
 	autoflag = {},
 }
@@ -10280,13 +10842,13 @@ _G.pg.base.world_effect_data[6104] = {
 _G.pg.base.world_effect_data[6105] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 6105,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1139",
+		"これは……セイレーンの警報装置？",
 	},
 	autoflag = {},
 }
@@ -10320,26 +10882,26 @@ _G.pg.base.world_effect_data[6106] = {
 _G.pg.base.world_effect_data[6107] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 6107,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1140",
+		"未回収の資材が消失しました……",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[9000] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 9000,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1141",
+		"セイレーンの強化モジュールの情報を回収しました。敵に適応する、艤装の調整には活用できるでしょう",
 	},
 	autoflag = {},
 }
@@ -39260,13 +39822,13 @@ _G.pg.base.world_effect_data[241303] = {
 _G.pg.base.world_effect_data[241304] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 241304,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840000",
+		"スイッチの解除順番を間違えたようだ。【装置が光る順番】の通りスイッチを解除しよう。",
 	},
 	autoflag = {},
 }
@@ -39594,13 +40156,13 @@ _G.pg.base.world_effect_data[242100] = {
 _G.pg.base.world_effect_data[242101] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 242101,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840010",
+		"スキャンが終了しました。内層の海流に変化が観測されました。気をつけてください",
 	},
 	autoflag = {},
 }
@@ -39660,13 +40222,13 @@ _G.pg.base.world_effect_data[242110] = {
 _G.pg.base.world_effect_data[242111] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 242111,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840010",
+		"スキャンが終了しました。内層の海流に変化が観測されました。気をつけてください",
 	},
 	autoflag = {},
 }
@@ -39726,13 +40288,13 @@ _G.pg.base.world_effect_data[242120] = {
 _G.pg.base.world_effect_data[242121] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 242121,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840011",
+		"スキャンが終了しました。外層の海流に変化が観測されました。気をつけてください",
 	},
 	autoflag = {},
 }
@@ -39792,13 +40354,13 @@ _G.pg.base.world_effect_data[242130] = {
 _G.pg.base.world_effect_data[242131] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 242131,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840011",
+		"スキャンが終了しました。外層の海流に変化が観測されました。気をつけてください",
 	},
 	autoflag = {},
 }
@@ -40002,13 +40564,13 @@ _G.pg.base.world_effect_data[242240] = {
 _G.pg.base.world_effect_data[242241] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 242241,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840020",
+		"スキャンが終了しました。エリアの海流に変化が観測されました。気をつけてください",
 	},
 	autoflag = {},
 }
@@ -40071,13 +40633,13 @@ _G.pg.base.world_effect_data[242243] = {
 _G.pg.base.world_effect_data[242244] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 242244,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840021",
+		"海流を操作できるセイレーンの【気象操作装置】を発見しました。気をつけてください",
 	},
 	autoflag = {},
 }
@@ -40156,13 +40718,13 @@ _G.pg.base.world_effect_data[242303] = {
 _G.pg.base.world_effect_data[242304] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 242304,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840000",
+		"スイッチの解除順番を間違えたようだ。【装置が光る順番】の通りスイッチを解除しよう。",
 	},
 	autoflag = {},
 }
@@ -40689,13 +41251,13 @@ _G.pg.base.world_effect_data[244303] = {
 _G.pg.base.world_effect_data[244304] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 244304,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840000",
+		"スイッチの解除順番を間違えたようだ。【装置が光る順番】の通りスイッチを解除しよう。",
 	},
 	autoflag = {},
 }
@@ -41033,13 +41595,13 @@ _G.pg.base.world_effect_data[245102] = {
 _G.pg.base.world_effect_data[245103] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 245103,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W843000",
+		"スキャンが完了しました。浮氷の一部が巨大浮氷を形成しました",
 	},
 	autoflag = {},
 }
@@ -41121,13 +41683,13 @@ _G.pg.base.world_effect_data[245112] = {
 _G.pg.base.world_effect_data[245113] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 245113,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W843001",
+		"スキャンが完了しました。浮氷の一部が溶解し、海流を形成しました",
 	},
 	autoflag = {},
 }
@@ -41205,13 +41767,13 @@ _G.pg.base.world_effect_data[245122] = {
 _G.pg.base.world_effect_data[245123] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 245123,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W843002",
+		"スキャンが完了しました。海流の海水が一部凍結し、浮氷を形成しました",
 	},
 	autoflag = {},
 }
@@ -41445,13 +42007,13 @@ _G.pg.base.world_effect_data[245240] = {
 _G.pg.base.world_effect_data[245241] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 245241,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W843010",
+		"異常気象が発生しました。浮氷に注意してください",
 	},
 	autoflag = {},
 }
@@ -41494,13 +42056,13 @@ _G.pg.base.world_effect_data[245243] = {
 _G.pg.base.world_effect_data[245244] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 245244,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W843011",
+		"スキャンが終了しました。浮氷を操作できるセイレーンの【気象操作装置】を発見しました",
 	},
 	autoflag = {},
 }
@@ -41582,13 +42144,13 @@ _G.pg.base.world_effect_data[245303] = {
 _G.pg.base.world_effect_data[245304] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 245304,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840000",
+		"スイッチの解除順番を間違えたようだ。【装置が光る順番】の通りスイッチを解除しよう。",
 	},
 	autoflag = {},
 }
@@ -41927,13 +42489,13 @@ _G.pg.base.world_effect_data[247051] = {
 _G.pg.base.world_effect_data[247110] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 247110,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W846000",
+		"セイレーンの【陥穽装置】を多数検出しました。回避してください",
 	},
 	autoflag = {},
 }
@@ -42146,13 +42708,13 @@ _G.pg.base.world_effect_data[247303] = {
 _G.pg.base.world_effect_data[247304] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 247304,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840000",
+		"スイッチの解除順番を間違えたようだ。【装置が光る順番】の通りスイッチを解除しよう。",
 	},
 	autoflag = {},
 }
@@ -42278,13 +42840,13 @@ _G.pg.base.world_effect_data[247504] = {
 _G.pg.base.world_effect_data[247505] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 247505,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W846010",
+		"セイレーン装置による被害を避けるよう艦隊を進入ポイントまで引き上げた。\n罠エリアに注意して艦隊を移動してください",
 	},
 	autoflag = {},
 }
@@ -42603,13 +43165,13 @@ _G.pg.base.world_effect_data[248051] = {
 _G.pg.base.world_effect_data[248110] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 248110,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W846020",
+		"さらなるセイレーンの破壊性装置が検出されました。回避に気をつけてください\nナビゲーションシステムがジャミングをされています。【思わぬ地点】に誘導・転送される可能性があります\n行きたい座標とは【逆の座標】への移動をオススメします",
 	},
 	autoflag = {},
 }
@@ -42867,13 +43429,13 @@ _G.pg.base.world_effect_data[248303] = {
 _G.pg.base.world_effect_data[248304] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 248304,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840000",
+		"スイッチの解除順番を間違えたようだ。【装置が光る順番】の通りスイッチを解除しよう。",
 	},
 	autoflag = {},
 }
@@ -44411,13 +44973,13 @@ _G.pg.base.world_effect_data[248705] = {
 _G.pg.base.world_effect_data[248706] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 248706,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W846010",
+		"セイレーン装置による被害を避けるよう艦隊を進入ポイントまで引き上げた。\n罠エリアに注意して艦隊を移動してください",
 	},
 	autoflag = {},
 }
@@ -45054,13 +45616,13 @@ _G.pg.base.world_effect_data[250303] = {
 _G.pg.base.world_effect_data[250304] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 250304,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840000",
+		"スイッチの解除順番を間違えたようだ。【装置が光る順番】の通りスイッチを解除しよう。",
 	},
 	autoflag = {},
 }
@@ -45530,13 +46092,13 @@ _G.pg.base.world_effect_data[251221] = {
 _G.pg.base.world_effect_data[251230] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 251230,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W849011",
+		"どうやらまだ経過していない黄色い区域があるようだ。一度出直そう。",
 	},
 	autoflag = {},
 }
@@ -45743,13 +46305,13 @@ _G.pg.base.world_effect_data[251303] = {
 _G.pg.base.world_effect_data[251304] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 251304,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W840000",
+		"スイッチの解除順番を間違えたようだ。【装置が光る順番】の通りスイッチを解除しよう。",
 	},
 	autoflag = {},
 }
@@ -46065,13 +46627,13 @@ _G.pg.base.world_effect_data[251806] = {
 _G.pg.base.world_effect_data[251807] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 251807,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W849012",
+		"どうやら黄色い区域が一回しか通過できないようだ。一度出直そう。",
 	},
 	autoflag = {},
 }
@@ -92590,26 +93152,26 @@ _G.pg.base.world_effect_data[800017] = {
 _G.pg.base.world_effect_data[800018] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 800018,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800000",
+		"「海洋動物の反応を探知。あれは……アザラシちゃん？」――この声…もしかしてTBが…？",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[800019] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 800019,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806010",
+		"敵個体、セイレーンの防衛ユニットの反応を探知しました",
 	},
 	autoflag = {},
 }
@@ -92968,26 +93530,26 @@ _G.pg.base.world_effect_data[801503] = {
 _G.pg.base.world_effect_data[801504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 801504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[801550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 801550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -93420,13 +93982,13 @@ _G.pg.base.world_effect_data[801557] = {
 _G.pg.base.world_effect_data[801558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 801558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -93487,13 +94049,13 @@ _G.pg.base.world_effect_data[801601] = {
 _G.pg.base.world_effect_data[801602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 801602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -93800,13 +94362,13 @@ _G.pg.base.world_effect_data[803020] = {
 _G.pg.base.world_effect_data[803021] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 803021,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W803000",
+		"「アザラシちゃんがあんなに…！どの子が本物でしょう…」――とりあえずスキャンさせてみるか。",
 	},
 	autoflag = {},
 }
@@ -93830,13 +94392,13 @@ _G.pg.base.world_effect_data[803022] = {
 _G.pg.base.world_effect_data[803024] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 803024,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W803001",
+		"「しょぼーん…」――どうやらこのアザラシは本物ではないようだ。",
 	},
 	autoflag = {},
 }
@@ -94118,13 +94680,13 @@ _G.pg.base.world_effect_data[803071] = {
 _G.pg.base.world_effect_data[803072] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 803072,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806010",
+		"敵個体、セイレーンの防衛ユニットの反応を探知しました",
 	},
 	autoflag = {},
 }
@@ -94164,26 +94726,26 @@ _G.pg.base.world_effect_data[803081] = {
 _G.pg.base.world_effect_data[803090] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 803090,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W803002",
+		"「海洋動物の反応を探知。あれは……アザラシちゃん？」――この声…もしかしてTBが…？",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[803100] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 803100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W803002",
+		"「海洋動物の反応を探知。あれは……アザラシちゃん？」――この声…もしかしてTBが…？",
 	},
 	autoflag = {},
 }
@@ -94341,26 +94903,26 @@ _G.pg.base.world_effect_data[804503] = {
 _G.pg.base.world_effect_data[804504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 804504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[804550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 804550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -95061,13 +95623,13 @@ _G.pg.base.world_effect_data[804557] = {
 _G.pg.base.world_effect_data[804558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 804558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -95128,13 +95690,13 @@ _G.pg.base.world_effect_data[804601] = {
 _G.pg.base.world_effect_data[804602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 804602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -95197,13 +95759,13 @@ _G.pg.base.world_effect_data[806012] = {
 _G.pg.base.world_effect_data[806013] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 806013,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806000",
+		"スキャンが完了しました。追跡中の海洋生物までの航路が浮氷にによって阻まれています\n【操作装置】を見つけ出し、浮氷の対処を行ってください",
 	},
 	autoflag = {},
 }
@@ -95244,13 +95806,13 @@ _G.pg.base.world_effect_data[806021] = {
 _G.pg.base.world_effect_data[806022] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 806022,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806010",
+		"敵個体、セイレーンの防衛ユニットの反応を探知しました",
 	},
 	autoflag = {},
 }
@@ -95291,13 +95853,13 @@ _G.pg.base.world_effect_data[806201] = {
 _G.pg.base.world_effect_data[806300] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 806300,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806001",
+		"【操作装置】を見つけ出し、浮氷の対処を行ってください",
 	},
 	autoflag = {},
 }
@@ -95450,13 +96012,13 @@ _G.pg.base.world_effect_data[806404] = {
 _G.pg.base.world_effect_data[806405] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 806405,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806002",
+		"セイレーンによって作り出された海霧と浮氷が一部消失した。",
 	},
 	autoflag = {},
 }
@@ -95623,13 +96185,13 @@ _G.pg.base.world_effect_data[806414] = {
 _G.pg.base.world_effect_data[806415] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 806415,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806003",
+		"「やった！」――海霧と浮氷が消失した。これでアザラシ探しを再開できる。",
 	},
 	autoflag = {},
 }
@@ -95801,26 +96363,26 @@ _G.pg.base.world_effect_data[807503] = {
 _G.pg.base.world_effect_data[807504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 807504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[807550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 807550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -96731,13 +97293,13 @@ _G.pg.base.world_effect_data[807557] = {
 _G.pg.base.world_effect_data[807558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 807558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -96798,13 +97360,13 @@ _G.pg.base.world_effect_data[807601] = {
 _G.pg.base.world_effect_data[807602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 807602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -96825,13 +97387,13 @@ _G.pg.base.world_effect_data[807700] = {
 _G.pg.base.world_effect_data[820010] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 820010,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820000",
+		"エネルギー供給装置を確保した。【格納プラットフォーム】に持っていこう。",
 	},
 	autoflag = {},
 }
@@ -96909,13 +97471,13 @@ _G.pg.base.world_effect_data[820110] = {
 _G.pg.base.world_effect_data[820111] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 820111,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820040",
+		"エネルギー供給装置を格納プラットフォームに格納しました。",
 	},
 	autoflag = {},
 }
@@ -96935,13 +97497,13 @@ _G.pg.base.world_effect_data[820112] = {
 _G.pg.base.world_effect_data[820113] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 820113,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806010",
+		"敵個体、セイレーンの防衛ユニットの反応を探知しました",
 	},
 	autoflag = {},
 }
@@ -97113,13 +97675,13 @@ _G.pg.base.world_effect_data[820203] = {
 _G.pg.base.world_effect_data[820204] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 820204,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820010",
+		"セイレーン実験場のセキュリティシステムが作動しました。海流の異常が観測されています",
 	},
 	autoflag = {},
 }
@@ -97153,13 +97715,13 @@ _G.pg.base.world_effect_data[820230] = {
 _G.pg.base.world_effect_data[820231] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 820231,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820011",
+		"異常海流によってこれ以上艦隊を前進させることができなくなった。一旦出直そう。",
 	},
 	autoflag = {},
 }
@@ -97471,13 +98033,13 @@ _G.pg.base.world_effect_data[820305] = {
 _G.pg.base.world_effect_data[820306] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 820306,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820020",
+		"セイレーン実験場のセキュリティシステムが作動しました。海流の異常が観測されています",
 	},
 	autoflag = {},
 }
@@ -97525,13 +98087,13 @@ _G.pg.base.world_effect_data[820330] = {
 _G.pg.base.world_effect_data[820331] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 820331,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820011",
+		"異常海流によってこれ以上艦隊を前進させることができなくなった。一旦出直そう。",
 	},
 	autoflag = {},
 }
@@ -97879,13 +98441,13 @@ _G.pg.base.world_effect_data[820405] = {
 _G.pg.base.world_effect_data[820406] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 820406,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820030",
+		"セイレーン実験場のセキュリティシステムが作動しました。海流の異常ならびに浮氷が観測されています\nセイレーンの【気象操作装置】を見つけ出し、浮氷の対処を提案します",
 	},
 	autoflag = {},
 }
@@ -97933,13 +98495,13 @@ _G.pg.base.world_effect_data[820430] = {
 _G.pg.base.world_effect_data[820431] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 820431,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820011",
+		"異常海流によってこれ以上艦隊を前進させることができなくなった。一旦出直そう。",
 	},
 	autoflag = {},
 }
@@ -98197,26 +98759,26 @@ _G.pg.base.world_effect_data[821503] = {
 _G.pg.base.world_effect_data[821504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 821504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[821550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 821550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -99199,13 +99761,13 @@ _G.pg.base.world_effect_data[821557] = {
 _G.pg.base.world_effect_data[821558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 821558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -99266,13 +99828,13 @@ _G.pg.base.world_effect_data[821601] = {
 _G.pg.base.world_effect_data[821602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 821602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -99885,13 +100447,13 @@ _G.pg.base.world_effect_data[823205] = {
 _G.pg.base.world_effect_data[823206] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 823206,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W823022",
+		"情報収集装置にスキャンされないよう一旦艦隊を進入ポイントまで引き上げた。エネルギー供給装置も元の位置に戻されたようだ。",
 	},
 	autoflag = {},
 }
@@ -100570,13 +101132,13 @@ _G.pg.base.world_effect_data[823724] = {
 _G.pg.base.world_effect_data[823725] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 823725,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W823000",
+		"エネルギー供給装置を確保した。【格納プラットフォーム】に持っていこう。\nスキャンが完了しました。エリアの異常海流は【気象操作装置】で対処可能です",
 	},
 	autoflag = {},
 }
@@ -100666,13 +101228,13 @@ _G.pg.base.world_effect_data[823733] = {
 _G.pg.base.world_effect_data[823734] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 823734,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806010",
+		"敵個体、セイレーンの防衛ユニットの反応を探知しました",
 	},
 	autoflag = {},
 }
@@ -100751,13 +101313,13 @@ _G.pg.base.world_effect_data[823802] = {
 _G.pg.base.world_effect_data[823803] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 823803,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W823020",
+		"スキャンがが完了しました。異常海流現象の解消が確認されました。",
 	},
 	autoflag = {},
 }
@@ -100827,13 +101389,13 @@ _G.pg.base.world_effect_data[823807] = {
 _G.pg.base.world_effect_data[823808] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 823808,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W823021",
+		"セイレーン実験場のセキュリティシステムが作動しました。情報収集装置の起動が確認されました。\n情報収集装置の【観測範囲】に入るとなにかが起こるか分からない。とりあえず気をつけて進もう。",
 	},
 	autoflag = {},
 }
@@ -100853,13 +101415,13 @@ _G.pg.base.world_effect_data[823809] = {
 _G.pg.base.world_effect_data[823820] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 823820,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W823010",
+		"セイレーンの情報収集装置は稼働していないようだ。",
 	},
 	autoflag = {},
 }
@@ -101017,26 +101579,26 @@ _G.pg.base.world_effect_data[824503] = {
 _G.pg.base.world_effect_data[824504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 824504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[824550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 824550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -102028,13 +102590,13 @@ _G.pg.base.world_effect_data[824557] = {
 _G.pg.base.world_effect_data[824558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 824558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -102095,13 +102657,13 @@ _G.pg.base.world_effect_data[824601] = {
 _G.pg.base.world_effect_data[824602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 824602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -102122,13 +102684,13 @@ _G.pg.base.world_effect_data[824700] = {
 _G.pg.base.world_effect_data[826000] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 826000,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W826021",
+		"腐食性の酸性海流が充満している。近づかないほうがいい。",
 	},
 	autoflag = {},
 }
@@ -102234,13 +102796,13 @@ _G.pg.base.world_effect_data[826015] = {
 _G.pg.base.world_effect_data[826016] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 826016,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W826040",
+		"酸性海流の被害を受けないよう一旦艦隊を進入ポイントまで引き上げた。エネルギー供給装置も元の位置に戻されたようだ。\n【酸性海流】は【障害物】やほかの海流に接触すると拡散が停止するようです。ご注意ください",
 	},
 	autoflag = {},
 }
@@ -102416,13 +102978,13 @@ _G.pg.base.world_effect_data[826213] = {
 _G.pg.base.world_effect_data[826214] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 826214,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W826031",
+		"セイレーン実験場のセキュリティシステムが作動しました。酸性海流区域の拡大が確認されています",
 	},
 	autoflag = {},
 }
@@ -102561,13 +103123,13 @@ _G.pg.base.world_effect_data[826223] = {
 _G.pg.base.world_effect_data[826224] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 826224,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W826032",
+		"艦隊が酸性海流区域に入ると、エネルギー供給装置を放棄し、エリアの進入ポイントまで後退せざるを得ない。移動には気をつけよう。",
 	},
 	autoflag = {},
 }
@@ -102653,13 +103215,13 @@ _G.pg.base.world_effect_data[826252] = {
 _G.pg.base.world_effect_data[826253] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 826253,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820040",
+		"エネルギー供給装置を格納プラットフォームに格納しました。",
 	},
 	autoflag = {},
 }
@@ -102679,13 +103241,13 @@ _G.pg.base.world_effect_data[826254] = {
 _G.pg.base.world_effect_data[826255] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 826255,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806010",
+		"敵個体、セイレーンの防衛ユニットの反応を探知しました",
 	},
 	autoflag = {},
 }
@@ -102981,13 +103543,13 @@ _G.pg.base.world_effect_data[826443] = {
 _G.pg.base.world_effect_data[826450] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 826450,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W826020",
+		"これ前に動かすことが出来ないようだ。",
 	},
 	autoflag = {},
 }
@@ -103302,13 +103864,13 @@ _G.pg.base.world_effect_data[826643] = {
 _G.pg.base.world_effect_data[826650] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 826650,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W826020",
+		"これ前に動かすことが出来ないようだ。",
 	},
 	autoflag = {},
 }
@@ -103521,26 +104083,26 @@ _G.pg.base.world_effect_data[827503] = {
 _G.pg.base.world_effect_data[827504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 827504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[827550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 827550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -104310,13 +104872,13 @@ _G.pg.base.world_effect_data[827557] = {
 _G.pg.base.world_effect_data[827558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 827558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -104377,13 +104939,13 @@ _G.pg.base.world_effect_data[827601] = {
 _G.pg.base.world_effect_data[827602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 827602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -104470,26 +105032,26 @@ _G.pg.base.world_effect_data[841503] = {
 _G.pg.base.world_effect_data[841504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 841504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[841550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 841550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -104851,13 +105413,13 @@ _G.pg.base.world_effect_data[841557] = {
 _G.pg.base.world_effect_data[841558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 841558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -104918,13 +105480,13 @@ _G.pg.base.world_effect_data[841601] = {
 _G.pg.base.world_effect_data[841602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 841602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -105011,26 +105573,26 @@ _G.pg.base.world_effect_data[842503] = {
 _G.pg.base.world_effect_data[842504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 842504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[842550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 842550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -105394,13 +105956,13 @@ _G.pg.base.world_effect_data[842557] = {
 _G.pg.base.world_effect_data[842558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 842558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -105461,13 +106023,13 @@ _G.pg.base.world_effect_data[842601] = {
 _G.pg.base.world_effect_data[842602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 842602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -105554,26 +106116,26 @@ _G.pg.base.world_effect_data[844503] = {
 _G.pg.base.world_effect_data[844504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 844504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[844550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 844550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -105932,13 +106494,13 @@ _G.pg.base.world_effect_data[844557] = {
 _G.pg.base.world_effect_data[844558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 844558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -105999,13 +106561,13 @@ _G.pg.base.world_effect_data[844601] = {
 _G.pg.base.world_effect_data[844602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 844602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -106092,26 +106654,26 @@ _G.pg.base.world_effect_data[845503] = {
 _G.pg.base.world_effect_data[845504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 845504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[845550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 845550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -106479,13 +107041,13 @@ _G.pg.base.world_effect_data[845557] = {
 _G.pg.base.world_effect_data[845558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 845558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -106546,13 +107108,13 @@ _G.pg.base.world_effect_data[845601] = {
 _G.pg.base.world_effect_data[845602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 845602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -106639,26 +107201,26 @@ _G.pg.base.world_effect_data[847503] = {
 _G.pg.base.world_effect_data[847504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 847504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[847550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 847550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -107024,13 +107586,13 @@ _G.pg.base.world_effect_data[847557] = {
 _G.pg.base.world_effect_data[847558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 847558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -107091,13 +107653,13 @@ _G.pg.base.world_effect_data[847601] = {
 _G.pg.base.world_effect_data[847602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 847602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -107184,26 +107746,26 @@ _G.pg.base.world_effect_data[848503] = {
 _G.pg.base.world_effect_data[848504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 848504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[848550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 848550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -107596,13 +108158,13 @@ _G.pg.base.world_effect_data[848557] = {
 _G.pg.base.world_effect_data[848558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 848558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -107663,13 +108225,13 @@ _G.pg.base.world_effect_data[848601] = {
 _G.pg.base.world_effect_data[848602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 848602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -107756,26 +108318,26 @@ _G.pg.base.world_effect_data[850503] = {
 _G.pg.base.world_effect_data[850504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 850504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[850550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 850550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -108141,13 +108703,13 @@ _G.pg.base.world_effect_data[850557] = {
 _G.pg.base.world_effect_data[850558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 850558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -108208,13 +108770,13 @@ _G.pg.base.world_effect_data[850601] = {
 _G.pg.base.world_effect_data[850602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 850602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -108301,26 +108863,26 @@ _G.pg.base.world_effect_data[851503] = {
 _G.pg.base.world_effect_data[851504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 851504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[851550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 851550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -108713,13 +109275,13 @@ _G.pg.base.world_effect_data[851557] = {
 _G.pg.base.world_effect_data[851558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 851558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -108780,13 +109342,13 @@ _G.pg.base.world_effect_data[851601] = {
 _G.pg.base.world_effect_data[851602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 851602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -108807,13 +109369,13 @@ _G.pg.base.world_effect_data[851700] = {
 _G.pg.base.world_effect_data[860010] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 860010,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W860010",
+		"エリアにあるセイレーンの装置を操作すると、【同じ色の障害物】を変化することができるようだ。\n障害物を動かし、エネルギー供給装置をプラットフォームに持っていこう。",
 	},
 	autoflag = {},
 }
@@ -109290,13 +109852,13 @@ _G.pg.base.world_effect_data[860510] = {
 _G.pg.base.world_effect_data[860511] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 860511,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820040",
+		"エネルギー供給装置を格納プラットフォームに格納しました。",
 	},
 	autoflag = {},
 }
@@ -109317,13 +109879,13 @@ _G.pg.base.world_effect_data[860512] = {
 _G.pg.base.world_effect_data[860513] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 860513,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806010",
+		"敵個体、セイレーンの防衛ユニットの反応を探知しました",
 	},
 	autoflag = {},
 }
@@ -109481,26 +110043,26 @@ _G.pg.base.world_effect_data[861503] = {
 _G.pg.base.world_effect_data[861504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 861504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[861550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 861550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -110302,13 +110864,13 @@ _G.pg.base.world_effect_data[861557] = {
 _G.pg.base.world_effect_data[861558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 861558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -110369,13 +110931,13 @@ _G.pg.base.world_effect_data[861601] = {
 _G.pg.base.world_effect_data[861602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 861602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -110462,26 +111024,26 @@ _G.pg.base.world_effect_data[864503] = {
 _G.pg.base.world_effect_data[864504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 864504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[864550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 864550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -111594,13 +112156,13 @@ _G.pg.base.world_effect_data[864557] = {
 _G.pg.base.world_effect_data[864558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 864558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -111661,13 +112223,13 @@ _G.pg.base.world_effect_data[864601] = {
 _G.pg.base.world_effect_data[864602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 864602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -111688,13 +112250,13 @@ _G.pg.base.world_effect_data[864700] = {
 _G.pg.base.world_effect_data[866000] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 866000,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W866000",
+		"【気象操作装置】を操作すると、浮氷を【6回艦隊を動かす間に】消すことができるようだ。\n浮氷をうまく対処し、エネルギー供給装置をプラットフォームまで持っていこう。",
 	},
 	autoflag = {},
 }
@@ -112118,13 +112680,13 @@ _G.pg.base.world_effect_data[866106] = {
 _G.pg.base.world_effect_data[866107] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 866107,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W866011",
+		"浮氷が融解した！\n【艦隊を6回動かすと】浮氷がまた形成されてしまうが、そのときにまた気象操作装置を操作すれば再び融解させられる。",
 	},
 	autoflag = {},
 }
@@ -112623,13 +113185,13 @@ _G.pg.base.world_effect_data[866175] = {
 _G.pg.base.world_effect_data[866176] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 866176,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W866012",
+		"浮氷が再び海面に形成された。1個目の気象操作装置を使い浮氷を融解させよう。",
 	},
 	autoflag = {},
 }
@@ -113021,13 +113583,13 @@ _G.pg.base.world_effect_data[866206] = {
 _G.pg.base.world_effect_data[866207] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 866207,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W866011",
+		"浮氷が融解した！\n【艦隊を6回動かすと】浮氷がまた形成されてしまうが、そのときにまた気象操作装置を操作すれば再び融解させられる。",
 	},
 	autoflag = {},
 }
@@ -113551,13 +114113,13 @@ _G.pg.base.world_effect_data[866275] = {
 _G.pg.base.world_effect_data[866276] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 866276,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W866013",
+		"浮氷が再び海面に形成された。2個目の気象操作装置を使い浮氷を融解させよう。",
 	},
 	autoflag = {},
 }
@@ -113606,13 +114168,13 @@ _G.pg.base.world_effect_data[866280] = {
 _G.pg.base.world_effect_data[866511] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 866511,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W820040",
+		"エネルギー供給装置を格納プラットフォームに格納しました。",
 	},
 	autoflag = {},
 }
@@ -113633,13 +114195,13 @@ _G.pg.base.world_effect_data[866512] = {
 _G.pg.base.world_effect_data[866513] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 866513,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W806010",
+		"敵個体、セイレーンの防衛ユニットの反応を探知しました",
 	},
 	autoflag = {},
 }
@@ -113810,26 +114372,26 @@ _G.pg.base.world_effect_data[867503] = {
 _G.pg.base.world_effect_data[867504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 867504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[867550] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 867550,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800101",
+		"オーダーを受領しました。セイレーン実験場の分析を開始します\n分析中です……セイレーン実験場のデータを取得しました。実験場の環境操作を開始します",
 	},
 	autoflag = {},
 }
@@ -114675,13 +115237,13 @@ _G.pg.base.world_effect_data[867557] = {
 _G.pg.base.world_effect_data[867558] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 867558,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800102",
+		"分析完了です。セイレーン実験場のギミックの無力化に成功しました",
 	},
 	autoflag = {},
 }
@@ -114742,13 +115304,13 @@ _G.pg.base.world_effect_data[867601] = {
 _G.pg.base.world_effect_data[867602] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 867602,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W800103",
+		"いや、やっぱり自分でなんとかしよう。",
 	},
 	autoflag = {},
 }
@@ -127619,286 +128181,286 @@ _G.pg.base.world_effect_data[2170010] = {
 _G.pg.base.world_effect_data[2100011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2100011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask000C",
+		"港近海の海洋ゴミを掃除しました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2101011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2101011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask010C",
+		"エネルギー供給装置のテストを行いました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2102011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2102011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask020C",
+		"港に来襲したセイレーン艦隊を撃破！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2103011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2103011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask030C",
+		"港に来襲したセイレーン艦隊を撃破！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2104011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2104011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask040C",
+		"演習をこなしました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2105011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2105011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask050C",
+		"演習をこなしました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2106011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2106011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask000C",
+		"港近海の海洋ゴミを掃除しました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2107011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2107011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask000C",
+		"港近海の海洋ゴミを掃除しました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2108011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2108011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask010C",
+		"エネルギー供給装置のテストを行いました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2109011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2109011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask010C",
+		"エネルギー供給装置のテストを行いました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2110011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2110011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask020C",
+		"港に来襲したセイレーン艦隊を撃破！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2111011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2111011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask040C",
+		"演習をこなしました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2130011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2130011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask300C",
+		"エリアにある資材を回収しました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2131011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2131011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask310C",
+		"エリアにある資材を回収しました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2132011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2132011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask320C",
+		"エリアにある資材をサルベージしました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2133011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2133011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask330C",
+		"エリアにある資材をサルベージしました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2134011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2134011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask340C",
+		"セイレーン艦隊の撃破に成功した！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2135011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2135011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask350C",
+		"セイレーン艦隊の撃破に成功した！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2136011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2136011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask360C",
+		"輸送船団を目標地点まで護衛した！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2137011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2137011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask370C",
+		"輸送船団を目標地点まで護衛した！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2138011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2138011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask380C",
+		"エリアにいるセイレーン艦隊を殲滅した！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2139011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2139011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask390C",
+		"エリアにいるセイレーン艦隊を殲滅した！任務完了！",
 	},
 	autoflag = {},
 }
@@ -127944,117 +128506,117 @@ _G.pg.base.world_effect_data[2162011] = {
 _G.pg.base.world_effect_data[2163011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2163011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask300C",
+		"エリアにある資材を回収しました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2164011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2164011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask310C",
+		"エリアにある資材を回収しました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2165011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2165011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask320C",
+		"エリアにある資材をサルベージしました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2166011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2166011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask330C",
+		"エリアにある資材をサルベージしました！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2167011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2167011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask340C",
+		"セイレーン艦隊の撃破に成功した！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2168011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2168011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask350C",
+		"セイレーン艦隊の撃破に成功した！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2169011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2169011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask360C",
+		"輸送船団を目標地点まで護衛した！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2170011] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2170011,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask370C",
+		"輸送船団を目標地点まで護衛した！任務完了！",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[2100100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2100100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask0000",
+		"海洋ゴミを掃除しました！",
 	},
 	autoflag = {},
 }
@@ -128672,13 +129234,13 @@ _G.pg.base.world_effect_data[2105201] = {
 _G.pg.base.world_effect_data[2106100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2106100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask0000",
+		"海洋ゴミを掃除しました！",
 	},
 	autoflag = {},
 }
@@ -128698,13 +129260,13 @@ _G.pg.base.world_effect_data[2106101] = {
 _G.pg.base.world_effect_data[2107100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2107100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask0000",
+		"海洋ゴミを掃除しました！",
 	},
 	autoflag = {},
 }
@@ -129086,13 +129648,13 @@ _G.pg.base.world_effect_data[2111201] = {
 _G.pg.base.world_effect_data[2130100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2130100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3000",
+		"資材を回収しました！",
 	},
 	autoflag = {},
 }
@@ -129112,13 +129674,13 @@ _G.pg.base.world_effect_data[2130101] = {
 _G.pg.base.world_effect_data[2131100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2131100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3000",
+		"資材を回収しました！",
 	},
 	autoflag = {},
 }
@@ -129138,13 +129700,13 @@ _G.pg.base.world_effect_data[2131101] = {
 _G.pg.base.world_effect_data[2132100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2132100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3200",
+		"資材をサルベージしました！",
 	},
 	autoflag = {},
 }
@@ -129192,13 +129754,13 @@ _G.pg.base.world_effect_data[2132110] = {
 _G.pg.base.world_effect_data[2133100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2133100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3200",
+		"資材をサルベージしました！",
 	},
 	autoflag = {},
 }
@@ -129508,13 +130070,13 @@ _G.pg.base.world_effect_data[2136100] = {
 _G.pg.base.world_effect_data[2136101] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2136101,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3600",
+		"味方の輸送艦がセイレーンに包囲されています！",
 	},
 	autoflag = {},
 }
@@ -129710,13 +130272,13 @@ _G.pg.base.world_effect_data[2137100] = {
 _G.pg.base.world_effect_data[2137101] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2137101,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3700",
+		"味方の輸送艦がセイレーンに包囲されています！",
 	},
 	autoflag = {},
 }
@@ -130564,13 +131126,13 @@ _G.pg.base.world_effect_data[2139401] = {
 _G.pg.base.world_effect_data[2163100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2163100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3000",
+		"資材を回収しました！",
 	},
 	autoflag = {},
 }
@@ -130590,13 +131152,13 @@ _G.pg.base.world_effect_data[2163101] = {
 _G.pg.base.world_effect_data[2164100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2164100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3000",
+		"資材を回収しました！",
 	},
 	autoflag = {},
 }
@@ -130616,13 +131178,13 @@ _G.pg.base.world_effect_data[2164101] = {
 _G.pg.base.world_effect_data[2165100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2165100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3200",
+		"資材をサルベージしました！",
 	},
 	autoflag = {},
 }
@@ -130670,13 +131232,13 @@ _G.pg.base.world_effect_data[2165110] = {
 _G.pg.base.world_effect_data[2166100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2166100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3200",
+		"資材をサルベージしました！",
 	},
 	autoflag = {},
 }
@@ -130986,13 +131548,13 @@ _G.pg.base.world_effect_data[2169100] = {
 _G.pg.base.world_effect_data[2169101] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2169101,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3600",
+		"味方の輸送艦がセイレーンに包囲されています！",
 	},
 	autoflag = {},
 }
@@ -131188,13 +131750,13 @@ _G.pg.base.world_effect_data[2170100] = {
 _G.pg.base.world_effect_data[2170101] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 2170101,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WTask3700",
+		"味方の輸送艦がセイレーンに包囲されています！",
 	},
 	autoflag = {},
 }
@@ -131375,26 +131937,26 @@ _G.pg.base.world_effect_data[2170301] = {
 _G.pg.base.world_effect_data[3000000] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 3000000,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W300000",
+		"情報エリアに進入しました。セイレーン艦隊をすべて撃破すると情報を開放できます",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[3000500] = {
 	autoactivate = 2,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 3000500,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W300001",
+		"情報を開放しました。次の情報エリアに進入すると、新しい情報を開放できます",
 	},
 	autoflag = {},
 }
@@ -131422,13 +131984,13 @@ _G.pg.base.world_effect_data[3000501] = {
 _G.pg.base.world_effect_data[3000510] = {
 	autoactivate = 2,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 3000510,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W300002",
+		"情報開放任務で獲得できる情報をすべて開放しました。\nお疲れさまでした。新しい情報の実装はショップにて確認できます",
 	},
 	autoflag = {},
 }
@@ -132047,13 +132609,13 @@ _G.pg.base.world_effect_data[10000024] = {
 _G.pg.base.world_effect_data[10000040] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000040,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2100",
+		"セイレーン艦隊の痕跡を発見しました。増援集結ポイントをサーチアンドデストロイして、セイレーンの援軍の阻止してください",
 	},
 	autoflag = {},
 }
@@ -132200,13 +132762,13 @@ _G.pg.base.world_effect_data[10000060] = {
 _G.pg.base.world_effect_data[10000100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2101",
+		"セイレーンの増援艦隊が接近中です",
 	},
 	autoflag = {},
 }
@@ -132335,13 +132897,13 @@ _G.pg.base.world_effect_data[10000130] = {
 _G.pg.base.world_effect_data[10000140] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000140,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2102",
+		"強化型のセイレーン増援艦隊が接近中です。セイレーンの集結ポイントを破壊してください",
 	},
 	autoflag = {},
 }
@@ -132518,13 +133080,13 @@ _G.pg.base.world_effect_data[10000170] = {
 _G.pg.base.world_effect_data[10000200] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000200,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2103",
+		"セイレーンの中枢艦隊が接近中です。セイレーンの集結ポイントを全て破壊してください",
 	},
 	autoflag = {},
 }
@@ -132818,13 +133380,13 @@ _G.pg.base.world_effect_data[10000300] = {
 _G.pg.base.world_effect_data[10000301] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000301,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2104",
+		"セイレーン反応を検出しました。強力なセイレーン増援艦隊がこちらに向かっています",
 	},
 	autoflag = {},
 }
@@ -132888,13 +133450,13 @@ _G.pg.base.world_effect_data[10000310] = {
 _G.pg.base.world_effect_data[10000311] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000311,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2104",
+		"セイレーン反応を検出しました。強力なセイレーン増援艦隊がこちらに向かっています",
 	},
 	autoflag = {},
 }
@@ -132973,13 +133535,13 @@ _G.pg.base.world_effect_data[10000320] = {
 _G.pg.base.world_effect_data[10000321] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000321,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2105",
+		"スキャンが完了しました。セイレーン集結ポイントが全て破壊されました",
 	},
 	autoflag = {},
 }
@@ -133089,13 +133651,13 @@ _G.pg.base.world_effect_data[10000326] = {
 _G.pg.base.world_effect_data[10000327] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000327,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2106",
+		"スキャンが完了しました。エリアの確保がされました。戦利品の回収を行ってください",
 	},
 	autoflag = {},
 }
@@ -133262,13 +133824,13 @@ _G.pg.base.world_effect_data[10000350] = {
 _G.pg.base.world_effect_data[10000351] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000351,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W1254",
+		"艦隊と一緒にオフニャを引き上げた。サルベージが中止された。",
 	},
 	autoflag = {},
 }
@@ -133689,13 +134251,13 @@ _G.pg.base.world_effect_data[10000413] = {
 _G.pg.base.world_effect_data[10000900] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000900,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2001",
+		"セイレーン拠点の守備艦隊に遭遇しました。戦闘に備えてください",
 	},
 	autoflag = {},
 }
@@ -133774,13 +134336,13 @@ _G.pg.base.world_effect_data[10000901] = {
 _G.pg.base.world_effect_data[10000902] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10000902,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2002",
+		"スキャンが完了しました。セイレーン増援の集結ポイントが破壊されました",
 	},
 	autoflag = {},
 }
@@ -134128,13 +134690,13 @@ _G.pg.base.world_effect_data[10001003] = {
 _G.pg.base.world_effect_data[10001004] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10001004,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2001",
+		"セイレーン拠点の守備艦隊に遭遇しました。戦闘に備えてください",
 	},
 	autoflag = {},
 }
@@ -134213,13 +134775,13 @@ _G.pg.base.world_effect_data[10001005] = {
 _G.pg.base.world_effect_data[10001006] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10001006,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2002",
+		"スキャンが完了しました。セイレーン増援の集結ポイントが破壊されました",
 	},
 	autoflag = {},
 }
@@ -134440,13 +135002,13 @@ _G.pg.base.world_effect_data[10002002] = {
 _G.pg.base.world_effect_data[10002003] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10002003,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2001",
+		"セイレーン拠点の守備艦隊に遭遇しました。戦闘に備えてください",
 	},
 	autoflag = {},
 }
@@ -134525,13 +135087,13 @@ _G.pg.base.world_effect_data[10002004] = {
 _G.pg.base.world_effect_data[10002005] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10002005,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2002",
+		"スキャンが完了しました。セイレーン増援の集結ポイントが破壊されました",
 	},
 	autoflag = {},
 }
@@ -135161,13 +135723,13 @@ _G.pg.base.world_effect_data[10003004] = {
 _G.pg.base.world_effect_data[10003005] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10003005,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2001",
+		"セイレーン拠点の守備艦隊に遭遇しました。戦闘に備えてください",
 	},
 	autoflag = {},
 }
@@ -135246,26 +135808,26 @@ _G.pg.base.world_effect_data[10003006] = {
 _G.pg.base.world_effect_data[10003007] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10003007,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2002",
+		"スキャンが完了しました。セイレーン増援の集結ポイントが破壊されました",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[10003008] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10003008,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2009",
+		"セイレーンの陥穽装置です。お気をつけください",
 	},
 	autoflag = {},
 }
@@ -135359,13 +135921,13 @@ _G.pg.base.world_effect_data[10003012] = {
 _G.pg.base.world_effect_data[10003013] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10003013,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2008",
+		"セイレーン艦隊による待ち伏せです。戦闘に備えてください",
 	},
 	autoflag = {},
 }
@@ -135611,13 +136173,13 @@ _G.pg.base.world_effect_data[10004002] = {
 _G.pg.base.world_effect_data[10004003] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10004003,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2001",
+		"セイレーン拠点の守備艦隊に遭遇しました。戦闘に備えてください",
 	},
 	autoflag = {},
 }
@@ -135696,13 +136258,13 @@ _G.pg.base.world_effect_data[10004004] = {
 _G.pg.base.world_effect_data[10004005] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10004005,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2002",
+		"スキャンが完了しました。セイレーン増援の集結ポイントが破壊されました",
 	},
 	autoflag = {},
 }
@@ -136174,39 +136736,39 @@ _G.pg.base.world_effect_data[10010004] = {
 _G.pg.base.world_effect_data[10010005] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10010005,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2010",
+		"これ以上進めないようだ。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[10010006] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10010006,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2011",
+		"艦隊を2つ同時で動かす必要があるようだ。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[10010007] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 2,
 	id = 10010007,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2012",
+		"スキャンが完了しました。施設が作動しました",
 	},
 	autoflag = {},
 }
@@ -136451,13 +137013,13 @@ _G.pg.base.world_effect_data[10010022] = {
 _G.pg.base.world_effect_data[10010023] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10010023,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2012B",
+		"スキャンが完了しました。セイレーンによる封鎖装置が作動しました。スイッチを起動し封鎖を解きましょう",
 	},
 	autoflag = {},
 }
@@ -136717,13 +137279,13 @@ _G.pg.base.world_effect_data[10011013] = {
 _G.pg.base.world_effect_data[10011014] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10011014,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2015",
+		"スキャンが完了しました。装置の起動が確認できました",
 	},
 	autoflag = {},
 }
@@ -136813,13 +137375,13 @@ _G.pg.base.world_effect_data[10011020] = {
 _G.pg.base.world_effect_data[10011021] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10011021,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2014",
+		"スキャンが完了しました。セイレーンの資源スポットを発見しました。…しかし、エネルギー供給がされていないようです\nエネルギー供給装置の位置をナビゲーションシステムに表示させました。回収し格納プラットフォームに格納しましょう",
 	},
 	autoflag = {},
 }
@@ -136839,13 +137401,13 @@ _G.pg.base.world_effect_data[10011022] = {
 _G.pg.base.world_effect_data[10011023] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10011023,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2016",
+		"エネルギー供給装置を手に入れた。格納プラットフォームに運ぼう",
 	},
 	autoflag = {},
 }
@@ -136968,13 +137530,13 @@ _G.pg.base.world_effect_data[10011031] = {
 _G.pg.base.world_effect_data[10011032] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10011032,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2016B",
+		"資源スポットのレベルが上ったようだ。",
 	},
 	autoflag = {},
 }
@@ -137043,13 +137605,13 @@ _G.pg.base.world_effect_data[10012002] = {
 _G.pg.base.world_effect_data[10012004] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10012004,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2017",
+		"まずはセイレーンの集結ポイントを破壊してから調査を続けよう。",
 	},
 	autoflag = {},
 }
@@ -137691,13 +138253,13 @@ _G.pg.base.world_effect_data[10021016] = {
 _G.pg.base.world_effect_data[10021017] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10021017,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2023",
+		"艦隊の耐久が回復しました！指揮官、引き続き頑張ってね～",
 	},
 	autoflag = {},
 }
@@ -137795,13 +138357,13 @@ _G.pg.base.world_effect_data[10021023] = {
 _G.pg.base.world_effect_data[10021024] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10021024,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2020",
+		"セイレーン作戦期間中はずっとここにいますから、いつでも声をかけてくださいね♪",
 	},
 	autoflag = {},
 }
@@ -137827,13 +138389,13 @@ _G.pg.base.world_effect_data[10021025] = {
 _G.pg.base.world_effect_data[10021026] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10021026,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2024",
+		"セイレーン作戦期間中はずっとここにいますから、いつでも声をかけてくださいね♪",
 	},
 	autoflag = {},
 }
@@ -137940,13 +138502,13 @@ _G.pg.base.world_effect_data[10022002] = {
 _G.pg.base.world_effect_data[10022003] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10022003,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2026",
+		"エリアが封鎖された。これ以上艦隊を進ませられないようだ…",
 	},
 	autoflag = {},
 }
@@ -137981,13 +138543,13 @@ _G.pg.base.world_effect_data[10022005] = {
 _G.pg.base.world_effect_data[10022006] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10022006,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2027",
+		"セイレーンのセキュリティシステムが作動しました。エリアの一部が封鎖されました",
 	},
 	autoflag = {},
 }
@@ -138083,13 +138645,13 @@ _G.pg.base.world_effect_data[10022012] = {
 _G.pg.base.world_effect_data[10022013] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10022013,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2028",
+		"何個もスイッチが出てきているが、どうやら正解は一つだけのようだ。",
 	},
 	autoflag = {},
 }
@@ -138400,13 +138962,13 @@ _G.pg.base.world_effect_data[10022031] = {
 _G.pg.base.world_effect_data[10022032] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10022032,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2030",
+		"セイレーンによる封鎖が解除されました",
 	},
 	autoflag = {},
 }
@@ -138489,13 +139051,13 @@ _G.pg.base.world_effect_data[10022036] = {
 _G.pg.base.world_effect_data[10022037] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10022037,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2031",
+		"セイレーンによる封鎖が解除されなかった。間違ったのか…\nスキャンが完了しました。装置がリセットされました。",
 	},
 	autoflag = {},
 }
@@ -138586,13 +139148,13 @@ _G.pg.base.world_effect_data[10022043] = {
 _G.pg.base.world_effect_data[10022044] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10022044,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2029",
+		"封鎖されたエリア以外にもスイッチが？もしかしたら謎を解けるちゃんすかもしれない…！",
 	},
 	autoflag = {},
 }
@@ -138647,13 +139209,13 @@ _G.pg.base.world_effect_data[10022047] = {
 _G.pg.base.world_effect_data[10022048] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10022048,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2032",
+		"ジャミング装置の無力化に成功し、物資を回収しました",
 	},
 	autoflag = {},
 }
@@ -138794,13 +139356,13 @@ _G.pg.base.world_effect_data[10022057] = {
 _G.pg.base.world_effect_data[10022058] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10022058,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2033",
+		"スキャンが完了しました。セイレーンの待ち伏せ艦隊が出現しました。撃破すればエリア封鎖が解除できます",
 	},
 	autoflag = {},
 }
@@ -138986,13 +139548,13 @@ _G.pg.base.world_effect_data[10022067] = {
 _G.pg.base.world_effect_data[10022068] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10022068,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2034",
+		"スキャンが完了しました。セイレーンが撃破されたことにより、エリア封鎖が解除されました",
 	},
 	autoflag = {},
 }
@@ -139076,13 +139638,13 @@ _G.pg.base.world_effect_data[10023003] = {
 _G.pg.base.world_effect_data[10023004] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 10023004,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W2036",
+		"エリア内に異常現象が発生しています。気をつけて行動してください",
 	},
 	autoflag = {},
 }
@@ -146476,13 +147038,13 @@ _G.pg.base.world_effect_data[40000005] = {
 _G.pg.base.world_effect_data[40000006] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 40000006,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W400001",
+		"前方にセイレーン反応。区域封鎖装置が解除されています。ご注意ください",
 	},
 	autoflag = {},
 }
@@ -146832,13 +147394,13 @@ _G.pg.base.world_effect_data[40020063] = {
 _G.pg.base.world_effect_data[40020064] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 40020064,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WNN005C",
+		"舰队的耐久值与战损状态恢复了！",
 	},
 	autoflag = {},
 }
@@ -146872,13 +147434,13 @@ _G.pg.base.world_effect_data[40020066] = {
 _G.pg.base.world_effect_data[40020070] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 40020070,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WNN005D",
+		"塞壬守卫的实力非常强，请指挥官小心应战。",
 	},
 	autoflag = {},
 }
@@ -146981,13 +147543,13 @@ _G.pg.base.world_effect_data[40054001] = {
 _G.pg.base.world_effect_data[40054002] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 40054002,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WNN005E",
+		"击败了塞壬守卫，可以通过传送门离开深渊海域。",
 	},
 	autoflag = {},
 }
@@ -147047,13 +147609,13 @@ _G.pg.base.world_effect_data[40055001] = {
 _G.pg.base.world_effect_data[40055002] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 40055002,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WNN005E",
+		"击败了塞壬守卫，可以通过传送门离开深渊海域。",
 	},
 	autoflag = {},
 }
@@ -147113,13 +147675,13 @@ _G.pg.base.world_effect_data[40058001] = {
 _G.pg.base.world_effect_data[40058002] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 40058002,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"WNN005E",
+		"击败了塞壬守卫，可以通过传送门离开深渊海域。",
 	},
 	autoflag = {},
 }
@@ -147223,13 +147785,13 @@ _G.pg.base.world_effect_data[41000011] = {
 _G.pg.base.world_effect_data[41000012] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 41000012,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W400005",
+		"スキャンが完了しました。仲裁支援機構…エンフォーサーの撃破が確認されました。転送装置を使い、エリアから離脱しましょう",
 	},
 	autoflag = {},
 }
@@ -147980,13 +148542,13 @@ _G.pg.base.world_effect_data[41002013] = {
 _G.pg.base.world_effect_data[41002100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 41002100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W400001",
+		"前方にセイレーン反応。区域封鎖装置が解除されています。ご注意ください",
 	},
 	autoflag = {},
 }
@@ -148144,13 +148706,13 @@ _G.pg.base.world_effect_data[41002113] = {
 _G.pg.base.world_effect_data[41002200] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 41002200,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W400003",
+		"スキャンが完了しました。封鎖が解除されました",
 	},
 	autoflag = {},
 }
@@ -148418,13 +148980,13 @@ _G.pg.base.world_effect_data[41003001] = {
 _G.pg.base.world_effect_data[41003002] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 41003002,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W400002",
+		"封鎖が解除されましたことにより、海域の気象状況が変化しました。注意してください",
 	},
 	autoflag = {},
 }
@@ -152557,13 +153119,13 @@ _G.pg.base.world_effect_data[50100004] = {
 _G.pg.base.world_effect_data[50100005] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 50100005,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W3000",
+		"这是？谜题空间？",
 	},
 	autoflag = {},
 }
@@ -152940,13 +153502,13 @@ _G.pg.base.world_effect_data[50100311] = {
 _G.pg.base.world_effect_data[50100401] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 50100401,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W3001",
+		"海面上出现了异动！一部分海域的入口被打开了，先尝试调查一下看看吧",
 	},
 	autoflag = {},
 }
@@ -153063,13 +153625,13 @@ _G.pg.base.world_effect_data[50100412] = {
 _G.pg.base.world_effect_data[50100420] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 50100420,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W3007",
+		"海况出现了变化！",
 	},
 	autoflag = {},
 }
@@ -154476,13 +155038,13 @@ _G.pg.base.world_effect_data[50100713] = {
 _G.pg.base.world_effect_data[50100714] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 50100714,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W3005",
+		"装置运转正常...",
 	},
 	autoflag = {},
 }
@@ -154537,13 +155099,13 @@ _G.pg.base.world_effect_data[50100720] = {
 _G.pg.base.world_effect_data[50100721] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 50100721,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W3006",
+		"解谜完成！海域平静了下来...现在可以领取奖励离开地图了",
 	},
 	autoflag = {},
 }
@@ -157636,156 +158198,156 @@ _G.pg.base.world_effect_data[60001027] = {
 _G.pg.base.world_effect_data[60001050] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001050,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610000",
+		"セイレーン要塞エリア、残りセイレーン拠点数・8つ。引き続き制圧を行ってください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001051] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001051,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610001",
+		"セイレーン要塞エリア、残りセイレーン拠点数・7つ。引き続き制圧を行ってください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001052] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001052,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610002",
+		"セイレーン要塞エリア、残りセイレーン拠点数・6つ。引き続き制圧を行ってください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001053] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001053,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610003",
+		"セイレーン要塞エリア、残りセイレーン拠点数・5つ。引き続き制圧を行ってください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001054] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001054,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610004",
+		"セイレーン要塞エリア、残りセイレーン拠点数・4つ。引き続き制圧を行ってください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001055] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001055,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610005",
+		"セイレーン要塞エリア、残りセイレーン拠点数・3つ。引き続き制圧を行ってください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001056] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001056,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610006",
+		"セイレーン要塞エリア、残りセイレーン拠点数・2つ。引き続き制圧を行ってください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001057] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001057,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610007",
+		"セイレーン要塞エリア、残りセイレーン拠点数・1つ。引き続き制圧を行ってください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001058] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001058,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610008",
+		"戦闘が終了しました。セイレーン拠点の制圧に成功しました。残りセイレーン拠点数・ゼロです\nセイレーン拠点の完全制圧を確認。セイレーン要塞エリアの掃討が完了しました。お疲れさまでした",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001060] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001060,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610010",
+		"セイレーンの奇襲艦隊の反応です。待ち伏せです",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001070] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001070,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610020",
+		"スキャンが完了しました。エリアの異常気象・海霧が解消されました",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60001071] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60001071,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610021",
+		"スキャンが完了しました。エリアの異常気象・酸性海流が解消されました",
 	},
 	autoflag = {},
 }
@@ -158192,13 +158754,13 @@ _G.pg.base.world_effect_data[60003002] = {
 _G.pg.base.world_effect_data[60003003] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60003003,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W611001",
+		"セイレーン要塞の掃討に成功した。セイレーン転送装置かエリア移動（マップ間際に艦隊を移動しマップ外側をタップ）でここから脱出しよう。",
 	},
 	autoflag = {},
 }
@@ -169894,13 +170456,13 @@ _G.pg.base.world_effect_data[60102100] = {
 _G.pg.base.world_effect_data[60102101] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60102101,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610100",
+		"スキャンが完了しました。セイレーンが支配率を50％を下回った場合、この装置の機能が停止します",
 	},
 	autoflag = {},
 }
@@ -172176,26 +172738,26 @@ _G.pg.base.world_effect_data[60204101] = {
 _G.pg.base.world_effect_data[60204102] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60204102,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610200",
+		"味方が占拠した拠点の奪還を狙うセイレーン艦隊を探知。拠点がセイレーンに奪還される前に、セイレーン艦隊を撃破してください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60204103] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60204103,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610201",
+		"スキャンが完了しました。セイレーン艦隊の撃破並びに拠点の脅威排除に成功しました。戦利品の特殊コンテナを回収してください",
 	},
 	autoflag = {},
 }
@@ -172283,26 +172845,26 @@ _G.pg.base.world_effect_data[60204111] = {
 _G.pg.base.world_effect_data[60204112] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60204112,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610200",
+		"味方が占拠した拠点の奪還を狙うセイレーン艦隊を探知。拠点がセイレーンに奪還される前に、セイレーン艦隊を撃破してください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60204113] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60204113,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610201",
+		"スキャンが完了しました。セイレーン艦隊の撃破並びに拠点の脅威排除に成功しました。戦利品の特殊コンテナを回収してください",
 	},
 	autoflag = {},
 }
@@ -172376,13 +172938,13 @@ _G.pg.base.world_effect_data[60204203] = {
 _G.pg.base.world_effect_data[60204204] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60204204,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610202",
+		"拠点がセイレーンに占拠されました、セイレーン支配率の上昇が確認されました",
 	},
 	autoflag = {},
 }
@@ -172470,13 +173032,13 @@ _G.pg.base.world_effect_data[60204213] = {
 _G.pg.base.world_effect_data[60204214] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60204214,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610202",
+		"拠点がセイレーンに占拠されました、セイレーン支配率の上昇が確認されました",
 	},
 	autoflag = {},
 }
@@ -172524,13 +173086,13 @@ _G.pg.base.world_effect_data[60204300] = {
 _G.pg.base.world_effect_data[60204301] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60204301,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610203",
+		"スキャンが完了しました。セイレーン艦隊の撃破並びに拠点の奪還を確認しました。戦利品の特殊コンテナを回収してください",
 	},
 	autoflag = {},
 }
@@ -172565,13 +173127,13 @@ _G.pg.base.world_effect_data[60204310] = {
 _G.pg.base.world_effect_data[60204311] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60204311,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610203",
+		"スキャンが完了しました。セイレーン艦隊の撃破並びに拠点の奪還を確認しました。戦利品の特殊コンテナを回収してください",
 	},
 	autoflag = {},
 }
@@ -172685,26 +173247,26 @@ _G.pg.base.world_effect_data[60214101] = {
 _G.pg.base.world_effect_data[60214102] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60214102,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610200",
+		"味方が占拠した拠点の奪還を狙うセイレーン艦隊を探知。拠点がセイレーンに奪還される前に、セイレーン艦隊を撃破してください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60214103] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60214103,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610201",
+		"スキャンが完了しました。セイレーン艦隊の撃破並びに拠点の脅威排除に成功しました。戦利品の特殊コンテナを回収してください",
 	},
 	autoflag = {},
 }
@@ -172792,26 +173354,26 @@ _G.pg.base.world_effect_data[60214111] = {
 _G.pg.base.world_effect_data[60214112] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60214112,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610200",
+		"味方が占拠した拠点の奪還を狙うセイレーン艦隊を探知。拠点がセイレーンに奪還される前に、セイレーン艦隊を撃破してください",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60214113] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60214113,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610201",
+		"スキャンが完了しました。セイレーン艦隊の撃破並びに拠点の脅威排除に成功しました。戦利品の特殊コンテナを回収してください",
 	},
 	autoflag = {},
 }
@@ -172885,13 +173447,13 @@ _G.pg.base.world_effect_data[60214203] = {
 _G.pg.base.world_effect_data[60214204] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60214204,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610202",
+		"拠点がセイレーンに占拠されました、セイレーン支配率の上昇が確認されました",
 	},
 	autoflag = {},
 }
@@ -172979,13 +173541,13 @@ _G.pg.base.world_effect_data[60214213] = {
 _G.pg.base.world_effect_data[60214214] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60214214,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610202",
+		"拠点がセイレーンに占拠されました、セイレーン支配率の上昇が確認されました",
 	},
 	autoflag = {},
 }
@@ -173033,13 +173595,13 @@ _G.pg.base.world_effect_data[60214300] = {
 _G.pg.base.world_effect_data[60214301] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60214301,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610203",
+		"スキャンが完了しました。セイレーン艦隊の撃破並びに拠点の奪還を確認しました。戦利品の特殊コンテナを回収してください",
 	},
 	autoflag = {},
 }
@@ -173074,13 +173636,13 @@ _G.pg.base.world_effect_data[60214310] = {
 _G.pg.base.world_effect_data[60214311] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60214311,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610203",
+		"スキャンが完了しました。セイレーン艦隊の撃破並びに拠点の奪還を確認しました。戦利品の特殊コンテナを回収してください",
 	},
 	autoflag = {},
 }
@@ -173299,26 +173861,26 @@ _G.pg.base.world_effect_data[60302000] = {
 _G.pg.base.world_effect_data[60302100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60302100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610300",
+		"捨てられた資材の回収に成功しました",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[60302110] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60302110,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610301",
+		"捨てられた資材の回収を行っています。――セイレーン奇襲艦隊の反応を探知しました。戦闘に備えてください",
 	},
 	autoflag = {},
 }
@@ -173598,13 +174160,13 @@ _G.pg.base.world_effect_data[60304121] = {
 _G.pg.base.world_effect_data[60304200] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60304200,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610305",
+		"捨てられた資材の回収を行っています。――セイレーン奇襲艦隊の反応を探知しました。戦闘に備えてください",
 	},
 	autoflag = {},
 }
@@ -173635,13 +174197,13 @@ _G.pg.base.world_effect_data[60304201] = {
 _G.pg.base.world_effect_data[60304210] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 60304210,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610306",
+		"捨てられた資材の回収を行っています。――酸性海流区域の形成が確認されました。セイレーン装置が起動した模様",
 	},
 	autoflag = {},
 }
@@ -175124,13 +175686,13 @@ _G.pg.base.world_effect_data[61041000] = {
 _G.pg.base.world_effect_data[61041001] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 61041001,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610102",
+		"スキャンが完了しました。セイレーンが支配率を80％を下回った場合、この装置の機能が停止します",
 	},
 	autoflag = {},
 }
@@ -175150,13 +175712,13 @@ _G.pg.base.world_effect_data[61041020] = {
 _G.pg.base.world_effect_data[61041021] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 61041021,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W610101",
+		"スキャンが完了しました。セイレーンが支配率を60％を下回った場合、この装置の機能が停止します",
 	},
 	autoflag = {},
 }
@@ -175275,13 +175837,13 @@ _G.pg.base.world_effect_data[61061130] = {
 _G.pg.base.world_effect_data[61061200] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 61061200,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W612000",
+		"スキャンが完了しました。艦隊の移動を阻む異常海流の制御装置を4基全て破壊してください",
 	},
 	autoflag = {},
 }
@@ -175332,13 +175894,13 @@ _G.pg.base.world_effect_data[61061302] = {
 _G.pg.base.world_effect_data[61061303] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 61061303,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W612001",
+		"異常海流の制御装置が破壊されました。引き続きほかの制御装置も破壊してください",
 	},
 	autoflag = {},
 }
@@ -175447,13 +176009,13 @@ _G.pg.base.world_effect_data[61061312] = {
 _G.pg.base.world_effect_data[61061313] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 61061313,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W612001",
+		"異常海流の制御装置が破壊されました。引き続きほかの制御装置も破壊してください",
 	},
 	autoflag = {},
 }
@@ -175549,13 +176111,13 @@ _G.pg.base.world_effect_data[61061322] = {
 _G.pg.base.world_effect_data[61061323] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 61061323,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W612001",
+		"異常海流の制御装置が破壊されました。引き続きほかの制御装置も破壊してください",
 	},
 	autoflag = {},
 }
@@ -175651,13 +176213,13 @@ _G.pg.base.world_effect_data[61061332] = {
 _G.pg.base.world_effect_data[61061333] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 61061333,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W612001",
+		"異常海流の制御装置が破壊されました。引き続きほかの制御装置も破壊してください",
 	},
 	autoflag = {},
 }
@@ -175747,13 +176309,13 @@ _G.pg.base.world_effect_data[61061401] = {
 _G.pg.base.world_effect_data[61061402] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 61061402,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W612002",
+		"異常海流の制御装置が全て破壊されました。海流の解消が確認されました",
 	},
 	autoflag = {},
 }
@@ -176239,39 +176801,39 @@ _G.pg.base.world_effect_data[70000320] = {
 _G.pg.base.world_effect_data[70000400] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70000400,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700030",
+		"NA海域中心部臨時基地に到着しました。マップ上の装置を使用すると、ノーマル・アビータ戦に挑戦できます",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[70000410] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70000410,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700031",
+		"ハードモードが開放されました。マップ上の装置を使用すると、ハード・アビータ戦に挑戦できます",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[70000420] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70000420,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700032",
+		"今月度のアビータ戦を全部クリアしました。マップ上の装置を使用すると、再び挑戦することが出来ます（報酬は入手できません）",
 	},
 	autoflag = {},
 }
@@ -176292,13 +176854,13 @@ _G.pg.base.world_effect_data[70000500] = {
 _G.pg.base.world_effect_data[70000501] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70000501,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700030",
+		"NA海域中心部臨時基地に到着しました。マップ上の装置を使用すると、ノーマル・アビータ戦に挑戦できます",
 	},
 	autoflag = {},
 }
@@ -176990,13 +177552,13 @@ _G.pg.base.world_effect_data[70003002] = {
 _G.pg.base.world_effect_data[70003003] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70003003,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700031",
+		"ハードモードが開放されました。マップ上の装置を使用すると、ハード・アビータ戦に挑戦できます",
 	},
 	autoflag = {},
 }
@@ -177059,13 +177621,13 @@ _G.pg.base.world_effect_data[70003102] = {
 _G.pg.base.world_effect_data[70003103] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70003103,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700032",
+		"今月度のアビータ戦を全部クリアしました。マップ上の装置を使用すると、再び挑戦することが出来ます（報酬は入手できません）",
 	},
 	autoflag = {},
 }
@@ -183338,13 +183900,13 @@ _G.pg.base.world_effect_data[70222503] = {
 _G.pg.base.world_effect_data[70222504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70222504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700010",
+		"海域守卫代行者出现了！",
 	},
 	autoflag = {},
 }
@@ -183456,13 +184018,13 @@ _G.pg.base.world_effect_data[70223503] = {
 _G.pg.base.world_effect_data[70223504] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70223504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700120",
+		"エンフォーサーXIVの撃破を確認しました。次の模擬戦エリアへの移動を開始してください",
 	},
 	autoflag = {},
 }
@@ -183490,13 +184052,13 @@ _G.pg.base.world_effect_data[70223505] = {
 _G.pg.base.world_effect_data[70225000] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70225000,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700100",
+		"オーダーを受領しました。「アビータ・TemperanceXⅣ」との模擬戦を行います。\n艦隊を移動させ、模擬戦相手に戦闘を挑んでください",
 	},
 	autoflag = {},
 }
@@ -183531,13 +184093,13 @@ _G.pg.base.world_effect_data[70225002] = {
 _G.pg.base.world_effect_data[70225003] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70225003,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700110",
+		"スキャンモジュール作動中。セイレーン施設によるジャミングを探知、ジャミング源を全部破壊してください",
 	},
 	autoflag = {},
 }
@@ -183695,13 +184257,13 @@ _G.pg.base.world_effect_data[70232503] = {
 _G.pg.base.world_effect_data[70232504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70232504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700010",
+		"海域守卫代行者出现了！",
 	},
 	autoflag = {},
 }
@@ -183761,13 +184323,13 @@ _G.pg.base.world_effect_data[70233503] = {
 _G.pg.base.world_effect_data[70233504] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70233504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700121",
+		"エンフォーサーVIIの撃破を確認しました。次の模擬戦エリアへの移動を開始してください",
 	},
 	autoflag = {},
 }
@@ -183795,13 +184357,13 @@ _G.pg.base.world_effect_data[70233505] = {
 _G.pg.base.world_effect_data[70235000] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70235000,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700101",
+		"オーダーを受領しました。「アビータ・StrengthVIII」との模擬戦を行います。\n艦隊を移動させ、模擬戦相手に戦闘を挑んでください",
 	},
 	autoflag = {},
 }
@@ -183850,13 +184412,13 @@ _G.pg.base.world_effect_data[70235003] = {
 _G.pg.base.world_effect_data[70235004] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70235004,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700110",
+		"スキャンモジュール作動中。セイレーン施設によるジャミングを探知、ジャミング源を全部破壊してください",
 	},
 	autoflag = {},
 }
@@ -184014,13 +184576,13 @@ _G.pg.base.world_effect_data[70242503] = {
 _G.pg.base.world_effect_data[70242504] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70242504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700010",
+		"海域守卫代行者出现了！",
 	},
 	autoflag = {},
 }
@@ -184080,13 +184642,13 @@ _G.pg.base.world_effect_data[70243503] = {
 _G.pg.base.world_effect_data[70243504] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70243504,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700122",
+		"エンフォーサーIXの撃破を確認しました。模擬戦がすべて終了しました。ノーマル・アビータ戦を開放します（前哨基地エリアで挑戦できます）",
 	},
 	autoflag = {},
 }
@@ -184114,13 +184676,13 @@ _G.pg.base.world_effect_data[70243505] = {
 _G.pg.base.world_effect_data[70245000] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70245000,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700102",
+		"オーダーを受領しました。「アビータ・HermitⅨ」との模擬戦を行います。\n艦隊を移動させ、模擬戦相手に戦闘を挑んでください",
 	},
 	autoflag = {},
 }
@@ -184169,13 +184731,13 @@ _G.pg.base.world_effect_data[70245003] = {
 _G.pg.base.world_effect_data[70245004] = {
 	autoactivate = 1,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70245004,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700110",
+		"スキャンモジュール作動中。セイレーン施設によるジャミングを探知、ジャミング源を全部破壊してください",
 	},
 	autoflag = {},
 }
@@ -184458,39 +185020,39 @@ _G.pg.base.world_effect_data[70300020] = {
 _G.pg.base.world_effect_data[70300100] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70300100,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700020",
+		"ノーマル・アビータ戦を遂行中です。\n今月中はエリアから離脱しても戦闘進捗が保存されます。\nノーマル・アビータ戦をクリアすると、ハードモードが開放されます。",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[70300110] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70300110,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700021",
+		"ハード・アビータ戦を遂行中です。\nエリアから離脱すると、戦闘進捗がリセットされます。\nまた、本エリアでは指揮官オーダー「艦隊整備」を発令することができません",
 	},
 	autoflag = {},
 }
 _G.pg.base.world_effect_data[70300120] = {
 	autoactivate = 0,
 	autocomplete = 0,
-	effect_type = 2,
+	effect_type = 52,
 	effective_num = 0,
 	id = 70300120,
 	log_text = "",
 	sound_effects = "",
 	effect_paramater = {
-		"W700022",
+		"ハード・アビータ戦模擬戦を遂行中です。\n敵の強さはハード・アビータ戦と同じです。敵を撃破しても、報酬を入手できません",
 	},
 	autoflag = {},
 }

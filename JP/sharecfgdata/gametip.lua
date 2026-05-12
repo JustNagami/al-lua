@@ -7942,7 +7942,7 @@ _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "「ブリュンヒルデ」「ブリュッヒャー」常設実装！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「Z16」常設実装！",
+	tip = "「マルセイエーズ」常設実装！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "「インプラカブル」「アーガス」常設実装！",
@@ -15190,6 +15190,9 @@ _G.pg.base.gametip.blackfriday_help = {
 	},
 }
 _G.pg.base.gametip.eventshop_time_hint = {
+	tip = "$1 メンテまで交換可能",
+}
+_G.pg.base.gametip.eventshop_time_hint2 = {
 	tip = "$1 23:59まで交換可能",
 }
 _G.pg.base.gametip.purchase_backyard_theme_desc_for_onekey = {
@@ -26375,6 +26378,36 @@ _G.pg.base.gametip.island_spoperation_item_2602_3 = {
 _G.pg.base.gametip.island_spoperation_item_2602_4 = {
 	tip = "ヒヤシンス",
 }
+_G.pg.base.gametip.island_spoperation_tip_2605_1 = {
+	tip = "イベント期間中、ピアリの特産品依頼が出現します。特産品依頼をこなすとシーズンPTなどの報酬を入手可能。\n*特産品依頼は依頼完成上限に影響せず、評価レベルを上昇させられません",
+}
+_G.pg.base.gametip.island_spoperation_tip_2605_2 = {
+	tip = "イベント期間中、特定の区域内に毎日イベント採集アイテムが出現します。早く探しに行きましょう！",
+}
+_G.pg.base.gametip.island_spoperation_tip_2605_3 = {
+	tip = "イベント期間内、【青々苗場】【有魚飯店】【白クマ茶房】【基地工場】で対応の特産品を生産可能",
+}
+_G.pg.base.gametip.island_spoperation_btn_2605_1 = {
+	tip = "特産品採集",
+}
+_G.pg.base.gametip.island_spoperation_btn_2605_2 = {
+	tip = "特産品制作",
+}
+_G.pg.base.gametip.island_spoperation_btn_2605_3 = {
+	tip = "イベント管理者",
+}
+_G.pg.base.gametip.island_spoperation_item_2605_1 = {
+	tip = "ジャスミン",
+}
+_G.pg.base.gametip.island_spoperation_item_2605_2 = {
+	tip = "ヒマワリ",
+}
+_G.pg.base.gametip.island_spoperation_item_2605_3 = {
+	tip = "スイカ",
+}
+_G.pg.base.gametip.island_spoperation_item_2605_4 = {
+	tip = "ヒユナ",
+}
 _G.pg.base.gametip.island_follow_success = {
 	tip = "同伴成功",
 }
@@ -28906,5 +28939,30 @@ _G.pg.base.gametip.exchange_code_after_time = {
 }
 _G.pg.base.gametip.exchange_code_skin_tip = {
 	tip = "着せ替え",
+}
+_G.pg.base.gametip.littleMusashi_npc = {
+	tip = {
+		{
+			info = "■概要\n「未だ未熟の守護者」とは、イベント開始時に仮加入した【武蔵ちゃん】の「友好度」を海域に出撃することで貯め、【武蔵ちゃん】を正式加入させるイベントになります。",
+		},
+		{
+			info = "■遊び方\n1.イベント期間中、限定イベントをこなすと「友好度」を獲得する事ができます。獲得した「友好度」が一定の数値に到達すると、「友好度報酬」を入手することができます",
+		},
+		{
+			info = "2.【武蔵ちゃん】は、友好度報酬（7段階目）の「正式加入」を達成しない限り、ケッコンすることができず、また退役や強化・限界突破素材への選択をすることができません。",
+		},
+		{
+			info = "3.イベント終了までにイベントページの「友好度報酬」を最後まで受け取ると、【武蔵ちゃん】を「正式加入」させることができます。イベント終了時、「正式加入」していない【武蔵ちゃん】は母港からいなくなります。",
+		},
+		{
+			info = "4.友好度報酬は5/6（水）まで毎日1段階ずつ解放されます。",
+		},
+		{
+			info = "5.仮加入状態の【武蔵ちゃん】はセイレーン作戦（META戦含む）に参加できません。",
+		},
+		{
+			info = "7.仮加入状態の【武蔵ちゃん】は大艦隊作戦には参加できません。",
+		},
+	},
 }
 
