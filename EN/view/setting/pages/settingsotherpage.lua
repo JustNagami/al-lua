@@ -66,25 +66,11 @@ function var_0_0.GetPanels(arg_3_0)
 end
 
 function var_0_0.NeedRedeem(arg_4_0)
-	local var_4_0 = true
-
-	if PLATFORM_CODE == PLATFORM_CH or PLATFORM_CODE == PLATFORM_KR then
-		if PLATFORM == PLATFORM_IPHONEPLAYER then
-			var_4_0 = false
-		end
-	elseif PLATFORM_CODE == PLATFORM_JP then
-		if PLATFORM == PLATFORM_IPHONEPLAYER then
-			var_4_0 = false
-		end
-	elseif PLATFORM_CODE == PLATFORM_US then
-		if PLATFORM == PLATFORM_IPHONEPLAYER then
-			var_4_0 = false
-		end
-	elseif PLATFORM_CODE == PLATFORM_CHT and PLATFORM == PLATFORM_IPHONEPLAYER then
-		var_4_0 = false
+	if PLATFORM == PLATFORM_IPHONEPLAYER then
+		return SettingsProxy.IsExchangeCodeActive()
+	else
+		return true
 	end
-
-	return var_4_0
 end
 
 function var_0_0.OnInitPanle(arg_5_0)

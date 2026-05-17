@@ -23438,6 +23438,9 @@ _G.pg.base.gametip.storyline_chapter3 = {
 _G.pg.base.gametip.storyline_chapter4 = {
 	tip = "Chapter 4",
 }
+_G.pg.base.gametip.storyline_chapter5 = {
+	tip = "Interlude",
+}
 _G.pg.base.gametip.storyline_memorysearch1 = {
 	tip = "Story Search",
 }
@@ -25378,7 +25381,7 @@ _G.pg.base.gametip.island_agora_label_capacity = {
 	tip = "Capacity",
 }
 _G.pg.base.gametip.island_agora_capacity = {
-	tip = "Space Capacity",
+	tip = "Space Capacity",
 }
 _G.pg.base.gametip.island_agora_furniure_preview = {
 	tip = "Preview",
@@ -26041,7 +26044,7 @@ _G.pg.base.gametip.island_label_furniture_cnt = {
 	tip = "Amount",
 }
 _G.pg.base.gametip.island_label_furniture_capacity = {
-	tip = "Space Capacity",
+	tip = "Space Capacity",
 }
 _G.pg.base.gametip.island_label_furniture_tip = {
 	tip = "Furniture takes up space capacity. You cannot exceed the maximum allowed capacity.",
@@ -28939,6 +28942,30 @@ _G.pg.base.gametip.l2d_tip_on = {
 _G.pg.base.gametip.l2d_tip_off = {
 	tip = "L2D interaction tips disabled.",
 }
+_G.pg.base.gametip.YidaliV5FramePage_go = {
+	tip = "Go",
+}
+_G.pg.base.gametip.YidaliV5FramePage_get = {
+	tip = "Collect",
+}
+_G.pg.base.gametip.YidaliV5FramePage_got = {
+	tip = "Collected",
+}
+_G.pg.base.gametip["20260514_story_unlock_tip"] = {
+	tip = "Unlocks after 5/20 maintenance",
+}
+_G.pg.base.gametip.OutPostCoreActivityUI_subtitle_1 = {
+	tip = "Call to Arms",
+}
+_G.pg.base.gametip.OutPostCoreActivityUI_subtitle_2 = {
+	tip = "Dust-Specked Omen",
+}
+_G.pg.base.gametip.OutPostOmenPage_task_tip1 = {
+	tip = "Unlocks on $1/$2",
+}
+_G.pg.base.gametip.OutPostOmenPage_task_tip2 = {
+	tip = "Unlocks after collecting the previous day's mission rewards",
+}
 _G.pg.base.gametip.play_room_season = {
 	tip = "Season",
 }
@@ -29224,5 +29251,17 @@ _G.pg.base.gametip.littleMusashi_npc = {
 			info = "· Musashi-chan cannot participate in Guild Bosses until she has been formally recruited.",
 		},
 	},
+}
+_G.pg.base.gametip["260514_story_title"] = {
+	tip = "Dust-Specked Omen",
+}
+_G.pg.base.gametip["260514_story_title_en"] = {
+	tip = "Omen in dust spot",
+}
+_G.pg.base.gametip.AnniversaryNineCoreActivityUI_subtitle_6 = {
+	tip = "A Lovely Vacation",
+}
+_G.pg.base.gametip.Outpost_20260514_Detail = {
+	tip = "Details",
 }
 
