@@ -281,7 +281,10 @@ temp()
 function temp()
 	var_0_1.撫 = {
 		順 = {
-			this = true
+			this = true,
+			改 = {
+				this = true
+			}
 		}
 	}
 end
@@ -436,20 +439,9 @@ temp()
 function temp()
 	var_0_1.華 = {
 		甲 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.华 = {
-		甲 = {
-			· = {
-				改 = {
-					this = true
-				}
+			this = true,
+			改 = {
+				this = true
 			}
 		}
 	}
@@ -461,36 +453,6 @@ function temp()
 	var_0_1.定 = {
 		安 = {
 			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.抚 = {
-		顺 = {
-			["."] = {
-				改 = {
-					this = true,
-					（ = {
-						后 = {
-							排 = {
-								） = {
-									this = true
-								}
-							}
-						},
-						前 = {
-							排 = {
-								） = {
-									this = true
-								}
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 end
@@ -525,6 +487,46 @@ function temp()
 						}
 					}
 				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.ム = {
+		ル = {
+			マ = {
+				ン = {
+					ス = {
+						ク = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		ジ = {
+			ナ = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.四 = {
+		万 = {
+			十 = {
+				this = true
+			}
+		},
+		糸 = {
+			乃 = {
+				this = true
 			}
 		}
 	}

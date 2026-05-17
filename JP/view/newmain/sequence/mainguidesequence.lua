@@ -160,15 +160,24 @@ local var_0_1 = {
 		end
 	},
 	{
+		id = "JUUS_GUIDE01",
+		condition = function()
+			return true
+		end,
+		args = function()
+			return {}
+		end
+	},
+	{
 		id = "Yumia_atelier",
 		condition = function()
-			local var_24_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+			local var_26_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-			if not tobool(var_24_0) then
+			if not tobool(var_26_0) then
 				return false
 			end
 
-			return AtelierTools.IsUnlockAtelier(var_24_0, 2)
+			return AtelierTools.IsUnlockAtelier(var_26_0, 2)
 		end,
 		args = function()
 			return {}
@@ -185,80 +194,88 @@ local var_0_1 = {
 	}
 }
 
-function var_0_0.Execute(arg_28_0, arg_28_1)
+function var_0_0.Execute(arg_30_0, arg_30_1)
+	arg_30_0:DoAction(var_0_1, arg_30_1, false)
+end
+
+function var_0_0.DoAction(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
 	if IsUnityEditor and not ENABLE_GUIDE then
-		if arg_28_1 then
-			arg_28_1()
+		if arg_31_2 then
+			arg_31_2()
 		end
 
 		return
 	end
 
-	local var_28_0 = getProxy(ContextProxy):getCurrentContext()
+	local var_31_0 = getProxy(ContextProxy):getCurrentContext()
 
-	if var_28_0 and var_28_0.mediator.__cname ~= "NewMainMediator" then
+	if var_31_0 and var_31_0.mediator.__cname ~= "NewMainMediator" then
 		return
 	end
 
-	local var_28_1 = _.detect(var_0_1, function(arg_29_0)
-		local var_29_0 = arg_29_0.id
-		local var_29_1 = arg_29_0.condition
+	local var_31_1 = _.detect(arg_31_1, function(arg_32_0)
+		local var_32_0 = arg_32_0.id
+		local var_32_1 = arg_32_0.condition
 
-		return not pg.NewStoryMgr.GetInstance():IsPlayed(var_29_0) and var_29_1()
+		return not pg.NewStoryMgr.GetInstance():IsPlayed(var_32_0) and var_32_1()
 	end)
 
-	if not var_28_1 then
-		arg_28_1()
+	if not var_31_1 then
+		arg_31_2()
 
 		return
 	end
 
-	local var_28_2 = var_28_1.id
-	local var_28_3 = var_28_1.args()
+	local var_31_2 = var_31_1.id
+	local var_31_3 = var_31_1.args()
 
 	if pg.SeriesGuideMgr.GetInstance():isRunning() then
-		arg_28_1()
+		arg_31_2()
 
 		return
 	end
 
 	if not pg.NewGuideMgr.GetInstance():CanPlay() then
-		arg_28_1()
+		arg_31_2()
 
 		return
 	end
 
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = var_28_2
+		storyId = var_31_2
 	})
 
-	if var_28_2 == "DORM3D_GUIDE_01" then
-		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_28_2)))
+	if var_31_2 == "DORM3D_GUIDE_01" then
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_31_2)))
 	end
 
-	pg.NewGuideMgr.GetInstance():Play(var_28_2, var_28_3, function()
-		if var_28_2 == "DORM3D_GUIDE_01" then
-			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_28_2)))
+	pg.NewGuideMgr.GetInstance():Play(var_31_2, var_31_3, function()
+		if var_31_2 == "DORM3D_GUIDE_01" then
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_31_2)))
 		end
 
-		if var_28_1.nextOne then
-			local var_30_0, var_30_1 = var_28_1.nextOne()
+		if var_31_1.nextOne then
+			local var_33_0, var_33_1 = var_31_1.nextOne()
 
-			arg_28_0:PlayNextOne(var_30_0, var_30_1)
+			arg_31_0:PlayNextOne(var_33_0, var_33_1)
 		end
-	end, arg_28_1)
+
+		if arg_31_3 and arg_31_2 then
+			arg_31_2()
+		end
+	end, arg_31_2)
 end
 
-function var_0_0.PlayNextOne(arg_31_0, arg_31_1, arg_31_2)
-	if not arg_31_1 then
+function var_0_0.PlayNextOne(arg_34_0, arg_34_1, arg_34_2)
+	if not arg_34_1 then
 		return
 	end
 
-	pg.NewGuideMgr.GetInstance():Play(arg_31_1, arg_31_2, function()
+	pg.NewGuideMgr.GetInstance():Play(arg_34_1, arg_34_2, function()
 		return
 	end)
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = arg_31_1
+		storyId = arg_34_1
 	})
 end
 

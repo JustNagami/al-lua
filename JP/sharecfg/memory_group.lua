@@ -268,6 +268,8 @@ pg.memory_group.all = {
 	360,
 	361,
 	362,
+	363,
+	364,
 	501,
 	502,
 	503,
@@ -6891,6 +6893,42 @@ end)()
 			5107
 		}
 	}
+	pg.base.memory_group[363] = {
+		auto_unlock = "",
+		subtype = 1,
+		title = "灰点の予兆",
+		type = 2,
+		link_event = 51005,
+		icon = "title_event",
+		id = 363,
+		group_id = "",
+		memories = {
+			5121,
+			5122,
+			5123,
+			5124,
+			5125,
+			5126,
+			5127
+		}
+	}
+	pg.base.memory_group[364] = {
+		auto_unlock = "",
+		subtype = 2,
+		title = "麗しい休日へ全速前進",
+		type = 2,
+		link_event = 51001,
+		icon = "title_event",
+		id = 364,
+		group_id = "",
+		memories = {
+			5131,
+			5132,
+			5133,
+			5134,
+			5135
+		}
+	}
 	pg.base.memory_group[501] = {
 		auto_unlock = "",
 		subtype = 0,
@@ -7616,6 +7654,8 @@ end)()
 			10000
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[536] = {
 		auto_unlock = "",
 		subtype = 0,
@@ -7658,8 +7698,6 @@ end)()
 			10000
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[538] = {
 		auto_unlock = "",
 		subtype = 0,
