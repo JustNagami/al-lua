@@ -162553,6 +162553,123 @@ _G.pg.base.equip_data_statistics[151133] = {
 	value_1 = "590",
 	value_2 = 2,
 }
+_G.pg.base.equip_data_statistics[151140] = {
+	ammo = 10,
+	attribute_1 = "dodge",
+	attribute_2 = "hit",
+	descrip = "鸢尾审判庭专机的启动钥匙，现在是你的了。",
+	icon = "151140",
+	id = 151140,
+	name = "「审判号」启动钥匙",
+	nationality = 9,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "10",
+	value_2 = 6,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61100,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"FFNF",
+		"DEV",
+	},
+}
+_G.pg.base.equip_data_statistics[151141] = {
+	base = 151140,
+	id = 151141,
+	value_1 = "11",
+	value_2 = 7,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151142] = {
+	base = 151140,
+	id = 151142,
+	value_1 = "12",
+	value_2 = 7,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151143] = {
+	base = 151140,
+	id = 151143,
+	value_1 = "13",
+	value_2 = 8,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151144] = {
+	base = 151140,
+	id = 151144,
+	value_1 = "14",
+	value_2 = 9,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151145] = {
+	base = 151140,
+	id = 151145,
+	value_1 = "15",
+	value_2 = 10,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151146] = {
+	base = 151140,
+	id = 151146,
+	value_1 = "16",
+	value_2 = 11,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151147] = {
+	base = 151140,
+	id = 151147,
+	value_1 = "17",
+	value_2 = 12,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151148] = {
+	base = 151140,
+	id = 151148,
+	value_1 = "18",
+	value_2 = 13,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151149] = {
+	base = 151140,
+	id = 151149,
+	value_1 = "19",
+	value_2 = 14,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151150] = {
+	base = 151140,
+	id = 151150,
+	value_1 = "20",
+	value_2 = 15,
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151151] = {
+	anti_siren = 100,
+	base = 151140,
+	id = 151151,
+	value_1 = "21",
+	value_2 = 16,
+	hidden_skill_id = {},
+}
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "技能弹幕",

@@ -1475,7 +1475,10 @@ _G.pg.base.gametip.login_game_banned = {
 	tip = "账号已被冻结，请您联系客服",
 }
 _G.pg.base.gametip.login_game_frequence = {
-	tip = "请勿频繁登陆服务器",
+	tip = "请勿频繁登录服务器",
+}
+_G.pg.base.gametip.login_game_midnightpressure = {
+	tip = "当前登录通道较为拥挤，请稍后再试，避免频繁登录",
 }
 _G.pg.base.gametip.login_createNewPlayer_full = {
 	tip = "服务器注册人数已满",
@@ -7839,7 +7842,7 @@ _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "{namecode:462}、{namecode:450} 建造追加！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "{namecode:442} 建造追加！",
+	tip = "马赛曲 建造追加！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "怨仇、百眼巨人 建造追加！",
@@ -15472,6 +15475,9 @@ _G.pg.base.gametip.blackfriday_help = {
 	},
 }
 _G.pg.base.gametip.eventshop_time_hint = {
+	tip = "兑换时间截止至$1维护",
+}
+_G.pg.base.gametip.eventshop_time_hint2 = {
 	tip = "兑换时间截止至$1 24时",
 }
 _G.pg.base.gametip.purchase_backyard_theme_desc_for_onekey = {
@@ -22522,7 +22528,7 @@ _G.pg.base.gametip.help_starLightAlbum = {
 			info = "纪念手册：",
 		},
 		{
-			info = "1. 回忆页面内新增「纪念手册」系统入口。\n2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动勋章。\n ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；\n ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；\n ※ 「纪念贴纸」可以通过完成对应活动任务获取；\n ※ 奖励领取界面将延长至3月4日24时；",
+			info = "1. 回忆页面内新增「纪念手册」系统入口。\n2. 活动期间，指挥官可通过完成活动任务收集对应<color=#92fc63>「纪念贴纸」</color>兑换获得活动勋章。\n ※ 活动进行时，指挥官可在<color=#92fc63>活动页面或回忆界面</color>通过指定入口进入「纪念贴纸」收集页面；\n ※ 活动结束后指挥官将只能通过<color=#92fc63>回忆界面</color>指定入口进入「纪念贴纸」收集页面；\n ※ 「纪念贴纸」可以通过完成对应活动任务获取；\n ※ 奖励领取界面将延长至5月13日24时；",
 		},
 	},
 }
@@ -23446,6 +23452,9 @@ _G.pg.base.gametip.storyline_chapter3 = {
 }
 _G.pg.base.gametip.storyline_chapter4 = {
 	tip = "第四章",
+}
+_G.pg.base.gametip.storyline_chapter5 = {
+	tip = "间章",
 }
 _G.pg.base.gametip.storyline_memorysearch1 = {
 	tip = "搜索剧情名",
@@ -26646,6 +26655,36 @@ _G.pg.base.gametip.island_spoperation_item_2602_3 = {
 _G.pg.base.gametip.island_spoperation_item_2602_4 = {
 	tip = "风信子",
 }
+_G.pg.base.gametip.island_spoperation_tip_2605_1 = {
+	tip = "活动期间，佩芮会连续发布特产订单，完成特产订单可获得开发季PT等奖励。\n*特产订单不占用岛屿订单完成上限、也不提升好评等级",
+}
+_G.pg.base.gametip.island_spoperation_tip_2605_2 = {
+	tip = "活动期间，岛屿特定区域中每天都会生长出新的活动采集物，快去寻找吧！",
+}
+_G.pg.base.gametip.island_spoperation_tip_2605_3 = {
+	tip = "活动期间，在【青芽苗圃】【有鱼餐馆】【手工制作设备】【白熊饮品】中可生产对应特产",
+}
+_G.pg.base.gametip.island_spoperation_btn_2605_1 = {
+	tip = "特产采集",
+}
+_G.pg.base.gametip.island_spoperation_btn_2605_2 = {
+	tip = "特产制作",
+}
+_G.pg.base.gametip.island_spoperation_btn_2605_3 = {
+	tip = "活动管理员",
+}
+_G.pg.base.gametip.island_spoperation_item_2605_1 = {
+	tip = "茉莉花",
+}
+_G.pg.base.gametip.island_spoperation_item_2605_2 = {
+	tip = "向日葵",
+}
+_G.pg.base.gametip.island_spoperation_item_2605_3 = {
+	tip = "西瓜",
+}
+_G.pg.base.gametip.island_spoperation_item_2605_4 = {
+	tip = "红米苋",
+}
 _G.pg.base.gametip.island_follow_success = {
 	tip = "跟随成功",
 }
@@ -28920,6 +28959,30 @@ _G.pg.base.gametip.l2d_tip_on = {
 _G.pg.base.gametip.l2d_tip_off = {
 	tip = "Live2D交互提示已关闭",
 }
+_G.pg.base.gametip.YidaliV5FramePage_go = {
+	tip = "前往",
+}
+_G.pg.base.gametip.YidaliV5FramePage_get = {
+	tip = "领取",
+}
+_G.pg.base.gametip.YidaliV5FramePage_got = {
+	tip = "已领取",
+}
+_G.pg.base.gametip["20260514_story_unlock_tip"] = {
+	tip = "5月20日维护后解锁",
+}
+_G.pg.base.gametip.OutPostCoreActivityUI_subtitle_1 = {
+	tip = "作战准备",
+}
+_G.pg.base.gametip.OutPostCoreActivityUI_subtitle_2 = {
+	tip = "灰点预兆",
+}
+_G.pg.base.gametip.OutPostOmenPage_task_tip1 = {
+	tip = "$1月$2日解锁",
+}
+_G.pg.base.gametip.OutPostOmenPage_task_tip2 = {
+	tip = "领取前一日任务奖励后解锁",
+}
 _G.pg.base.gametip.play_room_season = {
 	tip = "赛季",
 }
@@ -29177,5 +29240,45 @@ _G.pg.base.gametip.exchange_code_after_time = {
 }
 _G.pg.base.gametip.exchange_code_skin_tip = {
 	tip = "换装",
+}
+_G.pg.base.gametip.littleMusashi_npc = {
+	tip = {
+		{
+			info = "尚未成熟的守护者说明：",
+		},
+		{
+			info = "1.活动期间，玩家可获得临时npc角色「小鳄」，临时角色不可誓约、不可退役、不可被选为强化突破材料。",
+		},
+		{
+			info = "2.活动期间，完成活动任务，可获得临时npc角色「小鳄」的友好度。",
+		},
+		{
+			info = "3.5月6日为止，每日解锁1个可达成的友好度阶段。",
+		},
+		{
+			info = "4.在活动结束前累计获得10000点友好度，可领取奖励并将临时角色「小鳄」转化为永久角色。",
+		},
+		{
+			info = "5.在活动结束后，未完成转化的临时角色「小鳄」将离开港区，不返还已经消耗的强化、突破等培养材料。",
+		},
+		{
+			info = "6.npc角色无法参与大型作战。",
+		},
+		{
+			info = "7.npc角色无法参与大舰队作战中的事件派遣、攻坚队和首领战。",
+		},
+	},
+}
+_G.pg.base.gametip["260514_story_title"] = {
+	tip = "灰点预兆",
+}
+_G.pg.base.gametip["260514_story_title_en"] = {
+	tip = "Omen in dust spot",
+}
+_G.pg.base.gametip.AnniversaryNineCoreActivityUI_subtitle_6 = {
+	tip = "美好假日",
+}
+_G.pg.base.gametip.Outpost_20260514_Detail = {
+	tip = "查看详情",
 }
 

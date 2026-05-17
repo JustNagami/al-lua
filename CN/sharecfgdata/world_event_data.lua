@@ -5906,8 +5906,7 @@ _G.pg.base.world_event_data[1401] = {
 	event_op = {},
 	effect = {
 		1406,
-		1416,
-		1417,
+		1444,
 	},
 	grid = {
 		{
@@ -6102,6 +6101,43 @@ _G.pg.base.world_event_data[1410] = {
 		1436,
 		1437,
 		1438,
+		1439,
+	},
+	grid = {
+		{
+			0,
+			0,
+			0,
+			0,
+		},
+	},
+	slg_bufflist = {},
+	slg_buffnum = {},
+	map_buff = {},
+	deviation = {},
+}
+_G.pg.base.world_event_data[1411] = {
+	auto_pri = 0,
+	compass_index = 0,
+	discover_type = 2,
+	enemyicon = 0,
+	event_sight = -1,
+	expedition_icon = 0,
+	icon = "laohuji_pohuai",
+	icontype = 2,
+	id = 1411,
+	infection_value = 0,
+	is_guide = 0,
+	is_scanevent = 1,
+	name = "塞壬探测装置（已损坏）",
+	object_icon = "",
+	obstacle = 2,
+	scale = 0,
+	scan_desc = "设施已损坏……",
+	special_enemy = 0,
+	visuality = 0,
+	event_op = {},
+	effect = {
 		1439,
 	},
 	grid = {
