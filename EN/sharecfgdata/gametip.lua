@@ -29301,7 +29301,7 @@ _G.pg.base.gametip.mall_input_header = {
 	tip = "Sparks of Joy Spent:",
 }
 _G.pg.base.gametip.mall_summary_btn = {
-	tip = "Sparks of Joy Earned:",
+	tip = "Sparks of Joy Earned",
 }
 _G.pg.base.gametip.mall_evaluate_title = {
 	tip = "Closed for Business  Customer Reviews",
@@ -29465,7 +29465,7 @@ _G.pg.base.gametip.sort_minigame_help = {
 	},
 }
 _G.pg.base.gametip.AnniversaryNineCoreActivity_subtitle_1 = {
-	tip = "Supply Station",
+	tip = "Mall Management",
 }
 _G.pg.base.gametip.AnniversaryNineCoreActivity_subtitle_2 = {
 	tip = "Operation Vacation",
@@ -29513,13 +29513,13 @@ _G.pg.base.gametip.mall_title_lock = {
 	tip = "Level up the Mall\nto unlock",
 }
 _G.pg.base.gametip.mall_continue_to_unlock = {
-	tip = "提升购物中心等级后解锁",
+	tip = "Level up the Mall to unlock",
 }
 _G.pg.base.gametip.GeZiURCoreActivityUI_subtitle_1 = {
 	tip = "Event",
 }
 _G.pg.base.gametip.GeZiURCoreActivityUI_subtitle_2 = {
-	tip = "Event",
+	tip = "Supply Station ",
 }
 _G.pg.base.gametip.GeZiURCoreActivityUI_subtitle_3 = {
 	tip = "UR Exchange",
