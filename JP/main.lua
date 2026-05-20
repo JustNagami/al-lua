@@ -238,47 +238,48 @@ end
 pg.goldExchangeMgr = nil
 
 local function var_0_0(arg_8_0)
+	pg.ShaderMgr.GetInstance():Init(arg_8_0)
+end
+
+local function var_0_1(arg_9_0)
 	require("HybridCLRConst")
 
-	local var_8_0 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
-	local var_8_1 = HybridCLRConst.PatchDllList
+	local var_9_0 = Application.streamingAssetsPath .. "/AssetBundles/hybridclr/patch/"
+	local var_9_1 = HybridCLRConst.PatchDllList
 
-	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var_8_0, var_8_1)
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadPatchDLL(var_9_0, var_9_1)
 
-	local var_8_2 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
-	local var_8_3 = HybridCLRConst.HotfixDllList
+	local var_9_2 = Application.persistentDataPath .. "/AssetBundles/hybridclr/hotfix/"
+	local var_9_3 = HybridCLRConst.HotfixDllList
 
-	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var_8_2, var_8_3)
+	Sandystar.HybridCLRTool.HybridCLRHelper.LoadHotfixDLL(var_9_2, var_9_3)
 	Sandystar.HybridCLRTool.HybridCLRHelper.SetFinishCallback(function()
 		GraphicsInterface = BLHX.Rendering.GraphicsInterface
 
 		GraphicSettingConst.ClearPlayerPrefs()
 		GraphicSettingConst.InitDefautQuality()
-		arg_8_0()
+		arg_9_0()
 	end)
 end
 
-local function var_0_1(arg_10_0)
+local function var_0_2(arg_11_0)
 	parallelAsync({
-		function(arg_11_0)
-			pg.LayerWeightMgr.GetInstance():Init(arg_11_0)
-		end,
 		function(arg_12_0)
-			pg.UIMgr.GetInstance():Init(arg_12_0)
+			pg.LayerWeightMgr.GetInstance():Init(arg_12_0)
 		end,
 		function(arg_13_0)
-			pg.CriMgr.GetInstance():Init(arg_13_0)
+			pg.UIMgr.GetInstance():Init(arg_13_0)
+		end,
+		function(arg_14_0)
+			pg.CriMgr.GetInstance():Init(arg_14_0)
 		end
-	}, arg_10_0)
+	}, arg_11_0)
 end
 
-local function var_0_2(arg_14_0)
+local function var_0_3(arg_15_0)
 	parallelAsync({
-		function(arg_15_0)
-			pg.FontMgr.GetInstance():Init(arg_15_0)
-		end,
 		function(arg_16_0)
-			pg.ShaderMgr.GetInstance():Init(arg_16_0)
+			pg.FontMgr.GetInstance():Init(arg_16_0)
 		end,
 		function(arg_17_0)
 			pg.PoolMgr.GetInstance():Init(arg_17_0)
@@ -375,18 +376,19 @@ local function var_0_2(arg_14_0)
 				pg.IslandVisitorNotificationMgr.GetInstance():Init(arg_46_0)
 			end
 		end
-	}, arg_14_0)
+	}, arg_15_0)
 end
 
-local var_0_3 = os.clock()
+local var_0_4 = os.clock()
 
 seriesAsync({
 	var_0_0,
 	var_0_1,
-	var_0_2
+	var_0_2,
+	var_0_3
 }, function(arg_47_0)
 	pg.SdkMgr.GetInstance():QueryWithProduct()
-	print("loading cost: " .. os.clock() - var_0_3)
+	print("loading cost: " .. os.clock() - var_0_4)
 	VersionMgr.Inst:DestroyUI()
 
 	local var_47_0 = GameObject.Find("OverlayCamera/Overlay/UIMain/ServerChoosePanel")
