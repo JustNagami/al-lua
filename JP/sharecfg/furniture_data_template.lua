@@ -200,6 +200,10 @@ pg.furniture_data_template.all = {
 	331,
 	332,
 	333,
+	335,
+	336,
+	337,
+	338,
 	100002,
 	100003,
 	100004,
@@ -3521,7 +3525,25 @@ pg.furniture_data_template.all = {
 	337113,
 	337114,
 	337115,
-	337116
+	337116,
+	338001,
+	338002,
+	338101,
+	338102,
+	338103,
+	338104,
+	338105,
+	338106,
+	338107,
+	338108,
+	338109,
+	338110,
+	338111,
+	338112,
+	338113,
+	338114,
+	338115,
+	338116
 }
 pg.furniture_data_template.get_id_list_by_themeId = {
 	[0] = {
@@ -3719,6 +3741,10 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		331,
 		332,
 		333,
+		335,
+		336,
+		337,
+		338,
 		100002,
 		100003,
 		100004,
@@ -7287,6 +7313,26 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		337114,
 		337115,
 		337116
+	},
+	[138] = {
+		338001,
+		338002,
+		338101,
+		338102,
+		338103,
+		338104,
+		338105,
+		338106,
+		338107,
+		338108,
+		338109,
+		338110,
+		338111,
+		338112,
+		338113,
+		338114,
+		338115,
+		338116
 	}
 }
 pg.furniture_data_template.get_id_list_by_tag = {
@@ -9527,7 +9573,22 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		337113,
 		337114,
 		337115,
-		337116
+		337116,
+		338101,
+		338102,
+		338103,
+		338104,
+		338105,
+		338106,
+		338107,
+		338108,
+		338109,
+		338110,
+		338111,
+		338112,
+		338113,
+		338114,
+		338115
 	},
 	{
 		1108,
@@ -9810,7 +9871,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		334002,
 		335002,
 		336002,
-		337002
+		337002,
+		338002
 	},
 	{
 		1001,
@@ -9934,7 +9996,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		334001,
 		335001,
 		336001,
-		337001
+		337001,
+		338001
 	},
 	{
 		1301,
@@ -10444,6 +10507,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		328,
 		329,
 		330,
+		336,
+		337,
 		100002,
 		100003,
 		100004,
@@ -10744,7 +10809,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		333119,
 		334123,
 		335119,
-		336115
+		336115,
+		338116
 	},
 	{
 		101,
@@ -10822,7 +10888,9 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		323,
 		331,
 		332,
-		333
+		333,
+		335,
+		338
 	}
 }
 pg.furniture_data_template.get_id_list_by_type = {
@@ -10949,7 +11017,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		334002,
 		335002,
 		336002,
-		337002
+		337002,
+		338002
 	},
 	{
 		120,
@@ -13180,7 +13249,20 @@ pg.furniture_data_template.get_id_list_by_type = {
 		337113,
 		337114,
 		337115,
-		337116
+		337116,
+		338101,
+		338103,
+		338104,
+		338105,
+		338106,
+		338107,
+		338108,
+		338109,
+		338110,
+		338111,
+		338113,
+		338115,
+		338116
 	},
 	{
 		1108,
@@ -13463,7 +13545,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		334001,
 		335001,
 		336001,
-		337001
+		337001,
+		338001
 	},
 	{
 		1101,
@@ -14184,6 +14267,9 @@ pg.furniture_data_template.get_id_list_by_type = {
 		331,
 		332,
 		333,
+		335,
+		336,
+		338,
 		100002,
 		100004,
 		100005,
@@ -14296,6 +14382,7 @@ pg.furniture_data_template.get_id_list_by_type = {
 		281,
 		282,
 		308,
+		337,
 		100003,
 		100008,
 		100021,
@@ -14344,7 +14431,10 @@ pg.furniture_data_template.get_id_list_by_type = {
 		316112,
 		316121,
 		317107,
-		323102
+		323102,
+		338102,
+		338112,
+		338114
 	},
 	{
 		46131
@@ -24214,6 +24304,262 @@ end)()
 		},
 		interAction_group = {}
 	}
+	pg.base.furniture_data_template[335] = {
+		spine_extra = "",
+		describe = "黒き領域の塔をモチーフに作ったミニチュア。――「聖印前の同盟」に参加した指揮官に贈る",
+		gain_by = "聖印前の同盟",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "gezixunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 8,
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		name = "黒き領域の塔",
+		canputon = 0,
+		id = 335,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"gezixunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[336] = {
+		gain_by = "",
+		name = "ドリームトラベラー",
+		count = 1,
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		comfortable = 0,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "daolanshuchuangicon",
+		deblocking = 1,
+		level = 1,
+		describe = "ベッドから出なくても旅ができる。夢の中で名所を回ろう♪",
+		effect = "",
+		can_rotate = 0,
+		tag = 6,
+		spine_action_replace = "",
+		picture = "",
+		spine_extra = "",
+		canputon = 0,
+		id = 336,
+		advice = 0,
+		size = {
+			4,
+			6
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"daolanshuchuang",
+				"normal"
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sleep1",
+						nil,
+						"sleep"
+					}
+				},
+				{
+					nil,
+					1
+				},
+				{
+					1
+				},
+				{
+					{
+						"sleep1",
+						"sleep2",
+						"sleep3"
+					}
+				}
+			},
+			{},
+			{
+				0,
+				0
+			}
+		},
+		followBone = {
+			"char",
+			1
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[337] = {
+		gain_by = "",
+		name = "コロコロキャリアー",
+		count = 1,
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		comfortable = 4,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "sanxiaoxinglixiangicon",
+		deblocking = 1,
+		level = 1,
+		describe = "歩くのはこれまで。いざキャリーでコロコロする旅へ！",
+		effect = "",
+		can_rotate = 0,
+		tag = 6,
+		spine_action_replace = "",
+		picture = "",
+		spine_extra = "",
+		canputon = 0,
+		id = 337,
+		advice = 0,
+		size = {
+			2,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"sanxiaoxinglixiang",
+				"normal",
+				nil,
+				true
+			},
+			{},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit",
+						nil,
+						"sit"
+					}
+				},
+				{
+					[3] = {
+						"sit2",
+						"sit",
+						false,
+						true
+					}
+				},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			},
+			0.8
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338] = {
+		spine_extra = "",
+		describe = "黄金ビル（完全体）をモチーフに作ったミニチュア。皆が協力してお宝を取り戻した大事な思い出を記念して",
+		gain_by = "豪華絢爛！ゴールデン・ベイ",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "fujindashaxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 8,
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金ビルミニチュア",
+		canputon = 0,
+		id = 338,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"fujindashaxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+end)()
+;(function()
 	pg.base.furniture_data_template[100002] = {
 		gain_by = "",
 		name = "友情の空気ポンプ",
@@ -24566,8 +24912,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[100006] = {
 		gain_by = "",
 		name = "スターステージ ",
@@ -31177,6 +31521,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[1107] = {
 		spine_extra = "",
 		describe = "姉ちゃんは、外食費がかさむから、自給自足こそが王道って！",
@@ -31329,8 +31675,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[1111] = {
 		spine_extra = "",
 		describe = "クローゼットは高いから、ひとまずはこのダンボールで…",
@@ -35325,6 +35669,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[5112] = {
 		spine_extra = "",
 		describe = "レンガブロックで積み上げたようなデザインのチェスト",
@@ -35493,8 +35839,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[5202] = {
 		spine_extra = "",
 		describe = "客をもてなすためのワイン。でもやっぱりビールのほうは美味しいもん！",
@@ -39634,6 +39978,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[11109] = {
 		spine_extra = "",
 		describe = "「フルーツは健康にいいですよ」",
@@ -39800,8 +40146,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[11113] = {
 		spine_extra = "",
 		describe = "建物とガーデンを分ける境界線。",
@@ -43944,6 +44288,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[14115] = {
 		spine_extra = "",
 		describe = "ゆらりくらり　月の船",
@@ -44152,8 +44498,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[14119] = {
 		spine_extra = "",
 		describe = "「落ちないように注意してくださいねー」",
@@ -48940,6 +49284,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[18102] = {
 		spine_extra = "",
 		describe = "大きなスライヌのぬいぐるみ。クレーンゲームなら1万円くらいかかりそう。",
@@ -49118,8 +49464,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[18106] = {
 		spine_extra = "",
 		describe = "青い光を放つフェンス。",
@@ -53544,6 +53888,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[21301] = {
 		spine_extra = "",
 		describe = "バラの飾りが施されている木製のゲート。",
@@ -53690,8 +54036,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[22101] = {
 		spine_extra = "",
 		describe = "かの都市にある有名観光スポット…のレプリカ。",
@@ -58508,6 +58852,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[27106] = {
 		spine_extra = "",
 		describe = "足元注意！「パシャーン！」 ",
@@ -58687,8 +59033,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[27110] = {
 		spine_extra = "",
 		describe = "日陰で冷たい飲み物でも飲んで楽しみましょう！ ",
@@ -63218,6 +63562,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[29202] = {
 		spine_extra = "",
 		describe = "栄養を補充するには最適な、世界的TRADITIONAL　FOOD",
@@ -63367,8 +63713,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[30002] = {
 		spine_extra = "",
 		describe = "カラフルなブロックを組み合わせた床。カラフル！",
@@ -67892,6 +68236,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[35129] = {
 		spine_extra = "",
 		describe = "ハロウィンという劇場に舞い降りた黒騎士",
@@ -68076,8 +68422,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[35204] = {
 		spine_extra = "",
 		describe = "効果不明",
@@ -72405,6 +72749,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[38301] = {
 		spine_extra = "",
 		describe = "東煌的に縁起のいい壁紙",
@@ -72557,8 +72903,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[38305] = {
 		spine_extra = "",
 		describe = "駆逐艦では中々届かない高いところにある収納",
@@ -76888,6 +77232,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[43106] = {
 		spine_extra = "",
 		describe = "キズナアイをイメージしたスツール。――軽くて丈夫なので壊れにくいですよ！",
@@ -77089,8 +77435,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[43110] = {
 		spine_extra = "",
 		describe = "キズナアイが頭に着けている「ぴょこぴょこ」をイメージした絨毯",
@@ -81252,6 +81596,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[45308] = {
 		spine_extra = "",
 		describe = "壁を飾る垂れ幕",
@@ -81401,8 +81747,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[46002] = {
 		spine_extra = "",
 		describe = "流れる光は無数の0と1",
@@ -85575,6 +85919,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[50001] = {
 		spine_extra = "",
 		describe = "タフガールを排出させるユニオンの雄大な平原地帯を模した床",
@@ -85727,8 +86073,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[50103] = {
 		spine_extra = "",
 		describe = "配給ポイントを提示をプリーズ！",
@@ -90003,6 +90347,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[55104] = {
 		spine_extra = "",
 		describe = "シオンが所持している魔法のカーペット",
@@ -90171,8 +90517,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[55108] = {
 		spine_extra = "",
 		describe = "花言葉は「憧れ」、「忠誠」と「静かなる恋」。日光を当てて、水やりも忘れないように",
@@ -94325,6 +94669,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[58304] = {
 		spine_extra = "",
 		describe = "東煌屋敷の門。爆竹の燃えカスは掃除しましょう",
@@ -94477,8 +94823,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[59102] = {
 		spine_extra = "",
 		describe = "ヘッドボードが饅頭になっている可愛らしいダブルベッド",
@@ -98675,6 +99019,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[62114] = {
 		spine_extra = "",
 		describe = "普通の木。…普通の木。",
@@ -98909,8 +99255,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[62118] = {
 		spine_extra = "",
 		describe = "風が吹きひき臼が周り、饅頭がみんなに幸せなパンをお届け――",
@@ -103105,6 +103449,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[69118] = {
 		gain_by = "",
 		name = "レントゲン装置",
@@ -103365,8 +103711,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[69301] = {
 		spine_extra = "",
 		describe = "手指消毒は大事！",
@@ -107796,6 +108140,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[73109] = {
 		spine_extra = "",
 		describe = "「プレゼントはお肉がほしいぜ！」「はあ！？」",
@@ -107948,8 +108294,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[73113] = {
 		spine_extra = "",
 		describe = "クリスマス番組を楽しむ饅頭。ソファを完全占拠している。",
@@ -112160,6 +112504,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[77108] = {
 		spine_extra = "",
 		describe = "映し出される夜空は、「敵」の故郷......？",
@@ -112340,8 +112686,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[77112] = {
 		spine_extra = "",
 		describe = "「ここから一歩越えたら...ふふふ♡」",
@@ -116533,6 +116877,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[81132] = {
 		gain_by = "",
 		name = "TA饅頭",
@@ -116736,8 +117082,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[81306] = {
 		spine_extra = "",
 		describe = "「遅刻…にならず！セーフ！」",
@@ -121040,6 +121384,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[85103] = {
 		spine_extra = "",
 		describe = "一人ぼっちではなく、隣席で",
@@ -121192,8 +121538,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[85112] = {
 		spine_extra = "",
 		describe = "「よしよし、そのままおとなしくしてろよ…」",
@@ -125220,6 +125564,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[89106] = {
 		spine_extra = "",
 		describe = "シンプルなデザインのチェックカーペット",
@@ -125372,8 +125718,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[89110] = {
 		spine_extra = "",
 		describe = "モダン風じゃないシャンデリア",
@@ -129299,6 +129643,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[93103] = {
 		spine_extra = "",
 		describe = "イヤッッホォォォオオォオウ！",
@@ -129451,8 +129797,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[93107] = {
 		spine_extra = "",
 		describe = "バナナは食べられるかな…？",
@@ -133590,6 +133934,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[96112] = {
 		spine_extra = "",
 		describe = "とある特別計画艦から寄贈された盆栽。実（み）はみんなで美味しくいただきました",
@@ -133782,8 +134128,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[96116] = {
 		gain_by = "",
 		name = "海小屋のホームシアター",
@@ -138092,6 +138436,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[99128] = {
 		gain_by = "",
 		name = "火山浴槽",
@@ -138287,8 +138633,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[99204] = {
 		spine_extra = "",
 		describe = "美味しくて特別な温泉卵",
@@ -142926,6 +143270,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[303001] = {
 		spine_extra = "",
 		describe = "妖怪温泉街での奇妙な夜が始まる！",
@@ -143122,8 +143468,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[303103] = {
 		spine_extra = "",
 		describe = "頑張ってじーっと見つめてくるオバケ",
@@ -147323,6 +147667,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[306110] = {
 		spine_extra = "",
 		describe = "柔らかいソファチェア",
@@ -147541,8 +147887,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[306114] = {
 		gain_by = "",
 		name = "クラブバーカウンター",
@@ -152079,6 +152423,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[311105] = {
 		spine_extra = "",
 		describe = "これで日焼けせずに済む！",
@@ -152258,8 +152604,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[311109] = {
 		spine_extra = "",
 		describe = "のんびりと日光浴～",
@@ -157023,6 +157367,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[316120] = {
 		spine_extra = "",
 		describe = "水やりは必要なさそう…よね？",
@@ -157226,8 +157572,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[316301] = {
 		spine_extra = "",
 		describe = "王女たちの小物が入っているっぽい？",
@@ -161654,6 +161998,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[321101] = {
 		spine_extra = "",
 		describe = "木陰は涼を取るのに最適な場所",
@@ -161835,8 +162181,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[321105] = {
 		spine_extra = "",
 		describe = "風に揺れるチューリップの花壇。淡い香りが漂う",
@@ -166241,6 +166585,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[326108] = {
 		spine_extra = "",
 		describe = "中に何が入っているんだろう？",
@@ -166393,8 +166739,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[327001] = {
 		spine_extra = "",
 		describe = "暇な時は、アトリエの庭を散策しよう",
@@ -170905,6 +171249,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[331113] = {
 		spine_extra = "",
 		describe = "目的に合わせて自由に移動・組み合わせ可能な便利なモジュール式ソファ",
@@ -171108,8 +171454,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[331117] = {
 		spine_extra = "",
 		describe = "艦橋の指揮エリア――視界と位置、すべてが最高の場所",
@@ -175721,6 +176065,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[336113] = {
 		spine_extra = "",
 		describe = "今日も指揮室は平和ピョ！",
@@ -175935,8 +176281,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[336302] = {
 		spine_extra = "",
 		describe = "容疑者リスト更新完了、直ちに逮捕状を発行する！",
@@ -176728,6 +177072,812 @@ end)()
 		followBone = {
 			"char",
 			-1
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338001] = {
+		spine_extra = "",
+		describe = "燦々なる街を遊び歩き、贅沢絢爛なゴールデンベイを思いっきり楽しもう！",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "黄金湾岸の床",
+		effect = "",
+		advice = 0,
+		tag = 4,
+		spine_action_replace = "",
+		picture = "shh/dibanshh",
+		icon = "dibanshhicon",
+		canputon = 0,
+		comfortable = 4,
+		id = 338001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338002] = {
+		spine_extra = "",
+		describe = "燦々なる街を遊び歩き、贅沢絢爛なゴールデンベイを思いっきり楽しもう！",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "黄金湾岸の壁",
+		effect = "",
+		advice = 0,
+		tag = 3,
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		icon = "qiangbishhicon",
+		id = 338002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbishh",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338101] = {
+		gain_by = "",
+		name = "黄金湾岸高級車",
+		count = 1,
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		comfortable = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "changpengcheshhicon",
+		deblocking = 1,
+		level = 1,
+		describe = "金ピカの高級車。道端に静かに停まっている",
+		effect = "",
+		can_rotate = 0,
+		tag = 1,
+		spine_action_replace = "",
+		picture = "",
+		spine_extra = "",
+		canputon = 0,
+		id = 338101,
+		advice = 0,
+		size = {
+			6,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"changpengcheshhB",
+				"normal"
+			},
+			{
+				"changpengcheshhT"
+			},
+			{
+				{
+					0,
+					0
+				},
+				{
+					{
+						"sit"
+					}
+				},
+				{},
+				{
+					1
+				}
+			},
+			{},
+			{
+				0,
+				0
+			},
+			{
+				1,
+				1
+			}
+		},
+		followBone = {
+			"char",
+			-1
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338102] = {
+		spine_extra = "",
+		describe = "いっぱい買ったピョ～！",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "gouwujiushhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸ショップ饅頭",
+		canputon = 0,
+		id = 338102,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"gouwujiushh",
+				"normal",
+				{
+					"walk",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338103] = {
+		spine_extra = "",
+		describe = "巨大スクリーンが輝くショッピングモール、品揃えが最高のファッションセンター",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "gouwuloufangshhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		spine = "",
+		spine_action_replace = "",
+		picture = "shh/gouwuloufangshh",
+		comfortable = 3,
+		canputon = 0,
+		name = "黄金湾岸シネモール",
+		id = 338103,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338104] = {
+		spine_extra = "",
+		describe = "ドレスの裾がひらりと。ラグジュアリーとロマンが交錯するハートキャッチャー",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "gouwuloufang2shhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		spine = "",
+		spine_action_replace = "",
+		picture = "shh/gouwuloufang2shh",
+		comfortable = 3,
+		canputon = 0,
+		name = "黄金湾岸ファッションビル",
+		id = 338104,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338105] = {
+		spine_extra = "",
+		describe = "輝くショッピング天国。ありとあらゆるものが取り揃えている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "gouwulousanjiaoshhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		spine = "",
+		spine_action_replace = "",
+		picture = "shh/gouwulousanjiaoshh",
+		comfortable = 4,
+		canputon = 0,
+		name = "黄金湾岸ショッピングセンター",
+		id = 338105,
+		can_rotate = 1,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338106] = {
+		spine_extra = "",
+		describe = "ランドマークのドームはすぐそこに。目印にすればもう迷わない！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "gouwulouyuanshhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸ドームモール",
+		canputon = 0,
+		id = 338106,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"gouwulouyuanshh",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338107] = {
+		spine_extra = "",
+		describe = "川に泊まっている観光クルーザー。観光客に水上からの町並み見物を可能にしてくれる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "guanguangchuanshhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸観光船",
+		canputon = 0,
+		id = 338107,
+		can_rotate = 0,
+		size = {
+			8,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"guanguangchuanshh",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338108] = {
+		spine_extra = "",
+		describe = "グリル肉さえあれば、日々の暮らしにはもう悩まない！",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "kaoroutanshhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸屋台",
+		canputon = 0,
+		id = 338108,
+		can_rotate = 0,
+		size = {
+			4,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"kaoroutanshh",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338109] = {
+		spine_extra = "",
+		describe = "膝ぐらいの高さのフェンス。空間を仕切ってくれるが視線を遮らない",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "langanshhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		spine = "",
+		spine_action_replace = "",
+		picture = "shh/langanshh",
+		comfortable = 1,
+		canputon = 0,
+		name = "黄金湾岸仕切り",
+		id = 338109,
+		can_rotate = 0,
+		size = {
+			22,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338110] = {
+		spine_extra = "",
+		describe = "精緻な作りの街灯。優しく華やかな光で夜を照らしている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "ludengshhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		spine = "",
+		spine_action_replace = "",
+		picture = "shh/ludengshh",
+		comfortable = 1,
+		canputon = 0,
+		name = "黄金湾岸街灯",
+		id = 338110,
+		can_rotate = 0,
+		size = {
+			1,
+			1
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338111] = {
+		spine_extra = "",
+		describe = "音楽に合わせて水柱が動き、中々見応えあり",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "penquanshhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸噴水",
+		canputon = 0,
+		id = 338111,
+		can_rotate = 0,
+		size = {
+			5,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"penquanshh",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338112] = {
+		spine_extra = "",
+		describe = "次はどこを回るピョ？",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "sanbujiushhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸ツアー饅頭",
+		canputon = 0,
+		id = 338112,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"sanbujiushh",
+				"normal",
+				{
+					"walk",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338113] = {
+		spine_extra = "",
+		describe = "コーン！最高の買い物タイムを楽しむ準備は出来てる？",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "shizhongtashhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸時計塔",
+		canputon = 0,
+		id = 338113,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"shizhongtashh",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338114] = {
+		spine_extra = "",
+		describe = "新型ヘリのおもちゃ。いつでも飛び上がれるよ！",
+		gain_by = "",
+		type = 11,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 1,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "wurenjishhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 1,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸ヘリコプター",
+		canputon = 0,
+		id = 338114,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"wurenjishh",
+				"normal",
+				{
+					"action",
+					true
+				}
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338115] = {
+		spine_extra = "",
+		describe = "熱帯情緒あふれるシュロの木。ショッピングエリアに木陰をもたらしてくれる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 2,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 2,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "zonglvshushhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 2,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸のシュロ木",
+		canputon = 0,
+		id = 338115,
+		can_rotate = 0,
+		size = {
+			2,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"zonglvshushh",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[338116] = {
+		spine_extra = "",
+		describe = "タクシー専用の車寄せ。買い物で両手いっぱいの観光客たちを送り届けてくれる",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 138,
+		icon = "chuzucheshhicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		name = "黄金湾岸車寄せ",
+		canputon = 0,
+		id = 338116,
+		can_rotate = 0,
+		size = {
+			7,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"chuzucheshh",
+				"normal"
+			}
 		},
 		interAction_group = {}
 	}

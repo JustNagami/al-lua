@@ -270,6 +270,8 @@ pg.memory_group.all = {
 	362,
 	363,
 	364,
+	365,
+	366,
 	501,
 	502,
 	503,
@@ -405,14 +407,15 @@ pg.base.memory_group = {}
 
 ;(function()
 	pg.base.memory_group[1] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "序章",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "序章",
+		auto_unlock = "",
+		subtype = 0,
 		id = 1,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			1,
 			2,
@@ -423,14 +426,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[2] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "トラ！トラ！トラ！",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "トラ！トラ！トラ！",
+		auto_unlock = "",
+		subtype = 0,
 		id = 2,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			7,
 			8,
@@ -445,14 +449,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[3] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "初陣！珊瑚海",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "初陣！珊瑚海",
+		auto_unlock = "",
+		subtype = 0,
 		id = 3,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			17,
 			18,
@@ -460,14 +465,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[4] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "AF決戦",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "AF決戦",
+		auto_unlock = "",
+		subtype = 0,
 		id = 4,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			20,
 			21,
@@ -481,14 +487,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[5] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "ソロモン海にて・上",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "ソロモン海にて・上",
+		auto_unlock = "",
+		subtype = 0,
 		id = 5,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			1191,
 			1192,
@@ -506,14 +513,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[98] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "「竜骨編纂」開放 ",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "「竜骨編纂」開放 ",
+		auto_unlock = "",
+		subtype = 0,
 		id = 98,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			716,
 			717,
@@ -548,14 +556,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[99] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "オフニャ、登場！",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "オフニャ、登場！",
+		auto_unlock = "",
+		subtype = 0,
 		id = 99,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			457,
 			458,
@@ -564,14 +573,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[100] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "新機能「研究」開放！",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_main",
+		title = "新機能「研究」開放！",
+		auto_unlock = "",
+		subtype = 0,
 		id = 100,
-		group_id = "",
+		icon = "title_main",
 		memories = {
 			299,
 			300,
@@ -579,14 +589,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[101] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "「努力、希望と計画」",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "「努力、希望と計画」",
+		auto_unlock = "",
+		subtype = 2,
 		id = 101,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10000,
 			10001,
@@ -602,14 +613,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[102] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "鏡写されし異色",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "鏡写されし異色",
+		auto_unlock = "",
+		subtype = 1,
 		id = 102,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			35,
 			36,
@@ -633,14 +645,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[107] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "玉兎・月夜に酔う",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "玉兎・月夜に酔う",
+		auto_unlock = "",
+		subtype = 3,
 		id = 107,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			107,
 			108,
@@ -652,14 +665,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[108] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "紅染の来訪者",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "紅染の来訪者",
+		auto_unlock = "",
+		subtype = 1,
 		id = 108,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			114,
 			115,
@@ -682,14 +696,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[109] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "栄光なる最終戦",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "栄光なる最終戦",
+		auto_unlock = "",
+		subtype = 2,
 		id = 109,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			132,
 			133,
@@ -704,14 +719,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[110] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "「魔女達」の前夜祭",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "「魔女達」の前夜祭",
+		auto_unlock = "",
+		subtype = 3,
 		id = 110,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			142,
 			143,
@@ -723,14 +739,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[111] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "星の歌姫と小さな勇気",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "星の歌姫と小さな勇気",
+		auto_unlock = "",
+		subtype = 3,
 		id = 111,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			149,
 			150,
@@ -742,14 +759,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[112] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ワイワイお茶会",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ワイワイお茶会",
+		auto_unlock = "",
+		subtype = 3,
 		id = 112,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			156,
 			157,
@@ -761,14 +779,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[113] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "愛と平和の聖夜祭",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "愛と平和の聖夜祭",
+		auto_unlock = "",
+		subtype = 3,
 		id = 113,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			163,
 			164,
@@ -781,14 +800,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[114] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "謹賀新年",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "謹賀新年",
+		auto_unlock = "",
+		subtype = 3,
 		id = 114,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			171,
 			172,
@@ -800,14 +820,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[115] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "闇に堕ちた青き翼",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "闇に堕ちた青き翼",
+		auto_unlock = "",
+		subtype = 1,
 		id = 115,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			178,
 			179,
@@ -825,14 +846,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[116] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "夏(?)の大作戦",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "夏(?)の大作戦",
+		auto_unlock = "",
+		subtype = 3,
 		id = 116,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			189,
 			190,
@@ -844,14 +866,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[117] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "グラーフ・シュペー追撃戦",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "グラーフ・シュペー追撃戦",
+		auto_unlock = "",
+		subtype = 2,
 		id = 117,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			196,
 			197,
@@ -865,14 +888,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[118] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "別次元からの来訪者・日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "別次元からの来訪者・日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 118,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10036,
 			10037,
@@ -884,14 +908,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[119] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "別次元からの来訪者・ステージ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "別次元からの来訪者・ステージ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 119,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10043,
 			10044,
@@ -904,14 +929,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[120] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "四天王大冒険・鞍山編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "四天王大冒険・鞍山編",
+		auto_unlock = "",
+		subtype = 3,
 		id = 120,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			205,
 			206,
@@ -921,14 +947,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[121] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "四天王大冒険・撫順編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "四天王大冒険・撫順編",
+		auto_unlock = "",
+		subtype = 3,
 		id = 121,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			210,
 			211,
@@ -937,14 +964,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[122] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "春風の十字星",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "春風の十字星",
+		auto_unlock = "",
+		subtype = 3,
 		id = 122,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			214,
 			215,
@@ -956,14 +984,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[123] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "凛冽なりし冬の王冠",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "凛冽なりし冬の王冠",
+		auto_unlock = "",
+		subtype = 1,
 		id = 123,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			221,
 			222,
@@ -986,14 +1015,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[124] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "春のお花見大会",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "春のお花見大会",
+		auto_unlock = "",
+		subtype = 3,
 		id = 124,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			239,
 			240,
@@ -1005,14 +1035,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[125] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "桜華爛漫新学期",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "桜華爛漫新学期",
+		auto_unlock = "",
+		subtype = 3,
 		id = 125,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			253,
 			254,
@@ -1024,14 +1055,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[126] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "軍神の帰還",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "軍神の帰還",
+		auto_unlock = "",
+		subtype = 3,
 		id = 126,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10018,
 			10019,
@@ -1040,14 +1072,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[127] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "最近、綾波の様子が…？",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "最近、綾波の様子が…？",
+		auto_unlock = "",
+		subtype = 3,
 		id = 127,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10022,
 			10023,
@@ -1059,14 +1092,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[128] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "36年Z組ニーミ先生",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "36年Z組ニーミ先生",
+		auto_unlock = "",
+		subtype = 3,
 		id = 128,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10029,
 			10030,
@@ -1078,14 +1112,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[129] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "小さなめいどちょー",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "小さなめいどちょー",
+		auto_unlock = "",
+		subtype = 3,
 		id = 129,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			295,
 			296,
@@ -1094,14 +1129,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[130] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "夏の鍋大会！？",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "夏の鍋大会！？",
+		auto_unlock = "",
+		subtype = 3,
 		id = 130,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			315,
 			316,
@@ -1112,14 +1148,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[131] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "墨染まりし鋼の桜",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "墨染まりし鋼の桜",
+		auto_unlock = "",
+		subtype = 1,
 		id = 131,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10051,
 			10052,
@@ -1138,14 +1175,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[132] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "月夜の開幕曲 ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "月夜の開幕曲 ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 132,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10072,
 			10073,
@@ -1159,14 +1197,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[133] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "光と影のアイリス",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "光と影のアイリス",
+		auto_unlock = "",
+		subtype = 1,
 		id = 133,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			371,
 			372,
@@ -1182,14 +1221,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[134] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "白衣の天使or悪魔？",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "白衣の天使or悪魔？",
+		auto_unlock = "",
+		subtype = 3,
 		id = 134,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			382,
 			383,
@@ -1199,14 +1239,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[135] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "盛夏の射手座",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "盛夏の射手座",
+		auto_unlock = "",
+		subtype = 3,
 		id = 135,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			401,
 			402,
@@ -1217,14 +1258,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[136] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "三笠大先輩のミニ博物館",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "三笠大先輩のミニ博物館",
+		auto_unlock = "",
+		subtype = 3,
 		id = 136,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			407,
 			408,
@@ -1233,14 +1275,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[137] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "特別パーティー、開幕！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "特別パーティー、開幕！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 137,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			432,
 			433,
@@ -1250,14 +1293,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[138] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港の特別宴会",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "母港の特別宴会",
+		auto_unlock = "",
+		subtype = 3,
 		id = 138,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			437,
 			438,
@@ -1268,14 +1312,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[139] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "輝く☆バトルスター！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "輝く☆バトルスター！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 139,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			461,
 			462,
@@ -1284,14 +1329,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[140] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "戦え！ロイヤルメイド隊",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "戦え！ロイヤルメイド隊",
+		auto_unlock = "",
+		subtype = 2,
 		id = 140,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			466,
 			467,
@@ -1301,14 +1347,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[141] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "悪戯ハロウィン",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "悪戯ハロウィン",
+		auto_unlock = "",
+		subtype = 3,
 		id = 141,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			494,
 			495,
@@ -1320,14 +1367,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[142] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "夢幻の邂逅・ステージ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "夢幻の邂逅・ステージ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 142,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			522,
 			523,
@@ -1360,14 +1408,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[143] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "夢幻の邂逅・日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "夢幻の邂逅・日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 143,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			550,
 			551,
@@ -1379,14 +1428,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[144] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "夢幻の邂逅・スペシャル",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "夢幻の邂逅・スペシャル",
+		auto_unlock = "",
+		subtype = 2,
 		id = 144,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			557,
 			558,
@@ -1401,14 +1451,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[145] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "南洋に靡く硝煙",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "南洋に靡く硝煙",
+		auto_unlock = "",
+		subtype = 2,
 		id = 145,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			574,
 			575,
@@ -1424,14 +1475,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[146] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "オペレーション・クリスマス！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "オペレーション・クリスマス！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 146,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			592,
 			593,
@@ -1443,14 +1495,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[147] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "正月の祝福",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "正月の祝福",
+		auto_unlock = "",
+		subtype = 3,
 		id = 147,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			613,
 			614,
@@ -1462,14 +1515,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[148] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "縹映る深緋の残響",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "縹映る深緋の残響",
+		auto_unlock = "",
+		subtype = 1,
 		id = 148,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			620,
 			621,
@@ -1496,14 +1550,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[149] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ワイワイ旧正月！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ワイワイ旧正月！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 149,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			677,
 			678,
@@ -1515,14 +1570,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[150] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "特別演習・超空強襲波",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "特別演習・超空強襲波",
+		auto_unlock = "",
+		subtype = 2,
 		id = 150,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			684,
 			685,
@@ -1532,14 +1588,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[151] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "輝ける峡湾の星",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "輝ける峡湾の星",
+		auto_unlock = "",
+		subtype = 2,
 		id = 151,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			696,
 			697,
@@ -1556,14 +1613,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[152] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "「仮想繋げし共時性」-日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "「仮想繋げし共時性」-日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 152,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			728,
 			729,
@@ -1575,14 +1633,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[153] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "「仮想繋げし共時性」-スッキリ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "「仮想繋げし共時性」-スッキリ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 153,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			735,
 			736,
@@ -1591,14 +1650,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[154] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "「仮想繋げし共時性」-ステージ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "「仮想繋げし共時性」-ステージ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 154,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			739,
 			740,
@@ -1627,14 +1687,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[155] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港脱出作戦！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "母港脱出作戦！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 155,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			763,
 			764,
@@ -1644,14 +1705,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[156] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "小さな約束",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "小さな約束",
+		auto_unlock = "",
+		subtype = 1,
 		id = 156,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			775,
 			776,
@@ -1659,14 +1721,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[157] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "理科実験タイム！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "理科実験タイム！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 157,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			792,
 			793,
@@ -1676,14 +1739,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[158] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "黒鉄の楽章、誓いの海",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "黒鉄の楽章、誓いの海",
+		auto_unlock = "",
+		subtype = 1,
 		id = 158,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			797,
 			798,
@@ -1709,14 +1773,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[159] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "平和に祈りを",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "平和に祈りを",
+		auto_unlock = "",
+		subtype = 3,
 		id = 159,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			818,
 			819,
@@ -1728,14 +1793,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[160] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "月刊マンガJavelin",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "月刊マンガJavelin",
+		auto_unlock = "",
+		subtype = 3,
 		id = 160,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			825,
 			826,
@@ -1745,14 +1811,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[161] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "隅っこのヒマワリ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "隅っこのヒマワリ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 161,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			840,
 			841,
@@ -1761,14 +1828,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[162] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "迫りくる嵐",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "迫りくる嵐",
+		auto_unlock = "",
+		subtype = 1,
 		id = 162,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			830,
 			831,
@@ -1783,14 +1851,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[163] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "開かれし紺碧の砂箱",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "開かれし紺碧の砂箱",
+		auto_unlock = "",
+		subtype = 1,
 		id = 163,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			851,
 			852,
@@ -1828,14 +1897,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[164] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "青い海のアイドル",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "青い海のアイドル",
+		auto_unlock = "",
+		subtype = 3,
 		id = 164,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			884,
 			885,
@@ -1845,52 +1915,55 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[165] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "みんなの夏祭り",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "みんなの夏祭り",
+		auto_unlock = "",
+		subtype = 3,
 		id = 165,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			889,
 			890
 		}
 	}
 	pg.base.memory_group[166] = {
+		ship_group = 0,
+		group_id = "",
+		type = 4,
+		link_event = 0,
+		title = "SPストーリー",
 		auto_unlock = "",
 		subtype = 0,
-		title = "SPストーリー",
-		type = 3,
-		link_event = 0,
-		icon = "title_chara_rongyaodiantang",
 		id = 166,
-		group_id = "",
+		icon = "title_chara_rongyaodiantang",
 		memories = {
-			891,
 			892,
+			891,
 			894,
 			1871,
 			1872,
 			1873,
 			3212,
-			3215,
 			3216,
-			4831,
+			3215,
 			4833,
+			4831,
 			4836
 		}
 	}
 	pg.base.memory_group[167] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "悲歎せし焔海の詩",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "悲歎せし焔海の詩",
+		auto_unlock = "",
+		subtype = 1,
 		id = 167,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			907,
 			908,
@@ -1918,14 +1991,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[168] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "シンプルパーティー？",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "シンプルパーティー？",
+		auto_unlock = "",
+		subtype = 3,
 		id = 168,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			930,
 			931,
@@ -1934,14 +2008,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[169] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "交錯する新たな波",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "交錯する新たな波",
+		auto_unlock = "",
+		subtype = 2,
 		id = 169,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			934,
 			935,
@@ -1951,14 +2026,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[170] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "鉄血鮫とエニグマ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "鉄血鮫とエニグマ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 170,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			940,
 			941,
@@ -1973,14 +2049,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[171] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "カオティック・ハロウィンナイト",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "カオティック・ハロウィンナイト",
+		auto_unlock = "",
+		subtype = 3,
 		id = 171,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			950,
 			951,
@@ -1990,14 +2067,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[172] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "激奏のポラリス",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "激奏のポラリス",
+		auto_unlock = "",
+		subtype = 2,
 		id = 172,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			960,
 			961,
@@ -2026,14 +2104,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[173] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "ある日のポラリス",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ある日のポラリス",
+		auto_unlock = "",
+		subtype = 2,
 		id = 173,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			990,
 			991,
@@ -2041,14 +2120,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[174] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "「幻想と真実の二重奏」-ステージ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "「幻想と真実の二重奏」-ステージ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 174,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			995,
 			996,
@@ -2104,14 +2184,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[175] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "「幻想と真実の二重奏」-日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "「幻想と真実の二重奏」-日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 175,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1046,
 			1047,
@@ -2126,14 +2207,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[176] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "クリスマスパーティー！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "クリスマスパーティー！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 176,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1056,
 			1057,
@@ -2143,14 +2225,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[177] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "翳りし満ちる影の華",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "翳りし満ちる影の華",
+		auto_unlock = "",
+		subtype = 1,
 		id = 177,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1061,
 			1062,
@@ -2183,14 +2266,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[178] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "あけおめ2020",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "あけおめ2020",
+		auto_unlock = "",
+		subtype = 3,
 		id = 178,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1091,
 			1092,
@@ -2200,14 +2284,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[179] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "戦え！ロイヤルメイド2nd",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "戦え！ロイヤルメイド2nd",
+		auto_unlock = "",
+		subtype = 2,
 		id = 179,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1096,
 			1097,
@@ -2217,14 +2302,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[180] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "新春パーティー",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "新春パーティー",
+		auto_unlock = "",
+		subtype = 3,
 		id = 180,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1101,
 			1102,
@@ -2233,14 +2319,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[181] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "凍絶の北海",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "凍絶の北海",
+		auto_unlock = "",
+		subtype = 1,
 		id = 181,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1110,
 			1111,
@@ -2277,14 +2364,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[182] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "闇靄接近",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "闇靄接近",
+		auto_unlock = "",
+		subtype = 1,
 		id = 182,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1149,
 			1150,
@@ -2293,14 +2381,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[183] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "闇靄払う銀翼 ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "闇靄払う銀翼 ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 183,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1153,
 			1154,
@@ -2340,14 +2429,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[184] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ブリと黄金の秘宝",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ブリと黄金の秘宝",
+		auto_unlock = "",
+		subtype = 3,
 		id = 184,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1188,
 			1189,
@@ -2356,14 +2446,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[185] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "帰路は海色の陰りへと",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "帰路は海色の陰りへと",
+		auto_unlock = "",
+		subtype = 2,
 		id = 185,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1211,
 			1212,
@@ -2377,14 +2468,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[186] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "神穹を衝く聖歌",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "神穹を衝く聖歌",
+		auto_unlock = "",
+		subtype = 1,
 		id = 186,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1231,
 			1232,
@@ -2423,14 +2515,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[187] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "峡湾間の反撃",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "峡湾間の反撃",
+		auto_unlock = "",
+		subtype = 2,
 		id = 187,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1265,
 			1266,
@@ -2448,14 +2541,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[188] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "極夜照らす幻光  ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "極夜照らす幻光  ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 188,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1281,
 			1282,
@@ -2500,14 +2594,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[189] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "刹那觀る胡蝶の夢",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "刹那觀る胡蝶の夢",
+		auto_unlock = "",
+		subtype = 1,
 		id = 189,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1341,
 			1342,
@@ -2554,14 +2649,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[190] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "奔る彩帆の青",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "奔る彩帆の青",
+		auto_unlock = "",
+		subtype = 2,
 		id = 190,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1386,
 			1387,
@@ -2576,14 +2672,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[191] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "激唱のユニバース",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "激唱のユニバース",
+		auto_unlock = "",
+		subtype = 2,
 		id = 191,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1411,
 			1412,
@@ -2610,14 +2707,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[192] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "バケーションレーン-ステージ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "バケーションレーン-ステージ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 192,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1436,
 			1437,
@@ -2638,14 +2736,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[193] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "バケーションレーン-日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "バケーションレーン-日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 193,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1452,
 			1453,
@@ -2654,14 +2753,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[194] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "虚畳なりし限象",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "虚畳なりし限象",
+		auto_unlock = "",
+		subtype = 1,
 		id = 194,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1481,
 			1482,
@@ -2701,14 +2801,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[195] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "暁射す氷華の嵐",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "暁射す氷華の嵐",
+		auto_unlock = "",
+		subtype = 1,
 		id = 195,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1530,
 			1531,
@@ -2744,14 +2845,15 @@ pg.base.memory_group = {}
 		}
 	}
 	pg.base.memory_group[196] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "讃える復興の迷路",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "讃える復興の迷路",
+		auto_unlock = "",
+		subtype = 1,
 		id = 196,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1601,
 			1602,
@@ -2793,14 +2895,15 @@ pg.base.memory_group = {}
 end)()
 ;(function()
 	pg.base.memory_group[197] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "再現記録",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "再現記録",
+		auto_unlock = "",
+		subtype = 1,
 		id = 197,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1661,
 			1662,
@@ -2809,14 +2912,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[198] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "照らす螺旋の鏡海",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "照らす螺旋の鏡海",
+		auto_unlock = "",
+		subtype = 1,
 		id = 198,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1681,
 			1682,
@@ -2854,14 +2958,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[199] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "海に響くアイドルの歌-日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "海に響くアイドルの歌-日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 199,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1746,
 			1747,
@@ -2870,14 +2975,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[200] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "海に響くアイドルの歌-ステージ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "海に響くアイドルの歌-ステージ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 200,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1751,
 			1752,
@@ -2898,14 +3004,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[201] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "『装甲騎兵ボトムズ』コラボシナリオ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "『装甲騎兵ボトムズ』コラボシナリオ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 201,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			10065,
 			10066,
@@ -2917,14 +3024,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[202] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "駆けよ 碧海の吹き風",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5069,
-		icon = "title_event",
+		title = "駆けよ 碧海の吹き風",
+		auto_unlock = "",
+		subtype = 1,
 		id = 202,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1801,
 			1802,
@@ -2964,14 +3072,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[203] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "燈火のシニエ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "燈火のシニエ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 203,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1881,
 			1882,
@@ -2988,14 +3097,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[204] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "弧光は交わる世界にて-ステージ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4932,
-		icon = "title_event",
+		title = "弧光は交わる世界にて-ステージ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 204,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1896,
 			1897,
@@ -3025,14 +3135,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[205] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "弧光は交わる世界にて-日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4933,
-		icon = "title_event",
+		title = "弧光は交わる世界にて-日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 205,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1921,
 			1922,
@@ -3041,14 +3152,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[206] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "炭酸と紅茶",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "炭酸と紅茶",
+		auto_unlock = "",
+		subtype = 3,
 		id = 206,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1926,
 			1927,
@@ -3065,14 +3177,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[207] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "遡望せし虹彩の塔",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "遡望せし虹彩の塔",
+		auto_unlock = "",
+		subtype = 1,
 		id = 207,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1941,
 			1942,
@@ -3114,14 +3227,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[208] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "名状しがたき演習事件",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "名状しがたき演習事件",
+		auto_unlock = "",
+		subtype = 2,
 		id = 208,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1980,
 			1981,
@@ -3131,14 +3245,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[209] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "春節遊園撮影会",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "春節遊園撮影会",
+		auto_unlock = "",
+		subtype = 3,
 		id = 209,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			1985,
 			1986,
@@ -3150,14 +3265,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[210] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "絶海前話",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "絶海前話",
+		auto_unlock = "",
+		subtype = 1,
 		id = 210,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2002,
 			2003,
@@ -3166,14 +3282,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[211] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "鳴動せし星霜の淵",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "鳴動せし星霜の淵",
+		auto_unlock = "",
+		subtype = 1,
 		id = 211,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2006,
 			2007,
@@ -3211,14 +3328,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[212] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "幻像の塔・発見編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "幻像の塔・発見編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 212,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2050,
 			2051,
@@ -3234,28 +3352,30 @@ end)()
 		}
 	}
 	pg.base.memory_group[213] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ブリの誓い",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ブリの誓い",
+		auto_unlock = "",
+		subtype = 3,
 		id = 213,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2061,
 			2062
 		}
 	}
 	pg.base.memory_group[214] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "永き城の麗しき影",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "永き城の麗しき影",
+		auto_unlock = "",
+		subtype = 3,
 		id = 214,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2071,
 			2072,
@@ -3267,14 +3387,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[215] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "吟ずる瑠璃の楽章",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "吟ずる瑠璃の楽章",
+		auto_unlock = "",
+		subtype = 1,
 		id = 215,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2081,
 			2082,
@@ -3313,14 +3434,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[216] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "慶弔と帰路",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "慶弔と帰路",
+		auto_unlock = "",
+		subtype = 1,
 		id = 216,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2116,
 			2117,
@@ -3329,14 +3451,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[217] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "風変わりなメイドたち",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "風変わりなメイドたち",
+		auto_unlock = "",
+		subtype = 3,
 		id = 217,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2128,
 			2129,
@@ -3344,14 +3467,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[218] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "誠閃の剣　搖光の城",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "誠閃の剣　搖光の城",
+		auto_unlock = "",
+		subtype = 1,
 		id = 218,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2131,
 			2132,
@@ -3392,14 +3516,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[219] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "雅なる宴",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "雅なる宴",
+		auto_unlock = "",
+		subtype = 3,
 		id = 219,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2167,
 			2168,
@@ -3408,14 +3533,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[220] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "御伽の森冒険記",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "御伽の森冒険記",
+		auto_unlock = "",
+		subtype = 3,
 		id = 220,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2181,
 			2182,
@@ -3426,14 +3552,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[221] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "アイリスの天使",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "アイリスの天使",
+		auto_unlock = "",
+		subtype = 1,
 		id = 221,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2191,
 			2192,
@@ -3445,14 +3572,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[222] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "開け！世界博覧会",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "開け！世界博覧会",
+		auto_unlock = "",
+		subtype = 1,
 		id = 222,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2211,
 			2212,
@@ -3464,14 +3592,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[223] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "鋼鷲の冒険譚",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "鋼鷲の冒険譚",
+		auto_unlock = "",
+		subtype = 1,
 		id = 223,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2221,
 			2222,
@@ -3513,14 +3642,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[224] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "結像点作戦",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "結像点作戦",
+		auto_unlock = "",
+		subtype = 1,
 		id = 224,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2271,
 			2272,
@@ -3541,14 +3671,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[225] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "静海遠雷",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "静海遠雷",
+		auto_unlock = "",
+		subtype = 1,
 		id = 225,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2291,
 			2292,
@@ -3560,14 +3691,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[226] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "赫の涙月　菫の暁風",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "赫の涙月　菫の暁風",
+		auto_unlock = "",
+		subtype = 1,
 		id = 226,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2301,
 			2302,
@@ -3611,14 +3743,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[227] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "勇者の旅路",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "勇者の旅路",
+		auto_unlock = "",
+		subtype = 2,
 		id = 227,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2351,
 			2352,
@@ -3628,14 +3761,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[228] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "シュペーちゃん追撃戦？",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "シュペーちゃん追撃戦？",
+		auto_unlock = "",
+		subtype = 2,
 		id = 228,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2361,
 			2362,
@@ -3643,14 +3777,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[229] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "戦え！ロイヤルメイド隊？",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "戦え！ロイヤルメイド隊？",
+		auto_unlock = "",
+		subtype = 3,
 		id = 229,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2378,
 			2379,
@@ -3660,14 +3795,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[230] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "ハロウィンの遭遇",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ハロウィンの遭遇",
+		auto_unlock = "",
+		subtype = 2,
 		id = 230,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2383,
 			2384,
@@ -3678,14 +3814,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[231] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "錬金術士と謎の遺跡群島-「日常編」",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4584,
-		icon = "title_event",
+		title = "錬金術士と謎の遺跡群島-「日常編」",
+		auto_unlock = "",
+		subtype = 2,
 		id = 231,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2401,
 			2402,
@@ -3697,14 +3834,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[232] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "錬金術士と謎の遺跡群島-「ステージ編」",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4580,
-		icon = "title_event",
+		title = "錬金術士と謎の遺跡群島-「ステージ編」",
+		auto_unlock = "",
+		subtype = 2,
 		id = 232,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2411,
 			2412,
@@ -3735,14 +3873,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[233] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "分極する空想の因果",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4597,
-		icon = "title_event",
+		title = "分極する空想の因果",
+		auto_unlock = "",
+		subtype = 1,
 		id = 233,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2441,
 			2442,
@@ -3754,14 +3893,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[234] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "水辺の休日",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4618,
-		icon = "title_event",
+		title = "水辺の休日",
+		auto_unlock = "",
+		subtype = 3,
 		id = 234,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2461,
 			2462,
@@ -3773,14 +3913,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[235] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "積重なる事象の幻界",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4607,
-		icon = "title_event",
+		title = "積重なる事象の幻界",
+		auto_unlock = "",
+		subtype = 1,
 		id = 235,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2471,
 			2472,
@@ -3820,14 +3961,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[236] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ウィンター・パスファインダー",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ウィンター・パスファインダー",
+		auto_unlock = "",
+		subtype = 3,
 		id = 236,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2521,
 			2522,
@@ -3837,14 +3979,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[237] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "春節2023",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "春節2023",
+		auto_unlock = "",
+		subtype = 3,
 		id = 237,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2531,
 			2532,
@@ -3853,14 +3996,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[238] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "華彩舞い上がる新春",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "華彩舞い上がる新春",
+		auto_unlock = "",
+		subtype = 3,
 		id = 238,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2541,
 			2542,
@@ -3868,14 +4012,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[239] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "女王の一日",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "女王の一日",
+		auto_unlock = "",
+		subtype = 1,
 		id = 239,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2551,
 			2552,
@@ -3887,14 +4032,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[240] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "黙示の遺構",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "黙示の遺構",
+		auto_unlock = "",
+		subtype = 1,
 		id = 240,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2571,
 			2572,
@@ -3929,14 +4075,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[241] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "星霜海嵐",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "星霜海嵐",
+		auto_unlock = "",
+		subtype = 1,
 		id = 241,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2611,
 			2612,
@@ -3960,14 +4107,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[242] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "雪見温泉の招待状",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "雪見温泉の招待状",
+		auto_unlock = "",
+		subtype = 3,
 		id = 242,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2631,
 			2632,
@@ -3977,14 +4125,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[243] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "一撃！PURIN！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "一撃！PURIN！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 243,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2641,
 			2642,
@@ -3992,14 +4141,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[244] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "凶兆のアクム",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "凶兆のアクム",
+		auto_unlock = "",
+		subtype = 1,
 		id = 244,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2661,
 			2662,
@@ -4011,14 +4161,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[245] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "覆天せし万象の塵",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "覆天せし万象の塵",
+		auto_unlock = "",
+		subtype = 1,
 		id = 245,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2671,
 			2672,
@@ -4060,14 +4211,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[246] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "潮風と夏の無人島",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "潮風と夏の無人島",
+		auto_unlock = "",
+		subtype = 2,
 		id = 246,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2711,
 			2712,
@@ -4106,40 +4258,43 @@ end)()
 		}
 	}
 	pg.base.memory_group[247] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "清茶馥郁",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "清茶馥郁",
+		auto_unlock = "",
+		subtype = 3,
 		id = 247,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2751
 		}
 	}
 	pg.base.memory_group[248] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "飛仙にあやかりて",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "飛仙にあやかりて",
+		auto_unlock = "",
+		subtype = 3,
 		id = 248,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2781
 		}
 	}
 	pg.base.memory_group[249] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "緑地伽話",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4915,
-		icon = "title_event",
+		title = "緑地伽話",
+		auto_unlock = "",
+		subtype = 1,
 		id = 249,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2791,
 			2792,
@@ -4149,14 +4304,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[250] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "オフィス・ドリーム",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4919,
-		icon = "title_event",
+		title = "オフィス・ドリーム",
+		auto_unlock = "",
+		subtype = 3,
 		id = 250,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2801,
 			2802,
@@ -4164,14 +4320,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[251] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "燃ゆる聖都の回想曲",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4940,
-		icon = "title_event",
+		title = "燃ゆる聖都の回想曲",
+		auto_unlock = "",
+		subtype = 1,
 		id = 251,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2820,
 			2821,
@@ -4186,14 +4343,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[252] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "博覧会の夜",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4951,
-		icon = "title_event",
+		title = "博覧会の夜",
+		auto_unlock = "",
+		subtype = 1,
 		id = 252,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2841,
 			2842,
@@ -4205,14 +4363,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[253] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "パーティー・ウィズ・アイリス",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4963,
-		icon = "title_event",
+		title = "パーティー・ウィズ・アイリス",
+		auto_unlock = "",
+		subtype = 2,
 		id = 253,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2851,
 			2852,
@@ -4234,14 +4393,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[254] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "愚者の天秤",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4967,
-		icon = "title_event",
+		title = "愚者の天秤",
+		auto_unlock = "",
+		subtype = 1,
 		id = 254,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2871,
 			2872,
@@ -4291,14 +4451,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[255] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "薫風の招待状",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4962,
-		icon = "title_event",
+		title = "薫風の招待状",
+		auto_unlock = "",
+		subtype = 3,
 		id = 255,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2921,
 			2922,
@@ -4306,14 +4467,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[256] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "暁夜半宵",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4974,
-		icon = "title_event",
+		title = "暁夜半宵",
+		auto_unlock = "",
+		subtype = 1,
 		id = 256,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2951,
 			2952,
@@ -4325,14 +4487,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[257] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "須臾望月抄",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5001,
-		icon = "title_event",
+		title = "須臾望月抄",
+		auto_unlock = "",
+		subtype = 1,
 		id = 257,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			2961,
 			2962,
@@ -4371,14 +4534,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[258] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港着せ替え特集！その①",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5009,
-		icon = "title_event",
+		title = "母港着せ替え特集！その①",
+		auto_unlock = "",
+		subtype = 3,
 		id = 258,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3001,
 			3002,
@@ -4388,14 +4552,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[259] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "温泉街神隠し事件",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 4990,
-		icon = "title_event",
+		title = "温泉街神隠し事件",
+		auto_unlock = "",
+		subtype = 2,
 		id = 259,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3011,
 			3012,
@@ -4412,14 +4577,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[260] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港着せ替え特集！その②",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5015,
-		icon = "title_event",
+		title = "母港着せ替え特集！その②",
+		auto_unlock = "",
+		subtype = 3,
 		id = 260,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3031,
 			3032,
@@ -4427,14 +4593,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[261] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "レーシング・ステージ！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5019,
-		icon = "title_event",
+		title = "レーシング・ステージ！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 261,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3041,
 			3042,
@@ -4444,14 +4611,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[262] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "ロイヤル・フォーチュンの秘密造船所",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5023,
-		icon = "title_event",
+		title = "ロイヤル・フォーチュンの秘密造船所",
+		auto_unlock = "",
+		subtype = 2,
 		id = 262,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3061,
 			3062,
@@ -4464,14 +4632,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[263] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "テンペスタと若返りの泉",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5051,
-		icon = "title_event",
+		title = "テンペスタと若返りの泉",
+		auto_unlock = "",
+		subtype = 2,
 		id = 263,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3071,
 			3072,
@@ -4504,14 +4673,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[264] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "嵐夜綺譚",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5054,
-		icon = "title_event",
+		title = "嵐夜綺譚",
+		auto_unlock = "",
+		subtype = 3,
 		id = 264,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3101,
 			3102,
@@ -4544,14 +4714,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[265] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "今日の一押しは？",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5082,
-		icon = "title_event",
+		title = "今日の一押しは？",
+		auto_unlock = "",
+		subtype = 3,
 		id = 265,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3141,
 			3142,
@@ -4559,14 +4730,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[266] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "蒼閃忍法帖-ステージ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5101,
-		icon = "title_event",
+		title = "蒼閃忍法帖-ステージ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 266,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3151,
 			3152,
@@ -4595,14 +4767,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[267] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "蒼閃忍法帖-日常",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5096,
-		icon = "title_event",
+		title = "蒼閃忍法帖-日常",
+		auto_unlock = "",
+		subtype = 2,
 		id = 267,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3181,
 			3182,
@@ -4614,14 +4787,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[268] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "人気投票2023",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 1068,
-		icon = "title_event",
+		title = "人気投票2023",
+		auto_unlock = "",
+		subtype = 3,
 		id = 268,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3191,
 			3192,
@@ -4643,14 +4817,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[269] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "星凪の空",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5105,
-		icon = "title_event",
+		title = "星凪の空",
+		auto_unlock = "",
+		subtype = 1,
 		id = 269,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3221,
 			3222,
@@ -4662,14 +4837,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[270] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "光追う星の海",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5131,
-		icon = "title_event",
+		title = "光追う星の海",
+		auto_unlock = "",
+		subtype = 1,
 		id = 270,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3228,
 			3229,
@@ -4711,14 +4887,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[271] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港ナイト",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5143,
-		icon = "title_event",
+		title = "母港ナイト",
+		auto_unlock = "",
+		subtype = 3,
 		id = 271,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3272,
 			3273,
@@ -4727,14 +4904,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[272] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港着せ替え特集！その③",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5150,
-		icon = "title_event",
+		title = "母港着せ替え特集！その③",
+		auto_unlock = "",
+		subtype = 3,
 		id = 272,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3281,
 			3282,
@@ -4742,14 +4920,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[273] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "新春宴会狂騒曲",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5178,
-		icon = "title_event",
+		title = "新春宴会狂騒曲",
+		auto_unlock = "",
+		subtype = 3,
 		id = 273,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3301,
 			3302,
@@ -4759,14 +4938,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[274] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "スプリング冒険キング",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5178,
-		icon = "title_event",
+		title = "スプリング冒険キング",
+		auto_unlock = "",
+		subtype = 3,
 		id = 274,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3311,
 			3312,
@@ -4774,14 +4954,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[275] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "着せ替え特集　春節2023　①",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5184,
-		icon = "title_event",
+		title = "着せ替え特集　春節2023　①",
+		auto_unlock = "",
+		subtype = 3,
 		id = 275,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3331,
 			3332,
@@ -4789,14 +4970,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[276] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "着せ替え特集　春節2023　②",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5184,
-		icon = "title_event",
+		title = "着せ替え特集　春節2023　②",
+		auto_unlock = "",
+		subtype = 3,
 		id = 276,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3341,
 			3342,
@@ -4804,14 +4986,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[277] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "銀嶺烟霞",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5212,
-		icon = "title_event",
+		title = "銀嶺烟霞",
+		auto_unlock = "",
+		subtype = 1,
 		id = 277,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3361,
 			3362,
@@ -4824,14 +5007,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[278] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "銀界遊廻",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5221,
-		icon = "title_event",
+		title = "銀界遊廻",
+		auto_unlock = "",
+		subtype = 1,
 		id = 278,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3370,
 			3371,
@@ -4870,14 +5054,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[279] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "電影不夜城",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5224,
-		icon = "title_event",
+		title = "電影不夜城",
+		auto_unlock = "",
+		subtype = 3,
 		id = 279,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3411,
 			3412,
@@ -4890,14 +5075,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[280] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "バードの詩",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5243,
-		icon = "title_event",
+		title = "バードの詩",
+		auto_unlock = "",
+		subtype = 2,
 		id = 280,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3431,
 			3432,
@@ -4907,14 +5093,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[281] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "ゼロから頑張る魔王討伐",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5265,
-		icon = "title_event",
+		title = "ゼロから頑張る魔王討伐",
+		auto_unlock = "",
+		subtype = 2,
 		id = 281,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3441,
 			3442,
@@ -4947,14 +5134,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[282] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "蘇るゴールデン",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5267,
-		icon = "title_event",
+		title = "蘇るゴールデン",
+		auto_unlock = "",
+		subtype = 2,
 		id = 282,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3471,
 			3472,
@@ -4962,14 +5150,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[283] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "彼岸のレドレント",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5305,
-		icon = "title_event",
+		title = "彼岸のレドレント",
+		auto_unlock = "",
+		subtype = 1,
 		id = 283,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3491,
 			3492,
@@ -4981,14 +5170,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[284] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "共鳴のパッション",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5301,
-		icon = "title_event",
+		title = "共鳴のパッション",
+		auto_unlock = "",
+		subtype = 2,
 		id = 284,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3500,
 			3501,
@@ -5010,14 +5200,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[285] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "着せ替え特集  一味違う日常",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5311,
-		icon = "title_event",
+		title = "着せ替え特集  一味違う日常",
+		auto_unlock = "",
+		subtype = 3,
 		id = 285,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3520,
 			3521,
@@ -5025,14 +5216,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[286] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "出航せよ母港クルーズ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5324,
-		icon = "title_event",
+		title = "出航せよ母港クルーズ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 286,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3541,
 			3542,
@@ -5042,14 +5234,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[287] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "彼方の響",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5341,
-		icon = "title_event",
+		title = "彼方の響",
+		auto_unlock = "",
+		subtype = 1,
 		id = 287,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3551,
 			3552,
@@ -5061,14 +5254,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[288] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "トキメク休日大航海",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5335,
-		icon = "title_event",
+		title = "トキメク休日大航海",
+		auto_unlock = "",
+		subtype = 3,
 		id = 288,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3561,
 			3562,
@@ -5119,14 +5313,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[289] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "赫輝のマルティリウム",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5331,
-		icon = "title_event",
+		title = "赫輝のマルティリウム",
+		auto_unlock = "",
+		subtype = 1,
 		id = 289,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3610,
 			3611,
@@ -5166,40 +5361,43 @@ end)()
 		}
 	}
 	pg.base.memory_group[290] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "翠園佳繍",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5360,
-		icon = "title_event",
+		title = "翠園佳繍",
+		auto_unlock = "",
+		subtype = 3,
 		id = 290,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3651
 		}
 	}
 	pg.base.memory_group[291] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "悠然碧海行",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5364,
-		icon = "title_event",
+		title = "悠然碧海行",
+		auto_unlock = "",
+		subtype = 3,
 		id = 291,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3661
 		}
 	}
 	pg.base.memory_group[292] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "リトル学園へようこそ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5402,
-		icon = "title_event",
+		title = "リトル学園へようこそ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 292,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3681,
 			3682,
@@ -5214,14 +5412,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[293] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "夢幻の間奏曲",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5501,
-		icon = "title_event",
+		title = "夢幻の間奏曲",
+		auto_unlock = "",
+		subtype = 1,
 		id = 293,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3701,
 			3702,
@@ -5236,14 +5435,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[294] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "着せ替え特集  サマーレース",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5504,
-		icon = "title_event",
+		title = "着せ替え特集  サマーレース",
+		auto_unlock = "",
+		subtype = 3,
 		id = 294,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3711,
 			3712,
@@ -5251,14 +5451,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[295] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "朱染断章",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5512,
-		icon = "title_event",
+		title = "朱染断章",
+		auto_unlock = "",
+		subtype = 1,
 		id = 295,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3731,
 			3732,
@@ -5270,14 +5471,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[296] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "錬翼空翔",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5521,
-		icon = "title_event",
+		title = "錬翼空翔",
+		auto_unlock = "",
+		subtype = 1,
 		id = 296,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3741,
 			3742,
@@ -5321,14 +5523,15 @@ end)()
 end)()
 ;(function()
 	pg.base.memory_group[297] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "荒野休日開拓記",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5523,
-		icon = "title_event",
+		title = "荒野休日開拓記",
+		auto_unlock = "",
+		subtype = 3,
 		id = 297,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3781,
 			3782,
@@ -5351,14 +5554,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[298] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "徒花咲かす彼岸",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5541,
-		icon = "title_event",
+		title = "徒花咲かす彼岸",
+		auto_unlock = "",
+		subtype = 1,
 		id = 298,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3811,
 			3812,
@@ -5376,14 +5580,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[299] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "風塵積もる此岸",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5551,
-		icon = "title_event",
+		title = "風塵積もる此岸",
+		auto_unlock = "",
+		subtype = 1,
 		id = 299,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3831,
 			3832,
@@ -5395,14 +5600,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[300] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "楽園の開始符",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5548,
-		icon = "title_event",
+		title = "楽園の開始符",
+		auto_unlock = "",
+		subtype = 2,
 		id = 300,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3841,
 			3842,
@@ -5412,14 +5618,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[301] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "ドリームランド・ドリームデイズ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5560,
-		icon = "title_event",
+		title = "ドリームランド・ドリームデイズ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 301,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3851,
 			3852,
@@ -5443,14 +5650,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[302] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "絳染む丹華の詠歌",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5562,
-		icon = "title_event",
+		title = "絳染む丹華の詠歌",
+		auto_unlock = "",
+		subtype = 1,
 		id = 302,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3871,
 			3872,
@@ -5492,53 +5700,57 @@ end)()
 		}
 	}
 	pg.base.memory_group[303] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ハート・ダンシング",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5581,
-		icon = "title_event",
+		title = "ハート・ダンシング",
+		auto_unlock = "",
+		subtype = 3,
 		id = 303,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3908
 		}
 	}
 	pg.base.memory_group[304] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "寮舎新館計画だにゃ！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "寮舎新館計画だにゃ！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 304,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3921
 		}
 	}
 	pg.base.memory_group[305] = {
-		auto_unlock = "",
-		subtype = 0,
-		title = "艦船通信、新装テスト！",
+		ship_group = 0,
+		group_id = "",
 		type = 1,
 		link_event = 0,
-		icon = "title_event",
+		title = "艦船通信、新装テスト！",
+		auto_unlock = "",
+		subtype = 0,
 		id = 305,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3941
 		}
 	}
 	pg.base.memory_group[306] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "テンペスタと眠りし海",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5625,
-		icon = "title_event",
+		title = "テンペスタと眠りし海",
+		auto_unlock = "",
+		subtype = 2,
 		id = 306,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3951,
 			3952,
@@ -5565,14 +5777,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[307] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港休日ハロウィン",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5623,
-		icon = "title_event",
+		title = "母港休日ハロウィン",
+		auto_unlock = "",
+		subtype = 3,
 		id = 307,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			3981,
 			3982,
@@ -5585,14 +5798,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[309] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "危険発明接近中！-ステージ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5679,
-		icon = "title_event",
+		title = "危険発明接近中！-ステージ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 309,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4021,
 			4022,
@@ -5614,14 +5828,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[310] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "危険発明接近中！-日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5681,
-		icon = "title_event",
+		title = "危険発明接近中！-日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 310,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4041,
 			4042,
@@ -5632,14 +5847,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[311] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "危険発明接近中！-依頼編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5691,
-		icon = "title_event",
+		title = "危険発明接近中！-依頼編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 311,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4051,
 			4052,
@@ -5652,14 +5868,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[312] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "領域外からの帰還",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5699,
-		icon = "title_event",
+		title = "領域外からの帰還",
+		auto_unlock = "",
+		subtype = 1,
 		id = 312,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4071,
 			4072,
@@ -5673,14 +5890,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[313] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "星降る夕影の残光",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5711,
-		icon = "title_event",
+		title = "星降る夕影の残光",
+		auto_unlock = "",
+		subtype = 1,
 		id = 313,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4081,
 			4082,
@@ -5718,14 +5936,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[314] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ゲーミング・ナイト！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5721,
-		icon = "title_event",
+		title = "ゲーミング・ナイト！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 314,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4121,
 			4122,
@@ -5736,14 +5955,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[315] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ゲーミング・ナイト！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5735,
-		icon = "title_event",
+		title = "ゲーミング・ナイト！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 315,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4131,
 			4132,
@@ -5753,14 +5973,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[316] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "新春華裳協奏曲",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5777,
-		icon = "title_event",
+		title = "新春華裳協奏曲",
+		auto_unlock = "",
+		subtype = 3,
 		id = 316,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4151,
 			4152,
@@ -5769,14 +5990,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[317] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "新春華裳協奏曲",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5772,
-		icon = "title_event",
+		title = "新春華裳協奏曲",
+		auto_unlock = "",
+		subtype = 3,
 		id = 317,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4161,
 			4162,
@@ -5786,14 +6008,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[318] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "新春華裳協奏曲",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5790,
-		icon = "title_event",
+		title = "新春華裳協奏曲",
+		auto_unlock = "",
+		subtype = 3,
 		id = 318,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4171,
 			4172,
@@ -5802,14 +6025,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[319] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "被選者の道",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5809,
-		icon = "title_event",
+		title = "被選者の道",
+		auto_unlock = "",
+		subtype = 1,
 		id = 319,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4191,
 			4192,
@@ -5821,14 +6045,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[320] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "籠檻に囚われし神光",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5821,
-		icon = "title_event",
+		title = "籠檻に囚われし神光",
+		auto_unlock = "",
+		subtype = 1,
 		id = 320,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4201,
 			4202,
@@ -5869,14 +6094,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[321] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ナイル文化展",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5830,
-		icon = "title_event",
+		title = "ナイル文化展",
+		auto_unlock = "",
+		subtype = 3,
 		id = 321,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4241,
 			4242,
@@ -5885,14 +6111,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[322] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "病院探訪",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5871,
-		icon = "title_event",
+		title = "病院探訪",
+		auto_unlock = "",
+		subtype = 2,
 		id = 322,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4261,
 			4262,
@@ -5908,14 +6135,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[323] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "ブリ戦隊と母港暗黒コーポ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5879,
-		icon = "title_event",
+		title = "ブリ戦隊と母港暗黒コーポ",
+		auto_unlock = "",
+		subtype = 2,
 		id = 323,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4281,
 			4282,
@@ -5923,14 +6151,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[324] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港着せ替え特集:春のんびり",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5911,
-		icon = "title_event",
+		title = "母港着せ替え特集:春のんびり",
+		auto_unlock = "",
+		subtype = 3,
 		id = 324,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4301,
 			4302,
@@ -5939,14 +6168,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[325] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "チュリッパの海へ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5901,
-		icon = "title_event",
+		title = "チュリッパの海へ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 325,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4311,
 			4312,
@@ -5959,14 +6189,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[326] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "リゾート準備中",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5924,
-		icon = "title_event",
+		title = "リゾート準備中",
+		auto_unlock = "",
+		subtype = 2,
 		id = 326,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4331,
 			4332,
@@ -5976,14 +6207,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[327] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "太陽未だ沈まぬ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5924,
-		icon = "title_event",
+		title = "太陽未だ沈まぬ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 327,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4341,
 			4342,
@@ -5995,14 +6227,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[328] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "盛夏再び！リゾート再建計画！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5952,
-		icon = "title_event",
+		title = "盛夏再び！リゾート再建計画！",
+		auto_unlock = "",
+		subtype = 2,
 		id = 328,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4351,
 			4352,
@@ -6034,14 +6267,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[329] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "高い塔の薔薇",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5941,
-		icon = "title_event",
+		title = "高い塔の薔薇",
+		auto_unlock = "",
+		subtype = 1,
 		id = 329,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4381,
 			4382,
@@ -6082,27 +6316,29 @@ end)()
 		}
 	}
 	pg.base.memory_group[330] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "碧玉勝りし天青",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5979,
-		icon = "title_event",
+		title = "碧玉勝りし天青",
+		auto_unlock = "",
+		subtype = 3,
 		id = 330,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4417
 		}
 	}
 	pg.base.memory_group[331] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "幻影の迷い人",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5985,
-		icon = "title_event",
+		title = "幻影の迷い人",
+		auto_unlock = "",
+		subtype = 2,
 		id = 331,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4431,
 			4432,
@@ -6112,28 +6348,30 @@ end)()
 		}
 	}
 	pg.base.memory_group[332] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "幻影の迷い人",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 5985,
-		icon = "title_event",
+		title = "幻影の迷い人",
+		auto_unlock = "",
+		subtype = 2,
 		id = 332,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4421,
 			4422
 		}
 	}
 	pg.base.memory_group[333] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "ネオンシティの探索者",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50013,
-		icon = "title_event",
+		title = "ネオンシティの探索者",
+		auto_unlock = "",
+		subtype = 2,
 		id = 333,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4451,
 			4452,
@@ -6148,14 +6386,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[334] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "錬金術士と天空邂逅の塔-ステージ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50054,
-		icon = "title_event",
+		title = "錬金術士と天空邂逅の塔-ステージ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 334,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4481,
 			4482,
@@ -6194,14 +6433,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[335] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "錬金術士と天空邂逅の塔-日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50054,
-		icon = "title_event",
+		title = "錬金術士と天空邂逅の塔-日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 335,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4521,
 			4522,
@@ -6210,14 +6450,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[336] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "淵層界の秘密",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50081,
-		icon = "title_event",
+		title = "淵層界の秘密",
+		auto_unlock = "",
+		subtype = 2,
 		id = 336,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4541,
 			4542,
@@ -6251,14 +6492,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[337] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港ファッション　ホリデー",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50084,
-		icon = "title_event",
+		title = "母港ファッション　ホリデー",
+		auto_unlock = "",
+		subtype = 3,
 		id = 337,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4571,
 			4572,
@@ -6270,14 +6512,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[338] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "重桜の招待",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50104,
-		icon = "title_event",
+		title = "重桜の招待",
+		auto_unlock = "",
+		subtype = 1,
 		id = 338,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4591,
 			4592,
@@ -6289,14 +6532,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[339] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "アマハラに舞い奉れ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50114,
-		icon = "title_event",
+		title = "アマハラに舞い奉れ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 339,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4601,
 			4602,
@@ -6340,14 +6584,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[340] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "激戦！忍びの城！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50116,
-		icon = "title_event",
+		title = "激戦！忍びの城！",
+		auto_unlock = "",
+		subtype = 2,
 		id = 340,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4641,
 			4642,
@@ -6372,14 +6617,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[341] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "青空の下で出会いを-ステージ編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50156,
-		icon = "title_event",
+		title = "青空の下で出会いを-ステージ編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 341,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4671,
 			4672,
@@ -6399,28 +6645,30 @@ end)()
 		}
 	}
 	pg.base.memory_group[342] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "青空の下で出会いを-日常編",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50156,
-		icon = "title_event",
+		title = "青空の下で出会いを-日常編",
+		auto_unlock = "",
+		subtype = 2,
 		id = 342,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4691,
 			4692
 		}
 	}
 	pg.base.memory_group[343] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港の休日怪談集Ⅱ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50202,
-		icon = "title_event",
+		title = "母港の休日怪談集Ⅱ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 343,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4711,
 			4712,
@@ -6433,14 +6681,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[344] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "テンペスタと自由群島",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50181,
-		icon = "title_event",
+		title = "テンペスタと自由群島",
+		auto_unlock = "",
+		subtype = 2,
 		id = 344,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4721,
 			4722,
@@ -6474,14 +6723,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[345] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港ファッション：ピット・スタンバイ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50235,
-		icon = "title_event",
+		title = "母港ファッション：ピット・スタンバイ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 345,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4761,
 			4762,
@@ -6489,14 +6739,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[347] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "DATE A LANE-「ステージ編」",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50256,
-		icon = "title_event",
+		title = "DATE A LANE-「ステージ編」",
+		auto_unlock = "",
+		subtype = 2,
 		id = 347,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4781,
 			4782,
@@ -6533,14 +6784,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[348] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "DATE A LANE-「日常編」",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50256,
-		icon = "title_event",
+		title = "DATE A LANE-「日常編」",
+		auto_unlock = "",
+		subtype = 2,
 		id = 348,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4821,
 			4822,
@@ -6551,14 +6803,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[349] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "追憶の残響",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50262,
-		icon = "title_event",
+		title = "追憶の残響",
+		auto_unlock = "",
+		subtype = 1,
 		id = 349,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4841,
 			4842,
@@ -6582,14 +6835,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[350] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "美しい世界へ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50266,
-		icon = "title_event",
+		title = "美しい世界へ",
+		auto_unlock = "",
+		subtype = 1,
 		id = 350,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4871,
 			4872,
@@ -6603,14 +6857,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[351] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "天穹に響く音謡",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50281,
-		icon = "title_event",
+		title = "天穹に響く音謡",
+		auto_unlock = "",
+		subtype = 1,
 		id = 351,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4881,
 			4882,
@@ -6659,14 +6914,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[352] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港ファッション",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50290,
-		icon = "title_event",
+		title = "母港ファッション",
+		auto_unlock = "",
+		subtype = 3,
 		id = 352,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4931,
 			4932,
@@ -6676,14 +6932,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[353] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "母港ファッション",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50297,
-		icon = "title_event",
+		title = "母港ファッション",
+		auto_unlock = "",
+		subtype = 3,
 		id = 353,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4941,
 			4942,
@@ -6694,14 +6951,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[354] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "特集写真――撮影進行中！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50360,
-		icon = "title_event",
+		title = "特集写真――撮影進行中！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 354,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4961,
 			4962,
@@ -6716,14 +6974,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[355] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "新春珠玉逸品会",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50404,
-		icon = "title_event",
+		title = "新春珠玉逸品会",
+		auto_unlock = "",
+		subtype = 3,
 		id = 355,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4981,
 			4982,
@@ -6735,14 +6994,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[356] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "バレンタイン――甘々大作戦！",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50401,
-		icon = "title_event",
+		title = "バレンタイン――甘々大作戦！",
+		auto_unlock = "",
+		subtype = 3,
 		id = 356,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			4991,
 			4992,
@@ -6750,14 +7010,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[357] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "着せ替え特集 紅帳衣裳",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50412,
-		icon = "title_event",
+		title = "着せ替え特集 紅帳衣裳",
+		auto_unlock = "",
+		subtype = 3,
 		id = 357,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5001,
 			5002,
@@ -6766,14 +7027,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[358] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "春色旅籠Online",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50402,
-		icon = "title_event",
+		title = "春色旅籠Online",
+		auto_unlock = "",
+		subtype = 2,
 		id = 358,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5011,
 			5012,
@@ -6798,12 +7060,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[359] = {
-		title = "ワンダラー招集計画",
+		ship_group = 0,
 		subtype = 2,
-		id = 359,
+		title = "ワンダラー招集計画",
 		type = 2,
 		link_event = 50481,
 		icon = "title_event",
+		id = 359,
 		group_id = "",
 		memories = {
 			5041,
@@ -6835,14 +7098,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[360] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "煌く★ブリ★大作戦",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 50493,
-		icon = "title_event",
+		title = "煌く★ブリ★大作戦",
+		auto_unlock = "",
+		subtype = 2,
 		id = 360,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5061,
 			5062,
@@ -6850,14 +7114,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[361] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "きらめく砂浜~ステージ編~",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 6025,
-		icon = "title_event",
+		title = "きらめく砂浜~ステージ編~",
+		auto_unlock = "",
+		subtype = 2,
 		id = 361,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5081,
 			5082,
@@ -6875,14 +7140,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[362] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "きらめく砂浜~ヴィーナス編~",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 6028,
-		icon = "title_event",
+		title = "きらめく砂浜~ヴィーナス編~",
+		auto_unlock = "",
+		subtype = 2,
 		id = 362,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5101,
 			5102,
@@ -6894,14 +7160,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[363] = {
-		auto_unlock = "",
-		subtype = 1,
-		title = "灰点の予兆",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 51005,
-		icon = "title_event",
+		title = "灰点の予兆",
+		auto_unlock = "",
+		subtype = 1,
 		id = 363,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5121,
 			5122,
@@ -6913,14 +7180,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[364] = {
-		auto_unlock = "",
-		subtype = 2,
-		title = "麗しい休日へ全速前進",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 51001,
-		icon = "title_event",
+		title = "麗しい休日へ全速前進",
+		auto_unlock = "",
+		subtype = 2,
 		id = 364,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			5131,
 			5132,
@@ -6929,15 +7197,105 @@ end)()
 			5135
 		}
 	}
-	pg.base.memory_group[501] = {
+	pg.base.memory_group[365] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 50605,
+		title = "聖印前の同盟",
 		auto_unlock = "",
-		subtype = 0,
-		title = "明石のお願い",
+		subtype = 1,
+		id = 365,
+		icon = "title_event",
+		memories = {
+			5141,
+			5142,
+			5143,
+			5144,
+			5145,
+			5146,
+			5147,
+			5148,
+			5149,
+			5150,
+			5151,
+			5152,
+			5153,
+			5154,
+			5155,
+			5156,
+			5157,
+			5158,
+			5159,
+			5160,
+			5161,
+			5162,
+			5163,
+			5164,
+			5165,
+			5166,
+			5167,
+			5168,
+			5169,
+			5170,
+			5171,
+			5172,
+			5173,
+			5174,
+			5175,
+			5176,
+			5177,
+			5178,
+			5179
+		}
+	}
+	pg.base.memory_group[366] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 50602,
+		title = "豪華絢爛！ゴールデン・ベイ",
+		auto_unlock = "",
+		subtype = 2,
+		id = 366,
+		icon = "title_event",
+		memories = {
+			5181,
+			5182,
+			5183,
+			5184,
+			5185,
+			5186,
+			5187,
+			5188,
+			5189,
+			5190,
+			5191,
+			5192,
+			5193,
+			5194,
+			5195,
+			5196,
+			5197,
+			5198,
+			5199,
+			5200,
+			5201,
+			5202,
+			5203,
+			5204
+		}
+	}
+	pg.base.memory_group[501] = {
+		ship_group = 31201,
+		group_id = "",
 		type = 3,
 		link_event = 0,
-		icon = "title_chara_mingshi",
+		title = "明石のお願い",
+		auto_unlock = "",
+		subtype = 0,
 		id = 501,
-		group_id = "",
+		icon = "title_chara_mingshi",
 		memories = {
 			62,
 			63,
@@ -6962,12 +7320,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[502] = {
-		auto_unlock = "",
+		ship_group = 10601,
 		subtype = 0,
-		title = "幽霊さんはガンバラナイ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_changdao",
+		title = "幽霊さんはガンバラナイ",
 		id = 502,
 		memories = {
 			10011,
@@ -6983,12 +7342,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[503] = {
-		auto_unlock = "",
+		ship_group = 30706,
 		subtype = 0,
-		title = "幸運の鶴",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_ruihe",
+		title = "幸運の鶴",
 		id = 503,
 		memories = {
 			246,
@@ -7004,12 +7364,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[504] = {
-		auto_unlock = "",
+		ship_group = 30116,
 		subtype = 0,
-		title = "佐世保生まれの幸運艦",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xuefeng",
+		title = "佐世保生まれの幸運艦",
 		id = 504,
 		memories = {
 			260,
@@ -7025,12 +7386,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[505] = {
-		auto_unlock = "",
+		ship_group = 20203,
 		subtype = 0,
-		title = "私の素晴らしい記憶",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_ajiakesi",
+		title = "私の素晴らしい記憶",
 		id = 505,
 		memories = {
 			267,
@@ -7046,12 +7408,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[506] = {
-		auto_unlock = "",
+		ship_group = 10125,
 		subtype = 0,
-		title = "ハムマン観察記録",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_haman",
+		title = "ハムマン観察記録",
 		id = 506,
 		memories = {
 			274,
@@ -7067,12 +7430,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[507] = {
-		auto_unlock = "",
+		ship_group = 30701,
 		subtype = 0,
-		title = "ヒガンバナの恋",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_chicheng",
+		title = "ヒガンバナの恋",
 		id = 507,
 		memories = {
 			281,
@@ -7088,12 +7452,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[508] = {
-		auto_unlock = "",
+		ship_group = 10209,
 		subtype = 0,
-		title = "ナイト＆アワード",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kelifulan",
+		title = "ナイト＆アワード",
 		id = 508,
 		memories = {
 			288,
@@ -7109,12 +7474,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[509] = {
-		auto_unlock = "",
+		ship_group = 30502,
 		subtype = 0,
-		title = "雨のち晴れ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_shancheng2",
+		title = "雨のち晴れ",
 		id = 509,
 		memories = {
 			301,
@@ -7130,12 +7496,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[510] = {
-		auto_unlock = "",
+		ship_group = 20706,
 		subtype = 0,
-		title = "栄光なる間奏曲",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_guangrong",
+		title = "栄光なる間奏曲",
 		id = 510,
 		memories = {
 			308,
@@ -7151,12 +7518,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[511] = {
-		auto_unlock = "",
+		ship_group = 10703,
 		subtype = 0,
-		title = "ベストピクチャーズ！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_salatuojia",
+		title = "ベストピクチャーズ！",
 		id = 511,
 		memories = {
 			322,
@@ -7172,12 +7540,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[512] = {
-		auto_unlock = "",
+		ship_group = 30312,
 		subtype = 0,
-		title = "お姉さんと一日デート",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aidang",
+		title = "お姉さんと一日デート",
 		id = 512,
 		memories = {
 			329,
@@ -7193,12 +7562,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[513] = {
-		auto_unlock = "",
+		ship_group = 40146,
 		subtype = 0,
-		title = "白き詩",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_z46",
+		title = "白き詩",
 		id = 513,
 		memories = {
 			336,
@@ -7214,12 +7584,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[515] = {
-		auto_unlock = "",
+		ship_group = 80101,
 		subtype = 0,
-		title = "騎士姫の憂鬱",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kaixuan",
+		title = "騎士姫の憂鬱",
 		id = 515,
 		memories = {
 			350,
@@ -7235,12 +7606,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[516] = {
-		auto_unlock = "",
+		ship_group = 80201,
 		subtype = 0,
-		title = "踊り子天使エミール",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aimier",
+		title = "踊り子天使エミール",
 		id = 516,
 		memories = {
 			357,
@@ -7256,12 +7628,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[517] = {
-		auto_unlock = "",
+		ship_group = 80801,
 		subtype = 0,
-		title = "ジュルネ・シュルクーフ！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xukufu",
+		title = "ジュルネ・シュルクーフ！",
 		id = 517,
 		memories = {
 			364,
@@ -7277,12 +7650,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[518] = {
-		auto_unlock = "",
+		ship_group = 40502,
 		subtype = 0,
-		title = "「Schmelzen」",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_tierbici",
+		title = "「Schmelzen」",
 		id = 518,
 		memories = {
 			387,
@@ -7298,12 +7672,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[519] = {
-		auto_unlock = "",
+		ship_group = 20604,
 		subtype = 0,
-		title = "セントーと先輩たち",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_banrenma",
+		title = "セントーと先輩たち",
 		id = 519,
 		memories = {
 			394,
@@ -7319,12 +7694,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[520] = {
-		auto_unlock = "",
+		ship_group = 30402,
 		subtype = 0,
-		title = "御召艦の宴",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_birui",
+		title = "御召艦の宴",
 		id = 520,
 		memories = {
 			411,
@@ -7340,12 +7716,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[521] = {
-		auto_unlock = "",
+		ship_group = 40304,
 		subtype = 0,
-		title = "曇りの仮面",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_deyizhi",
+		title = "曇りの仮面",
 		id = 521,
 		memories = {
 			418,
@@ -7361,12 +7738,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[522] = {
-		auto_unlock = "",
+		ship_group = 10802,
 		subtype = 0,
-		title = "サブマリン・トラップ！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_daqinghuayu",
+		title = "サブマリン・トラップ！",
 		id = 522,
 		memories = {
 			425,
@@ -7382,12 +7760,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[523] = {
-		auto_unlock = "",
+		ship_group = 30707,
 		subtype = 0,
-		title = "その女、賢妻につき",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dafeng",
+		title = "その女、賢妻につき",
 		id = 523,
 		memories = {
 			443,
@@ -7403,12 +7782,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[524] = {
-		auto_unlock = "",
+		ship_group = 10709,
 		subtype = 0,
-		title = "先輩とわだかまり",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aisaikesi",
+		title = "先輩とわだかまり",
 		id = 524,
 		memories = {
 			450,
@@ -7424,12 +7804,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[525] = {
-		auto_unlock = "",
+		ship_group = 30109,
 		subtype = 0,
-		title = "ニンジャ暁参上！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xiao",
+		title = "ニンジャ暁参上！",
 		id = 525,
 		memories = {
 			471,
@@ -7445,12 +7826,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[526] = {
-		auto_unlock = "",
+		ship_group = 20219,
 		subtype = 0,
-		title = "平穏を讃えて",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_niukasier",
+		title = "平穏を讃えて",
 		id = 526,
 		memories = {
 			478,
@@ -7466,12 +7848,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[527] = {
-		auto_unlock = "",
+		ship_group = 10212,
 		subtype = 0,
-		title = "拗ねやすい彼女の小さなお話",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_huonululu",
+		title = "拗ねやすい彼女の小さなお話",
 		id = 527,
 		memories = {
 			485,
@@ -7487,12 +7870,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[528] = {
-		auto_unlock = "",
+		ship_group = 10127,
 		subtype = 0,
-		title = "ウサウサ星人の謎？",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_beili",
+		title = "ウサウサ星人の謎？",
 		id = 528,
 		memories = {
 			501,
@@ -7508,12 +7892,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[529] = {
-		auto_unlock = "",
+		ship_group = 30118,
 		subtype = 0,
-		title = "万能店員シラヌイ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_buzhihuo",
+		title = "万能店員シラヌイ",
 		id = 529,
 		memories = {
 			508,
@@ -7529,12 +7914,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[530] = {
-		auto_unlock = "",
+		ship_group = 10218,
 		subtype = 0,
-		title = "シュガリーコンコード",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kangkede",
+		title = "シュガリーコンコード",
 		id = 530,
 		memories = {
 			515,
@@ -7550,12 +7936,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[531] = {
-		auto_unlock = "",
+		ship_group = 30606,
 		subtype = 0,
-		title = "軽空母龍驤ここにあり",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_longxiang",
+		title = "軽空母龍驤ここにあり",
 		id = 531,
 		memories = {
 			567,
@@ -7571,12 +7958,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[532] = {
-		auto_unlock = "",
+		ship_group = 30164,
 		subtype = 0,
-		title = "大潮よりお届け♪",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dachao",
+		title = "大潮よりお届け♪",
 		id = 532,
 		memories = {
 			585,
@@ -7592,12 +7980,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[533] = {
-		auto_unlock = "",
+		ship_group = 30309,
 		subtype = 0,
-		title = "足柄、すゝめ！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zubing",
+		title = "足柄、すゝめ！",
 		id = 533,
 		memories = {
 			599,
@@ -7612,13 +8001,16 @@ end)()
 			10000
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[534] = {
-		auto_unlock = "",
+		ship_group = 30703,
 		subtype = 0,
-		title = "蒼龍さんと一緒",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_canglong",
+		title = "蒼龍さんと一緒",
 		id = 534,
 		memories = {
 			606,
@@ -7634,12 +8026,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[535] = {
-		auto_unlock = "",
+		ship_group = 30121,
 		subtype = 0,
-		title = "人見知りの黒猫",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_chuchun",
+		title = "人見知りの黒猫",
 		id = 535,
 		memories = {
 			642,
@@ -7654,15 +8047,14 @@ end)()
 			10000
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[536] = {
-		auto_unlock = "",
+		ship_group = 10310,
 		subtype = 0,
-		title = "妹の成長期？！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_wensensi",
+		title = "妹の成長期？！",
 		id = 536,
 		memories = {
 			649,
@@ -7678,12 +8070,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[537] = {
-		auto_unlock = "",
+		ship_group = 20208,
 		subtype = 0,
-		title = "銃弾と、愛を込めて",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xiefeierde",
+		title = "銃弾と、愛を込めて",
 		id = 537,
 		memories = {
 			656,
@@ -7699,12 +8092,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[538] = {
-		auto_unlock = "",
+		ship_group = 20220,
 		subtype = 0,
-		title = "シリアス改造計画",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_tianlangxing",
+		title = "シリアス改造計画",
 		id = 538,
 		memories = {
 			663,
@@ -7720,12 +8114,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[539] = {
-		auto_unlock = "",
+		ship_group = 20502,
 		subtype = 0,
-		title = "ナイト・オブ・ロイヤル",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_yanzhan",
+		title = "ナイト・オブ・ロイヤル",
 		id = 539,
 		memories = {
 			670,
@@ -7741,12 +8136,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[540] = {
-		auto_unlock = "",
+		ship_group = 10738,
 		subtype = 0,
-		title = "紀行のサフラン",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xianggelila",
+		title = "紀行のサフラン",
 		id = 540,
 		memories = {
 			689,
@@ -7762,12 +8158,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[542] = {
-		auto_unlock = "",
+		ship_group = 40305,
 		subtype = 0,
-		title = "小さな出来事",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_sipei",
+		title = "小さな出来事",
 		id = 542,
 		memories = {
 			768,
@@ -7783,12 +8180,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[543] = {
-		auto_unlock = "",
+		ship_group = 20505,
 		subtype = 0,
-		title = "もうひとりのカリスマ？",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_qiaozhiwushi",
+		title = "もうひとりのカリスマ？",
 		id = 543,
 		memories = {
 			778,
@@ -7804,12 +8202,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[544] = {
-		auto_unlock = "",
+		ship_group = 40804,
 		subtype = 0,
-		title = "誓ってナイト！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_u556story",
+		title = "誓ってナイト！",
 		id = 544,
 		memories = {
 			785,
@@ -7825,12 +8224,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[545] = {
-		auto_unlock = "",
+		ship_group = 10803,
 		subtype = 0,
-		title = "コドモじゃないもん！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_jiqi",
+		title = "コドモじゃないもん！",
 		id = 545,
 		memories = {
 			844,
@@ -7846,12 +8246,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[546] = {
-		auto_unlock = "",
+		ship_group = 60302,
 		subtype = 0,
-		title = "ローザ・ストーリア",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zhala",
+		title = "ローザ・ストーリア",
 		id = 546,
 		memories = {
 			900,
@@ -7867,12 +8268,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[547] = {
-		auto_unlock = "",
+		ship_group = 70201,
 		subtype = 0,
-		title = "アヴローラと愉快な仲間たち",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_afuleer",
+		title = "アヴローラと愉快な仲間たち",
 		id = 547,
 		memories = {
 			1142,
@@ -7888,12 +8290,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[548] = {
-		auto_unlock = "",
+		ship_group = 30180,
 		subtype = 0,
-		title = "笑顔オーバーフロー！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_juanbo",
+		title = "笑顔オーバーフロー！",
 		id = 548,
 		memories = {
 			1204,
@@ -7909,12 +8312,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[549] = {
-		auto_unlock = "",
+		ship_group = 10306,
 		subtype = 0,
-		title = "インディちゃんの笑顔のために！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_botelan",
+		title = "インディちゃんの笑顔のために！",
 		id = 549,
 		memories = {
 			1321,
@@ -7930,12 +8334,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[550] = {
-		auto_unlock = "",
+		ship_group = 20703,
 		subtype = 0,
-		title = "ご令嬢の小さな提案",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_guanghui",
+		title = "ご令嬢の小さな提案",
 		id = 550,
 		memories = {
 			1331,
@@ -7951,12 +8356,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[551] = {
-		auto_unlock = "",
+		ship_group = 20402,
 		subtype = 0,
-		title = "笑顔なあの子の胸のウチ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_fanji",
+		title = "笑顔なあの子の胸のウチ",
 		id = 551,
 		memories = {
 			1401,
@@ -7972,12 +8378,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[552] = {
-		auto_unlock = "",
+		ship_group = 40301,
 		subtype = 0,
-		title = "幸せテンプレート",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xipeier",
+		title = "幸せテンプレート",
 		id = 552,
 		memories = {
 			1461,
@@ -7993,12 +8400,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[553] = {
-		auto_unlock = "",
+		ship_group = 20303,
 		subtype = 0,
-		title = "GO！ポジティブ・メイド！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kente",
+		title = "GO！ポジティブ・メイド！",
 		id = 553,
 		memories = {
 			1471,
@@ -8014,12 +8422,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[554] = {
-		auto_unlock = "",
+		ship_group = 20605,
 		subtype = 0,
-		title = "お嬢様とめぐるひとときを",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zhuiganzhe",
+		title = "お嬢様とめぐるひとときを",
 		id = 554,
 		memories = {
 			1521,
@@ -8035,12 +8444,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[555] = {
-		auto_unlock = "",
+		ship_group = 20226,
 		subtype = 0,
-		title = "それは恋を呼ぶ季節",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_gelasige",
+		title = "それは恋を呼ぶ季節",
 		id = 555,
 		memories = {
 			1561,
@@ -8056,12 +8466,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[556] = {
-		auto_unlock = "",
+		ship_group = 70504,
 		subtype = 0,
-		title = "颯爽の「白」",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_beilaluosi",
+		title = "颯爽の「白」",
 		id = 556,
 		memories = {
 			1571,
@@ -8077,12 +8488,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[557] = {
-		auto_unlock = "",
+		ship_group = 10215,
 		subtype = 0,
-		title = "デンバーの母港クエスト！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_danfo",
+		title = "デンバーの母港クエスト！",
 		id = 557,
 		memories = {
 			1581,
@@ -8098,12 +8510,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[558] = {
-		auto_unlock = "",
+		ship_group = 10145,
 		subtype = 0,
-		title = "3つ星プレミアム恋物語",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_ailunsamuna",
+		title = "3つ星プレミアム恋物語",
 		id = 558,
 		memories = {
 			1591,
@@ -8119,12 +8532,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[559] = {
-		auto_unlock = "",
+		ship_group = 30115,
 		subtype = 0,
-		title = "世話焼き娘はダテじゃない",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_shiyu",
+		title = "世話焼き娘はダテじゃない",
 		id = 559,
 		memories = {
 			1641,
@@ -8140,12 +8554,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[560] = {
-		auto_unlock = "",
+		ship_group = 60701,
 		subtype = 0,
-		title = "お嬢様学習帳",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_tianying",
+		title = "お嬢様学習帳",
 		id = 560,
 		memories = {
 			1651,
@@ -8161,12 +8576,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[561] = {
-		auto_unlock = "",
+		ship_group = 40802,
 		subtype = 0,
-		title = "やさしくて静かであたたかくて",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_u47",
+		title = "やさしくて静かであたたかくて",
 		id = 561,
 		memories = {
 			1671,
@@ -8182,12 +8598,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[562] = {
-		auto_unlock = "",
+		ship_group = 20503,
 		subtype = 0,
-		title = "素直になれないキモチ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_naerxun",
+		title = "素直になれないキモチ",
 		id = 562,
 		memories = {
 			1716,
@@ -8203,12 +8620,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[563] = {
-		auto_unlock = "",
+		ship_group = 10229,
 		subtype = 0,
-		title = "ティラミス・マーマレード",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_boyixi",
+		title = "ティラミス・マーマレード",
 		id = 563,
 		memories = {
 			1725,
@@ -8224,12 +8642,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[564] = {
-		auto_unlock = "",
+		ship_group = 30501,
 		subtype = 0,
-		title = "桜流しの日のあとで",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_fusang",
+		title = "桜流しの日のあとで",
 		id = 564,
 		memories = {
 			1736,
@@ -8245,12 +8664,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[565] = {
-		auto_unlock = "",
+		ship_group = 30208,
 		subtype = 0,
-		title = "凛として鬼の如く",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_guinu",
+		title = "凛として鬼の如く",
 		id = 565,
 		memories = {
 			1771,
@@ -8266,12 +8686,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[566] = {
-		auto_unlock = "",
+		ship_group = 10707,
 		subtype = 0,
-		title = "サンシャイン・デュエル！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dahuangfeng",
+		title = "サンシャイン・デュエル！",
 		id = 566,
 		memories = {
 			1781,
@@ -8287,12 +8708,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[567] = {
-		auto_unlock = "",
+		ship_group = 10655,
 		subtype = 0,
-		title = "ラブロマンスは突然に",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kasabulanka",
+		title = "ラブロマンスは突然に",
 		id = 567,
 		memories = {
 			1791,
@@ -8308,12 +8730,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[568] = {
-		auto_unlock = "",
+		ship_group = 10227,
 		subtype = 0,
-		title = "太陽のギャル",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_mabuerheide",
+		title = "太陽のギャル",
 		id = 568,
 		memories = {
 			1841,
@@ -8329,12 +8752,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[569] = {
-		auto_unlock = "",
+		ship_group = 30129,
 		subtype = 0,
-		title = "急がば回れ！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_daofeng",
+		title = "急がば回れ！",
 		id = 569,
 		memories = {
 			1851,
@@ -8350,12 +8774,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[570] = {
-		auto_unlock = "",
+		ship_group = 30514,
 		subtype = 0,
-		title = "裏表魅力MAXガール",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_junhe",
+		title = "裏表魅力MAXガール",
 		id = 570,
 		memories = {
 			1861,
@@ -8371,12 +8796,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[571] = {
-		auto_unlock = "",
+		ship_group = 40503,
 		subtype = 0,
-		title = "essential.",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_wuerlixi",
+		title = "essential.",
 		id = 571,
 		memories = {
 			1995,
@@ -8392,12 +8818,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[572] = {
-		auto_unlock = "",
+		ship_group = 20132,
 		subtype = 0,
-		title = "夏の日の「サプライズ」",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aisijimoren",
+		title = "夏の日の「サプライズ」",
 		id = 572,
 		memories = {
 			2041,
@@ -8413,12 +8840,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[573] = {
-		auto_unlock = "",
+		ship_group = 20211,
 		subtype = 0,
-		title = "「ワタシ」にしかない価値を",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aidingbao",
+		title = "「ワタシ」にしかない価値を",
 		id = 573,
 		memories = {
 			2063,
@@ -8434,12 +8862,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[574] = {
-		auto_unlock = "",
+		ship_group = 10205,
 		subtype = 0,
-		title = "スイート・デイは二人の雨模様",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_hailunna",
+		title = "スイート・デイは二人の雨模様",
 		id = 574,
 		memories = {
 			2121,
@@ -8455,12 +8884,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[575] = {
-		auto_unlock = "",
+		ship_group = 60105,
 		subtype = 0,
-		title = "リベッチオ、全力でがんばるよ！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xinanfeng",
+		title = "リベッチオ、全力でがんばるよ！",
 		id = 575,
 		memories = {
 			2171,
@@ -8476,12 +8906,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[576] = {
-		auto_unlock = "",
+		ship_group = 20134,
 		subtype = 0,
-		title = "好きを伝えよう！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_jiaweisi",
+		title = "好きを伝えよう！",
 		id = 576,
 		memories = {
 			2201,
@@ -8497,12 +8928,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[577] = {
-		auto_unlock = "",
+		ship_group = 70202,
 		subtype = 0,
-		title = "クーちゃんが秘書艦！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_shuixingjinian",
+		title = "クーちゃんが秘書艦！",
 		id = 577,
 		memories = {
 			2261,
@@ -8518,12 +8950,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[578] = {
-		auto_unlock = "",
+		ship_group = 10501,
 		subtype = 0,
-		title = "ネバダとの旅",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_neihuada",
+		title = "ネバダとの旅",
 		id = 578,
 		memories = {
 			2341,
@@ -8539,12 +8972,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[579] = {
-		auto_unlock = "",
+		ship_group = 30182,
 		subtype = 0,
-		title = "言の葉、空に舞う花びら",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_huayue",
+		title = "言の葉、空に舞う花びら",
 		id = 579,
 		memories = {
 			2371,
@@ -8560,12 +8994,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[580] = {
-		auto_unlock = "",
+		ship_group = 40302,
 		subtype = 0,
-		title = "大大大大好きアタック！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_bulvxieer",
+		title = "大大大大好きアタック！",
 		id = 580,
 		memories = {
 			2391,
@@ -8581,12 +9016,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[581] = {
-		auto_unlock = "",
+		ship_group = 60108,
 		subtype = 0,
-		title = "母港ジャーナル・THE特別号！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aerfuleiduo",
+		title = "母港ジャーナル・THE特別号！",
 		id = 581,
 		memories = {
 			2451,
@@ -8602,12 +9038,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[582] = {
-		auto_unlock = "",
+		ship_group = 10148,
 		subtype = 0,
-		title = "瞳に宿る光のために",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_yinggelahan",
+		title = "瞳に宿る光のために",
 		id = 582,
 		memories = {
 			2511,
@@ -8623,12 +9060,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[583] = {
-		auto_unlock = "",
+		ship_group = 19901,
 		subtype = 0,
-		title = "オール陣営パーティーナイト！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xiyatu",
+		title = "オール陣営パーティーナイト！",
 		id = 583,
 		memories = {
 			2561,
@@ -8644,12 +9082,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[584] = {
-		auto_unlock = "",
+		ship_group = 60801,
 		subtype = 0,
-		title = "日陰のトリチェリ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_tuolichaili",
+		title = "日陰のトリチェリ",
 		id = 584,
 		memories = {
 			2601,
@@ -8665,12 +9104,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[585] = {
-		auto_unlock = "",
+		ship_group = 10702,
 		subtype = 0,
-		title = "青き海と仲間のための",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_liekexingdun",
+		title = "青き海と仲間のための",
 		id = 585,
 		memories = {
 			2651,
@@ -8686,12 +9126,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[586] = {
-		auto_unlock = "",
+		ship_group = 40603,
 		subtype = 0,
-		title = "「いい子」とのおサボりタイム",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_yade",
+		title = "「いい子」とのおサボりタイム",
 		id = 586,
 		memories = {
 			2761,
@@ -8707,12 +9148,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[587] = {
-		auto_unlock = "",
+		ship_group = 40403,
 		subtype = 0,
-		title = "ほころぶアイアンローズ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_saidelici",
+		title = "ほころぶアイアンローズ",
 		id = 587,
 		memories = {
 			2771,
@@ -8728,12 +9170,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[588] = {
-		auto_unlock = "",
+		ship_group = 60802,
 		subtype = 0,
-		title = "あなたのためのインベンション",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dafenqi",
+		title = "あなたのためのインベンション",
 		id = 588,
 		memories = {
 			2811,
@@ -8749,12 +9192,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[589] = {
-		auto_unlock = "",
+		ship_group = 60109,
 		subtype = 0,
-		title = "あなたと共に見る風景",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_peisagenuo",
+		title = "あなたと共に見る風景",
 		id = 589,
 		memories = {
 			2831,
@@ -8770,12 +9214,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[590] = {
-		auto_unlock = "",
+		ship_group = 90111,
 		subtype = 0,
-		title = "守られし悪しき剣",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_edu",
+		title = "守られし悪しき剣",
 		id = 590,
 		memories = {
 			2941,
@@ -8791,12 +9236,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[591] = {
-		auto_unlock = "",
+		ship_group = 90502,
 		subtype = 0,
-		title = "白に隠されしもの",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_kelaimengsuo",
+		title = "白に隠されしもの",
 		id = 591,
 		memories = {
 			3051,
@@ -8812,12 +9258,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[592] = {
-		auto_unlock = "",
+		ship_group = 60107,
 		subtype = 0,
-		title = "キャプテンポンペイにおまかせを！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_pangpei",
+		title = "キャプテンポンペイにおまかせを！",
 		id = 592,
 		memories = {
 			3131,
@@ -8833,12 +9280,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[593] = {
-		auto_unlock = "",
+		ship_group = 11802,
 		subtype = 0,
-		title = "タレントキャスターセクレタリー！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_guandao",
+		title = "タレントキャスターセクレタリー！",
 		id = 593,
 		memories = {
 			3265,
@@ -8854,12 +9302,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[594] = {
-		auto_unlock = "",
+		ship_group = 50102,
 		subtype = 0,
-		title = "不思議に大ピンチ！？",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_fushun",
+		title = "不思議に大ピンチ！？",
 		id = 594,
 		memories = {
 			3291,
@@ -8875,12 +9324,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[595] = {
-		auto_unlock = "",
+		ship_group = 50601,
 		subtype = 0,
-		title = "棋力を上達させる妙手",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zhenhai",
+		title = "棋力を上達させる妙手",
 		id = 595,
 		memories = {
 			3351,
@@ -8896,12 +9346,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[596] = {
-		auto_unlock = "",
+		ship_group = 10730,
 		subtype = 0,
-		title = "疲労回復の秘訣とは⁉",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_shenghaxintuo",
+		title = "疲労回復の秘訣とは⁉",
 		id = 596,
 		memories = {
 			3421,
@@ -8917,12 +9368,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[597] = {
-		auto_unlock = "",
+		ship_group = 90701,
 		subtype = 0,
-		title = "天使とのランデブー",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_xiafei",
+		title = "天使とのランデブー",
 		id = 597,
 		memories = {
 			3481,
@@ -8938,12 +9390,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[598] = {
-		auto_unlock = "",
+		ship_group = 50207,
 		subtype = 0,
-		title = "いざ出発！閃きを求める旅へ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_haitian",
+		title = "いざ出発！閃きを求める旅へ",
 		id = 598,
 		memories = {
 			3531,
@@ -8959,12 +9412,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[599] = {
-		auto_unlock = "",
+		ship_group = 49905,
 		subtype = 0,
-		title = "激動する荒海の主",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aijier",
+		title = "激動する荒海の主",
 		id = 599,
 		memories = {
 			3671,
@@ -8980,12 +9434,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[600] = {
-		auto_unlock = "",
+		ship_group = 80503,
 		subtype = 0,
-		title = "アルザス、オーバーヒート！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aersasi",
+		title = "アルザス、オーバーヒート！",
 		id = 600,
 		memories = {
 			3691,
@@ -9001,12 +9456,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[601] = {
-		auto_unlock = "",
+		ship_group = 10324,
 		subtype = 0,
-		title = "今日はお休み相談屋",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_bulaimodun",
+		title = "今日はお休み相談屋",
 		id = 601,
 		memories = {
 			3721,
@@ -9022,12 +9478,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[602] = {
-		auto_unlock = "",
+		ship_group = 30311,
 		subtype = 0,
-		title = "タカオ・スタディー",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_gaoxiong",
+		title = "タカオ・スタディー",
 		id = 602,
 		memories = {
 			3911,
@@ -9043,12 +9500,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[603] = {
-		auto_unlock = "",
+		ship_group = 960005,
 		subtype = 0,
-		title = "お出かけ！お宝探し！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_weidahao",
+		title = "お出かけ！お宝探し！",
 		id = 603,
 		memories = {
 			3931,
@@ -9064,12 +9522,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[604] = {
-		auto_unlock = "",
+		ship_group = 20509,
 		subtype = 0,
-		title = "二人だけのスイートクッキー",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_hao",
+		title = "二人だけのスイートクッキー",
 		id = 604,
 		memories = {
 			3991,
@@ -9085,12 +9544,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[605] = {
-		auto_unlock = "",
+		ship_group = 40404,
 		subtype = 0,
-		title = "スイートドリームを取り戻せ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_lvzuofu",
+		title = "スイートドリームを取り戻せ",
 		id = 605,
 		memories = {
 			4061,
@@ -9106,12 +9566,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[606] = {
-		auto_unlock = "",
+		ship_group = 50105,
 		subtype = 0,
-		title = "それゆけグルメファーム！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_longwu",
+		title = "それゆけグルメファーム！",
 		id = 606,
 		memories = {
 			4141,
@@ -9127,12 +9588,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[607] = {
-		auto_unlock = "",
+		ship_group = 50209,
 		subtype = 0,
-		title = "指揮官、ご飯の時間ですよ！",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_jian",
+		title = "指揮官、ご飯の時間ですよ！",
 		id = 607,
 		memories = {
 			4181,
@@ -9148,12 +9610,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[608] = {
-		auto_unlock = "",
+		ship_group = 90107,
 		subtype = 0,
-		title = "ネッスル・イン・ストーム",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_mojiaduoer",
+		title = "ネッスル・イン・ストーム",
 		id = 608,
 		memories = {
 			4251,
@@ -9169,12 +9632,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[609] = {
-		auto_unlock = "",
+		ship_group = 70203,
 		subtype = 0,
-		title = "二人繋ぎ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_qiabayefu",
+		title = "二人繋ぎ",
 		id = 609,
 		memories = {
 			4291,
@@ -9190,12 +9654,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[610] = {
-		auto_unlock = "",
+		ship_group = 20712,
 		subtype = 0,
-		title = "無効な省エネ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_bunao",
+		title = "無効な省エネ",
 		id = 610,
 		memories = {
 			4321,
@@ -9211,12 +9676,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[611] = {
-		auto_unlock = "",
+		ship_group = 49906,
 		subtype = 0,
-		title = "魔女の運命の夜",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aogusite",
+		title = "魔女の運命の夜",
 		id = 611,
 		memories = {
 			4441,
@@ -9232,12 +9698,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[612] = {
-		auto_unlock = "",
+		ship_group = 90401,
 		subtype = 0,
-		title = "思い、酔いしれて",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dunkeerke",
+		title = "思い、酔いしれて",
 		id = 612,
 		memories = {
 			4471,
@@ -9253,12 +9720,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[613] = {
-		auto_unlock = "",
+		ship_group = 90105,
 		subtype = 0,
-		title = "花と剣の魔術師",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_huajian",
+		title = "花と剣の魔術師",
 		id = 613,
 		memories = {
 			4531,
@@ -9274,12 +9742,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[614] = {
-		auto_unlock = "",
+		ship_group = 30225,
 		subtype = 0,
-		title = "天衣結縁",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dulianglai",
+		title = "天衣結縁",
 		id = 614,
 		memories = {
 			4661,
@@ -9295,12 +9764,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[615] = {
-		auto_unlock = "",
+		ship_group = 960014,
 		subtype = 0,
-		title = "大海の音",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_zhenzhuhao",
+		title = "大海の音",
 		id = 615,
 		memories = {
 			4701,
@@ -9316,12 +9786,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[616] = {
-		auto_unlock = "",
+		ship_group = 110201,
 		subtype = 0,
-		title = "花咲く家電",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_qisheng",
+		title = "花咲く家電",
 		id = 616,
 		memories = {
 			4751,
@@ -9337,12 +9808,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[617] = {
-		auto_unlock = "",
+		ship_group = 10233,
 		subtype = 0,
-		title = "幸せは計算不可能数",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_fage",
+		title = "幸せは計算不可能数",
 		id = 617,
 		memories = {
 			4861,
@@ -9358,12 +9830,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[618] = {
-		auto_unlock = "",
+		ship_group = 60501,
 		subtype = 0,
-		title = "威光ガイドツアー",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_weineituo",
+		title = "威光ガイドツアー",
 		id = 618,
 		memories = {
 			4951,
@@ -9379,12 +9852,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[619] = {
-		auto_unlock = "",
+		ship_group = 51901,
 		subtype = 0,
-		title = "投資して、しかして破綻せよ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dingan",
+		title = "投資して、しかして破綻せよ",
 		id = 619,
 		memories = {
 			4971,
@@ -9400,12 +9874,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[620] = {
-		auto_unlock = "",
+		ship_group = 20607,
 		subtype = 0,
-		title = "森の風と心の羅針盤",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_aerbien",
+		title = "森の風と心の羅針盤",
 		id = 620,
 		memories = {
 			5031,
@@ -9421,12 +9896,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[621] = {
-		auto_unlock = "",
+		ship_group = 20313,
 		subtype = 0,
-		title = "真実と虚飾のカノジョ",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_dewenjun",
+		title = "真実と虚飾のカノジョ",
 		id = 621,
 		memories = {
 			5071,
@@ -9442,12 +9918,13 @@ end)()
 		}
 	}
 	pg.base.memory_group[622] = {
-		auto_unlock = "",
+		ship_group = 49910,
 		subtype = 0,
-		title = "紅月の輝きは永夜の契り",
+		auto_unlock = "",
 		type = 3,
 		link_event = 0,
 		icon = "title_chara_meikelunbao",
+		title = "紅月の輝きは永夜の契り",
 		id = 622,
 		memories = {
 			5111,
@@ -9463,14 +9940,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1000] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "TB育成計画",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "TB育成計画",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1000,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20000,
 			20001,
@@ -9519,14 +9997,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1001] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "分かり合う心",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "分かり合う心",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1001,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20044,
 			20045,
@@ -9539,14 +10018,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1002] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "耳を傾ければ",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "耳を傾ければ",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1002,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20052,
 			20053,
@@ -9581,14 +10061,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1003] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ナビゲーター育成",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ナビゲーター育成",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1003,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20082,
 			20083,
@@ -9639,14 +10120,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1004] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ナビィの心の声",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ナビィの心の声",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1004,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20128,
 			20129,
@@ -9660,14 +10142,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1005] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "仲間会話",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "仲間会話",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1005,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20138,
 			20139,
@@ -9684,14 +10167,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1006] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "スカベンジャー育成",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "スカベンジャー育成",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1006,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20150,
 			20151,
@@ -9742,14 +10226,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1007] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "ローラーの心の声",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "ローラーの心の声",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1007,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20196,
 			20197,
@@ -9763,14 +10248,15 @@ end)()
 		}
 	}
 	pg.base.memory_group[1008] = {
-		auto_unlock = "",
-		subtype = 3,
-		title = "仲間会話",
+		ship_group = 0,
+		group_id = "",
 		type = 2,
 		link_event = 0,
-		icon = "title_event",
+		title = "仲間会話",
+		auto_unlock = "",
+		subtype = 3,
 		id = 1008,
-		group_id = "",
+		icon = "title_event",
 		memories = {
 			20206,
 			20207,

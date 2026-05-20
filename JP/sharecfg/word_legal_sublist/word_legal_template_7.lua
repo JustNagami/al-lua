@@ -26,6 +26,12 @@ function temp()
 			["3"] = {
 				this = true
 			},
+			["4"] = {
+				this = true
+			},
+			["5"] = {
+				this = true
+			},
 			["6"] = {
 				this = true
 			},
@@ -117,6 +123,30 @@ end
 temp()
 
 function temp()
+	var_0_1.希 = {
+		佩 = {
+			尔 = {
+				海 = {
+					军 = {
+						上 = {
+							将 = {
+								["."] = {
+									改 = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.ザ = {
 		イ = {
 			ド = {
@@ -131,6 +161,42 @@ function temp()
 		},
 		ラ = {
 			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.ゲ = {
+		ッ = {
+			ツ = {
+				・ = {
+					フ = {
+						ォ = {
+							ン = {
+								・ = {
+									ベ = {
+										ル = {
+											リ = {
+												ヒ = {
+													ン = {
+														ゲ = {
+															ン = {
+																this = true
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 end
@@ -257,6 +323,15 @@ function temp()
 				},
 				["1"] = {
 					this = true
+				}
+			},
+			["2"] = {
+				["5"] = {
+					["0"] = {
+						["1"] = {
+							this = true
+						}
+					}
 				}
 			}
 		}
@@ -487,46 +562,6 @@ function temp()
 						}
 					}
 				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.ム = {
-		ル = {
-			マ = {
-				ン = {
-					ス = {
-						ク = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		ジ = {
-			ナ = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.四 = {
-		万 = {
-			十 = {
-				this = true
-			}
-		},
-		糸 = {
-			乃 = {
-				this = true
 			}
 		}
 	}

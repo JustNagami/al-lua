@@ -205,6 +205,12 @@ pg.expedition_data_by_map.all = {
 	2020001,
 	2020002,
 	2020003,
+	2030001,
+	2030002,
+	2030011,
+	2030012,
+	2030025,
+	2030026,
 	2100000,
 	2100001,
 	2100010,
@@ -14623,6 +14629,607 @@ end)()
 			402
 		}
 	}
+	pg.base.expedition_data_by_map[2030001] = {
+		map = 2030001,
+		name = "聖印前の同盟·前編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-hrr",
+		enter_story = "",
+		ani_name = "Map_2030001",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part1",
+		default_background = "bg_aircraft_future",
+		cloud_suffix = "",
+		default_bgm = "Battle-shenguang-holy",
+		uifx = "",
+		on_activity = 50605,
+		ui_type = 10,
+		bg = "Map_2030001",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 2030011,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2030001,
+				2030021
+			},
+			{
+				2030002,
+				2030022
+			},
+			{
+				2030003,
+				2030023
+			}
+		},
+		story_id = {
+			421,
+			422,
+			423,
+			424,
+			425,
+			426,
+			427,
+			428,
+			429,
+			430,
+			431,
+			432,
+			433,
+			434,
+			435,
+			436,
+			437,
+			438,
+			439,
+			440,
+			441,
+			442,
+			443,
+			444,
+			445,
+			446,
+			447,
+			448,
+			449,
+			450,
+			451,
+			452,
+			453,
+			454,
+			455,
+			456,
+			457,
+			458,
+			459
+		}
+	}
+	pg.base.expedition_data_by_map[2030002] = {
+		map = 2030002,
+		name = "聖印前の同盟·後編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-hrr",
+		enter_story = "",
+		ani_name = "Map_2030002",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part2",
+		default_background = "bg_aircraft_future",
+		cloud_suffix = "",
+		default_bgm = "Battle-shenguang-holy",
+		uifx = "",
+		on_activity = 50605,
+		ui_type = 10,
+		bg = "Map_2030002",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 2030012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2030004,
+				2030024
+			},
+			{
+				2030005,
+				2030025
+			},
+			{
+				2030006,
+				2030026
+			}
+		},
+		story_id = {
+			421,
+			422,
+			423,
+			424,
+			425,
+			426,
+			427,
+			428,
+			429,
+			430,
+			431,
+			432,
+			433,
+			434,
+			435,
+			436,
+			437,
+			438,
+			439,
+			440,
+			441,
+			442,
+			443,
+			444,
+			445,
+			446,
+			447,
+			448,
+			449,
+			450,
+			451,
+			452,
+			453,
+			454,
+			455,
+			456,
+			457,
+			458,
+			459
+		}
+	}
+	pg.base.expedition_data_by_map[2030011] = {
+		map = 2030011,
+		name = "聖印前の同盟·前編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-hrr",
+		enter_story = "",
+		ani_name = "Map_2030001",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part1",
+		default_background = "bg_aircraft_future",
+		cloud_suffix = "",
+		default_bgm = "Battle-shenguang-holy",
+		uifx = "",
+		on_activity = 50605,
+		ui_type = 10,
+		bg = "Map_2030001",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 2030001,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2030001,
+				2030021
+			},
+			{
+				2030002,
+				2030022
+			},
+			{
+				2030003,
+				2030023
+			}
+		},
+		story_id = {
+			421,
+			422,
+			423,
+			424,
+			425,
+			426,
+			427,
+			428,
+			429,
+			430,
+			431,
+			432,
+			433,
+			434,
+			435,
+			436,
+			437,
+			438,
+			439,
+			440,
+			441,
+			442,
+			443,
+			444,
+			445,
+			446,
+			447,
+			448,
+			449,
+			450,
+			451,
+			452,
+			453,
+			454,
+			455,
+			456,
+			457,
+			458,
+			459
+		}
+	}
+	pg.base.expedition_data_by_map[2030012] = {
+		map = 2030012,
+		name = "聖印前の同盟·後編|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-hrr",
+		enter_story = "",
+		ani_name = "Map_2030002",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_part2",
+		default_background = "bg_aircraft_future",
+		cloud_suffix = "",
+		default_bgm = "Battle-shenguang-holy",
+		uifx = "",
+		on_activity = 50605,
+		ui_type = 10,
+		bg = "Map_2030002",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 2030002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2030004,
+				2030024
+			},
+			{
+				2030005,
+				2030025
+			},
+			{
+				2030006,
+				2030026
+			}
+		},
+		story_id = {
+			421,
+			422,
+			423,
+			424,
+			425,
+			426,
+			427,
+			428,
+			429,
+			430,
+			431,
+			432,
+			433,
+			434,
+			435,
+			436,
+			437,
+			438,
+			439,
+			440,
+			441,
+			442,
+			443,
+			444,
+			445,
+			446,
+			447,
+			448,
+			449,
+			450,
+			451,
+			452,
+			453,
+			454,
+			455,
+			456,
+			457,
+			458,
+			459
+		}
+	}
+	pg.base.expedition_data_by_map[2030025] = {
+		map = 2030025,
+		name = "聖印前の同盟·SP|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "story-shenguang-holy",
+		enter_story = "",
+		ani_name = "Map_2030003A",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_sp",
+		default_background = "bg_aircraft_future",
+		cloud_suffix = "",
+		default_bgm = "Battle-shenguang-holy",
+		uifx = "",
+		on_activity = 50605,
+		ui_type = 10,
+		bg = "Map_2030003",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 2030011,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2030041
+			}
+		},
+		story_id = {
+			421,
+			422,
+			423,
+			424,
+			425,
+			426,
+			427,
+			428,
+			429,
+			430,
+			431,
+			432,
+			433,
+			434,
+			435,
+			436,
+			437,
+			438,
+			439,
+			440,
+			441,
+			442,
+			443,
+			444,
+			445,
+			446,
+			447,
+			448,
+			449,
+			450,
+			451,
+			452,
+			453,
+			454,
+			455,
+			456,
+			457,
+			458,
+			459
+		}
+	}
+	pg.base.expedition_data_by_map[2030026] = {
+		map = 2030026,
+		name = "聖印前の同盟·EX|| ||CHAPTER EX||E.X.",
+		level_limit = 1,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		bgm = "theme-thehierophantV",
+		enter_story = "",
+		ani_name = "Map_2030003B",
+		guide_id = "",
+		ani_controller = "",
+		map_name = "levelscene_mapselect_ex",
+		default_background = "bg_aircraft_future",
+		cloud_suffix = "",
+		default_bgm = "Battle-shenguang-holy",
+		uifx = "",
+		on_activity = 50605,
+		ui_type = 10,
+		bg = "Map_2030003",
+		destory_icon_suffix = "blue",
+		story_inactive_color = "162443",
+		animtor = 1,
+		bind_map = 2030012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2030051,
+				2030052
+			}
+		},
+		story_id = {
+			421,
+			422,
+			423,
+			424,
+			425,
+			426,
+			427,
+			428,
+			429,
+			430,
+			431,
+			432,
+			433,
+			434,
+			435,
+			436,
+			437,
+			438,
+			439,
+			440,
+			441,
+			442,
+			443,
+			444,
+			445,
+			446,
+			447,
+			448,
+			449,
+			450,
+			451,
+			452,
+			453,
+			454,
+			455,
+			456,
+			457,
+			458,
+			459
+		}
+	}
 	pg.base.expedition_data_by_map[2100000] = {
 		map = 2100000,
 		name = "『紅染の来訪者』-前編|| ||CHAPTER EX||E.X.",
@@ -19226,6 +19833,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.expedition_data_by_map[2100462] = {
 		map = 2100462,
 		name = "誠閃の剣　搖光の城·後編|| ||CHAPTER EX||E.X.",
@@ -19637,8 +20246,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.expedition_data_by_map[2100492] = {
 		map = 2100492,
 		name = "鋼鷲の冒険譚·後編|| ||CHAPTER EX||E.X.",

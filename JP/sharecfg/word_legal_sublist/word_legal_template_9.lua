@@ -7,6 +7,32 @@ var_0_0.word_legal_template_9 = {}
 local var_0_1 = var_0_0.word_legal_template_9
 
 function temp()
+	var_0_1.拉 = {
+		菲 = {
+			I = {
+				I = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.ナ = {
+		ポ = {
+			リ = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.と = {
 		き = {
 			の = {

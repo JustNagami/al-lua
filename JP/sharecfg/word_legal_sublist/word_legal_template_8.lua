@@ -7,6 +7,46 @@ var_0_0.word_legal_template_8 = {}
 local var_0_1 = var_0_0.word_legal_template_8
 
 function temp()
+	var_0_1.ム = {
+		ル = {
+			マ = {
+				ン = {
+					ス = {
+						ク = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		ジ = {
+			ナ = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.四 = {
+		万 = {
+			十 = {
+				this = true
+			}
+		},
+		糸 = {
+			乃 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.孟 = {
 		菲 = {
 			斯 = {
@@ -200,6 +240,21 @@ function temp()
 					特 = {
 						拉 = {
 							this = true
+						}
+					}
+				}
+			}
+		},
+		莱 = {
+			蒙 = {
+				梭 = {
+					（ = {
+						前 = {
+							排 = {
+								） = {
+									this = true
+								}
+							}
 						}
 					}
 				}
@@ -529,32 +584,6 @@ function temp()
 						}
 					}
 				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.拉 = {
-		菲 = {
-			I = {
-				I = {
-					this = true
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.ナ = {
-		ポ = {
-			リ = {
-				this = true
 			}
 		}
 	}

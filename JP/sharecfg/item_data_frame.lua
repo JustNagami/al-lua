@@ -652,10 +652,10 @@ pg.base.item_data_frame = {}
 	pg.base.item_data_frame[341] = {
 		time_limit_type = 0,
 		name = "聖なる盟約",
-		gain_by = "",
+		gain_by = "聖印前の同盟",
 		id = 341,
 		time_second = 0,
-		desc = "今後開催するイベントにて入手可能",
+		desc = "「剣にて約束し、書簡にて誓約する。神聖なる盟約は命果てるその時まで」\n<color=#A7A7AA>「聖印前の同盟」イベント参加</color>",
 		scene = {}
 	}
 	pg.base.item_data_frame[401] = {

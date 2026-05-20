@@ -364,6 +364,11 @@ pg.task_meta_data_template.all = {
 	100533,
 	100534,
 	100535,
+	100561,
+	100562,
+	100563,
+	100564,
+	100565,
 	200001,
 	200002,
 	200003,
@@ -543,7 +548,11 @@ pg.task_meta_data_template.all = {
 	200441,
 	200442,
 	200443,
-	200444
+	200444,
+	200471,
+	200472,
+	200473,
+	200474
 }
 pg.base = pg.base or {}
 pg.base.task_meta_data_template = {}
@@ -3435,6 +3444,46 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
+	pg.base.task_meta_data_template[100561] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "エルベ(META)を編成した艦隊で1回戦闘を勝利する",
+		id = 100561,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[100562] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "エルベ(META)を編成した艦隊でLv30+の敵艦隊を撃破する",
+		id = 100562,
+		target_num = 1,
+		target_id = "30"
+	}
+	pg.base.task_meta_data_template[100563] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "エルベ(META)を編成した艦隊でLv55+の敵艦隊を撃破する",
+		id = 100563,
+		target_num = 1,
+		target_id = "55"
+	}
+	pg.base.task_meta_data_template[100564] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "エルベ(META)を編成した艦隊でLv80+の敵艦隊を撃破する",
+		id = 100564,
+		target_num = 1,
+		target_id = "80"
+	}
+	pg.base.task_meta_data_template[100565] = {
+		target_id_2 = "970605",
+		sub_type = 180,
+		desc = "エルベ(META)を編成した艦隊でLv100+の敵艦隊を撃破する",
+		id = 100565,
+		target_num = 1,
+		target_id = "100"
+	}
 	pg.base.task_meta_data_template[200001] = {
 		target_id_2 = "970101",
 		sub_type = 302,
@@ -3715,6 +3764,8 @@ end)()
 		target_num = 1,
 		target_id = "90"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200094] = {
 		target_id_2 = "970302",
 		sub_type = 302,
@@ -3755,8 +3806,6 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200111] = {
 		target_id_2 = "970205",
 		sub_type = 302,
@@ -4517,6 +4566,8 @@ end)()
 		target_num = 1,
 		target_id = "90"
 	}
+end)()
+;(function()
 	pg.base.task_meta_data_template[200344] = {
 		target_id_2 = "970707",
 		sub_type = 302,
@@ -4557,8 +4608,6 @@ end)()
 		target_num = 1,
 		target_id = "100"
 	}
-end)()
-;(function()
 	pg.base.task_meta_data_template[200361] = {
 		target_id_2 = "970406",
 		sub_type = 302,
@@ -4876,6 +4925,38 @@ end)()
 		sub_type = 302,
 		desc = "セイレーン作戦でレーゲンスブルク(META)を含めた艦隊でLv100+の敵を撃破",
 		id = 200444,
+		target_num = 1,
+		target_id = "100"
+	}
+	pg.base.task_meta_data_template[200471] = {
+		target_id_2 = "970605",
+		sub_type = 302,
+		desc = "セイレーン作戦でエルベ(META)を含めた艦隊で1回勝利する",
+		id = 200471,
+		target_num = 1,
+		target_id = "0"
+	}
+	pg.base.task_meta_data_template[200472] = {
+		target_id_2 = "970605",
+		sub_type = 302,
+		desc = "セイレーン作戦でエルベ(META)を含めた艦隊でLv70+の敵を撃破",
+		id = 200472,
+		target_num = 1,
+		target_id = "70"
+	}
+	pg.base.task_meta_data_template[200473] = {
+		target_id_2 = "970605",
+		sub_type = 302,
+		desc = "セイレーン作戦でエルベ(META)を含めた艦隊でLv90+の敵を撃破",
+		id = 200473,
+		target_num = 1,
+		target_id = "90"
+	}
+	pg.base.task_meta_data_template[200474] = {
+		target_id_2 = "970605",
+		sub_type = 302,
+		desc = "セイレーン作戦でエルベ(META)を含めた艦隊でLv100+の敵を撃破",
+		id = 200474,
 		target_num = 1,
 		target_id = "100"
 	}

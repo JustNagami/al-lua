@@ -23,7 +23,8 @@ pg.item_data_battleui.all = {
 	204,
 	205,
 	206,
-	207
+	207,
+	208
 }
 pg.base = pg.base or {}
 pg.base.item_data_battleui = {}
@@ -349,6 +350,23 @@ pg.base.item_data_battleui = {}
 		unlock = "ショップ購入（戦闘UI・春色旅籠）",
 		id = 207,
 		icon = "207",
+		scene = {},
+		rare_display = {
+			1,
+			2,
+			3
+		}
+	}
+	pg.base.item_data_battleui[208] = {
+		key = "SkinElite_20260520",
+		name = "ゴールデンベイ",
+		desc = "流れるゴールドが描く星のフレーム、燦々たるダイヤが散りばめられたボタン——すべての戦いを絢爛豪華な夢へと変えてくれる。",
+		display_icon = "ui_208",
+		is_unlock = 1,
+		rare = 4,
+		unlock = "ショップ購入（戦闘UI・ゴールデンベイ）",
+		id = 208,
+		icon = "208",
 		scene = {},
 		rare_display = {
 			1,
