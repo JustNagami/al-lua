@@ -5066,6 +5066,44 @@ _G.pg.base.equip_data_statistics[492] = {
 		"DC",
 	},
 }
+_G.pg.base.equip_data_statistics[493] = {
+	ammo = 1,
+	damage = "21 x 4",
+	descrip = "默认装备",
+	icon = "1",
+	id = 493,
+	name = "P2突破后自带150mm副炮",
+	nationality = 4,
+	rarity = 1,
+	speciality = "<[LOCK]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 2,
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {
+		2,
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		180025,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		3,
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"KMS",
+		"CL",
+		"MG",
+		"AP",
+	},
+}
 _G.pg.base.equip_data_statistics[500] = {
 	ammo = 10,
 	attribute_1 = "dodge",
@@ -162670,6 +162708,133 @@ _G.pg.base.equip_data_statistics[151151] = {
 	value_2 = 16,
 	hidden_skill_id = {},
 }
+_G.pg.base.equip_data_statistics[151160] = {
+	ammo = 10,
+	attribute_1 = "torpedo",
+	attribute_2 = "durability",
+	attribute_3 = "raid_distance",
+	descrip = "通过对艇壳形状的改良，减小了潜艇水下航行的阻力，提高了战斗中的航速与航程",
+	icon = "800",
+	id = 151160,
+	name = "艇壳改良设计案",
+	nationality = 4,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 3,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "18",
+	value_2 = 48,
+	value_3 = -8,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			6560,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {
+		8,
+		17,
+	},
+	part_sub = {
+		8,
+		17,
+	},
+	equip_parameters = {},
+	label = {
+		"KMS",
+		"DEV",
+	},
+}
+_G.pg.base.equip_data_statistics[151161] = {
+	base = 151160,
+	id = 151161,
+	value_1 = "20",
+	value_2 = 54,
+}
+_G.pg.base.equip_data_statistics[151162] = {
+	base = 151160,
+	id = 151162,
+	value_1 = "23",
+	value_2 = 60,
+}
+_G.pg.base.equip_data_statistics[151163] = {
+	base = 151160,
+	id = 151163,
+	value_1 = "25",
+	value_2 = 66,
+}
+_G.pg.base.equip_data_statistics[151164] = {
+	base = 151160,
+	id = 151164,
+	value_1 = "27",
+	value_2 = 72,
+}
+_G.pg.base.equip_data_statistics[151165] = {
+	base = 151160,
+	id = 151165,
+	value_1 = "30",
+	value_2 = 78,
+}
+_G.pg.base.equip_data_statistics[151166] = {
+	base = 151160,
+	id = 151166,
+	value_1 = "32",
+	value_2 = 84,
+}
+_G.pg.base.equip_data_statistics[151167] = {
+	base = 151160,
+	id = 151167,
+	value_1 = "35",
+	value_2 = 90,
+}
+_G.pg.base.equip_data_statistics[151168] = {
+	base = 151160,
+	id = 151168,
+	value_1 = "37",
+	value_2 = 96,
+}
+_G.pg.base.equip_data_statistics[151169] = {
+	base = 151160,
+	id = 151169,
+	value_1 = "40",
+	value_2 = 108,
+}
+_G.pg.base.equip_data_statistics[151170] = {
+	base = 151160,
+	id = 151170,
+	value_1 = "42",
+	value_2 = 120,
+}
+_G.pg.base.equip_data_statistics[151171] = {
+	anti_siren = 100,
+	base = 151160,
+	id = 151171,
+	value_1 = "44",
+	value_2 = 125,
+}
+_G.pg.base.equip_data_statistics[151172] = {
+	anti_siren = 200,
+	base = 151160,
+	id = 151172,
+	value_1 = "46",
+	value_2 = 132,
+}
+_G.pg.base.equip_data_statistics[151173] = {
+	anti_siren = 300,
+	base = 151160,
+	id = 151173,
+	value_1 = "50",
+	value_2 = 142,
+}
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "技能弹幕",
@@ -164408,6 +164573,44 @@ _G.pg.base.equip_data_statistics[180001] = {
 		"DD",
 		"MG",
 		"AP",
+	},
+}
+_G.pg.base.equip_data_statistics[180025] = {
+	ammo = 1,
+	damage = "21 x 4",
+	descrip = "默认装备",
+	icon = "1",
+	id = 180025,
+	name = "莫里茨突破后自带150mm副炮",
+	nationality = 4,
+	rarity = 1,
+	speciality = "<[LOCK]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 2,
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {
+		2,
+	},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		180025,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		3,
+	},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"KMS",
+		"CL",
+		"MG",
+		"HE",
 	},
 }
 _G.pg.base.equip_data_statistics[594017] = {
