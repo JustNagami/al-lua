@@ -359,6 +359,11 @@ end
 
 function var_0_0.removeTask(arg_34_0, arg_34_1)
 	assert(isa(arg_34_1, Task), "should be an instance of Task")
+
+	if not arg_34_0.data[arg_34_1.id] then
+		arg_34_0.data[arg_34_1.id] = arg_34_1
+	end
+
 	arg_34_0:removeTaskById(arg_34_1.id)
 end
 

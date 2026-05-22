@@ -570,7 +570,7 @@
 						monsterTemplateID = 50170,
 						sickness = 0.1,
 						corrdinate = {
-							-70,
+							-50,
 							0,
 							70
 						},
@@ -599,9 +599,9 @@
 						monsterTemplateID = 50170,
 						sickness = 0.1,
 						corrdinate = {
-							-70,
+							-50,
 							0,
-							30
+							40
 						},
 						buffList = {
 							152334
