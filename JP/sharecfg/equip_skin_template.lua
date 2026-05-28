@@ -1514,6 +1514,10 @@ pg.equip_skin_template.all = {
 	2118,
 	2119,
 	2120,
+	2121,
+	2122,
+	2123,
+	2124,
 	3001,
 	3002,
 	3003,
@@ -62614,6 +62618,187 @@ end)()
 			{
 				-5,
 				93
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	}
+	pg.base.equip_skin_template[2121] = {
+		hit_sfx = "",
+		bullet_name = "zidan_bianhuanchilun",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "永動歯車弾",
+		themeid = 109,
+		desc = "幾千万回も廻り続ける歯車",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		double_char_bone = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "96845",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_ui_back = 0,
+		orbit_combat_bound = "",
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_bianhuanchilun_hit",
+		id = 2121,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[2122] = {
+		hit_sfx = "",
+		bullet_name = "yulei_huocheyancong",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		name = "静寂煙突魚雷",
+		themeid = 109,
+		desc = "煙の跡が残っていようと、炉火は既にどこにもなく",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		double_char_bone = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "96846",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_ui_back = 0,
+		orbit_combat_bound = "",
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_huocheyancong_hit",
+		id = 2122,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[2123] = {
+		hit_sfx = "",
+		bullet_name = "paodan_huntianyi",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		name = "儀軌遺産砲弾",
+		themeid = 109,
+		desc = "星々が廻る大いなる儀軌は、四季を分かてり",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		double_char_bone = "",
+		orbit_combat = "",
+		orbit_combat_anima_change = "",
+		icon = "96847",
+		miss_sfx = "",
+		orbit_hidden_action = "",
+		mirror = 0,
+		rarity = 4,
+		orbit_rotate = "",
+		orbit_ui = "",
+		orbit_ui_back = 0,
+		orbit_combat_bound = "",
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 2123,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[2124] = {
+		hit_sfx = "",
+		bullet_name = "",
+		name = "幻夢の檻籠",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 109,
+		orbit_combat = "shebei_longzhongniao",
+		desc = "機関の鳴動が止まらず、されど夢は旧き檻に囚われたまま",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_ui = "shebei_longzhongniaoui",
+		miss_sfx = "",
+		orbit_combat_anima_change = "",
+		icon = "96848",
+		orbit_rotate = false,
+		orbit_ui_back = 1,
+		mirror = 0,
+		rarity = 4,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		id = 2124,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-0.2,
+				-2.03,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-10,
+				-147.5
 			}
 		},
 		orbit_hidden_action = {

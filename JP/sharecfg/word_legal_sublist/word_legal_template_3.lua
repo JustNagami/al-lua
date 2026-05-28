@@ -168,7 +168,20 @@ function temp()
 						ベ = {
 							ル = {
 								ク = {
-									this = true
+									this = true,
+									["("] = {
+										M = {
+											E = {
+												T = {
+													A = {
+														[")"] = {
+															this = true
+														}
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}

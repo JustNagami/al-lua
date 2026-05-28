@@ -17,6 +17,7 @@ pg.item_data_battleui.all = {
 	112,
 	113,
 	114,
+	115,
 	201,
 	202,
 	203,
@@ -233,6 +234,21 @@ pg.base.item_data_battleui = {}
 		unlock = "クルーズパス28期報酬",
 		id = 114,
 		icon = "114",
+		scene = {},
+		rare_display = {
+			1
+		}
+	}
+	pg.base.item_data_battleui[115] = {
+		key = "SkinNormal_20260528",
+		name = "ブルーコア",
+		desc = "錆びついた機械の心臓が再び鼓動し、青いコアの余音が旧き文明の反響を響き渡らせる",
+		display_icon = "ui_115",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "クルーズパス29期報酬",
+		id = 115,
+		icon = "115",
 		scene = {},
 		rare_display = {
 			1
