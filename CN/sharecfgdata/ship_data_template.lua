@@ -67813,6 +67813,181 @@ _G.pg.base.ship_data_template[303204] = {
 	},
 	hide_buff_list = {},
 }
+_G.pg.base.ship_data_template[303211] = {
+	can_get_proficency = 0,
+	energy = 150,
+	equip_id_1 = 0,
+	equip_id_2 = 0,
+	equip_id_3 = 0,
+	group_type = 30321,
+	id = 303211,
+	max_level = 100,
+	oil_at_end = 5,
+	oil_at_start = 1,
+	star = 2,
+	star_max = 5,
+	strengthen_id = 30321,
+	type = 3,
+	specific_type = {},
+	equip_1 = {
+		3,
+	},
+	equip_2 = {
+		5,
+	},
+	equip_3 = {
+		6,
+	},
+	equip_4 = {
+		10,
+	},
+	equip_5 = {
+		10,
+	},
+	airassist_time = {},
+	buff_list = {
+		152440,
+		152450,
+	},
+	buff_list_display = {
+		152440,
+		152450,
+		22281,
+	},
+	hide_buff_list = {},
+}
+_G.pg.base.ship_data_template[303212] = {
+	can_get_proficency = 0,
+	energy = 150,
+	equip_id_1 = 0,
+	equip_id_2 = 0,
+	equip_id_3 = 0,
+	group_type = 30321,
+	id = 303212,
+	max_level = 100,
+	oil_at_end = 7,
+	oil_at_start = 1,
+	star = 3,
+	star_max = 5,
+	strengthen_id = 30321,
+	type = 3,
+	specific_type = {},
+	equip_1 = {
+		3,
+	},
+	equip_2 = {
+		5,
+	},
+	equip_3 = {
+		6,
+	},
+	equip_4 = {
+		10,
+	},
+	equip_5 = {
+		10,
+	},
+	airassist_time = {},
+	buff_list = {
+		152440,
+		152450,
+		22281,
+	},
+	buff_list_display = {
+		152440,
+		152450,
+		22281,
+	},
+	hide_buff_list = {},
+}
+_G.pg.base.ship_data_template[303213] = {
+	can_get_proficency = 0,
+	energy = 150,
+	equip_id_1 = 0,
+	equip_id_2 = 0,
+	equip_id_3 = 0,
+	group_type = 30321,
+	id = 303213,
+	max_level = 100,
+	oil_at_end = 9,
+	oil_at_start = 1,
+	star = 4,
+	star_max = 5,
+	strengthen_id = 30321,
+	type = 3,
+	specific_type = {},
+	equip_1 = {
+		3,
+	},
+	equip_2 = {
+		5,
+	},
+	equip_3 = {
+		6,
+	},
+	equip_4 = {
+		10,
+	},
+	equip_5 = {
+		10,
+	},
+	airassist_time = {},
+	buff_list = {
+		152440,
+		152450,
+		22281,
+	},
+	buff_list_display = {
+		152440,
+		152450,
+		22281,
+	},
+	hide_buff_list = {},
+}
+_G.pg.base.ship_data_template[303214] = {
+	can_get_proficency = 1,
+	energy = 150,
+	equip_id_1 = 0,
+	equip_id_2 = 0,
+	equip_id_3 = 0,
+	group_type = 30321,
+	id = 303214,
+	max_level = 100,
+	oil_at_end = 11,
+	oil_at_start = 1,
+	star = 5,
+	star_max = 5,
+	strengthen_id = 30321,
+	type = 3,
+	specific_type = {},
+	equip_1 = {
+		3,
+	},
+	equip_2 = {
+		5,
+	},
+	equip_3 = {
+		6,
+	},
+	equip_4 = {
+		10,
+	},
+	equip_5 = {
+		10,
+	},
+	airassist_time = {},
+	buff_list = {
+		152440,
+		152450,
+		22282,
+	},
+	buff_list_display = {
+		152440,
+		152450,
+		22282,
+	},
+	hide_buff_list = {},
+}
 _G.pg.base.ship_data_template[304011] = {
 	can_get_proficency = 0,
 	energy = 150,
@@ -142145,6 +142320,180 @@ _G.pg.base.ship_data_template[9702114] = {
 		802120,
 		802130,
 		802142,
+	},
+	hide_buff_list = {},
+}
+_G.pg.base.ship_data_template[9702121] = {
+	can_get_proficency = 1,
+	energy = 150,
+	equip_id_1 = 0,
+	equip_id_2 = 0,
+	equip_id_3 = 0,
+	group_type = 970212,
+	id = 9702121,
+	max_level = 100,
+	oil_at_end = 11,
+	oil_at_start = 1,
+	star = 2,
+	star_max = 5,
+	strengthen_id = 970212,
+	type = 2,
+	specific_type = {},
+	equip_1 = {
+		2,
+	},
+	equip_2 = {
+		5,
+	},
+	equip_3 = {
+		6,
+	},
+	equip_4 = {
+		10,
+		14,
+	},
+	equip_5 = {
+		10,
+		14,
+	},
+	airassist_time = {},
+	buff_list = {},
+	buff_list_display = {
+		802180,
+		802190,
+		802201,
+	},
+	hide_buff_list = {},
+}
+_G.pg.base.ship_data_template[9702122] = {
+	can_get_proficency = 1,
+	energy = 150,
+	equip_id_1 = 0,
+	equip_id_2 = 0,
+	equip_id_3 = 0,
+	group_type = 970212,
+	id = 9702122,
+	max_level = 100,
+	oil_at_end = 11,
+	oil_at_start = 1,
+	star = 3,
+	star_max = 5,
+	strengthen_id = 970212,
+	type = 2,
+	specific_type = {},
+	equip_1 = {
+		2,
+	},
+	equip_2 = {
+		5,
+	},
+	equip_3 = {
+		6,
+	},
+	equip_4 = {
+		10,
+		14,
+	},
+	equip_5 = {
+		10,
+		14,
+	},
+	airassist_time = {},
+	buff_list = {
+		802201,
+	},
+	buff_list_display = {
+		802180,
+		802190,
+		802201,
+	},
+	hide_buff_list = {},
+}
+_G.pg.base.ship_data_template[9702123] = {
+	can_get_proficency = 1,
+	energy = 150,
+	equip_id_1 = 0,
+	equip_id_2 = 0,
+	equip_id_3 = 0,
+	group_type = 970212,
+	id = 9702123,
+	max_level = 100,
+	oil_at_end = 11,
+	oil_at_start = 1,
+	star = 4,
+	star_max = 5,
+	strengthen_id = 970212,
+	type = 2,
+	specific_type = {},
+	equip_1 = {
+		2,
+	},
+	equip_2 = {
+		5,
+	},
+	equip_3 = {
+		6,
+	},
+	equip_4 = {
+		10,
+		14,
+	},
+	equip_5 = {
+		10,
+		14,
+	},
+	airassist_time = {},
+	buff_list = {
+		802201,
+	},
+	buff_list_display = {
+		802180,
+		802190,
+		802201,
+	},
+	hide_buff_list = {},
+}
+_G.pg.base.ship_data_template[9702124] = {
+	can_get_proficency = 1,
+	energy = 150,
+	equip_id_1 = 0,
+	equip_id_2 = 0,
+	equip_id_3 = 0,
+	group_type = 970212,
+	id = 9702124,
+	max_level = 100,
+	oil_at_end = 11,
+	oil_at_start = 1,
+	star = 5,
+	star_max = 5,
+	strengthen_id = 970212,
+	type = 2,
+	specific_type = {},
+	equip_1 = {
+		2,
+	},
+	equip_2 = {
+		5,
+	},
+	equip_3 = {
+		6,
+	},
+	equip_4 = {
+		10,
+		14,
+	},
+	equip_5 = {
+		10,
+		14,
+	},
+	airassist_time = {},
+	buff_list = {
+		802202,
+	},
+	buff_list_display = {
+		802180,
+		802190,
+		802202,
 	},
 	hide_buff_list = {},
 }

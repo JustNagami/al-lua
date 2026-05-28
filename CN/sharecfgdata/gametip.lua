@@ -29244,6 +29244,54 @@ _G.pg.base.gametip.exchange_code_after_time = {
 _G.pg.base.gametip.exchange_code_skin_tip = {
 	tip = "换装",
 }
+_G.pg.base.gametip.battlepass_main_tip_2606 = {
+	tip = "2026/6/1-2026/7/31期间，完成巡游任务累计<icon name=pt w=0.5 h=0.5/>可获取<color=#854747>「阿尔伯缇娜·META」</color>在内的丰富奖励",
+}
+_G.pg.base.gametip.battlepass_main_help_2606 = {
+	tip = {
+		{
+			info = "世界巡游(2026.6.1-2026.7.31)\n\n·<color=#92fc63>开放时间</color>\n 2026.6.1 0点 ~ 2026.7.31 23:59:59\n\n·<color=#92fc63>巡游进度说明</color>\n（1）活动期间，指挥官通过完成巡游任务，可获取「巡游点数」。\n（2）巡游任务随时间开放解锁。\n（3）每获取100点「巡游点数」即可增加1巡游进度\n（4）巡游进度提升后可以获取相应等级的奖励，巡游进度最高可达100。\n\n·<color=#92fc63>奖励规则</color>\n巡游进度奖励分为两种：\n（1）基础巡游奖励：包含<color=#ff5c5c>「阿尔伯缇娜·META」</color>、<color=#ff5c5c>心智魔方</color>、<color=#ff5c5c>高级定向蓝图·八期</color>等奖励；\n 当巡游达到指定进度时，指挥官可以直接领取相应的基础巡游奖励。\n（2）特许巡游奖励：包含<color=#ff5c5c>梧换装「甜蜜的意外序曲 </color>」、<color=#ff5c5c>钻石</color>等奖励；\n 购买「特许巡游凭证」，且巡游达到指定进度时，可以领取特许巡游奖励。\n 注：购买「特许巡游凭证」后，不会影响基础巡游奖励的领取。\n\n·<color=#92fc63>「特许巡游凭证」说明</color>\n（1）「特许巡游凭证」可于「商店」-「优惠礼包」中购买，购买后可立刻获得<color=#ff5c5c>1500点</color>「巡游点数」同时解锁特许巡游奖励。\n（2）「特许巡游凭证」将于<color=#ff5c5c>活动结束前一小时</color>停止售卖(即7.31 22:59:59停止)，请指挥官注意购买时间。\n\n·<color=#92fc63>任务说明</color>\n巡游任务分为两种：\n（1）每周任务 \n 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务\n（2）S.P.任务\n S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。\n（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励。\n\n·<color=#92fc63>「巡游任务快速完成券」说明</color>\n（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成大部分巡游任务\n（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐\n（3）每个巡游任务需要消耗的完成券数量固定，与当前任务进度无关\n（4）「巡游任务快速完成券」不会随本期活动结束而消失\n\n·<color=#ff5c5c>特别提示</color>\n（1）在本期世界巡游活动结束后，所有巡游任务将会无法继续完成，所有巡游奖励将会无法继续领取，请各位指挥官务必注意活动结束时间，提前领取奖励。\n（2）巡游进度、[特许巡游凭证]仅对本期世界巡游活动生效",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_task_help_2606 = {
+	tip = {
+		{
+			info = "巡游任务说明\n\n·<color=#92fc63>开放时间</color>\n 2026.6.1 0点 ~ 2026.7.30 23:59:59\n\n·<color=#92fc63>巡游任务分为两种</color>\n（1）每周任务\n 巡游任务中共有8组每周任务。自活动开始后解锁第一周任务，之后每周一的0点解锁下一组每周任务。\n（2）S.P.任务\n S.P.任务为一组特殊任务，在活动开始后会直接处于全部解锁状态。\n（3）巡游任务在解锁后将自动接取，满足任务完成条件时，会自动完成并获取对应奖励\n\n·<color=#92fc63>「巡游任务快速完成券」说明</color>\n（1）「巡游任务快速完成券」可以在巡游任务界面使用，花费一定数量的「巡游任务快速完成券」可以直接完成每周巡游任务\n（2）在「巡游任务快速完成券」数量不足时，指挥官可花费钻石进行补齐\n（3）每个巡游任务需要消耗的「巡游任务快速完成券」数量和其提供的「巡游点数」相关，与当前任务进度无关\n（4）「巡游任务快速完成券」<color=#92fc63>不会随本期活动结束而消失</color>",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_title_2606 = {
+	tip = "世界巡游·第二十九期",
+}
+_G.pg.base.gametip.littleyunxian_npc = {
+	tip = {
+		{
+			info = "独立小仙寻宝中说明：",
+		},
+		{
+			info = "1.活动期间，玩家可获得临时npc角色「{namecode:563}」，临时角色不可誓约、不可退役、不可被选为强化突破材料。",
+		},
+		{
+			info = "2.活动期间，完成活动任务，可获得临时npc角色「{namecode:563}」的友好度。",
+		},
+		{
+			info = "3.6月3日为止，每日解锁1个可达成的友好度阶段。",
+		},
+		{
+			info = "4.在活动结束前累计获得10000点友好度，可领取奖励并将临时角色「{namecode:563}」转化为永久角色。",
+		},
+		{
+			info = "5.在活动结束后，未完成转化的临时角色「{namecode:563}」将离开港区，不返还已经消耗的强化、突破等培养材料。",
+		},
+		{
+			info = "6.npc角色无法参与大型作战。",
+		},
+		{
+			info = "7.npc角色无法参与大舰队作战中的事件派遣、攻坚队和首领战。",
+		},
+	},
+}
 _G.pg.base.gametip.littleMusashi_npc = {
 	tip = {
 		{
@@ -29532,6 +29580,9 @@ _G.pg.base.gametip.mall_title_lock = {
 _G.pg.base.gametip.mall_continue_to_unlock = {
 	tip = "提升购物中心等级后解锁",
 }
+_G.pg.base.gametip.mall_pos_lock = {
+	tip = "提升购物中心等级后解锁",
+}
 _G.pg.base.gametip.GeZiURCoreActivityUI_subtitle_1 = {
 	tip = "圣印前的同盟",
 }
@@ -29576,5 +29627,14 @@ _G.pg.base.gametip.mall_unlock_date_tip2 = {
 }
 _G.pg.base.gametip.mall_order_finished_all_tip = {
 	tip = "已完成所有啾啾定制订单",
+}
+_G.pg.base.gametip.littleyunxian_tip1 = {
+	tip = "PHASE",
+}
+_G.pg.base.gametip.littleyunxian_tip2 = {
+	tip = "累计",
+}
+_G.pg.base.gametip.OutPostCoreActivityUI_subtitle_3 = {
+	tip = "若漆之光",
 }
 
