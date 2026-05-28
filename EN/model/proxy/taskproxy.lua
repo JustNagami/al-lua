@@ -359,11 +359,6 @@ end
 
 function var_0_0.removeTask(arg_34_0, arg_34_1)
 	assert(isa(arg_34_1, Task), "should be an instance of Task")
-
-	if not arg_34_0.data[arg_34_1.id] then
-		arg_34_0.data[arg_34_1.id] = arg_34_1
-	end
-
 	arg_34_0:removeTaskById(arg_34_1.id)
 end
 
@@ -392,6 +387,12 @@ function var_0_0.deleteTask(arg_36_0, arg_36_1)
 end
 
 function var_0_0.deleteTaskById(arg_37_0, arg_37_1)
+	if arg_37_0.submittingTask[arg_37_1] then
+		print("正在提交的任务不予删除，id:" .. arg_37_1)
+
+		return
+	end
+
 	local var_37_0 = arg_37_0.data[arg_37_1] or arg_37_0.finishData[arg_37_1]
 
 	arg_37_0.data[arg_37_1] = nil
