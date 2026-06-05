@@ -32808,6 +32808,69 @@ _G.pg.base.shop_template[60797] = {
 		},
 	},
 }
+_G.pg.base.shop_template[60805] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "980钻石购买限时礼包-比翼双飞(260605国服周年第三弹版本)",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "gift_package",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 60805,
+	limit_args2 = "",
+	num = 1,
+	order = 0,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 980,
+	resource_type = 14,
+	second_text = "",
+	tag = 2,
+	time_second = 0,
+	type = 2,
+	type_order = 5,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		40100,
+	},
+	time = {
+		{
+			{
+				2026,
+				6,
+				5,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				6,
+				17,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
 _G.pg.base.shop_template[61001] = {
 	akashi_pick = 0,
 	collaboration_skin_time = "",
@@ -104185,8 +104248,8 @@ _G.pg.base.shop_template[71342] = {
 		{
 			{
 				2026,
-				5,
-				20,
+				6,
+				8,
 			},
 			{
 				0,
@@ -104197,8 +104260,8 @@ _G.pg.base.shop_template[71342] = {
 		{
 			{
 				2026,
-				5,
-				27,
+				6,
+				9,
 			},
 			{
 				23,
@@ -104243,8 +104306,8 @@ _G.pg.base.shop_template[71343] = {
 		{
 			{
 				2026,
-				5,
-				20,
+				6,
+				8,
 			},
 			{
 				0,
@@ -104255,8 +104318,8 @@ _G.pg.base.shop_template[71343] = {
 		{
 			{
 				2026,
-				5,
-				27,
+				6,
+				9,
 			},
 			{
 				23,
@@ -104301,8 +104364,8 @@ _G.pg.base.shop_template[71344] = {
 		{
 			{
 				2026,
-				5,
-				20,
+				6,
+				8,
 			},
 			{
 				0,
@@ -104313,8 +104376,8 @@ _G.pg.base.shop_template[71344] = {
 		{
 			{
 				2026,
-				5,
-				27,
+				6,
+				9,
 			},
 			{
 				23,
@@ -104359,8 +104422,8 @@ _G.pg.base.shop_template[71345] = {
 		{
 			{
 				2026,
-				5,
-				20,
+				6,
+				8,
 			},
 			{
 				0,
@@ -104371,8 +104434,8 @@ _G.pg.base.shop_template[71345] = {
 		{
 			{
 				2026,
-				5,
-				27,
+				6,
+				9,
 			},
 			{
 				23,
@@ -104417,8 +104480,8 @@ _G.pg.base.shop_template[71346] = {
 		{
 			{
 				2026,
-				5,
-				20,
+				6,
+				8,
 			},
 			{
 				0,
@@ -104429,8 +104492,8 @@ _G.pg.base.shop_template[71346] = {
 		{
 			{
 				2026,
-				5,
-				27,
+				6,
+				9,
 			},
 			{
 				23,
@@ -104475,8 +104538,8 @@ _G.pg.base.shop_template[71347] = {
 		{
 			{
 				2026,
-				5,
-				20,
+				6,
+				8,
 			},
 			{
 				0,
@@ -104487,8 +104550,8 @@ _G.pg.base.shop_template[71347] = {
 		{
 			{
 				2026,
-				5,
-				27,
+				6,
+				9,
 			},
 			{
 				23,
@@ -104533,8 +104596,8 @@ _G.pg.base.shop_template[71348] = {
 		{
 			{
 				2026,
-				5,
-				20,
+				6,
+				8,
 			},
 			{
 				0,
@@ -104545,8 +104608,8 @@ _G.pg.base.shop_template[71348] = {
 		{
 			{
 				2026,
-				5,
-				27,
+				6,
+				9,
 			},
 			{
 				23,
@@ -104591,8 +104654,8 @@ _G.pg.base.shop_template[71349] = {
 		{
 			{
 				2026,
-				5,
-				20,
+				6,
+				8,
 			},
 			{
 				0,
@@ -104603,8 +104666,8 @@ _G.pg.base.shop_template[71349] = {
 		{
 			{
 				2026,
-				5,
-				27,
+				6,
+				9,
 			},
 			{
 				23,
@@ -104649,8 +104712,8 @@ _G.pg.base.shop_template[71350] = {
 		{
 			{
 				2026,
-				5,
-				28,
+				6,
+				10,
 			},
 			{
 				0,
@@ -104662,7 +104725,7 @@ _G.pg.base.shop_template[71350] = {
 			{
 				2026,
 				6,
-				4,
+				11,
 			},
 			{
 				23,
@@ -104707,8 +104770,8 @@ _G.pg.base.shop_template[71351] = {
 		{
 			{
 				2026,
-				5,
-				28,
+				6,
+				10,
 			},
 			{
 				0,
@@ -104720,7 +104783,7 @@ _G.pg.base.shop_template[71351] = {
 			{
 				2026,
 				6,
-				4,
+				11,
 			},
 			{
 				23,
@@ -104765,8 +104828,8 @@ _G.pg.base.shop_template[71352] = {
 		{
 			{
 				2026,
-				5,
-				28,
+				6,
+				10,
 			},
 			{
 				0,
@@ -104778,7 +104841,7 @@ _G.pg.base.shop_template[71352] = {
 			{
 				2026,
 				6,
-				4,
+				11,
 			},
 			{
 				23,
@@ -104823,8 +104886,8 @@ _G.pg.base.shop_template[71353] = {
 		{
 			{
 				2026,
-				5,
-				28,
+				6,
+				10,
 			},
 			{
 				0,
@@ -104836,7 +104899,7 @@ _G.pg.base.shop_template[71353] = {
 			{
 				2026,
 				6,
-				4,
+				11,
 			},
 			{
 				23,
@@ -104881,8 +104944,8 @@ _G.pg.base.shop_template[71354] = {
 		{
 			{
 				2026,
-				5,
-				28,
+				6,
+				10,
 			},
 			{
 				0,
@@ -104894,7 +104957,7 @@ _G.pg.base.shop_template[71354] = {
 			{
 				2026,
 				6,
-				4,
+				11,
 			},
 			{
 				23,
@@ -104939,8 +105002,8 @@ _G.pg.base.shop_template[71355] = {
 		{
 			{
 				2026,
-				5,
-				28,
+				6,
+				10,
 			},
 			{
 				0,
@@ -104952,7 +105015,65 @@ _G.pg.base.shop_template[71355] = {
 			{
 				2026,
 				6,
-				4,
+				11,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[71356] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "购买皮肤:260605胡德SPINE",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "skin_shop",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 71356,
+	limit_args2 = "",
+	num = 1,
+	order = 6,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 980,
+	resource_type = 14,
+	second_text = "",
+	tag = 2,
+	time_second = 0,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {},
+	effect_args = {
+		204035,
+	},
+	time = {
+		{
+			{
+				2026,
+				6,
+				5,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2026,
+				6,
+				17,
 			},
 			{
 				23,
