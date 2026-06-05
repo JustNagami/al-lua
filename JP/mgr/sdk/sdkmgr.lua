@@ -122,7 +122,7 @@ function var_0_0.GetChannelUIDIncludeHarmony(arg_23_0)
 	local function var_23_0()
 		local var_24_0 = arg_23_0:GetChannelUID()
 
-		return var_24_0 == "harmony" and 9999 or var_24_0
+		return var_24_0 == "harmony" and 9999 or tonumber(var_24_0)
 	end
 
 	if arg_23_0:IsTestServer() or IsUnityEditor then
