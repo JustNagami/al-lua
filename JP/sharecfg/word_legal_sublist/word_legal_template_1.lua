@@ -3017,7 +3017,20 @@ function temp()
 			ス = {
 				ト = {
 					ル = {
-						this = true
+						this = true,
+						["("] = {
+							M = {
+								E = {
+									T = {
+										A = {
+											[")"] = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			},

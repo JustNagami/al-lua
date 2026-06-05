@@ -449,7 +449,14 @@ pg.island_task.all = {
 	90001010,
 	90001011,
 	90001012,
-	90001020
+	90001020,
+	90002001,
+	90002002,
+	90002003,
+	90002004,
+	90002005,
+	90002006,
+	90002007
 }
 pg.island_task.get_id_list_by_type = {
 	{
@@ -910,7 +917,14 @@ pg.island_task.get_id_list_by_type = {
 		90001010,
 		90001011,
 		90001012,
-		90001020
+		90001020,
+		90002001,
+		90002002,
+		90002003,
+		90002004,
+		90002005,
+		90002006,
+		90002007
 	}
 }
 pg.base = pg.base or {}
@@ -21951,6 +21965,433 @@ end)()
 			{
 				52,
 				4018,
+				1
+			}
+		}
+	}
+	pg.base.island_task[90002001] = {
+		name = "ねこを撫でる",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "ねこを撫でる",
+		series_name = "",
+		id = 90002001,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					6,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					18
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900020011
+		},
+		reward_show = {
+			{
+				46,
+				1010015,
+				1
+			}
+		}
+	}
+	pg.base.island_task[90002002] = {
+		name = "任意の農作物を30個入手する",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "任意の農作物を30個入手する",
+		series_name = "",
+		id = 90002002,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					6,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					18
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900020021
+		},
+		reward_show = {
+			{
+				41,
+				1,
+				1000
+			}
+		}
+	}
+	pg.base.island_task[90002003] = {
+		name = "任意の離島依頼を1個こなす",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "任意の離島依頼を1個こなす",
+		series_name = "",
+		id = 90002003,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					6,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					18
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900020031
+		},
+		reward_show = {
+			{
+				46,
+				1030014,
+				1
+			}
+		}
+	}
+	pg.base.island_task[90002004] = {
+		name = "資源生産枠に仲間を配置する",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "資源生産枠に仲間を配置する",
+		series_name = "",
+		id = 90002004,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					6,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					18
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900020041
+		},
+		reward_show = {
+			{
+				41,
+				1,
+				1000
+			}
+		}
+	}
+	pg.base.island_task[90002005] = {
+		name = "仲間とインタラクトする",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "仲間とインタラクトする",
+		series_name = "",
+		id = 90002005,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					6,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					18
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900020051
+		},
+		reward_show = {
+			{
+				46,
+				1020014,
+				1
+			}
+		}
+	}
+	pg.base.island_task[90002006] = {
+		name = "任意の輸送委託を1回こなす",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "任意の輸送委託を1回こなす",
+		series_name = "",
+		id = 90002006,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					6,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					18
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900020061
+		},
+		reward_show = {
+			{
+				41,
+				1,
+				1000
+			}
+		}
+	}
+	pg.base.island_task[90002007] = {
+		name = "任意の料理を3個入手する",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 9,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "任意の料理を3個入手する",
+		series_name = "",
+		id = 90002007,
+		unlock_condition = {},
+		unlock_time = {
+			{
+				{
+					2026,
+					6,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					6,
+					18
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			900020071
+		},
+		reward_show = {
+			{
+				46,
+				1060013,
 				1
 			}
 		}
