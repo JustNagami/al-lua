@@ -50,7 +50,9 @@ function var_0_0.init(arg_2_0, ...)
 
 							var_2_0 = var_3_0.id
 
-							if arg_2_0:GetActivityClassName(var_3_0) == "AnniversaryNineHwahJahSkinPage" then
+							local var_5_0 = arg_2_0:GetActivityClassName(var_3_0)
+
+							if var_5_0 == "AnniversaryNineHwahJahSkinPage" or var_5_0 == "AnniversaryNineEvertsenSkinPage" then
 								arg_2_0:SetColorTab(var_0_1)
 							else
 								arg_2_0:SetColorTab(var_0_2)
@@ -64,8 +66,12 @@ function var_0_0.init(arg_2_0, ...)
 end
 
 function var_0_0.SetColorTab(arg_6_0, arg_6_1)
-	for iter_6_0 = 1, 7 do
-		setTextColor(arg_6_0.tabs:Find(iter_6_0 .. "/off/name"), Color.NewHex(arg_6_1))
+	for iter_6_0 = 0, arg_6_0.tabs.childCount - 1 do
+		local var_6_0 = arg_6_0.tabs:GetChild(iter_6_0):Find("off/name")
+
+		if var_6_0 then
+			setTextColor(var_6_0, Color.NewHex(arg_6_1))
+		end
 	end
 end
 
