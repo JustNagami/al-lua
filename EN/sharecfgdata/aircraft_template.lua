@@ -88261,6 +88261,180 @@ _G.pg.base.aircraft_template[183850] = {
 		183860,
 	},
 }
+_G.pg.base.aircraft_template[184051] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 208,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1692,
+	icon = "97jiangong",
+	id = 184051,
+	max_hp = 42,
+	model_ID = "97jiangong",
+	name = "瑞鹤专武弹幕鱼雷机lv1",
+	nationality = 3,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 48,
+	type = 3,
+	weapon_ID = {
+		184061,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.68,
+				-0.667,
+				0,
+			},
+			{
+				0.97,
+				0.584,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0.54,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+_G.pg.base.aircraft_template[184052] = {
+	base = 184051,
+	hp_growth = 1913,
+	id = 184052,
+	max_hp = 48,
+	name = "瑞鹤专武弹幕鱼雷机lv2",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184062,
+	},
+}
+_G.pg.base.aircraft_template[184053] = {
+	base = 184051,
+	hp_growth = 2133,
+	id = 184053,
+	max_hp = 54,
+	name = "瑞鹤专武弹幕鱼雷机lv3",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184063,
+	},
+}
+_G.pg.base.aircraft_template[184054] = {
+	base = 184051,
+	hp_growth = 2354,
+	id = 184054,
+	max_hp = 61,
+	name = "瑞鹤专武弹幕鱼雷机lv4",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184064,
+	},
+}
+_G.pg.base.aircraft_template[184055] = {
+	base = 184051,
+	hp_growth = 2575,
+	id = 184055,
+	max_hp = 67,
+	name = "瑞鹤专武弹幕鱼雷机lv5",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184065,
+	},
+}
+_G.pg.base.aircraft_template[184056] = {
+	base = 184051,
+	hp_growth = 2796,
+	id = 184056,
+	max_hp = 73,
+	name = "瑞鹤专武弹幕鱼雷机lv6",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184066,
+	},
+}
+_G.pg.base.aircraft_template[184057] = {
+	base = 184051,
+	hp_growth = 3016,
+	id = 184057,
+	max_hp = 79,
+	name = "瑞鹤专武弹幕鱼雷机lv7",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184067,
+	},
+}
+_G.pg.base.aircraft_template[184058] = {
+	base = 184051,
+	hp_growth = 3237,
+	id = 184058,
+	max_hp = 86,
+	name = "瑞鹤专武弹幕鱼雷机lv8",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184068,
+	},
+}
+_G.pg.base.aircraft_template[184059] = {
+	base = 184051,
+	hp_growth = 3458,
+	id = 184059,
+	max_hp = 92,
+	name = "瑞鹤专武弹幕鱼雷机lv9",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184069,
+	},
+}
+_G.pg.base.aircraft_template[184060] = {
+	base = 184051,
+	hp_growth = 3678,
+	id = 184060,
+	max_hp = 98,
+	name = "瑞鹤专武弹幕鱼雷机lv10",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184070,
+	},
+}
 _G.pg.base.aircraft_template[200101] = {
 	ACC_growth = 0,
 	AP_growth = 2000,
