@@ -1864,7 +1864,7 @@ end)()
 		group = 50607,
 		task_id = 21925,
 		medal_asset = "ActivityMedal/5060701",
-		activity_medal_name = "ステッカー：神性総連帝国",
+		activity_medal_name = "ステッカー：神聖総連帝国",
 		id = 5060701,
 		activity_medal_desc = "神聖総連帝国。「神聖」にして「総連」の「帝国」"
 	}
