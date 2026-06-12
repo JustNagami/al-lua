@@ -4436,7 +4436,7 @@ _G.pg.base.weapon_property_2[184101] = {
 	spawn_bound = "cannon",
 	suppress = 0,
 	torpedo_ammo = 0,
-	type = 1,
+	type = 2,
 	bullet_ID = {
 		168301,
 		168303,
