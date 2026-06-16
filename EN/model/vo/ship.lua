@@ -471,7 +471,7 @@ function var_0_0.getEnergyPrint(arg_32_0)
 end
 
 function var_0_0.getIntimacy(arg_33_0)
-	return arg_33_0.intimacy
+	return arg_33_0.intimacy or 0
 end
 
 function var_0_0.getCVIntimacy(arg_34_0)
