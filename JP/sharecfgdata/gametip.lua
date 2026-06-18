@@ -7942,13 +7942,13 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "アビリティPtが不足しています",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "限定建造200回で「ゲッツ・フォン・ベルリヒンゲン」を確定で入手可能！（最大4隻まで）",
+	tip = "限定建造200回で「アルザス」を確定で入手可能！（最大4隻まで）",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "「ビスマルクZwei」常設実装！",
+	tip = "「ストラスブール」「デュプレクス」常設実装！",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "「レーゲンスブルク」常設実装！",
+	tip = "「ローダシュー」常設実装！",
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "「ビスマルクZwei」「U-556(META)」常設実装！",
