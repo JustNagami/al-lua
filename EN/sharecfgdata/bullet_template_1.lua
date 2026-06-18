@@ -933988,9 +933988,9 @@ _G.pg.base.bullet_template_1[3155001] = {
 		},
 	},
 	cld_box = {
-		2,
-		2,
-		2,
+		5,
+		5,
+		5,
 	},
 	cld_offset = {
 		100,
@@ -934043,7 +934043,7 @@ _G.pg.base.bullet_template_1[3155002] = {
 	out_bound = 0,
 	pierce_count = 50,
 	random_damage_rate = 0,
-	range = 0.02,
+	range = 0.1,
 	range_offset = 0,
 	type = 1,
 	velocity = 0.1,
@@ -934079,7 +934079,9 @@ _G.pg.base.bullet_template_1[3155002] = {
 	},
 	hit_type = {},
 	attach_buff = {},
-	extra_param = {},
+	extra_param = {
+		ignoreShield = true,
+	},
 }
 _G.pg.base.bullet_template_1[3155003] = {
 	alert_fx = "",
@@ -934133,9 +934135,9 @@ _G.pg.base.bullet_template_1[3155003] = {
 		},
 	},
 	cld_box = {
-		2,
-		2,
-		2,
+		5,
+		5,
+		5,
 	},
 	cld_offset = {
 		100,
@@ -934237,7 +934239,7 @@ _G.pg.base.bullet_template_1[3155005] = {
 	miss_fx = "None",
 	miss_sfx = "",
 	modle_ID = "cave_bullet04",
-	out_bound = 3,
+	out_bound = 0,
 	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
@@ -934265,9 +934267,9 @@ _G.pg.base.bullet_template_1[3155005] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -934276,7 +934278,9 @@ _G.pg.base.bullet_template_1[3155005] = {
 	},
 	hit_type = {},
 	attach_buff = {},
-	extra_param = {},
+	extra_param = {
+		ignoreShield = true,
+	},
 }
 _G.pg.base.bullet_template_1[3155006] = {
 	alert_fx = "",
@@ -934289,7 +934293,7 @@ _G.pg.base.bullet_template_1[3155006] = {
 	miss_fx = "None",
 	miss_sfx = "",
 	modle_ID = "cave_bullet04",
-	out_bound = 3,
+	out_bound = 0,
 	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
@@ -934317,9 +934321,9 @@ _G.pg.base.bullet_template_1[3155006] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -934328,7 +934332,9 @@ _G.pg.base.bullet_template_1[3155006] = {
 	},
 	hit_type = {},
 	attach_buff = {},
-	extra_param = {},
+	extra_param = {
+		ignoreShield = true,
+	},
 }
 _G.pg.base.bullet_template_1[3155007] = {
 	alert_fx = "",
@@ -934344,7 +934350,7 @@ _G.pg.base.bullet_template_1[3155007] = {
 	out_bound = 0,
 	pierce_count = 50,
 	random_damage_rate = 0,
-	range = 0.02,
+	range = 0.1,
 	range_offset = 0,
 	type = 1,
 	velocity = 0.1,
@@ -934380,7 +934386,9 @@ _G.pg.base.bullet_template_1[3155007] = {
 	},
 	hit_type = {},
 	attach_buff = {},
-	extra_param = {},
+	extra_param = {
+		ignoreShield = true,
+	},
 }
 _G.pg.base.bullet_template_1[3155008] = {
 	alert_fx = "",
@@ -934421,9 +934429,9 @@ _G.pg.base.bullet_template_1[3155008] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		5,
+		5,
+		5,
 	},
 	cld_offset = {
 		100,
@@ -934494,9 +934502,9 @@ _G.pg.base.bullet_template_1[3155009] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		5,
+		5,
+		5,
 	},
 	cld_offset = {
 		100,
@@ -934567,9 +934575,9 @@ _G.pg.base.bullet_template_1[3155010] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		5,
+		5,
+		5,
 	},
 	cld_offset = {
 		100,
@@ -934633,9 +934641,9 @@ _G.pg.base.bullet_template_1[3155011] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		5,
+		5,
+		5,
 	},
 	cld_offset = {
 		100,
@@ -934699,9 +934707,9 @@ _G.pg.base.bullet_template_1[3155012] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		5,
+		5,
+		5,
 	},
 	cld_offset = {
 		100,
@@ -934767,7 +934775,7 @@ _G.pg.base.bullet_template_1[3155013] = {
 		{
 			flip = false,
 			t = 0.1,
-			u = -0.035,
+			u = -0.03,
 			v = 0,
 		},
 		{
@@ -934778,9 +934786,9 @@ _G.pg.base.bullet_template_1[3155013] = {
 		},
 	},
 	cld_box = {
-		1,
-		1,
-		1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -934816,7 +934824,7 @@ _G.pg.base.bullet_template_1[3155014] = {
 	miss_fx = "None",
 	miss_sfx = "",
 	modle_ID = "dongfangjiguang04",
-	out_bound = 3,
+	out_bound = 0,
 	pierce_count = 50,
 	random_damage_rate = 0,
 	range = 100,
@@ -934844,9 +934852,9 @@ _G.pg.base.bullet_template_1[3155014] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1,
-		1,
-		1,
+		0.5,
+		0.5,
+		0.5,
 	},
 	cld_offset = {
 		0,
@@ -934871,7 +934879,7 @@ _G.pg.base.bullet_template_1[3155015] = {
 	miss_fx = "None",
 	miss_sfx = "",
 	modle_ID = "cave_bullet04",
-	out_bound = 3,
+	out_bound = 0,
 	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
@@ -934901,7 +934909,7 @@ _G.pg.base.bullet_template_1[3155015] = {
 		{
 			flip = false,
 			t = 0.1,
-			u = -0.035,
+			u = -0.03,
 			v = 0,
 		},
 		{
@@ -934912,9 +934920,9 @@ _G.pg.base.bullet_template_1[3155015] = {
 		},
 	},
 	cld_box = {
-		1,
-		1,
-		1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -934923,7 +934931,9 @@ _G.pg.base.bullet_template_1[3155015] = {
 	},
 	hit_type = {},
 	attach_buff = {},
-	extra_param = {},
+	extra_param = {
+		ignoreShield = true,
+	},
 }
 _G.pg.base.bullet_template_1[3155016] = {
 	alert_fx = "",
@@ -934936,7 +934946,7 @@ _G.pg.base.bullet_template_1[3155016] = {
 	miss_fx = "None",
 	miss_sfx = "",
 	modle_ID = "None",
-	out_bound = 3,
+	out_bound = 0,
 	pierce_count = 50,
 	random_damage_rate = 0,
 	range = 0.01,
@@ -935082,7 +935092,7 @@ _G.pg.base.bullet_template_1[3155018] = {
 	miss_fx = "None",
 	miss_sfx = "",
 	modle_ID = "gulite_jianci_low",
-	out_bound = 3,
+	out_bound = 0,
 	pierce_count = 50,
 	random_damage_rate = 0,
 	range = 100,
@@ -935110,9 +935120,9 @@ _G.pg.base.bullet_template_1[3155018] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -935121,7 +935131,9 @@ _G.pg.base.bullet_template_1[3155018] = {
 	},
 	hit_type = {},
 	attach_buff = {},
-	extra_param = {},
+	extra_param = {
+		ignoreShield = true,
+	},
 }
 _G.pg.base.bullet_template_1[3155019] = {
 	alert_fx = "",
@@ -935199,7 +935211,7 @@ _G.pg.base.bullet_template_1[3155020] = {
 	miss_fx = "None",
 	miss_sfx = "",
 	modle_ID = "cave_bullet04",
-	out_bound = 3,
+	out_bound = 0,
 	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
@@ -935227,9 +935239,9 @@ _G.pg.base.bullet_template_1[3155020] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -935238,7 +935250,9 @@ _G.pg.base.bullet_template_1[3155020] = {
 	},
 	hit_type = {},
 	attach_buff = {},
-	extra_param = {},
+	extra_param = {
+		ignoreShield = true,
+	},
 }
 _G.pg.base.bullet_template_1[3155021] = {
 	alert_fx = "",
@@ -935251,7 +935265,7 @@ _G.pg.base.bullet_template_1[3155021] = {
 	miss_fx = "None",
 	miss_sfx = "",
 	modle_ID = "shuidizidan05",
-	out_bound = 3,
+	out_bound = 0,
 	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
@@ -935279,9 +935293,9 @@ _G.pg.base.bullet_template_1[3155021] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -935290,7 +935304,9 @@ _G.pg.base.bullet_template_1[3155021] = {
 	},
 	hit_type = {},
 	attach_buff = {},
-	extra_param = {},
+	extra_param = {
+		ignoreShield = true,
+	},
 }
 _G.pg.base.bullet_template_1[3155022] = {
 	alert_fx = "",
@@ -935331,9 +935347,9 @@ _G.pg.base.bullet_template_1[3155022] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -935342,7 +935358,9 @@ _G.pg.base.bullet_template_1[3155022] = {
 	},
 	hit_type = {},
 	attach_buff = {},
-	extra_param = {},
+	extra_param = {
+		ignoreShield = true,
+	},
 }
 _G.pg.base.bullet_template_1[3155023] = {
 	alert_fx = "",
@@ -935448,9 +935466,9 @@ _G.pg.base.bullet_template_1[3155024] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.5,
-		0.5,
-		0.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -935602,7 +935620,7 @@ _G.pg.base.bullet_template_1[3155027] = {
 	miss_fx = "None",
 	miss_sfx = "",
 	modle_ID = "gulite_jianci_low",
-	out_bound = 3,
+	out_bound = 0,
 	pierce_count = 50,
 	random_damage_rate = 0,
 	range = 100,
@@ -935630,9 +935648,9 @@ _G.pg.base.bullet_template_1[3155027] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -935682,9 +935700,9 @@ _G.pg.base.bullet_template_1[3155028] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		100,
@@ -935703,6 +935721,408 @@ _G.pg.base.bullet_template_1[3155028] = {
 				bullet_ID = 3155027,
 				emitterType = "BattleBulletEmitter",
 				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+_G.pg.base.bullet_template_1[3155029] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3155029,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 1,
+				bullet_ID = 3155016,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetEnemyLeaderShip",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+_G.pg.base.bullet_template_1[3155030] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3155030,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3155034,
+				bullet_ID = 3155008,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetEnemyLeaderShip",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+_G.pg.base.bullet_template_1[3155031] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3155031,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3155035,
+				bullet_ID = 3155009,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetEnemyLeaderShip",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+_G.pg.base.bullet_template_1[3155032] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3155032,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3155034,
+				bullet_ID = 3155010,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetEnemyLeaderShip",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+_G.pg.base.bullet_template_1[3155033] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3155033,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3155035,
+				bullet_ID = 3155011,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetEnemyLeaderShip",
+				},
+			},
+			FXID = "",
+		},
+	},
+}
+_G.pg.base.bullet_template_1[3155034] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3155034,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 3155034,
+				bullet_ID = 3155012,
+				emitterType = "BattleBulletEmitter",
+				reaim = {
+					"TargetEnemyLeaderShip",
+				},
 			},
 			FXID = "",
 		},
