@@ -6138,6 +6138,7 @@ _G.pg.base.world_event_data[1411] = {
 	visuality = 0,
 	event_op = {},
 	effect = {
+		1473,
 		1439,
 	},
 	grid = {
