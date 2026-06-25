@@ -17,7 +17,9 @@ pg.dorm3d_gift.all = {
 	1051702,
 	3070701,
 	3070702,
-	4990501
+	4990501,
+	7990201,
+	7990261
 }
 pg.dorm3d_gift.get_id_list_by_ship_group_id = {
 	[0] = {
@@ -48,6 +50,10 @@ pg.dorm3d_gift.get_id_list_by_ship_group_id = {
 	},
 	[49905] = {
 		4990501
+	},
+	[79902] = {
+		7990201,
+		7990261
 	}
 }
 pg.base = pg.base or {}
@@ -57,12 +63,14 @@ pg.base.dorm3d_gift = {}
 	pg.base.dorm3d_gift[1021001] = {
 		name = "ウサウサぬいぐるみ",
 		display = "ピンク色のウサギのぬいぐるみ。柔らかい素材でふわふわで、抱き心地が最高。",
-		rarity = 2,
+		time = "always",
 		unlock_dialogue_id = 0,
+		rarity = 2,
+		id = 1021001,
 		shop_id = "",
 		ship_group_id = 0,
 		favor_trigger_id = 1009,
-		id = 1021001,
+		hide_if_not_owned = 0,
 		icon = "dorm3dicon/3Ddrom_everyone_CommonGift3",
 		reply_dialogue_id = {
 			{
@@ -88,6 +96,10 @@ pg.base.dorm3d_gift = {}
 			{
 				49905,
 				140301
+			},
+			{
+				79902,
+				210301
 			}
 		},
 		unlock_tips = {},
@@ -127,18 +139,26 @@ pg.base.dorm3d_gift = {}
 				{
 					"banner_aijier"
 				}
+			},
+			{
+				79902,
+				{
+					"banner_naximofu"
+				}
 			}
 		}
 	}
 	pg.base.dorm3d_gift[1021002] = {
-		ship_group_id = 0,
-		display = "奥ゆかしい魅惑的な香りを放つ花束。バラとその他の赤色を基調とした花々が、情熱とロマンスを際立たせている。",
-		rarity = 3,
-		unlock_dialogue_id = 0,
-		id = 1021002,
-		icon = "dorm3dicon/3Ddrom_everyone_CommonGift2",
 		name = "満点のロマンチック",
+		display = "奥ゆかしい魅惑的な香りを放つ花束。バラとその他の赤色を基調とした花々が、情熱とロマンスを際立たせている。",
+		time = "always",
+		unlock_dialogue_id = 0,
+		rarity = 3,
+		id = 1021002,
+		ship_group_id = 0,
 		favor_trigger_id = 1010,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_everyone_CommonGift2",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -163,6 +183,10 @@ pg.base.dorm3d_gift = {}
 			{
 				49905,
 				140302
+			},
+			{
+				79902,
+				210302
 			}
 		},
 		shop_id = {
@@ -209,18 +233,26 @@ pg.base.dorm3d_gift = {}
 				{
 					"banner_aijier"
 				}
+			},
+			{
+				79902,
+				{
+					"banner_naximofu"
+				}
 			}
 		}
 	}
 	pg.base.dorm3d_gift[1021003] = {
-		ship_group_id = 0,
-		display = "精緻にラッピングされた箱と美味しいカットケーキの詰め合わせ。自分で食べるのはもちろん、人に贈るプレゼントとしても嬉しいものだ。",
-		rarity = 4,
-		unlock_dialogue_id = 0,
-		id = 1021003,
-		icon = "dorm3dicon/3Ddrom_everyone_CommonGift1",
 		name = "ケーキギフトボックス",
+		display = "精緻にラッピングされた箱と美味しいカットケーキの詰め合わせ。自分で食べるのはもちろん、人に贈るプレゼントとしても嬉しいものだ。",
+		time = "always",
+		unlock_dialogue_id = 0,
+		rarity = 4,
+		id = 1021003,
+		ship_group_id = 0,
 		favor_trigger_id = 1019,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_everyone_CommonGift1",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -245,6 +277,10 @@ pg.base.dorm3d_gift = {}
 			{
 				49905,
 				140303
+			},
+			{
+				79902,
+				210303
 			}
 		},
 		shop_id = {
@@ -288,18 +324,26 @@ pg.base.dorm3d_gift = {}
 				{
 					"banner_aijier"
 				}
+			},
+			{
+				79902,
+				{
+					"banner_naximofu"
+				}
 			}
 		}
 	}
 	pg.base.dorm3d_gift[2022001] = {
-		ship_group_id = 20220,
-		display = "家や職場の清掃・整理に欠かせないアイテム。丈夫で耐久性に優れたケースが、中のツールを損傷から守ってくれる。",
-		rarity = 4,
-		unlock_dialogue_id = 10060,
-		id = 2022001,
-		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift2",
 		name = "清掃ツールボックス",
+		display = "家や職場の清掃・整理に欠かせないアイテム。丈夫で耐久性に優れたケースが、中のツールを損傷から守ってくれる。",
+		time = "always",
+		unlock_dialogue_id = 10060,
+		rarity = 4,
+		id = 2022001,
+		ship_group_id = 20220,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift2",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -322,14 +366,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[2022002] = {
-		ship_group_id = 20220,
-		display = "クラシックでエレガントなロイヤルティーセット。\n ゆったりした気持ちになる爽やかな「ブルー×ホワイト」のデザインで、ティータイムを優雅なひと時にしてくれる。",
-		rarity = 4,
-		unlock_dialogue_id = 10070,
-		id = 2022002,
-		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift1",
 		name = "ロイヤルティーセット",
+		display = "クラシックでエレガントなロイヤルティーセット。\n ゆったりした気持ちになる爽やかな「ブルー×ホワイト」のデザインで、ティータイムを優雅なひと時にしてくれる。",
+		time = "always",
+		unlock_dialogue_id = 10070,
+		rarity = 4,
+		id = 2022002,
+		ship_group_id = 20220,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift1",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -352,14 +398,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[2022003] = {
-		ship_group_id = 20220,
-		display = "踏み込んだ考察と事例で、完璧なメイドになるにはいかなる教養・スキル・心構えが必要かを詳しく説明してくれている。\n日常生活の中でもメイドとしての奉仕精神を十分に発揮すべきだとも訴えている。",
-		rarity = 4,
-		unlock_dialogue_id = 10080,
-		id = 2022003,
-		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift4",
 		name = "『完璧なメイド心得』",
+		display = "踏み込んだ考察と事例で、完璧なメイドになるにはいかなる教養・スキル・心構えが必要かを詳しく説明してくれている。\n日常生活の中でもメイドとしての奉仕精神を十分に発揮すべきだとも訴えている。",
+		time = "always",
+		unlock_dialogue_id = 10080,
+		rarity = 4,
+		id = 2022003,
+		ship_group_id = 20220,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_tianlangxing_FancyGift4",
 		reply_dialogue_id = {
 			{
 				20220,
@@ -382,14 +430,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[3022101] = {
-		ship_group_id = 30221,
-		display = "シンプルなデザイン、シンプルな色。軽やかでいい履き心地。\n足裏にも快適にフィットし、日々に寄り添ってくれる。",
-		rarity = 4,
-		unlock_dialogue_id = 29991,
-		id = 3022101,
-		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift1",
 		name = "素直ローファー",
+		display = "シンプルなデザイン、シンプルな色。軽やかでいい履き心地。\n足裏にも快適にフィットし、日々に寄り添ってくれる。",
+		time = "always",
+		unlock_dialogue_id = 29991,
+		rarity = 4,
+		id = 3022101,
+		ship_group_id = 30221,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift1",
 		reply_dialogue_id = {
 			{
 				30221,
@@ -412,14 +462,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[3022102] = {
-		ship_group_id = 30221,
-		display = "疲れを癒やし心を癒やす、日々の体にエネルギー充填！",
-		rarity = 4,
-		unlock_dialogue_id = 20530,
-		id = 3022102,
-		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift2",
 		name = "フットマッサージャー",
+		display = "疲れを癒やし心を癒やす、日々の体にエネルギー充填！",
+		time = "always",
+		unlock_dialogue_id = 20530,
+		rarity = 4,
+		id = 3022102,
+		ship_group_id = 30221,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_nengdai_FancyGift2",
 		reply_dialogue_id = {
 			{
 				30221,
@@ -442,14 +494,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[1990301] = {
-		ship_group_id = 19903,
-		display = "世界を凝縮させたような、可愛らしい色使いが見て取れるキャンバス。一筆一筆がアンカレッジの純真さを上手く表現しているようだ",
-		rarity = 4,
-		unlock_dialogue_id = 30510,
-		id = 1990301,
-		icon = "dorm3dicon/3Ddrom_ankeleiqi_FancyGift1",
 		name = "なないろ気持ち",
+		display = "世界を凝縮させたような、可愛らしい色使いが見て取れるキャンバス。一筆一筆がアンカレッジの純真さを上手く表現しているようだ",
+		time = "always",
+		unlock_dialogue_id = 30510,
+		rarity = 4,
+		id = 1990301,
+		ship_group_id = 19903,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_ankeleiqi_FancyGift1",
 		reply_dialogue_id = {
 			{
 				19903,
@@ -472,14 +526,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[1990302] = {
-		ship_group_id = 19903,
-		display = "原木の額縁にウェーブボウ、色彩と閃きがここに邂逅する。彼女だけのクリエイティブは喜びとともに咲き誇る",
-		rarity = 4,
-		unlock_dialogue_id = 30550,
-		id = 1990302,
-		icon = "dorm3dicon/3Ddrom_ankeleiqi_FancyGift2",
 		name = "精緻な額縁",
+		display = "原木の額縁にウェーブボウ、色彩と閃きがここに邂逅する。彼女だけのクリエイティブは喜びとともに咲き誇る",
+		time = "always",
+		unlock_dialogue_id = 30550,
+		rarity = 4,
+		id = 1990302,
+		ship_group_id = 19903,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_ankeleiqi_FancyGift2",
 		reply_dialogue_id = {
 			{
 				19903,
@@ -502,14 +558,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[1051701] = {
-		ship_group_id = 10517,
-		display = "透明なガラスボトルには、キラキラカラフルなキャンディがいっぱい。\n蓋を開けると、幸せな甘ったるい香りが鼻をくすぐってくる――",
-		rarity = 4,
-		unlock_dialogue_id = 110541,
-		id = 1051701,
-		icon = "dorm3dicon/3Ddrom_xinzexi_CommonFurniture4",
 		name = "水晶キャンディ",
+		display = "透明なガラスボトルには、キラキラカラフルなキャンディがいっぱい。\n蓋を開けると、幸せな甘ったるい香りが鼻をくすぐってくる――",
+		time = "always",
+		unlock_dialogue_id = 110541,
+		rarity = 4,
+		id = 1051701,
+		ship_group_id = 10517,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_xinzexi_CommonFurniture4",
 		reply_dialogue_id = {
 			{
 				10517,
@@ -532,14 +590,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[1051702] = {
-		ship_group_id = 10517,
-		display = "フィードバックが上々で、ゲーミングライトが鮮やか。カジュアルから手に汗握る対人マッチまでなんでもこなせる！",
-		rarity = 4,
-		unlock_dialogue_id = 110551,
-		id = 1051702,
-		icon = "dorm3dicon/3Ddrom_xinzexi_PremiumGift2",
 		name = "ゲーミングパッド",
+		display = "フィードバックが上々で、ゲーミングライトが鮮やか。カジュアルから手に汗握る対人マッチまでなんでもこなせる！",
+		time = "always",
+		unlock_dialogue_id = 110551,
+		rarity = 4,
+		id = 1051702,
+		ship_group_id = 10517,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_xinzexi_PremiumGift2",
 		reply_dialogue_id = {
 			{
 				10517,
@@ -562,14 +622,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[3070701] = {
-		ship_group_id = 30707,
-		display = "鍵つき鎖付きのアクセサリー。シンプルながらも含みのあるデザイン。ひんやりとした金属質感の触り心地が、きっちり繋げられた愛を語ってくれる。",
-		rarity = 4,
-		unlock_dialogue_id = 120541,
-		id = 3070701,
-		icon = "dorm3dicon/3Ddrom_dafeng_FancyGift1",
 		name = "繋げられた愛",
+		display = "鍵つき鎖付きのアクセサリー。シンプルながらも含みのあるデザイン。ひんやりとした金属質感の触り心地が、きっちり繋げられた愛を語ってくれる。",
+		time = "always",
+		unlock_dialogue_id = 120541,
+		rarity = 4,
+		id = 3070701,
+		ship_group_id = 30707,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_dafeng_FancyGift1",
 		reply_dialogue_id = {
 			{
 				30707,
@@ -592,14 +654,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[3070702] = {
-		ship_group_id = 30707,
-		display = "緋色の裾は夕焼けのように広がり、黒いリボンを結ぶのは心の形。触れる指先に待つのは――温もりに隠しきれない想いと愛――",
-		rarity = 4,
-		unlock_dialogue_id = 120551,
-		id = 3070702,
-		icon = "dorm3dicon/3Ddrom_dafeng_FancyGift2",
 		name = "緋色の誘い",
+		display = "緋色の裾は夕焼けのように広がり、黒いリボンを結ぶのは心の形。触れる指先に待つのは――温もりに隠しきれない想いと愛――",
+		time = "always",
+		unlock_dialogue_id = 120551,
+		rarity = 4,
+		id = 3070702,
+		ship_group_id = 30707,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_dafeng_FancyGift2",
 		reply_dialogue_id = {
 			{
 				30707,
@@ -622,14 +686,16 @@ pg.base.dorm3d_gift = {}
 		}
 	}
 	pg.base.dorm3d_gift[4990501] = {
-		ship_group_id = 49905,
-		display = "まるで朝の光に包まれた蕾の如く、優雅で可憐なグラス。\n二人の思い出の全てが優しさとなり、曲線にそっと溶け込む",
-		rarity = 4,
-		unlock_dialogue_id = 140541,
-		id = 4990501,
-		icon = "dorm3dicon/3Ddrom_aijier_FancyGift1",
 		name = "チューリップグラス",
+		display = "まるで朝の光に包まれた蕾の如く、優雅で可憐なグラス。\n二人の思い出の全てが優しさとなり、曲線にそっと溶け込む",
+		time = "always",
+		unlock_dialogue_id = 140541,
+		rarity = 4,
+		id = 4990501,
+		ship_group_id = 49905,
 		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_aijier_FancyGift1",
 		reply_dialogue_id = {
 			{
 				49905,
@@ -647,6 +713,91 @@ pg.base.dorm3d_gift = {}
 				49905,
 				{
 					"banner_gift4990501"
+				}
+			}
+		}
+	}
+	pg.base.dorm3d_gift[7990201] = {
+		name = "本能トレーナー",
+		display = "ぬいぐるみの魚で相手の視線を固定させる、本能トレーナーという名のおもちゃ。\n空中で弧を描くそれは、相手の最も純粋な本能を引き出すべく、誘惑を仕掛けていく。",
+		time = "always",
+		unlock_dialogue_id = 210541,
+		rarity = 4,
+		id = 7990201,
+		ship_group_id = 79902,
+		favor_trigger_id = 1004,
+		hide_if_not_owned = 0,
+		icon = "dorm3dicon/3Ddrom_naximofu_FancyGift1",
+		reply_dialogue_id = {
+			{
+				79902,
+				210304
+			}
+		},
+		shop_id = {
+			260701
+		},
+		unlock_tips = {
+			4
+		},
+		unlock_banners = {
+			{
+				79902,
+				{
+					"banner_gift7990201"
+				}
+			}
+		}
+	}
+	pg.base.dorm3d_gift[7990261] = {
+		name = "絶海漁獲抱き枕",
+		display = "柔らかい手触りで優しい抱き心地の、絶海の漁獲をテーマにした抱き枕。抱きしめてぼーっとしてもよし、寄りかかって休んでもよし",
+		rarity = 4,
+		unlock_dialogue_id = 0,
+		id = 7990261,
+		ship_group_id = 79902,
+		favor_trigger_id = 1099,
+		hide_if_not_owned = 1,
+		icon = "dorm3dicon/3Ddrom_naximofu_FancyGift9",
+		reply_dialogue_id = {
+			{
+				79902,
+				210302
+			}
+		},
+		shop_id = {},
+		unlock_tips = {},
+		unlock_banners = {
+			{
+				79902,
+				{
+					"banner_naximofu"
+				}
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					6,
+					25
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					7,
+					16
+				},
+				{
+					23,
+					59,
+					59
 				}
 			}
 		}

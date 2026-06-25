@@ -189,7 +189,42 @@ pg.dorm3d_collection_template.all = {
 	1422,
 	1423,
 	1424,
-	1425
+	1425,
+	2101,
+	2102,
+	2103,
+	2104,
+	2105,
+	2106,
+	2107,
+	2108,
+	2109,
+	2110,
+	2111,
+	2112,
+	2113,
+	2114,
+	2115,
+	2116,
+	2117,
+	2118,
+	2119,
+	2120,
+	2121,
+	2122,
+	2123,
+	2124,
+	2125,
+	2601,
+	2602,
+	2603,
+	2604,
+	2605,
+	2606,
+	2607,
+	2608,
+	2609,
+	2610
 }
 pg.dorm3d_collection_template.get_id_list_by_room_id = {
 	{
@@ -393,6 +428,45 @@ pg.dorm3d_collection_template.get_id_list_by_room_id = {
 		1607,
 		1608,
 		1609
+	},
+	[21] = {
+		2101,
+		2102,
+		2103,
+		2104,
+		2105,
+		2106,
+		2107,
+		2108,
+		2109,
+		2110,
+		2111,
+		2112,
+		2113,
+		2114,
+		2115,
+		2116,
+		2117,
+		2118,
+		2119,
+		2120,
+		2121,
+		2122,
+		2123,
+		2124,
+		2125
+	},
+	[26] = {
+		2601,
+		2602,
+		2603,
+		2604,
+		2605,
+		2606,
+		2607,
+		2608,
+		2609,
+		2610
 	}
 }
 pg.base = pg.base or {}
@@ -4269,6 +4343,703 @@ end)()
 		},
 		vfx_prefab = {
 			"fbx/litmap_01/pre_db_decoration21/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2101] = {
+		text = "dorm3d_naximofu_chair",
+		name = "ロケットモデル",
+		award = 0,
+		time = 0,
+		id = 2101,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item1",
+		desc = "精巧なロケットのミニチュアモデル。部屋にSF風な雰囲気を添えてくれる",
+		model = {
+			"fbx/litmap_03/day/pre_db_decoration32"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_decoration32/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2102] = {
+		text = "dorm3d_naximofu_chair",
+		name = "丸みのある陶磁器",
+		award = 0,
+		time = 0,
+		id = 2102,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item2",
+		desc = "オレンジと黄色の丸みのある陶磁器。釉薬は滑らかで色鮮やか、並べると互いを引き立てる",
+		model = {
+			"fbx/litmap_03/day/pre_db_ceram29"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_ceram29/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2103] = {
+		text = "dorm3d_naximofu_chair",
+		name = "ガラスの酒瓶",
+		award = 0,
+		time = 2,
+		id = 2103,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item3",
+		desc = "ガラスの酒瓶。シンプルでシャープな瓶の中には「命の水」が見える",
+		model = {
+			"fbx/litmap_03/night/pre_db_drink18"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_drink18/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2104] = {
+		text = "dorm3d_naximofu_chair",
+		name = "レトロテレビ",
+		award = 0,
+		time = 0,
+		id = 2104,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item4",
+		desc = "どっしりとしたレトロテレビ。ノブやボタンが揃っていて、どこかノスタルジックな雰囲気がある",
+		model = {
+			"fbx/litmap_03/day/pre_db_electrical25"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_electrical25/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2105] = {
+		text = "dorm3d_naximofu_bed",
+		name = "柔らかタオル",
+		award = 0,
+		time = 2,
+		id = 2105,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item5",
+		desc = "肌触りが優しいバスタオル。吸水性に優れた仕様",
+		model = {
+			"fbx/litmap_03/night/pre_db_towel02_01"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_towel02_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2106] = {
+		text = "dorm3d_naximofu_bed",
+		name = "二段キャビネット",
+		award = 0,
+		time = 0,
+		id = 2106,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item6",
+		desc = "シンプルで実用的な二段キャビネット。扉の開閉がスムーズで、日用品の収納にぴったり",
+		model = {
+			"fbx/litmap_03/day/pre_db_cupboard42"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_cupboard42/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2107] = {
+		text = "dorm3d_naximofu_bed",
+		name = "ネコ耳ボールチェア",
+		award = 0,
+		time = 0,
+		id = 2107,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item7",
+		desc = "クッションが詰まったボールチェアにネコ耳のデコレーション。座り心地がよくて、どこかキュートな雰囲気",
+		model = {
+			"fbx/litmap_03/day/pre_db_chair30"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_chair30/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2108] = {
+		text = "dorm3d_naximofu_bed",
+		name = "レコード盤",
+		award = 0,
+		time = 0,
+		id = 2108,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item8",
+		desc = "クラシックなレコード盤。表面のグルーヴがくっきりしていて、プレーヤーにセットすると心地よいメロディーが流れ出す",
+		model = {
+			"fbx/litmap_03/day/pre_db_decoration30"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_decoration30/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2109] = {
+		text = "dorm3d_naximofu_bed",
+		name = "ぶら下がりポンポン",
+		award = 0,
+		time = 0,
+		id = 2109,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item9",
+		desc = "紐でぶら下がった小さなポンポン。軽く触れるだけで揺れ動き、愛らしくてストレス解消にもなる",
+		model = {
+			"fbx/litmap_03/day/pre_db_toy18_7"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_toy18_7/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2110] = {
+		text = "dorm3d_naximofu_bed",
+		name = "ティッシュボックス",
+		award = 0,
+		time = 0,
+		id = 2110,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item10",
+		desc = "かわいいネコの形のティッシュボックス。ティッシュを取る動作も楽しくなる",
+		model = {
+			"fbx/litmap_03/day/pre_db_plasticbox03"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_plasticbox03/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2111] = {
+		text = "dorm3d_naximofu_chair",
+		name = "オレンジライト",
+		award = 0,
+		time = 0,
+		id = 2111,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item11",
+		desc = "暖かいオレンジ色のシェードに包まれた丸型の壁面ライト。点灯すると光が柔らかく広がり、部屋に温もりを添えてくれる",
+		model = {
+			"fbx/litmap_03/day/pre_db_walllamp02"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_walllamp02/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2112] = {
+		text = "dorm3d_naximofu_chair",
+		name = "観葉植物盆栽Ⅰ",
+		award = 0,
+		time = 0,
+		id = 2112,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item12",
+		desc = "クラシックな陶磁器の鉢に茂った観葉植物。青々とした葉が部屋に自然の活気をもたらす",
+		model = {
+			"fbx/litmap_03/day/pre_db_flowerpot26_1"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_flowerpot26_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2113] = {
+		text = "dorm3d_naximofu_chair",
+		name = "段ボール爪とぎ",
+		award = 0,
+		time = 0,
+		id = 2113,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item13",
+		desc = "段ボール素材の爪とぎ。表面には使い込まれた浅い爪跡がある",
+		model = {
+			"fbx/litmap_03/day/pre_db_toy17_1"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_toy17_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2114] = {
+		text = "dorm3d_naximofu_chair",
+		name = "天吊りテレビ",
+		award = 0,
+		time = 0,
+		id = 2114,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item14",
+		desc = "天井に吊るされたテレビ。仰向けで見られるので、楽な姿勢で快適に過ごせる",
+		model = {
+			"fbx/litmap_03/day/pre_db_electrical27"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_electrical27/vfx_wupintishi01"
+		}
+	}
+end)()
+;(function()
+	pg.base.dorm3d_collection_template[2115] = {
+		text = "dorm3d_naximofu_chair",
+		name = "本の山",
+		award = 0,
+		time = 0,
+		id = 2115,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item15",
+		desc = "無造作に積まれた本の山。最近の読書の足跡が刻まれている",
+		model = {
+			"fbx/litmap_03/day/pre_db_book30_1"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_book30_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2116] = {
+		text = "dorm3d_naximofu_chair",
+		name = "ネコ用食器セット",
+		award = 0,
+		time = 0,
+		id = 2116,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item16",
+		desc = "清潔で実用的な、陶磁器の小さなお碗。エサ用と水用が並べて置かれている",
+		model = {
+			"fbx/litmap_03/day/pre_db_tableware55"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_tableware55/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2117] = {
+		text = "dorm3d_naximofu_bed",
+		name = "暖色デスクランプ",
+		award = 0,
+		time = 2,
+		id = 2117,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item17",
+		desc = "コンパクトなデスクランプ。安定した柔らかな光でデスクの一角を照らす",
+		model = {
+			"fbx/litmap_03/night/pre_db_desklamp07_on"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_desklamp07_on/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2118] = {
+		text = "dorm3d_naximofu_bed",
+		name = "テクノロジックライト",
+		award = 0,
+		time = 2,
+		id = 2118,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item18",
+		desc = "ペンダント型のデザインの照明。広がる光が下の空間をくまなく照らしてくれる",
+		model = {
+			"fbx/litmap_03/night/pre_db_chandelier28_on"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/night/pre_db_chandelier28_on/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2119] = {
+		text = "dorm3d_naximofu_chair",
+		name = "低型キャビネット",
+		award = 0,
+		time = 0,
+		id = 2119,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item19",
+		desc = "ロープロファイルの収納キャビネット。リビングの日用品を収納できる",
+		model = {
+			"fbx/litmap_03/day/pre_db_cupboard40"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_cupboard40/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2120] = {
+		text = "dorm3d_naximofu_chair",
+		name = "エレベーターボタン",
+		award = 0,
+		time = 0,
+		id = 2120,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item20",
+		desc = "ぽつんと置かれているエレベーターのボタン。思わず押してみたくなる",
+		model = {
+			"fbx/litmap_03/day/pre_db_naximofu_button01"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_naximofu_button01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2121] = {
+		text = "dorm3d_naximofu_chair",
+		name = "テーブル&スツール",
+		award = 0,
+		time = 0,
+		id = 2121,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item21",
+		desc = "丸テーブルと丸スツール。ちょうどいい高さで、午後のひとときにぴったりな組み合わせ",
+		model = {
+			"fbx/litmap_03/day/pre_db_naximofu_table02_01"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_naximofu_table02_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2122] = {
+		text = "dorm3d_naximofu_bed",
+		name = "角型スピーカー",
+		award = 0,
+		time = 0,
+		id = 2122,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item22",
+		desc = "ワイヤレス接続対応の角型スピーカー。いつでも好きな音楽を再生できる",
+		model = {
+			"fbx/litmap_03/day/pre_db_electrical21_01"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_electrical21_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2123] = {
+		text = "dorm3d_naximofu_chair",
+		name = "観葉植物盆栽Ⅱ",
+		award = 0,
+		time = 0,
+		id = 2123,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item23",
+		desc = "クラシックな陶磁器の鉢に茂った観葉植物。青々とした葉が部屋に自然の活気をもたらす",
+		model = {
+			"fbx/litmap_03/day/pre_db_flowerpot26"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_flowerpot26/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2124] = {
+		text = "dorm3d_naximofu_bed",
+		name = "レコードプレーヤー",
+		award = 0,
+		time = 0,
+		id = 2124,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item24",
+		desc = "前衛的なデザインのスタンド型レコードプレーヤー。現代的でありながら、温かみのある音色を出す",
+		model = {
+			"fbx/litmap_03/day/pre_db_decoration31"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_decoration31/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2125] = {
+		text = "dorm3d_naximofu_chair",
+		name = "ふかふかネコベッド",
+		award = 0,
+		time = 0,
+		id = 2125,
+		room_id = 21,
+		icon = "3Ddrom_naximofu_item25",
+		desc = "クッションが敷き詰められている丸型のネコベッド。入ったら出たくなくなる",
+		model = {
+			"fbx/litmap_03/day/pre_db_bed06_1"
+		},
+		unlock = {
+			1,
+			79902,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_03/day/pre_db_bed06_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2601] = {
+		text = "dorm3d_collection_carwash",
+		name = "高画質テレビ",
+		award = 0,
+		time = 0,
+		id = 2601,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item1",
+		desc = "薄型ボディで大画面の高画質テレビ。鮮明な映像で、没入感のある視聴体験と空間へのなじみやすさを両立している。",
+		model = {
+			"fbx/litmap_05/pre_db_appliances09"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_appliances09/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2602] = {
+		text = "dorm3d_collection_carwash",
+		name = "ストリートスケボ",
+		award = 0,
+		time = 0,
+		id = 2602,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item2",
+		desc = "オーダーメイドのストリートスケートボード。滑りは安定し、ターンも軽快。移動にもスポーツにもうってつけの一台。",
+		model = {
+			"fbx/litmap_05/pre_db_sportinggoods08_02"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_sportinggoods08_02/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2603] = {
+		text = "dorm3d_collection_carwash",
+		name = "ダブルヘッドコーヒーマシン",
+		award = 0,
+		time = 0,
+		id = 2603,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item3",
+		desc = "多機能なダブルヘッドコーヒーマシン。一度に二杯分を同時抽出でき、ほんのわずかな時間で淹れたてが楽しめる。",
+		model = {
+			"fbx/litmap_05/pre_db_electrical23_group_01"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_electrical23_group_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2604] = {
+		text = "dorm3d_collection_carwash",
+		name = "栄誉のトロフィー",
+		award = 0,
+		time = 0,
+		id = 2604,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item4",
+		desc = "レースで勝ち取った栄誉のトロフィー。コースを風のように駆け抜けた末につかんだ、栄光の証。",
+		model = {
+			"fbx/litmap_05/pre_db_decoration33c_02"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_decoration33c_02/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2605] = {
+		text = "dorm3d_collection_carwash",
+		name = "ワインセット",
+		award = 0,
+		time = 0,
+		id = 2605,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item5",
+		desc = "ワインを嗜むための道具がひと通りそろい、いつでもどこでもテイスティングのひとときを。",
+		model = {
+			"fbx/litmap_05/pre_db_tableware56_group_1"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_tableware56_group_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2606] = {
+		text = "dorm3d_collection_carwash",
+		name = "優勝のトロフィー",
+		award = 0,
+		time = 0,
+		id = 2606,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item6",
+		desc = "金メッキの優勝トロフィー。最高峰のレースを制した一流ドライバーに贈られる。",
+		model = {
+			"fbx/litmap_05/pre_db_decoration34"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_decoration34/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2607] = {
+		text = "dorm3d_collection_carwash",
+		name = "キャッチスティック",
+		award = 0,
+		time = 0,
+		id = 2607,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item7",
+		desc = "反応力を試すキャッチスティックゲーム。反射神経を効果的に鍛えられる。",
+		model = {
+			"no_bake/pre_db_entertainment01"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"no_bake/pre_db_entertainment01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2608] = {
+		text = "dorm3d_collection_carwash",
+		name = "レーシングシミュレーター",
+		award = 0,
+		time = 0,
+		id = 2608,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item8",
+		desc = "本物に迫る運転体験を備えたレーシングシミュレーター。コース外でのトレーニングに最適。",
+		model = {
+			"no_bake/pre_db_cw_racingsim01"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"no_bake/pre_db_cw_racingsim01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2609] = {
+		text = "dorm3d_collection_carwash",
+		name = "プロのレーシングスーツ",
+		award = 0,
+		time = 0,
+		id = 2609,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item9",
+		desc = "ドライバー必須のプロ仕様レーシングスーツ。難燃素材で耐火性能がよく、さらに摩耗や衝撃にもよく耐えるなどと抜群の性能を持つ。",
+		model = {
+			"fbx/litmap_05/pre_db_cloth12_1"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_cloth12_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2610] = {
+		text = "dorm3d_collection_carwash",
+		name = "マシン洗浄セット",
+		award = 0,
+		time = 0,
+		id = 2610,
+		room_id = 26,
+		icon = "3Ddrom_carwash_item10",
+		desc = "レースのピットでおなじみの洗浄用具。扱いやすく、洗浄効果も一流。",
+		model = {
+			"fbx/litmap_05/pre_db_electrical16"
+		},
+		unlock = {},
+		vfx_prefab = {
+			"fbx/litmap_05/pre_db_electrical16/vfx_wupintishi01"
 		}
 	}
 end)()

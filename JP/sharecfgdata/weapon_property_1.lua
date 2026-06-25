@@ -1165446,27 +1165446,6 @@ _G.pg.base.weapon_property_1[3386205] = {
 		time = 1,
 	},
 }
-_G.pg.base.weapon_property_1[3512040] = {
-	aim_type = 1,
-	angle = 180,
-	axis_angle = 0,
-	base = 1001,
-	damage = 100,
-	effect_move = 0,
-	id = 3512040,
-	min_range = 0,
-	range = 120,
-	reload_max = 6000,
-	spawn_bound = "torpedo",
-	suppress = 1,
-	type = 3,
-	bullet_ID = {
-		3512040,
-	},
-	barrage_ID = {
-		3512040,
-	},
-}
 _G.pg.base.weapon_property_1[9999900] = {
 	action_index = "attack",
 	aim_type = 0,

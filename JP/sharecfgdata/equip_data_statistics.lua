@@ -113004,6 +113004,53 @@ _G.pg.base.equip_data_statistics[61183] = {
 	},
 	hidden_skill_id = {},
 }
+_G.pg.base.equip_data_statistics[61191] = {
+	ammo = 10,
+	descrip = "航母空袭展示用",
+	icon = "1",
+	id = 61191,
+	name = "航空攻击展示-阿罗芒什I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 99,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		61191,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {},
+}
+_G.pg.base.equip_data_statistics[61192] = {
+	base = 61191,
+	id = 61192,
+	name = "航空攻击展示-阿罗芒什II",
+	weapon_id = {
+		61192,
+	},
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[61193] = {
+	base = 61191,
+	id = 61193,
+	name = "航空攻击展示-阿罗芒什III",
+	weapon_id = {
+		61193,
+	},
+	hidden_skill_id = {},
+}
 _G.pg.base.equip_data_statistics[61501] = {
 	ammo = 10,
 	descrip = "外观空袭展示用",
@@ -162493,6 +162540,111 @@ _G.pg.base.equip_data_statistics[151173] = {
 	value_1 = "50",
 	value_2 = 142,
 }
+_G.pg.base.equip_data_statistics[151180] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "帽子をかぶって皆をハッピーに！",
+	icon = "151180",
+	id = 151180,
+	name = "笑わせ担当",
+	nationality = 10,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61110,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"FFNF",
+		"DEV",
+	},
+}
+_G.pg.base.equip_data_statistics[151181] = {
+	base = 151180,
+	id = 151181,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151182] = {
+	base = 151180,
+	id = 151182,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151183] = {
+	base = 151180,
+	id = 151183,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151184] = {
+	base = 151180,
+	id = 151184,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151185] = {
+	base = 151180,
+	id = 151185,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151186] = {
+	base = 151180,
+	id = 151186,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151187] = {
+	base = 151180,
+	id = 151187,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151188] = {
+	base = 151180,
+	id = 151188,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151189] = {
+	base = 151180,
+	id = 151189,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151190] = {
+	base = 151180,
+	id = 151190,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151191] = {
+	anti_siren = 100,
+	base = 151180,
+	id = 151191,
+	value_1 = "530",
+	hidden_skill_id = {},
+}
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "技能弹幕",
@@ -164165,6 +164317,57 @@ _G.pg.base.equip_data_statistics[170882] = {
 	name = "专属弹幕-皇家詹姆斯",
 	weapon_id = {
 		170882,
+	},
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[171041] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 171041,
+	name = "专属弹幕-瑟堡I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		171041,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+_G.pg.base.equip_data_statistics[171042] = {
+	base = 171041,
+	id = 171042,
+	name = "专属弹幕-瑟堡II",
+	weapon_id = {
+		171042,
 	},
 	hidden_skill_id = {},
 }

@@ -1713,6 +1713,85 @@ _G.pg.base.bullet_template_2[168303] = {
 		ignoreShield = true,
 	},
 }
+_G.pg.base.bullet_template_2[170938] = {
+	alert_fx = "AlertArea",
+	ammo_type = 6,
+	antisub_enhancement = 1,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 170938,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "",
+	modle_ID = "aluomangshi_zidan",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 200,
+	range_offset = 20,
+	type = 2,
+	velocity = 21,
+	damage_type = {
+		0.7,
+		1.05,
+		1.25,
+	},
+	DMG_font = {
+		{
+			3,
+			1.2,
+		},
+		{
+			3,
+			1.5,
+		},
+		{
+			3,
+			2,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 28,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 152429,
+			group_level = 1,
+			rant = 10000,
+		},
+		{
+			buff_id = 152428,
+			group_level = 1,
+			rant = 10000,
+		},
+		{
+			buff_id = 152427,
+			group_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		airdrop = true,
+		dropOffset = true,
+		gravity = -0.03,
+		ignoreShield = true,
+		offsetY = 30,
+		randomOffsetX = 42,
+		randomOffsetZ = 42,
+	},
+}
 _G.pg.base.bullet_template_2[171000] = {
 	alert_fx = "AlertArea",
 	ammo_type = 6,
@@ -2955,6 +3034,64 @@ _G.pg.base.bullet_template_2[171018] = {
 		},
 	},
 }
+_G.pg.base.bullet_template_2[171019] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "pofang",
+	hit_sfx = "battle/hit",
+	id = 171019,
+	miss_fx = "ShellMiss",
+	miss_sfx = "battle/sink",
+	modle_ID = "BulletUK",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 10,
+	type = 1,
+	velocity = 18,
+	damage_type = {
+		1.2,
+		1.1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1.2,
+		},
+		{
+			1,
+			1.1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {
+		{
+			buff_id = 152489,
+			group_level = 1,
+			rant = 10000,
+		},
+	},
+	extra_param = {},
+}
 _G.pg.base.bullet_template_2[171021] = {
 	alert_fx = "",
 	ammo_type = 4,
@@ -3181,6 +3318,58 @@ _G.pg.base.bullet_template_2[171033] = {
 			2,
 		},
 	},
+}
+_G.pg.base.bullet_template_2[171041] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "pofang",
+	hit_sfx = "battle/hit",
+	id = 171041,
+	miss_fx = "ShellMiss",
+	miss_sfx = "battle/sink",
+	modle_ID = "longgong_nutao",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 150,
+	range_offset = 10,
+	type = 1,
+	velocity = 12,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
 }
 _G.pg.base.bullet_template_2[183881] = {
 	alert_fx = "",

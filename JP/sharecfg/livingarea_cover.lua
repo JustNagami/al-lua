@@ -22,7 +22,10 @@ pg.livingarea_cover.all = {
 	101203,
 	101401,
 	101402,
-	101403
+	101403,
+	102101,
+	102102,
+	102103
 }
 pg.base = pg.base or {}
 pg.base.livingarea_cover = {}
@@ -253,6 +256,42 @@ pg.base.livingarea_cover = {}
 		desc = "入手すると「母港」の壁紙を「枕辺の誘い」にすることが可能",
 		unlock_text = "エーギル宿舎親愛度Lv10で開放",
 		daytime_res = "101403_bg_day",
+		icon = "Props/drom3d_camera1003",
+		get_tips = "親愛度壁紙を入手しました"
+	}
+	pg.base.livingarea_cover[102101] = {
+		rarity = 3,
+		name = "寄り添う温度",
+		nighttime_res = "102101_bg_night",
+		id = 102101,
+		icon_res = "102101_icon",
+		desc = "入手すると「母港」の壁紙を「寄り添う温度」にすることが可能",
+		unlock_text = "アドミラル・ナヒーモフ宿舎親愛度Lv2で開放",
+		daytime_res = "102101_bg_day",
+		icon = "Props/drom3d_camera1003",
+		get_tips = "親愛度壁紙を入手しました"
+	}
+	pg.base.livingarea_cover[102102] = {
+		rarity = 3,
+		name = "添い遂げ安眠",
+		nighttime_res = "102102_bg_night",
+		id = 102102,
+		icon_res = "102102_icon",
+		desc = "入手すると「母港」の壁紙を「添い遂げ安眠」にすることが可能",
+		unlock_text = "アドミラル・ナヒーモフ宿舎親愛度Lv7で開放",
+		daytime_res = "102102_bg_day",
+		icon = "Props/drom3d_camera1003",
+		get_tips = "親愛度壁紙を入手しました"
+	}
+	pg.base.livingarea_cover[102103] = {
+		rarity = 3,
+		name = "付き添い作業",
+		nighttime_res = "102103_bg_night",
+		id = 102103,
+		icon_res = "102103_icon",
+		desc = "入手すると「母港」の壁紙を「付き添い作業」にすることが可能",
+		unlock_text = "アドミラル・ナヒーモフ宿舎親愛度Lv10で開放",
+		daytime_res = "102103_bg_day",
 		icon = "Props/drom3d_camera1003",
 		get_tips = "親愛度壁紙を入手しました"
 	}
