@@ -39524,6 +39524,65 @@ _G.pg.base.ship_data_breakout[801054] = {
 	use_item = {},
 	weapon_ids = {},
 }
+_G.pg.base.ship_data_breakout[801061] = {
+	breakout_id = 801062,
+	breakout_view = "Unlock All Out Assault/Main gun efficiency +5%",
+	icon = "10001",
+	id = 801061,
+	level = 10,
+	pre_id = 0,
+	use_char = 80106,
+	use_char_num = 1,
+	use_gold = 500,
+	use_item = {},
+	weapon_ids = {
+		78021,
+	},
+}
+_G.pg.base.ship_data_breakout[801062] = {
+	breakout_id = 801063,
+	breakout_view = "Torpedo base +1/Torpedo preload +1/Torpedo efficiency +10%",
+	icon = "10001",
+	id = 801062,
+	level = 30,
+	pre_id = 801061,
+	use_char = 80106,
+	use_char_num = 1,
+	use_gold = 1500,
+	use_item = {},
+	weapon_ids = {
+		106,
+		106,
+	},
+}
+_G.pg.base.ship_data_breakout[801063] = {
+	breakout_id = 801064,
+	breakout_view = "Improve All Out Assault/All weapons' efficiency +5%",
+	icon = "10001",
+	id = 801063,
+	level = 70,
+	pre_id = 801062,
+	use_char = 80106,
+	use_char_num = 2,
+	use_gold = 2500,
+	use_item = {},
+	weapon_ids = {
+		78022,
+	},
+}
+_G.pg.base.ship_data_breakout[801064] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 801064,
+	level = 0,
+	pre_id = 801063,
+	use_char = 80106,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
 _G.pg.base.ship_data_breakout[801071] = {
 	breakout_id = 801072,
 	breakout_view = "Unlock All Out Assault/Main gun efficiency +5%",
@@ -40427,6 +40486,71 @@ _G.pg.base.ship_data_breakout[806014] = {
 	use_item = {},
 	weapon_ids = {},
 }
+_G.pg.base.ship_data_breakout[806021] = {
+	breakout_id = 806022,
+	breakout_view = "All torpedo bombers +1/Aircraft efficiency +2%",
+	icon = "10001",
+	id = 806021,
+	level = 10,
+	pre_id = 0,
+	use_char = 80602,
+	use_char_num = 1,
+	use_gold = 1000,
+	use_item = {},
+	weapon_ids = {
+		60931,
+		54014,
+	},
+}
+_G.pg.base.ship_data_breakout[806022] = {
+	breakout_id = 806023,
+	breakout_view = "Hangar capacity +1/All dive bombers +1/Aircraft efficiency +3%",
+	icon = "10001",
+	id = 806022,
+	level = 30,
+	pre_id = 806021,
+	use_char = 80602,
+	use_char_num = 1,
+	use_gold = 3000,
+	use_item = {},
+	weapon_ids = {
+		60932,
+		54014,
+		60932,
+		54014,
+	},
+}
+_G.pg.base.ship_data_breakout[806023] = {
+	breakout_id = 806024,
+	breakout_view = "All aircraft +1/Aircraft efficiency +5%",
+	icon = "10001",
+	id = 806023,
+	level = 70,
+	pre_id = 806022,
+	use_char = 80602,
+	use_char_num = 2,
+	use_gold = 10000,
+	use_item = {},
+	weapon_ids = {
+		60933,
+		54015,
+		60933,
+		54015,
+	},
+}
+_G.pg.base.ship_data_breakout[806024] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 806024,
+	level = 0,
+	pre_id = 806023,
+	use_char = 80602,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
 _G.pg.base.ship_data_breakout[807011] = {
 	breakout_id = 807012,
 	breakout_view = "All aircraft +1/Aircraft efficiency +3%",
@@ -40613,6 +40737,65 @@ _G.pg.base.ship_data_breakout[808014] = {
 	level = 0,
 	pre_id = 808013,
 	use_char = 80801,
+	use_char_num = 0,
+	use_gold = 0,
+	use_item = {},
+	weapon_ids = {},
+}
+_G.pg.base.ship_data_breakout[818011] = {
+	breakout_id = 818012,
+	breakout_view = "Unlock All Out Assault/Main gun efficiency +5%",
+	icon = "10001",
+	id = 818011,
+	level = 10,
+	pre_id = 0,
+	use_char = 81801,
+	use_char_num = 1,
+	use_gold = 1000,
+	use_item = {},
+	weapon_ids = {
+		171041,
+	},
+}
+_G.pg.base.ship_data_breakout[818012] = {
+	breakout_id = 818013,
+	breakout_view = "Main gun base +1/Secondary gun efficiency +10%",
+	icon = "10001",
+	id = 818012,
+	level = 30,
+	pre_id = 818011,
+	use_char = 81801,
+	use_char_num = 1,
+	use_gold = 3000,
+	use_item = {},
+	weapon_ids = {
+		85520,
+		85520,
+	},
+}
+_G.pg.base.ship_data_breakout[818013] = {
+	breakout_id = 818014,
+	breakout_view = "Improve All Out Assault/Main gun efficiency +15%",
+	icon = "10001",
+	id = 818013,
+	level = 70,
+	pre_id = 818012,
+	use_char = 81801,
+	use_char_num = 2,
+	use_gold = 10000,
+	use_item = {},
+	weapon_ids = {
+		171042,
+	},
+}
+_G.pg.base.ship_data_breakout[818014] = {
+	breakout_id = 0,
+	breakout_view = "None",
+	icon = "10001",
+	id = 818014,
+	level = 0,
+	pre_id = 818013,
+	use_char = 81801,
 	use_char_num = 0,
 	use_gold = 0,
 	use_item = {},
