@@ -466,7 +466,7 @@ pg.base.dorm3d_resource = {}
 	}
 	pg.base.dorm3d_resource[799021] = {
 		ship_group = 79902,
-		name = "纳希莫夫常服",
+		name = "ナヒーモフ部屋着",
 		type = 1,
 		remarks = "",
 		stocking_pos = "",
@@ -490,7 +490,7 @@ pg.base.dorm3d_resource = {}
 	}
 	pg.base.dorm3d_resource[799022] = {
 		ship_group = 79902,
-		name = "纳希莫夫公共房间",
+		name = "ナヒーモフガレージ衣装",
 		type = 2,
 		remarks = "",
 		stocking_pos = "",
@@ -521,7 +521,7 @@ pg.base.dorm3d_resource = {}
 	}
 	pg.base.dorm3d_resource[799023] = {
 		ship_group = 79902,
-		name = "纳希莫夫宿舍赛车服",
+		name = "ナヒーモフガレージ衣装",
 		type = 2,
 		remarks = "",
 		stocking_pos = "",
@@ -549,7 +549,7 @@ pg.base.dorm3d_resource = {}
 	}
 	pg.base.dorm3d_resource[799024] = {
 		ship_group = 79902,
-		name = "纳希莫夫洗车",
+		name = "ナヒーモフガレージ衣装",
 		type = 2,
 		remarks = "",
 		stocking_pos = "",
