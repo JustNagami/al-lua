@@ -108,7 +108,7 @@
 					op_list = {
 						{
 							param = "Play",
-							name = "stare_01-start",
+							name = "talk_02-start",
 							time = 0,
 							type = "action",
 							skip = true
