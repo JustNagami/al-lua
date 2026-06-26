@@ -22399,6 +22399,9 @@ _G.pg.base.gametip.dorm3d_privatechat_screen_floor_1 = {
 _G.pg.base.gametip.dorm3d_privatechat_screen_floor_2 = {
 	tip = "ロフト",
 }
+_G.pg.base.gametip.dorm3d_privatechat_screen_floor_3 = {
+	tip = "ヴィラ",
+}
 _G.pg.base.gametip.dorm3d_privatechat_visit_time_now = {
 	tip = "今日",
 }
