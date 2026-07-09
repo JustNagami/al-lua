@@ -396,6 +396,7 @@ pg.memory_group.all = {
 	621,
 	622,
 	623,
+	624,
 	1000,
 	1001,
 	1002,
@@ -10015,6 +10016,28 @@ end)()
 			10000
 		}
 	}
+	pg.base.memory_group[624] = {
+		ship_group = 29905,
+		subtype = 0,
+		auto_unlock = "",
+		type = 3,
+		link_event = 0,
+		icon = "title_chara_pulimaosi",
+		title = "絶対的な笑顔のために",
+		id = 624,
+		memories = {
+			5251,
+			5252,
+			5253,
+			5254,
+			5255,
+			5256,
+			5257
+		},
+		group_id = {
+			10000
+		}
+	}
 	pg.base.memory_group[1000] = {
 		ship_group = 0,
 		group_id = "",
@@ -10301,6 +10324,8 @@ end)()
 			20195
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[1007] = {
 		ship_group = 0,
 		group_id = "",
@@ -10323,8 +10348,6 @@ end)()
 			20205
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[1008] = {
 		ship_group = 0,
 		group_id = "",

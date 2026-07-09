@@ -129,6 +129,11 @@
 		},
 		{
 			types = {
+				Nation.LDP
+			}
+		},
+		{
+			types = {
 				Nation.META
 			}
 		},

@@ -216,6 +216,10 @@ pg.pay_data_display.all = {
 	2079,
 	2080,
 	2081,
+	2088,
+	2089,
+	2090,
+	2091,
 	5001,
 	5002,
 	5003,
@@ -22631,6 +22635,273 @@ end)()
 			{
 				2,
 				40081,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2088] = {
+		limit_group = 6,
+		name = "PR特別計画艦パック・Ⅵ期",
+		descrip_extra = "此处不会被看到",
+		type = 0,
+		second_text = "+強化ユニット",
+		type_order = 0,
+		subject = "PR特別計画艦パック・Ⅵ期",
+		first_text = "特別計画艦",
+		limit_arg = 0,
+		tip = "",
+		money = 2000,
+		tip_open = 0,
+		tag = 2,
+		id = 2088,
+		gem = 0,
+		name_display = "PR特別計画艦パック·Ⅵ期",
+		package_sort_id = 3,
+		limit_type = 3,
+		time = "always",
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "tech6_display",
+		extra_service = 3,
+		skin_inquire_relation = 0,
+		show_group = "tech",
+		id_str = "",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "特別計画艦・Ⅵ期と交換できるアイテムなどを入手できます",
+		package_tag_open = 0,
+		airijp_id = "",
+		extra_service_item = {
+			{
+				2,
+				40145,
+				1
+			},
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {},
+		first_icon = {
+			{
+				2,
+				40145,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2089] = {
+		limit_group = 6,
+		name = "PR艦船Ⅵ期交換アイテム＋強化ユニットセット",
+		descrip_extra = "*既にPR艦船・Ⅵ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
+		type = 0,
+		second_text = "",
+		type_order = 0,
+		subject = "PR艦船Ⅵ期交換アイテム＋強化ユニットセット",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 2000,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2089,
+		name_display = "PR艦船Ⅵ期交換アイテム\n＋強化ユニットセット",
+		limit_type = 3,
+		time = "always",
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "tech6_promotion",
+		package_sort_id = 3,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.bilibili.blhx.keyan16",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "内容",
+		show_group = "tech",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.tech16",
+		extra_service_item = {
+			{
+				2,
+				40145,
+				1
+			},
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				40145,
+				1
+			},
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40086,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2090] = {
+		limit_group = 6,
+		name = "PR艦船Ⅵ期交換アイテム",
+		descrip_extra = "*既にPR艦船・Ⅵ期をすべて所持している場合、使用時にアイテムに変換されます（アイコンタップで確認）",
+		type = 0,
+		second_text = "",
+		type_order = 0,
+		subject = "PR艦船Ⅵ期交換アイテム",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 2,
+		money = 1200,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2090,
+		name_display = "PR艦船Ⅵ期交換アイテム",
+		limit_type = 3,
+		time = "always",
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "tech6_normal",
+		package_sort_id = 3,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.bilibili.blhx.keyan17",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "内容",
+		show_group = "tech",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.tech17",
+		extra_service_item = {
+			{
+				2,
+				40145,
+				1
+			}
+		},
+		display = {
+			{
+				2,
+				40145,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40087,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2091] = {
+		limit_group = 6,
+		name = "PR特別計画艦Ⅵ期強化ユニットセット",
+		descrip_extra = "購入すると指向型強化ユニット・Ⅵ期×343個を入手可能",
+		type = 0,
+		second_text = "",
+		type_order = 0,
+		subject = "強化ユニット",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 3,
+		money = 1000,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 2091,
+		name_display = "強化ユニット",
+		limit_type = 3,
+		time = "always",
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "tech6_promotion",
+		package_sort_id = 3,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.bilibili.blhx.keyan18",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "内容",
+		show_group = "tech",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.tech18",
+		extra_service_item = {
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		display = {
+			{
+				2,
+				42050,
+				343
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {
+			{
+				"level",
+				30
+			}
+		},
+		drop_item = {
+			{
+				2,
+				40088,
 				1
 			}
 		}

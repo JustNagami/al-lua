@@ -34,7 +34,10 @@ pg.activity_series_enemy.all = {
 	5002,
 	5003,
 	5004,
-	5005
+	5005,
+	1001001,
+	1001002,
+	1001003
 }
 pg.base = pg.base or {}
 pg.base.activity_series_enemy = {}
@@ -2383,6 +2386,169 @@ pg.base.activity_series_enemy = {}
 			0.2,
 			1000,
 			0.8
+		}
+	}
+	pg.base.activity_series_enemy[1001001] = {
+		pre_chapter = 0,
+		name = "EASY：撹乱阻止",
+		chapter_name = "TC1",
+		type = 1,
+		pos_x = "0.10703125",
+		count = 0,
+		additional_awards_display = "",
+		pos_y = "0.157291667",
+		whether_singlefight = 0,
+		collection_group_id = 104,
+		ex_count = "",
+		oil = 0,
+		profiles = "作戦目標：西部にあるセイレーン要塞を制圧し、ジャミング装置を破壊し基幹通信回線を回復せよ！",
+		id = 1001001,
+		limitation = {},
+		expedition_id = {
+			1719101
+		},
+		boss_icon = {
+			{
+				"qinraozhe",
+				2
+			}
+		},
+		pass_awards_display = {
+			{
+				2,
+				58839
+			},
+			{
+				2,
+				59001
+			},
+			{
+				2,
+				54012
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	}
+	pg.base.activity_series_enemy[1001002] = {
+		pre_chapter = 1001001,
+		name = "NORMAL：気象復元",
+		chapter_name = "TC2",
+		type = 1,
+		pos_x = "0.34609375",
+		count = 0,
+		collection_group_id = 105,
+		pos_y = "0.347916667",
+		whether_singlefight = 1,
+		id = 1001002,
+		ex_count = "",
+		oil = 0,
+		profiles = "作戦目標：東部にあるセイレーン防衛線を突破し、気象制御装置を破壊して各海域の異常気象を復元せよ！",
+		limitation = {},
+		expedition_id = {
+			1719201,
+			1719202
+		},
+		boss_icon = {
+			{
+				"qinraozhe",
+				2
+			},
+			{
+				"qingchuzhe",
+				5
+			}
+		},
+		pass_awards_display = {
+			{
+				2,
+				58838
+			},
+			{
+				2,
+				59001
+			},
+			{
+				2,
+				54017
+			}
+		},
+		additional_awards_display = {
+			{
+				1,
+				1
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	}
+	pg.base.activity_series_enemy[1001003] = {
+		pre_chapter = 1001002,
+		name = "HARD：基地奪還",
+		chapter_name = "TC3",
+		type = 1,
+		pos_x = "0.50546875",
+		count = 0,
+		collection_group_id = 106,
+		pos_y = "0.080208333",
+		whether_singlefight = 1,
+		id = 1001003,
+		ex_count = "",
+		oil = 0,
+		profiles = "作戦目標：北部の調査基地を奪還し、周辺にあるセイレーン生産施設を破壊して敵援軍の増勢を阻止せよ！",
+		limitation = {},
+		expedition_id = {
+			1719301,
+			1719302,
+			1719303
+		},
+		boss_icon = {
+			{
+				"qinraozhe_IV",
+				2
+			},
+			{
+				"kuersike",
+				3
+			},
+			{
+				"qingchuzhe",
+				5
+			}
+		},
+		pass_awards_display = {
+			{
+				2,
+				58837
+			},
+			{
+				2,
+				59001
+			},
+			{
+				2,
+				54017
+			}
+		},
+		additional_awards_display = {
+			{
+				1,
+				1
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			25,
+			16
 		}
 	}
 end)()

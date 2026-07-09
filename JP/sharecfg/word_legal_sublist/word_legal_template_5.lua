@@ -277,6 +277,9 @@ function temp()
 	var_0_1.高 = {
 		雄 = {
 			this = true
+		},
+		梁 = {
+			this = true
 		}
 	}
 end

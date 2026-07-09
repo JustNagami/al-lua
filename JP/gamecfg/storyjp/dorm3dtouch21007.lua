@@ -46,7 +46,7 @@
 						},
 						{
 							skip = false,
-							time = 1.5,
+							time = 15,
 							type = "wait"
 						}
 					}

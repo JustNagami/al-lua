@@ -452,6 +452,11 @@ function temp()
 						this = true
 					}
 				}
+			},
+			カ = {
+				ン = {
+					this = true
+				}
 			}
 		}
 	}
@@ -933,6 +938,25 @@ function temp()
 			セ = {
 				ナ = {
 					this = true
+				}
+			},
+			ク = {
+				ス = {
+					・ = {
+						イ = {
+							ン = {
+								メ = {
+									ル = {
+										マ = {
+											ン = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		},
@@ -1879,6 +1903,15 @@ function temp()
 		レ = {
 			グ = {
 				this = true
+			}
+		},
+		ラ = {
+			ー = {
+				ジ = {
+					ュ = {
+						this = true
+					}
+				}
 			}
 		}
 	}
@@ -3287,6 +3320,15 @@ function temp()
 									}
 								}
 							}
+						}
+					}
+				}
+			},
+			パ = {
+				ラ = {
+					イ = {
+						ソ = {
+							this = true
 						}
 					}
 				}
