@@ -9219,7 +9219,7 @@ _G.pg.base.gametip.blueprint_simulation_confirm_119901 = {
 	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 283mm/54.5 Main Gun Mount\nTwin 100mm Type 98 Kai High-Angle Gun Mount\nTwin 57mm/L60 Bofors Mle 1951 AA Gun Mount\n</color></size>",
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_29906 = {
-	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype 406mm SK C/34 Main Gun Mount\nTwin 150mm TbtsK C/36 Main Gun Mount\nPrototype Quadruple 30mm AA Gun Mount\n</color></size>",
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 419mm Mk. I Main Gun Mount\nTwin 114mm (QF Mk IV Prototype)\nSingle 20mm Oerlikon (Mark II)\n</color></size>",
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_129901 = {
 	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nTwin 381mm Main Gun Mount\nPrototype Twin 127mm Mk16 Dual-Purpose Gun Mount\nTwin 76mm RF Mk 37 Gun Mount\n</color></size>",
