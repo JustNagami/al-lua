@@ -9097,7 +9097,7 @@ _G.pg.base.gametip.blueprint_simulation_confirm_119901 = {
 	tip = "<size=28>\n是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，\n<color=#ff5c5c>实际性能以获得舰船为准</color>）\n使用装备：<color=#92fc63>\n试作型三联装283mm/54.5主炮\n双联100mm98式高射炮改\n双联装57mm/L60博福斯对空机炮Mle1951\n</color></size>",
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_29906 = {
-	tip = "<size=28>\n是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，\n<color=#ff5c5c>实际性能以获得舰船为准</color>）\n使用装备：<color=#92fc63>\n试作型双联装406mmSKC主炮\n双联装TbtsKC36式150mm主炮\n试作型四联装30mm机炮\n</color></size>",
+	tip = "<size=28>\n是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，\n<color=#ff5c5c>实际性能以获得舰船为准</color>）\n使用装备：<color=#92fc63>\n试作型三联装419mm主炮MK.I\n双联装114mm高平两用炮MarkIV\n20mm厄利孔高射炮MkII\n</color></size>",
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_129901 = {
 	tip = "<size=28>\n是否开始战术模拟？(模拟中我方舰船将受到某些特殊加成影响，\n<color=#ff5c5c>实际性能以获得舰船为准</color>）\n使用装备：<color=#92fc63>\n双联装381mm主炮改\n试作型双联装127mm高平两用炮Mk16\n双联装76mmRF火炮Mk37\n</color></size>",
