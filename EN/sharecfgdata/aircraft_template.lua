@@ -30868,6 +30868,211 @@ _G.pg.base.aircraft_template[49067] = {
 		52247,
 	},
 }
+_G.pg.base.aircraft_template[49080] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 208,
+	dodge = 1.05,
+	dodge_limit = 6,
+	funnel_behavior = "",
+	hp_growth = 1830,
+	icon = "ta152cr14",
+	id = 49080,
+	max_hp = 48,
+	model_ID = "ta152cr14",
+	name = "试作舰载型Ta 152C-1/R14",
+	nationality = 4,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 52,
+	type = 3,
+	weapon_ID = {
+		53500,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0,
+			},
+			{
+				0.82,
+				2.04,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+_G.pg.base.aircraft_template[49081] = {
+	base = 49080,
+	hp_growth = 2105,
+	id = 49081,
+	max_hp = 55,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53501,
+	},
+}
+_G.pg.base.aircraft_template[49082] = {
+	base = 49080,
+	hp_growth = 2380,
+	id = 49082,
+	max_hp = 62,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53502,
+	},
+}
+_G.pg.base.aircraft_template[49083] = {
+	base = 49080,
+	hp_growth = 2654,
+	id = 49083,
+	max_hp = 69,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53503,
+	},
+}
+_G.pg.base.aircraft_template[49084] = {
+	base = 49080,
+	hp_growth = 2929,
+	id = 49084,
+	max_hp = 76,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53504,
+	},
+}
+_G.pg.base.aircraft_template[49085] = {
+	base = 49080,
+	hp_growth = 3203,
+	id = 49085,
+	max_hp = 83,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53505,
+	},
+}
+_G.pg.base.aircraft_template[49086] = {
+	base = 49080,
+	hp_growth = 3478,
+	id = 49086,
+	max_hp = 90,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53506,
+	},
+}
+_G.pg.base.aircraft_template[49087] = {
+	base = 49080,
+	hp_growth = 3752,
+	id = 49087,
+	max_hp = 98,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53507,
+	},
+}
+_G.pg.base.aircraft_template[49088] = {
+	base = 49080,
+	hp_growth = 4027,
+	id = 49088,
+	max_hp = 105,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53508,
+	},
+}
+_G.pg.base.aircraft_template[49089] = {
+	base = 49080,
+	hp_growth = 4301,
+	id = 49089,
+	max_hp = 112,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53509,
+	},
+}
+_G.pg.base.aircraft_template[49090] = {
+	base = 49080,
+	hp_growth = 4576,
+	id = 49090,
+	max_hp = 119,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53510,
+	},
+}
+_G.pg.base.aircraft_template[49091] = {
+	base = 49080,
+	hp_growth = 4851,
+	id = 49091,
+	max_hp = 126,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53511,
+	},
+}
+_G.pg.base.aircraft_template[49092] = {
+	base = 49080,
+	hp_growth = 5125,
+	id = 49092,
+	max_hp = 133,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53512,
+	},
+}
+_G.pg.base.aircraft_template[49093] = {
+	base = 49080,
+	hp_growth = 5400,
+	id = 49093,
+	max_hp = 140,
+	spawn_brownian = 1,
+	weapon_ID = {
+		53513,
+	},
+}
 _G.pg.base.aircraft_template[54017] = {
 	ACC_growth = 0,
 	AP_growth = 2000,
@@ -39196,7 +39401,7 @@ _G.pg.base.aircraft_template[65491] = {
 	max_hp = 38,
 	model_ID = "Ju87D4",
 	name = "彼得史特拉塞技能JU87鱼雷机LV1",
-	nationality = 3,
+	nationality = 4,
 	scale = 1,
 	spawn_brownian = 1,
 	speed = 51,
@@ -88433,6 +88638,354 @@ _G.pg.base.aircraft_template[184060] = {
 	spawn_brownian = 1,
 	weapon_ID = {
 		184070,
+	},
+}
+_G.pg.base.aircraft_template[184291] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 208,
+	dodge = 3.27,
+	dodge_limit = 1.1,
+	funnel_behavior = "",
+	hp_growth = 1739,
+	icon = "ta152cr14",
+	id = 184291,
+	max_hp = 45,
+	model_ID = "ta152cr14",
+	name = "马克斯轰炸机Lv1",
+	nationality = 4,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 52,
+	type = 3,
+	weapon_ID = {
+		184301,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.71,
+				-1.73,
+				0,
+			},
+			{
+				0.82,
+				2.04,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+_G.pg.base.aircraft_template[184292] = {
+	base = 184291,
+	hp_growth = 2000,
+	id = 184292,
+	max_hp = 52,
+	name = "马克斯轰炸机Lv2",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184302,
+	},
+}
+_G.pg.base.aircraft_template[184293] = {
+	base = 184291,
+	hp_growth = 2261,
+	id = 184293,
+	max_hp = 59,
+	name = "马克斯轰炸机Lv3",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184303,
+	},
+}
+_G.pg.base.aircraft_template[184294] = {
+	base = 184291,
+	hp_growth = 2521,
+	id = 184294,
+	max_hp = 66,
+	name = "马克斯轰炸机Lv4",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184304,
+	},
+}
+_G.pg.base.aircraft_template[184295] = {
+	base = 184291,
+	hp_growth = 2782,
+	id = 184295,
+	max_hp = 72,
+	name = "马克斯轰炸机Lv5",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184305,
+	},
+}
+_G.pg.base.aircraft_template[184296] = {
+	base = 184291,
+	hp_growth = 3043,
+	id = 184296,
+	max_hp = 79,
+	name = "马克斯轰炸机Lv6",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184306,
+	},
+}
+_G.pg.base.aircraft_template[184297] = {
+	base = 184291,
+	hp_growth = 3304,
+	id = 184297,
+	max_hp = 86,
+	name = "马克斯轰炸机Lv7",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184307,
+	},
+}
+_G.pg.base.aircraft_template[184298] = {
+	base = 184291,
+	hp_growth = 3565,
+	id = 184298,
+	max_hp = 93,
+	name = "马克斯轰炸机Lv8",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184308,
+	},
+}
+_G.pg.base.aircraft_template[184299] = {
+	base = 184291,
+	hp_growth = 3826,
+	id = 184299,
+	max_hp = 99,
+	name = "马克斯轰炸机Lv9",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184309,
+	},
+}
+_G.pg.base.aircraft_template[184300] = {
+	base = 184291,
+	hp_growth = 4086,
+	id = 184300,
+	max_hp = 106,
+	name = "马克斯轰炸机Lv10",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184310,
+	},
+}
+_G.pg.base.aircraft_template[184341] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 168,
+	dodge = 1.05,
+	dodge_limit = 5,
+	funnel_behavior = "",
+	hp_growth = 1459,
+	icon = "Ju87D4",
+	id = 184341,
+	max_hp = 38,
+	model_ID = "Ju87D4",
+	name = "马克斯鱼雷机Lv1",
+	nationality = 4,
+	scale = 1,
+	spawn_brownian = 1,
+	speed = 51,
+	type = 2,
+	weapon_ID = {
+		184351,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.69,
+				-1.22,
+				0,
+			},
+			{
+				0.75,
+				1.26,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+_G.pg.base.aircraft_template[184342] = {
+	base = 184341,
+	hp_growth = 1678,
+	id = 184342,
+	max_hp = 44,
+	name = "马克斯鱼雷机Lv2",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184352,
+	},
+}
+_G.pg.base.aircraft_template[184343] = {
+	base = 184341,
+	hp_growth = 1897,
+	id = 184343,
+	max_hp = 49,
+	name = "马克斯鱼雷机Lv3",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184353,
+	},
+}
+_G.pg.base.aircraft_template[184344] = {
+	base = 184341,
+	hp_growth = 2116,
+	id = 184344,
+	max_hp = 55,
+	name = "马克斯鱼雷机Lv4",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184354,
+	},
+}
+_G.pg.base.aircraft_template[184345] = {
+	base = 184341,
+	hp_growth = 2335,
+	id = 184345,
+	max_hp = 61,
+	name = "马克斯鱼雷机Lv5",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184355,
+	},
+}
+_G.pg.base.aircraft_template[184346] = {
+	base = 184341,
+	hp_growth = 2554,
+	id = 184346,
+	max_hp = 66,
+	name = "马克斯鱼雷机Lv6",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184356,
+	},
+}
+_G.pg.base.aircraft_template[184347] = {
+	base = 184341,
+	hp_growth = 2772,
+	id = 184347,
+	max_hp = 72,
+	name = "马克斯鱼雷机Lv7",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184357,
+	},
+}
+_G.pg.base.aircraft_template[184348] = {
+	base = 184341,
+	hp_growth = 2991,
+	id = 184348,
+	max_hp = 78,
+	name = "马克斯鱼雷机Lv8",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184358,
+	},
+}
+_G.pg.base.aircraft_template[184349] = {
+	base = 184341,
+	hp_growth = 3210,
+	id = 184349,
+	max_hp = 83,
+	name = "马克斯鱼雷机Lv9",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184359,
+	},
+}
+_G.pg.base.aircraft_template[184350] = {
+	base = 184341,
+	hp_growth = 3429,
+	id = 184350,
+	max_hp = 89,
+	name = "马克斯鱼雷机Lv10",
+	spawn_brownian = 1,
+	weapon_ID = {
+		184360,
 	},
 }
 _G.pg.base.aircraft_template[200101] = {

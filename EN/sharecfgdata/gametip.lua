@@ -3202,6 +3202,9 @@ _G.pg.base.gametip.levelScene_chapter_not_open = {
 _G.pg.base.gametip.levelScene_activate_remaster = {
 	tip = "Unlocking this stage requires <color=#ffde38>1 Data Key</color>.\nWould you like to unlock this stage?",
 }
+_G.pg.base.gametip.levelScene_activate_remaster_1 = {
+	tip = "Unlocking this stage requires <color=#ffde38>1 Data Key</color>.\nWould you like to unlock this stage?",
+}
 _G.pg.base.gametip.levelScene_remaster_tickets_not_enough = {
 	tip = "You do not have enough Data Keys.",
 }
@@ -3214,10 +3217,10 @@ _G.pg.base.gametip.levelScene_remaster_help_tip = {
 			info = "- Data Keys Info -\n· You can use Data Keys to play on event stages found on the War Archives screen.\n· Any progress you've made on an event stage prior to its addition to the War Archives does not carry over.",
 		},
 		{
-			info = "\n· You can acquire <color=#92fc63>4</color> Data Keys a day from the War Archives menu.",
+			info = "\n· You can acquire <color=#92fc63>20</color> Data Keys a day from the War Archives menu.",
 		},
 		{
-			info = "· You can store up to <color=#92fc63>60</color> Data Keys at a time. Any Data Keys you collect beyond this point will be <color=#92fc63>discarded</color>.",
+			info = "· You can store up to <color=#92fc63>300</color> Data Keys at a time. Any Data Keys you collect beyond this point will be <color=#92fc63>discarded</color>.",
 		},
 		{
 			info = "· Using 1 Data Key lets you do <color=#92fc63>1 run</color> on any archived event stage of your choosing.",
@@ -4342,6 +4345,9 @@ _G.pg.base.gametip.word_shipNation_danmachi = {
 }
 _G.pg.base.gametip.word_shipNation_dal = {
 	tip = "Date A Live",
+}
+_G.pg.base.gametip.word_shipNation_jinghuanlianmeng = {
+	tip = "Liga de Pedrería",
 }
 _G.pg.base.gametip.word_reset = {
 	tip = "Reset",
@@ -7982,10 +7988,10 @@ _G.pg.base.gametip.buildship_new_tip = {
 	tip = "Get Alsace guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Strasbourg, Dupleix added to standard build pool!",
+	tip = "Kursk and Sevastopol added to standard build pool!",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "L'Audacieux added to standard build pool!",
+	tip = "Voroshilov added to standard build pool!",
 }
 _G.pg.base.gametip.buildship_special_tip = {
 	tip = "Bismarck Zwei, U-556 META added to standard build pool!",
@@ -9211,6 +9217,21 @@ _G.pg.base.gametip.blueprint_simulation_confirm_79903 = {
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_119901 = {
 	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 283mm/54.5 Main Gun Mount\nTwin 100mm Type 98 Kai High-Angle Gun Mount\nTwin 57mm/L60 Bofors Mle 1951 AA Gun Mount\n</color></size>",
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_29906 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype 406mm SK C/34 Main Gun Mount\nTwin 150mm TbtsK C/36 Main Gun Mount\nPrototype Quadruple 30mm AA Gun Mount\n</color></size>",
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_129901 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nTwin 381mm Main Gun Mount\nPrototype Twin 127mm Mk16 Dual-Purpose Gun Mount\nTwin 76mm RF Mk 37 Gun Mount\n</color></size>",
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_39908 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 150mm Type 5 High-Angle Gun Mount\nPrototype Quadruple 610mm Cruiser Torpedo Mount\nTwin 100mm AA Gun Mount\n</color></size>",
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_89905 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Twin 127mm Mle 1948 Naval Gun\n550mm Triple Torpedo Mount\nTwin 57mm/L60 Bofors Mle 1951 AA Gun Mount\n</color></size>",
+}
+_G.pg.base.gametip.blueprint_simulation_confirm_49911 = {
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Carrier-Based La-9\nPrototype Carrier-Based Ta 152 C-1/R14\nPrototype Carrier-Based La-9\n</color></size>",
 }
 _G.pg.base.gametip.electrotherapy_wanning = {
 	tip = "The electrified area is about to expand",
@@ -29682,6 +29703,12 @@ _G.pg.base.gametip.island_mecha_task_progress = {
 }
 _G.pg.base.gametip.island_mecha_task_lock_tip = {
 	tip = "Unlocks on $1/$2",
+}
+_G.pg.base.gametip.bossrush_act_remaster_close_prev_one_tip = {
+	tip = "Would you like to unlock this War Archive? The currently-open War Archives file will be closed.",
+}
+_G.pg.base.gametip.charge_title_getskin = {
+	tip = "随机获得一件全新换装",
 }
 _G.pg.base.gametip.yearly_sign_in = {
 	tip = "Yearly Logins",

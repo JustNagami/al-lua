@@ -34248,4 +34248,286 @@ _G.pg.base.spweapon_data_statistics[15450] = {
 		},
 	},
 }
+_G.pg.base.spweapon_data_statistics[15500] = {
+	attribute_1 = "cannon",
+	attribute_2 = "hit",
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	effect_id = 901010,
+	effect_id_display = 901010,
+	icon = "15500",
+	id = 15500,
+	important = 2,
+	level = 1,
+	name = "Grazia e Disciplina",
+	next = 15501,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 4,
+	uncraftable = 0,
+	unique = 60303,
+	upgrade_id = 101,
+	value_1 = 12,
+	value_1_random = 10,
+	value_2 = 5,
+	value_2_random = 5,
+	usability = {
+		3,
+	},
+	skill_upgrade = {
+		{
+			0,
+			1014050,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+_G.pg.base.spweapon_data_statistics[15501] = {
+	base = 15500,
+	id = 15501,
+	level = 2,
+	next = 15502,
+	prev = 15500,
+	upgrade_id = 102,
+	value_1 = 14,
+	value_2 = 6,
+}
+_G.pg.base.spweapon_data_statistics[15502] = {
+	base = 15500,
+	id = 15502,
+	level = 3,
+	next = 15503,
+	prev = 15501,
+	upgrade_id = 103,
+	value_1 = 16,
+	value_2 = 7,
+}
+_G.pg.base.spweapon_data_statistics[15503] = {
+	base = 15500,
+	id = 15503,
+	level = 4,
+	next = 15504,
+	prev = 15502,
+	upgrade_id = 104,
+	value_1 = 18,
+	value_2 = 8,
+}
+_G.pg.base.spweapon_data_statistics[15504] = {
+	base = 15500,
+	id = 15504,
+	level = 5,
+	next = 15505,
+	prev = 15503,
+	upgrade_id = 105,
+	value_1 = 20,
+	value_2 = 9,
+}
+_G.pg.base.spweapon_data_statistics[15505] = {
+	base = 15500,
+	id = 15505,
+	level = 6,
+	next = 15506,
+	prev = 15504,
+	upgrade_id = 106,
+	value_1 = 22,
+	value_2 = 10,
+}
+_G.pg.base.spweapon_data_statistics[15506] = {
+	base = 15500,
+	id = 15506,
+	level = 7,
+	next = 15507,
+	prev = 15505,
+	upgrade_id = 107,
+	value_1 = 24,
+	value_2 = 11,
+}
+_G.pg.base.spweapon_data_statistics[15507] = {
+	base = 15500,
+	id = 15507,
+	level = 8,
+	next = 15508,
+	prev = 15506,
+	upgrade_id = 108,
+	value_1 = 26,
+	value_2 = 12,
+}
+_G.pg.base.spweapon_data_statistics[15508] = {
+	base = 15500,
+	id = 15508,
+	level = 9,
+	next = 15509,
+	prev = 15507,
+	upgrade_id = 109,
+	value_1 = 28,
+	value_2 = 13,
+}
+_G.pg.base.spweapon_data_statistics[15509] = {
+	base = 15500,
+	id = 15509,
+	level = 10,
+	next = 15510,
+	prev = 15508,
+	upgrade_id = 110,
+	value_1 = 30,
+	value_2 = 14,
+}
+_G.pg.base.spweapon_data_statistics[15510] = {
+	base = 15500,
+	id = 15510,
+	level = 11,
+	next = 0,
+	prev = 15509,
+	upgrade_id = 111,
+	value_1 = 32,
+	value_2 = 15,
+	skill_upgrade = {
+		{
+			14050,
+			1014050,
+		},
+	},
+}
+_G.pg.base.spweapon_data_statistics[15520] = {
+	attribute_1 = "cannon",
+	attribute_2 = "hit",
+	descrip = "A custom-designed piece of gear made from an Augment Module core.",
+	effect_id = 901010,
+	effect_id_display = 901010,
+	icon = "15520",
+	id = 15520,
+	important = 2,
+	level = 1,
+	name = "OK! Cap",
+	next = 15521,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 4,
+	uncraftable = 0,
+	unique = 10301,
+	upgrade_id = 101,
+	value_1 = 13,
+	value_1_random = 5,
+	value_2 = 8,
+	value_2_random = 5,
+	usability = {
+		3,
+	},
+	skill_upgrade = {
+		{
+			0,
+			1090490,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+_G.pg.base.spweapon_data_statistics[15521] = {
+	base = 15520,
+	id = 15521,
+	level = 2,
+	next = 15522,
+	prev = 15520,
+	upgrade_id = 102,
+	value_1 = 14,
+	value_2 = 9,
+}
+_G.pg.base.spweapon_data_statistics[15522] = {
+	base = 15520,
+	id = 15522,
+	level = 3,
+	next = 15523,
+	prev = 15521,
+	upgrade_id = 103,
+	value_1 = 15,
+	value_2 = 10,
+}
+_G.pg.base.spweapon_data_statistics[15523] = {
+	base = 15520,
+	id = 15523,
+	level = 4,
+	next = 15524,
+	prev = 15522,
+	upgrade_id = 104,
+	value_1 = 16,
+	value_2 = 11,
+}
+_G.pg.base.spweapon_data_statistics[15524] = {
+	base = 15520,
+	id = 15524,
+	level = 5,
+	next = 15525,
+	prev = 15523,
+	upgrade_id = 105,
+	value_1 = 17,
+	value_2 = 12,
+}
+_G.pg.base.spweapon_data_statistics[15525] = {
+	base = 15520,
+	id = 15525,
+	level = 6,
+	next = 15526,
+	prev = 15524,
+	upgrade_id = 106,
+	value_1 = 18,
+	value_2 = 14,
+}
+_G.pg.base.spweapon_data_statistics[15526] = {
+	base = 15520,
+	id = 15526,
+	level = 7,
+	next = 15527,
+	prev = 15525,
+	upgrade_id = 107,
+	value_1 = 19,
+	value_2 = 15,
+}
+_G.pg.base.spweapon_data_statistics[15527] = {
+	base = 15520,
+	id = 15527,
+	level = 8,
+	next = 15528,
+	prev = 15526,
+	upgrade_id = 108,
+	value_1 = 20,
+	value_2 = 16,
+}
+_G.pg.base.spweapon_data_statistics[15528] = {
+	base = 15520,
+	id = 15528,
+	level = 9,
+	next = 15529,
+	prev = 15527,
+	upgrade_id = 109,
+	value_1 = 21,
+	value_2 = 17,
+}
+_G.pg.base.spweapon_data_statistics[15529] = {
+	base = 15520,
+	id = 15529,
+	level = 10,
+	next = 15530,
+	prev = 15528,
+	upgrade_id = 110,
+	value_1 = 23,
+	value_2 = 18,
+}
+_G.pg.base.spweapon_data_statistics[15530] = {
+	base = 15520,
+	id = 15530,
+	level = 11,
+	next = 0,
+	prev = 15529,
+	upgrade_id = 111,
+	value_1 = 25,
+	value_2 = 20,
+	skill_upgrade = {
+		{
+			2021,
+			1090490,
+		},
+	},
+}
 
