@@ -1311,6 +1311,8 @@ function var_0_0.GetFakeGiftPackActivity(arg_131_0, arg_131_1)
 
 				return not iter_131_1:isEnd() and iter_131_1.data1 < var_134_0.limit_count and underscore.any(var_134_0.skin, function(arg_135_0)
 					return pg.ship_skin_template[arg_135_0].shop_id == arg_131_1.id
+				end) and not underscore.all(var_134_0.skin, function(arg_136_0)
+					return getProxy(ShipSkinProxy):hasNonLimitSkin(arg_136_0)
 				end)
 			end
 		}, function()

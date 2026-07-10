@@ -3203,7 +3203,7 @@ _G.pg.base.gametip.levelScene_activate_remaster = {
 	tip = "Unlocking this stage requires <color=#ffde38>1 Data Key</color>.\nWould you like to unlock this stage?",
 }
 _G.pg.base.gametip.levelScene_activate_remaster_1 = {
-	tip = "Unlocking this stage requires <color=#ffde38>1 Data Key</color>.\nWould you like to unlock this stage?",
+	tip = "Unlocking this stage requires <color=#ffde38>$1 Data Key(s)</color>.\nWould you like to unlock this stage?",
 }
 _G.pg.base.gametip.levelScene_remaster_tickets_not_enough = {
 	tip = "You do not have enough Data Keys.",
@@ -9219,7 +9219,7 @@ _G.pg.base.gametip.blueprint_simulation_confirm_119901 = {
 	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 283mm/54.5 Main Gun Mount\nTwin 100mm Type 98 Kai High-Angle Gun Mount\nTwin 57mm/L60 Bofors Mle 1951 AA Gun Mount\n</color></size>",
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_29906 = {
-	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 419mm Mk. I Main Gun Mount\nTwin 114mm (QF Mk IV Prototype)\nSingle 20mm Oerlikon (Mark II)\n</color></size>",
+	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nPrototype Triple 419mm Mk. I Main Gun Mount\nTwin 114mm Dual-Purpose Mark IV\nSingle 20mm Mk II Oerlikon AA Gun Mount\n</color></size>",
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_129901 = {
 	tip = "<size=28>\nWould you like to start a Battle Simulation?\n(<color=#ff5c5c>A shipgirl's simulation performance may differ from her actual performance.</color>)\nEquipment: <color=#92fc63>\nTwin 381mm Main Gun Mount\nPrototype Twin 127mm Mk16 Dual-Purpose Gun Mount\nTwin 76mm RF Mk 37 Gun Mount\n</color></size>",
