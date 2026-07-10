@@ -4318,7 +4318,7 @@ _G.pg.base.gametip.word_shipNation_dal = {
 	tip = "Date A Live",
 }
 _G.pg.base.gametip.word_shipNation_jinghuanlianmeng = {
-	tip = "ペドレーリア",
+	tip = "ペドレリーア",
 }
 _G.pg.base.gametip.word_reset = {
 	tip = "クリア",
@@ -9185,7 +9185,7 @@ _G.pg.base.gametip.blueprint_simulation_confirm_119901 = {
 	tip = "<size=28>\n弾幕確認機能（模擬戦）を起動しますか？\n(<color=#ff5c5c>※実際の艦の性能と異なります</color>）\n使用兵装：<color=#92fc63>\n試作型283mm/54.5三連装砲\n100mm二連装九八式高角砲改\n二連装57mm/L60ボフォース対空機関砲 Mle1951\n</color></size>",
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_29906 = {
-	tip = "<size=28>\n弾幕確認機能（模擬戦）を起動しますか？\n<color=#ff5c5c>（※実際の艦の性能と異なります</color>）\n使用兵装：<color=#92fc63>\n試作型406mmSKC連装砲\n150mmTbtsKC/36連装砲\n試作型四連装30mm機関砲\n</color></size>",
+	tip = "<size=28>\n弾幕確認機能（模擬戦）を起動しますか？\n<color=#ff5c5c>（※実際の艦の性能と異なります</color>）\n使用兵装：<color=#92fc63>\n試作型419mm三連装砲MK.I\n114mm連装両用砲MarkIV\n20mmエリコン高角砲MkII\n</color></size>",
 }
 _G.pg.base.gametip.blueprint_simulation_confirm_129901 = {
 	tip = "<size=28>\n弾幕確認機能（模擬戦）を起動しますか？\n<color=#ff5c5c>（※実際の艦の性能と異なります</color>）\n使用兵装：<color=#92fc63>\n381mm連装砲改\n試作型127mm連装高角砲Mk16\n76mm連装RF砲Mk37\n</color></size>",
