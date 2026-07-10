@@ -1284,18 +1284,6 @@ function var_0_0.GetBossActivityByChapterId(arg_130_0, arg_130_1)
 end
 
 function var_0_0.GetFakeGiftPackActivity(arg_131_0, arg_131_1)
-	arg_131_0.skinCommodityActDic = arg_131_0.skinCommodityActDic or {}
-
-	if arg_131_0.skinCommodityActDic[arg_131_1.id] then
-		local var_131_0 = arg_131_0.skinCommodityActDic[arg_131_1.id]
-
-		if not var_131_0:isEnd() then
-			return var_131_0
-		end
-
-		arg_131_0.skinCommodityActDic[arg_131_1.id] = nil
-	end
-
 	for iter_131_0, iter_131_1 in ipairs(arg_131_0:getActivitiesByTypes({
 		ActivityConst.ACTIVITY_TYPE_SKIN_FAKE_PACKAGE,
 		ActivityConst.ACTIVITY_TYPE_TIMES_FAKE_PACKAGE
@@ -1311,13 +1299,13 @@ function var_0_0.GetFakeGiftPackActivity(arg_131_0, arg_131_1)
 
 				return not iter_131_1:isEnd() and iter_131_1.data1 < var_134_0.limit_count and underscore.any(var_134_0.skin, function(arg_135_0)
 					return pg.ship_skin_template[arg_135_0].shop_id == arg_131_1.id
+				end) and not underscore.all(var_134_0.skin, function(arg_136_0)
+					return getProxy(ShipSkinProxy):hasNonLimitSkin(arg_136_0)
 				end)
 			end
 		}, function()
 			return
 		end) then
-			arg_131_0.skinCommodityActDic[arg_131_1.id] = iter_131_1
-
 			return iter_131_1
 		end
 	end
