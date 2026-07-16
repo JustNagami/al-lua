@@ -127,7 +127,8 @@ pg.backyard_theme_template.all = {
 	136,
 	137,
 	138,
-	139
+	139,
+	140
 }
 pg.base = pg.base or {}
 pg.base.backyard_theme_template = {}
@@ -5033,7 +5034,7 @@ end)()
 	}
 	pg.base.backyard_theme_template[130] = {
 		Cfg_1 = 5,
-		name = "迷宫都市",
+		name = "迷宮都市",
 		hot = 1,
 		is_view = 1,
 		id = 130,
@@ -5390,6 +5391,30 @@ end)()
 			339112,
 			339113,
 			339114
+		}
+	}
+	pg.base.backyard_theme_template[140] = {
+		Cfg_1 = 5,
+		name = "バンカー・キャビン",
+		hot = 1,
+		is_view = 1,
+		id = 140,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "衛星軌道を巡るバンカーの居住区に身を置き、モノトーンを基調とした無機質な空間で、束の間の休息を",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "nierthemeicon",
+		deblocking = 1,
+		order = 140,
+		ids = {
+			340001,
+			340002,
+			340101,
+			340102,
+			340103,
+			340104
 		}
 	}
 end)()

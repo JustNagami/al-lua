@@ -205,6 +205,7 @@ pg.furniture_data_template.all = {
 	337,
 	338,
 	339,
+	341,
 	100002,
 	100003,
 	100004,
@@ -3563,7 +3564,14 @@ pg.furniture_data_template.all = {
 	339112,
 	339113,
 	339114,
-	339115
+	339115,
+	340001,
+	340002,
+	340101,
+	340102,
+	340103,
+	340104,
+	340105
 }
 pg.furniture_data_template.get_id_list_by_themeId = {
 	[0] = {
@@ -3766,6 +3774,7 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		337,
 		338,
 		339,
+		341,
 		100002,
 		100003,
 		100004,
@@ -7375,6 +7384,15 @@ pg.furniture_data_template.get_id_list_by_themeId = {
 		339113,
 		339114,
 		339115
+	},
+	[140] = {
+		340001,
+		340002,
+		340101,
+		340102,
+		340103,
+		340104,
+		340105
 	}
 }
 pg.furniture_data_template.get_id_list_by_tag = {
@@ -9644,7 +9662,11 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		339111,
 		339112,
 		339113,
-		339114
+		339114,
+		340101,
+		340102,
+		340103,
+		340104
 	},
 	{
 		1108,
@@ -9929,7 +9951,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		336002,
 		337002,
 		338002,
-		339002
+		339002,
+		340002
 	},
 	{
 		1001,
@@ -10055,7 +10078,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		336001,
 		337001,
 		338001,
-		339001
+		339001,
+		340001
 	},
 	{
 		1301,
@@ -10871,7 +10895,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		335119,
 		336115,
 		338116,
-		339115
+		339115,
+		340105
 	},
 	{
 		101,
@@ -10952,7 +10977,8 @@ pg.furniture_data_template.get_id_list_by_tag = {
 		333,
 		335,
 		338,
-		339
+		339,
+		341
 	}
 }
 pg.furniture_data_template.get_id_list_by_type = {
@@ -11081,7 +11107,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		336002,
 		337002,
 		338002,
-		339002
+		339002,
+		340002
 	},
 	{
 		120,
@@ -13339,7 +13366,11 @@ pg.furniture_data_template.get_id_list_by_type = {
 		339112,
 		339113,
 		339114,
-		339115
+		339115,
+		340101,
+		340103,
+		340104,
+		340105
 	},
 	{
 		1108,
@@ -13624,7 +13655,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		336001,
 		337001,
 		338001,
-		339001
+		339001,
+		340001
 	},
 	{
 		1101,
@@ -13792,7 +13824,8 @@ pg.furniture_data_template.get_id_list_by_type = {
 		333106,
 		334104,
 		335103,
-		339103
+		339103,
+		340102
 	},
 	{
 		261,
@@ -14350,6 +14383,7 @@ pg.furniture_data_template.get_id_list_by_type = {
 		336,
 		338,
 		339,
+		341,
 		100002,
 		100004,
 		100005,
@@ -24686,6 +24720,50 @@ end)()
 		},
 		interAction_group = {}
 	}
+	pg.base.furniture_data_template[341] = {
+		spine_extra = "",
+		describe = "構造が特殊な幻像の塔。「自動歩兵人形の旅」に参加した指揮官に栄光あれ",
+		gain_by = "自動歩兵人形の旅",
+		type = 7,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 5,
+		is_get_time_note = 1,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 0,
+		icon = "nierxunzhangicon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 8,
+		comfortable = 0,
+		spine_action_replace = "",
+		picture = "",
+		name = "複製サレタ幻像の塔",
+		canputon = 0,
+		id = 341,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			1
+		},
+		spine = {
+			{
+				"nierxunzhang",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
 	pg.base.furniture_data_template[100002] = {
 		gain_by = "",
 		name = "友情の空気ポンプ",
@@ -31624,6 +31702,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[1103] = {
 		spine_extra = "",
 		describe = "地べたで寝るよりマシな床ベッド。プロレタリアスタイル…かも？",
@@ -31671,8 +31751,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[1104] = {
 		spine_extra = "",
 		describe = "木製の間仕切り。所々がツギハギしているようで本当に仕切れるかが疑問",
@@ -35756,6 +35834,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[5107] = {
 		spine_extra = "",
 		describe = "赤のソファ。普通のソファより少しサイズが小さい",
@@ -35818,8 +35898,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[5108] = {
 		spine_extra = "",
 		describe = "新兵器の設計図面が収納されているボックス",
@@ -40062,6 +40140,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[11105] = {
 		spine_extra = "",
 		describe = "大きなポット風のベッド。寝心地が良さそう。",
@@ -40114,8 +40194,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[11106] = {
 		spine_extra = "",
 		describe = "美味しそうな外見の割に座り心地はちょっと微妙。",
@@ -44376,6 +44454,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[14111] = {
 		spine_extra = "",
 		describe = "小さいプロジェクターで映り出すとある星系の景色。",
@@ -44414,8 +44494,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[14112] = {
 		spine_extra = "",
 		describe = "大きすぎてデスクになったサターンチェア。",
@@ -49414,6 +49492,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[17301] = {
 		spine_extra = "",
 		describe = "「福袋、一個でどうかにゃ？」",
@@ -49452,8 +49532,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[18001] = {
 		spine_extra = "",
 		describe = "ラインが浮かび上がるフローリング。",
@@ -54012,6 +54090,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[21204] = {
 		spine_extra = "",
 		describe = "「大丈夫大丈夫！キャンディは博愛！みんなの分まであるから！」",
@@ -54050,8 +54130,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[21205] = {
 		spine_extra = "",
 		describe = "パチッ……パシャ―…ドン！",
@@ -58801,6 +58879,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[27102] = {
 		spine_extra = "",
 		describe = "青いウォーターボール、ぶつかると意外と痛い？ ",
@@ -58852,8 +58932,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[27103] = {
 		spine_extra = "",
 		describe = "青と白のストライプ柄。一部には人気らしい。 ",
@@ -63590,6 +63668,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[29122] = {
 		spine_extra = "",
 		describe = "海底の天然温泉を利用したバスタブ",
@@ -63657,8 +63737,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[29123] = {
 		spine_extra = "",
 		describe = "墨ではなくバブルを飛ばす。ソファだからね",
@@ -68279,6 +68357,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[35125] = {
 		spine_extra = "",
 		describe = "謎の液体を垂れ流している",
@@ -68330,8 +68410,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[35126] = {
 		spine_extra = "",
 		describe = "更に強くなった毒沼",
@@ -72832,6 +72910,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[38131] = {
 		spine_extra = "",
 		describe = "肉料理に合うテーブルクロス",
@@ -72898,8 +72978,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[38132] = {
 		spine_extra = "",
 		describe = "ボア鼻が大々的描かれているラウンドチェア。人によってハートに見えるかもしれない",
@@ -77294,6 +77372,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[43102] = {
 		spine_extra = "",
 		describe = "スナック愛にありそうなソファとテーブル。オススメはジンジャーエール。",
@@ -77370,8 +77450,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[43103] = {
 		spine_extra = "",
 		describe = "キズナアイが温度調節をしてくれる超高性能冷蔵庫",
@@ -81720,6 +81798,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[45304] = {
 		spine_extra = "",
 		describe = "壁掛けの鉄血シンボル（オブジェクト）",
@@ -81758,8 +81838,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[45305] = {
 		spine_extra = "",
 		describe = "より豪華な壁掛けの鉄血シンボル（オブジェクト）",
@@ -86043,6 +86121,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[49302] = {
 		spine_extra = "",
 		describe = "「ちょっと光があったほうが、よく寝れるよね」",
@@ -86081,8 +86161,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[49303] = {
 		spine_extra = "",
 		describe = "「姉貴と私たちが活躍した海を指し示せる？」",
@@ -90447,6 +90525,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[55002] = {
 		spine_extra = "",
 		describe = "ホロライブをイメージした壁紙",
@@ -90485,8 +90565,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[55101] = {
 		spine_extra = "",
 		describe = "メンバーたちの個性的な絵や便箋が貼られている",
@@ -94787,6 +94865,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[58116] = {
 		spine_extra = "",
 		describe = "大火力で一気に蒸し上げるピョ！",
@@ -94831,8 +94911,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[58301] = {
 		spine_extra = "",
 		describe = "今は殆ど見かけないデザインの窓",
@@ -99101,6 +99179,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[62110] = {
 		spine_extra = "",
 		describe = "小さな花を飾るのは、誰の発案かしら",
@@ -99139,8 +99219,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[62111] = {
 		spine_extra = "",
 		describe = "「あなたにも、アイリスの加護があらんことを」",
@@ -103547,6 +103625,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[69114] = {
 		spine_extra = "",
 		describe = "「呼ばれるまではそこに座っていてくださいね」",
@@ -103611,8 +103691,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[69115] = {
 		spine_extra = "",
 		describe = "医療施設のウォーターサーバー。その水質は純水に近く、安心して飲める",
@@ -108250,6 +108328,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[73105] = {
 		spine_extra = "",
 		describe = "クリスマスパーティーの備品も数多く入っている。",
@@ -108288,8 +108368,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[73106] = {
 		spine_extra = "",
 		describe = "ふかふかなカーペット。そのまま寝そべてもいい夢が見れそう",
@@ -112614,6 +112692,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[77104] = {
 		spine_extra = "",
 		describe = "雪国の町を彩る白と緑",
@@ -112652,8 +112732,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[77105] = {
 		spine_extra = "",
 		describe = "雪国の町を彩る白と緑",
@@ -116959,6 +117037,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[81119] = {
 		spine_extra = "",
 		describe = "授業を始めるピョ！",
@@ -116997,8 +117077,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[81120] = {
 		spine_extra = "",
 		describe = "「風雲の机に風が吹かぬまま――」",
@@ -121514,6 +121592,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[85001] = {
 		spine_extra = "",
 		describe = "「どれ、今日もお手並み拝見といこう」",
@@ -121549,8 +121629,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[85002] = {
 		spine_extra = "",
 		describe = "「どれ、今日もお手並み拝見といこう」",
@@ -125664,6 +125742,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[89102] = {
 		spine_extra = "",
 		describe = "ふんわりと柔らかくていい夢見れそう！",
@@ -125726,8 +125806,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[89103] = {
 		spine_extra = "",
 		describe = "安心できる暖色系の光",
@@ -129773,6 +129851,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[93001] = {
 		spine_extra = "",
 		describe = "アツい夏に海のサマーパーク！",
@@ -129808,8 +129888,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[93002] = {
 		spine_extra = "",
 		describe = "アツい夏に海のサマーパーク！",
@@ -134045,6 +134123,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[96106] = {
 		spine_extra = "",
 		describe = "「ヨークタウン姉さん！アイスもあるわよ！」",
@@ -134083,8 +134163,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[96107] = {
 		spine_extra = "",
 		describe = "オフニャを置くのにちょうどいい大きさ",
@@ -138508,6 +138586,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[99121] = {
 		spine_extra = "",
 		describe = "一人だけで楽しむための小さな浴槽",
@@ -138572,8 +138652,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[99123] = {
 		spine_extra = "",
 		describe = "心地よくお風呂を楽しもう",
@@ -143394,6 +143472,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[302301] = {
 		spine_extra = "",
 		describe = "心をリラックスさせる優しい光",
@@ -143432,8 +143512,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[302302] = {
 		spine_extra = "",
 		describe = "奇妙な色彩で書かれている絵",
@@ -147764,6 +147842,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[306106] = {
 		spine_extra = "",
 		describe = "VIP席ピョ！",
@@ -147816,8 +147896,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[306107] = {
 		spine_extra = "",
 		describe = "バルーンがつけられたドリンクバケット",
@@ -152523,6 +152601,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[311101] = {
 		spine_extra = "",
 		describe = "遠慮せず好きなだけ召し上がるピョ！",
@@ -152585,8 +152665,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[311102] = {
 		spine_extra = "",
 		describe = "キラキラしているパール饅頭の像",
@@ -157447,6 +157525,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[316116] = {
 		gain_by = "",
 		name = "培養カプセル",
@@ -157516,8 +157596,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[316117] = {
 		spine_extra = "",
 		describe = "ふわふわふかふかで、みんなよく使うよ！",
@@ -162116,6 +162194,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[320305] = {
 		spine_extra = "",
 		describe = "ここから、遠い宇宙を眺められる――",
@@ -162154,8 +162234,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[320306] = {
 		spine_extra = "",
 		describe = "ここから、遠い宇宙を眺められる――",
@@ -166709,6 +166787,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[326104] = {
 		spine_extra = "",
 		describe = "材料の共鳴範囲が広がる",
@@ -166747,8 +166827,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[326105] = {
 		spine_extra = "",
 		describe = "道具を複製できる",
@@ -171360,6 +171438,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[331109] = {
 		spine_extra = "",
 		describe = "雲を駆け抜け、空中艦の力を体感せよ",
@@ -171398,8 +171478,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[331110] = {
 		spine_extra = "",
 		describe = "雲を駆け抜け、空中艦の力を体感せよ",
@@ -176132,6 +176210,8 @@ end)()
 		},
 		interAction_group = {}
 	}
+end)()
+;(function()
 	pg.base.furniture_data_template[336109] = {
 		gain_by = "",
 		name = "指揮室ワークデスク",
@@ -176207,8 +176287,6 @@ end)()
 		},
 		interAction_group = {}
 	}
-end)()
-;(function()
 	pg.base.furniture_data_template[336110] = {
 		spine_extra = "",
 		describe = "腰を屈めて体を捻らせ、レーザーに触れないように！",
@@ -178977,6 +179055,307 @@ end)()
 		followBone = {
 			"char",
 			1
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[340001] = {
+		spine_extra = "",
+		describe = "モノトーンに統一された空間。キャビンの静けさがいっそう際立つ",
+		gain_by = "",
+		type = 4,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 140,
+		size = "",
+		deblocking = 1,
+		level = 1,
+		name = "バンカーの床",
+		effect = "",
+		advice = 0,
+		tag = 4,
+		spine_action_replace = "",
+		picture = "nier/dibannier",
+		icon = "dibanniericon",
+		canputon = 0,
+		comfortable = 4,
+		id = 340001,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[340002] = {
+		spine_extra = "",
+		describe = "モノトーンに統一された空間。キャビンの静けさがいっそう際立つ",
+		gain_by = "",
+		type = 1,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 0,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 140,
+		size = "",
+		deblocking = 1,
+		level = 5,
+		name = "バンカーの壁",
+		effect = "",
+		advice = 0,
+		tag = 3,
+		spine_action_replace = "",
+		picture = "",
+		comfortable = 4,
+		canputon = 0,
+		icon = "qiangbiniericon",
+		id = 340002,
+		can_rotate = 0,
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"qiangbinier",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[340101] = {
+		spine_extra = "",
+		describe = "ちゃんと整えられた簡素なベッド。足元の黒いブーツは誰が置いていったものだろうか",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 140,
+		icon = "chaungniericon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 3,
+		spine_action_replace = "",
+		picture = "nier/chaungnier",
+		name = "ヨルハ制式シングルベッド",
+		canputon = 0,
+		id = 340101,
+		can_rotate = 0,
+		size = {
+			9,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		interAction = {
+			{
+				"sleep",
+				{
+					-8,
+					-58
+				},
+				{
+					1,
+					1
+				}
+			}
+		},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[340102] = {
+		spine_extra = "",
+		describe = "ビックリマーク型の黒いラグ。落ち着いた雰囲気で、次の目的について考えを巡らせたいときにちょうどいい",
+		gain_by = "",
+		type = 5,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 3,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 140,
+		icon = "ditanniericon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		name = "ビックリマークカーペット",
+		spine_action_replace = "",
+		picture = "nier/ditannier",
+		comfortable = 3,
+		canputon = 0,
+		id = 340102,
+		can_rotate = 0,
+		size = {
+			6,
+			2
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[340103] = {
+		spine_extra = "",
+		describe = "宙に浮く黒いボックス。中には、強大なエネルギーが秘められているようだ",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 140,
+		icon = "heixiaziniericon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		name = "ブラックボックスの浮遊スタンド",
+		canputon = 0,
+		id = 340103,
+		can_rotate = 0,
+		size = {
+			3,
+			3
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"heixiazinier",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[340104] = {
+		spine_extra = "",
+		describe = "モノトーンの苗床に咲く白い花。とても珍しく、見つけた者は願いが叶うといわれている",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 140,
+		icon = "huatianniericon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 1,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		name = "月の涙の花壇",
+		canputon = 0,
+		id = 340104,
+		can_rotate = 0,
+		size = {
+			6,
+			5
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"huatiannier",
+				"normal"
+			}
+		},
+		interAction_group = {}
+	}
+	pg.base.furniture_data_template[340105] = {
+		spine_extra = "",
+		describe = "命令一つで、モノクロの飛行ユニットが頭上を駆け抜け、終わりのない任務を遂行する",
+		gain_by = "",
+		type = 2,
+		dir = 0,
+		dorm_id = 0,
+		rarity = 4,
+		is_get_time_note = 0,
+		belong = 1,
+		count = 1,
+		is_3d_obj = 0,
+		spine_combine_action_replace = "",
+		themeId = 140,
+		icon = "fangweiliezhenniericon",
+		deblocking = 1,
+		level = 1,
+		advice = 0,
+		effect = "",
+		tag = 7,
+		comfortable = 4,
+		spine_action_replace = "",
+		picture = "",
+		name = "飛行ユニット・オート防衛形態",
+		canputon = 0,
+		id = 340105,
+		can_rotate = 0,
+		size = {
+			7,
+			7
+		},
+		offset = {},
+		canputonGrid = {},
+		can_trigger = {
+			0
+		},
+		spine = {
+			{
+				"fangweiliezhennier",
+				"normal",
+				{
+					"action",
+					false
+				}
+			}
 		},
 		interAction_group = {}
 	}

@@ -303,6 +303,9 @@ function temp()
 			目 = {
 				this = true
 			}
+		},
+		B = {
+			this = true
 		}
 	}
 end
@@ -389,6 +392,16 @@ function temp()
 					}
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.A = {
+		["2"] = {
+			this = true
 		}
 	}
 end

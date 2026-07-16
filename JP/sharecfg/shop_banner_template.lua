@@ -75,13 +75,13 @@ pg.base.shop_banner_template = {}
 		id = 11,
 		relation_param = "",
 		pic = "shopbanner/shop_skin2",
-		time_lable = 0,
+		time_lable = 1,
 		time = {
 			{
 				{
 					2026,
 					7,
-					9
+					16
 				},
 				{
 					0,
@@ -93,12 +93,12 @@ pg.base.shop_banner_template = {}
 				{
 					2026,
 					7,
-					16
+					29
 				},
 				{
-					16,
-					0,
-					0
+					23,
+					59,
+					59
 				}
 			}
 		},
