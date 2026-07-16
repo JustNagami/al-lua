@@ -30894,478 +30894,478 @@ cs.gametip = {
 	},
 	nier_2b_text_block_day1 = {
 		1506257,
-		495
+		498
 	},
 	nier_2b_text_block_day2 = {
-		1506752,
-		452
+		1506755,
+		455
 	},
 	nier_2b_text_block_day3 = {
-		1507204,
-		588
+		1507210,
+		591
 	},
 	nier_2b_text_block_day4 = {
-		1507792,
-		587
+		1507801,
+		590
 	},
 	nier_2b_text_block_day5 = {
-		1508379,
-		543
+		1508391,
+		546
 	},
 	nier_2b_text_block_day6 = {
-		1508922,
-		465
+		1508937,
+		468
 	},
 	nier_2b_text_block_day7 = {
-		1509387,
-		558
+		1509405,
+		561
 	},
 	nier_2b_text_block_day_fin = {
-		1509945,
+		1509966,
 		146
 	},
 	nier_core_countdown = {
-		1510091,
+		1510112,
 		105
 	},
 	nier_core_award_check = {
-		1510196,
+		1510217,
 		97
 	},
 	nier_core_task_desc = {
-		1510293,
+		1510314,
 		104
 	},
 	nier_a2_mission_day = {
-		1510397,
+		1510418,
 		88
 	},
 	nier_a2_mission_unlock_desc = {
-		1510485,
+		1510506,
 		110
 	},
 	nier_a2_mission_detail = {
-		1510595,
+		1510616,
 		98
 	},
 	nier_a2_mission_progress = {
-		1510693,
+		1510714,
 		100
 	},
 	nier_award_char = {
-		1510793,
+		1510814,
 		88
 	},
 	nier_award_furniture = {
-		1510881,
+		1510902,
 		90
 	},
 	nier_award_equip_skin = {
-		1510971,
+		1510992,
 		97
 	},
 	nier_award_sp_equip = {
-		1511068,
+		1511089,
 		95
 	},
 	NieRAutomataCoreActivityUI_subtitle_3 = {
-		1511163,
+		1511184,
 		109
 	},
 	NieRAutomataCoreActivityUI_subtitle_1 = {
-		1511272,
+		1511293,
 		125
 	},
 	NieRAutomataCoreActivityUI_subtitle_5 = {
-		1511397,
+		1511418,
 		113
 	},
 	NieRAutomataCoreActivityUI_subtitle_4 = {
-		1511510,
+		1511531,
 		119
 	},
 	NieRAutomataCoreActivityUI_subtitle_2 = {
-		1511629,
+		1511650,
 		109
 	},
 	dorm3d_carwash_button = {
-		1511738,
+		1511759,
 		100
 	},
 	dorm3d_carwash_tiiiiiip = {
-		1511838,
+		1511859,
 		763
 	},
 	dorm3d_carwash_mood = {
-		1512601,
+		1512622,
 		89
 	},
 	dorm3d_carwash_clean = {
-		1512690,
+		1512711,
 		93
 	},
 	dorm3d_carwash_retry = {
-		1512783,
+		1512804,
 		96
 	},
 	dorm3d_carwash_exit = {
-		1512879,
+		1512900,
 		89
 	},
 	dorm3d_carwash_title = {
-		1512968,
+		1512989,
 		93
 	},
 	dorm3d_collection_carwash = {
-		1513061,
+		1513082,
 		101
 	},
 	dorm3d_naximofu_table = {
-		1513162,
+		1513183,
 		94
 	},
 	dorm3d_naximofu_chair = {
-		1513256,
+		1513277,
 		97
 	},
 	dorm3d_naximofu_bed = {
-		1513353,
+		1513374,
 		89
 	},
 	dorm3d_gift_overtime = {
-		1513442,
+		1513463,
 		142
 	},
 	dorm3d_gift_overtime_title = {
-		1513584,
+		1513605,
 		102
 	},
 	auction_help = {
-		1513686,
+		1513707,
 		681
 	},
 	auction_currency_noenough = {
-		1514367,
+		1514388,
 		122
 	},
 	auction_preorder_tips = {
-		1514489,
+		1514510,
 		154
 	},
 	auction_preorder_tips_1 = {
-		1514643,
+		1514664,
 		148
 	},
 	auction_game_rarity_0 = {
-		1514791,
+		1514812,
 		91
 	},
 	auction_game_rarity_1 = {
-		1514882,
+		1514903,
 		86
 	},
 	auction_game_rarity_2 = {
-		1514968,
+		1514989,
 		86
 	},
 	auction_game_rarity_3 = {
-		1515054,
+		1515075,
 		87
 	},
 	auction_game_rarity_4 = {
-		1515141,
+		1515162,
 		88
 	},
 	auction_game_rarity_5 = {
-		1515229,
+		1515250,
 		87
 	},
 	auction_game_punishment = {
-		1515316,
+		1515337,
 		221
 	},
 	auction_game_match_forbidden = {
-		1515537,
+		1515558,
 		132
 	},
 	auction_game_match_warning = {
-		1515669,
+		1515690,
 		211
 	},
 	auction_game_bid_phase = {
-		1515880,
+		1515901,
 		98
 	},
 	auction_game_kick = {
-		1515978,
+		1515999,
 		172
 	},
 	auction_game_nobid_tip = {
-		1516150,
+		1516171,
 		171
 	},
 	auction_game_cannot_forfeit = {
-		1516321,
+		1516342,
 		140
 	},
 	auction_game_forfeit_tip = {
-		1516461,
+		1516482,
 		179
 	},
 	auction_game_wait_bid_phase = {
-		1516640,
+		1516661,
 		106
 	},
 	auction_game_min_bid = {
-		1516746,
+		1516767,
 		138
 	},
 	auction_game_bid_confirm = {
-		1516884,
+		1516905,
 		114
 	},
 	auction_game_exceeds_max_value = {
-		1516998,
+		1517019,
 		161
 	},
 	auction_game_prepare = {
-		1517159,
+		1517180,
 		117
 	},
 	auction_main_handbook = {
-		1517276,
+		1517297,
 		100
 	},
 	auction_main_public_notice = {
-		1517376,
+		1517397,
 		99
 	},
 	auction_main_done = {
-		1517475,
+		1517496,
 		87
 	},
 	auction_main_doing = {
-		1517562,
+		1517583,
 		91
 	},
 	auction_main_personal_event = {
-		1517653,
+		1517674,
 		109
 	},
 	auction_main_public_event = {
-		1517762,
+		1517783,
 		107
 	},
 	auction_main_select_event = {
-		1517869,
+		1517890,
 		113
 	},
 	auction_main_pt = {
-		1517982,
+		1518003,
 		85
 	},
 	auction_main_bid_price = {
-		1518067,
+		1518088,
 		98
 	},
 	auction_main_win = {
-		1518165,
+		1518186,
 		86
 	},
 	auction_main_fail = {
-		1518251,
+		1518272,
 		90
 	},
 	auction_main_match_exit = {
-		1518341,
+		1518362,
 		136
 	},
 	auction_settlement_quick = {
-		1518477,
+		1518498,
 		100
 	},
 	auction_settlement_session = {
-		1518577,
+		1518598,
 		108
 	},
 	auction_settlement_name = {
-		1518685,
+		1518706,
 		96
 	},
 	auction_settlement_price = {
-		1518781,
+		1518802,
 		100
 	},
 	auction_settlement_value = {
-		1518881,
+		1518902,
 		100
 	},
 	auction_settlement_revenue = {
-		1518981,
+		1519002,
 		96
 	},
 	auction_settlement_dividend = {
-		1519077,
+		1519098,
 		100
 	},
 	auction_block_emoji = {
-		1519177,
+		1519198,
 		104
 	},
 	auction_ready = {
-		1519281,
+		1519302,
 		104
 	},
 	auction_cancel = {
-		1519385,
+		1519406,
 		84
 	},
 	auction_confirm = {
-		1519469,
+		1519490,
 		85
 	},
 	auction_signin_task = {
-		1519554,
+		1519575,
 		89
 	},
 	auction_signin_goto = {
-		1519643,
+		1519664,
 		104
 	},
 	auction_signin_collect = {
-		1519747,
+		1519768,
 		98
 	},
 	auction_pt_tip = {
-		1519845,
+		1519866,
 		87
 	},
 	auction_pt_collected = {
-		1519932,
+		1519953,
 		105
 	},
 	auction_pt_info = {
-		1520037,
+		1520058,
 		127
 	},
 	auction_not_enough_assets = {
-		1520164,
+		1520185,
 		109
 	},
 	auction_forbidden_tip = {
-		1520273,
+		1520294,
 		126
 	},
 	auction_value = {
-		1520399,
+		1520420,
 		92
 	},
 	auction_ticket = {
-		1520491,
+		1520512,
 		87
 	},
 	auction_matching = {
-		1520578,
+		1520599,
 		98
 	},
 	auction_assistant = {
-		1520676,
+		1520697,
 		96
 	},
 	auction_activity_closed = {
-		1520772,
+		1520793,
 		105
 	},
 	auction_activity_closed_tip = {
-		1520877,
+		1520898,
 		124
 	},
 	auction_collection_title = {
-		1521001,
+		1521022,
 		103
 	},
 	auction_tab_text_1 = {
-		1521104,
+		1521125,
 		100
 	},
 	auction_tab_text_2 = {
-		1521204,
+		1521225,
 		97
 	},
 	auction_matches_title = {
-		1521301,
+		1521322,
 		97
 	},
 	auction_success_cnt_title = {
-		1521398,
+		1521419,
 		101
 	},
 	auction_success_rate_title = {
-		1521499,
+		1521520,
 		102
 	},
 	auction_currency_title = {
-		1521601,
+		1521622,
 		101
 	},
 	auction_total_profit_title = {
-		1521702,
+		1521723,
 		102
 	},
 	auction_highest_profit_title = {
-		1521804,
+		1521825,
 		104
 	},
 	auction_collection_type_title = {
-		1521908,
+		1521929,
 		108
 	},
 	auction_collection_price_title = {
-		1522016,
+		1522037,
 		106
 	},
 	auction_task_daily = {
-		1522122,
+		1522143,
 		94
 	},
 	auction_task_challenge = {
-		1522216,
+		1522237,
 		98
 	},
 	auction_bid_keyboard_clear = {
-		1522314,
+		1522335,
 		102
 	},
 	auction_round_instant_buy = {
-		1522416,
+		1522437,
 		121
 	},
 	auction_collect_unlock = {
-		1522537,
+		1522558,
 		98
 	},
 	auction_show_common_event = {
-		1522635,
+		1522656,
 		116
 	},
 	auction_show_personal_event = {
-		1522751,
+		1522772,
 		118
 	},
 	auction_store_estimate = {
-		1522869,
+		1522890,
 		118
 	},
 	auction_relief_tip = {
-		1522987,
+		1523008,
 		138
 	},
 	auction_relief_tip_2 = {
-		1523125,
+		1523146,
 		207
 	},
 	nier_a2_item_got = {
-		1523332,
+		1523353,
 		89
 	}
 }

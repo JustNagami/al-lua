@@ -46,6 +46,9 @@ function var_0_0.didEnter(arg_4_0, arg_4_1)
 				var_5_0.preserveAspect = true
 			end
 
+			tf(arg_5_0).anchoredPosition = Vector2.zero
+			rtf(arg_5_0).sizeDelta = Vector2.New(210, 210)
+
 			local var_5_1 = arg_5_0:GetComponent("Animator")
 
 			if var_5_1 then
