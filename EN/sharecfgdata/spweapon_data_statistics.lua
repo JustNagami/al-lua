@@ -34248,6 +34248,288 @@ _G.pg.base.spweapon_data_statistics[15450] = {
 		},
 	},
 }
+_G.pg.base.spweapon_data_statistics[15460] = {
+	attribute_1 = "cannon",
+	attribute_2 = "dodge",
+	descrip = "A2's Augment Module.",
+	effect_id = 117080,
+	effect_id_display = 117080,
+	icon = "15460",
+	id = 15460,
+	important = 2,
+	level = 1,
+	name = "Type-4O Sword",
+	next = 15461,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 4,
+	uncraftable = 1,
+	unique = 1170001,
+	upgrade_id = 10001,
+	value_1 = 20,
+	value_1_random = 0,
+	value_2 = 1,
+	value_2_random = 0,
+	usability = {
+		3,
+	},
+	skill_upgrade = {
+		{
+			0,
+			117070,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+_G.pg.base.spweapon_data_statistics[15461] = {
+	base = 15460,
+	id = 15461,
+	level = 2,
+	next = 15462,
+	prev = 15460,
+	upgrade_id = 10002,
+	value_1 = 21,
+	value_2 = 1,
+}
+_G.pg.base.spweapon_data_statistics[15462] = {
+	base = 15460,
+	id = 15462,
+	level = 3,
+	next = 15463,
+	prev = 15461,
+	upgrade_id = 10003,
+	value_1 = 22,
+	value_2 = 2,
+}
+_G.pg.base.spweapon_data_statistics[15463] = {
+	base = 15460,
+	id = 15463,
+	level = 4,
+	next = 15464,
+	prev = 15462,
+	upgrade_id = 10004,
+	value_1 = 23,
+	value_2 = 3,
+}
+_G.pg.base.spweapon_data_statistics[15464] = {
+	base = 15460,
+	id = 15464,
+	level = 5,
+	next = 15465,
+	prev = 15463,
+	upgrade_id = 10005,
+	value_1 = 24,
+	value_2 = 4,
+}
+_G.pg.base.spweapon_data_statistics[15465] = {
+	base = 15460,
+	id = 15465,
+	level = 6,
+	next = 15466,
+	prev = 15464,
+	upgrade_id = 10006,
+	value_1 = 25,
+	value_2 = 5,
+}
+_G.pg.base.spweapon_data_statistics[15466] = {
+	base = 15460,
+	id = 15466,
+	level = 7,
+	next = 15467,
+	prev = 15465,
+	upgrade_id = 10007,
+	value_1 = 26,
+	value_2 = 6,
+}
+_G.pg.base.spweapon_data_statistics[15467] = {
+	base = 15460,
+	id = 15467,
+	level = 8,
+	next = 15468,
+	prev = 15466,
+	upgrade_id = 10008,
+	value_1 = 27,
+	value_2 = 7,
+}
+_G.pg.base.spweapon_data_statistics[15468] = {
+	base = 15460,
+	id = 15468,
+	level = 9,
+	next = 15469,
+	prev = 15467,
+	upgrade_id = 10009,
+	value_1 = 28,
+	value_2 = 8,
+}
+_G.pg.base.spweapon_data_statistics[15469] = {
+	base = 15460,
+	id = 15469,
+	level = 10,
+	next = 15470,
+	prev = 15468,
+	upgrade_id = 10010,
+	value_1 = 29,
+	value_2 = 9,
+}
+_G.pg.base.spweapon_data_statistics[15470] = {
+	base = 15460,
+	id = 15470,
+	level = 11,
+	next = 0,
+	prev = 15469,
+	upgrade_id = 10011,
+	value_1 = 30,
+	value_2 = 10,
+	skill_upgrade = {
+		{
+			117050,
+			117070,
+		},
+	},
+}
+_G.pg.base.spweapon_data_statistics[15480] = {
+	attribute_1 = "cannon",
+	attribute_2 = "hit",
+	descrip = "2B's Augment Module.",
+	effect_id = 117040,
+	effect_id_display = 117040,
+	icon = "15480",
+	id = 15480,
+	important = 2,
+	level = 1,
+	name = "Virtuous Contract",
+	next = 15481,
+	prev = 0,
+	rarity = 4,
+	tech = 0,
+	type = 2,
+	uncraftable = 1,
+	unique = 1170002,
+	upgrade_id = 10001,
+	value_1 = 20,
+	value_1_random = 0,
+	value_2 = 5,
+	value_2_random = 0,
+	usability = {
+		2,
+	},
+	skill_upgrade = {
+		{
+			0,
+			117030,
+		},
+	},
+	hide_buff_upgrade = {},
+	label = {},
+}
+_G.pg.base.spweapon_data_statistics[15481] = {
+	base = 15480,
+	id = 15481,
+	level = 2,
+	next = 15482,
+	prev = 15480,
+	upgrade_id = 10002,
+	value_1 = 21,
+	value_2 = 6,
+}
+_G.pg.base.spweapon_data_statistics[15482] = {
+	base = 15480,
+	id = 15482,
+	level = 3,
+	next = 15483,
+	prev = 15481,
+	upgrade_id = 10003,
+	value_1 = 22,
+	value_2 = 7,
+}
+_G.pg.base.spweapon_data_statistics[15483] = {
+	base = 15480,
+	id = 15483,
+	level = 4,
+	next = 15484,
+	prev = 15482,
+	upgrade_id = 10004,
+	value_1 = 23,
+	value_2 = 8,
+}
+_G.pg.base.spweapon_data_statistics[15484] = {
+	base = 15480,
+	id = 15484,
+	level = 5,
+	next = 15485,
+	prev = 15483,
+	upgrade_id = 10005,
+	value_1 = 24,
+	value_2 = 9,
+}
+_G.pg.base.spweapon_data_statistics[15485] = {
+	base = 15480,
+	id = 15485,
+	level = 6,
+	next = 15486,
+	prev = 15484,
+	upgrade_id = 10006,
+	value_1 = 25,
+	value_2 = 10,
+}
+_G.pg.base.spweapon_data_statistics[15486] = {
+	base = 15480,
+	id = 15486,
+	level = 7,
+	next = 15487,
+	prev = 15485,
+	upgrade_id = 10007,
+	value_1 = 26,
+	value_2 = 11,
+}
+_G.pg.base.spweapon_data_statistics[15487] = {
+	base = 15480,
+	id = 15487,
+	level = 8,
+	next = 15488,
+	prev = 15486,
+	upgrade_id = 10008,
+	value_1 = 27,
+	value_2 = 12,
+}
+_G.pg.base.spweapon_data_statistics[15488] = {
+	base = 15480,
+	id = 15488,
+	level = 9,
+	next = 15489,
+	prev = 15487,
+	upgrade_id = 10009,
+	value_1 = 28,
+	value_2 = 13,
+}
+_G.pg.base.spweapon_data_statistics[15489] = {
+	base = 15480,
+	id = 15489,
+	level = 10,
+	next = 15490,
+	prev = 15488,
+	upgrade_id = 10010,
+	value_1 = 29,
+	value_2 = 14,
+}
+_G.pg.base.spweapon_data_statistics[15490] = {
+	base = 15480,
+	id = 15490,
+	level = 11,
+	next = 0,
+	prev = 15489,
+	upgrade_id = 10011,
+	value_1 = 30,
+	value_2 = 15,
+	skill_upgrade = {
+		{
+			117010,
+			117030,
+		},
+	},
+}
 _G.pg.base.spweapon_data_statistics[15500] = {
 	attribute_1 = "cannon",
 	attribute_2 = "hit",
