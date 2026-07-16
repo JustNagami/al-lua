@@ -175,6 +175,7 @@ function var_0_0.OnFirstFlush(arg_19_0)
 	arg_19_0:LocalInit()
 	arg_19_0:LocalFresh()
 	arg_19_0:InitBtn()
+	arg_19_0:Hx4Channel()
 end
 
 function var_0_0.OnUpdateFlush(arg_20_0)
@@ -218,6 +219,20 @@ function var_0_0.GetWorldPtData(arg_23_0, arg_23_1)
 			cmd = 2,
 			activity_id = arg_23_0.ptData:GetId()
 		})
+	end
+end
+
+local function var_0_1(arg_24_0)
+	local var_24_0 = pg.SdkMgr.GetInstance():GetChannelUIDIncludeHarmony()
+
+	return (arg_24_0._tf:Find("rw/hx_ch" .. var_24_0))
+end
+
+function var_0_0.Hx4Channel(arg_25_0)
+	local var_25_0 = var_0_1(arg_25_0)
+
+	if not IsNil(var_25_0) then
+		setActive(var_25_0, HXSet.isHx())
 	end
 end
 

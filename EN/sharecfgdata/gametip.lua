@@ -15777,7 +15777,7 @@ _G.pg.base.gametip.newserver_activity_tip = {
 			info = "<color=#92fc63>· Availability</color>\nThis campaign lasts from the day you logged in with your newly-created account until 11:59 PM on the 21st day since account creation. You can also see how much longer the campaign is active on the corresponding event banner.\n",
 		},
 		{
-			info = "<color=#92fc63>· Newcomer Missions</color>\nEligible players can complete special missions to earn Campaign Points. There are two types of missions: daily missions, which update every day at midnight local server time, and one-time missions, which may only be completed once.\nCompleting some of these missions yields additional rewards as well, including the shipgirls Ark Royal, U-47, and Sirius.\n",
+			info = "<color=#92fc63>· Newcomer Missions</color>\nEligible players can complete special missions to earn Campaign Points. There are two types of missions: daily missions, which update every day at midnight local server time, and one-time missions, which may only be completed once.\n",
 		},
 		{
 			info = "<color=#92fc63>· The Exchange</color>\nThe Campaign Points you've earned can be spent in the Exchange on rewards such as the shipgirl Nagato, Build Tickets, and Wisdom Cubes.\nThe Exchange's inventory lineup comes in 3 stages that are unlocked in order:\nStage 1: available from your first login\nStage 2: available from day 7 since your first login\nStage 3: available from day 14 since your first login\nYou may still exchange for rewards for another 7 days after this campaign formally ends.\n",
@@ -29919,7 +29919,7 @@ _G.pg.base.gametip.NieRAutomataCoreActivityUI_subtitle_3 = {
 	tip = "2B's Journey",
 }
 _G.pg.base.gametip.NieRAutomataCoreActivityUI_subtitle_1 = {
-	tip = "An Android's Journey",
+	tip = "Main Page",
 }
 _G.pg.base.gametip.NieRAutomataCoreActivityUI_subtitle_5 = {
 	tip = "Rewards",
@@ -30278,5 +30278,8 @@ _G.pg.base.gametip.auction_relief_tip_2 = {
 }
 _G.pg.base.gametip.nier_a2_item_got = {
 	tip = "Collected",
+}
+_G.pg.base.gametip.auction_network_timeout = {
+	tip = "Connection lost. You have left the match.",
 }
 
