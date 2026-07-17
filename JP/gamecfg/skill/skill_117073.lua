@@ -22,7 +22,7 @@
 			target_choise = "TargetSelf",
 			targetAniEffect = "",
 			arg_list = {
-				buff_id = 117053
+				buff_id = 117073
 			}
 		}
 	}

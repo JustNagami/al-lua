@@ -30010,7 +30010,13 @@ _G.pg.base.gametip.auction_relief_tip = {
 _G.pg.base.gametip.auction_relief_tip_2 = {
 	tip = "コインが500000以下のため、追加（コイン×500000）を受取できます\n本日残り受取可能回数$1/$2",
 }
+_G.pg.base.gametip.donot_send_emoji_frequently = {
+	tip = "しばらく経ってから再度お試しください",
+}
 _G.pg.base.gametip.nier_a2_item_got = {
 	tip = "受取済",
+}
+_G.pg.base.gametip.auction_network_timeout = {
+	tip = "接続環境に異常があるため、オークションから退出しました",
 }
 
