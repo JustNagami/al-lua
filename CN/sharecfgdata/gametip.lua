@@ -30293,6 +30293,9 @@ _G.pg.base.gametip.auction_relief_tip = {
 _G.pg.base.gametip.auction_relief_tip_2 = {
 	tip = "当前虚拟币少于500000，可领取竞拍补给：虚拟币*500000\n 今日可领取次数$1/$2",
 }
+_G.pg.base.gametip.donot_send_emoji_frequently = {
+	tip = "请勿频繁发送表情",
+}
 _G.pg.base.gametip.ConsumeGem_tip = {
 	tip = {
 		{
