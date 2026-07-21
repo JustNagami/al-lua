@@ -30199,7 +30199,7 @@ _G.pg.base.gametip.auction_value = {
 	tip = "Lot Value:",
 }
 _G.pg.base.gametip.auction_ticket = {
-	tip = "Participation Fee:",
+	tip = "Join Fee:",
 }
 _G.pg.base.gametip.auction_matching = {
 	tip = "Matching...",
