@@ -1974,4 +1974,12 @@ end)()
 		code = 514,
 		actor_name = "星谷美緒"
 	}
+	pg.base.voice_actor_CN[515] = {
+		code = 515,
+		actor_name = "井料愛良"
+	}
+	pg.base.voice_actor_CN[516] = {
+		code = 516,
+		actor_name = "福積沙耶"
+	}
 end)()

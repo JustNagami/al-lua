@@ -5277,7 +5277,7 @@ end)()
 		end_by_maintenance = 0,
 		commodity_type = 7,
 		shop_tag = 2,
-		order = 10,
+		order = 17,
 		scene = {
 			"crusing",
 			{}

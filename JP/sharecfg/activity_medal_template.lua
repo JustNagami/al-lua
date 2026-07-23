@@ -152,7 +152,15 @@ pg.activity_medal_template.all = {
 	5065905,
 	5065906,
 	5065907,
-	5065908
+	5065908,
+	5107801,
+	5107802,
+	5107803,
+	5107804,
+	5107805,
+	5107806,
+	5107807,
+	5107808
 }
 pg.activity_medal_template.get_id_list_by_group = {
 	[5711] = {
@@ -342,6 +350,16 @@ pg.activity_medal_template.get_id_list_by_group = {
 		5065906,
 		5065907,
 		5065908
+	},
+	[51078] = {
+		5107801,
+		5107802,
+		5107803,
+		5107804,
+		5107805,
+		5107806,
+		5107807,
+		5107808
 	}
 }
 pg.base = pg.base or {}
@@ -2149,5 +2167,101 @@ end)()
 		activity_medal_name = "ステッカー：サーカスチケット",
 		id = 5065908,
 		activity_medal_desc = "ここまで来たし、中に入ろっか"
+	}
+	pg.base.activity_medal_template[5107801] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 66053,
+		remake_task_id = 0,
+		group = 51078,
+		task_id = 21989,
+		medal_asset = "ActivityMedal/5107801",
+		activity_medal_name = "ステッカー：白夜ヴィラ",
+		id = 5107801,
+		activity_medal_desc = "キーヒヒヒ！これぞ時代を越えて語り継がれる怪談スポット！超スリル！超怖い！"
+	}
+	pg.base.activity_medal_template[5107802] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 66054,
+		remake_task_id = 0,
+		group = 51078,
+		task_id = 21990,
+		medal_asset = "ActivityMedal/5107802",
+		activity_medal_name = "ステッカー：夜回り饅頭",
+		id = 5107802,
+		activity_medal_desc = "今日巡回する病室の番号はどれピョ…？"
+	}
+	pg.base.activity_medal_template[5107803] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 66055,
+		remake_task_id = 0,
+		group = 51078,
+		task_id = 21991,
+		medal_asset = "ActivityMedal/5107803",
+		activity_medal_name = "ステッカー：怪談メモ",
+		id = 5107803,
+		activity_medal_desc = "ここに書いてあるルールの厳守をお願い……"
+	}
+	pg.base.activity_medal_template[5107804] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 66056,
+		remake_task_id = 0,
+		group = 51078,
+		task_id = 21992,
+		medal_asset = "ActivityMedal/5107804",
+		activity_medal_name = "ステッカー：医療用ポールアックス",
+		id = 5107804,
+		activity_medal_desc = "病院でよく見かける医療器具……か？"
+	}
+	pg.base.activity_medal_template[5107805] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 66057,
+		remake_task_id = 0,
+		group = 51078,
+		task_id = 21993,
+		medal_asset = "ActivityMedal/5107805",
+		activity_medal_name = "ステッカー：二倍お注射",
+		id = 5107805,
+		activity_medal_desc = "一本で長生き、二本で怖いものなし！"
+	}
+	pg.base.activity_medal_template[5107806] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 66058,
+		remake_task_id = 0,
+		group = 51078,
+		task_id = 21994,
+		medal_asset = "ActivityMedal/5107806",
+		activity_medal_name = "ステッカー：心拍感応",
+		id = 5107806,
+		activity_medal_desc = "注意！奴らが来る！"
+	}
+	pg.base.activity_medal_template[5107807] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 66059,
+		remake_task_id = 0,
+		group = 51078,
+		task_id = 21995,
+		medal_asset = "ActivityMedal/5107807",
+		activity_medal_name = "ステッカー：デンタルライト",
+		id = 5107807,
+		activity_medal_desc = "はーい、あーんしてください。あーん"
+	}
+	pg.base.activity_medal_template[5107808] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 66060,
+		remake_task_id = 0,
+		group = 51078,
+		task_id = 21996,
+		medal_asset = "ActivityMedal/5107808",
+		activity_medal_name = "ステッカー：封鎖エリア",
+		id = 5107808,
+		activity_medal_desc = "感染者が出るまであと10、9……"
 	}
 end)()

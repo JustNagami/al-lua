@@ -128,7 +128,8 @@ pg.backyard_theme_template.all = {
 	137,
 	138,
 	139,
-	140
+	140,
+	141
 }
 pg.base = pg.base or {}
 pg.base.backyard_theme_template = {}
@@ -5415,6 +5416,48 @@ end)()
 			340102,
 			340103,
 			340104
+		}
+	}
+	pg.base.backyard_theme_template[141] = {
+		Cfg_1 = 5,
+		name = "廃病院",
+		hot = 1,
+		is_view = 1,
+		id = 141,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "ここはアバドン・ホスタイル。寂れた病室と古びた廊下を探索しよう",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "yi3themeicon",
+		deblocking = 1,
+		order = 141,
+		ids = {
+			341001,
+			341002,
+			341101,
+			341102,
+			341103,
+			341104,
+			341105,
+			341106,
+			341107,
+			341108,
+			341109,
+			341110,
+			341111,
+			341112,
+			341113,
+			341114,
+			341115,
+			341116,
+			341117,
+			341118,
+			341301,
+			341302,
+			341303,
+			341304
 		}
 	}
 end)()

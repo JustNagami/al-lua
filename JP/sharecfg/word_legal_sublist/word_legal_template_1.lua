@@ -476,6 +476,13 @@ function temp()
 					}
 				}
 			},
+			フ = {
+				ィ = {
+					ン = {
+						this = true
+					}
+				}
+			},
 			ー = {
 				ン = {
 					ハ = {
@@ -1800,6 +1807,11 @@ function temp()
 					}
 				}
 			}
+		},
+		リ = {
+			ー = {
+				this = true
+			}
 		}
 	}
 end
@@ -2378,6 +2390,13 @@ function temp()
 			this = true
 		},
 		ュ = {
+			パ = {
+				ー = {
+					ブ = {
+						this = true
+					}
+				}
+			},
 			ロ = {
 				ッ = {
 					プ = {
