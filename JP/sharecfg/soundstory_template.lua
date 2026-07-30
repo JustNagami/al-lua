@@ -31,7 +31,8 @@ pg.soundstory_template.all = {
 	26,
 	27,
 	28,
-	29
+	29,
+	30
 }
 pg.base = pg.base or {}
 pg.base.soundstory_template = {}
@@ -148,13 +149,14 @@ pg.base.soundstory_template = {}
 	pg.base.soundstory_template[5] = {
 		story_pic = "",
 		name = "最高のご褒美",
-		story_resource_CN = "",
+		time = "always",
 		audition_resource_CN = "",
 		CV_JP = "井上ほの花",
 		audition_text = "さぁ、体の力を抜いて？恥ずかしがることなどありませんわ.",
-		id = 5,
+		story_resource_CN = "",
 		ship_id = 40207,
 		audition_resource_JP = "ss-40207-1",
+		id = 5,
 		CV_CN = "",
 		overview = "何もない昼下がり、人間さんことあなたにエムデンは最高のご褒美を授けようとしている…",
 		captions_color = "#7a524e",
@@ -169,33 +171,6 @@ pg.base.soundstory_template = {}
 			1,
 			15,
 			3
-		},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					4,
-					24
-				},
-				{
-					12,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					4,
-					30
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	}
 	pg.base.soundstory_template[6] = {
@@ -572,9 +547,9 @@ pg.base.soundstory_template = {}
 			"timer",
 			{
 				{
-					2024,
+					2026,
 					7,
-					25
+					30
 				},
 				{
 					12,
@@ -584,9 +559,9 @@ pg.base.soundstory_template = {}
 			},
 			{
 				{
-					2024,
-					7,
-					31
+					2026,
+					8,
+					5
 				},
 				{
 					23,
@@ -1409,6 +1384,59 @@ pg.base.soundstory_template = {}
 					2026,
 					5,
 					6
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.soundstory_template[30] = {
+		story_pic = "",
+		name = "今夜の健康診断",
+		story_resource_CN = "",
+		audition_resource_CN = "",
+		CV_JP = "鷲見友美ジェナ",
+		audition_text = "あら…私の心拍数から答えを確かめたいの？",
+		id = 30,
+		ship_id = 40406,
+		audition_resource_JP = "ss-40406-1",
+		CV_CN = "",
+		overview = "残業の忙しさのあまり、母港の健康診断のタイミングを逃してしまった指揮官。\n夜、医務室のベッドに横たわり、自分で検査を始めようとしたその時、カーテンを開いたアルヴィトの姿が……",
+		captions_color = "#4c505b",
+		story_resource_JP = "soundStory30_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					7,
+					30
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					5
 				},
 				{
 					23,

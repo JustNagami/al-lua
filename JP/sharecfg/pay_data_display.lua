@@ -147,6 +147,7 @@ pg.pay_data_display.all = {
 	1026,
 	1027,
 	1028,
+	1029,
 	1303,
 	2001,
 	2002,
@@ -16668,6 +16669,91 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
+	pg.base.pay_data_display[1029] = {
+		limit_group = 0,
+		name = "クルーズパス(26夏)",
+		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
+		type = 0,
+		second_text = "特別報酬開放",
+		type_order = 6,
+		subject = "クルーズパス(26夏)",
+		first_text = "",
+		first_icon = "",
+		limit_arg = 1,
+		money = 1200,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		id = 1029,
+		name_display = "クルーズパス(26夏)",
+		limit_type = 2,
+		package_sort_id = 0,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "battlepass_1",
+		extra_service = 4,
+		skin_inquire_relation = 0,
+		show_group = "",
+		id_str = "com.bilibili.blhx.battlepass31",
+		first_pay_double = 0,
+		extra_gem = 0,
+		descrip = "購入すると、シーズン任務進捗Pt1500を入手し、さらにSP報酬を開放",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.seasonpass30",
+		extra_service_item = {
+			{
+				1,
+				4030,
+				1500
+			},
+			{
+				8,
+				65118,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					8,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					30
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7030,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	}
 	pg.base.pay_data_display[1303] = {
 		limit_group = 0,
 		name = "迎春特売パス2026",
@@ -21453,6 +21539,8 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[2058] = {
 		limit_group = 106,
 		name = "戦闘UI・シノビ（単品）",
@@ -21546,8 +21634,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[2059] = {
 		limit_group = 106,
 		name = "戦闘UI・シノビ（セット）",
