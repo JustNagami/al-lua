@@ -1404,7 +1404,7 @@ pg.base.soundstory_template = {}
 		ship_id = 40406,
 		audition_resource_JP = "ss-40406-1",
 		CV_CN = "",
-		overview = "Due to the sheer stress of overwork, the Commander has missed a regularly-scheduled checkup at the port.\nThat night, as the Commander lies on the infirmary bed, about to perform a self-examination, Alvitr suddenly emerges from behind the curtains...",
+		overview = "<size=27>Due to the sheer stress of overwork, the Commander has missed a regularly-scheduled checkup at the port.\nThat night, as the Commander lies on the infirmary bed, about to perform a self-examination, Alvitr suddenly emerges from behind the curtains...</size>",
 		captions_color = "#4c505b",
 		story_resource_JP = "soundStory30_JP",
 		order = 2,
