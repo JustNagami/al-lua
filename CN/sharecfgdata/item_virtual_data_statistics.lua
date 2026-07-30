@@ -56149,11 +56149,6 @@ _G.pg.base.item_virtual_data_statistics[57607] = {
 		},
 		{
 			4,
-			404011,
-			1,
-		},
-		{
-			4,
 			404021,
 			1,
 		},
@@ -57520,11 +57515,6 @@ _G.pg.base.item_virtual_data_statistics[57625] = {
 		{
 			4,
 			205051,
-			1,
-		},
-		{
-			4,
-			404011,
 			1,
 		},
 		{
@@ -61709,11 +61699,6 @@ _G.pg.base.item_virtual_data_statistics[57687] = {
 		},
 		{
 			4,
-			205041,
-			1,
-		},
-		{
-			4,
 			201121,
 			1,
 		},
@@ -63055,16 +63040,6 @@ _G.pg.base.item_virtual_data_statistics[57705] = {
 		{
 			4,
 			205011,
-			1,
-		},
-		{
-			4,
-			205041,
-			1,
-		},
-		{
-			4,
-			103061,
 			1,
 		},
 		{
@@ -170219,6 +170194,30 @@ _G.pg.base.item_virtual_data_statistics[65117] = {
 	id = 65117,
 	is_world = 0,
 	link_id = 7029,
+	max_num = 0,
+	name = "巡游点数",
+	order = 0,
+	rarity = 2,
+	replace_item = 0,
+	shop_id = -1,
+	time_limit = 0,
+	type = 0,
+	virtual_type = 21,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+}
+_G.pg.base.item_virtual_data_statistics[65118] = {
+	album_config = "",
+	display = "参与「世界巡游」获得的点数，累计一定程度可以领取奖励，活动结束后将会消失 ",
+	drop_gold_max = 0,
+	drop_oil_max = 0,
+	icon = "props/battlepass_pt",
+	id = 65118,
+	is_world = 0,
+	link_id = 7030,
 	max_num = 0,
 	name = "巡游点数",
 	order = 0,
