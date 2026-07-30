@@ -102805,6 +102805,69 @@ _G.pg.base.shop_template[105013] = {
 		},
 	},
 }
+_G.pg.base.shop_template[105014] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "通行证复刻-梅换装",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "cruise_skin",
+	group = 0,
+	group_buy_count = 0,
+	group_limit = 0,
+	group_type = 0,
+	id = 105014,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 880,
+	resource_type = 14,
+	second_text = "",
+	tag = 0,
+	time_second = 0,
+	type = 6,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			1,
+		},
+	},
+	effect_args = {
+		301213,
+	},
+	time = {
+		{
+			{
+				2026,
+				8,
+				1,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2034,
+				10,
+				1,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
 _G.pg.base.shop_template[106001] = {
 	akashi_pick = 0,
 	collaboration_skin_time = "",
@@ -106059,6 +106122,258 @@ _G.pg.base.shop_template[106052] = {
 			{
 				2026,
 				6,
+				1,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2034,
+				10,
+				1,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[106053] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "通行证复刻-兔兔导弹",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "cruise_gearskin",
+	group = 10,
+	group_buy_count = 1,
+	group_limit = 4,
+	group_type = 3,
+	id = 106053,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 100,
+	resource_type = 14,
+	second_text = "",
+	tag = 0,
+	time_second = 0,
+	type = 9,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			9,
+		},
+	},
+	effect_args = {
+		2053,
+	},
+	time = {
+		{
+			{
+				2026,
+				8,
+				1,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2034,
+				10,
+				1,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[106054] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "通行证复刻-能量球子弹",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "cruise_gearskin",
+	group = 10,
+	group_buy_count = 1,
+	group_limit = 4,
+	group_type = 3,
+	id = 106054,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 100,
+	resource_type = 14,
+	second_text = "",
+	tag = 0,
+	time_second = 0,
+	type = 9,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			9,
+		},
+	},
+	effect_args = {
+		2054,
+	},
+	time = {
+		{
+			{
+				2026,
+				8,
+				1,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2034,
+				10,
+				1,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[106055] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "通行证复刻-像素爱心鱼雷",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "cruise_gearskin",
+	group = 10,
+	group_buy_count = 1,
+	group_limit = 4,
+	group_type = 3,
+	id = 106055,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 100,
+	resource_type = 14,
+	second_text = "",
+	tag = 0,
+	time_second = 0,
+	type = 9,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			9,
+		},
+	},
+	effect_args = {
+		2055,
+	},
+	time = {
+		{
+			{
+				2026,
+				8,
+				1,
+			},
+			{
+				0,
+				0,
+				0,
+			},
+		},
+		{
+			{
+				2034,
+				10,
+				1,
+			},
+			{
+				23,
+				59,
+				59,
+			},
+		},
+	},
+}
+_G.pg.base.shop_template[106056] = {
+	akashi_pick = 0,
+	collaboration_skin_time = "",
+	desc = "通行证复刻-多变箭头",
+	discount = 0,
+	first_icon = "",
+	first_text = "",
+	genre = "cruise_gearskin",
+	group = 10,
+	group_buy_count = 1,
+	group_limit = 4,
+	group_type = 3,
+	id = 106056,
+	limit_args2 = "",
+	num = 1,
+	order = 1,
+	package_sort_id = 0,
+	package_tag = "",
+	package_tag_open = 0,
+	resource_num = 100,
+	resource_type = 14,
+	second_text = "",
+	tag = 0,
+	time_second = 0,
+	type = 9,
+	type_order = 0,
+	discount_time = {},
+	limit_args = {
+		{
+			"time",
+			9,
+		},
+	},
+	effect_args = {
+		2056,
+	},
+	time = {
+		{
+			{
+				2026,
+				8,
 				1,
 			},
 			{

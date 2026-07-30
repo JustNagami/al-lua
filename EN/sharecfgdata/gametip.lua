@@ -29988,6 +29988,26 @@ _G.pg.base.gametip.dorm3d_gift_overtime = {
 _G.pg.base.gametip.dorm3d_gift_overtime_title = {
 	tip = "Expiration Notice",
 }
+_G.pg.base.gametip.battlepass_main_tip_2608 = {
+	tip = "Complete Cruise Missions between 8/1/2026 - 9/30/2026, accumulate <icon name=pt w=0.5 h=0.5/>, and receive <color=#854747>Nürnberg META</color> and other rewards!",
+}
+_G.pg.base.gametip.battlepass_main_help_2608 = {
+	tip = {
+		{
+			info = "Cruise Missions Seasonal Campaign\n8/1/2026 00:00 – 9/30/2026 23:59\n\n- Overview -\n\"\"Cruise Missions\"\" is a seasonal campaign where you can complete special missions, collect Progress Pts, and obtain great rewards for reaching certain Progress milestones.\nAdditionally, you can unlock an additional set of \"\"Fair Winds Cruise\"\" rewards by purchasing the \"\"Fair Winds Cruise Pass\"\" item from Akashi's shop.\nNürnberg META will be obtainable from the regular Cruise Missions rewards. By upgrading to the Fair Winds Cruise, you will also be able to obtain an exclusive outfit for CA Quincy, \"\"Extracurricular Tutoring\"\".\n\n- How to Play -\n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts for any missions you've completed.\n· If you purchase a Fair Winds Cruise Pass, you will automatically receive 15 levels worth of progress (1500 Progress Pts).\n· You can receive rewards for reaching certain Progress milestones. There are two types of rewards:\na) Cruise Rewards - Rewards that can be obtained based on the total number of accumulated Progress Pts. There are a total of 100 levels.\nb) Fair Winds Rewards - An additional set of rewards that will be unlocked when you purchase a Fair Winds Cruise Pass. As with the regular Cruise Rewards, there are a total of 100 levels, and they can be collected alongside Cruise Rewards at the same Progress level.\n· When the campaign season ends, your Progress Pts will be reset.\n\n- Tips - \n· Play at your own pace\nCruise Missions have a total of 100 Progress levels, and are not meant to be cleared in one session. We recommend that you complete them at your own pace.\n\n· Fair Winds Cruise Pass\nIf you purchase a Fair Winds Cruise Pass from Akashi's shop, you will automatically earn 1500 Progress Pts and unlock access to valuable rewards. Furthermore, there is an exclusive outfit available only through the Fair Winds rewards, so please plan accordingly.\n\n· Skipping Missions (not recommended)\nYou can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_task_help_2608 = {
+	tip = {
+		{
+			info = "- Regarding Cruise Missions - \n· Two types of missions will be released at the same time at the start of the campaign season:\na) Weekly Missions - Missions unlocked in batches every 7 days during the campaign season, for a total of 8 batches.\nb) Seasonal Missions - One set of missions available for the entire campaign season, available from the start of the season.\n\n· All of the above Season Missions are automatically active, and when you open the Season Missions menu, you will automatically obtain Progress Pts for any missions you've completed.\n\n· You can purchase and use Cruise Mission Vouchers to automatically complete missions and receive the corresponding amount of Progress Pts. Tap the arrow button next to a mission on the Mission List to automatically complete it.\nWe do not recommend this because this costs Gems, whereas you are able to complete Cruise Missions normally.\nAny purchased Cruise Mission Vouchers will remain even after the campaign season ends.",
+		},
+	},
+}
+_G.pg.base.gametip.cruise_title_2608 = {
+	tip = "Cruise Missions - S30",
+}
 _G.pg.base.gametip.auction_help = {
 	tip = {
 		{
@@ -30298,9 +30318,6 @@ _G.pg.base.gametip.auction_relief_tip_2 = {
 _G.pg.base.gametip.nier_a2_item_got = {
 	tip = "Collected",
 }
-_G.pg.base.gametip.auction_network_timeout = {
-	tip = "Connection lost. You have left the match.",
-}
 _G.pg.base.gametip.escape_series_pt = {
 	tip = "Total: $1",
 }
@@ -30312,5 +30329,8 @@ _G.pg.base.gametip.escape_series_task = {
 }
 _G.pg.base.gametip.escape_story_reward_count = {
 	tip = "Play through the whole story to get a limited gear skin.",
+}
+_G.pg.base.gametip.auction_network_timeout = {
+	tip = "Connection lost. You have left the match.",
 }
 

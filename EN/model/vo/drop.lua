@@ -343,6 +343,8 @@ function var_0_0.InitSwitch()
 			return var_70_0
 		end,
 		[DROP_TYPE_EQUIPMENT_SKIN] = function(arg_71_0)
+			warning(arg_71_0.id)
+
 			local var_71_0 = pg.equip_skin_template[arg_71_0.id]
 
 			arg_71_0.desc = var_71_0.desc
