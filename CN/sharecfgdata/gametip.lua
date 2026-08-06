@@ -24174,7 +24174,7 @@ _G.pg.base.gametip.beat_game_exit_desc = {
 _G.pg.base.gametip.musicbeat_minigame_help = {
 	tip = {
 		{
-			info = "埃塞克斯和企业正跟着律动整理港区仓库！来加入她们吧！\n\n·参与游戏可获得埃塞克斯改造道具<b>「必要的准备」</b>\n·8月20日为止每日解锁一档奖励。\n\n·点击<b><color=#F55656>左侧红色按钮</color></b>可将飞行物<color=#F55656><b>打飞</b></color>\n·点击<b><color=#FAF065>右侧黄色按钮</color></b>可将飞行物<color=#FAF065><b>接住</b></color>\n·指挥官需要指挥企业<color=#F55656><b>打飞各种水果</b></color>，并<color=#FAF065><b>接住所有舰载机</b></color>！\n\n·每次进行正确的操作时会加分，如果接住了水果则会扣除生命值，当生命值归零后游戏结束。\n※随着游戏进行，音乐将逐渐变快。",
+			info = "埃塞克斯和企业正跟着律动整理港区仓库！来加入她们吧！\n\n·参与游戏可获得埃塞克斯改造道具<b>「必要的准备」</b>\n·8月12日为止每日解锁一档奖励。\n\n·点击<b><color=#F55656>左侧红色按钮</color></b>可将飞行物<color=#F55656><b>打飞</b></color>\n·点击<b><color=#FAF065>右侧黄色按钮</color></b>可将飞行物<color=#FAF065><b>接住</b></color>\n·指挥官需要指挥企业<color=#F55656><b>打飞各种水果</b></color>，并<color=#FAF065><b>接住所有舰载机</b></color>！\n\n·每次进行正确的操作时会加分，如果接住了水果则会扣除生命值，当生命值归零后游戏结束。\n※随着游戏进行，音乐将逐渐变快。",
 		},
 	},
 }
@@ -29742,6 +29742,30 @@ _G.pg.base.gametip.DreamTourCoreActivity_subtitle_1 = {
 _G.pg.base.gametip.DreamTourCoreActivity_subtitle_2 = {
 	tip = "美梦补给站",
 }
+_G.pg.base.gametip.island_post_btn_set_meal = {
+	tip = "套餐图鉴",
+}
+_G.pg.base.gametip.island_post_btn_sign = {
+	tip = "日常补给",
+}
+_G.pg.base.gametip.StarsCityCoreActivityUI_subtitle_1 = {
+	tip = "作战准备",
+}
+_G.pg.base.gametip.StarsCityCoreActivityUI_subtitle_2 = {
+	tip = "有客自来",
+}
+_G.pg.base.gametip.StarsCityCoreActivityUI_subtitle_3 = {
+	tip = "律动储物间",
+}
+_G.pg.base.gametip.Outpost_20260806_rule = {
+	tip = "※任务可同步记录达成条件，但需按日程顺序领取",
+}
+_G.pg.base.gametip["260806_story_title"] = {
+	tip = "有客自来",
+}
+_G.pg.base.gametip["260806_story_title_en"] = {
+	tip = "fateful encounter",
+}
 _G.pg.base.gametip.EscapeManorCoreActivity_subtitle_1 = {
 	tip = "逃离白夜山庄",
 }
@@ -30365,5 +30389,8 @@ _G.pg.base.gametip.escape_story_reward_count = {
 }
 _G.pg.base.gametip.auction_network_timeout = {
 	tip = "网络环境异常，已退出对局",
+}
+_G.pg.base.gametip.loading_pic_btn = {
+	tip = "过场图",
 }
 
