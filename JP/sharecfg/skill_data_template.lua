@@ -387,6 +387,7 @@ pg.skill_data_template.all = {
 	61090,
 	61100,
 	61110,
+	61120,
 	7000,
 	9030,
 	9031,
@@ -3084,6 +3085,7 @@ pg.skill_data_template.all = {
 	1010800,
 	1019300,
 	1018300,
+	1013450,
 	1014050,
 	1090010,
 	1090020,
@@ -3130,6 +3132,7 @@ pg.skill_data_template.all = {
 	1090460,
 	1090470,
 	1090480,
+	1090500,
 	1090490
 }
 pg.base = pg.base or {}
@@ -13824,6 +13827,20 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+	pg.base.skill_data_template[61120] = {
+		desc_get = "",
+		name = "名探偵の帽子",
+		id = 61120,
+		type = 0,
+		max_level = 0,
+		desc = "エセックスが装備している時、戦闘中の命中が30アップ",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
 	pg.base.skill_data_template[7000] = {
 		desc_get = "",
 		name = "ライン演習",
@@ -14602,6 +14619,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[9711] = {
 		desc_get = "",
 		name = "ブリの誓い·プリン",
@@ -14616,8 +14635,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[10010] = {
 		desc_get = "",
 		name = "Recommissioned",
@@ -21934,6 +21951,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[10980] = {
 		desc_get = "",
 		name = "対空火力援護",
@@ -21995,8 +22014,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[10990] = {
 		desc_get = "",
 		name = "対空火力転用",
@@ -30317,6 +30334,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[11970] = {
 		desc_get = "",
 		name = "士気上昇",
@@ -30423,8 +30442,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[11980] = {
 		desc_get = "",
 		name = "タスクグループ",
@@ -39835,6 +39852,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[13040] = {
 		desc_get = "",
 		name = "メルクーリイへ思い出を込めて",
@@ -39941,8 +39960,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[13050] = {
 		desc_get = "",
 		name = "革命に祝福よッ！",
@@ -49555,6 +49572,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[14040] = {
 		desc_get = "",
 		name = "明け星のプロトロジア",
@@ -49661,8 +49680,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[14050] = {
 		desc_get = "",
 		name = "ヴィオラスピア",
@@ -60936,6 +60953,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[15040] = {
 		desc_get = "",
 		name = "事故だからねっ！",
@@ -61042,8 +61061,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[15050] = {
 		desc_get = "",
 		name = "桂冠者の韻律論",
@@ -72900,6 +72917,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[16050] = {
 		desc_get = "",
 		name = "武蔵の守り",
@@ -72999,8 +73018,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[16060] = {
 		desc_get = "",
 		name = "武藏跨队技能占位",
@@ -84238,6 +84255,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[17060] = {
 		desc_get = "",
 		name = "マジヤバな絆パワー",
@@ -84434,8 +84453,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[17070] = {
 		desc_get = "",
 		name = "マブダチの思いやり",
@@ -95332,6 +95349,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[150130] = {
 		desc_get = "",
 		name = "幼きKonzertierte",
@@ -95474,8 +95493,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[150140] = {
 		desc_get = "",
 		name = "刺し貫く悪滅の鉾",
@@ -106935,6 +106952,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[151110] = {
 		desc_get = "",
 		name = "マッドサイエンティストでぇぇす！",
@@ -106996,8 +107015,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[151120] = {
 		desc_get = "",
 		name = "吠えて、絶海のポーラーベアー",
@@ -118730,6 +118747,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[152100] = {
 		desc_get = "",
 		name = "アトミックな心 ",
@@ -118872,8 +118891,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[152110] = {
 		desc_get = "",
 		name = "出力上昇シマス ",
@@ -122628,7 +122645,7 @@ end)()
 		id = 152490,
 		type = 2,
 		max_level = 10,
-		desc = "戦闘開始30秒後、ラントレビートが【お肉もぐもぐ】（8秒間持続、自身の速力が10%ダウン、受けるダメージを$1軽減する）になる。【お肉もぐもぐ】持続時間終了後、戦闘終了時まで自身の対空・回避が$2アップし、かつ自身の耐久上限の$3分のダメージを無効にできるシールドを1枚生成する",
+		desc = "戦闘開始30秒後、ラントレピードが【お肉もぐもぐ】（8秒間持続、自身の速力が10%ダウン、受けるダメージを$1軽減する）になる。【お肉もぐもぐ】持続時間終了後、戦闘終了時まで自身の対空・回避が$2アップし、かつ自身の耐久上限の$3分のダメージを無効にできるシールドを1枚生成する",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -128901,6 +128918,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[19210] = {
 		desc_get = "",
 		name = "特殊砲術操典",
@@ -128962,8 +128981,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[19220] = {
 		desc_get = "",
 		name = "破壊のSinfonie",
@@ -138707,6 +138724,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[20072] = {
 		desc_get = "",
 		name = "全弾発射-ギアリング級Ⅱ",
@@ -138721,8 +138740,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[20081] = {
 		desc_get = "",
 		name = "全弾発射-アレン・M・サムナー級Ⅰ",
@@ -140109,6 +140126,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[22091] = {
 		desc_get = "",
 		name = "全弾発射-朝潮型Ⅰ",
@@ -140123,8 +140142,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[22092] = {
 		desc_get = "",
 		name = "全弾発射-朝潮型Ⅱ",
@@ -141511,6 +141528,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[25214] = {
 		desc_get = "",
 		name = "全弾発射Ⅱ",
@@ -141525,8 +141544,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[25221] = {
 		desc_get = "",
 		name = "全弾発射Ⅰ",
@@ -142913,6 +142930,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[29232] = {
 		desc_get = "",
 		name = "特殊弾幕-ネプチューンII",
@@ -142927,8 +142946,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[29241] = {
 		desc_get = "",
 		name = "特殊弾幕-ローンI",
@@ -144323,6 +144340,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[29771] = {
 		desc_get = "",
 		name = "特殊弾幕-マクデブルクⅠ",
@@ -144337,8 +144356,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[29772] = {
 		desc_get = "",
 		name = "特殊弾幕-マクデブルクⅡ",
@@ -145725,6 +145742,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[30301] = {
 		desc_get = "",
 		name = "特殊弾幕-ハルフォードⅠ",
@@ -145739,8 +145758,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[30302] = {
 		desc_get = "",
 		name = "特殊弾幕-ハルフォードⅡ",
@@ -148983,6 +149000,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[104020] = {
 		desc_get = "",
 		name = "危機回避～！",
@@ -149089,8 +149108,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[104030] = {
 		desc_get = "",
 		name = "繋がるキズナ",
@@ -158007,6 +158024,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[108020] = {
 		desc_get = "",
 		name = "Slash & Circus",
@@ -158158,8 +158177,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[108030] = {
 		desc_get = "",
 		name = "グリッドフィクサービーム",
@@ -165840,6 +165857,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[111010] = {
 		desc_get = "",
 		name = "ごーごーバキュームくん！",
@@ -165946,8 +165965,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[111020] = {
 		desc_get = "",
 		name = "発明！戦闘！オールマイティ！",
@@ -175376,6 +175393,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[190120] = {
 		desc_get = "",
 		name = "潤して、ペドレーリアの歌",
@@ -175518,8 +175537,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[190130] = {
 		desc_get = "",
 		name = "きゃぷちゃーうぇぶ",
@@ -180248,6 +180265,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[800571] = {
 		desc_get = "",
 		name = "炬火の力-レナウン",
@@ -180264,8 +180283,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[800572] = {
 		desc_get = "",
 		name = "炬火の力-レナウン",
@@ -185366,6 +185383,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[801090] = {
 		desc_get = "",
 		name = "滅び去った絆とともに",
@@ -185463,8 +185482,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[801100] = {
 		desc_get = "",
 		name = "古の栄光を再び",
@@ -191081,6 +191098,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[801650] = {
 		desc_get = "",
 		name = "ドリーム・シャドウ",
@@ -191178,8 +191197,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[801660] = {
 		desc_get = "",
 		name = "ゴースト・オペレーション",
@@ -196303,6 +196320,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[802205] = {
 		desc_get = "",
 		name = "焔追の灰-ケーニヒスベルクⅠ",
@@ -196319,8 +196338,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[802207] = {
 		desc_get = "",
 		name = "焔追の灰-ケーニヒスベルクⅡ",
@@ -202433,6 +202450,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[1017200] = {
 		desc_get = "",
 		name = "炸裂する無敵の砲丸 +",
@@ -202530,8 +202549,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[1017270] = {
 		desc_get = "",
 		name = "裏切らぬ守護の財宝 +",
@@ -214049,6 +214066,112 @@ end)()
 			}
 		}
 	}
+	pg.base.skill_data_template[1013450] = {
+		desc_get = "",
+		name = "朽ちぬ騎士の結束 +",
+		id = 1013450,
+		type = 3,
+		max_level = 10,
+		desc = "戦闘開始時、自身の火力・装填が$1アップ。また、自身と味方前衛艦隊先頭艦船の火力・対空が$2アップ",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"4.5%",
+				"12.0%"
+			},
+			{
+				"8.0%",
+				"18.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"4.5%",
+					"+0.7%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+0.7%"
+				},
+				{
+					"7.7%",
+					"+0.8%"
+				},
+				{
+					"8.5%",
+					"+1.0%"
+				},
+				{
+					"9.5%",
+					"+0.7%"
+				},
+				{
+					"10.2%",
+					"+0.8%"
+				},
+				{
+					"11.0%",
+					"+1.0%"
+				},
+				{
+					"12.0%"
+				}
+			},
+			{
+				{
+					"8.0%",
+					"+1.1%"
+				},
+				{
+					"9.1%",
+					"+1.1%"
+				},
+				{
+					"10.2%",
+					"+1.1%"
+				},
+				{
+					"11.3%",
+					"+1.1%"
+				},
+				{
+					"12.4%",
+					"+1.1%"
+				},
+				{
+					"13.5%",
+					"+1.1%"
+				},
+				{
+					"14.6%",
+					"+1.1%"
+				},
+				{
+					"15.7%",
+					"+1.1%"
+				},
+				{
+					"16.8%",
+					"+1.2%"
+				},
+				{
+					"18.0%"
+				}
+			}
+		}
+	}
 	pg.base.skill_data_template[1014050] = {
 		desc_get = "",
 		name = "ヴィオラスピア +",
@@ -216339,6 +216462,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[1090180] = {
 		desc_get = "",
 		name = "砲火制圧·扶桑",
@@ -216578,8 +216703,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[1090200] = {
 		desc_get = "",
 		name = "次発装填・マッコール",
@@ -220215,6 +220338,112 @@ end)()
 				},
 				{
 					"5.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[1090500] = {
+		desc_get = "",
+		name = "我が身を盾に·那智",
+		id = 1090500,
+		type = 2,
+		max_level = 10,
+		desc = "戦闘開始時、自身の対空・回避が$1アップ、与えるダメージが$1アップ。戦闘中20秒毎に$2で発動、8秒間味方前衛艦隊が受けるダメージの50%を引き受ける。同じスキルの効果は重複しない",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"10%",
+				"40%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+3.0%"
+				},
+				{
+					"13.0%",
+					"+3.0%"
+				},
+				{
+					"16.0%",
+					"+4.0%"
+				},
+				{
+					"20.0%",
+					"+3.0%"
+				},
+				{
+					"23.0%",
+					"+3.0%"
+				},
+				{
+					"26.0%",
+					"+4.0%"
+				},
+				{
+					"30.0%",
+					"+3.0%"
+				},
+				{
+					"33.0%",
+					"+3.0%"
+				},
+				{
+					"36.0%",
+					"+4.0%"
+				},
+				{
+					"40.0%"
 				}
 			}
 		}

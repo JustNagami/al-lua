@@ -23897,7 +23897,7 @@ _G.pg.base.gametip.beat_game_exit_desc = {
 _G.pg.base.gametip.musicbeat_minigame_help = {
 	tip = {
 		{
-			info = "エセックス、エンタープライズと一緒に、リズムよく母校の倉庫を整理しよう！\n\n·ゲームに参加し、エセックス改造素材<b>「マストな準備事項」</b>\n·8月20日（水）まで毎日報酬が開放されます。\n\n·画面の<b><color=#F55656>左側の赤いボタン</color></b>をタップすると、アイテムを<color=#F55656><b>ぶっとばす</b></color>ことができます\n·画面の<b><color=#FAF065>右側の黄色いボタン</color></b>をタップすると、アイテムを<color=#FAF065><b>受け止める</b></color>ことができます\n·エンタープライズを指揮し、<color=#F55656><b>フルーツを全部ふっとばし</b></color>、<color=#FAF065><b>艦載機を全部受け止めましょう</b></color>！\n\n·正しい操作をするとスコアを獲得できますが、フルーツを受け止めてしまうとライフが減ります。ライフが0になると、ゲームが終了します。\n※ゲーム進行とともにスピードがどんどん上昇していきます。",
+			info = "エセックス、エンタープライズと一緒に、リズムよく母校の倉庫を整理しよう！\n\n·ゲームに参加し、エセックス改造素材<b>「マストな準備事項」</b>\n·8月12日（水）まで毎日報酬が開放されます。\n\n·画面の<b><color=#F55656>左側の赤いボタン</color></b>をタップすると、アイテムを<color=#F55656><b>ぶっとばす</b></color>ことができます\n·画面の<b><color=#FAF065>右側の黄色いボタン</color></b>をタップすると、アイテムを<color=#FAF065><b>受け止める</b></color>ことができます\n·エンタープライズを指揮し、<color=#F55656><b>フルーツを全部ふっとばし</b></color>、<color=#FAF065><b>艦載機を全部受け止めましょう</b></color>！\n\n·正しい操作をするとスコアを獲得できますが、フルーツを受け止めてしまうとライフが減ります。ライフが0になると、ゲームが終了します。\n※ゲーム進行とともにスピードがどんどん上昇していきます。",
 		},
 	},
 }
@@ -29459,6 +29459,30 @@ _G.pg.base.gametip.DreamTourCoreActivity_subtitle_1 = {
 _G.pg.base.gametip.DreamTourCoreActivity_subtitle_2 = {
 	tip = "幻夢補給地",
 }
+_G.pg.base.gametip.island_post_btn_set_meal = {
+	tip = "セット図鑑",
+}
+_G.pg.base.gametip.island_post_btn_sign = {
+	tip = "定期補給",
+}
+_G.pg.base.gametip.StarsCityCoreActivityUI_subtitle_1 = {
+	tip = "作戦準備",
+}
+_G.pg.base.gametip.StarsCityCoreActivityUI_subtitle_2 = {
+	tip = "客ありて",
+}
+_G.pg.base.gametip.StarsCityCoreActivityUI_subtitle_3 = {
+	tip = "ミニゲーム",
+}
+_G.pg.base.gametip.Outpost_20260806_rule = {
+	tip = "※任務報酬は順次開放されます",
+}
+_G.pg.base.gametip["260806_story_title"] = {
+	tip = "客ありて",
+}
+_G.pg.base.gametip["260806_story_title_en"] = {
+	tip = "fateful encounter",
+}
 _G.pg.base.gametip.EscapeManorCoreActivity_subtitle_1 = {
 	tip = "白夜ヴィラより脱出せよ",
 }
@@ -30055,9 +30079,6 @@ _G.pg.base.gametip.donot_send_emoji_frequently = {
 _G.pg.base.gametip.nier_a2_item_got = {
 	tip = "受取済",
 }
-_G.pg.base.gametip.auction_network_timeout = {
-	tip = "接続環境に異常があるため、オークションから退出しました",
-}
 _G.pg.base.gametip.escape_series_pt = {
 	tip = "累計：$1",
 }
@@ -30069,5 +30090,11 @@ _G.pg.base.gametip.escape_series_task = {
 }
 _G.pg.base.gametip.escape_story_reward_count = {
 	tip = "ストーリー全クリアで限定装備外装入手可能",
+}
+_G.pg.base.gametip.auction_network_timeout = {
+	tip = "接続環境に異常があるため、オークションから退出しました",
+}
+_G.pg.base.gametip.loading_pic_btn = {
+	tip = "スチル",
 }
 

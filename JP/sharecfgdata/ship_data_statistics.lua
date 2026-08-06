@@ -66298,6 +66298,7 @@ _G.pg.base.ship_data_statistics[107091] = {
 	tag_list = {
 		"Essex-Class",
 		"Essex-Class-No-Yorktown",
+		"DetectiveEssex",
 	},
 	gift_dislike = {
 		180006,
@@ -66427,6 +66428,7 @@ _G.pg.base.ship_data_statistics[107092] = {
 	tag_list = {
 		"Essex-Class",
 		"Essex-Class-No-Yorktown",
+		"DetectiveEssex",
 	},
 	gift_dislike = {
 		180006,
@@ -66556,6 +66558,7 @@ _G.pg.base.ship_data_statistics[107093] = {
 	tag_list = {
 		"Essex-Class",
 		"Essex-Class-No-Yorktown",
+		"DetectiveEssex",
 	},
 	gift_dislike = {
 		180006,
@@ -66685,6 +66688,7 @@ _G.pg.base.ship_data_statistics[107094] = {
 	tag_list = {
 		"Essex-Class",
 		"Essex-Class-No-Yorktown",
+		"DetectiveEssex",
 	},
 	gift_dislike = {
 		180006,
@@ -74039,6 +74043,7 @@ _G.pg.base.ship_data_statistics[107974] = {
 		"Essex-Class",
 		"Essex-Class-No-Yorktown",
 		"EssexG",
+		"DetectiveEssex",
 	},
 	gift_dislike = {
 		180006,

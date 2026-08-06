@@ -35,6 +35,8 @@ pg.island_technology_template.all = {
 	110308,
 	100307,
 	100308,
+	100309,
+	100310,
 	110309,
 	120005,
 	110310,
@@ -239,6 +241,8 @@ pg.island_technology_template.get_id_list_by_tech_belong = {
 		110308,
 		100307,
 		100308,
+		100309,
+		100310,
 		110309,
 		120005,
 		110310,
@@ -1438,6 +1442,66 @@ pg.base.island_technology_template = {}
 		axis = {
 			24,
 			1
+		}
+	}
+	pg.base.island_technology_template[100309] = {
+		tech_desc = "倉庫容量増加。もっとたくさん置けるよ！",
+		tech_chara = 1,
+		tech_level = "9",
+		complete_character_id = "",
+		tech_icon = "tech_100301",
+		auto_finish = 1,
+		tech_name = "倉庫容量＋IX",
+		complete_tips = "<color=#1E8FFE>管理</color>の<color=#1E8FFE>倉庫</color>で確認できます",
+		formula_id = 7100309,
+		complete_title = "<color=#1E8FFE>管理</color>の<color=#1E8FFE>倉庫</color>で確認できます",
+		tech_belong = 1,
+		id = 100309,
+		island_level = 42,
+		complete_map_id = 0,
+		sys_unlock = {
+			{
+				3,
+				100308
+			}
+		},
+		tech_repeat = {
+			0,
+			0
+		},
+		axis = {
+			28,
+			9.5
+		}
+	}
+	pg.base.island_technology_template[100310] = {
+		tech_desc = "倉庫容量増加。もっとたくさん置けるよ！",
+		tech_chara = 1,
+		tech_level = "10",
+		complete_character_id = "",
+		tech_icon = "tech_100301",
+		auto_finish = 1,
+		tech_name = "倉庫容量＋X",
+		complete_tips = "<color=#1E8FFE>管理</color>の<color=#1E8FFE>倉庫</color>で確認できます",
+		formula_id = 7100310,
+		complete_title = "<color=#1E8FFE>管理</color>の<color=#1E8FFE>倉庫</color>で確認できます",
+		tech_belong = 1,
+		id = 100310,
+		island_level = 52,
+		complete_map_id = 0,
+		sys_unlock = {
+			{
+				3,
+				100309
+			}
+		},
+		tech_repeat = {
+			0,
+			0
+		},
+		axis = {
+			28,
+			10
 		}
 	}
 	pg.base.island_technology_template[110309] = {
@@ -3544,6 +3608,8 @@ pg.base.island_technology_template = {}
 			4.5
 		}
 	}
+end)()
+;(function()
 	pg.base.island_technology_template[430302] = {
 		tech_desc = "悠々牧場のモーモーウシの数を増やす",
 		tech_chara = 1,
@@ -3608,8 +3674,6 @@ pg.base.island_technology_template = {}
 			6
 		}
 	}
-end)()
-;(function()
 	pg.base.island_technology_template[440302] = {
 		tech_desc = "悠々牧場のメェメーヒツジの数を増やす",
 		tech_chara = 1,
@@ -6831,6 +6895,8 @@ end)()
 			9
 		}
 	}
+end)()
+;(function()
 	pg.base.island_technology_template[660206] = {
 		tech_desc = "傷への処置用の無菌包帯を制作可能。",
 		tech_chara = 1,
@@ -6895,8 +6961,6 @@ end)()
 			9
 		}
 	}
-end)()
-;(function()
 	pg.base.island_technology_template[650203] = {
 		tech_desc = "水質浄化用フィルター装置コアを制作可能。",
 		tech_chara = 1,

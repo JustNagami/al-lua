@@ -9,18 +9,21 @@ pg.island_speedup_ticket.all = {
 	10004,
 	10005,
 	10006,
+	10007,
 	20001,
 	20002,
 	20003,
 	20004,
 	20005,
 	20006,
+	20007,
 	30001,
 	30002,
 	30003,
 	30004,
 	30005,
-	30006
+	30006,
+	30007
 }
 pg.island_speedup_ticket.get_id_list_by_speedup_time = {
 	[60] = {
@@ -29,7 +32,8 @@ pg.island_speedup_ticket.get_id_list_by_speedup_time = {
 		10003,
 		10004,
 		10005,
-		10006
+		10006,
+		10007
 	},
 	[600] = {
 		20001,
@@ -37,7 +41,8 @@ pg.island_speedup_ticket.get_id_list_by_speedup_time = {
 		20003,
 		20004,
 		20005,
-		20006
+		20006,
+		20007
 	},
 	[3600] = {
 		30001,
@@ -45,7 +50,8 @@ pg.island_speedup_ticket.get_id_list_by_speedup_time = {
 		30003,
 		30004,
 		30005,
-		30006
+		30006,
+		30007
 	}
 }
 pg.base = pg.base or {}
@@ -155,6 +161,30 @@ pg.base.island_speedup_ticket = {}
 				2026,
 				8,
 				6
+			},
+			{
+				16,
+				0,
+				0
+			}
+		}
+	}
+	pg.base.island_speedup_ticket[10007] = {
+		rarity = 2,
+		name = "加速券（1分）",
+		expiration_type = 2,
+		type = 1,
+		icon = "islandprops/item_speedup_ticket1",
+		desc = "進行中のタスクを1分間短縮できる。開発をもっとスピーディーに！",
+		speedup_time = 60,
+		id = 10007,
+		duration = 0,
+		icon_normal = "props/item_speedup_ticket1",
+		expiration_time = {
+			{
+				2026,
+				11,
+				5
 			},
 			{
 				16,
@@ -274,6 +304,30 @@ pg.base.island_speedup_ticket = {}
 			}
 		}
 	}
+	pg.base.island_speedup_ticket[20007] = {
+		rarity = 3,
+		name = "加速券（10分）",
+		expiration_type = 2,
+		type = 2,
+		icon = "islandprops/item_speedup_ticket2",
+		desc = "進行中のタスクを10分間短縮できる。開発をもっとスピーディーに！",
+		speedup_time = 600,
+		id = 20007,
+		duration = 0,
+		icon_normal = "props/item_speedup_ticket2",
+		expiration_time = {
+			{
+				2026,
+				11,
+				5
+			},
+			{
+				16,
+				0,
+				0
+			}
+		}
+	}
 	pg.base.island_speedup_ticket[30001] = {
 		rarity = 4,
 		name = "加速券（60分）",
@@ -377,6 +431,30 @@ pg.base.island_speedup_ticket = {}
 				2026,
 				8,
 				6
+			},
+			{
+				16,
+				0,
+				0
+			}
+		}
+	}
+	pg.base.island_speedup_ticket[30007] = {
+		rarity = 4,
+		name = "加速券（60分）",
+		expiration_type = 2,
+		type = 3,
+		icon = "islandprops/item_speedup_ticket3",
+		desc = "進行中のタスクを60分間短縮できる。開発をもっとスピーディーに！",
+		speedup_time = 3600,
+		id = 30007,
+		duration = 0,
+		icon_normal = "props/item_speedup_ticket3",
+		expiration_time = {
+			{
+				2026,
+				11,
+				5
 			},
 			{
 				16,

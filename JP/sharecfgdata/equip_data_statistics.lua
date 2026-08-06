@@ -163999,6 +163999,117 @@ _G.pg.base.equip_data_statistics[151191] = {
 	value_1 = "530",
 	hidden_skill_id = {},
 }
+_G.pg.base.equip_data_statistics[151200] = {
+	ammo = 10,
+	attribute_1 = "air",
+	descrip = "その優れた頭脳で事件の真相を突き止めよう！",
+	icon = "151200",
+	id = 151200,
+	name = "名探偵の帽子",
+	nationality = 1,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "18",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61120,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {
+		6,
+		7,
+	},
+	part_sub = {
+		6,
+		7,
+	},
+	equip_parameters = {},
+	label = {
+		"USS",
+		"DEV",
+	},
+}
+_G.pg.base.equip_data_statistics[151201] = {
+	base = 151200,
+	id = 151201,
+	value_1 = "22",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151202] = {
+	base = 151200,
+	id = 151202,
+	value_1 = "26",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151203] = {
+	base = 151200,
+	id = 151203,
+	value_1 = "30",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151204] = {
+	base = 151200,
+	id = 151204,
+	value_1 = "34",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151205] = {
+	base = 151200,
+	id = 151205,
+	value_1 = "39",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151206] = {
+	base = 151200,
+	id = 151206,
+	value_1 = "43",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151207] = {
+	base = 151200,
+	id = 151207,
+	value_1 = "47",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151208] = {
+	base = 151200,
+	id = 151208,
+	value_1 = "51",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151209] = {
+	base = 151200,
+	id = 151209,
+	value_1 = "55",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151210] = {
+	base = 151200,
+	id = 151210,
+	value_1 = "60",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151211] = {
+	anti_siren = 100,
+	base = 151200,
+	id = 151211,
+	value_1 = "65",
+	hidden_skill_id = {},
+}
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "技能弹幕",

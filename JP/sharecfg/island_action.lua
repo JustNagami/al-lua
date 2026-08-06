@@ -27,12 +27,19 @@ pg.island_action.all = {
 	1022,
 	1023,
 	1024,
+	1025,
+	1026,
+	1027,
+	1028,
+	1029,
+	1030,
 	2000,
 	2001,
 	2002,
 	2003,
 	2004,
-	2005
+	2005,
+	2006
 }
 pg.island_action.get_id_list_by_type = {
 	{
@@ -59,7 +66,13 @@ pg.island_action.get_id_list_by_type = {
 		1021,
 		1022,
 		1023,
-		1024
+		1024,
+		1025,
+		1026,
+		1027,
+		1028,
+		1029,
+		1030
 	},
 	{
 		2000,
@@ -67,7 +80,8 @@ pg.island_action.get_id_list_by_type = {
 		2002,
 		2003,
 		2004,
-		2005
+		2005,
+		2006
 	}
 }
 pg.base = pg.base or {}
@@ -565,6 +579,138 @@ pg.base.island_action = {}
 			}
 		}
 	}
+	pg.base.island_action[1025] = {
+		sigle_action_reply_type = 2,
+		name = "ビシッ",
+		respond_point = "",
+		type = 1,
+		feedback_type = 1,
+		desc = "インタラクション「ビシッ」",
+		tech_id = 0,
+		resource = "point",
+		id = 1025,
+		responder_feedback = "",
+		chara_sigle_action_reply = {
+			105,
+			204
+		},
+		jump_page = {
+			{
+				"シーズンIV-開発ショップ",
+				{}
+			}
+		}
+	}
+	pg.base.island_action[1026] = {
+		sigle_action_reply_type = 2,
+		name = "歓迎",
+		respond_point = "",
+		type = 1,
+		feedback_type = 1,
+		desc = "インタラクション「歓迎」",
+		tech_id = 0,
+		resource = "welcome",
+		id = 1026,
+		responder_feedback = "",
+		chara_sigle_action_reply = {
+			102,
+			107
+		},
+		jump_page = {
+			{
+				"シーズンIV-開発ショップ",
+				{}
+			}
+		}
+	}
+	pg.base.island_action[1027] = {
+		sigle_action_reply_type = 2,
+		name = "見つめる",
+		respond_point = "",
+		type = 1,
+		feedback_type = 1,
+		desc = "インタラクション「見つめる」",
+		tech_id = 0,
+		resource = "lookover",
+		id = 1027,
+		responder_feedback = "",
+		chara_sigle_action_reply = {
+			105,
+			201
+		},
+		jump_page = {
+			{
+				"シーズンIV-開発ショップ",
+				{}
+			}
+		}
+	}
+	pg.base.island_action[1028] = {
+		sigle_action_reply_type = 2,
+		name = "お腹ぽんぽん",
+		respond_point = "",
+		type = 1,
+		feedback_type = 1,
+		desc = "インタラクション「お腹ぽんぽん」",
+		tech_id = 0,
+		resource = "slapbelly",
+		id = 1028,
+		responder_feedback = "",
+		chara_sigle_action_reply = {
+			106,
+			207
+		},
+		jump_page = {
+			{
+				"シーズンIV-開発ショップ",
+				{}
+			}
+		}
+	}
+	pg.base.island_action[1029] = {
+		sigle_action_reply_type = 2,
+		name = "眠そう",
+		respond_point = "",
+		type = 1,
+		feedback_type = 1,
+		desc = "インタラクション「眠そう」",
+		tech_id = 0,
+		resource = "doze",
+		id = 1029,
+		responder_feedback = "",
+		chara_sigle_action_reply = {
+			103,
+			108
+		},
+		jump_page = {
+			{
+				"星彩賞",
+				{}
+			}
+		}
+	}
+	pg.base.island_action[1030] = {
+		sigle_action_reply_type = 2,
+		name = "ジャンプ",
+		respond_point = "",
+		type = 1,
+		feedback_type = 1,
+		desc = "インタラクション「ジャンプ」",
+		tech_id = 0,
+		resource = "jumpinplace",
+		id = 1030,
+		responder_feedback = "",
+		chara_sigle_action_reply = {
+			103,
+			104
+		},
+		jump_page = {
+			{
+				"星彩賞",
+				{}
+			}
+		}
+	}
 	pg.base.island_action[2000] = {
 		chara_sigle_action_reply = "",
 		name = "ハイタッチ",
@@ -690,6 +836,29 @@ pg.base.island_action = {}
 			0,
 			0,
 			2
+		},
+		jump_page = {
+			{
+				"星彩賞",
+				{}
+			}
+		}
+	}
+	pg.base.island_action[2006] = {
+		chara_sigle_action_reply = "",
+		name = "集団ダンス",
+		sigle_action_reply_type = 0,
+		type = 2,
+		feedback_type = 0,
+		desc = "インタラクション「集団ダンス」",
+		tech_id = 0,
+		resource = "mutidance",
+		id = 2006,
+		responder_feedback = "mutidance_end",
+		respond_point = {
+			0,
+			0,
+			1.41529
 		},
 		jump_page = {
 			{
