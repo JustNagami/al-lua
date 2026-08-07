@@ -99,7 +99,7 @@
 			bgName = "star_level_bg_321",
 			hidePaintObj = true,
 			actor = 900479,
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			nameColor = "#A9F548FF",
 			say = "エリザベス、久しぶり！",
 			typewriter = {
@@ -178,7 +178,7 @@
 			bgName = "star_level_bg_321",
 			hidePaintObj = true,
 			actor = 900479,
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			nameColor = "#A9F548FF",
 			say = "うん！楽しく遊べるといいなー！",
 			typewriter = {
@@ -233,7 +233,7 @@
 			bgName = "star_level_bg_321",
 			hidePaintObj = true,
 			actor = 900479,
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			nameColor = "#A9F548FF",
 			say = "ぼくもおすすめしないよ",
 			typewriter = {
@@ -256,7 +256,7 @@
 		},
 		{
 			side = 2,
-			actorName = "ナレーション",
+			actorName = "通信",
 			bgName = "star_level_bg_321",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -460,7 +460,7 @@
 			bgName = "star_level_bg_321",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			say = "聞こえてるよ♪",
 			typewriter = {
 				speed = 0.05,
@@ -501,7 +501,7 @@
 			bgName = "star_level_bg_321",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			say = "気にしない気にしない。こっちもさっぱりわからないんだから",
 			typewriter = {
 				speed = 0.05,
@@ -527,7 +527,7 @@
 			bgName = "star_level_bg_321",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			say = "向こうには聞こえないんじゃ、どうしようもないよ～",
 			typewriter = {
 				speed = 0.05,
@@ -650,7 +650,7 @@
 			bgName = "star_level_bg_321",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			say = "またあとで！",
 			typewriter = {
 				speed = 0.05,
@@ -722,7 +722,7 @@
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			actor = 900479,
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			nameColor = "#A9F548FF",
 			say = "ぼくは？先生は一緒に連れて行ってくれないの？",
 			typewriter = {
@@ -749,7 +749,7 @@
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			actor = 900479,
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			nameColor = "#A9F548FF",
 			say = "ふふ〜ん♪",
 			typewriter = {
@@ -763,7 +763,7 @@
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			actor = 900479,
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			nameColor = "#A9F548FF",
 			say = "わかってて聞いただけ。先生との話題を作りたかったし♪",
 			typewriter = {
@@ -817,7 +817,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actorName = "ナレーション",
+			actorName = "ミスD",
 			say = "わ！助手、遊びに来てくれたのか！",
 			typewriter = {
 				speed = 0.05,
@@ -882,7 +882,7 @@
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			actor = 900479,
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			nameColor = "#A9F548FF",
 			say = "……え？",
 			typewriter = {
@@ -956,7 +956,7 @@
 		},
 		{
 			side = 2,
-			actorName = "ナレーション",
+			actorName = "通信",
 			bgName = "star_level_bg_307",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
@@ -989,7 +989,7 @@
 			side = 2,
 			bgName = "star_level_bg_154",
 			paintingNoise = true,
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			portrait = "tongxunqi",
 			bgm = "story-darkplan",
 			actor = 900479,
@@ -1048,7 +1048,7 @@
 			bgName = "star_level_bg_154",
 			paintingNoise = true,
 			portrait = "tongxunqi",
-			actorName = "ナレーション",
+			actorName = "ボノム・リシャール？",
 			actor = 900479,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
