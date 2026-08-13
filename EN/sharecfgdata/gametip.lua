@@ -6183,6 +6183,9 @@ _G.pg.base.gametip.ship_remould_warning_201514 = {
 _G.pg.base.gametip.ship_remould_warning_201524 = {
 	tip = "Completing the retrofit will give this shipgirl <color=#92fc63>main gun base +1</color>.\n Proceed with the retrofit?",
 }
+_G.pg.base.gametip.ship_remould_warning_202994 = {
+	tip = "The retrofitting process will use up your <color=#92fc63>Head Maid's Conviction</color>.\nProceed with the retrofit?\nCompleting the retrofit will have the following effects: Gear Slot efficiency becomes 130%/155%/120%.\n<color=#92fc63>Main Gun base +1, Torpedo preload +1, Anti-air gun base +1</color>.\nThe skill <color=#92fc63>Smokescreen: Light Cruisers</color> will be upgraded into <color=#92fc63>Smokescreen: Belfast</color>.\nThe skill <color=#92fc63>All Out Assault II: Belfast</color> will be upgraded into <color=#92fc63>All Out Assault III: Belfast</color>.",
+}
 _G.pg.base.gametip.ship_remould_warning_203114 = {
 	tip = "This ship's <color=#92fc63>Torpedo slot</color> will be converted into an <color=#92fc63>Auxiliary Weapon slot.</color><color=#92fc63>\n<material=underline c=#92fc63 event=clickDetail>View more info here.</material></color>\nWould you like to proceed with the retrofit? ",
 }
@@ -7988,7 +7991,7 @@ _G.pg.base.gametip.commander_skill_point_noengough = {
 	tip = "This Meowfficer does not have any Talent Points.",
 }
 _G.pg.base.gametip.buildship_new_tip = {
-	tip = "Rate UP for Superb and Surrey!",
+	tip = "Rate UP for Bennington, Vicksburg, and more!",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
 	tip = "Kursk and Sevastopol added to standard build pool!",
@@ -17603,6 +17606,12 @@ _G.pg.base.gametip.battle_text_tianchengCV_3 = {
 _G.pg.base.gametip.battle_text_lumei_1 = {
 	tip = "\"Don't just stand there! Follow me!\"",
 }
+_G.pg.base.gametip.battle_text_benningdun_1 = {
+	tip = "The wind blows <color=#ffaa2b>westward</color>.",
+}
+_G.pg.base.gametip.battle_text_benningdun_2 = {
+	tip = "The wind blows <color=#2baaff>eastward</color>.",
+}
 _G.pg.base.gametip.series_enemy_mood = {
 	tip = "Low Morale",
 }
@@ -24277,6 +24286,30 @@ _G.pg.base.gametip.shop_new_category = {
 _G.pg.base.gametip.shop_new_skin_theme = {
 	tip = "Theme",
 }
+_G.pg.base.gametip.skin_shop_tag = {
+	tip = "Tags",
+}
+_G.pg.base.gametip.skin_shop_tag_0 = {
+	tip = "All",
+}
+_G.pg.base.gametip.skin_shop_tag_1 = {
+	tip = "Popular",
+}
+_G.pg.base.gametip.skin_shop_tag_2 = {
+	tip = "New",
+}
+_G.pg.base.gametip.skin_shop_tag_3 = {
+	tip = "Hot",
+}
+_G.pg.base.gametip.skin_shop_tag_4 = {
+	tip = "Limited",
+}
+_G.pg.base.gametip.skin_shop_tag_5 = {
+	tip = "Limited",
+}
+_G.pg.base.gametip.skin_shop_tag_6 = {
+	tip = "Returning",
+}
 _G.pg.base.gametip.shop_new_confirm = {
 	tip = "Confirm",
 }
@@ -30012,6 +30045,12 @@ _G.pg.base.gametip.dorm3d_gift_overtime = {
 _G.pg.base.gametip.dorm3d_gift_overtime_title = {
 	tip = "Expiration Notice",
 }
+_G.pg.base.gametip.monopoly2026_left_cnt = {
+	tip = "$1 Remaining",
+}
+_G.pg.base.gametip.monopoly2026_story_award = {
+	tip = "Read the whole story ($1/$2)",
+}
 _G.pg.base.gametip.battlepass_main_tip_2608 = {
 	tip = "Complete Cruise Missions between 8/1/2026 - 9/30/2026, accumulate <icon name=pt w=0.5 h=0.5/>, and receive <color=#854747>Nürnberg META</color> and other rewards!",
 }
@@ -30357,7 +30396,123 @@ _G.pg.base.gametip.escape_story_reward_count = {
 _G.pg.base.gametip.auction_network_timeout = {
 	tip = "Connection lost. You have left the match.",
 }
+_G.pg.base.gametip.StarsCityCoreActivityUI_subtitle_4 = {
+	tip = "Depths of the Astrarium",
+}
+_G.pg.base.gametip.StarsCityCoreActivityUI_subtitle_5 = {
+	tip = "Astrarium Supply Station",
+}
+_G.pg.base.gametip.StarsCityMainPage_res_day_time = {
+	tip = "$1d $2h left",
+}
+_G.pg.base.gametip.StarsCityMainPage_no_time = {
+	tip = "Ending Soon",
+}
+_G.pg.base.gametip.RapidSeasideMonopolyPage_turn_cnt_tip = {
+	tip = "Lap Number:",
+}
+_G.pg.base.gametip.RapidSeasideMonopolyPage_progress_tip = {
+	tip = "Lap Progress:",
+}
+_G.pg.base.gametip.RapidSeasideMonopolyPage_award_loop1 = {
+	tip = "Lap 3",
+}
+_G.pg.base.gametip.RapidSeasideMonopolyPage_award_loop2 = {
+	tip = "Lap 6",
+}
+_G.pg.base.gametip.RapidSeasideMonopolyPage_award_loop3 = {
+	tip = "Lap 9",
+}
+_G.pg.base.gametip.mini_game_crossroad_cnt = {
+	tip = "Passed:",
+}
+_G.pg.base.gametip.mini_game_crossroad_score = {
+	tip = "Score:",
+}
+_G.pg.base.gametip.mono_car_2026_toggle_main = {
+	tip = "Race Mode",
+}
+_G.pg.base.gametip.mono_car_2026_toggle_story = {
+	tip = "Story Mode",
+}
+_G.pg.base.gametip.crossroad_minigame_help = {
+	tip = {
+		{
+			icon = {
+				atlas = "helpbg/crossroad_help1",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/crossroad_help2",
+				path = "",
+			},
+		},
+		{
+			icon = {
+				atlas = "helpbg/crossroad_help3",
+				path = "",
+			},
+		},
+		ImageMode = true,
+		defaultpage = 1,
+		disableScroll = true,
+		pageMode = true,
+		windowSize = {
+			x = 1263,
+			y = 873,
+		},
+		windowPos = {
+			y = -70,
+		},
+		helpSize = {
+			x = 1176,
+			y = 1024,
+		},
+	},
+}
+_G.pg.base.gametip.help_monopoly_car2026 = {
+	tip = {
+		{
+			info = "- Overview -",
+		},
+		{
+			info = "Log in daily during the event to receive three dice rolls, allowing you to accelerate on the board. Clearing event-limited daily missions can give you up to another two extra dice rolls.",
+		},
+		{
+			info = "You can pick one of the shipgirls as your crew at the starting location. She will comment on your progress, based on how many tiles you advanced or what type of tile you landed on.",
+		},
+		{
+			info = "Once you've finished nine laps around the track, you'll receive a limited piece of furniture. Each lap finished with a different crewmate will also reward you with 1,000 Coins.",
+		},
+		{
+			info = "The effects of each tile is as follows:",
+		},
+		{
+			info = " 5km & 11km: Obtain a sum of Coins;",
+		},
+		{
+			info = " 4km & 9km: Obtain a sum of Oil;",
+		},
+		{
+			info = " 3km & 7km: Trigger a random event;",
+		},
+		{
+			info = " 2km &6km: Obtain a random reward;",
+		},
+		{
+			info = " 10km: Trigger a random movement-based event;",
+		},
+	},
+}
 _G.pg.base.gametip.loading_pic_btn = {
 	tip = "Loading Screen",
+}
+_G.pg.base.gametip.LeMarsReSkinPage_reward_title = {
+	tip = "Oil Goal",
+}
+_G.pg.base.gametip.LeMarsReSkinPage_reward_target = {
+	tip = "Total Oil Spent:",
 }
 
