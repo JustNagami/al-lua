@@ -132,7 +132,9 @@ pg.medal_template.all = {
 	200161,
 	200171,
 	200181,
-	200191
+	200191,
+	200201,
+	200211
 }
 pg.base = pg.base or {}
 pg.base.medal_template = {}
@@ -2976,10 +2978,52 @@ end)()
 		start = 0,
 		hide = 0,
 		label = "l_9191",
-		condition = "「怪談実録：白夜ヴィラより脱出せよ！」記念ステッカーを8つ集める",
+		condition = "「怪談実録：白夜ヴィラより脱出せよ！」記念ステッカーを\n8つ集める",
 		rank = 1,
 		id = 200191,
 		target_num = 8,
 		target_id = "51078"
+	}
+	pg.base.medal_template[200201] = {
+		explain1 = "「夢光のアストリウム」",
+		name = "メトロ記念勲章",
+		explain2 = "イベント",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "迷える旅人よ、あなたはメトロスターライトの甘い夢を見届け、そして打ち砕いた",
+		next = 0,
+		icon = "9201",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9201",
+		condition = "「夢光のアストリウム」記念ステッカーを8つ集める",
+		rank = 1,
+		id = 200201,
+		target_num = 8,
+		target_id = "51110"
+	}
+	pg.base.medal_template[200211] = {
+		explain1 = "「フラッシュウェーブ：サマーレース」",
+		name = "フラッシュウェーブ記念メダル",
+		explain2 = "イベント",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "唸るエンジン、回るタイヤ。潮風と熱気が輝く道を伸ばしていく。さあ、優勝を目指して全速前進よ！",
+		next = 0,
+		icon = "9211",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9211",
+		condition = "「フラッシュウェーブ：サマーレース」記念ステッカーを\n7つ集める",
+		rank = 1,
+		id = 200211,
+		target_num = 7,
+		target_id = "51113"
 	}
 end)()

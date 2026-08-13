@@ -88,7 +88,9 @@ pg.login.all = {
 	92,
 	93,
 	94,
-	95
+	95,
+	96,
+	97
 }
 pg.base = pg.base or {}
 pg.base.login = {}
@@ -3032,7 +3034,7 @@ pg.base.login = {}
 					16
 				},
 				{
-					10,
+					16,
 					0,
 					0
 				}
@@ -3059,7 +3061,7 @@ pg.base.login = {}
 					16
 				},
 				{
-					10,
+					16,
 					0,
 					0
 				}
@@ -3079,7 +3081,7 @@ pg.base.login = {}
 				{
 					2026,
 					7,
-					30
+					23
 				},
 				{
 					0,
@@ -3090,8 +3092,8 @@ pg.base.login = {}
 			{
 				{
 					2026,
-					8,
-					6
+					7,
+					30
 				},
 				{
 					16,
@@ -3106,7 +3108,7 @@ pg.base.login = {}
 				{
 					2026,
 					7,
-					30
+					23
 				},
 				{
 					0,
@@ -3117,8 +3119,8 @@ pg.base.login = {}
 			{
 				{
 					2026,
-					8,
-					6
+					7,
+					30
 				},
 				{
 					16,
@@ -3134,6 +3136,78 @@ pg.base.login = {}
 		effective_channel = 0,
 		date = "stop",
 		op_play = 0,
+		op_time = "",
+		login_cri = "",
+		bgm = ""
+	}
+	pg.base.login[96] = {
+		id = 96,
+		effective_channel = 0,
+		op_play = 1,
+		login_static = "login_0813",
+		login_cri = "",
+		bgm = "",
+		date = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		op_time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		}
+	}
+	pg.base.login[97] = {
+		id = 97,
+		login_static = "login_0820",
+		effective_channel = 0,
+		date = "stop",
+		op_play = 1,
 		op_time = "stop",
 		login_cri = "",
 		bgm = ""

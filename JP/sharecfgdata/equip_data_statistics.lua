@@ -128742,6 +128742,59 @@ _G.pg.base.equip_data_statistics[80662] = {
 	},
 	hidden_skill_id = {},
 }
+_G.pg.base.equip_data_statistics[80681] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 80681,
+	name = "专属弹幕-柯莱特I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		171111,
+		171113,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+_G.pg.base.equip_data_statistics[80682] = {
+	base = 80681,
+	id = 80682,
+	name = "专属弹幕-柯莱特II",
+	weapon_id = {
+		171112,
+		171113,
+	},
+	hidden_skill_id = {},
+}
 _G.pg.base.equip_data_statistics[85000] = {
 	ammo = 3,
 	attribute_2 = "cannon",
@@ -164110,6 +164163,125 @@ _G.pg.base.equip_data_statistics[151211] = {
 	value_1 = "65",
 	hidden_skill_id = {},
 }
+_G.pg.base.equip_data_statistics[151220] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "コレットの一番お気に入りのペット。もう13世だからちゃんと時間通りエサをやってあげて",
+	icon = "151220",
+	id = 151220,
+	name = "エラーⅩⅢ世",
+	nationality = 1,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "250",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61130,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"USS",
+		"DEV",
+	},
+}
+_G.pg.base.equip_data_statistics[151221] = {
+	base = 151220,
+	id = 151221,
+	value_1 = "280",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151222] = {
+	base = 151220,
+	id = 151222,
+	value_1 = "310",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151223] = {
+	base = 151220,
+	id = 151223,
+	value_1 = "340",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151224] = {
+	base = 151220,
+	id = 151224,
+	value_1 = "370",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151225] = {
+	base = 151220,
+	id = 151225,
+	value_1 = "400",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151226] = {
+	base = 151220,
+	id = 151226,
+	value_1 = "430",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151227] = {
+	base = 151220,
+	id = 151227,
+	value_1 = "460",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151228] = {
+	base = 151220,
+	id = 151228,
+	value_1 = "490",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151229] = {
+	base = 151220,
+	id = 151229,
+	value_1 = "520",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151230] = {
+	base = 151220,
+	id = 151230,
+	value_1 = "550",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151231] = {
+	anti_siren = 100,
+	base = 151220,
+	id = 151231,
+	value_1 = "580",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151232] = {
+	anti_siren = 200,
+	base = 151220,
+	id = 151232,
+	value_1 = "610",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151233] = {
+	anti_siren = 300,
+	base = 151220,
+	id = 151233,
+	value_1 = "640",
+	hidden_skill_id = {},
+}
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "技能弹幕",
@@ -165935,6 +166107,57 @@ _G.pg.base.equip_data_statistics[171082] = {
 	name = "专属弹幕-萨里II",
 	weapon_id = {
 		171082,
+	},
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[171091] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 171091,
+	name = "专属弹幕-维克斯堡I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		171091,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+_G.pg.base.equip_data_statistics[171092] = {
+	base = 171091,
+	id = 171092,
+	name = "专属弹幕-维克斯堡II",
+	weapon_id = {
+		171092,
 	},
 	hidden_skill_id = {},
 }

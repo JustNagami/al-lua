@@ -665,10 +665,10 @@ pg.base.item_data_frame = {}
 	pg.base.item_data_frame[342] = {
 		time_limit_type = 0,
 		name = "メトロスターライトの夢",
-		gain_by = "",
+		gain_by = "夢光のアストリウム",
 		id = 342,
 		time_second = 0,
-		desc = "今後開催するイベントにて入手可能",
+		desc = "「メトロスターライトへようこそ。あなたは叶えたい夢はあるかな？」\n<color=#A7A7AA>「夢光のアストリウム」イベント参加</color>",
 		scene = {}
 	}
 	pg.base.item_data_frame[401] = {

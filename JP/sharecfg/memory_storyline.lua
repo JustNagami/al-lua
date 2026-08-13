@@ -99,7 +99,8 @@ pg.memory_storyline.all = {
 	94,
 	95,
 	96,
-	97
+	97,
+	98
 }
 pg.base = pg.base or {}
 pg.base.memory_storyline = {}
@@ -2589,9 +2590,32 @@ pg.base.memory_storyline = {}
 		}
 	}
 	pg.base.memory_storyline[97] = {
+		description = "「心を惑わすは幾千の言貌。流離した者が集い、麗しき夢は昇華する。岐路に迷い込んだ旅人よ、ようこそ――メトロスターライトへ」",
+		name = "夢光のアストリウム",
+		world_id = "",
+		memory_lock = 0,
+		column = 61,
+		bgm = "theme-richard-white",
+		row = 0,
+		chapter = 5,
+		id = 97,
+		icon = "InterludeOne_4",
+		sort = 1,
+		memory_id = {
+			1,
+			374
+		},
+		shipnation = {
+			1
+		},
+		link_event = {
+			98
+		}
+	}
+	pg.base.memory_storyline[98] = {
 		description = "敬请期待",
 		name = "敬请期待",
-		column = 61,
+		column = 62,
 		memory_id = "",
 		link_event = "",
 		shipnation = 0,
@@ -2600,7 +2624,7 @@ pg.base.memory_storyline = {}
 		row = 0,
 		chapter = 0,
 		memory_lock = 1,
-		id = 97,
+		id = 98,
 		icon = "",
 		sort = 0
 	}

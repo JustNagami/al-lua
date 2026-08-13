@@ -7,6 +7,16 @@ var_0_0.word_legal_template_6 = {}
 local var_0_1 = var_0_0.word_legal_template_6
 
 function temp()
+	var_0_1.浅 = {
+		間 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.金 = {
 		剛 = {
 			this = true,
@@ -513,16 +523,6 @@ temp()
 function temp()
 	var_0_1.葛 = {
 		城 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.明 = {
-		石 = {
 			this = true
 		}
 	}

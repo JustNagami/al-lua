@@ -160,7 +160,22 @@ pg.activity_medal_template.all = {
 	5107805,
 	5107806,
 	5107807,
-	5107808
+	5107808,
+	5111001,
+	5111002,
+	5111003,
+	5111004,
+	5111005,
+	5111006,
+	5111007,
+	5111008,
+	5111301,
+	5111302,
+	5111303,
+	5111304,
+	5111305,
+	5111306,
+	5111307
 }
 pg.activity_medal_template.get_id_list_by_group = {
 	[5711] = {
@@ -360,6 +375,25 @@ pg.activity_medal_template.get_id_list_by_group = {
 		5107806,
 		5107807,
 		5107808
+	},
+	[51110] = {
+		5111001,
+		5111002,
+		5111003,
+		5111004,
+		5111005,
+		5111006,
+		5111007,
+		5111008
+	},
+	[51113] = {
+		5111301,
+		5111302,
+		5111303,
+		5111304,
+		5111305,
+		5111306,
+		5111307
 	}
 }
 pg.base = pg.base or {}
@@ -2263,5 +2297,185 @@ end)()
 		activity_medal_name = "ステッカー：封鎖エリア",
 		id = 5107808,
 		activity_medal_desc = "感染者が出るまであと10、9……"
+	}
+	pg.base.activity_medal_template[5111001] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 66066,
+		remake_task_id = 0,
+		group = 51110,
+		task_id = 25702,
+		medal_asset = "ActivityMedal/5111001",
+		activity_medal_name = "記念シール：メトロスターライト",
+		id = 5111001,
+		activity_medal_desc = "「岐路に迷い込んだ旅人よ、ようこそ————メトロスターライトへ」"
+	}
+	pg.base.activity_medal_template[5111002] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 66067,
+		remake_task_id = 0,
+		group = 51110,
+		task_id = 25703,
+		medal_asset = "ActivityMedal/5111002",
+		activity_medal_name = "記念シール：名探偵",
+		id = 5111002,
+		activity_medal_desc = "この街には、もっとたくさんの名探偵が必要だ！"
+	}
+	pg.base.activity_medal_template[5111003] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 66068,
+		remake_task_id = 0,
+		group = 51110,
+		task_id = 25704,
+		medal_asset = "ActivityMedal/5111003",
+		activity_medal_name = "記念シール：配信者",
+		id = 5111003,
+		activity_medal_desc = "機材チェック完了、カウントダウン3…2…1——録画スタート！"
+	}
+	pg.base.activity_medal_template[5111004] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 66069,
+		remake_task_id = 0,
+		group = 51110,
+		task_id = 25705,
+		medal_asset = "ActivityMedal/5111004",
+		activity_medal_name = "記念シール：新人アイドル",
+		id = 5111004,
+		activity_medal_desc = "昇りはじめたばかりの新しいスター。その調子で頑張って！"
+	}
+	pg.base.activity_medal_template[5111005] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 66070,
+		remake_task_id = 0,
+		group = 51110,
+		task_id = 25706,
+		medal_asset = "ActivityMedal/5111005",
+		activity_medal_name = "記念シール：セキュリティのプロ",
+		id = 5111005,
+		activity_medal_desc = "気前のいいお客様、今日はどんな「セキュリティ」についてのご相談でしょうか"
+	}
+	pg.base.activity_medal_template[5111006] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 66071,
+		remake_task_id = 0,
+		group = 51110,
+		task_id = 25707,
+		medal_asset = "ActivityMedal/5111006",
+		activity_medal_name = "記念シール：「B」",
+		id = 5111006,
+		activity_medal_desc = "街に隠された秘密はもう見つけた？——「B」on"
+	}
+	pg.base.activity_medal_template[5111007] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 66072,
+		remake_task_id = 0,
+		group = 51110,
+		task_id = 25708,
+		medal_asset = "ActivityMedal/5111007",
+		activity_medal_name = "記念シール：「H」",
+		id = 5111007,
+		activity_medal_desc = "街に隠された秘密はもう見つけた？——「H」omme"
+	}
+	pg.base.activity_medal_template[5111008] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 66073,
+		remake_task_id = 0,
+		group = 51110,
+		task_id = 25709,
+		medal_asset = "ActivityMedal/5111008",
+		activity_medal_name = "記念シール：「R」",
+		id = 5111008,
+		activity_medal_desc = "街に隠された秘密はもう見つけた？——「R」ichard"
+	}
+	pg.base.activity_medal_template[5111301] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 66075,
+		remake_task_id = 0,
+		group = 51113,
+		task_id = 25712,
+		medal_asset = "ActivityMedal/5111301",
+		activity_medal_name = "記念シール：優勝トロフィー",
+		id = 5111301,
+		activity_medal_desc = "トロフィーが壊れたら誰が弁償するの？ピョピョ！"
+	}
+	pg.base.activity_medal_template[5111302] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 66076,
+		remake_task_id = 0,
+		group = 51113,
+		task_id = 25713,
+		medal_asset = "ActivityMedal/5111302",
+		activity_medal_name = "記念シール：全力応援",
+		id = 5111302,
+		activity_medal_desc = "アンコール！アンコール！"
+	}
+	pg.base.activity_medal_template[5111303] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 66077,
+		remake_task_id = 0,
+		group = 51113,
+		task_id = 25714,
+		medal_asset = "ActivityMedal/5111303",
+		activity_medal_name = "記念シール：ぶっちぎりトップ",
+		id = 5111303,
+		activity_medal_desc = "もう仕方ないんだから。しっかり掴まっててね～"
+	}
+	pg.base.activity_medal_template[5111304] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 66078,
+		remake_task_id = 0,
+		group = 51113,
+		task_id = 25715,
+		medal_asset = "ActivityMedal/5111304",
+		activity_medal_name = "記念シール：高圧ウォーターガン",
+		id = 5111304,
+		activity_medal_desc = "このノズル、すごい勢い！"
+	}
+	pg.base.activity_medal_template[5111305] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 66079,
+		remake_task_id = 0,
+		group = 51113,
+		task_id = 25716,
+		medal_asset = "ActivityMedal/5111305",
+		activity_medal_name = "記念シール：実況中継",
+		id = 5111305,
+		activity_medal_desc = "ラストスパートに入った！勝利はもう目の前！"
+	}
+	pg.base.activity_medal_template[5111306] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 66080,
+		remake_task_id = 0,
+		group = 51113,
+		task_id = 25717,
+		medal_asset = "ActivityMedal/5111306",
+		activity_medal_name = "記念シール：ゴールの瞬間",
+		id = 5111306,
+		activity_medal_desc = "あのラインを駆け抜けたら、あとは歓声の時間だ！"
+	}
+	pg.base.activity_medal_template[5111307] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 66081,
+		remake_task_id = 0,
+		group = 51113,
+		task_id = 25718,
+		medal_asset = "ActivityMedal/5111307",
+		activity_medal_name = "記念シール：SPEED MAX",
+		id = 5111307,
+		activity_medal_desc = "DU！DU！DU！DU！"
 	}
 end)()

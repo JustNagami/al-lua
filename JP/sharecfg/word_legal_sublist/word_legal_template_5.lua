@@ -7,6 +7,16 @@ var_0_0.word_legal_template_5 = {}
 local var_0_1 = var_0_0.word_legal_template_5
 
 function temp()
+	var_0_1.追 = {
+		風 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.風 = {
 		雲 = {
 			this = true
@@ -339,16 +349,6 @@ temp()
 function temp()
 	var_0_1.雲 = {
 		仙 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.浅 = {
-		間 = {
 			this = true
 		}
 	}

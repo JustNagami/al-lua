@@ -7,6 +7,36 @@ var_0_0.word_legal_template_9 = {}
 local var_0_1 = var_0_0.word_legal_template_9
 
 function temp()
+	var_0_1.基 = {
+		洛 = {
+			夫 = {
+				· = {
+					M = {
+						E = {
+							T = {
+								A = {
+									（ = {
+										后 = {
+											排 = {
+												） = {
+													this = true
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.拉 = {
 		菲 = {
 			I = {

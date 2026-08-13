@@ -7,6 +7,16 @@ var_0_0.word_legal_template_7 = {}
 local var_0_1 = var_0_0.word_legal_template_7
 
 function temp()
+	var_0_1.明 = {
+		石 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.樫 = {
 		野 = {
 			this = true
@@ -528,41 +538,6 @@ function temp()
 	var_0_1.定 = {
 		安 = {
 			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.ゴ = {
-		リ = {
-			ツ = {
-				ィ = {
-					ア = {
-						this = true
-					}
-				}
-			}
-		},
-		ー = {
-			ル = {
-				デ = {
-					ン = {
-						・ = {
-							ハ = {
-								イ = {
-									ン = {
-										ド = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 end

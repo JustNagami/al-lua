@@ -70,6 +70,9 @@ pg.emoji_template.all = {
 	66,
 	67,
 	68,
+	69,
+	70,
+	71,
 	100,
 	101,
 	102,
@@ -264,6 +267,9 @@ pg.emoji_template.get_id_list_by_auction = {
 		66,
 		67,
 		68,
+		69,
+		70,
+		71,
 		100,
 		101,
 		102,
@@ -1334,6 +1340,48 @@ pg.base.emoji_template = {}
 			2
 		}
 	}
+	pg.base.emoji_template[69] = {
+		item_name = "スタンプ：嬉しいです！",
+		item_desc = "スタンプ：嬉しいです！チャットのモーションスタンプセットで使用可能",
+		index = 1028,
+		pic = "weikesibao_2_1",
+		desc = "<color=#92fc63>[嬉しいです！]</color>",
+		achieve = 1,
+		auction = 0,
+		id = 69,
+		icon = "",
+		type = {
+			2
+		}
+	}
+	pg.base.emoji_template[70] = {
+		item_name = "スタンプ：きらりーん",
+		item_desc = "スタンプ：きらりーん。チャットのモーションスタンプセットで使用可能",
+		index = 1029,
+		pic = "weikesibao_2_2",
+		desc = "<color=#92fc63>[きらりーん]</color>",
+		achieve = 1,
+		auction = 0,
+		id = 70,
+		icon = "",
+		type = {
+			2
+		}
+	}
+	pg.base.emoji_template[71] = {
+		item_name = "スタンプ：あと少し",
+		item_desc = "スタンプ：あと少し。チャットのモーションスタンプセットで使用可能",
+		index = 1030,
+		pic = "weikesibao_2_3",
+		desc = "<color=#92fc63>[あと少し]</color>",
+		achieve = 1,
+		auction = 0,
+		id = 71,
+		icon = "",
+		type = {
+			2
+		}
+	}
 	pg.base.emoji_template[100] = {
 		item_name = "",
 		item_desc = "",
@@ -1754,6 +1802,8 @@ pg.base.emoji_template = {}
 			1
 		}
 	}
+end)()
+;(function()
 	pg.base.emoji_template[216] = {
 		item_name = "",
 		item_desc = "",
@@ -1796,8 +1846,6 @@ pg.base.emoji_template = {}
 			1
 		}
 	}
-end)()
-;(function()
 	pg.base.emoji_template[219] = {
 		item_name = "",
 		item_desc = "",

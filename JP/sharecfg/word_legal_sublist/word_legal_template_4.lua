@@ -7,6 +7,16 @@ var_0_0.word_legal_template_4 = {}
 local var_0_1 = var_0_0.word_legal_template_4
 
 function temp()
+	var_0_1.松 = {
+		風 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.睦 = {
 		月 = {
 			this = true
@@ -466,16 +476,6 @@ function temp()
 			this = true
 		},
 		波 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.追 = {
-		風 = {
 			this = true
 		}
 	}

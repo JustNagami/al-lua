@@ -4215,6 +4215,77 @@ pg.memory_template.all = {
 	5248,
 	5249,
 	5311,
+	5321,
+	5322,
+	5323,
+	5324,
+	5325,
+	5326,
+	5327,
+	5328,
+	5329,
+	5330,
+	5331,
+	5332,
+	5333,
+	5334,
+	5335,
+	5336,
+	5337,
+	5338,
+	5339,
+	5340,
+	5341,
+	5342,
+	5343,
+	5344,
+	5345,
+	5346,
+	5347,
+	5348,
+	5349,
+	5350,
+	5351,
+	5352,
+	5353,
+	5354,
+	5355,
+	5356,
+	5357,
+	5358,
+	5359,
+	5360,
+	5361,
+	5362,
+	5363,
+	5364,
+	5365,
+	5366,
+	5371,
+	5372,
+	5373,
+	5381,
+	5382,
+	5383,
+	5384,
+	5385,
+	5386,
+	5387,
+	5388,
+	5389,
+	5390,
+	5391,
+	5392,
+	5393,
+	5394,
+	5395,
+	5396,
+	5397,
+	5398,
+	5399,
+	5400,
+	5401,
+	5402,
 	10000,
 	10001,
 	10002,
@@ -80403,6 +80474,1284 @@ end)()
 			"TEBIEJINGPAISHIKE1"
 		}
 	}
+	pg.base.memory_template[5321] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG1",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "初夢",
+		condition = "EP1-1開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5321,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG1"
+		}
+	}
+	pg.base.memory_template[5322] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG2",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "路地裏の異変",
+		condition = "EP1-2開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5322,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG2"
+		}
+	}
+	pg.base.memory_template[5323] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG3",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "第二の名探偵",
+		condition = "EP1-3開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5323,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG3"
+		}
+	}
+	pg.base.memory_template[5324] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG4",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "下層エリア",
+		condition = "EP1-4開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5324,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG4"
+		}
+	}
+	pg.base.memory_template[5325] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG5",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "メトロスターライトのルール",
+		condition = "EP1-5開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5325,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG5"
+		}
+	}
+	pg.base.memory_template[5326] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG6",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "指摘",
+		condition = "EP2-1開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5326,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG6"
+		}
+	}
+	pg.base.memory_template[5327] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG7",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "アイドルとファンクラブ",
+		condition = "EP2-2開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5327,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG7"
+		}
+	}
+	pg.base.memory_template[5328] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG8",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "感情フラグメント",
+		condition = "EP2-3開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5328,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG8"
+		}
+	}
+	pg.base.memory_template[5329] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG9",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "事件現場調査",
+		condition = "EP2-4開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5329,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG9"
+		}
+	}
+	pg.base.memory_template[5330] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG10",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "等価交換",
+		condition = "EP2-5開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5330,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG10"
+		}
+	}
+	pg.base.memory_template[5331] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG11",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "調査拡大",
+		condition = "EP3-1開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5331,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG11"
+		}
+	}
+	pg.base.memory_template[5332] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG12",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "セキュリティ専門家",
+		condition = "EP3-2開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5332,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG12"
+		}
+	}
+	pg.base.memory_template[5333] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG13",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "泥棒の情報",
+		condition = "EP3-3開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5333,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG13"
+		}
+	}
+	pg.base.memory_template[5334] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG14",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "メトロポリスエリアへ",
+		condition = "EP3-4開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5334,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG14"
+		}
+	}
+	pg.base.memory_template[5335] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG15",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "スターライトタワーへの行き方",
+		condition = "EP4-1開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5335,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG15"
+		}
+	}
+	pg.base.memory_template[5336] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG16",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "公演開催許可証",
+		condition = "EP4-2開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5336,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG16"
+		}
+	}
+	pg.base.memory_template[5337] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG17",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "退勤不可能",
+		condition = "EP4-3開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5337,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG17"
+		}
+	}
+	pg.base.memory_template[5338] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG18",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "もっともっと許可証",
+		condition = "EP4-4開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5338,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG18"
+		}
+	}
+	pg.base.memory_template[5339] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG19",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "情報整理",
+		condition = "EP4-5開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5339,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG19"
+		}
+	}
+	pg.base.memory_template[5340] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG20",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "会場使用許可証",
+		condition = "EP5-1開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5340,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG20"
+		}
+	}
+	pg.base.memory_template[5341] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG21",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "次の計画は",
+		condition = "EP5-2開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5341,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG21"
+		}
+	}
+	pg.base.memory_template[5342] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG22",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "バンド組もう",
+		condition = "EP5-3開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5342,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG22"
+		}
+	}
+	pg.base.memory_template[5343] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG23",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "Shining☆Forever",
+		condition = "EP5-4開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5343,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG23"
+		}
+	}
+	pg.base.memory_template[5344] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG24",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "舞台設備許可証",
+		condition = "EP5-5開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5344,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG24"
+		}
+	}
+	pg.base.memory_template[5345] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG25",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "P.M広場",
+		condition = "EP5-6開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5345,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG25"
+		}
+	}
+	pg.base.memory_template[5346] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG26",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "公演衣装許可証",
+		condition = "EP5-7開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5346,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG26"
+		}
+	}
+	pg.base.memory_template[5347] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG27",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "呪われた広告カード",
+		condition = "EP5-8開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5347,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG27"
+		}
+	}
+	pg.base.memory_template[5348] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG28",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "広告宣伝許可証",
+		condition = "EP5-9開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5348,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG28"
+		}
+	}
+	pg.base.memory_template[5349] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG29",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "ビッグイズビューティ",
+		condition = "EP6-1開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5349,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG29"
+		}
+	}
+	pg.base.memory_template[5350] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG30",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "リシャールの計画",
+		condition = "EP6-2開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5350,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG30"
+		}
+	}
+	pg.base.memory_template[5351] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG31",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "ハイスピードレース",
+		condition = "EP6-3開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5351,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG31"
+		}
+	}
+	pg.base.memory_template[5352] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG32",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "警備チーム許可証",
+		condition = "EP6-4開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5352,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG32"
+		}
+	}
+	pg.base.memory_template[5353] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG33",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "2つ目の夢",
+		condition = "EP7-1開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5353,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG33"
+		}
+	}
+	pg.base.memory_template[5354] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG34",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "目覚め",
+		condition = "EP7-2開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5354,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG34"
+		}
+	}
+	pg.base.memory_template[5355] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG35",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "蛾の蛍火",
+		condition = "EP7-3開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5355,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG35"
+		}
+	}
+	pg.base.memory_template[5356] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2056001",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "回遊",
+		condition = "EP7-4開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5356,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"2056001"
+		}
+	}
+	pg.base.memory_template[5357] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG37",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "フェイスオフ",
+		condition = "EP7-5開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5357,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG37"
+		}
+	}
+	pg.base.memory_template[5358] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2056002",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "メトロスターライトの戦い",
+		condition = "EP8-1開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5358,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"2056002"
+		}
+	}
+	pg.base.memory_template[5359] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG39",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "スターライトの外",
+		condition = "EP8-2開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5359,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG39"
+		}
+	}
+	pg.base.memory_template[5360] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2056003",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "メトロスターライトの戦いⅡ",
+		condition = "EP8-3開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5360,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"2056003"
+		}
+	}
+	pg.base.memory_template[5361] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "2056004",
+		type = 2,
+		mask = "bg/bg_memory",
+		title = "メトロスターライトの戦いⅢ",
+		condition = "EP8-4開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5361,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"2056004"
+		}
+	}
+	pg.base.memory_template[5362] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG42",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "混乱",
+		condition = "EP8-5開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5362,
+		icon = "memory_chenniyuxingguangzhicheng1",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG42"
+		}
+	}
+	pg.base.memory_template[5363] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG43",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "パンドラの願い",
+		condition = "EX-1開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5363,
+		icon = "memory_chenniyuxingguangzhicheng2",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG43"
+		}
+	}
+	pg.base.memory_template[5364] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG44",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "探索者の秘密",
+		condition = "EX-2開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5364,
+		icon = "memory_chenniyuxingguangzhicheng2",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG44"
+		}
+	}
+	pg.base.memory_template[5365] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG45",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "連合遠征",
+		condition = "EX-3開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5365,
+		icon = "memory_chenniyuxingguangzhicheng2",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG45"
+		}
+	}
+	pg.base.memory_template[5366] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "CHENNIYUXINGGUANGZHICHENG46",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "toTheAfter",
+		condition = "EX-4開始",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5366,
+		icon = "memory_chenniyuxingguangzhicheng2",
+		is_open = 0,
+		unlock_pre = {
+			"CHENNIYUXINGGUANGZHICHENG46"
+		}
+	}
+	pg.base.memory_template[5371] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "LUCK69903",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "新しい旅-ヴィットリオ・クニベルティ",
+		condition = "特別計画艦強化レベル30達成",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5371,
+		icon = "memory_jhkunibeierdi",
+		is_open = 0,
+		unlock_pre = {
+			"LUCK69903"
+		}
+	}
+	pg.base.memory_template[5372] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "LUCK79903",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "新しい旅-ドミートリィ・ドンスコイ",
+		condition = "特別計画艦強化レベル30達成",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5372,
+		icon = "memory_jhdimiteli",
+		is_open = 0,
+		unlock_pre = {
+			"LUCK79903"
+		}
+	}
+	pg.base.memory_template[5373] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "LUCK19906",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "新しい旅-カンザス",
+		condition = "特別計画艦強化レベル30達成",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5373,
+		icon = "memory_jhkansasi",
+		is_open = 0,
+		unlock_pre = {
+			"LUCK19906"
+		}
+	}
+	pg.base.memory_template[5381] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU1",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "潮風、カメラ、エンジン",
+		condition = "「フラッシュウェーブ：サマーレース」を開始する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5381,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU1"
+		}
+	}
+	pg.base.memory_template[5382] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU2",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "トラブル続出？チーム始動",
+		condition = "スタッフを選択する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5382,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU2"
+		}
+	}
+	pg.base.memory_template[5383] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU3",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "新米チームの頼もしい助っ人",
+		condition = "レースを1ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5383,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU3"
+		}
+	}
+	pg.base.memory_template[5384] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU4",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "まぐれ当たりのテクサポ",
+		condition = "レースを2ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5384,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU4"
+		}
+	}
+	pg.base.memory_template[5385] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU5",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "バカンスの誘い",
+		condition = "レースを3ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5385,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU5"
+		}
+	}
+	pg.base.memory_template[5386] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU6",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "目指すはポールポジション",
+		condition = "レースを4ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5386,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU6"
+		}
+	}
+	pg.base.memory_template[5387] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU7",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "予選開始！",
+		condition = "レースを5ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5387,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU7"
+		}
+	}
+	pg.base.memory_template[5388] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU8",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "風を切るエース",
+		condition = "レースを6ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5388,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU8"
+		}
+	}
+	pg.base.memory_template[5389] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU9",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "いよいよ本戦！",
+		condition = "レースを7ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5389,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU9"
+		}
+	}
+	pg.base.memory_template[5390] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU10",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "経験値の差",
+		condition = "レースを8ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5390,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU10"
+		}
+	}
+	pg.base.memory_template[5391] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU11",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "チームの追い上げ！",
+		condition = "レースを9ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5391,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU11"
+		}
+	}
+	pg.base.memory_template[5392] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU12",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "0.001秒の奇跡",
+		condition = "レースを10ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5392,
+		icon = "memory_binhaijisu1",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU12"
+		}
+	}
+	pg.base.memory_template[5393] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU13",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "試合の特ダネ！",
+		condition = "「フラッシュウェーブ：サマーレース」を開始する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5393,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU13"
+		}
+	}
+	pg.base.memory_template[5394] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU14",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "チョコバー盗難事件？！",
+		condition = "レースを1ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5394,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU14"
+		}
+	}
+	pg.base.memory_template[5395] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU15",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "プロモビデオを撮ろう！",
+		condition = "レースを2ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5395,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU15"
+		}
+	}
+	pg.base.memory_template[5396] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU16",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "コーナー前の休憩",
+		condition = "レースを3ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5396,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU16"
+		}
+	}
+	pg.base.memory_template[5397] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU17",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "テクニカルチェックにて",
+		condition = "レースを4ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5397,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU17"
+		}
+	}
+	pg.base.memory_template[5398] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU18",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "夜闇の誘い",
+		condition = "レースを5ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5398,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU18"
+		}
+	}
+	pg.base.memory_template[5399] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU19",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "アクセルを踏んで",
+		condition = "レースを6ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5399,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU19"
+		}
+	}
+	pg.base.memory_template[5400] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU20",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "エナジー補給コーナー",
+		condition = "レースを7ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5400,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU20"
+		}
+	}
+	pg.base.memory_template[5401] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU21",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "キラキラレースアイドル",
+		condition = "レースを8ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5401,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU21"
+		}
+	}
+	pg.base.memory_template[5402] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "BINHAIJISU22",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "汝だけの褒賞を",
+		condition = "レースを10ラップ完了する",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5402,
+		icon = "memory_binhaijisu2",
+		is_open = 0,
+		unlock_pre = {
+			"BINHAIJISU22"
+		}
+	}
 	pg.base.memory_template[10000] = {
 		ship_group = 0,
 		subtitle = "",
@@ -80727,6 +82076,8 @@ end)()
 			"CHANGDAO7"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[10018] = {
 		ship_group = 0,
 		subtitle = "",
@@ -82005,8 +83356,6 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA8"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20008] = {
 		ship_group = 0,
 		subtitle = "",
@@ -82529,6 +83878,8 @@ end)()
 			"LINGHANGYUANYANGCHENGJIHUA37"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20037] = {
 		ship_group = 0,
 		subtitle = "",
@@ -83807,8 +85158,6 @@ end)()
 			"LINGYANGZHEYANGCHENGJIHUA27"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20108] = {
 		ship_group = 0,
 		subtitle = "",
@@ -84331,6 +85680,8 @@ end)()
 			"LINGYANGZHEXINZHIXUYU9"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20138] = {
 		ship_group = 0,
 		subtitle = "",
@@ -85609,8 +86960,6 @@ end)()
 			"TANSUOZHELAIFANGJISHI4"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20210] = {
 		ship_group = 0,
 		subtitle = "",

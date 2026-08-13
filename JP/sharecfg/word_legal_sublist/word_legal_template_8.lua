@@ -7,6 +7,41 @@ var_0_0.word_legal_template_8 = {}
 local var_0_1 = var_0_0.word_legal_template_8
 
 function temp()
+	var_0_1.ゴ = {
+		リ = {
+			ツ = {
+				ィ = {
+					ア = {
+						this = true
+					}
+				}
+			}
+		},
+		ー = {
+			ル = {
+				デ = {
+					ン = {
+						・ = {
+							ハ = {
+								イ = {
+									ン = {
+										ド = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.ム = {
 		ル = {
 			マ = {
@@ -554,36 +589,6 @@ function temp()
 		睦 = {
 			号 = {
 				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.基 = {
-		洛 = {
-			夫 = {
-				· = {
-					M = {
-						E = {
-							T = {
-								A = {
-									（ = {
-										后 = {
-											排 = {
-												） = {
-													this = true
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
 			}
 		}
 	}

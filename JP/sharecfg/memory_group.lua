@@ -279,6 +279,8 @@ pg.memory_group.all = {
 	369,
 	370,
 	373,
+	374,
+	375,
 	501,
 	502,
 	503,
@@ -562,7 +564,10 @@ pg.base.memory_group = {}
 			3803,
 			4581,
 			4582,
-			4583
+			4583,
+			5371,
+			5372,
+			5373
 		}
 	}
 	pg.base.memory_group[99] = {
@@ -7421,6 +7426,100 @@ end)()
 			5311
 		}
 	}
+	pg.base.memory_group[374] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 51101,
+		title = "夢光のアストリウム",
+		auto_unlock = "",
+		subtype = 1,
+		id = 374,
+		icon = "title_event",
+		memories = {
+			5321,
+			5322,
+			5323,
+			5324,
+			5325,
+			5326,
+			5327,
+			5328,
+			5329,
+			5330,
+			5331,
+			5332,
+			5333,
+			5334,
+			5335,
+			5336,
+			5337,
+			5338,
+			5339,
+			5340,
+			5341,
+			5342,
+			5343,
+			5344,
+			5345,
+			5346,
+			5347,
+			5348,
+			5349,
+			5350,
+			5351,
+			5352,
+			5353,
+			5354,
+			5355,
+			5356,
+			5357,
+			5358,
+			5359,
+			5360,
+			5361,
+			5362,
+			5363,
+			5364,
+			5365,
+			5366
+		}
+	}
+	pg.base.memory_group[375] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 51113,
+		title = "フラッシュウェーブ：サマーレース",
+		auto_unlock = "",
+		subtype = 3,
+		id = 375,
+		icon = "title_event",
+		memories = {
+			5381,
+			5382,
+			5383,
+			5384,
+			5385,
+			5386,
+			5387,
+			5388,
+			5389,
+			5390,
+			5391,
+			5392,
+			5393,
+			5394,
+			5395,
+			5396,
+			5397,
+			5398,
+			5399,
+			5400,
+			5401,
+			5402
+		}
+	}
 	pg.base.memory_group[501] = {
 		ship_group = 31201,
 		group_id = "",
@@ -7938,6 +8037,8 @@ end)()
 			10000
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[525] = {
 		ship_group = 30109,
 		subtype = 0,
@@ -7982,8 +8083,6 @@ end)()
 			10000
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[527] = {
 		ship_group = 10212,
 		subtype = 0,
@@ -10140,6 +10239,8 @@ end)()
 			10000
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[1000] = {
 		ship_group = 0,
 		group_id = "",
@@ -10218,8 +10319,6 @@ end)()
 			20051
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[1002] = {
 		ship_group = 0,
 		group_id = "",
