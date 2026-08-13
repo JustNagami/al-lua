@@ -104038,7 +104038,6 @@ _G.pg.base.ship_skin_template[207122] = {
 	l2d_se = "",
 	lip_smoothing = 0,
 	lip_sync_gain = 0,
-	live2d_offset_profile = "",
 	lover_hand = "hand_1_02",
 	lover_kiss = "lip03",
 	main_UI_FX = "",
@@ -104068,10 +104067,10 @@ _G.pg.base.ship_skin_template[207122] = {
 		2,
 	},
 	live2d_offset = {
-		0,
+		35,
 		-68,
 		0,
-		76.43,
+		80,
 	},
 	shop_offset = {
 		0,
@@ -104084,6 +104083,12 @@ _G.pg.base.ship_skin_template[207122] = {
 		-68,
 		0,
 		74,
+	},
+	live2d_offset_profile = {
+		26,
+		-13,
+		0,
+		67.5,
 	},
 	fx_container = {
 		{
