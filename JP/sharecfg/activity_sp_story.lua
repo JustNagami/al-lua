@@ -9744,7 +9744,7 @@ end)()
 	}
 	pg.base.activity_sp_story[492] = {
 		story_type = 1,
-		name = "EP3-2 EP3-2",
+		name = "EP3-2 セキュリティ専門家 ",
 		label_key = "",
 		unlock_conditions = "EP3-1をクリア",
 		change_prefab = "",

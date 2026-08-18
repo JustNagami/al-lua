@@ -22,7 +22,7 @@
 			side = 2,
 			bgName = "star_level_bg_186",
 			hidePaintObj = true,
-			say = "$2のメンバーはパドックエリアに集まり、本戦に向けた最後の準備を始めていた。",
+			say = "{car2026}のメンバーはパドックエリアに集まり、本戦に向けた最後の準備を始めていた。",
 			bgm = "story-cardrive-stand",
 			typewriter = {
 				speed = 0.05,

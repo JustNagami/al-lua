@@ -467,7 +467,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actorName = "ル・マラン",
+			actorName = "オゾルノイ",
 			say = "（コメント）一般体験枠？本気なの？",
 			typewriter = {
 				speed = 0.05,
@@ -576,7 +576,7 @@
 			hidePaintObj = true,
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actorName = "ル・マラン",
+			actorName = "オゾルノイ",
 			say = "（コメント）お疲れさん",
 			typewriter = {
 				speed = 0.05,

@@ -57,7 +57,7 @@
 			dir = 1,
 			nameColor = "#A9F548FF",
 			actor = 107201,
-			say = "Hi――指揮官！ペニントンのチャンネルへおかえり♪",
+			say = "Hi――指揮官！ベニントンのチャンネルへおかえり♪",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
