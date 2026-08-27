@@ -130998,6 +130998,108 @@ _G.pg.base.equip_data_statistics[80662] = {
 	},
 	hidden_skill_id = {},
 }
+_G.pg.base.equip_data_statistics[80701] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 80701,
+	name = "专属弹幕-天津风I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 1,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		171121,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+_G.pg.base.equip_data_statistics[80702] = {
+	base = 80701,
+	id = 80702,
+	name = "专属弹幕-天津风II",
+	weapon_id = {
+		171122,
+	},
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[80703] = {
+	ammo = 10,
+	descrip = "技能弹幕",
+	icon = "1",
+	id = 80703,
+	name = "专属弹幕-天津风I",
+	nationality = 0,
+	rarity = 1,
+	speciality = "<[NA]>",
+	tech = 1,
+	torpedo_ammo = 0,
+	type = 5,
+	value_1 = "0",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {},
+	weapon_id = {
+		171123,
+	},
+	skill_id = {},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+		19,
+		20,
+		21,
+	},
+	part_sub = {
+		2,
+		3,
+		4,
+		5,
+		8,
+		13,
+		18,
+	},
+	equip_parameters = {},
+	label = {},
+}
+_G.pg.base.equip_data_statistics[80704] = {
+	base = 80703,
+	id = 80704,
+	name = "专属弹幕-天津风II",
+	weapon_id = {
+		171124,
+	},
+	hidden_skill_id = {},
+}
 _G.pg.base.equip_data_statistics[80681] = {
 	ammo = 10,
 	descrip = "技能弹幕",
@@ -166537,6 +166639,124 @@ _G.pg.base.equip_data_statistics[151233] = {
 	id = 151233,
 	value_1 = "640",
 	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151240] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	attribute_2 = "luck",
+	descrip = "说的也是啊，风也该听我的话，不是吗？",
+	icon = "151240",
+	id = 151240,
+	name = "天风袋",
+	nationality = 3,
+	rarity = 5,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "140",
+	value_2 = 1,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61140,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {
+		1,
+	},
+	part_sub = {
+		1,
+	},
+	equip_parameters = {},
+	label = {
+		"IJN",
+		"DEV",
+	},
+}
+_G.pg.base.equip_data_statistics[151241] = {
+	base = 151240,
+	id = 151241,
+	value_1 = "161",
+}
+_G.pg.base.equip_data_statistics[151242] = {
+	base = 151240,
+	id = 151242,
+	value_1 = "182",
+}
+_G.pg.base.equip_data_statistics[151243] = {
+	base = 151240,
+	id = 151243,
+	value_1 = "203",
+}
+_G.pg.base.equip_data_statistics[151244] = {
+	base = 151240,
+	id = 151244,
+	value_1 = "224",
+}
+_G.pg.base.equip_data_statistics[151245] = {
+	base = 151240,
+	id = 151245,
+	value_1 = "245",
+}
+_G.pg.base.equip_data_statistics[151246] = {
+	base = 151240,
+	id = 151246,
+	value_1 = "266",
+}
+_G.pg.base.equip_data_statistics[151247] = {
+	base = 151240,
+	id = 151247,
+	value_1 = "287",
+	value_2 = 2,
+}
+_G.pg.base.equip_data_statistics[151248] = {
+	base = 151240,
+	id = 151248,
+	value_1 = "308",
+	value_2 = 2,
+}
+_G.pg.base.equip_data_statistics[151249] = {
+	base = 151240,
+	id = 151249,
+	value_1 = "329",
+	value_2 = 2,
+}
+_G.pg.base.equip_data_statistics[151250] = {
+	base = 151240,
+	id = 151250,
+	value_1 = "350",
+	value_2 = 2,
+}
+_G.pg.base.equip_data_statistics[151251] = {
+	anti_siren = 100,
+	base = 151240,
+	id = 151251,
+	value_1 = "370",
+	value_2 = 3,
+}
+_G.pg.base.equip_data_statistics[151252] = {
+	anti_siren = 200,
+	base = 151240,
+	id = 151252,
+	value_1 = "390",
+	value_2 = 3,
+}
+_G.pg.base.equip_data_statistics[151253] = {
+	anti_siren = 300,
+	base = 151240,
+	id = 151253,
+	value_1 = "410",
+	value_2 = 3,
 }
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,

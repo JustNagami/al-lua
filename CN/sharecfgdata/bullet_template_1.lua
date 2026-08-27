@@ -814220,6 +814220,7 @@ _G.pg.base.bullet_template_1[3069401] = {
 	attach_buff = {},
 	extra_param = {
 		dontRotate = true,
+		ignoreShield = true,
 	},
 }
 _G.pg.base.bullet_template_1[3069402] = {
@@ -814293,6 +814294,7 @@ _G.pg.base.bullet_template_1[3069402] = {
 	attach_buff = {},
 	extra_param = {
 		dontRotate = true,
+		ignoreShield = true,
 	},
 }
 _G.pg.base.bullet_template_1[3069403] = {
@@ -815269,6 +815271,7 @@ _G.pg.base.bullet_template_1[3069417] = {
 	attach_buff = {},
 	extra_param = {
 		dontRotate = true,
+		ignoreShield = true,
 	},
 }
 _G.pg.base.bullet_template_1[3069418] = {
@@ -815981,6 +815984,7 @@ _G.pg.base.bullet_template_1[3069429] = {
 	attach_buff = {},
 	extra_param = {
 		dontRotate = true,
+		ignoreShield = true,
 	},
 }
 _G.pg.base.bullet_template_1[3069430] = {

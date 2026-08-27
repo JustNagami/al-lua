@@ -348297,7 +348297,7 @@ _G.pg.base.chapter_template[1960052] = {
 }
 _G.pg.base.chapter_template[1970001] = {
 	ItemTransformPattern = "",
-	act_id = 50181,
+	act_id = 51601,
 	air_dominance = 50,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -349038,7 +349038,7 @@ _G.pg.base.chapter_template[1970001] = {
 }
 _G.pg.base.chapter_template[1970002] = {
 	ItemTransformPattern = "",
-	act_id = 50181,
+	act_id = 51601,
 	air_dominance = 295,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -349772,7 +349772,7 @@ _G.pg.base.chapter_template[1970002] = {
 }
 _G.pg.base.chapter_template[1970003] = {
 	ItemTransformPattern = "",
-	act_id = 50181,
+	act_id = 51601,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -350562,7 +350562,7 @@ _G.pg.base.chapter_template[1970003] = {
 }
 _G.pg.base.chapter_template[1970004] = {
 	ItemTransformPattern = "",
-	act_id = 50181,
+	act_id = 51601,
 	air_dominance = 600,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -351345,7 +351345,7 @@ _G.pg.base.chapter_template[1970004] = {
 }
 _G.pg.base.chapter_template[1970005] = {
 	ItemTransformPattern = "",
-	act_id = 50181,
+	act_id = 51601,
 	air_dominance = 600,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -352133,7 +352133,7 @@ _G.pg.base.chapter_template[1970005] = {
 }
 _G.pg.base.chapter_template[1970006] = {
 	ItemTransformPattern = "",
-	act_id = 50181,
+	act_id = 51601,
 	air_dominance = 600,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -352910,7 +352910,7 @@ _G.pg.base.chapter_template[1970006] = {
 }
 _G.pg.base.chapter_template[1970041] = {
 	ItemTransformPattern = "",
-	act_id = 50181,
+	act_id = 51601,
 	air_dominance = 1320,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -353732,7 +353732,7 @@ _G.pg.base.chapter_template[1970041] = {
 }
 _G.pg.base.chapter_template[1970051] = {
 	ItemTransformPattern = "",
-	act_id = 50181,
+	act_id = 51601,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -354091,7 +354091,7 @@ _G.pg.base.chapter_template[1970051] = {
 }
 _G.pg.base.chapter_template[1970052] = {
 	ItemTransformPattern = "",
-	act_id = 50181,
+	act_id = 51601,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
