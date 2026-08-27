@@ -155,26 +155,6 @@ end
 temp()
 
 function temp()
-	var_0_1.贝 = {
-		尔 = {
-			法 = {
-				斯 = {
-					特 = {
-						["."] = {
-							改 = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.ケ = {
 		ン = {
 			ト = {
@@ -679,6 +659,16 @@ function temp()
 					}
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.松 = {
+		風 = {
+			this = true
 		}
 	}
 end
