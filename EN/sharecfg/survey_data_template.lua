@@ -266,7 +266,7 @@ pg.base.survey_data_template = {}
 		uo_url = "",
 		id = 1016,
 		name = "Survey",
-		main_url = "https://survey.yostar.net/vm/hLuG1AD.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
+		main_url = "https://survey.yostar.net/vm/hLuG1AD.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6",
 		main_activity = "381451700",
 		ios_activity = "",
 		uo_activity = "",
