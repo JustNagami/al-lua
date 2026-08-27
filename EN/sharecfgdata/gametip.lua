@@ -3205,6 +3205,9 @@ _G.pg.base.gametip.levelScene_activate_remaster = {
 _G.pg.base.gametip.levelScene_activate_remaster_1 = {
 	tip = "Unlocking this stage requires <color=#ffde38>$1 Data Key(s)</color>.\nWould you like to unlock this stage?",
 }
+_G.pg.base.gametip.levelScene_activate_remaster_auto = {
+	tip = "Unlocking this stage requires <color=#ffde38>$1 Data Key(s)</color>.\nWould you like to unlock this stage?",
+}
 _G.pg.base.gametip.levelScene_remaster_tickets_not_enough = {
 	tip = "You do not have enough Data Keys.",
 }
@@ -7994,13 +7997,13 @@ _G.pg.base.gametip.buildship_new_tip = {
 	tip = "Rate UP for Bennington, Vicksburg, and more!",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Kursk and Sevastopol added to standard build pool!",
+	tip = "Alvitr added to standard build pool!",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Voroshilov added to standard build pool!",
+	tip = "Z47 added to standard build pool!",
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Bismarck Zwei, U-556 META added to standard build pool!",
+	tip = "U-31 added to standard build pool!",
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -8722,6 +8725,12 @@ _G.pg.base.gametip.tag_level_oni = {
 _G.pg.base.gametip.tag_level_bomb = {
 	tip = "英系轰炸",
 }
+_G.pg.base.gametip.tag_level_autoing = {
+	tip = "Delegated",
+}
+_G.pg.base.gametip.tag_level_auto_finish = {
+	tip = "Completed",
+}
 _G.pg.base.gametip.ui_word_levelui2_inevent = {
 	tip = "In action",
 }
@@ -8812,22 +8821,22 @@ _G.pg.base.gametip.world_boss_help = {
 			info = "<color=#92fc63>- Overview -</color>",
 		},
 		{
-			info = "During the Spring Auction Adventure event, your goal is to accumulate <color=#92fc63>Contribution Points (CPts)</color> which will progress the mission and can be used to claim both individual rewards and milestone rewards.\n",
+			info = "During the Big Shot's Proclamation event, your goal is to accumulate <color=#92fc63>Exquisitely Tasteful Red Ribbon (CPts)</color> which will progress the mission and can be used to claim both individual rewards and milestone rewards.\n",
 		},
 		{
-			info = "During the event period, you will play on a special stage and face off against an opposing exercise fleet.\nAll Commanders on the same server will need to work together by gathering CPts and <color=#92fc63>lowering the progress gauge to 0%</color> in order to complete the mission.\nOnce the mission is completed, all players who participated will be rewarded with a special piece of gear sent to their Mailbox.\nPlease be aware that you will not be able to claim this reward if your Mailbox is completely full.\n<color=#92fc63>Note that you can still earn CPts through the event stage even once the progress gauge has hit 0%.</color>\n",
+			info = "During the event period, you will play on a special stage and face off against an opposing exercise fleet.\nAll Commanders on the same server will need to work together by gathering CPts and <color=#92fc63>lowering the progress gauge to 0%</color> in order to complete the mission.\nOnce the mission is completed, all players who participated will be rewarded with a special piece of gear sent to their Mailbox.\nBe aware that you will not be able to claim this reward if your Mailbox is completely full.\n<color=#92fc63>Note that you can still earn CPts through the event stage even once the progress gauge has hit 0%.</color>\n",
 		},
 		{
-			info = "<color=#92fc63>- Contribution Points Info -</color>\n1. You earn Contribution Points by clearing the Special Stage.\n2. The progress gauge is affected by the total number of CPts earned by all Commanders on your server.\n3. Once the progress bar hits <color=#92fc63>0%</color>, the mission is complete. Note that each server's progress bar is independent of the others.\n4. You can claim rewards from the event banner by collecting a lot of CPts.\n",
+			info = "<color=#92fc63>- Contribution Points Info -</color>\n1. You earn Contribution Points by clearing the Special Stage.\n2. The progress gauge is affected by the total number of CPts earned by all Commanders on your server.\n3. Once the progress bar hits <color=#92fc63>0%</color>, the mission is complete. Note that each server's progress bar is independent of the others.\n4. You can claim nice rewards from the event banner by collecting a lot of CPts.\n",
 		},
 		{
-			info = "<color=#92fc63>- Event Stage Info -</color>\n1. The event stage can be played on 4 difficulty modes: <color=#92fc63>Easy</color>, <color=#92fc63>Normal</color>, <color=#92fc63>Hard</color>, and <color=#92fc63>EX</color>.\n2. You earn a <color=#92fc63>fixed amount</color> of CPts from the first 3 difficulties, but the amount of CPts and which rewards you receive on <color=#92fc63>EX difficulty</color> are based on how much damage you dealt during the battle.\n3. The event stage uses a <color=#92fc63>different fleet composition</color> to regular maps. You can change its formation beforehand.\n4. <color=#92fc63>Oil</color> will be consumed when you sortie for and win on the event stage. When you complete the map, you receive <color=#92fc63>EXP</color> and <color=#92fc63>clear rewards</color> as per usual, and Morale changes will take effect.\n· Note that the EX difficulty also imposes a <color=#92fc63>60-second time limit</color>. Your EX difficulty run concludes when you run out of time, when you defeat the boss, or when your Flagship sinks.\n· Shipgirls do not suffer a Morale penalty from being sunk on the event stage.\n5. You can deploy <color=#92fc63>a Submarine Fleet</color> and <color=#92fc63>Meowfficers</color> on EX difficulty. Calling in your Submarine Fleet during a battle will cost Oil.\n6. You can play on Easy, Normal, and Hard difficulty <color=#92fc63>as much as you like</color>, but you will need to spend a <color=#92fc63>Bonus Ticket</color> each time you wish to do a run on <color=#92fc63>EX difficulty</color>.\n",
+			info = "<color=#92fc63>- Event Stage Info -</color>\n1. The event stage can be played on 4 difficulty modes: <color=#92fc63>Easy</color>, <color=#92fc63>Normal</color>, <color=#92fc63>Hard</color>, and <color=#92fc63>EX</color>.\n2. You earn a <color=#92fc63>fixed amount</color> of CPts from the first 3 difficulties, but the amount of CPts and which rewards you receive on <color=#92fc63>EX difficulty</color> are based on how much damage you dealt during the battle.\n3. The event stage uses a <color=#92fc63>different fleet composition</color> from regular maps. You can change its formation beforehand.\n4. <color=#92fc63>Oil</color> will be consumed when you sortie for and win on the event stage. When you complete the map, you receive <color=#92fc63>EXP</color> and <color=#92fc63>clear rewards</color> as per usual, and Morale changes will take effect.\n· Note that the EX difficulty also imposes a <color=#92fc63>60-second time limit</color>. Your EX difficulty run concludes when you run out of time, when you defeat the boss, or when your Flagship sinks.\n· Shipgirls do not suffer a Morale penalty from being sunk on the event stage.\n5. You can deploy <color=#92fc63>a Submarine Fleet</color> and <color=#92fc63>Meowfficers</color> on EX difficulty. Calling in your Submarine Fleet during a battle will cost Oil.\n6. You can play on Easy, Normal, and Hard difficulty <color=#92fc63>as much as you like</color>, but you will need to spend a <color=#92fc63>Bonus Ticket</color> each time you wish to do a run on <color=#92fc63>EX difficulty</color>.\n",
 		},
 		{
 			info = "<color=#92fc63>- Reward Sorties and Bonus Tickets Info -</color>\n1. Your first <color=#92fc63>15 battles</color> on Easy, Normal, or Hard difficulty of each day are treated as <color=#92fc63>Reward Sorties</color>, which will give you better clear rewards than usual.\n2. If you've <color=#92fc63>used up</color> your 15 daily Reward Sorties, you can use <color=#92fc63>Bonus Tickets</color> to gain access to more Reward Sorties.\n3. <color=#92fc63>Bonus Tickets</color> are also used to gain access to EX difficulty.\n4. <color=#92fc63>Bonus Tickets</color> can be acquired through <color=#92fc63>missions</color> available during the event period.\n",
 		},
 		{
-			info = "<color=#ff5c5c>- Miscellaneous Info -</color>\n1. If you abort an EX difficulty run partway through, your Bonus Ticket will still be consumed, <color=#ff5c5c>but you will not receive any rewards or CPts</color>.\n2. It is recommended to play the game on <color=#92fc63>Manual Mode</color> when doing a run on EX difficulty.\n3. You can do practice runs of EX mode from the Formation screen. Practice runs do not cost Bonus Tickets or Oil, and do not affect your shipgirls' Morale, but they do not award EXP or rewards either. \n4. A Reward Sortie will <color=#92fc63>not be deducted from your daily 15</color> if you choose to abort a run partway through on Easy, Normal, or Hard difficulty.\n5. We urge you to keep an eye on your shipgirls' Morale and Affinity and to not sortie too much. <color=#92fc63>Please be considerate!</color>\n6. The number of clears required for any given server to complete the event will differ based on the combined user data of that server.",
+			info = "<color=#ff5c5c>- Miscellaneous Info -</color>\n1. If you abort an EX difficulty run partway through, your Bonus Ticket will still be consumed, <color=#ff5c5c>but you will not receive any rewards or CPts</color>.\n2. We recommend you play the game on <color=#92fc63>Manual Mode</color> when doing a run on EX difficulty.\n3. You can do practice runs of EX mode from the Formation screen. Practice runs do not cost Bonus Tickets or Oil, and do not affect your shipgirls' Morale, but they do not award EXP or rewards either. \n4. A Reward Sortie will <color=#92fc63>not be deducted from your daily 15</color> if you choose to abort a run partway through on Easy, Normal, or Hard difficulty.\n5. We urge you to keep an eye on your shipgirls' Morale and Affinity and to not sortie too much. <color=#92fc63>Please be considerate!</color>\n6. The number of clears required for any given server to complete the event will differ based on the combined user data of that server.",
 		},
 	},
 }
@@ -8843,7 +8852,7 @@ _G.pg.base.gametip.backyard_is_loading = {
 _G.pg.base.gametip.levelScene_loop_help_tip = {
 	tip = {
 		{
-			info = "Upon reaching 100% completion for a given stage, you may choose to enable <color=#92fc63>Clearing Mode</color> for it.\n\nEnabling Clearing Mode affects a stage in the following ways: \n\n1. A maximum Fuel cost limit is added. If the combined Fuel cost of entering a battle with your surface fleets and submarine fleets would exceed this limit, your Fuel cost is automatically reduced to the limit's maximum. This limit is only active while Clearing Mode is enabled.\n2. On Hard Mode stages, enemy escort fleets <color=#92fc63>will not appear</color>.\n3. On Event stages, some changes will be made to the configurations of enemy fleets.\n4. On event stages, <color=#92fc63>movement restrictions</color> will be lifted, allowing you to move your fleets freely.\n5. On normal stages, <color=#92fc63>ambushes and air raids will no longer occur</color>.\n6. <color=#92fc63>Fleet Formation Lock</color> will be enabled.\n7. <color=#92fc63>Auto-Search Mode</color> will be enabled.\n\n <color=#92fc63>Auto-Search Mode</color> Details:\n1. <color=#92fc63>Auto-Search Mode</color> can only be enabled in Clearing Mode, and will be automatically activated the first time you enter a stage in Clearing Mode.\n2.When Auto-Search Mode is enabled, <color=#92fc63>Auto Combat</color> and <color=#92fc63>Fleet Lock</color> will automatically be enabled as well. Auto Submarine will not be automatically enabled and depends on your personal settings.\n3.After enabling Auto-Search, you may change 4 settings on the fleet selection interface. The settings are as follows:①<color=#92fc63>Escorts Only</color>: This fleet will only engage escort fleets. When set, the other fleet will automatically be set to engage the enemy boss fleet.\n②<color=#92fc63>Flagship Only</color>: When the enemy flagship fleet spawns, this fleet will automatically move to engage it. When set, the other fleet will automatically be set to engage enemy escort fleets.\n③<color=#92fc63>All Enemies</color>: This fleet will engage enemy escort fleets until the flagship fleet spawns, then engage the enemy flagship. When set, the other fleet will automatically be set to standby.\n④<color=#92fc63>Standby</color>: This fleet will not be used to engage enemies. When set, the other fleet will automatically be set to engage all enemies.\n When Auto-Search is enabled, if there is an <color=#92fc63>Elite Enemy</color> present on the battlefield, that fleet will be prioritized. If there is no Elite Enemy present, your fleets will attempt to engage the <color=#92fc63>closest available enemy</color>. When the enemy flagship fleet appears, your fleets will prioritize attacking the <color=#92fc63>enemy flagship</color>.",
+			info = "Upon reaching 100% completion for a given stage, you may choose to enable <color=#92fc63>Clearing Mode</color> for it.\n\nEnabling Clearing Mode affects a stage in the following ways: \n\n1. A maximum Oil cost limit is added. If the combined Oil cost of entering a battle with your surface fleets and submarine fleets would exceed this limit, your Oil cost is automatically reduced to the limit's maximum. This limit is only active while Clearing Mode is enabled.\n2. On Hard Mode stages, enemy escort fleets <color=#92fc63>will not appear</color>.\n3. On Event stages, some changes will be made to the configurations of enemy fleets.\n4. On event stages, <color=#92fc63>movement restrictions</color> will be lifted, allowing you to move your fleets freely.\n5. On normal stages, <color=#92fc63>ambushes and air raids will no longer occur</color>.\n6. <color=#92fc63>Fleet Formation Lock</color> will be enabled.\n7. <color=#92fc63>Auto-Search Mode</color> will be enabled.\n\n <color=#92fc63>Auto-Search Mode</color> Details:\n1. <color=#92fc63>Auto-Search Mode</color> can only be enabled in Clearing Mode, and will be automatically activated the first time you enter a stage in Clearing Mode.\n2.When Auto-Search Mode is enabled, <color=#92fc63>Auto Combat</color> and <color=#92fc63>Fleet Lock</color> will automatically be enabled as well. Auto Submarine will not be automatically enabled and depends on your personal settings.\n3.After enabling Auto-Search, you may change 4 settings on the fleet selection interface. The settings are as follows:①<color=#92fc63>Escorts Only</color>: This fleet will only engage escort fleets. When set, the other fleet will automatically be set to engage the enemy boss fleet.\n②<color=#92fc63>Flagship Only</color>: When the enemy flagship fleet spawns, this fleet will automatically move to engage it. When set, the other fleet will automatically be set to engage enemy escort fleets.\n③<color=#92fc63>All Enemies</color>: This fleet will engage enemy escort fleets until the flagship fleet spawns, then engage the enemy flagship. When set, the other fleet will automatically be set to standby.\n④<color=#92fc63>Standby</color>: This fleet will not be used to engage enemies. When set, the other fleet will automatically be set to engage all enemies.\n When Auto-Search is enabled, if there is an <color=#92fc63>Elite Enemy</color> present on the battlefield, that fleet will be prioritized. If there is no Elite Enemy present, your fleets will attempt to engage the <color=#92fc63>closest available enemy</color>. When the enemy flagship fleet appears, your fleets will prioritize attacking the <color=#92fc63>enemy flagship</color>.'\n\n<color=#92fc63>Operational Handover</color>:\n\nThe Operational Handover feature allows you to automatically complete stages that you have already cleared, receiving Handover rewards after a period of time. Operational Handover will continue <color=#92fc63>even when you are not logged in</color>.\n1. To unlock Handover on a stage, you must <color=#92fc63>clear it on Auto-Repeat one time, without interruption</color>.\n2. The time required for one Handover mission will be based on <color=#92fc63>your fastest uninterrupted Auto-Repeat clear</color> of that stage (<color=#92fc63>excludes time spent firing Main Fleet volleys</color>).\n3. The maximum time you may spend on Operational Handovers daily is <color=#92fc63>8 hours</color>. You may not perform a Handover if you do not have any remaining time required for it. When a Handover is performed, it will <color=#92fc63>consume the amount of time equal to its length</color>. Once per day, you may perform a Handover that is <color=#92fc63>longer than your time remaining</color>. Time will be restored every day at <color=#92fc63>midnight</color>.\n4. When Operational Handover is in progress, you may not sortie to <color=#92fc63>Campaign stages, Event stages, or War Archive stages</color>.\n5. Operational Handover only yields Lecture Hall Proficiency. However, <color=#92fc63>if you use a Handover Permit</color>, you can receive additional rewards.",
 		},
 	},
 }
@@ -20833,6 +20842,9 @@ _G.pg.base.gametip.main_silent_tip_5 = {
 _G.pg.base.gametip.main_silent_tip_6 = {
 	tip = "There are assignments available.",
 }
+_G.pg.base.gametip.main_silent_tip_7 = {
+	tip = "The Operational Handover is complete.",
+}
 _G.pg.base.gametip.commission_label_go = {
 	tip = "Confirm",
 }
@@ -20850,6 +20862,9 @@ _G.pg.base.gametip.commission_label_unlock_event_tip = {
 }
 _G.pg.base.gametip.commission_label_unlock_tech_tip = {
 	tip = "Unlocks at Commander Level 30",
+}
+_G.pg.base.gametip.commission_label_unlock_auto_tip = {
+	tip = "Unlocks upon clearing main campaign 1-3.",
 }
 _G.pg.base.gametip.specialshipyard_tip = {
 	tip = "* META shipgirls go into your special dock and do not take up regular dock space.",
@@ -30514,5 +30529,183 @@ _G.pg.base.gametip.LeMarsReSkinPage_reward_title = {
 }
 _G.pg.base.gametip.LeMarsReSkinPage_reward_target = {
 	tip = "Total Oil Spent:",
+}
+_G.pg.base.gametip.event_worldboss_0827_title = {
+	tip = "Joint Operation",
+}
+_G.pg.base.gametip.event_worldboss_0827_title_en = {
+	tip = "Joint Operation",
+}
+_G.pg.base.gametip.auto_battle_unlock_tip = {
+	tip = "Unlocks upon clearing main campaign 1-3.",
+}
+_G.pg.base.gametip.auto_chapter_unlock_tip = {
+	tip = "Clear on Auto-Repeat 1 time to unlock.",
+}
+_G.pg.base.gametip.auto_battle_headline = {
+	tip = "Operational Handover",
+}
+_G.pg.base.gametip.auto_battle_headline_en = {
+	tip = "Operational Handover",
+}
+_G.pg.base.gametip.auto_battle_book_day = {
+	tip = "$1 day(s)",
+}
+_G.pg.base.gametip.auto_battle_book_hour = {
+	tip = "$1 hour(s)",
+}
+_G.pg.base.gametip.auto_battle_cnt = {
+	tip = "Number of Sorties",
+}
+_G.pg.base.gametip.auto_battle_dec_en = {
+	tip = "HANDOVER.",
+}
+_G.pg.base.gametip.auto_battle_time_limit_reached = {
+	tip = "Insufficient time remaining.",
+}
+_G.pg.base.gametip.auto_battle_cnt_book = {
+	tip = "Use Handover Permit",
+}
+_G.pg.base.gametip.auto_battle_book_max_reached = {
+	tip = "Insufficient Handover Permits.",
+}
+_G.pg.base.gametip.auto_battle_book_times_reached = {
+	tip = "Handover limit reached.",
+}
+_G.pg.base.gametip.auto_battle_time_left = {
+	tip = "Time required:",
+}
+_G.pg.base.gametip.auto_battle_cost_time = {
+	tip = "Time remaining:",
+}
+_G.pg.base.gametip.auto_battle_cost_extra = {
+	tip = "Estimated additional costs:",
+}
+_G.pg.base.gametip.auto_battle_cost_oil = {
+	tip = "<color=#92fc63><icon name=oil w=0.7 h=0.7/>Oil x$1</color>",
+}
+_G.pg.base.gametip.auto_battle_cost_book = {
+	tip = "<color=#92fc63><icon name=weituo w=0.7 h=0.7/>Handover Permit x$1</color>",
+}
+_G.pg.base.gametip.auto_battle_add_time = {
+	tip = "Add Handover Time",
+}
+_G.pg.base.gametip.auto_battle_base_loot = {
+	tip = "Handover Rewards",
+}
+_G.pg.base.gametip.auto_battle_class_exp_head = {
+	tip = "Lecture Hall Proficiency",
+}
+_G.pg.base.gametip.auto_battle_extra_loot = {
+	tip = "Additional Rewards",
+}
+_G.pg.base.gametip.auto_battle_extra_loot_lock = {
+	tip = "Receive bonus items from Operational Handover by using a Handover Permit.",
+}
+_G.pg.base.gametip.auto_battle_oil_store_tip = {
+	tip = "<color=#92fc63><icon name=oil w=0.7 h=0.7/>$1</color> Oil refunded for the next Handover.",
+}
+_G.pg.base.gametip.auto_battle_confirm_button = {
+	tip = "Sortie",
+}
+_G.pg.base.gametip.auto_battle_times_zero = {
+	tip = "Please select a number of sorties.",
+}
+_G.pg.base.gametip.auto_battle_start_tips = {
+	tip = "Begin Handover",
+}
+_G.pg.base.gametip.auto_battle_not_enough_resource = {
+	tip = "Cannot start due to insufficient resources.",
+}
+_G.pg.base.gametip.auto_battle_base_exp_warning = {
+	tip = "Lecture Hall Proficiency gained beyond the limit will be lost. Continue?",
+}
+_G.pg.base.gametip.auto_battle_info_tips = {
+	tip = "*Performing Operational Handover will generate Lecture Hall Proficiency. You may use a Handover Permit to gain additional rewards.\n*The time consumed by a single Handover is equivalent to the shortest amount of time needed to complete an uninterrupted Auto-Repeat sortie with Auto Combat enabled (excludes time spent firing Main Fleet volleys)",
+}
+_G.pg.base.gametip.auto_battle_time_add_headline = {
+	tip = "Info",
+}
+_G.pg.base.gametip.auto_battle_time_add_headline_en = {
+	tip = "INFORM",
+}
+_G.pg.base.gametip.auto_battle_time_add_info = {
+	tip = "Handover Time Remaining: <color=#ffffff>$1</color> + <color=#92fc63>$2</color>",
+}
+_G.pg.base.gametip.auto_battle_time_add_item_lack = {
+	tip = "Insufficient items.",
+}
+_G.pg.base.gametip.auto_battle_time_add_cancel = {
+	tip = "Cancel",
+}
+_G.pg.base.gametip.auto_battle_time_add_confirm = {
+	tip = "Confirm",
+}
+_G.pg.base.gametip.auto_battle_time_add_zero_item = {
+	tip = "Select items to use.",
+}
+_G.pg.base.gametip.auto_battle_time_add_success = {
+	tip = "Handover time added.",
+}
+_G.pg.base.gametip.auto_battle_ing_headline = {
+	tip = "Handover in Progress",
+}
+_G.pg.base.gametip.auto_battle_ing_time = {
+	tip = "Time Remaining: <color=#92fc63>$1</color>",
+}
+_G.pg.base.gametip.auto_battle_ing_cnt = {
+	tip = "Completed: <color=#92fc63>$1/$2</color>",
+}
+_G.pg.base.gametip.auto_battle_ing_base_loot = {
+	tip = "Rewards Per Sortie",
+}
+_G.pg.base.gametip.auto_battle_ing_stop = {
+	tip = "Terminate",
+}
+_G.pg.base.gametip.auto_battle_ing_finish = {
+	tip = "Claim Rewards",
+}
+_G.pg.base.gametip.auto_battle_ing_stop_tips = {
+	tip = "Would you like to terminate the handover? You will receive rewards for completed runs, and unused items will be returned. Refunded Oil will be stored for future Handovers.",
+}
+_G.pg.base.gametip.auto_battle_drop_book_expired = {
+	tip = "The refunded Handover Permit(s) will expire. Do you still want to terminate it?",
+}
+_G.pg.base.gametip.auto_battle_drop_classEXP_overflow = {
+	tip = "Lecture Hall Proficiency gained beyond the limit will be wasted. Continue?",
+}
+_G.pg.base.gametip.auto_battle_drop_bookEXP_overflow = {
+	tip = "$1 T1 EXP Data Pack(s) beyond the limit will be wasted. Continue?",
+}
+_G.pg.base.gametip.auto_battle_stop = {
+	tip = "Operational Handover has been terminated.",
+}
+_G.pg.base.gametip.auto_battle_finish = {
+	tip = "Operational Handover has completed.",
+}
+_G.pg.base.gametip.auto_battle_end_exp = {
+	tip = "Received <color=#92fc63>$1</color> Lecture Hall Proficiency.",
+}
+_G.pg.base.gametip.auto_battle_end_status = {
+	tip = "Expected clears: <color=#92fc63>$1</color>. Actual clears: <color=#92fc63>$2</color>.",
+}
+_G.pg.base.gametip.auto_battle_book_expire_warning = {
+	tip = "x$1 expiring soon.",
+}
+_G.pg.base.gametip.auto_drop_is_activation = {
+	tip = "Operational Handover for stage <color=#92fc63>$1</color> is in progress. Please wait for it to be completed.",
+}
+_G.pg.base.gametip.auto_drop_is_activation_cancle = {
+	tip = "Cancel",
+}
+_G.pg.base.gametip.auto_drop_is_activation_go = {
+	tip = "View Handover",
+}
+_G.pg.base.gametip.auto_battle_help = {
+	tip = {
+		{
+			info = "<color=#92fc63>Operational Handover</color>:\n\nThe Operational Handover feature allows you to automatically complete stages that you have already cleared, receiving Handover rewards after a period of time. Operational Handover will continue <color=#92fc63>even when you are not logged in</color>.\n1. To unlock Handover on a stage, you must <color=#92fc63>clear it on Auto-Repeat one time, without interruption</color>.\n2. The time required for one Handover mission will be based on <color=#92fc63>your fastest uninterrupted Auto-Repeat clear</color> of that stage (<color=#92fc63>excludes time spent firing Main Fleet volleys</color>).\n3. The maximum time you may spend on Operational Handovers daily is <color=#92fc63>8 hours</color>. You may not perform a Handover if you do not have any remaining time required for it. When a Handover is performed, it will <color=#92fc63>consume the amount of time equal to its length</color>. Once per day, you may perform a Handover that is <color=#92fc63>longer than your time remaining</color>. Time will be restored every day at <color=#92fc63>midnight</color>.\n4. When Operational Handover is in progress, you may not sortie to <color=#92fc63>Campaign stages, Event stages, or War Archive stages</color>.\n5. Operational Handover only yields Lecture Hall Proficiency. However, <color=#92fc63>if you use a Handover Permit</color>, you can receive additional rewards.\n\n<color=#92fc63>Handover Permits</color>:\n\n1. Using a Handover Permit will allow you to receive <color=#92fc63>additional rewards from Operational Handover</color>. Handover Permits can be obtained through means such as <color=#92fc63>daily missions</color>.\n2. Using a Handover Permit will also <color=#92fc63>consume Oil</color>.\n3. Additional rewards from Handover Permits will be based on <color=#92fc63>each stage's clear rewards</color>, including <color=#92fc63>shipgirls, Coins, supplies, and other items</color>.\n4. Stages completed through the usage of a Handover Permit will <color=#92fc63>progress relevant missions</color> normally.\n5. Stages completed through the usage of a Handover Permit have a chance to create <color=#92fc63>Urgent Commissions</color> (up to 1 per stage).\n6. Handover Permits may also be used to <color=#92fc63>add more Handover time</color> to your daily limit. Each permit can be exchanged for <color=#92fc63>1 hour</color> of additional time.",
+		},
+	},
 }
 

@@ -5967,6 +5967,70 @@ _G.pg.base.bullet_template_2[168361] = {
 		},
 	},
 }
+_G.pg.base.bullet_template_2[168394] = {
+	alert_fx = "TorAlert",
+	ammo_type = 4,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "TorpedoHit3",
+	hit_sfx = "battle/torpedo-hit",
+	id = 168394,
+	miss_fx = "",
+	miss_sfx = "",
+	modle_ID = "Torpedo01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 20,
+	type = 3,
+	velocity = 3,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			3,
+			0.8,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.3,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 3,
+		time = -1,
+	},
+	attach_buff = {
+		{
+			buff_id = 152757,
+			rant = 10000,
+		},
+	},
+	extra_param = {
+		diveFilter = {
+			2,
+		},
+	},
+}
 _G.pg.base.bullet_template_2[168369] = {
 	alert_fx = "AlertArea",
 	ammo_type = 6,
@@ -7608,6 +7672,117 @@ _G.pg.base.bullet_template_2[171041] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {},
+}
+_G.pg.base.bullet_template_2[171054] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "pofang",
+	hit_sfx = "battle/hit",
+	id = 171054,
+	miss_fx = "ShellMiss",
+	miss_sfx = "battle/sink",
+	modle_ID = "shenyuanbullet14",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 10,
+	type = 1,
+	velocity = 12,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
+}
+_G.pg.base.bullet_template_2[171055] = {
+	alert_fx = "TorAlert",
+	ammo_type = 4,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "TorpedoHit3",
+	hit_sfx = "battle/torpedo-hit",
+	id = 171055,
+	miss_fx = "",
+	miss_sfx = "",
+	modle_ID = "Torpedo01",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 20,
+	type = 3,
+	velocity = 4,
+	damage_type = {
+		0.8,
+		1,
+		1.3,
+	},
+	DMG_font = {
+		{
+			3,
+			0.8,
+		},
+		{
+			3,
+			1,
+		},
+		{
+			3,
+			1.3,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		1.8,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 3,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		diveFilter = {
+			2,
+		},
+	},
 }
 _G.pg.base.bullet_template_2[171051] = {
 	alert_fx = "",

@@ -7,56 +7,6 @@ var_0_0.word_legal_template_9 = {}
 local var_0_1 = var_0_0.word_legal_template_9
 
 function temp()
-	var_0_1.若 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.檚 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.桎 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.椋 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.杪 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.藤 = {
 		this = {
 			this = true
@@ -305,6 +255,66 @@ temp()
 
 function temp()
 	var_0_1.犹 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.猅 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.狘 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.獌 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.狏 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.狳 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.犰 = {
 		this = {
 			this = true
 		}

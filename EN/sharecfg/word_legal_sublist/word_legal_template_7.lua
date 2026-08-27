@@ -7,49 +7,6 @@ var_0_0.word_legal_template_7 = {}
 local var_0_1 = var_0_0.word_legal_template_7
 
 function temp()
-	var_0_1.不 = {
-		挠 = {
-			this = true
-		},
-		屈 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.恐 = {
-		怖 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.桐 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.杉 = {
-		this = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.梧 = {
 		this = {
 			this = true
@@ -186,6 +143,16 @@ end
 temp()
 
 function temp()
+	var_0_1.菡 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.苓 = {
 		this = {
 			this = true
@@ -309,6 +276,46 @@ temp()
 
 function temp()
 	var_0_1.樟 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.楙 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.杌 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.橗 = {
+		this = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.枨 = {
 		this = {
 			this = true
 		}
