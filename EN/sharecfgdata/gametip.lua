@@ -30621,7 +30621,7 @@ _G.pg.base.gametip.auto_battle_base_exp_warning = {
 	tip = "Lecture Hall Proficiency gained beyond the limit will be lost. Continue?",
 }
 _G.pg.base.gametip.auto_battle_info_tips = {
-	tip = "*Performing Operational Handover will generate Lecture Hall Proficiency. You may use a Handover Permit to gain additional rewards.\n*The time consumed by a single Handover is equivalent to the shortest amount of time needed to complete an uninterrupted Auto-Repeat sortie with Auto Combat enabled (excludes time spent firing Main Fleet volleys)",
+	tip = "*Performing Operational Handover will generate Lecture Hall Proficiency. You may use a Handover Permit to gain additional rewards.\n*The time consumed by a single Handover is equivalent to the shortest amount of time needed to complete an uninterrupted Auto-Repeat \nsortie with Auto Combat enabled (excludes time spent firing Main Fleet volleys)",
 }
 _G.pg.base.gametip.auto_battle_time_add_headline = {
 	tip = "Info",
