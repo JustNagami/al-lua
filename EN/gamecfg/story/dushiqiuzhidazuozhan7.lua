@@ -426,7 +426,7 @@
 			hidePaintObj = true,
 			side = 2,
 			portrait = "zhihuiguan",
-			say = "Location confirmed. Please stay calm and remain where you are. Repeat my name: $1.",
+			say = "Location confirmed. Please stay calm and remain where you are. Repeat my name: {playername}.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

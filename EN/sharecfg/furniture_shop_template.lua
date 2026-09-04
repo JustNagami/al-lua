@@ -3538,7 +3538,7 @@ pg.base.furniture_shop_template = {}
 		dorm_icon_price = 80,
 		not_for_sale = 0,
 		discount = 0,
-		new = 1,
+		new = -1,
 		discount_time = "",
 		time = {
 			{
