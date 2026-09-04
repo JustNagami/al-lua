@@ -40461,13 +40461,13 @@ end)()
 		config_client = {
 			id = 2,
 			bg = "loadingbg/bg_build_2_act",
-			buildship_tip = "{namecode:23} 建造概率UP！",
+			buildship_tip = "「天津風」出現確率UP！",
 			rate_tip = {
-				"<color=#ffde38>超稀有舰船</color>：7%",
-				"<color=#d797ff>精锐舰船</color>：12%",
-				"<color=#3dc6ff>稀有舰船</color>：26%",
-				"普通舰船：55%",
-				"<color=#ffde38>{namecode:23}</color>：2.0%<color=#92FC63>(up!)</color>"
+				"<color=#ffde38>SSレア</color>：7%",
+				"<color=#d797ff>Sレア</color>：12%",
+				"<color=#3dc6ff>レア</color>：26%",
+				"ノーマル：55%",
+				"<color=#ffde38>天津風</color>：2.0%<color=#92FC63>(up!)</color>"
 			}
 		}
 	}
