@@ -7336,7 +7336,7 @@ _G.pg.base.weapon_name[53493] = {
 }
 _G.pg.base.weapon_name[53500] = {
 	id = 53500,
-	name = "2 x 爆弾（反跳爆撃）",
+	name = "3 x 爆弾（反跳爆撃）",
 }
 _G.pg.base.weapon_name[53501] = {
 	base = 53500,

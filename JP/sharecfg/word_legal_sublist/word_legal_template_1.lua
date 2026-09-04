@@ -1781,7 +1781,20 @@ function temp()
 		ラ = {
 			ト = {
 				ガ = {
-					this = true
+					this = true,
+					["("] = {
+						M = {
+							E = {
+								T = {
+									A = {
+										[")"] = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			},
 			ァ = {

@@ -25,7 +25,8 @@ pg.world_joint_boss_template.all = {
 	20,
 	21,
 	22,
-	23
+	23,
+	24
 }
 pg.base = pg.base or {}
 pg.base.world_joint_boss_template = {}
@@ -607,7 +608,7 @@ pg.base.world_joint_boss_template = {}
 		}
 	}
 	pg.base.world_joint_boss_template[18] = {
-		state = "stop",
+		state = "always",
 		name = "ホーネット(META)",
 		painting = "dahuangfeng",
 		boss_level_id = 256,
@@ -835,6 +836,64 @@ pg.base.world_joint_boss_template = {}
 		p_offset_other = {
 			261,
 			495,
+			0.7,
+			0.7
+		}
+	}
+	pg.base.world_joint_boss_template[24] = {
+		item_id = 100000,
+		name = "サラトガ(META)",
+		painting = "salatuojia",
+		boss_level_id = 346,
+		id = 24,
+		meta_id = 970710,
+		description = {
+			{
+				"パニッシュ★フロムスカイ",
+				3,
+				"戦闘中、軌道兵器による支援が出現します：\n1.大規模な長距離砲撃\n2.大規模な航空兵器支援\n3.目標ロックオン（8秒間、味方<color=#92fc63>前衛艦隊戦闘の艦船が受けるダメージが100%アップ</color>。この効果は15秒に1度しか発動できない）"
+			},
+			{
+				"チェンジ★バトルミュージック",
+				1,
+				"サラトガ(META)の装甲タイプは25秒毎に<color=#92fc63>中装甲/重装甲に切り替わる</color>（右上に装甲タイプ変更のカウントダウンが出現する・戦闘開始時は中装甲）。装甲タイプが切り替わる度に、艦載機による航空攻撃を繰り出す。"
+			}
+		},
+		state = {
+			{
+				{
+					2026,
+					9,
+					4
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					12,
+					10
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		p_offset = {
+			-392,
+			483,
+			0.7,
+			0.7
+		},
+		p_offset_other = {
+			261,
+			523,
 			0.7,
 			0.7
 		}
