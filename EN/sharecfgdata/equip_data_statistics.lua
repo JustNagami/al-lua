@@ -166788,6 +166788,110 @@ _G.pg.base.equip_data_statistics[151253] = {
 	value_1 = "410",
 	value_2 = 3,
 }
+_G.pg.base.equip_data_statistics[151260] = {
+	ammo = 10,
+	attribute_1 = "durability",
+	descrip = "Please, Commander! You're the nicest person in the world, so... please give me a job!",
+	icon = "151260",
+	id = 151260,
+	name = "Staff Pass",
+	nationality = 0,
+	rarity = 4,
+	speciality = "<[NA]>",
+	tech = 0,
+	torpedo_ammo = 0,
+	type = 10,
+	value_1 = "200",
+	value_2 = 0,
+	value_3 = 0,
+	property_rate = {},
+	ammo_icon = {},
+	ammo_info = {},
+	equip_info = {
+		6,
+	},
+	weapon_id = {},
+	skill_id = {
+		{
+			61150,
+			1,
+		},
+	},
+	hidden_skill_id = {},
+	part_main = {},
+	part_sub = {},
+	equip_parameters = {},
+	label = {
+		"DEV",
+	},
+}
+_G.pg.base.equip_data_statistics[151261] = {
+	base = 151260,
+	id = 151261,
+	value_1 = "230",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151262] = {
+	base = 151260,
+	id = 151262,
+	value_1 = "260",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151263] = {
+	base = 151260,
+	id = 151263,
+	value_1 = "290",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151264] = {
+	base = 151260,
+	id = 151264,
+	value_1 = "320",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151265] = {
+	base = 151260,
+	id = 151265,
+	value_1 = "350",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151266] = {
+	base = 151260,
+	id = 151266,
+	value_1 = "380",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151267] = {
+	base = 151260,
+	id = 151267,
+	value_1 = "410",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151268] = {
+	base = 151260,
+	id = 151268,
+	value_1 = "440",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151269] = {
+	base = 151260,
+	id = 151269,
+	value_1 = "470",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151270] = {
+	base = 151260,
+	id = 151270,
+	value_1 = "500",
+	hidden_skill_id = {},
+}
+_G.pg.base.equip_data_statistics[151271] = {
+	anti_siren = 100,
+	base = 151260,
+	id = 151271,
+	value_1 = "530",
+	hidden_skill_id = {},
+}
 _G.pg.base.equip_data_statistics[170001] = {
 	ammo = 10,
 	descrip = "Barrage",
