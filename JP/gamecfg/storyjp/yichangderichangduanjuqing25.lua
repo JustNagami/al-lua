@@ -4,10 +4,11 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
+			actor = 205162,
 			side = 2,
-			say = "ライオンと一緒に路地をパトロールしていると、ふいに夜風が吹き抜け、彼女は手で顔を覆った。",
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
+			say = "ライオンと一緒に路地をパトロールしていると、ふいに夜風が吹き抜け、彼女は手で顔を覆った。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

@@ -1169,12 +1169,11 @@
 			}
 		},
 		{
-			expression = 5,
+			actor = 201210,
 			side = 2,
 			bgName = "star_level_bg_496",
 			factiontag = "新人エージェント",
 			dir = 1,
-			actor = 201210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "……どうなってるんですか！？",

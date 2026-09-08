@@ -2,9 +2,10 @@
 	id = "Reflux",
 	events = {
 		{
+			alpha = 0.4,
 			is3dDorm = false,
 			delay = 0.6,
-			alpha = 0.4,
+			forceDormLine = true,
 			style = {
 				text = "バナーをタップし気になるコンテンツをチェック！",
 				mode = 2,
@@ -30,6 +31,7 @@
 		{
 			is3dDorm = false,
 			alpha = 0.4,
+			forceDormLine = true,
 			style = {
 				text = "ここで開催中のイベントを確認できるわ！",
 				mode = 2,
@@ -55,6 +57,7 @@
 		{
 			is3dDorm = false,
 			alpha = 0.4,
+			forceDormLine = true,
 			style = {
 				text = "艦隊を出撃させ、報酬を手に入れましょう！",
 				mode = 2,

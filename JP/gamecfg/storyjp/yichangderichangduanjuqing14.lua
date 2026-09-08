@@ -40,12 +40,12 @@
 			},
 			options = {
 				{
-					content = "まだ少し慣れないな",
-					flag = 1
-				},
-				{
 					content = "怖くない",
 					flag = 2
+				},
+				{
+					content = "まだ少し慣れないな",
+					flag = 1
 				}
 			}
 		},

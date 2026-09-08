@@ -28,12 +28,12 @@
 			},
 			options = {
 				{
-					content = "いいね",
-					flag = 2
-				},
-				{
 					content = "さすがにドキドキするよ",
 					flag = 1
+				},
+				{
+					content = "いいね",
+					flag = 2
 				}
 			}
 		},

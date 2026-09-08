@@ -20290,6 +20290,7 @@ end)()
 			"painting/xianghe_4_tex",
 			"painting/xianghe_4_rw_tex",
 			"painting/xianghe_4_n_rw_tex",
+			"painting/xianghe_4_n_bj_tex",
 			"painting/xianghe_4_n",
 			"painting/xianghe_4_bj_tex",
 			"painting/xianghe_4"
