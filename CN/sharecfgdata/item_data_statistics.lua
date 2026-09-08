@@ -7944,6 +7944,35 @@ _G.pg.base.item_data_statistics[11058] = {
 	combination_display = {},
 	limit = {},
 }
+_G.pg.base.item_data_statistics[11059] = {
+	compose_number = 0,
+	display = "双联装152mm主炮Mk.XXVIT3设计图",
+	display_effect = "",
+	icon = "Equips/22300",
+	id = 11059,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "双联装152mm主炮Mk.XXVIT3设计图",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 9,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
 _G.pg.base.item_data_statistics[12000] = {
 	compose_number = 0,
 	display = "九三式纯氧鱼雷T3设计图",
@@ -15921,6 +15950,35 @@ _G.pg.base.item_data_statistics[21064] = {
 	link_id = 0,
 	max_num = 0,
 	name = "结晶：萨拉托加·META",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 4,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[21065] = {
+	compose_number = 0,
+	display = "胜利·META的专用性能提升装置，可在「META研究室」-「能量激活」中使用。",
+	display_effect = "",
+	icon = "Props/21065",
+	id = 21065,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "结晶：胜利·META",
 	open_directly = 0,
 	order = 0,
 	other_item_cost = "[]",
@@ -29248,6 +29306,129 @@ _G.pg.base.item_data_statistics[30387] = {
 		{
 			9,
 			4437,
+			1,
+		},
+	},
+	price = {
+		1,
+		7000,
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[30388] = {
+	compose_number = 0,
+	display = "可以获得一件随机的幽影奇谈风格外观装备",
+	display_effect = "",
+	icon = "Props/appearanceboxdushiguaitan",
+	id = 30388,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "外观装备箱(幽影奇谈)",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 11,
+	usage = "usage_drop",
+	usage_arg = "30385",
+	virtual_type = 0,
+	display_icon = {
+		{
+			9,
+			4438,
+			1,
+		},
+		{
+			9,
+			4439,
+			1,
+		},
+		{
+			9,
+			4440,
+			1,
+		},
+		{
+			9,
+			4441,
+			1,
+		},
+		{
+			9,
+			4442,
+			1,
+		},
+		{
+			9,
+			4443,
+			1,
+		},
+		{
+			9,
+			4444,
+			1,
+		},
+		{
+			9,
+			4445,
+			1,
+		},
+		{
+			9,
+			4446,
+			1,
+		},
+		{
+			9,
+			4447,
+			1,
+		},
+		{
+			9,
+			4448,
+			1,
+		},
+		{
+			9,
+			4449,
+			1,
+		},
+		{
+			9,
+			4450,
+			1,
+		},
+		{
+			9,
+			4451,
+			1,
+		},
+		{
+			9,
+			4452,
+			1,
+		},
+		{
+			9,
+			4453,
+			1,
+		},
+		{
+			9,
+			4454,
+			1,
+		},
+		{
+			9,
+			4455,
 			1,
 		},
 	},
@@ -46047,6 +46228,217 @@ _G.pg.base.item_data_statistics[30571] = {
 	},
 	limit = {},
 }
+_G.pg.base.item_data_statistics[30572] = {
+	compose_number = 0,
+	display = "使用后可从「幽影奇谈」主题外观装备中任意选择一种获得1个",
+	display_effect = "",
+	icon = "Props/appearanceboxdushiguaitanzixuan",
+	id = 30572,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "定向外观装备箱(幽影奇谈)",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 13,
+	usage = "usage_drop_appointed",
+	virtual_type = 0,
+	display_icon = {
+		{
+			9,
+			4438,
+			1,
+		},
+		{
+			9,
+			4439,
+			1,
+		},
+		{
+			9,
+			4440,
+			1,
+		},
+		{
+			9,
+			4441,
+			1,
+		},
+		{
+			9,
+			4442,
+			1,
+		},
+		{
+			9,
+			4443,
+			1,
+		},
+		{
+			9,
+			4444,
+			1,
+		},
+		{
+			9,
+			4445,
+			1,
+		},
+		{
+			9,
+			4446,
+			1,
+		},
+		{
+			9,
+			4447,
+			1,
+		},
+		{
+			9,
+			4448,
+			1,
+		},
+		{
+			9,
+			4449,
+			1,
+		},
+		{
+			9,
+			4450,
+			1,
+		},
+		{
+			9,
+			4451,
+			1,
+		},
+		{
+			9,
+			4452,
+			1,
+		},
+		{
+			9,
+			4453,
+			1,
+		},
+		{
+			9,
+			4454,
+			1,
+		},
+		{
+			9,
+			4455,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			9,
+			4438,
+			1,
+		},
+		{
+			9,
+			4439,
+			1,
+		},
+		{
+			9,
+			4440,
+			1,
+		},
+		{
+			9,
+			4441,
+			1,
+		},
+		{
+			9,
+			4442,
+			1,
+		},
+		{
+			9,
+			4443,
+			1,
+		},
+		{
+			9,
+			4444,
+			1,
+		},
+		{
+			9,
+			4445,
+			1,
+		},
+		{
+			9,
+			4446,
+			1,
+		},
+		{
+			9,
+			4447,
+			1,
+		},
+		{
+			9,
+			4448,
+			1,
+		},
+		{
+			9,
+			4449,
+			1,
+		},
+		{
+			9,
+			4450,
+			1,
+		},
+		{
+			9,
+			4451,
+			1,
+		},
+		{
+			9,
+			4452,
+			1,
+		},
+		{
+			9,
+			4453,
+			1,
+		},
+		{
+			9,
+			4454,
+			1,
+		},
+		{
+			9,
+			4455,
+			1,
+		},
+	},
+	limit = {},
+}
 _G.pg.base.item_data_statistics[30900] = {
 	compose_number = 0,
 	display = "使用后可从T4部件中任意选择一种获得1个",
@@ -51181,6 +51573,86 @@ _G.pg.base.item_data_statistics[40088] = {
 			2,
 			42050,
 			343,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[40089] = {
+	compose_number = 0,
+	display = "购买礼包可获得战斗界面主题 烛影镜台*1,1000物资",
+	display_effect = "OpenBox",
+	icon = "ChargeIcon/ui11",
+	id = 40089,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "烛影镜台主题礼包(基础版)",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "4089",
+	virtual_type = 0,
+	display_icon = {
+		{
+			31,
+			210,
+			1,
+		},
+		{
+			1,
+			1,
+			1000,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[40090] = {
+	compose_number = 0,
+	display = "购买礼包可获得战斗界面主题 烛影镜台*1,3060钻石",
+	display_effect = "OpenBox",
+	icon = "ChargeIcon/ui11",
+	id = 40090,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "烛影镜台主题礼包(豪华版)",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "4090",
+	virtual_type = 0,
+	display_icon = {
+		{
+			31,
+			210,
+			1,
+		},
+		{
+			1,
+			14,
+			3060,
 		},
 	},
 	price = {},
@@ -106423,7 +106895,7 @@ _G.pg.base.item_data_statistics[59720] = {
 }
 _G.pg.base.item_data_statistics[59721] = {
 	compose_number = 0,
-	display = "由{namecode:524}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:524}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59721,
@@ -106452,7 +106924,7 @@ _G.pg.base.item_data_statistics[59721] = {
 }
 _G.pg.base.item_data_statistics[59722] = {
 	compose_number = 0,
-	display = "由贝尔法斯特赠与的，作为宴会邀约的回礼",
+	display = "由贝尔法斯特赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59722,
@@ -106481,7 +106953,7 @@ _G.pg.base.item_data_statistics[59722] = {
 }
 _G.pg.base.item_data_statistics[59723] = {
 	compose_number = 0,
-	display = "由{namecode:66}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:66}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59723,
@@ -106510,7 +106982,7 @@ _G.pg.base.item_data_statistics[59723] = {
 }
 _G.pg.base.item_data_statistics[59724] = {
 	compose_number = 0,
-	display = "由厌战赠与的，作为宴会邀约的回礼",
+	display = "由厌战赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59724,
@@ -106539,7 +107011,7 @@ _G.pg.base.item_data_statistics[59724] = {
 }
 _G.pg.base.item_data_statistics[59725] = {
 	compose_number = 0,
-	display = "由胡德赠与的，作为宴会邀约的回礼",
+	display = "由胡德赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59725,
@@ -106568,7 +107040,7 @@ _G.pg.base.item_data_statistics[59725] = {
 }
 _G.pg.base.item_data_statistics[59726] = {
 	compose_number = 0,
-	display = "由企业赠与的，作为宴会邀约的回礼",
+	display = "由企业赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59726,
@@ -106597,7 +107069,7 @@ _G.pg.base.item_data_statistics[59726] = {
 }
 _G.pg.base.item_data_statistics[59727] = {
 	compose_number = 0,
-	display = "由光辉赠与的，作为宴会邀约的回礼",
+	display = "由光辉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59727,
@@ -106626,7 +107098,7 @@ _G.pg.base.item_data_statistics[59727] = {
 }
 _G.pg.base.item_data_statistics[59728] = {
 	compose_number = 0,
-	display = "由威尔士亲王赠与的，作为宴会邀约的回礼",
+	display = "由威尔士亲王赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59728,
@@ -106655,7 +107127,7 @@ _G.pg.base.item_data_statistics[59728] = {
 }
 _G.pg.base.item_data_statistics[59729] = {
 	compose_number = 0,
-	display = "由{namecode:67}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:67}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59729,
@@ -107401,7 +107873,7 @@ _G.pg.base.item_data_statistics[59750] = {
 }
 _G.pg.base.item_data_statistics[59751] = {
 	compose_number = 0,
-	display = "由克利夫兰赠与的，作为共度平安夜的回礼",
+	display = "由克利夫兰赠予的，作为共度平安夜的回礼",
 	display_effect = "",
 	icon = "Props/shengye",
 	id = 59751,
@@ -107430,7 +107902,7 @@ _G.pg.base.item_data_statistics[59751] = {
 }
 _G.pg.base.item_data_statistics[59752] = {
 	compose_number = 0,
-	display = "由宁海赠与的，作为共度平安夜的回礼",
+	display = "由宁海赠予的，作为共度平安夜的回礼",
 	display_effect = "",
 	icon = "Props/shengye",
 	id = 59752,
@@ -107459,7 +107931,7 @@ _G.pg.base.item_data_statistics[59752] = {
 }
 _G.pg.base.item_data_statistics[59753] = {
 	compose_number = 0,
-	display = "由平海赠与的，作为共度平安夜的回礼",
+	display = "由平海赠予的，作为共度平安夜的回礼",
 	display_effect = "",
 	icon = "Props/shengye",
 	id = 59753,
@@ -107488,7 +107960,7 @@ _G.pg.base.item_data_statistics[59753] = {
 }
 _G.pg.base.item_data_statistics[59754] = {
 	compose_number = 0,
-	display = "由{namecode:2}赠与的，作为共度平安夜的回礼",
+	display = "由{namecode:2}赠予的，作为共度平安夜的回礼",
 	display_effect = "",
 	icon = "Props/shengye",
 	id = 59754,
@@ -107517,7 +107989,7 @@ _G.pg.base.item_data_statistics[59754] = {
 }
 _G.pg.base.item_data_statistics[59755] = {
 	compose_number = 0,
-	display = "由爱丁堡赠与的，作为共度平安夜的回礼",
+	display = "由爱丁堡赠予的，作为共度平安夜的回礼",
 	display_effect = "",
 	icon = "Props/shengye",
 	id = 59755,
@@ -109000,7 +109472,7 @@ _G.pg.base.item_data_statistics[59915] = {
 }
 _G.pg.base.item_data_statistics[59916] = {
 	compose_number = 0,
-	display = "由{namecode:524}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:524}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59916,
@@ -109029,7 +109501,7 @@ _G.pg.base.item_data_statistics[59916] = {
 }
 _G.pg.base.item_data_statistics[59917] = {
 	compose_number = 0,
-	display = "由贝尔法斯特赠与的，作为宴会邀约的回礼",
+	display = "由贝尔法斯特赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59917,
@@ -109058,7 +109530,7 @@ _G.pg.base.item_data_statistics[59917] = {
 }
 _G.pg.base.item_data_statistics[59918] = {
 	compose_number = 0,
-	display = "由{namecode:66}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:66}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59918,
@@ -109087,7 +109559,7 @@ _G.pg.base.item_data_statistics[59918] = {
 }
 _G.pg.base.item_data_statistics[59919] = {
 	compose_number = 0,
-	display = "由厌战赠与的，作为宴会邀约的回礼",
+	display = "由厌战赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59919,
@@ -109116,7 +109588,7 @@ _G.pg.base.item_data_statistics[59919] = {
 }
 _G.pg.base.item_data_statistics[59920] = {
 	compose_number = 0,
-	display = "由胡德赠与的，作为宴会邀约的回礼",
+	display = "由胡德赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59920,
@@ -109145,7 +109617,7 @@ _G.pg.base.item_data_statistics[59920] = {
 }
 _G.pg.base.item_data_statistics[59921] = {
 	compose_number = 0,
-	display = "由企业赠与的，作为宴会邀约的回礼",
+	display = "由企业赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59921,
@@ -109174,7 +109646,7 @@ _G.pg.base.item_data_statistics[59921] = {
 }
 _G.pg.base.item_data_statistics[59922] = {
 	compose_number = 0,
-	display = "由光辉赠与的，作为宴会邀约的回礼",
+	display = "由光辉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59922,
@@ -109203,7 +109675,7 @@ _G.pg.base.item_data_statistics[59922] = {
 }
 _G.pg.base.item_data_statistics[59923] = {
 	compose_number = 0,
-	display = "由威尔士亲王赠与的，作为宴会邀约的回礼",
+	display = "由威尔士亲王赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59923,
@@ -109232,7 +109704,7 @@ _G.pg.base.item_data_statistics[59923] = {
 }
 _G.pg.base.item_data_statistics[59924] = {
 	compose_number = 0,
-	display = "由{namecode:67}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:67}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 59924,
@@ -110488,7 +110960,7 @@ _G.pg.base.item_data_statistics[60047] = {
 }
 _G.pg.base.item_data_statistics[60048] = {
 	compose_number = 0,
-	display = "由天狼星赠与的，作为宴会邀约的回礼",
+	display = "由天狼星赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60048,
@@ -110517,7 +110989,7 @@ _G.pg.base.item_data_statistics[60048] = {
 }
 _G.pg.base.item_data_statistics[60049] = {
 	compose_number = 0,
-	display = "由贝尔法斯特赠与的，作为宴会邀约的回礼",
+	display = "由贝尔法斯特赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60049,
@@ -110546,7 +111018,7 @@ _G.pg.base.item_data_statistics[60049] = {
 }
 _G.pg.base.item_data_statistics[60050] = {
 	compose_number = 0,
-	display = "由胜利赠与的，作为宴会邀约的回礼",
+	display = "由胜利赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60050,
@@ -110575,7 +111047,7 @@ _G.pg.base.item_data_statistics[60050] = {
 }
 _G.pg.base.item_data_statistics[60051] = {
 	compose_number = 0,
-	display = "由厌战赠与的，作为宴会邀约的回礼",
+	display = "由厌战赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60051,
@@ -110604,7 +111076,7 @@ _G.pg.base.item_data_statistics[60051] = {
 }
 _G.pg.base.item_data_statistics[60052] = {
 	compose_number = 0,
-	display = "由胡德赠与的，作为宴会邀约的回礼",
+	display = "由胡德赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60052,
@@ -110633,7 +111105,7 @@ _G.pg.base.item_data_statistics[60052] = {
 }
 _G.pg.base.item_data_statistics[60053] = {
 	compose_number = 0,
-	display = "由企业赠与的，作为宴会邀约的回礼",
+	display = "由企业赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60053,
@@ -110662,7 +111134,7 @@ _G.pg.base.item_data_statistics[60053] = {
 }
 _G.pg.base.item_data_statistics[60054] = {
 	compose_number = 0,
-	display = "由光辉赠与的，作为宴会邀约的回礼",
+	display = "由光辉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60054,
@@ -110691,7 +111163,7 @@ _G.pg.base.item_data_statistics[60054] = {
 }
 _G.pg.base.item_data_statistics[60055] = {
 	compose_number = 0,
-	display = "由威尔士亲王赠与的，作为宴会邀约的回礼",
+	display = "由威尔士亲王赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60055,
@@ -110720,7 +111192,7 @@ _G.pg.base.item_data_statistics[60055] = {
 }
 _G.pg.base.item_data_statistics[60056] = {
 	compose_number = 0,
-	display = "由{namecode:67}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:67}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60056,
@@ -111109,7 +111581,7 @@ _G.pg.base.item_data_statistics[60087] = {
 }
 _G.pg.base.item_data_statistics[60088] = {
 	compose_number = 0,
-	display = "由恶毒赠与的，作为宴会邀约的回礼",
+	display = "由恶毒赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60088,
@@ -111138,7 +111610,7 @@ _G.pg.base.item_data_statistics[60088] = {
 }
 _G.pg.base.item_data_statistics[60089] = {
 	compose_number = 0,
-	display = "由贝尔法斯特赠与的，作为宴会邀约的回礼",
+	display = "由贝尔法斯特赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60089,
@@ -111167,7 +111639,7 @@ _G.pg.base.item_data_statistics[60089] = {
 }
 _G.pg.base.item_data_statistics[60090] = {
 	compose_number = 0,
-	display = "由光辉赠与的，作为宴会邀约的回礼",
+	display = "由光辉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60090,
@@ -111196,7 +111668,7 @@ _G.pg.base.item_data_statistics[60090] = {
 }
 _G.pg.base.item_data_statistics[60091] = {
 	compose_number = 0,
-	display = "由胡德赠与的，作为宴会邀约的回礼",
+	display = "由胡德赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60091,
@@ -111225,7 +111697,7 @@ _G.pg.base.item_data_statistics[60091] = {
 }
 _G.pg.base.item_data_statistics[60092] = {
 	compose_number = 0,
-	display = "由企业赠与的，作为宴会邀约的回礼",
+	display = "由企业赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60092,
@@ -111254,7 +111726,7 @@ _G.pg.base.item_data_statistics[60092] = {
 }
 _G.pg.base.item_data_statistics[60093] = {
 	compose_number = 0,
-	display = "由天狼星赠与的，作为宴会邀约的回礼",
+	display = "由天狼星赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60093,
@@ -111283,7 +111755,7 @@ _G.pg.base.item_data_statistics[60093] = {
 }
 _G.pg.base.item_data_statistics[60094] = {
 	compose_number = 0,
-	display = "由{namecode:95}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:95}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60094,
@@ -111312,7 +111784,7 @@ _G.pg.base.item_data_statistics[60094] = {
 }
 _G.pg.base.item_data_statistics[60095] = {
 	compose_number = 0,
-	display = "由{namecode:96}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:96}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60095,
@@ -111341,7 +111813,7 @@ _G.pg.base.item_data_statistics[60095] = {
 }
 _G.pg.base.item_data_statistics[60096] = {
 	compose_number = 0,
-	display = "由厌战赠与的，作为宴会邀约的回礼",
+	display = "由厌战赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60096,
@@ -112832,7 +113304,7 @@ _G.pg.base.item_data_statistics[60157] = {
 }
 _G.pg.base.item_data_statistics[60158] = {
 	compose_number = 0,
-	display = "由{namecode:67}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:67}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60158,
@@ -112861,7 +113333,7 @@ _G.pg.base.item_data_statistics[60158] = {
 }
 _G.pg.base.item_data_statistics[60159] = {
 	compose_number = 0,
-	display = "由蒙彼利埃赠与的，作为宴会邀约的回礼",
+	display = "由蒙彼利埃赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60159,
@@ -112890,7 +113362,7 @@ _G.pg.base.item_data_statistics[60159] = {
 }
 _G.pg.base.item_data_statistics[60160] = {
 	compose_number = 0,
-	display = "由{namecode:66}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:66}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60160,
@@ -112919,7 +113391,7 @@ _G.pg.base.item_data_statistics[60160] = {
 }
 _G.pg.base.item_data_statistics[60161] = {
 	compose_number = 0,
-	display = "由胡德赠与的，作为宴会邀约的回礼",
+	display = "由胡德赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60161,
@@ -112948,7 +113420,7 @@ _G.pg.base.item_data_statistics[60161] = {
 }
 _G.pg.base.item_data_statistics[60162] = {
 	compose_number = 0,
-	display = "由企业赠与的，作为宴会邀约的回礼",
+	display = "由企业赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60162,
@@ -112977,7 +113449,7 @@ _G.pg.base.item_data_statistics[60162] = {
 }
 _G.pg.base.item_data_statistics[60163] = {
 	compose_number = 0,
-	display = "由确捷赠与的，作为宴会邀约的回礼",
+	display = "由确捷赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60163,
@@ -113006,7 +113478,7 @@ _G.pg.base.item_data_statistics[60163] = {
 }
 _G.pg.base.item_data_statistics[60164] = {
 	compose_number = 0,
-	display = "由威尔士亲王赠与的，作为宴会邀约的回礼",
+	display = "由威尔士亲王赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60164,
@@ -113035,7 +113507,7 @@ _G.pg.base.item_data_statistics[60164] = {
 }
 _G.pg.base.item_data_statistics[60165] = {
 	compose_number = 0,
-	display = "由厌战赠与的，作为宴会邀约的回礼",
+	display = "由厌战赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60165,
@@ -113064,7 +113536,7 @@ _G.pg.base.item_data_statistics[60165] = {
 }
 _G.pg.base.item_data_statistics[60199] = {
 	compose_number = 0,
-	display = "由恶毒赠与的，作为宴会邀约的回礼",
+	display = "由恶毒赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60199,
@@ -113093,7 +113565,7 @@ _G.pg.base.item_data_statistics[60199] = {
 }
 _G.pg.base.item_data_statistics[60200] = {
 	compose_number = 0,
-	display = "由贝尔法斯特赠与的，作为宴会邀约的回礼",
+	display = "由贝尔法斯特赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60200,
@@ -113122,7 +113594,7 @@ _G.pg.base.item_data_statistics[60200] = {
 }
 _G.pg.base.item_data_statistics[60201] = {
 	compose_number = 0,
-	display = "由光辉赠与的，作为宴会邀约的回礼",
+	display = "由光辉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60201,
@@ -113151,7 +113623,7 @@ _G.pg.base.item_data_statistics[60201] = {
 }
 _G.pg.base.item_data_statistics[60202] = {
 	compose_number = 0,
-	display = "由胡德赠与的，作为宴会邀约的回礼",
+	display = "由胡德赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60202,
@@ -113180,7 +113652,7 @@ _G.pg.base.item_data_statistics[60202] = {
 }
 _G.pg.base.item_data_statistics[60203] = {
 	compose_number = 0,
-	display = "由企业赠与的，作为宴会邀约的回礼",
+	display = "由企业赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60203,
@@ -113209,7 +113681,7 @@ _G.pg.base.item_data_statistics[60203] = {
 }
 _G.pg.base.item_data_statistics[60204] = {
 	compose_number = 0,
-	display = "由天狼星赠与的，作为宴会邀约的回礼",
+	display = "由天狼星赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60204,
@@ -113238,7 +113710,7 @@ _G.pg.base.item_data_statistics[60204] = {
 }
 _G.pg.base.item_data_statistics[60205] = {
 	compose_number = 0,
-	display = "由{namecode:95}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:95}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60205,
@@ -113267,7 +113739,7 @@ _G.pg.base.item_data_statistics[60205] = {
 }
 _G.pg.base.item_data_statistics[60206] = {
 	compose_number = 0,
-	display = "由{namecode:96}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:96}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60206,
@@ -113296,7 +113768,7 @@ _G.pg.base.item_data_statistics[60206] = {
 }
 _G.pg.base.item_data_statistics[60207] = {
 	compose_number = 0,
-	display = "由厌战赠与的，作为宴会邀约的回礼",
+	display = "由厌战赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60207,
@@ -113898,7 +114370,7 @@ _G.pg.base.item_data_statistics[60235] = {
 }
 _G.pg.base.item_data_statistics[60236] = {
 	compose_number = 0,
-	display = "由{namecode:436}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:436}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60236,
@@ -113927,7 +114399,7 @@ _G.pg.base.item_data_statistics[60236] = {
 }
 _G.pg.base.item_data_statistics[60237] = {
 	compose_number = 0,
-	display = "由{namecode:437}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:437}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60237,
@@ -113956,7 +114428,7 @@ _G.pg.base.item_data_statistics[60237] = {
 }
 _G.pg.base.item_data_statistics[60238] = {
 	compose_number = 0,
-	display = "由华盛顿赠与的，作为宴会邀约的回礼",
+	display = "由华盛顿赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60238,
@@ -113985,7 +114457,7 @@ _G.pg.base.item_data_statistics[60238] = {
 }
 _G.pg.base.item_data_statistics[60239] = {
 	compose_number = 0,
-	display = "由胡德赠与的，作为宴会邀约的回礼",
+	display = "由胡德赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60239,
@@ -114014,7 +114486,7 @@ _G.pg.base.item_data_statistics[60239] = {
 }
 _G.pg.base.item_data_statistics[60240] = {
 	compose_number = 0,
-	display = "由{namecode:22}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:22}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60240,
@@ -114043,7 +114515,7 @@ _G.pg.base.item_data_statistics[60240] = {
 }
 _G.pg.base.item_data_statistics[60241] = {
 	compose_number = 0,
-	display = "由蒙彼利埃赠与的，作为宴会邀约的回礼",
+	display = "由蒙彼利埃赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60241,
@@ -114072,7 +114544,7 @@ _G.pg.base.item_data_statistics[60241] = {
 }
 _G.pg.base.item_data_statistics[60242] = {
 	compose_number = 0,
-	display = "由确捷赠与的，作为宴会邀约的回礼",
+	display = "由确捷赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60242,
@@ -114101,7 +114573,7 @@ _G.pg.base.item_data_statistics[60242] = {
 }
 _G.pg.base.item_data_statistics[60243] = {
 	compose_number = 0,
-	display = "由恶毒赠与的，作为宴会邀约的回礼",
+	display = "由恶毒赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60243,
@@ -114172,7 +114644,7 @@ _G.pg.base.item_data_statistics[60260] = {
 }
 _G.pg.base.item_data_statistics[60261] = {
 	compose_number = 0,
-	display = "由{namecode:74}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:74}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60261,
@@ -114201,7 +114673,7 @@ _G.pg.base.item_data_statistics[60261] = {
 }
 _G.pg.base.item_data_statistics[60262] = {
 	compose_number = 0,
-	display = "由{namecode:22}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:22}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60262,
@@ -114230,7 +114702,7 @@ _G.pg.base.item_data_statistics[60262] = {
 }
 _G.pg.base.item_data_statistics[60263] = {
 	compose_number = 0,
-	display = "由蒙彼利埃赠与的，作为宴会邀约的回礼",
+	display = "由蒙彼利埃赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60263,
@@ -114259,7 +114731,7 @@ _G.pg.base.item_data_statistics[60263] = {
 }
 _G.pg.base.item_data_statistics[60264] = {
 	compose_number = 0,
-	display = "由巴尔的摩赠与的，作为宴会邀约的回礼",
+	display = "由巴尔的摩赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60264,
@@ -114288,7 +114760,7 @@ _G.pg.base.item_data_statistics[60264] = {
 }
 _G.pg.base.item_data_statistics[60265] = {
 	compose_number = 0,
-	display = "由恶毒赠与的，作为宴会邀约的回礼",
+	display = "由恶毒赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60265,
@@ -114317,7 +114789,7 @@ _G.pg.base.item_data_statistics[60265] = {
 }
 _G.pg.base.item_data_statistics[60266] = {
 	compose_number = 0,
-	display = "由天狼星赠与的，作为宴会邀约的回礼",
+	display = "由天狼星赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60266,
@@ -114346,7 +114818,7 @@ _G.pg.base.item_data_statistics[60266] = {
 }
 _G.pg.base.item_data_statistics[60267] = {
 	compose_number = 0,
-	display = "由光辉赠与的，作为宴会邀约的回礼",
+	display = "由光辉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60267,
@@ -114375,7 +114847,7 @@ _G.pg.base.item_data_statistics[60267] = {
 }
 _G.pg.base.item_data_statistics[60268] = {
 	compose_number = 0,
-	display = "由{namecode:436}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:436}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60268,
@@ -114993,7 +115465,7 @@ _G.pg.base.item_data_statistics[60316] = {
 }
 _G.pg.base.item_data_statistics[60317] = {
 	compose_number = 0,
-	display = "由{namecode:97}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:97}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60317,
@@ -115022,7 +115494,7 @@ _G.pg.base.item_data_statistics[60317] = {
 }
 _G.pg.base.item_data_statistics[60318] = {
 	compose_number = 0,
-	display = "由{namecode:161}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:161}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60318,
@@ -115051,7 +115523,7 @@ _G.pg.base.item_data_statistics[60318] = {
 }
 _G.pg.base.item_data_statistics[60319] = {
 	compose_number = 0,
-	display = "由华盛顿赠与的，作为宴会邀约的回礼",
+	display = "由华盛顿赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60319,
@@ -115080,7 +115552,7 @@ _G.pg.base.item_data_statistics[60319] = {
 }
 _G.pg.base.item_data_statistics[60320] = {
 	compose_number = 0,
-	display = "由恰巴耶夫赠与的，作为宴会邀约的回礼",
+	display = "由恰巴耶夫赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60320,
@@ -115109,7 +115581,7 @@ _G.pg.base.item_data_statistics[60320] = {
 }
 _G.pg.base.item_data_statistics[60321] = {
 	compose_number = 0,
-	display = "由光辉赠与的，作为宴会邀约的回礼",
+	display = "由光辉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60321,
@@ -115138,7 +115610,7 @@ _G.pg.base.item_data_statistics[60321] = {
 }
 _G.pg.base.item_data_statistics[60322] = {
 	compose_number = 0,
-	display = "由{namecode:437}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:437}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60322,
@@ -115167,7 +115639,7 @@ _G.pg.base.item_data_statistics[60322] = {
 }
 _G.pg.base.item_data_statistics[60323] = {
 	compose_number = 0,
-	display = "由波拉赠与的，作为宴会邀约的回礼",
+	display = "由波拉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60323,
@@ -115196,7 +115668,7 @@ _G.pg.base.item_data_statistics[60323] = {
 }
 _G.pg.base.item_data_statistics[60324] = {
 	compose_number = 0,
-	display = "由恶毒赠与的，作为宴会邀约的回礼",
+	display = "由恶毒赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60324,
@@ -115267,7 +115739,7 @@ _G.pg.base.item_data_statistics[60423] = {
 }
 _G.pg.base.item_data_statistics[60424] = {
 	compose_number = 0,
-	display = "由巴尔的摩赠与的，作为宴会邀约的回礼",
+	display = "由巴尔的摩赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60424,
@@ -115296,7 +115768,7 @@ _G.pg.base.item_data_statistics[60424] = {
 }
 _G.pg.base.item_data_statistics[60425] = {
 	compose_number = 0,
-	display = "由布莱默顿赠与的，作为宴会邀约的回礼",
+	display = "由布莱默顿赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60425,
@@ -115325,7 +115797,7 @@ _G.pg.base.item_data_statistics[60425] = {
 }
 _G.pg.base.item_data_statistics[60426] = {
 	compose_number = 0,
-	display = "由威尔士亲王赠与的，作为宴会邀约的回礼",
+	display = "由威尔士亲王赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60426,
@@ -115354,7 +115826,7 @@ _G.pg.base.item_data_statistics[60426] = {
 }
 _G.pg.base.item_data_statistics[60427] = {
 	compose_number = 0,
-	display = "由黛朵赠与的，作为宴会邀约的回礼",
+	display = "由黛朵赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60427,
@@ -115383,7 +115855,7 @@ _G.pg.base.item_data_statistics[60427] = {
 }
 _G.pg.base.item_data_statistics[60428] = {
 	compose_number = 0,
-	display = "由可畏赠与的，作为宴会邀约的回礼",
+	display = "由可畏赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60428,
@@ -115412,7 +115884,7 @@ _G.pg.base.item_data_statistics[60428] = {
 }
 _G.pg.base.item_data_statistics[60429] = {
 	compose_number = 0,
-	display = "由{namecode:50}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:50}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60429,
@@ -115441,7 +115913,7 @@ _G.pg.base.item_data_statistics[60429] = {
 }
 _G.pg.base.item_data_statistics[60430] = {
 	compose_number = 0,
-	display = "由{namecode:74}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:74}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60430,
@@ -115470,7 +115942,7 @@ _G.pg.base.item_data_statistics[60430] = {
 }
 _G.pg.base.item_data_statistics[60431] = {
 	compose_number = 0,
-	display = "由{namecode:526}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:526}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60431,
@@ -116029,7 +116501,7 @@ _G.pg.base.item_data_statistics[60491] = {
 }
 _G.pg.base.item_data_statistics[60492] = {
 	compose_number = 0,
-	display = "由光辉赠与的，作为宴会邀约的回礼",
+	display = "由光辉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60492,
@@ -116058,7 +116530,7 @@ _G.pg.base.item_data_statistics[60492] = {
 }
 _G.pg.base.item_data_statistics[60493] = {
 	compose_number = 0,
-	display = "由{namecode:81}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:81}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60493,
@@ -116087,7 +116559,7 @@ _G.pg.base.item_data_statistics[60493] = {
 }
 _G.pg.base.item_data_statistics[60494] = {
 	compose_number = 0,
-	display = "由{namecode:161}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:161}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60494,
@@ -116116,7 +116588,7 @@ _G.pg.base.item_data_statistics[60494] = {
 }
 _G.pg.base.item_data_statistics[60495] = {
 	compose_number = 0,
-	display = "由天狼星赠与的，作为宴会邀约的回礼",
+	display = "由天狼星赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60495,
@@ -116145,7 +116617,7 @@ _G.pg.base.item_data_statistics[60495] = {
 }
 _G.pg.base.item_data_statistics[60496] = {
 	compose_number = 0,
-	display = "由恰巴耶夫赠与的，作为宴会邀约的回礼",
+	display = "由恰巴耶夫赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60496,
@@ -116174,7 +116646,7 @@ _G.pg.base.item_data_statistics[60496] = {
 }
 _G.pg.base.item_data_statistics[60497] = {
 	compose_number = 0,
-	display = "由塔什干赠与的，作为宴会邀约的回礼",
+	display = "由塔什干赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60497,
@@ -116203,7 +116675,7 @@ _G.pg.base.item_data_statistics[60497] = {
 }
 _G.pg.base.item_data_statistics[60498] = {
 	compose_number = 0,
-	display = "由{namecode:437}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:437}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60498,
@@ -116232,7 +116704,7 @@ _G.pg.base.item_data_statistics[60498] = {
 }
 _G.pg.base.item_data_statistics[60499] = {
 	compose_number = 0,
-	display = "由{namecode:453}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:453}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60499,
@@ -116303,7 +116775,7 @@ _G.pg.base.item_data_statistics[60510] = {
 }
 _G.pg.base.item_data_statistics[60511] = {
 	compose_number = 0,
-	display = "由贝尔法斯特赠与的，作为宴会邀约的回礼",
+	display = "由贝尔法斯特赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60511,
@@ -116332,7 +116804,7 @@ _G.pg.base.item_data_statistics[60511] = {
 }
 _G.pg.base.item_data_statistics[60512] = {
 	compose_number = 0,
-	display = "由布莱默顿赠与的，作为宴会邀约的回礼",
+	display = "由布莱默顿赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60512,
@@ -116361,7 +116833,7 @@ _G.pg.base.item_data_statistics[60512] = {
 }
 _G.pg.base.item_data_statistics[60513] = {
 	compose_number = 0,
-	display = "由天狼星赠与的，作为宴会邀约的回礼",
+	display = "由天狼星赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60513,
@@ -116390,7 +116862,7 @@ _G.pg.base.item_data_statistics[60513] = {
 }
 _G.pg.base.item_data_statistics[60514] = {
 	compose_number = 0,
-	display = "由{namecode:470}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:470}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60514,
@@ -116419,7 +116891,7 @@ _G.pg.base.item_data_statistics[60514] = {
 }
 _G.pg.base.item_data_statistics[60515] = {
 	compose_number = 0,
-	display = "由{namecode:50}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:50}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60515,
@@ -116448,7 +116920,7 @@ _G.pg.base.item_data_statistics[60515] = {
 }
 _G.pg.base.item_data_statistics[60516] = {
 	compose_number = 0,
-	display = "由{namecode:74}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:74}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60516,
@@ -116477,7 +116949,7 @@ _G.pg.base.item_data_statistics[60516] = {
 }
 _G.pg.base.item_data_statistics[60517] = {
 	compose_number = 0,
-	display = "由苏维埃罗西亚赠与的，作为宴会邀约的回礼",
+	display = "由苏维埃罗西亚赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60517,
@@ -116506,7 +116978,7 @@ _G.pg.base.item_data_statistics[60517] = {
 }
 _G.pg.base.item_data_statistics[60518] = {
 	compose_number = 0,
-	display = "由圣女贞德赠与的，作为宴会邀约的回礼",
+	display = "由圣女贞德赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60518,
@@ -117065,7 +117537,7 @@ _G.pg.base.item_data_statistics[60535] = {
 }
 _G.pg.base.item_data_statistics[60536] = {
 	compose_number = 0,
-	display = "由{namecode:97}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:97}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60536,
@@ -117094,7 +117566,7 @@ _G.pg.base.item_data_statistics[60536] = {
 }
 _G.pg.base.item_data_statistics[60537] = {
 	compose_number = 0,
-	display = "由苏维埃贝拉罗斯赠与的，作为宴会邀约的回礼",
+	display = "由苏维埃贝拉罗斯赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60537,
@@ -117123,7 +117595,7 @@ _G.pg.base.item_data_statistics[60537] = {
 }
 _G.pg.base.item_data_statistics[60538] = {
 	compose_number = 0,
-	display = "由可畏赠与的，作为宴会邀约的回礼",
+	display = "由可畏赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60538,
@@ -117152,7 +117624,7 @@ _G.pg.base.item_data_statistics[60538] = {
 }
 _G.pg.base.item_data_statistics[60539] = {
 	compose_number = 0,
-	display = "由{namecode:414}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:414}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60539,
@@ -117181,7 +117653,7 @@ _G.pg.base.item_data_statistics[60539] = {
 }
 _G.pg.base.item_data_statistics[60540] = {
 	compose_number = 0,
-	display = "由光辉赠与的，作为宴会邀约的回礼",
+	display = "由光辉赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60540,
@@ -117210,7 +117682,7 @@ _G.pg.base.item_data_statistics[60540] = {
 }
 _G.pg.base.item_data_statistics[60541] = {
 	compose_number = 0,
-	display = "由{namecode:437}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:437}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60541,
@@ -117239,7 +117711,7 @@ _G.pg.base.item_data_statistics[60541] = {
 }
 _G.pg.base.item_data_statistics[60542] = {
 	compose_number = 0,
-	display = "由巴尔的摩赠与的，作为宴会邀约的回礼",
+	display = "由巴尔的摩赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60542,
@@ -117268,7 +117740,7 @@ _G.pg.base.item_data_statistics[60542] = {
 }
 _G.pg.base.item_data_statistics[60543] = {
 	compose_number = 0,
-	display = "由恰巴耶夫赠与的，作为宴会邀约的回礼",
+	display = "由恰巴耶夫赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60543,
@@ -117332,7 +117804,7 @@ _G.pg.base.item_data_statistics[60544] = {
 }
 _G.pg.base.item_data_statistics[60545] = {
 	compose_number = 0,
-	display = "由{namecode:182}赠与的，作为邀约的回礼",
+	display = "由{namecode:182}赠予的，作为邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60545,
@@ -117361,7 +117833,7 @@ _G.pg.base.item_data_statistics[60545] = {
 }
 _G.pg.base.item_data_statistics[60546] = {
 	compose_number = 0,
-	display = "由{namecode:199}赠与的，作为邀约的回礼",
+	display = "由{namecode:199}赠予的，作为邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60546,
@@ -117432,7 +117904,7 @@ _G.pg.base.item_data_statistics[60556] = {
 }
 _G.pg.base.item_data_statistics[60557] = {
 	compose_number = 0,
-	display = "由贝尔法斯特赠与的，作为宴会邀约的回礼",
+	display = "由贝尔法斯特赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60557,
@@ -117461,7 +117933,7 @@ _G.pg.base.item_data_statistics[60557] = {
 }
 _G.pg.base.item_data_statistics[60558] = {
 	compose_number = 0,
-	display = "由布莱默顿赠与的，作为宴会邀约的回礼",
+	display = "由布莱默顿赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60558,
@@ -117490,7 +117962,7 @@ _G.pg.base.item_data_statistics[60558] = {
 }
 _G.pg.base.item_data_statistics[60559] = {
 	compose_number = 0,
-	display = "由天狼星赠与的，作为宴会邀约的回礼",
+	display = "由天狼星赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60559,
@@ -117519,7 +117991,7 @@ _G.pg.base.item_data_statistics[60559] = {
 }
 _G.pg.base.item_data_statistics[60560] = {
 	compose_number = 0,
-	display = "由{namecode:470}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:470}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60560,
@@ -117548,7 +118020,7 @@ _G.pg.base.item_data_statistics[60560] = {
 }
 _G.pg.base.item_data_statistics[60561] = {
 	compose_number = 0,
-	display = "由{namecode:50}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:50}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60561,
@@ -117577,7 +118049,7 @@ _G.pg.base.item_data_statistics[60561] = {
 }
 _G.pg.base.item_data_statistics[60562] = {
 	compose_number = 0,
-	display = "由{namecode:161}赠与的，作为宴会邀约的回礼",
+	display = "由{namecode:161}赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60562,
@@ -117606,7 +118078,7 @@ _G.pg.base.item_data_statistics[60562] = {
 }
 _G.pg.base.item_data_statistics[60563] = {
 	compose_number = 0,
-	display = "由塔林赠与的，作为宴会邀约的回礼",
+	display = "由塔林赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60563,
@@ -117635,7 +118107,7 @@ _G.pg.base.item_data_statistics[60563] = {
 }
 _G.pg.base.item_data_statistics[60564] = {
 	compose_number = 0,
-	display = "由霞飞赠与的，作为宴会邀约的回礼",
+	display = "由霞飞赠予的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60564,
@@ -118405,6 +118877,280 @@ _G.pg.base.item_data_statistics[60589] = {
 	link_id = 0,
 	max_num = 0,
 	name = "巴尔的摩的回礼",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 9,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 1,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[60599] = {
+	compose_number = 0,
+	display = "使用后可以邀请一名特定对象参加宴会（获得指定角色）",
+	display_effect = "",
+	icon = "Props/yaoqinghan",
+	id = 60599,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "庆典邀请函",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 21,
+	usage = "usage_invitation",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		3501,
+		3502,
+		3503,
+		3504,
+		3505,
+		3506,
+		3507,
+		3508,
+	},
+	limit = {},
+	open_ui = {
+		"login_year",
+		"t_ninth_jp",
+	},
+}
+_G.pg.base.item_data_statistics[62000] = {
+	compose_number = 0,
+	display = "由光辉处收到的，作为宴会邀约的回礼",
+	display_effect = "",
+	icon = "Props/yaoqinghan",
+	id = 62000,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "光辉的回礼",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 9,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 1,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[62001] = {
+	compose_number = 0,
+	display = "由黛朵处收到的，作为宴会邀约的回礼",
+	display_effect = "",
+	icon = "Props/yaoqinghan",
+	id = 62001,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "黛朵的回礼",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 9,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 1,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[62002] = {
+	compose_number = 0,
+	display = "由{namecode:95}处收到的，作为宴会邀约的回礼",
+	display_effect = "",
+	icon = "Props/yaoqinghan",
+	id = 62002,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "{namecode:95}的回礼",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 9,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 1,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[62003] = {
+	compose_number = 0,
+	display = "由{namecode:27}处收到的，作为宴会邀约的回礼",
+	display_effect = "",
+	icon = "Props/yaoqinghan",
+	id = 62003,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "{namecode:27}的回礼",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 9,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 1,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[62004] = {
+	compose_number = 0,
+	display = "由里诺处收到的，作为宴会邀约的回礼",
+	display_effect = "",
+	icon = "Props/yaoqinghan",
+	id = 62004,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "里诺的回礼",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 9,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 1,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[62005] = {
+	compose_number = 0,
+	display = "由{namecode:453}处收到的，作为宴会邀约的回礼",
+	display_effect = "",
+	icon = "Props/yaoqinghan",
+	id = 62005,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "{namecode:453}的回礼",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 9,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 1,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[62006] = {
+	compose_number = 0,
+	display = "由霞飞处收到的，作为宴会邀约的回礼",
+	display_effect = "",
+	icon = "Props/yaoqinghan",
+	id = 62006,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "霞飞的回礼",
+	open_directly = 0,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 9,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 1,
+	usage = "usage_undefined",
+	usage_arg = "[]",
+	virtual_type = 0,
+	display_icon = {},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[62007] = {
+	compose_number = 0,
+	display = "由基洛夫处收到的，作为宴会邀约的回礼",
+	display_effect = "",
+	icon = "Props/yaoqinghan",
+	id = 62007,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "基洛夫的回礼",
 	open_directly = 0,
 	order = 0,
 	other_item_cost = "[]",
@@ -129746,6 +130492,339 @@ _G.pg.base.item_data_statistics[68348] = {
 	},
 	limit = {},
 }
+_G.pg.base.item_data_statistics[68349] = {
+	compose_number = 0,
+	display = "购买后可获得<color=#92fc63FF>光辉</color>换装<color=#92fc63FF>幽影徘徊之夜</color>的钻石抵扣券等道具",
+	display_effect = "",
+	icon = "ChargeIcon/skin_ticket_package",
+	id = 68349,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "换装抵扣礼包(幽影徘徊之夜)",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "88250",
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			68352,
+			1,
+		},
+		{
+			2,
+			68355,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[68350] = {
+	compose_number = 0,
+	display = "购买后可获得<color=#92fc63FF>{namecode:315}</color>换装<color=#92fc63FF>午夜的瑰色电梯</color>的钻石抵扣券等道具",
+	display_effect = "",
+	icon = "ChargeIcon/skin_ticket_package",
+	id = 68350,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "换装抵扣礼包(午夜的瑰色电梯)",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "88251",
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			68353,
+			1,
+		},
+		{
+			2,
+			68356,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[68351] = {
+	compose_number = 0,
+	display = "购买后可获得<color=#92fc63FF>{namecode:531}</color>换装<color=#92fc63FF>午夜频道</color>的钻石抵扣券等道具",
+	display_effect = "",
+	icon = "ChargeIcon/skin_ticket_package",
+	id = 68351,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "换装抵扣礼包(午夜频道)",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "88252",
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			68354,
+			1,
+		},
+		{
+			2,
+			68357,
+			1,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[68352] = {
+	compose_number = 0,
+	display = "持有此道具时，购买<color=#92fc63FF>光辉</color>换装<color=#92fc63FF>幽影徘徊之夜</color>时可消耗此道具，并抵扣300钻石\n<color=#ff5c5c>道具有效期：自获得后～2026年9月16日23:59，过期后此道具将消失，并自动转化为300钻石</color>",
+	display_effect = "",
+	icon = "Props/limit_skin_300",
+	id = 68352,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "换装抵扣券(幽影徘徊之夜)",
+	open_directly = 0,
+	order = 1,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 1,
+	type = 1,
+	usage = "usage_shop_discount",
+	virtual_type = 0,
+	display_icon = {},
+	price = {
+		14,
+		300,
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			71403,
+		},
+		300,
+	},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[68353] = {
+	compose_number = 0,
+	display = "持有此道具时，购买<color=#92fc63FF>{namecode:315}</color>换装<color=#92fc63FF>午夜的瑰色电梯</color>时可消耗此道具，并抵扣300钻石\n<color=#ff5c5c>道具有效期：自获得后～2026年9月16日23:59，过期后此道具将消失，并自动转化为300钻石</color>",
+	display_effect = "",
+	icon = "Props/limit_skin_300",
+	id = 68353,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "换装抵扣券(午夜的瑰色电梯)",
+	open_directly = 0,
+	order = 1,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 1,
+	type = 1,
+	usage = "usage_shop_discount",
+	virtual_type = 0,
+	display_icon = {},
+	price = {
+		14,
+		300,
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			71398,
+		},
+		300,
+	},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[68354] = {
+	compose_number = 0,
+	display = "持有此道具时，购买<color=#92fc63FF>{namecode:531}</color>换装<color=#92fc63FF>午夜频道</color>时可消耗此道具，并抵扣300钻石\n<color=#ff5c5c>道具有效期：自获得后～2026年9月16日23:59，过期后此道具将消失，并自动转化为300钻石</color>",
+	display_effect = "",
+	icon = "Props/limit_skin_300",
+	id = 68354,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "换装抵扣券(午夜频道)",
+	open_directly = 0,
+	order = 1,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 1,
+	type = 1,
+	usage = "usage_shop_discount",
+	virtual_type = 0,
+	display_icon = {},
+	price = {
+		14,
+		300,
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		{
+			71402,
+		},
+		300,
+	},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[68355] = {
+	compose_number = 0,
+	display = "使用后可前往换装体验兑换界面，界面内可以选择兑换<color=#92fc63FF>光辉</color>换装<color=#92fc63FF>幽影徘徊之夜</color>的2天换装体验资格\n<color=#ff5c5c>道具有效期：自获得后～2026年9月16日23:59，过期后此道具将消失</color>",
+	display_effect = "",
+	icon = "Props/limit_skinticket",
+	id = 68355,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "换装体验券(幽影徘徊之夜)",
+	open_directly = 0,
+	order = 1,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 1,
+	type = 1,
+	usage = "usage_skin_exp",
+	virtual_type = 0,
+	display_icon = {},
+	price = {
+		1,
+		0,
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		90528,
+	},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[68356] = {
+	compose_number = 0,
+	display = "使用后可前往换装体验兑换界面，界面内可以选择兑换<color=#92fc63FF>{namecode:315}</color>换装<color=#92fc63FF>午夜的瑰色电梯</color>的2天换装体验资格\n<color=#ff5c5c>道具有效期：自获得后～2026年9月16日23:59，过期后此道具将消失</color>",
+	display_effect = "",
+	icon = "Props/limit_skinticket",
+	id = 68356,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "换装体验券(午夜的瑰色电梯)",
+	open_directly = 0,
+	order = 1,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 1,
+	type = 1,
+	usage = "usage_skin_exp",
+	virtual_type = 0,
+	display_icon = {},
+	price = {
+		1,
+		0,
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		90529,
+	},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[68357] = {
+	compose_number = 0,
+	display = "使用后可前往换装体验兑换界面，界面内可以选择兑换<color=#92fc63FF>{namecode:531}</color>换装<color=#92fc63FF>午夜频道</color>的2天换装体验资格\n<color=#ff5c5c>道具有效期：自获得后～2026年9月16日23:59，过期后此道具将消失</color>",
+	display_effect = "",
+	icon = "Props/limit_skinticket",
+	id = 68357,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "换装体验券(午夜频道)",
+	open_directly = 0,
+	order = 1,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 1,
+	type = 1,
+	usage = "usage_skin_exp",
+	virtual_type = 0,
+	display_icon = {},
+	price = {
+		1,
+		0,
+	},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	usage_arg = {
+		90530,
+	},
+	limit = {},
+}
 _G.pg.base.item_data_statistics[68306] = {
 	compose_number = 0,
 	display = "购买后可获得<color=#92fc63FF>瑟堡</color>换装<color=#92fc63FF>布偶熊里面的是……？</color>的钻石抵扣券等道具",
@@ -133703,6 +134782,71 @@ _G.pg.base.item_data_statistics[81237] = {
 		{
 			2,
 			86229,
+			1,
+		},
+		{
+			1,
+			14,
+			2026,
+		},
+		{
+			2,
+			42086,
+			2,
+		},
+		{
+			2,
+			15008,
+			50,
+		},
+		{
+			2,
+			20001,
+			20,
+		},
+		{
+			2,
+			15003,
+			10,
+		},
+		{
+			1,
+			6,
+			100,
+		},
+	},
+	price = {},
+	index = {},
+	shiptrans_id = {},
+	combination_display = {},
+	limit = {},
+}
+_G.pg.base.item_data_statistics[81238] = {
+	compose_number = 0,
+	display = "购买礼包可获得随机换装*1，钻石*2026，心智单元*50，心智魔方*20，高级定向蓝图·九期*2，快速完成工具*10，家具币*100",
+	display_effect = "",
+	icon = "Props/fudai38",
+	id = 81238,
+	is_world = 0,
+	link_id = 0,
+	max_num = 0,
+	name = "幽影迷城换装礼盒I",
+	open_directly = 1,
+	order = 0,
+	other_item_cost = "[]",
+	other_resource_cost = "[]",
+	rarity = 4,
+	replace_item = 0,
+	target_id = 0,
+	time_limit = 0,
+	type = 17,
+	usage = "usage_drop",
+	usage_arg = "998333",
+	virtual_type = 0,
+	display_icon = {
+		{
+			2,
+			86230,
 			1,
 		},
 		{
