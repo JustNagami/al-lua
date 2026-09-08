@@ -27,7 +27,8 @@ pg.item_data_battleui.all = {
 	206,
 	207,
 	208,
-	209
+	209,
+	210
 }
 pg.base = pg.base or {}
 pg.base.item_data_battleui = {}
@@ -417,6 +418,23 @@ pg.base.item_data_battleui = {}
 		unlock = "ショップ購入（戦闘UI・ヨルハ）",
 		id = 209,
 		icon = "209",
+		scene = {},
+		rare_display = {
+			1,
+			2,
+			3
+		}
+	}
+	pg.base.item_data_battleui[210] = {
+		key = "SkinElite_20260908",
+		name = "ミスティック",
+		desc = "鏡の間で蝋燭の火が揺らめき、妖異と茨が絡み合う。虚ろと現にさまよう物語の序章が戦闘中に幕を開ける",
+		display_icon = "ui_210",
+		is_unlock = 1,
+		rare = 4,
+		unlock = "ショップ購入（戦闘UI・ミスティック）",
+		id = 210,
+		icon = "210",
 		scene = {},
 		rare_display = {
 			1,

@@ -7,6 +7,41 @@ var_0_0.word_legal_template_8 = {}
 local var_0_1 = var_0_0.word_legal_template_8
 
 function temp()
+	var_0_1.ゴ = {
+		リ = {
+			ツ = {
+				ィ = {
+					ア = {
+						this = true
+					}
+				}
+			}
+		},
+		ー = {
+			ル = {
+				デ = {
+					ン = {
+						・ = {
+							ハ = {
+								イ = {
+									ン = {
+										ド = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.ム = {
 		ル = {
 			マ = {
@@ -215,16 +250,6 @@ temp()
 function temp()
 	var_0_1.喀 = {
 		山 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.勇 = {
-		气 = {
 			this = true
 		}
 	}

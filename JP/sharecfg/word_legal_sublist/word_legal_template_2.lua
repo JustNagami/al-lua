@@ -1835,7 +1835,20 @@ function temp()
 					リ = {
 						ア = {
 							ス = {
-								this = true
+								this = true,
+								["("] = {
+									M = {
+										E = {
+											T = {
+												A = {
+													[")"] = {
+														this = true
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -2647,6 +2660,11 @@ function temp()
 							}
 						}
 					}
+				}
+			},
+			ガ = {
+				ー = {
+					this = true
 				}
 			}
 		},

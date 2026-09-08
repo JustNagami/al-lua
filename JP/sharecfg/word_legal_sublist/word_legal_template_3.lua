@@ -86,6 +86,23 @@ end
 temp()
 
 function temp()
+	var_0_1.勇 = {
+		敢 = {
+			["."] = {
+				改 = {
+					this = true
+				}
+			}
+		},
+		气 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.ガ = {
 		ラ = {
 			テ = {
@@ -659,16 +676,6 @@ function temp()
 					}
 				}
 			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.松 = {
-		風 = {
-			this = true
 		}
 	}
 end
