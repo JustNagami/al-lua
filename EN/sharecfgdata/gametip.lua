@@ -30650,7 +30650,7 @@ _G.pg.base.gametip.reverse_pacman_owned = {
 	tip = "Owned",
 }
 _G.pg.base.gametip.reverse_pacman_count = {
-	tip = "1",
+	tip = "$1",
 }
 _G.pg.base.gametip.reverse_pacman_buy = {
 	tip = "Buy",
