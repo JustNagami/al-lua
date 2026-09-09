@@ -218,6 +218,7 @@ function var_0_0.OnUpdateItem(arg_9_0, arg_9_1, arg_9_2)
 
 			var_10_0:Stop()
 			var_10_0:Play("anim_newinstagram_chat_right_in")
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(0, var_9_0.currentTopicId, 1))
 		end, SFX_PANEL)
 	else
 		SetActive(var_9_1:Find("officialAccounts/tip"), getProxy(InstagramProxy):ShouldShowOfficialAccountsTip())
@@ -872,6 +873,7 @@ function var_0_0.UpdateOptionPanel(arg_46_0, arg_46_1, arg_46_2)
 				setText(arg_47_2:Find("Text"), HXSet.hxLan(var_47_0[2]))
 				onButton(arg_46_0, arg_47_2, function()
 					arg_46_0:emit(InstagramChatMediator.REPLY, arg_46_1.topicId, arg_46_2[#arg_46_2].id, var_47_0[1])
+					pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(1, arg_46_1.topicId, 1))
 				end, SFX_PANEL)
 			end
 		end)
@@ -1196,6 +1198,7 @@ function var_0_0.SetTopicPanel(arg_61_0, arg_61_1)
 
 		var_67_0:Stop()
 		var_67_0:Play("anim_newinstagram_chat_right_in")
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(0, arg_61_0.currentTopic.topicId, 1))
 	end, SFX_PANEL)
 end
 
@@ -1672,7 +1675,7 @@ function var_0_0.OfficialAccountsUpdateItem(arg_110_0, arg_110_1, arg_110_2)
 	onButton(arg_110_0, var_110_2, function()
 		arg_110_0.currentOfficalID = var_110_1.id
 
-		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(var_110_1.id))
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(0, var_110_1.id, 2))
 		arg_110_0:ShowOfficialAccountsInfo(var_110_1)
 		arg_110_0:ReadOfficialAccountComment()
 
@@ -1841,6 +1844,7 @@ function var_0_0.OpenCommentPanel(arg_126_0, arg_126_1)
 
 			setText(arg_127_2:Find("Text"), HXSet.hxLan(var_127_1))
 			onButton(arg_126_0, arg_127_2, function()
+				pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildJuusOfficialAccountsClick(1, arg_126_1, 2))
 				arg_126_0:emit(InstagramChatMediator.ON_OFFICIAL_ACCOUNTS_OPERATE, ActivityConst.INSTAGRAM_OP_COMMENT, arg_126_1, var_127_2, var_127_3)
 				arg_126_0:CloseCommentPanel()
 			end, SFX_PANEL)
