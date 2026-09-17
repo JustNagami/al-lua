@@ -7883,7 +7883,7 @@ end)()
 		skin_id = 105099,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "",
+		descrip = "近代化改修完了。対空+20、装填+25\n改造後、スキル【BIG SEVEN】が【BIG SEVEN·コロラド】に強化されます",
 		icon = "mt_yellow",
 		skill_id = 0,
 		condition_id = {
@@ -8350,7 +8350,7 @@ end)()
 		skin_id = 105109,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "",
+		descrip = "近代化改修完了。対空+20、装填+25\n改造後、スキル【BIG SEVEN】が【BIG SEVEN·メリーランド】に強化されます",
 		icon = "mt_yellow",
 		skill_id = 0,
 		condition_id = {
@@ -14544,7 +14544,7 @@ end)()
 		skin_id = 201149,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "",
+		descrip = "近代化改修完了。雷装+25、回避+20\n改造後<color=#92fc63>【主砲砲座+1】</color>",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -17172,7 +17172,7 @@ end)()
 		skin_id = 202129,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "",
+		descrip = "改造（近代化改修）完了。対空+60\n改造後、主砲砲座+1、開始時魚雷+1、対空砲砲座+1\nスキル<color=#92fc63>【煙幕散布·軽巡】</color>は<color=#92fc63>【煙幕散布·ベルファスト】</color>に強化、スキル<color=#92fc63>【全弾発射-ベルファストII】</color>は\n<color=#92fc63>【全弾発射-ベルファストIII】</color>に強化されました\n兵装枠威力補正が130%/155%/120%に変更",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {

@@ -121,6 +121,8 @@ pg.pay_data_display.all = {
 	9020,
 	9021,
 	9022,
+	9023,
+	9024,
 	1000,
 	1001,
 	1002,
@@ -246,7 +248,8 @@ pg.pay_data_display.all = {
 	5015,
 	5016,
 	5017,
-	70001
+	70001,
+	70002
 }
 pg.pay_data_display.get_id_list_by_extra_service = {
 	[0] = {
@@ -371,6 +374,8 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		9020,
 		9021,
 		9022,
+		9023,
+		9024,
 		2001,
 		2002,
 		2003,
@@ -500,7 +505,8 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		1303
 	},
 	[6] = {
-		70001
+		70001,
+		70002
 	}
 }
 pg.base = pg.base or {}
@@ -14985,6 +14991,276 @@ end)()
 			}
 		}
 	}
+	pg.base.pay_data_display[9023] = {
+		limit_group = 0,
+		name = "九周年福袋B",
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		second_text = "大量な報酬",
+		id = 9023,
+		subject = "九周年福袋B",
+		first_text = "ランダム着せ替え",
+		package_sort_id = 0,
+		tip = "",
+		money = 3800,
+		tip_open = 0,
+		tag = 2,
+		cash_show = 0,
+		gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		name_display = "九周年福袋B",
+		limit_type = 2,
+		type_order = 2,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "fudai39",
+		extra_service = 3,
+		skin_inquire_relation = 86231,
+		limit_arg = 1,
+		id_str = "com.bilibili.blhx.zuanshi222",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.diamond210",
+		extra_service_item = {
+			{
+				2,
+				86231,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			},
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					9,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81239,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86231,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			}
+		}
+	}
+	pg.base.pay_data_display[9024] = {
+		limit_group = 0,
+		name = "八周年福袋B(復刻)",
+		descrip_extra = "※福袋は購入後、メールボックスに送られます。\nすでに所持している着せ替えを入手した場合、自動的に衣装の価格分の無償ダイヤに変換されます。",
+		type = 1,
+		second_text = "大量な報酬",
+		id = 9024,
+		subject = "八周年福袋B(復刻)",
+		first_text = "ランダム着せ替え",
+		package_sort_id = 0,
+		tip = "",
+		money = 3800,
+		tip_open = 0,
+		tag = 2,
+		cash_show = 0,
+		gem = 0,
+		descrip = "アイテム・資源とランダムな着せ替え衣装を入手可能",
+		name_display = "八周年福袋B(復刻)",
+		limit_type = 2,
+		type_order = 2,
+		akashi_pick = 1,
+		package_tag = "",
+		picture = "fudai28",
+		extra_service = 3,
+		skin_inquire_relation = 86218,
+		limit_arg = 1,
+		id_str = "com.bilibili.blhx.zuanshi223",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "",
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.diamond211",
+		extra_service_item = {
+			{
+				2,
+				86218,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			},
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					9,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42076,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81218,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86218,
+				1
+			},
+			{
+				1,
+				14,
+				2025
+			}
+		}
+	}
 	pg.base.pay_data_display[1000] = {
 		limit_group = 0,
 		name = "クルーズパス",
@@ -22057,6 +22333,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[2053] = {
 		limit_group = 5,
 		name = "PR特別計画艦パック·Ⅴ期",
@@ -22200,8 +22478,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[2055] = {
 		limit_group = 5,
 		name = "PR艦船Ⅴ期交換アイテム",
@@ -25988,6 +26264,78 @@ end)()
 					2026,
 					9,
 					8
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					30
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		limit_args = {},
+		drop_item = {}
+	}
+	pg.base.pay_data_display[70002] = {
+		descrip_extra = "",
+		name = "微笑む怪談の金鹿様",
+		ignorePlatform = "",
+		type = 0,
+		second_text = "",
+		limit_group = 0,
+		subject = "微笑む怪談の金鹿様",
+		type_order = 0,
+		package_sort_id = 0,
+		tip = "",
+		money = 2580,
+		tip_open = 0,
+		cash_show = 4000,
+		descrip = "微笑む怪談の金鹿様",
+		gem = 0,
+		name_display = "微笑む怪談の金鹿様",
+		limit_arg = 1,
+		limit_type = 2,
+		package_tag = "",
+		picture = "",
+		id_str = "com.bilibili.blhx.skin2",
+		extra_gem = 0,
+		id = 70002,
+		airijp_id = "com.yostarjp.azurlane.skin2",
+		display = "",
+		first_icon = "",
+		first_text = "",
+		tag = 0,
+		akashi_pick = 1,
+		sub_display = "",
+		skin_inquire_relation = 0,
+		first_pay_double = 0,
+		extra_service = 6,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				7,
+				9600033,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					9,
+					17
 				},
 				{
 					0,

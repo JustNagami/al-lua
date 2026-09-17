@@ -9315,7 +9315,6 @@ end)()
 		main = "",
 		upgrade = "",
 		mission_complete = "",
-		headtouch = "",
 		feeling2 = "",
 		hp_warning = "",
 		id = 403110,
@@ -9335,6 +9334,12 @@ end)()
 			{
 				1100,
 				"粘り強く、そして攻勢に出る時は果敢に…なるほど、あなたの作戦はいつも勉強になるわね"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"ふふふ。これでは足りないわ～し・き・かん♪"
 			}
 		},
 		detail = {
@@ -16000,21 +16005,20 @@ end)()
 	pg.base.ship_skin_words_extra[9600030] = {
 		unlock = "",
 		feeling3 = "",
-		feeling4 = "",
-		feeling1 = "",
-		expedition = "",
-		profile = "",
-		mission = "",
-		skill = "",
 		mail = "",
-		lose = "",
 		main = "",
+		expedition = "",
 		upgrade = "",
 		mission_complete = "",
-		headtouch = "",
+		mission = "",
 		feeling2 = "",
+		profile = "",
+		skill = "",
 		hp_warning = "",
 		id = 9600030,
+		lose = "",
+		feeling1 = "",
+		feeling4 = "",
 		login = {
 			{
 				1100,
@@ -16037,6 +16041,12 @@ end)()
 			{
 				1100,
 				"絡みついたらもう遅いわぁ～♡"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"指揮官さまの手つき、癖になりそうだわぁ……♡"
 			}
 		},
 		detail = {

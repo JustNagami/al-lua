@@ -2974,6 +2974,12 @@ _G.pg.base.gametip.spweapon_tip_ship = {
 _G.pg.base.gametip.spweapon_tip_type = {
 	tip = "装備艦種",
 }
+_G.pg.base.gametip.spweapon_unique_title = {
+	tip = "装備艦船",
+}
+_G.pg.base.gametip.spweapon_tip_jump = {
+	tip = "確認",
+}
 _G.pg.base.gametip.stage_beginStage_error = {
 	tip = "ステージ開始失敗:",
 }
