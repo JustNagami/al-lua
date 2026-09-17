@@ -9311,7 +9311,6 @@ end)()
 		main = "",
 		upgrade = "",
 		mission_complete = "",
-		headtouch = "",
 		feeling2 = "",
 		hp_warning = "",
 		id = 403110,
@@ -9331,6 +9330,12 @@ end)()
 			{
 				1100,
 				"Tenacious and brave in the face of incoming attacks... I see. There's always so much to learn from your strategies."
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"Heheh... You'll have to do better than that~ Com-man-der~♪"
 			}
 		},
 		detail = {
@@ -15996,21 +16001,20 @@ end)()
 	pg.base.ship_skin_words_extra[9600030] = {
 		unlock = "",
 		feeling3 = "",
-		feeling4 = "",
-		feeling1 = "",
-		expedition = "",
-		profile = "",
-		mission = "",
-		skill = "",
 		mail = "",
-		lose = "",
 		main = "",
+		expedition = "",
 		upgrade = "",
 		mission_complete = "",
-		headtouch = "",
+		mission = "",
 		feeling2 = "",
+		profile = "",
+		skill = "",
 		hp_warning = "",
 		id = 9600030,
+		lose = "",
+		feeling1 = "",
+		feeling4 = "",
 		login = {
 			{
 				1100,
@@ -16033,6 +16037,12 @@ end)()
 			{
 				1100,
 				"It's too late once I've caught you~♡"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"Commander, the way you touch me... I can't get enough of it~♡"
 			}
 		},
 		detail = {

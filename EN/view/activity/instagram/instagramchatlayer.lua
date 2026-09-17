@@ -648,13 +648,13 @@ function var_0_0.UpdateMessageList(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_1
 						var_20_8 = string.gsub(var_20_8, iter_20_0, "<color=#93e9ff>" .. var_0_1[tonumber(var_20_9)].name .. "</color>")
 					end
 
-					setText(arg_20_2:Find("charaMessageCard/systemTip/panel/Text"), var_20_8)
+					setText(arg_20_2:Find("charaMessageCard/systemTip/systemTipPanel/panel/Text"), var_20_8)
 
 					if arg_17_3 and var_17_0 and arg_20_1 + 1 > var_17_0 then
 						SetActive(arg_20_2, false)
 						arg_17_0:StartTimer(function()
 							SetActive(arg_20_2, true)
-							arg_20_2:Find("charaMessageCard/systemTip"):GetComponent(typeof(Animation)):Play("anim_newinstagram_tip_in")
+							arg_20_2:Find("charaMessageCard/systemTip/systemTipPanel"):GetComponent(typeof(Animation)):Play("anim_newinstagram_tip_in")
 
 							if arg_20_1 + 1 ~= #arg_17_2 then
 								arg_17_0:ChangeCharaTextFunc(arg_17_4, var_20_8)
@@ -666,7 +666,7 @@ function var_0_0.UpdateMessageList(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_1
 
 							Canvas.ForceUpdateCanvases()
 							LeanTween.value(go(arg_17_0.rightPanel:Find("chat/messageScroll")), var_17_2.normalizedPosition.y, 0, 0.5):setOnUpdate(System.Action_float(var_17_3)):setEase(LeanTweenType.easeInOutCubic)
-							arg_17_0:SetEndAniEvent(arg_20_2:Find("charaMessageCard/systemTip"), function()
+							arg_17_0:SetEndAniEvent(arg_20_2:Find("charaMessageCard/systemTip/systemTipPanel"), function()
 								if arg_17_0.shouldShowOption and arg_20_1 + 1 == #arg_17_2 then
 									arg_17_0:SetOptionPanelActive(true)
 								end
@@ -1691,7 +1691,7 @@ function var_0_0.ShowOfficialAccountsInfo(arg_112_0, arg_112_1)
 		arg_112_0:ExitOfficialAccountsInfo()
 	end, SFX_PANEL)
 	setScrollText(arg_112_0.officialAccountsInfoItem:Find("title/Text"), arg_112_1:getConfig("title"))
-	setText(arg_112_0.officialAccountsInfoItem:Find("content"), arg_112_1.text)
+	setText(arg_112_0.officialAccountsInfoItem:Find("content"), arg_112_1:GetContent())
 	arg_112_0:SetImageByUrl(arg_112_1:GetImage(), arg_112_0.officialAccountsInfoItem:Find("Image/Image"):GetComponent(typeof(RawImage)))
 	setText(arg_112_0.officialAccountsInfoItem:Find("bottom/time"), arg_112_1:GetPushTime())
 	arg_112_0:UpdateLinkBtn(arg_112_1.id)

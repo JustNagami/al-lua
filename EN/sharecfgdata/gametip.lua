@@ -2963,10 +2963,16 @@ _G.pg.base.gametip.spweapon_tip_view = {
 	tip = "<material=underline event=displayDetail>View Details</material>",
 }
 _G.pg.base.gametip.spweapon_tip_ship = {
-	tip = "Equipable By",
+	tip = "Equippable By",
 }
 _G.pg.base.gametip.spweapon_tip_type = {
 	tip = "Ship Type",
+}
+_G.pg.base.gametip.spweapon_unique_title = {
+	tip = "Equippable By",
+}
+_G.pg.base.gametip.spweapon_tip_jump = {
+	tip = "Go",
 }
 _G.pg.base.gametip.stage_beginStage_error = {
 	tip = "Failed to begin stage: ",
