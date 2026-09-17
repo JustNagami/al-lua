@@ -2572,6 +2572,12 @@ _G.pg.base.gametip.spweapon_tip_ship = {
 _G.pg.base.gametip.spweapon_tip_type = {
 	tip = "适配舰种",
 }
+_G.pg.base.gametip.spweapon_unique_title = {
+	tip = "适配角色",
+}
+_G.pg.base.gametip.spweapon_tip_jump = {
+	tip = "跳转",
+}
 _G.pg.base.gametip.stage_beginStage_error = {
 	tip = "开始关卡失败:",
 }
