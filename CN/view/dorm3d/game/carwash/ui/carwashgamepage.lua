@@ -119,6 +119,8 @@ function var_0_0.BindEvent(arg_14_0)
 	arg_14_0:bind(CarWashGameFlowSystem.GAME_RESET, function()
 		arg_14_0:InitConfig()
 		arg_14_0:Flush()
+
+		arg_14_0.needsRelock = true
 	end)
 	arg_14_0:bind(CarWashGameFlowSystem.UPDATE_IS_SHOOTING, function()
 		arg_14_0:FlushShooting()
@@ -149,60 +151,76 @@ function var_0_0.BindEvent(arg_14_0)
 	arg_14_0:bind(CarWashGameFlowSystem.UPDATE_GAME_STATE, function(arg_21_0, arg_21_1)
 		if arg_21_1.newValue == CarWashConst.GAME_STATE.PHASE_1 then
 			arg_14_0:Show()
+
+			if arg_14_0.needsRelock then
+				arg_14_0.needsRelock = false
+
+				arg_14_0:PlayRelockAnim()
+			end
 		elseif arg_21_1.newValue == CarWashConst.GAME_STATE.PHASE_2 or arg_21_1.newValue == CarWashConst.GAME_STATE.END then
 			arg_14_0:Hide()
 		end
 	end)
 end
 
-function var_0_0.UpdateTimeText(arg_22_0, arg_22_1)
-	setText(arg_22_0.timeText, arg_22_0:FormatTime(arg_22_1))
+function var_0_0.PlayRelockAnim(arg_22_0)
+	local var_22_0 = arg_22_0._tf:Find("left/cams")
+
+	for iter_22_0, iter_22_1 in ipairs(arg_22_0.posUnlock) do
+		if not iter_22_1 then
+			var_22_0:GetChild(iter_22_0 - 1):GetComponent(typeof(Animation)):Play("anim_Dorm3dCarWashUI_relock")
+		end
+	end
 end
 
-function var_0_0.FormatTime(arg_23_0, arg_23_1)
-	arg_23_1 = math.max(arg_23_1 or 0, 0)
-
-	local var_23_0 = math.floor(arg_23_1 / 60)
-	local var_23_1 = arg_23_1 % 60
-
-	return string.format("%02d:%02d", var_23_0, var_23_1)
+function var_0_0.UpdateTimeText(arg_23_0, arg_23_1)
+	setText(arg_23_0.timeText, arg_23_0:FormatTime(arg_23_1))
 end
 
-function var_0_0.FlushShooting(arg_24_0)
-	setActive(arg_24_0._tf:Find("bottom/btn_shoot/on"), arg_24_0.contextData.gameStatus.isShooting)
-	setActive(arg_24_0._tf:Find("bottom/btn_shoot/off"), not arg_24_0.contextData.gameStatus.isShooting)
+function var_0_0.FormatTime(arg_24_0, arg_24_1)
+	arg_24_1 = math.max(arg_24_1 or 0, 0)
+
+	local var_24_0 = math.floor(arg_24_1 / 60)
+	local var_24_1 = arg_24_1 % 60
+
+	return string.format("%02d:%02d", var_24_0, var_24_1)
 end
 
-function var_0_0.Flush(arg_25_0)
-	arg_25_0:FlushShooting()
-	arg_25_0.gunList:align(var_0_0.GUN_COUNT)
-	arg_25_0.camsList:align(#arg_25_0.posConfig)
-	arg_25_0.favorList:align(#arg_25_0.heartBeatDotVals - 1)
-	arg_25_0:FlushCleanPersent()
+function var_0_0.FlushShooting(arg_25_0)
+	setActive(arg_25_0._tf:Find("bottom/btn_shoot/on"), arg_25_0.contextData.gameStatus.isShooting)
+	setActive(arg_25_0._tf:Find("bottom/btn_shoot/off"), not arg_25_0.contextData.gameStatus.isShooting)
 end
 
-function var_0_0.FlushCleanPersent(arg_26_0)
-	local var_26_0 = arg_26_0:GetCleanPersent()
-	local var_26_1 = arg_26_0:GetRank(var_26_0)
+function var_0_0.Flush(arg_26_0)
+	arg_26_0:FlushShooting()
+	arg_26_0.gunList:align(var_0_0.GUN_COUNT)
+	arg_26_0.camsList:align(#arg_26_0.posConfig)
+	arg_26_0.favorList:align(#arg_26_0.heartBeatDotVals - 1)
+	arg_26_0:FlushCleanPersent()
+end
 
-	setText(arg_26_0.cleanPersentText, var_26_0 .. "%")
-	eachChild(arg_26_0.cleanRank, function(arg_27_0)
-		setActive(arg_27_0, arg_27_0.name == var_26_1)
+function var_0_0.FlushCleanPersent(arg_27_0)
+	local var_27_0 = arg_27_0:GetCleanPersent()
+	local var_27_1 = arg_27_0:GetRank(var_27_0)
+
+	setText(arg_27_0.cleanPersentText, var_27_0 .. "%")
+	eachChild(arg_27_0.cleanRank, function(arg_28_0)
+		setActive(arg_28_0, arg_28_0.name == var_27_1)
 	end)
 end
 
-function var_0_0.GetCleanPersent(arg_28_0)
-	if arg_28_0.contextData.gameStatus.stainsCountMax == 0 then
+function var_0_0.GetCleanPersent(arg_29_0)
+	if arg_29_0.contextData.gameStatus.stainsCountMax == 0 then
 		return 0
 	end
 
-	local var_28_0 = 1 - arg_28_0.contextData.gameStatus.stainsCount / arg_28_0.contextData.gameStatus.stainsCountMax
+	local var_29_0 = 1 - arg_29_0.contextData.gameStatus.stainsCount / arg_29_0.contextData.gameStatus.stainsCountMax
 
-	return (math.floor(var_28_0 * 100))
+	return (math.floor(var_29_0 * 100))
 end
 
-function var_0_0.GetRank(arg_29_0, arg_29_1)
-	return CarWashConst.GetScoreRank(arg_29_1)
+function var_0_0.GetRank(arg_30_0, arg_30_1)
+	return CarWashConst.GetScoreRank(arg_30_1)
 end
 
 return var_0_0

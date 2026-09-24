@@ -31,12 +31,19 @@ function var_0_0.getResource(arg_2_0, arg_2_1)
 		table.insert(var_2_0, var_2_2)
 	end
 
-	arg_2_0._preloadPicPath, arg_2_0._preloadPicType = HXSet.HxPath(var_2_2), var_2_1
+	local var_2_4 = HXSet.HxPath(var_2_2)
 
-	local var_2_4, var_2_5, var_2_6 = CombatLoadUI.GetTotalResourceList(arg_2_1)
+	arg_2_1._combatLoadPicData = {
+		type = var_2_1,
+		path = var_2_4
+	}
+	arg_2_0._preloadPicType = var_2_1
+	arg_2_0._preloadPicPath = var_2_4
 
-	if var_2_4 and #var_2_4 > 0 then
-		for iter_2_0, iter_2_1 in ipairs(var_2_4) do
+	local var_2_5, var_2_6, var_2_7 = CombatLoadUI.GetTotalResourceList(arg_2_1)
+
+	if var_2_5 and #var_2_5 > 0 then
+		for iter_2_0, iter_2_1 in ipairs(var_2_5) do
 			iter_2_1 = string.lower(iter_2_1)
 
 			table.insert(var_2_0, iter_2_1)
@@ -47,8 +54,10 @@ function var_0_0.getResource(arg_2_0, arg_2_1)
 end
 
 function var_0_0.preload(arg_3_0, arg_3_1)
-	arg_3_0._preloadPicType = arg_3_0._preloadPicType or nil
-	arg_3_0._preloadPicPath = arg_3_0._preloadPicPath or nil
+	local var_3_0 = arg_3_0.contextData and arg_3_0.contextData._combatLoadPicData
+
+	arg_3_0._preloadPicType = var_3_0 and var_3_0.type or nil
+	arg_3_0._preloadPicPath = var_3_0 and var_3_0.path or nil
 	arg_3_0._preloadPicSprite = nil
 	arg_3_0._preloadBgFitMode = PlayerPrefs.GetInt("bgFitMode", 0)
 
