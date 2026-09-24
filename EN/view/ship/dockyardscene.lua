@@ -82,7 +82,7 @@ function var_0_0.getDockyardShipResList(arg_3_0, arg_3_1)
 			local var_3_5 = var_3_4:getShipById(iter_3_11)
 
 			if var_3_5 and #var_3_5:getAllShipPhantomMarks() > 1 then
-				iter_3_10.each(var_3_5:getAllShipPhantom(), function(arg_4_0)
+				_.each(var_3_5:getAllShipPhantom(), function(arg_4_0)
 					local var_4_0 = ResPathSupport.GetPaintingShipYardIconListByPaintingName(arg_4_0:getPainting())
 
 					table.insertto(var_3_0, var_4_0)

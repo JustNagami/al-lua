@@ -31055,7 +31055,7 @@ _G.pg.base.gametip.cruise_task_help_2610 = {
 	},
 }
 _G.pg.base.gametip.cruise_title_2610 = {
-	tip = "世界巡游·第三十一期",
+	tip = "Cruise Missions – S31",
 }
 _G.pg.base.gametip.dorm3d_yuanchou_table = {
 	tip = "Study",
