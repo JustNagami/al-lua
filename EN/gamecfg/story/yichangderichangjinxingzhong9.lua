@@ -10,10 +10,11 @@
 			hideRecordIco = true,
 			side = 2,
 			bgName = "star_level_bg_177",
+			nameColor = "#A9F548FF",
 			withoutActorName = true,
 			bgm = "theme-magicalnight-mystic",
 			actor = 299035,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			live2d = "login",
 			say = "*flip*... *flip*...",
 			typewriter = {
@@ -31,14 +32,15 @@
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "I hear what feels like the sound of a giant sheet of paper being turned, and a surreal scene unfolds before my eyes.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "I hear what feels like the sound of a giant sheet of paper being turned, and a surreal scene unfolds before my eyes.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -48,10 +50,11 @@
 			portrait = "zhihuiguan",
 			side = 2,
 			bgName = "star_level_bg_177",
+			actorName = "{playername}",
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
 			actor = 299035,
-			actorName = "{playername}",
+			NextIcon = 1,
 			live2d = true,
 			say = "But I was at the research center just now...",
 			typewriter = {
@@ -65,6 +68,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "Heheh, caught you!♪",
 			typewriter = {
@@ -73,14 +77,15 @@
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Suddenly, a single shade shoots out and wraps around my arm.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "Suddenly, a single shade shoots out and wraps around my arm.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -90,10 +95,11 @@
 			expression = 8,
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = "touch",
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 299035,
+			nameColor = "#A9F548FF",
+			live2d = "touch",
 			say = "Welcome to Cheshire's fairytale maze~",
 			typewriter = {
 				speed = 0.05,
@@ -123,6 +129,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "Ehehe, I had to work really hard to get you here, Owner♪",
 			typewriter = {
@@ -136,6 +143,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "Come on over. There's no dumb papers here to get in the way of fun.",
 			typewriter = {
@@ -147,10 +155,11 @@
 			expression = 4,
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 299035,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "All there is is little ol' me, with my heart bursting with love for you~♪",
 			typewriter = {
 				speed = 0.05,
@@ -163,6 +172,7 @@
 			bgName = "star_level_bg_177",
 			live2d = "mission",
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "Make yourself at home, Owner. You'll get to enjoy my special guest treatment.",
 			typewriter = {
@@ -174,10 +184,11 @@
 			portrait = "zhihuiguan",
 			side = 2,
 			bgName = "star_level_bg_177",
+			actorName = "{playername}",
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
 			actor = 299035,
-			actorName = "{playername}",
+			NextIcon = 1,
 			live2d = true,
 			say = "Guest treatment?",
 			typewriter = {
@@ -186,28 +197,30 @@
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Cheshire snaps her fingers, and a chair and table decorated with beautiful red velvet poofs into being, along with an incredibly fancy-looking tea set.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "Cheshire snaps her fingers, and a chair and table decorated with beautiful red velvet poofs into being, along with an incredibly fancy-looking tea set.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "She presses me down into the velvet chair, and produces a mirror from seemingly thin air.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "She presses me down into the velvet chair, and produces a mirror from seemingly thin air.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -219,6 +232,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "I prepared a bunch of fun toys for us to play with today♪",
 			typewriter = {
@@ -230,10 +244,11 @@
 			expression = 9,
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = "headtouch",
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 299035,
+			nameColor = "#A9F548FF",
+			live2d = "headtouch",
 			say = "First up... Behold! My favorite ball of yarn!",
 			typewriter = {
 				speed = 0.05,
@@ -241,28 +256,30 @@
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "I catch the ball as she throws it out of instinct, and the red thread ball seems to unravel on its own as if it was a living being.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "I catch the ball as she throws it out of instinct, and the red thread ball seems to unravel on its own as if it was a living being.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "The thin, long thread wraps around my wrist, and in the blink of an eye both my hands are tied to the chair's armrest.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "The thin, long thread wraps around my wrist, and in the blink of an eye both my hands are tied to the chair's armrest.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -272,10 +289,11 @@
 			portrait = "zhihuiguan",
 			side = 2,
 			bgName = "star_level_bg_177",
+			actorName = "{playername}",
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
 			actor = 299035,
-			actorName = "{playername}",
+			NextIcon = 1,
 			live2d = true,
 			say = "Cheshire, this is a bit tight...",
 			typewriter = {
@@ -287,10 +305,11 @@
 			expression = 10,
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = "home",
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 299035,
+			nameColor = "#A9F548FF",
+			live2d = "home",
 			say = "Hee hee! Now you can't leave!",
 			typewriter = {
 				speed = 0.05,
@@ -303,6 +322,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "Shh! Don't struggle too much, please?",
 			typewriter = {
@@ -316,6 +336,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "Otherwise... I'll make it tighter, 'kay?",
 			typewriter = {
@@ -324,28 +345,30 @@
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Cheshire runs her hand over the edge of the velvet chair and slides right into my lap to straddle me.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "Cheshire runs her hand over the edge of the velvet chair and slides right into my lap to straddle me.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Her bushy tail brushes against my chest, tickling me.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "Her bushy tail brushes against my chest, tickling me.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -355,10 +378,11 @@
 			expression = 9,
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 299035,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "And next is my second favorite toy... The tickly feather!",
 			typewriter = {
 				speed = 0.05,
@@ -371,6 +395,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "Hehe! I really want you to feel as good as me right now♪",
 			typewriter = {
@@ -379,42 +404,45 @@
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
+			withoutActorName = true,
+			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
 			live2d = "touch2",
-			withoutActorName = true,
-			nameColor = "#A9F548FF",
 			say = "She uses the feather to gently caress my cheek, around my ear, and then lets it glide down my neck tantalizingly.",
-			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
+			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
 			say = "Each time the feather brushes my skin, a tingling feeling runs throughout my whole body.",
-			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "She wraps her tail around my waist, slowly inching downwards.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "She wraps her tail around my waist, slowly inching downwards.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -424,10 +452,11 @@
 			portrait = "zhihuiguan",
 			side = 2,
 			bgName = "star_level_bg_177",
+			actorName = "{playername}",
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
 			actor = 299035,
-			actorName = "{playername}",
+			NextIcon = 1,
 			live2d = true,
 			say = "Mmgh... That seriously tickles...",
 			typewriter = {
@@ -439,10 +468,11 @@
 			expression = 2,
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 299035,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "My, my, Owner~ You're heating up so much already...",
 			typewriter = {
 				speed = 0.05,
@@ -455,6 +485,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "Heehee~ I just knew you'd enjoy the toys I brought for you~♪",
 			typewriter = {
@@ -463,28 +494,30 @@
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = "main2",
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "She casually tosses the feather into the mirror, then leans in closer to my face before licking my cheek.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = "main2",
+			say = "She casually tosses the feather into the mirror, then leans in closer to my face before licking my cheek.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 299035,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Her bright, wide open eyes are full of adoration, and they twinkle with a deep desire to keep me with her.",
 			hideRecordIco = true,
+			actor = 299035,
+			NextIcon = 1,
+			live2d = true,
+			say = "Her bright, wide open eyes are full of adoration, and they twinkle with a deep desire to keep me with her.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -496,6 +529,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "And finally... Hee hee, did you maybe think we were done?",
 			typewriter = {
@@ -507,10 +541,11 @@
 			expression = 9,
 			side = 2,
 			bgName = "star_level_bg_177",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 299035,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "The final act is just beginning!",
 			typewriter = {
 				speed = 0.05,
@@ -523,6 +558,7 @@
 			bgName = "star_level_bg_177",
 			live2d = "main1",
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "Though if we're splitting cat hairs, this isn't my special guest treatment anymore. It's something you prepared for me♪",
 			typewriter = {
@@ -536,6 +572,7 @@
 			bgName = "star_level_bg_177",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "That's what you get for wandering into my maze to see me♡",
 			typewriter = {

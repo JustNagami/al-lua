@@ -12,9 +12,10 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			bgm = "story-richang-quiet",
 			actor = 307053,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			say = "I see a beautiful figure, clad in white robes and holding an umbrella. She's standing alone, facing the raging blizzard with an aura of pure and tender grace.",
 			typewriter = {
 				speed = 0.05,
@@ -30,14 +31,15 @@
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "A thin layer of snow piles up on the cuffs of her kimono, and the edge of the umbrella hides half her face.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "A thin layer of snow piles up on the cuffs of her kimono, and the edge of the umbrella hides half her face.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -50,6 +52,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "Excuse me, kind traveler.",
 			typewriter = {
 				speed = 0.05,
@@ -62,6 +65,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "Would you be so kind as to offer shelter to a crane stranded by this blizzard?",
@@ -71,14 +75,15 @@
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Her voice is faint, as if she is trying to avoid startling the swirling snowflakes. Still, I sense a smile that her tone can't quite conceal.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "Her voice is faint, as if she is trying to avoid startling the swirling snowflakes. Still, I sense a smile that her tone can't quite conceal.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -89,10 +94,11 @@
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
+			actorName = "{playername}",
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
 			actor = 307053,
-			actorName = "{playername}",
+			NextIcon = 1,
 			say = "Shoukaku... Is this a new performance?",
 			typewriter = {
 				speed = 0.05,
@@ -105,6 +111,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "Heehee, so you saw right through my ruse.",
@@ -119,6 +126,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "I thought I'd be able to fool you a bit longer with this outfit.",
@@ -128,14 +136,15 @@
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "She comes closer and takes me under her umbrella.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "She comes closer and takes me under her umbrella.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -147,6 +156,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "And yes. I'm performing a story called \"The Crane's Gratitude\"~♪",
@@ -161,6 +171,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "In the legend, a rescued crane secretly weaves a beautiful brocade to present to her savior.",
@@ -175,6 +186,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "I may not know how to weave fabrics, but I certainly can weave sweet dreams for you with my flute's melody. Will you stay and listen for a spell?",
@@ -188,10 +200,11 @@
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
+			actorName = "{playername}",
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
 			actor = 307053,
-			actorName = "{playername}",
+			NextIcon = 1,
 			say = "Of course, I'd love to.",
 			typewriter = {
 				speed = 0.05,
@@ -199,42 +212,45 @@
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
+			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "Shoukaku gives me a satisfied look and brings the flute to her lips. The sound cuts through the raging wings, echoing with pure grace like the falling snow.",
-			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
+			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
 			say = "The snow seems to dance along with her gentle melody, as if a glistening silver veil is being woven around us.",
-			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "I hold the umbrella for her, and as my gaze lowers, I see her fingertips are bright red from the cold.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "I hold the umbrella for her, and as my gaze lowers, I see her fingertips are bright red from the cold.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -245,10 +261,11 @@
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
+			actorName = "{playername}",
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
 			actor = 307053,
-			actorName = "{playername}",
+			NextIcon = 1,
 			say = "Aren't you cold?",
 			typewriter = {
 				speed = 0.05,
@@ -261,6 +278,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "Heehee. How could I credibly ask for shelter if I did not feel the bite of the cold at all?",
@@ -275,6 +293,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "This is just my way of showing you my gratitude. And it may be a little selfish of me to ask... but you don't think less of me for this, do you?",
@@ -284,14 +303,15 @@
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Instead of answering, I take her hand and pull her closer to me.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "Instead of answering, I take her hand and pull her closer to me.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -303,6 +323,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "...Does my pain make your heart ache?",
@@ -316,10 +337,11 @@
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
+			actorName = "{playername}",
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
 			actor = 307053,
-			actorName = "{playername}",
+			NextIcon = 1,
 			say = "I can't leave a defenseless crane alone in a blizzard.",
 			typewriter = {
 				speed = 0.05,
@@ -327,14 +349,15 @@
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Shoukaku seems flustered for a moment, but then she snuggles closer and accepts my embrace. Before long, her cold hands warm up in mine.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "Shoukaku seems flustered for a moment, but then she snuggles closer and accepts my embrace. Before long, her cold hands warm up in mine.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -346,6 +369,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "Mmh, your hands are so warm, my savior♪",
@@ -360,6 +384,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "But while my hands are warm now, there's another spot that's still rather chilly.",
@@ -373,10 +398,11 @@
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
+			actorName = "{playername}",
 			nameColor = "#A9F548FF",
 			hideRecordIco = true,
 			actor = 307053,
-			actorName = "{playername}",
+			NextIcon = 1,
 			say = "Where's that?",
 			typewriter = {
 				speed = 0.05,
@@ -389,6 +415,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "Right here♪",
@@ -398,28 +425,30 @@
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Her gratitude act melts away, and she simply smiles before imprinting her affections upon my lips with her own.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "Her gratitude act melts away, and she simply smiles before imprinting her affections upon my lips with her own.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "Her warmth is so intense that it leaves me breathless for a second.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "Her warmth is so intense that it leaves me breathless for a second.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -431,6 +460,7 @@
 			bgName = "star_level_bg_153",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#A9F548FF",
 			say = "The night is still young. You can look forward to my gratitude even more... And in so many ways too♪",
@@ -440,14 +470,15 @@
 			}
 		},
 		{
-			actor = 307053,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_153",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "While the snow covers all around us, the sound of her flute keeps our little nest warm.",
 			hideRecordIco = true,
+			actor = 307053,
+			NextIcon = 1,
+			say = "While the snow covers all around us, the sound of her flute keeps our little nest warm.",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01

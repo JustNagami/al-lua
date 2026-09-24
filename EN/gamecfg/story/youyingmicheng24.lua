@@ -712,7 +712,7 @@
 					1
 				},
 				{
-					1,
+					3,
 					"Investment by Ms. Azuchi"
 				},
 				{
