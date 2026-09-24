@@ -9,6 +9,7 @@
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			bgm = "story-darkplan",
 			actor = 9600033,
 			nameColor = "#A9F548FF",
@@ -33,11 +34,12 @@
 			}
 		},
 		{
-			actor = 9600033,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "狩りを好み、恐怖を好む……わざとあなたの部下を市庁舎に放り込んで疑いをそらし、対立を煽って……その上でわたしを襲い力を削いだの",
@@ -52,6 +54,7 @@
 			bgName = "star_level_bg_452",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -62,11 +65,12 @@
 			}
 		},
 		{
-			actor = 9600033,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "でも、ライオンにしても、収容区を襲ったほかの妖異にしても……それらが従っているのは、もっと危険な別の存在よ",
@@ -76,12 +80,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_452",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――それは誰なんだ？",
 			typewriter = {
 				speed = 0.05,
@@ -94,6 +99,7 @@
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -104,10 +110,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_452",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "その名を口にした途端、ゴールデン・ハインドの顔からわずかに笑みが引いた。",
 			typewriter = {
 				speed = 0.05,
@@ -120,6 +127,7 @@
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -130,12 +138,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_452",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――人間と寄り添う？",
 			typewriter = {
 				speed = 0.05,
@@ -143,11 +152,12 @@
 			}
 		},
 		{
-			actor = 9600033,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "ええ。実はねぇ、妖異は人間の感情に惹かれるの",
@@ -162,6 +172,7 @@
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -177,6 +188,7 @@
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -187,11 +199,12 @@
 			}
 		},
 		{
-			actor = 9600033,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "あなたたちは、私たちの言葉を理解してくれる。私たちを討ち滅ぼすしかない化け物として見たりしない……だからこそ最高の協力相手なの",
@@ -201,12 +214,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_452",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――協力相手として教えてほしいが、安土はこれから何をするつもりなんだ？",
 			typewriter = {
 				speed = 0.05,
@@ -214,11 +228,12 @@
 			}
 		},
 		{
-			actor = 9600033,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "指揮官さま、それはじきに分かるわ",
@@ -228,11 +243,12 @@
 			}
 		},
 		{
-			actor = 9600033,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "「幸福都市計画」は、7つの新紀元シティがキーよ。NO.7はその中のひとつにすぎない",
@@ -247,6 +263,7 @@
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -257,11 +274,12 @@
 			}
 		},
 		{
-			actor = 9600033,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_452",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 9600033,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "……もし、私の言葉を信じてくださるなら……そこの調査をしてほしいわ",
@@ -271,12 +289,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_452",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――わかった。信じよう",
 			typewriter = {
 				speed = 0.05,
@@ -284,14 +303,15 @@
 			}
 		},
 		{
-			actor = 103090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_662",
-			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
-			say = "あ……あの……「レディ」？",
 			bgm = "battle-visioncity-1",
+			actor = 103090,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
+			say = "あ……あの……「レディ」？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -322,11 +342,12 @@
 		},
 		{
 			actor = 103090,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_662",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "災害復興の書類が届いてますので……至急確認した方がよいかと",
 			typewriter = {
 				speed = 0.05,
@@ -334,10 +355,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_662",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "クインシーは目の前で物思いにふけっているらしいゴールデン・ハインドに遠慮がちに声をかけた。",
 			typewriter = {
 				speed = 0.05,
@@ -350,6 +372,7 @@
 			bgName = "star_level_bg_662",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -360,10 +383,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_662",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "ゴールデン・ハインドは我に返ると、何も言わずクインシーにほほ笑みを向け、書類を手元に置くよう促した。",
 			typewriter = {
 				speed = 0.05,
@@ -372,11 +396,12 @@
 		},
 		{
 			actor = 103090,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_662",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "（わわ、すごい圧……やっぱり噂通り「レディ」は口数が少なく、凄みのあるお方……）",
 			typewriter = {
 				speed = 0.05,
@@ -385,11 +410,12 @@
 		},
 		{
 			actor = 103090,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_662",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "ど、どうぞご確認ください！で、では失礼しますね……",
 			typewriter = {
 				speed = 0.05,
@@ -397,10 +423,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_662",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "ゴールデン・ハインドは何か考え込むかのように書類を片付け、時間を確認したのち、仮オフィスをあとにした。",
 			typewriter = {
 				speed = 0.05,
@@ -408,10 +435,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_1",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "夜が明けると、街全体を覆っていた異様さは引いていた。",
 			bgm = "story-dailyfuture-soft",
 			typewriter = {
@@ -446,6 +474,7 @@
 			bgName = "bg_youyingmicheng_1",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -456,11 +485,12 @@
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_youyingmicheng_1",
 			factiontag = "新人エージェント",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "こんな普通の街をまた見られるなんて……ジャベリン、ちょっと泣いちゃいそうです……",
@@ -470,10 +500,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_1",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "昨夜の大規模な悪性妖異による事件を受け、今日は新紀元シティNO.1から慰問の使者が訪問する。",
 			typewriter = {
 				speed = 0.05,
@@ -481,11 +512,12 @@
 			}
 		},
 		{
-			actor = 9600030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_youyingmicheng_1",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 9600030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "おはよう、指揮官さま〜",
@@ -495,10 +527,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_1",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "市庁舎の送迎車から降りたゴールデン・ハインドがにこにこと挨拶してきた。",
 			typewriter = {
 				speed = 0.05,
@@ -506,11 +539,12 @@
 			}
 		},
 		{
-			actor = 900557,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_youyingmicheng_1",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "ちっ、ずいぶん大胆じゃない。こんな大勢の前で堂々と口を開くなんて。ほかの連中に妖異だってバレるのが怖くないわけ？",
@@ -529,6 +563,7 @@
 			bgName = "bg_youyingmicheng_1",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -539,10 +574,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_1",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "ちょうどそのとき、検問所から黒い車列がやってきた。車には「新紀元シティNO.1」の紋章の旗が掲げられている。",
 			typewriter = {
 				speed = 0.05,
@@ -550,10 +586,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_1",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "新紀元シティNO.1。「幸福都市計画」が生まれた都市であり、すべての新紀元シティの中核でもある。",
 			typewriter = {
 				speed = 0.05,
@@ -561,11 +598,12 @@
 			}
 		},
 		{
-			actor = 9600030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_youyingmicheng_1",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 9600030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "NO.1からの使者ね。指揮官さま、ここからはあなたたちの出番よ",

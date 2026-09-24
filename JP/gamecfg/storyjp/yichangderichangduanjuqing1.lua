@@ -6,10 +6,11 @@
 		{
 			expression = 2,
 			side = 2,
-			actor = 202381,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			actor = 202381,
 			say = "指揮官さん、私の羽衣が見つからないの……どこかで見かけなかったかしら？",
 			typewriter = {
 				speed = 0.05,
@@ -28,11 +29,12 @@
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "ええ、とても助かるわ",
 			typewriter = {
 				speed = 0.05,
@@ -41,11 +43,12 @@
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "ありがとう、指揮官さん♪",
 			typewriter = {
 				speed = 0.05,
@@ -55,11 +58,12 @@
 		{
 			expression = 2,
 			side = 2,
-			actor = 202381,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 202381,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "そう……とても大切な宝物なの。どこかで野ざらしになってるのは少し危ないわね",
 			typewriter = {
 				speed = 0.05,
@@ -68,11 +72,12 @@
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "もう一度探してみるわ",
 			typewriter = {
 				speed = 0.05,

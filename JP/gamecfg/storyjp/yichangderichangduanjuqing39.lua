@@ -5,10 +5,11 @@
 	scripts = {
 		{
 			actor = 900562,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "指揮官、聞こえた？",
 			typewriter = {
 				speed = 0.05,
@@ -17,10 +18,11 @@
 		},
 		{
 			actor = 900562,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "このエレベーターから、今とても変な音が聞こえなかった？",
 			typewriter = {
 				speed = 0.05,
@@ -40,11 +42,12 @@
 		{
 			expression = 2,
 			side = 2,
-			actor = 900562,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 900562,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "私もそう思うわ",
 			typewriter = {
 				speed = 0.05,
@@ -54,11 +57,12 @@
 		{
 			expression = 4,
 			side = 2,
-			actor = 900562,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 900562,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "ううん、いっそビルまるごと改装しよう！",
 			typewriter = {
 				speed = 0.05,
@@ -68,11 +72,12 @@
 		{
 			expression = 4,
 			side = 2,
-			actor = 900562,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 900562,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "こんなボロボロのビル、ずっと気に入らなかったわ♪",
 			typewriter = {
 				speed = 0.05,
@@ -82,11 +87,12 @@
 		{
 			expression = 1,
 			side = 2,
-			actor = 900562,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 900562,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "そういうことを言う人って、ホラー映画ではたいてい出番が短いものよ？",
 			typewriter = {
 				speed = 0.05,

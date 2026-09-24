@@ -5,10 +5,11 @@
 	scripts = {
 		{
 			actor = 900562,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "指揮官、ビルのエレベーターが急に止まってしまって、扉も開かないわ……",
 			typewriter = {
 				speed = 0.05,
@@ -17,10 +18,11 @@
 		},
 		{
 			actor = 900562,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "どうすればいいかしら？",
 			typewriter = {
 				speed = 0.05,
@@ -40,11 +42,12 @@
 		{
 			expression = 1,
 			side = 2,
-			actor = 900562,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 900562,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "ええ。中で待ってるわ～",
 			typewriter = {
 				speed = 0.05,
@@ -54,11 +57,12 @@
 		{
 			expression = 2,
 			side = 2,
-			actor = 900562,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 900562,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "指揮官がそう言ってくれると安心するわ。必ず来てちょうだいね～♥",
 			typewriter = {
 				speed = 0.05,
@@ -67,11 +71,12 @@
 		},
 		{
 			actor = 900562,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "管理会社なんて、多分もう十年以上前に廃れてしまってるはず……",
 			typewriter = {
 				speed = 0.05,
@@ -80,11 +85,12 @@
 		},
 		{
 			actor = 900562,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "他の手を考えることにするわ",
 			typewriter = {
 				speed = 0.05,

@@ -215,6 +215,30 @@ pg.dorm3d_collection_template.all = {
 	2123,
 	2124,
 	2125,
+	2201,
+	2202,
+	2203,
+	2204,
+	2205,
+	2206,
+	2207,
+	2208,
+	2209,
+	2210,
+	2211,
+	2212,
+	2213,
+	2214,
+	2215,
+	2216,
+	2217,
+	2218,
+	2219,
+	2220,
+	2221,
+	2222,
+	2223,
+	2225,
 	2601,
 	2602,
 	2603,
@@ -455,6 +479,32 @@ pg.dorm3d_collection_template.get_id_list_by_room_id = {
 		2123,
 		2124,
 		2125
+	},
+	[22] = {
+		2201,
+		2202,
+		2203,
+		2204,
+		2205,
+		2206,
+		2207,
+		2208,
+		2209,
+		2210,
+		2211,
+		2212,
+		2213,
+		2214,
+		2215,
+		2216,
+		2217,
+		2218,
+		2219,
+		2220,
+		2221,
+		2222,
+		2223,
+		2225
 	},
 	[26] = {
 		2601,
@@ -4870,6 +4920,510 @@ end)()
 		},
 		vfx_prefab = {
 			"fbx/litmap_03/day/pre_db_bed06_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2201] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "憩いのテーブルセット",
+		award = 0,
+		time = 0,
+		id = 2201,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item1",
+		desc = "小ぶりなテーブルとスツールのセット。ひと休みしたり、静かに語り合ったりするのにぴったり",
+		model = {
+			"fbx/litmap_01/pre_db_table23a"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_table23a/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2202] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "花咲くフラワーベース",
+		award = 0,
+		time = 0,
+		id = 2202,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item2",
+		desc = "陶製の器に活けられた花と葉が幾重にも広がり、室内に鮮やかな彩りを添えている",
+		model = {
+			"fbx/litmap_01/pre_db_flowers17_01"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_flowers17_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2203] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "ペデスタルプレート",
+		award = 0,
+		time = 0,
+		id = 2203,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item3",
+		desc = "金色の模様が施されたペデスタルプレート。飾りとして置くだけでも、空間に華美な雰囲気を添えてくれる",
+		model = {
+			"fbx/litmap_01/pre_db_tableware58"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_tableware58/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2204] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "宵闇のデスクランプ",
+		award = 0,
+		time = 2,
+		id = 2204,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item4",
+		desc = "繊細な装飾を施したデスクランプ。照明としてだけでなく、部屋の一角を彩るインテリアにも",
+		model = {
+			"fbx/litmap_01/night/pre_db_desklamp12_on"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/night/pre_db_desklamp12_on/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2205] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "建築風景画",
+		award = 0,
+		time = 0,
+		id = 2205,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item5",
+		desc = "美しく額装された、建物が描かれた風景画。眺めていると、どこか遠い場所へ思いを馳せたくなる",
+		model = {
+			"fbx/litmap_01/pre_db_billboard38_02"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_billboard38_02/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2206] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "キャンドルスタンド",
+		award = 0,
+		time = 0,
+		id = 2206,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item6",
+		desc = "シンプルなシルエットのキャンドルスタンド。蝋燭が灯す小さな炎を穏やかで厳かなものに引き立てる",
+		model = {
+			"fbx/litmap_01/pre_db_decoration26_01_on"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_decoration26_01_on/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2207] = {
+		text = "dorm3d_yuanchou_table",
+		name = "静謐のファウンテン",
+		award = 0,
+		time = 0,
+		id = 2207,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item7",
+		desc = "浅く広がる水景が静けさをたたえ、辺りの空気まで涼しく感じられる",
+		model = {
+			"no_bake_pay_prop/chamber/pre_db_yuanchou01_chamber02_0"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"no_bake_pay_prop/chamber/pre_db_yuanchou01_chamber02_0/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2208] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "廊下のコンソールキャビネット",
+		award = 0,
+		time = 0,
+		id = 2208,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item8",
+		desc = "収納とディスプレイを兼ねたコンソールキャビネット。廊下の片隅をすっきりと整えながら、暮らしに温もりを添える",
+		model = {
+			"fbx/litmap_01/pre_db_cupboard49"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cupboard49/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2209] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "対の陶器飾り",
+		award = 0,
+		time = 0,
+		id = 2209,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item9",
+		desc = "寄り添うように並ぶ大小二つの陶器。素朴な見た目の中にどこか味わい深い趣をにじませている",
+		model = {
+			"fbx/litmap_01/pre_db_decoration39"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_decoration39/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2210] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "クッションベンチ",
+		award = 0,
+		time = 0,
+		id = 2210,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item10",
+		desc = "柔らかなクッションが敷かれている、ちょっとした憩いに便利なベンチ",
+		model = {
+			"fbx/litmap_01/pre_db_chair39a_01"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_chair39a_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2211] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "ハイスツール",
+		award = 0,
+		time = 0,
+		id = 2211,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item11",
+		desc = "細身で軽やかな印象のハイスツール。展示台として使えば、上に置いたオブジェクトも自然と注目の的になるだろう",
+		model = {
+			"fbx/litmap_01/pre_db_frame31_1"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_frame31_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2212] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "重厚なベンチ",
+		award = 0,
+		time = 0,
+		id = 2212,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item12",
+		desc = "どっしりとしたシルエットのベンチ。落ち着いた佇まいが、確かな安らぎをもたらしてくれる",
+		model = {
+			"fbx/litmap_01/pre_db_chair39"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_chair39/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2213] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "饅頭の彫像",
+		award = 0,
+		time = 0,
+		id = 2213,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item13",
+		desc = "台座つきの饅頭像。ひときわ目を引く姿がほっこりするような親近感を与える",
+		model = {
+			"fbx/litmap_01/pre_db_yuanchou_sculptures01"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_yuanchou_sculptures01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2214] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "暖炉付きマントルピース",
+		award = 0,
+		time = 0,
+		id = 2214,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item14",
+		desc = "暖かさを提供するだけでなく、さまざまなオブジェクトを飾る場所にもなる。実用性に優れた、部屋の中心的存在",
+		model = {
+			"fbx/litmap_01/pre_db_fireplace04"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_fireplace04/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2215] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "白磁の花瓶",
+		award = 0,
+		time = 0,
+		id = 2215,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item15",
+		desc = "大小二つの白い花瓶。統一感の中にほどよい変化を生み出している",
+		model = {
+			"fbx/litmap_01/pre_db_ceram30a"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_ceram30a/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2216] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "ガラス扉のキャビネット",
+		award = 0,
+		time = 0,
+		id = 2216,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item16",
+		desc = "4枚のガラス扉を備えたディスプレイキャビネット。重厚な木の質感の中に軽やかさと抜け感をあしらった",
+		model = {
+			"fbx/litmap_01/pre_db_cupboard50"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cupboard50/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2217] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "廊下のローボード",
+		award = 0,
+		time = 0,
+		id = 2217,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item17",
+		desc = "廊下の壁沿いに置かれている、定番の木製ローボード。控えめだが安心できる存在感で、日々の品々の収納を担ってくれる",
+		model = {
+			"fbx/litmap_01/pre_db_table27"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_table27/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2218] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "金色の細口ポット",
+		award = 0,
+		time = 0,
+		id = 2218,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item18",
+		desc = "すらりと伸びている首が特徴の、華やかな金属製の壺。端正で気品ある存在感を放っている",
+		model = {
+			"fbx/litmap_01/pre_db_decoration22_1"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_decoration22_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2219] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "浅型コンポート",
+		award = 0,
+		time = 0,
+		id = 2219,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item19",
+		desc = "実用性と芸術性を兼ね備えた浅型のコンポート皿。飲み物やスイーツを入れるとまた違う趣を感じさせる",
+		model = {
+			"fbx/litmap_01/pre_db_decoration37b"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_decoration37b/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2220] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "ラウンドアート",
+		award = 0,
+		time = 0,
+		id = 2220,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item20",
+		desc = "丸みを帯びたフレームが絵を柔らかく包み、切り取られた世界をより優雅に演出する。壁に飾ると雰囲気を和ませてくれる",
+		model = {
+			"fbx/litmap_01/pre_db_billboard49_01"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_billboard49_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2221] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "二段ボンベチェスト",
+		award = 0,
+		time = 0,
+		id = 2221,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item21",
+		desc = "シンプルな造りの二段チェスト。手の届きやすい場所に小物をきっちり収められる",
+		model = {
+			"fbx/litmap_01/pre_db_cupboard35"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cupboard35/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2222] = {
+		text = "dorm3d_yuanchou_chair",
+		name = "ソフトライトフロアランプ",
+		award = 0,
+		time = 0,
+		id = 2222,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item22",
+		desc = "部屋の中を明るくするだけでなく、空間を温かな雰囲気で包み込んでくれる",
+		model = {
+			"fbx/litmap_01/day/pre_db_floorlamp04_01"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/day/pre_db_floorlamp04_01/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2223] = {
+		text = "dorm3d_yuanchou_table",
+		name = "壁掛けキャンドルホルダー",
+		award = 0,
+		time = 0,
+		id = 2223,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item23",
+		desc = "壁にしっかり据えられているキャンドルホルダー。光源としての役目以外にも細かい気配りを感じられる",
+		model = {
+			"fbx/litmap_01/day/pre_db_walllamp03b_1"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/day/pre_db_walllamp03b_1/vfx_wupintishi01"
+		}
+	}
+	pg.base.dorm3d_collection_template[2225] = {
+		text = "dorm3d_yuanchou_bed",
+		name = "ベッドサイドチェスト",
+		award = 0,
+		time = 0,
+		id = 2225,
+		room_id = 22,
+		icon = "3Ddrom_yuanchou_item25",
+		desc = "素朴ながらも便利なチェスト。落ち着いた意匠の収納インテリア",
+		model = {
+			"fbx/litmap_01/pre_db_cupboard51"
+		},
+		unlock = {
+			1,
+			20707,
+			1
+		},
+		vfx_prefab = {
+			"fbx/litmap_01/pre_db_cupboard51/vfx_wupintishi01"
 		}
 	}
 	pg.base.dorm3d_collection_template[2601] = {

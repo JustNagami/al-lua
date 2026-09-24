@@ -5,12 +5,13 @@
 	scripts = {
 		{
 			actor = 317031,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			hidePaintObj = true,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "伊14は普段、自分の部屋にこもってばかりで、他人と関わるのを好まない。",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -18,10 +19,11 @@
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "指揮官……来たんだ",
 			typewriter = {
 				speed = 0.05,
@@ -30,10 +32,11 @@
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "わたしから……何か得たいものでもあるの？",
 			typewriter = {
 				speed = 0.05,
@@ -52,11 +55,12 @@
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "わたしの、考え……？",
 			typewriter = {
 				speed = 0.05,
@@ -66,11 +70,12 @@
 		{
 			expression = 8,
 			side = 2,
-			actor = 317031,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 317031,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "そういうの……どこから話せば、いいんだろう……",
 			typewriter = {
 				speed = 0.05,
@@ -79,11 +84,12 @@
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "食べ物なんて……あまり気にしないけど……",
 			typewriter = {
 				speed = 0.05,
@@ -93,11 +99,12 @@
 		{
 			expression = 11,
 			side = 2,
-			actor = 317031,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 317031,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "でも、気を使わせてごめん。ありがとう",
 			typewriter = {
 				speed = 0.05,

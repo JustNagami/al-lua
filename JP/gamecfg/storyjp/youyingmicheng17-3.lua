@@ -4,10 +4,11 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_523",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "今回はタイガーも本気を出さなかった。収容装置が閉じ始めると、イラストリアスは何かを手放したかのように、ゆっくりと目を伏せた。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -21,6 +22,7 @@
 			bgName = "star_level_bg_523",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900561,
 			nameColor = "#A9F548FF",
 			say = "あなたのような方に負けるのなら、イラストリアスは本望です。ふふふ",
@@ -35,6 +37,7 @@
 			bgName = "star_level_bg_523",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900561,
 			nameColor = "#A9F548FF",
 			say = "きっとあなたはイラストリアスの想いを深く分かってくださるでしょうから",

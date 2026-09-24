@@ -2043,7 +2043,20 @@ function temp()
 								リ = {
 									ヌ = {
 										イ = {
-											this = true
+											this = true,
+											["("] = {
+												M = {
+													E = {
+														T = {
+															A = {
+																[")"] = {
+																	this = true
+																}
+															}
+														}
+													}
+												}
+											}
 										}
 									}
 								}

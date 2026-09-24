@@ -153,6 +153,7 @@ pg.pay_data_display.all = {
 	1027,
 	1028,
 	1029,
+	1030,
 	1303,
 	2001,
 	2002,
@@ -502,6 +503,7 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		1027,
 		1028,
 		1029,
+		1030,
 		1303
 	},
 	[6] = {
@@ -17841,6 +17843,92 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
+	pg.base.pay_data_display[1030] = {
+		limit_group = 0,
+		name = "クルーズパス(26秋)",
+		descrip_extra = "※シーズン任務クリア時に追加の報酬を入手可能",
+		type = 0,
+		second_text = "特別報酬開放",
+		id = 1030,
+		subject = "クルーズパス(26秋)",
+		first_text = "",
+		package_sort_id = 0,
+		first_icon = "",
+		money = 1200,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		cash_show = 0,
+		descrip = "購入すると、シーズン任務進捗Pt1500を入手し、さらにSP報酬を開放",
+		limit_type = 2,
+		name_display = "クルーズパス(26秋)",
+		type_order = 6,
+		package_tag = "",
+		picture = "battlepass_1",
+		akashi_pick = 1,
+		skin_inquire_relation = 0,
+		extra_service = 4,
+		id_str = "com.bilibili.blhx.battlepass32",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "",
+		limit_arg = 1,
+		package_tag_open = 0,
+		airijp_id = "com.yostarjp.azurlane.seasonpass31",
+		extra_service_item = {
+			{
+				1,
+				4031,
+				1500
+			},
+			{
+				8,
+				65121,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					10,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					30
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7031,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	}
 	pg.base.pay_data_display[1303] = {
 		limit_group = 0,
 		name = "迎春特売パス2026",
@@ -22239,6 +22327,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[2052] = {
 		limit_group = 105,
 		name = "戦闘UI・シーサイド（セット）",
@@ -22333,8 +22423,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[2053] = {
 		limit_group = 5,
 		name = "PR特別計画艦パック·Ⅴ期",

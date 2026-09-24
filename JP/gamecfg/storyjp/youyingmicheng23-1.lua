@@ -4,10 +4,11 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "遠くから、警報の音が次々と鳴り響き始めた。シティの外周部がいよいよ本格的に交戦へ入った合図だ。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -25,12 +26,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――妖異が攻勢に出てきた……ここもじきに危なくなる",
 			typewriter = {
 				speed = 0.05,
@@ -38,12 +40,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――タイガー、今すぐ安全なところに連れていく",
 			typewriter = {
 				speed = 0.05,
@@ -54,10 +57,11 @@
 			expression = 4,
 			side = 2,
 			bgName = "star_level_bg_306",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "ある普通の後方要員",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "指揮官……！",
 			typewriter = {
 				speed = 0.05,
@@ -65,10 +69,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "制御室の外から、慌ただしい足音が入ってきた。",
 			typewriter = {
 				speed = 0.05,
@@ -79,10 +84,11 @@
 			expression = 4,
 			side = 2,
 			bgName = "star_level_bg_306",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "ある普通の後方要員",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "……タイガー……あなた……",
 			typewriter = {
 				speed = 0.05,
@@ -93,10 +99,11 @@
 			expression = 1,
 			side = 2,
 			bgName = "star_level_bg_306",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "ある普通の後方要員",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "…………",
 			typewriter = {
 				speed = 0.05,
@@ -107,10 +114,11 @@
 			expression = 1,
 			side = 2,
 			bgName = "star_level_bg_306",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "ある普通の後方要員",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "臨時指揮所まで連れていくために来た…！避難のお手伝いをさせて…！",
 			typewriter = {
 				speed = 0.05,
@@ -118,10 +126,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "少女は軽く頭を下げ、道を空けた。",
 			typewriter = {
 				speed = 0.05,
@@ -129,10 +138,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "タイガーとこの場から離れようとしたその時、妖しく艶めいた炎が前触れもなく噴き上がり、一瞬で出口への道を塞いだ。",
 			typewriter = {
 				speed = 0.05,
@@ -140,10 +150,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "揺らめく炎の中から見覚えのある人影が、ゆっくりと歩み出てきた。",
 			typewriter = {
 				speed = 0.05,
@@ -156,6 +167,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -171,6 +183,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -181,12 +194,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――安土が壊したかったのは……これだったのか？",
 			typewriter = {
 				speed = 0.05,
@@ -194,10 +208,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "安土は完全に停止した巨大な装置へと視線を向けた。",
 			typewriter = {
 				speed = 0.05,
@@ -210,6 +225,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -225,6 +241,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -235,11 +252,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "その「幸福」を妨げる不純物を全部外へと排出させる。そうして切り捨てられた感情がやがて妖異になるというわけ",
@@ -254,6 +272,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -264,11 +283,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "だから、伊14",
@@ -283,6 +303,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -293,10 +314,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "空気がしんと静まり返った。後方要員を名乗っていた少女は手で顔を覆い、深々とため息をついた。",
 			typewriter = {
 				speed = 0.05,
@@ -307,10 +329,11 @@
 			expression = 6,
 			side = 2,
 			bgName = "star_level_bg_306",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "ある普通の後方要員",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "……もう、これ以上演じるのは無理みたい",
 			typewriter = {
 				speed = 0.05,
@@ -318,11 +341,12 @@
 			}
 		},
 		{
-			actor = 317031,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 317031,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "改めて、自己紹介…わたしは伊14",
@@ -354,6 +378,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 317031,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -364,11 +389,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "ふふふ♪その仮面と偽りの姿を最後まで貫き通せたらよかったのにね",
@@ -383,6 +409,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 317031,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -393,10 +420,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_306",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "伊14は一歩前に出て、こちらとタイガーを庇うように安土に立ちはだかり、意外そうな表情を浮かべる安土を静かに見据えた。",
 			typewriter = {
 				speed = 0.05,
@@ -409,6 +437,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 317031,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -424,6 +453,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -434,11 +464,12 @@
 			}
 		},
 		{
-			actor = 317031,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 317031,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "好きに言えばいい……今自分が何をしてるか、分かってるから……",
@@ -453,6 +484,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 317031,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -468,6 +500,7 @@
 			bgName = "star_level_bg_306",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 317031,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,

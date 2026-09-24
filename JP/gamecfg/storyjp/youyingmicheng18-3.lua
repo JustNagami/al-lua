@@ -4,10 +4,11 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_148",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "収容装置の輝きがライオンを捕らえたその瞬間、彼女は一瞬呆然とし、そして笑い始めた。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -21,6 +22,7 @@
 			bgName = "star_level_bg_148",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 205162,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,

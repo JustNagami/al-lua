@@ -4,11 +4,12 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			oldPhoto = true,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			hidePaintObj = true,
 			nameColor = "#A9F548FF",
+			oldPhoto = true,
 			say = "安土の宣言が公共回線を通じて広まると、新紀元シティNO.7は瞬く間に第一級警戒態勢へと移行した。",
 			bgm = "story-antarctica-serious",
 			typewriter = {
@@ -26,10 +27,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_cg3",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			oldPhoto = true,
 			say = "だが予想に反して――妖異たちが攻め込んでくることはなかった。",
 			typewriter = {
@@ -38,10 +40,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "宙に浮かぶ幾つものホログラムに、各シティから届いた警報が映し出されていた。",
 			typewriter = {
 				speed = 0.05,
@@ -70,10 +73,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "経験豊富な作戦参謀たちですら、誰が先に口火を切るか受け身で待っていた。",
 			typewriter = {
 				speed = 0.05,
@@ -86,6 +90,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -106,10 +111,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "ジャベリンは本来なら新人が座るはずのない席へと座らされていた。",
 			typewriter = {
 				speed = 0.05,
@@ -122,6 +128,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			NextIcon = 1,
 			actor = 602030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -137,6 +144,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			NextIcon = 1,
 			actor = 404070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -147,11 +155,12 @@
 			}
 		},
 		{
-			actor = 102030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			actor = 102030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "ですが、それでは外交の面が……",
@@ -161,11 +170,12 @@
 			}
 		},
 		{
-			actor = 202030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			actor = 202030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "敵の罠ではないと誰が断言できますの？まんまと主力をおびき出される形になれば、どうすればいいんですか？",
@@ -175,11 +185,12 @@
 			}
 		},
 		{
-			actor = 301180,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			actor = 301180,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "助けるにしろ助けぬにしろ構いませんが……妾はただ、この機に旧式の……おっと、在庫が余っている武器を売り捌けられれば、都市の稼ぎにもなろうと思うだけでございます",
@@ -194,6 +205,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -209,6 +221,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			NextIcon = 1,
 			actor = 602030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -224,6 +237,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			NextIcon = 1,
 			actor = 404070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -234,10 +248,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "落ち着いていて隙のない声が幾つも重なり合い、ジャベリンの反論はあっという間に潰されてしまった。",
 			typewriter = {
 				speed = 0.05,
@@ -245,10 +260,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "ちょうどそのとき、ジャベリンのスマホが鳴った。",
 			typewriter = {
 				speed = 0.05,
@@ -261,6 +277,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -286,6 +303,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -308,10 +326,11 @@
 			paintingNoise = true,
 			side = 2,
 			bgName = "star_level_bg_503",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 201250,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "ジャベリン！やっと電話に出てくれた！",
 			typewriter = {
 				speed = 0.05,
@@ -343,10 +362,11 @@
 			paintingNoise = true,
 			side = 2,
 			bgName = "star_level_bg_503",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 201250,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "新紀元シティが大変なことになってるってニュースが……！何回電話したと思ってるのよ！死ぬほど心配したんだから！",
 			typewriter = {
 				speed = 0.05,
@@ -359,6 +379,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -369,11 +390,12 @@
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "ううん！今のはなし！NO.7はすっごく頼れる指揮官が守ってるから、みんなで力を合わせれば悪い妖異なんてすぐに追い払えるよ！",
@@ -386,10 +408,11 @@
 			paintingNoise = true,
 			side = 2,
 			bgName = "star_level_bg_503",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 201250,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "たった数日で、その「指揮官」さんのいいところをいっぱい聞かされたけど……",
 			typewriter = {
 				speed = 0.05,
@@ -400,10 +423,11 @@
 			paintingNoise = true,
 			side = 2,
 			bgName = "star_level_bg_503",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 201240,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "ジャベリン、こっちに…カエッテコナイ？",
 			typewriter = {
 				speed = 0.05,
@@ -416,6 +440,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -431,6 +456,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -446,6 +472,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -456,10 +483,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "本当にそうなの？と、会議室で議論にすらならなかった先ほどのやり取りを思い、ジャベリンの笑顔はわずかに翳った。",
 			typewriter = {
 				speed = 0.05,
@@ -470,10 +498,11 @@
 			paintingNoise = true,
 			side = 2,
 			bgName = "star_level_bg_503",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 201250,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "わかった……危ないことがあったら、絶対に自分の身を一番に守ってね！",
 			typewriter = {
 				speed = 0.05,
@@ -486,6 +515,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -496,10 +526,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "通話を切ると、廊下は一気に静まり返った。",
 			typewriter = {
 				speed = 0.05,
@@ -512,6 +543,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -522,11 +554,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "会議は、声の大きさで勝負が決まる場所ではありませんよ",
@@ -536,10 +569,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "資料の箱を抱えた少女が曲がり角から現れた。その佇まいは頼もしさは、NO.7へ向かう列車の中で出会った少女を思い出させた。",
 			typewriter = {
 				speed = 0.05,
@@ -552,6 +586,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -562,11 +597,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "私は参謀の補佐をやってるんですよ。ジャベリンが会議に参加している間に、資料を運んだり、整理をしたり、お偉い方が置いたばかりの書類を探してあげたり……",
@@ -581,6 +617,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -591,11 +628,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "ただ事実を言っただけよ",
@@ -610,6 +648,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -620,11 +659,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "会議室の中での発言は少しだけ聞こえてました。皆さんを説得して援軍を出してもらいたかったんでしょう？",
@@ -639,6 +679,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -649,11 +690,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "なら「全員を言い負かそう」なんて考えないことです。まずは一番心が揺らぎやすい人を見つけて、その人が頷いてくれそうな言葉を選べばいいです",
@@ -663,11 +705,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "ただ流れに身を任せるような人もいるし、利益だけで動く人もいる。そしてリスク評価しか信じないような人もまたいるから",
@@ -677,11 +720,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "人を説得するのにスローガンを叫ぶ必要はありません。あくまで相手に自分と同じ考えを持ってると思わせることです",
@@ -691,10 +735,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Z23は資料箱の中から、一束の書類を抜き取った。",
 			typewriter = {
 				speed = 0.05,
@@ -702,11 +747,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "どうぞ。出席者リストです。さらに直近の情報や過去三年分の会議での発言傾向をまとめてます",
@@ -716,11 +762,12 @@
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "新人エージェント",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "す、すごい……",
@@ -730,11 +777,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "夢の業界に入るためですなら、これくらい大したことじゃありません",
@@ -744,11 +792,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "……って、こんなやりとり、前にもしましたよね",
@@ -758,11 +807,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "今のジャベリンは、何かを変えられる場所にいます。だから自分にはできると信じてみるべきです",
@@ -772,10 +822,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "手からすり抜けそうな何かを懸命に掴み止めるように、ジャベリンはZ23から渡された書類をぎゅっと掴んだ。",
 			typewriter = {
 				speed = 0.05,
@@ -783,11 +834,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "さて、そろそろコーヒーを用意しに行かないと。世界を救う大人たちの頭を冴えさせておかないといけませんから",
@@ -797,11 +849,12 @@
 			}
 		},
 		{
-			actor = 401231,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "参謀補佐",
 			dir = 1,
+			actor = 401231,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "ジャベリン頑張って。私もその内あなたに追いついてみせますから",
@@ -811,10 +864,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "そう言うと、Z23は残りの資料を抱えて廊下を後にした。",
 			typewriter = {
 				speed = 0.05,
@@ -827,6 +881,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			NextIcon = 1,
 			actor = 404070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -859,6 +914,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -869,10 +925,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "再び姿を見せたジャベリンは、落ち着きを見せていた。",
 			typewriter = {
 				speed = 0.05,
@@ -885,6 +942,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -900,6 +958,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -915,6 +974,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			NextIcon = 1,
 			actor = 404070,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -925,10 +985,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "一辺倒だった会議室の空気に揺らぎが生じ始めた。",
 			typewriter = {
 				speed = 0.05,
@@ -936,11 +997,12 @@
 			}
 		},
 		{
-			actor = 102030,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			actor = 102030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "中心エリアにあるNO.1、NO.2とは、今のところ連絡がつきませんから……まずは外縁の都市から着手して、少しずつ連携を回復させるのはどうでしょう？",
@@ -955,6 +1017,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "参謀団メンバー",
 			dir = 1,
+			NextIcon = 1,
 			actor = 602030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -970,6 +1033,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -980,10 +1044,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "会議がまた紛糾しそうになったとき、会議室の扉が再び開いた。",
 			typewriter = {
 				speed = 0.05,
@@ -991,12 +1056,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――ジャベリンの案に賛成だ",
 			typewriter = {
 				speed = 0.05,
@@ -1004,12 +1070,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――NO.7が陸の孤島になるのを座して待つより、まだ動けるうちにこっちから道を繋ぎ直した方がいい",
 			typewriter = {
 				speed = 0.05,
@@ -1022,6 +1089,7 @@
 			bgName = "bg_guild_blue_n",
 			factiontag = "レディ",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -1032,10 +1100,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_blue_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "こうして、短くも効率的な準備を終えると、NO.7の支援行動班は都市間を結ぶ環状道路を通って、隣接する都市――新紀元シティNO.5へと向かった。",
 			typewriter = {
 				speed = 0.05,

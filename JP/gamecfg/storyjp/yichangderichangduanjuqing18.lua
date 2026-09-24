@@ -5,10 +5,11 @@
 	scripts = {
 		{
 			actor = 307162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "この頃、ふと感じ入ることがあります",
 			typewriter = {
 				speed = 0.05,
@@ -17,10 +18,11 @@
 		},
 		{
 			actor = 307162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "白鳳と指揮官様が、ともに蒔いたこの縁は……",
 			typewriter = {
 				speed = 0.05,
@@ -29,10 +31,11 @@
 		},
 		{
 			actor = 307162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "今日この日に花を咲かせ、実を結ぶかもしれない…と",
 			typewriter = {
 				speed = 0.05,
@@ -51,11 +54,12 @@
 		},
 		{
 			actor = 307162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "ええ、白鳳も、そう思いますわ♡",
 			typewriter = {
 				speed = 0.05,
@@ -64,11 +68,12 @@
 		},
 		{
 			actor = 307162,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "はぁ…まだその時ではない、ということかしら……",
 			typewriter = {
 				speed = 0.05,

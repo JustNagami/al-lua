@@ -4,10 +4,11 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "――タイガーが手を掲げると、周囲の乱れた電子ノイズがぴたりと止み、代わりに肌が粟立つような低い反響が響き渡った。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -16,10 +17,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "天の彼方の星々が一つ、また一つと灯り、陰鬱な雲を刺し貫いた。",
 			typewriter = {
 				speed = 0.05,
@@ -27,11 +29,12 @@
 			}
 		},
 		{
-			actor = 202380,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "聴きなさい、星々のオーケストラを！",
@@ -41,10 +44,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "タクトが振り下ろされ、星光の波紋がタイガーを中心に広がり、轟音とともに奇妙なものを映す全てのビジョンを破壊した。",
 			typewriter = {
 				speed = 0.05,
@@ -52,10 +56,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "だが、一箇所の「写し身」だけが元の姿を保っていた。",
 			typewriter = {
 				speed = 0.05,
@@ -63,12 +68,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――あそこだ！今だ、ジャベリン！",
 			typewriter = {
 				speed = 0.05,
@@ -81,6 +87,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -100,6 +107,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -110,11 +118,12 @@
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "新人エージェント",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "「PINKLOVE★HeartLancer」――！！",
@@ -134,10 +143,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "夜空を切り裂く流れ星のように、ジャベリンのステッキが長い槍へと姿を変え、フリードリヒ・カールの「写し身」を貫き、彼女を引きずり出した。",
 			typewriter = {
 				speed = 0.05,
@@ -150,6 +160,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -165,6 +176,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -175,10 +187,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "フリードリヒ・カール目がけて「仲間玉」を投げつけた。球体が空中で展開されると環状の光輪が高速で回転し始め、やがてフリードリヒ・カールの姿が球体の中に包み込まれた。",
 			typewriter = {
 				speed = 0.05,
@@ -186,12 +199,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――収容、成功",
 			typewriter = {
 				speed = 0.05,

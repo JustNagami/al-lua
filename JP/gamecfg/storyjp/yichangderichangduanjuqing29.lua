@@ -5,10 +5,11 @@
 	scripts = {
 		{
 			actor = 201191,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "指揮官、見回りに出かけるの？",
 			typewriter = {
 				speed = 0.05,
@@ -17,10 +18,11 @@
 		},
 		{
 			actor = 201191,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "外は危ないかもしれない。あたしも連れていって",
 			typewriter = {
 				speed = 0.05,
@@ -40,11 +42,12 @@
 		{
 			expression = 1,
 			side = 2,
-			actor = 201191,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 201191,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "正しい選択。考えうる危険をあたしが全部見張っておくから",
 			typewriter = {
 				speed = 0.05,
@@ -54,11 +57,12 @@
 		{
 			expression = 2,
 			side = 2,
-			actor = 201191,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 201191,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "うぅ……わかった……",
 			typewriter = {
 				speed = 0.05,
@@ -68,11 +72,12 @@
 		{
 			expression = 2,
 			side = 2,
-			actor = 201191,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 201191,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "もし危ないことがあったら、絶対あたしにすぐ連絡して",
 			typewriter = {
 				speed = 0.05,

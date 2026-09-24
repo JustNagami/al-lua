@@ -4,9 +4,10 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
+			nameColor = "#A9F548FF",
 			say = "幾度となくクリーンヒットしたはずなのに、安土は次の瞬間には傷ひとつなく立ち上がってくる。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -29,6 +30,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			say = "あははは……足りないわ！",
@@ -43,6 +45,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			say = "あなたたちの攻めは、まだまだ全然足りない",
@@ -57,6 +60,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			say = "……復活した？",
@@ -67,11 +71,12 @@
 		},
 		{
 			actor = 304090,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
-			nameColor = "#FF9B93",
+			side = 2,
+			NextIcon = 1,
 			say = "ええ正解よ。だって私の焔は「新生ノ焔」だもの",
 			typewriter = {
 				speed = 0.05,
@@ -84,6 +89,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			say = "今のあなたたちの実力じゃ、せいぜい軽い準備運動といったところね〜",
@@ -93,9 +99,10 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
+			nameColor = "#A9F548FF",
 			say = "安土が扇子を振り上げると、荒れ狂う烈火ががこちらへと襲いかかってきた。",
 			typewriter = {
 				speed = 0.05,
@@ -103,9 +110,10 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
+			nameColor = "#A9F548FF",
 			say = "ようやく好転しかけた戦況も一瞬にして彼女の手で覆された。",
 			typewriter = {
 				speed = 0.05,
@@ -118,6 +126,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			say = "くっ……せっかくここまで来たっていうのに！",
@@ -132,11 +141,12 @@
 		},
 		{
 			actor = 304070,
-			nameColor = "#A9F548FF",
-			bgName = "star_level_bg_495",
-			side = 2,
-			dir = 1,
 			actorName = "？？？",
+			bgName = "star_level_bg_495",
+			nameColor = "#A9F548FF",
+			dir = 1,
+			side = 2,
+			NextIcon = 1,
 			say = "――指揮官さま！！",
 			typewriter = {
 				speed = 0.05,
@@ -144,9 +154,10 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
+			nameColor = "#A9F548FF",
 			say = "その時、空から轟音が聞こえ始めた。空を見上げると流麗なフォルムの飛行艇が一隻、雲を切り裂きながらこちらに向かってきている。",
 			typewriter = {
 				speed = 0.05,
@@ -159,6 +170,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			say = "ふん、とうとう腰を上げたのね……NO.1の子どもたち",
@@ -168,9 +180,10 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
+			nameColor = "#A9F548FF",
 			say = "飛行艇のハッチが開き、そこから小さな影が降下した。続いて、それらから放たれた全力の一撃が、安土の攻勢をわずかに押し返した。",
 			typewriter = {
 				speed = 0.05,
@@ -179,11 +192,12 @@
 		},
 		{
 			actor = 304070,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_495",
 			factiontag = "NO.1支援者",
 			dir = 1,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "新紀元シティNO.1より天城、来援いたしました",
 			typewriter = {
 				speed = 0.05,
@@ -192,11 +206,12 @@
 		},
 		{
 			actor = 304070,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_495",
 			factiontag = "NO.1支援者",
 			dir = 1,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "申し訳ありません、NO.7の指揮官さま……げほげほ……遅くなってしまいました",
 			typewriter = {
 				speed = 0.05,
@@ -205,11 +220,12 @@
 		},
 		{
 			actor = 304070,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_495",
 			factiontag = "NO.1支援者",
 			dir = 1,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "ここは持久戦に適した戦場ではありません。皆さん、まずは天城と共に離脱を！",
 			typewriter = {
 				speed = 0.05,

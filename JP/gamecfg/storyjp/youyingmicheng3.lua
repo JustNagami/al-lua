@@ -4,10 +4,11 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "ほんの数分前まで、ここは東城区の大通りでいちばん賑いのある商店街の一角だった。",
 			bgm = "battle-visioncity-1",
 			typewriter = {
@@ -25,10 +26,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "だが、現場に着いたときには何もかもが変わっていた。明るく華やいでいた商店街はまるで何かの力によって、現実から「剥ぎ取られた」かのようだった。",
 			typewriter = {
 				speed = 0.05,
@@ -36,10 +38,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "昼間にも関わらず街の上空は重たい鉛色になっていて、あらゆる光が冷たく濁っているように見えた。",
 			typewriter = {
 				speed = 0.05,
@@ -52,6 +55,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -66,12 +70,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――ナビも影響を受けてるな",
 			typewriter = {
 				speed = 0.05,
@@ -79,11 +84,12 @@
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "新人エージェント",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "……私たちはこれから何をするんですか？",
@@ -93,11 +99,12 @@
 			}
 		},
 		{
-			actor = 900557,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "決まってるじゃない、妖異を見つけて収容するのよ",
@@ -111,12 +118,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――タイガー、この先の様子は感知できる？",
 			typewriter = {
 				speed = 0.05,
@@ -127,10 +135,11 @@
 			expression = 6,
 			side = 2,
 			bgName = "star_level_bg_495",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 202380,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "ええ……怪異空間の奥から、いくつも不協和音が聞こえてくるわ",
 			typewriter = {
 				speed = 0.05,
@@ -141,10 +150,11 @@
 			expression = 6,
 			side = 2,
 			bgName = "star_level_bg_495",
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 202380,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "耳障りな口論の声……激しい戦いの音……",
 			typewriter = {
 				speed = 0.05,
@@ -157,6 +167,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -172,6 +183,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -182,10 +194,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "タイガーはタクトを軽く掲げ、影に呑み込まれた脇道を指し示した。",
 			typewriter = {
 				speed = 0.05,
@@ -198,6 +211,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -213,6 +227,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "無辜の被害者",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -245,6 +260,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "無辜の被害者",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -255,10 +271,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "Z14はこらえきれずに振り返ると——すぐ後ろに黒い影が静かに佇んでいた。",
 			typewriter = {
 				speed = 0.05,
@@ -266,13 +283,14 @@
 			}
 		},
 		{
-			actorName = "？？？",
+			nameColor = "#FF9B93",
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900560,
-			nameColor = "#FF9B93",
+			actorName = "？？？",
 			hidePaintObj = true,
 			say = "「…………#&……」",
 			typewriter = {
@@ -286,6 +304,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "無辜の被害者",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -296,10 +315,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "黒い影が音もなく近づいてくる。",
 			typewriter = {
 				speed = 0.05,
@@ -312,6 +332,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "無辜の被害者",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -327,6 +348,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -342,10 +364,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "黒い影とZ14の間を横合いからまばゆい光がひと筋差し込んだ。",
 			typewriter = {
 				speed = 0.05,
@@ -353,10 +376,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "黒い影はわずかに後ずさり、ためらうように数秒とどまると、次の瞬間視界から消え去った。",
 			typewriter = {
 				speed = 0.05,
@@ -369,6 +393,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -384,6 +409,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -403,6 +429,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "無辜の被害者",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -413,11 +440,12 @@
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "新人エージェント",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "指揮官、生存者を見つけました！",
@@ -427,11 +455,12 @@
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "新人エージェント",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "もう大丈夫ですよ！あ……膝、擦りむいちゃってる……支えますね",
@@ -446,6 +475,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "無辜の被害者",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -461,6 +491,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -471,10 +502,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_170",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "新紀元シティNO.7へ向かう列車の中――反対側の一人席に座ってる少女が、手に持っている『都市サバイバルガイド』をおずおずと見せた。",
 			typewriter = {
 				speed = 0.05,
@@ -510,6 +542,7 @@
 			bgName = "star_level_bg_170",
 			factiontag = "乗客",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -525,6 +558,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -563,6 +597,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "無辜の被害者",
 			dir = 1,
+			NextIcon = 1,
 			actor = 401140,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -579,10 +614,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "『近頃の少女失踪事件に関する合同調査依頼』の書類に添付されていた写真にZ14の姿もあった。",
 			typewriter = {
 				speed = 0.05,
@@ -590,12 +626,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "（……今回もあの事件が関わっているようだな）",
 			typewriter = {
 				speed = 0.05,
@@ -603,10 +640,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			shakeTime = 3,
 			say = "その時、怪異空間が突然激しく揺らぎ始め、耳障りな電流音がこちらを包み込んだ。",
 			typewriter = {
@@ -615,10 +653,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "次の瞬間、通り沿いのショーウィンドウ、店のドアガラス、車のバックミラー、さらには路面の水たまりの反射にすら一斉に同じ映像が流れた。",
 			typewriter = {
 				speed = 0.05,
@@ -626,10 +665,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "漆黒の背景に、青白くぼやけた女性の顔が浮かび上がった。",
 			typewriter = {
 				speed = 0.05,
@@ -642,6 +682,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			actorName = "？？？？",
+			NextIcon = 1,
 			actor = 403143,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,

@@ -4,10 +4,11 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "タイガーがタクトを振るうと、幻影が一つ、また一つとその場に静止した。星々の低い唸りが、けたたましい舞曲をかき消していく。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -16,10 +17,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "そしてタイガーは自分をひとつの幻影の前へと導き、その「ヨルク」の手を握るよう目で促した。",
 			typewriter = {
 				speed = 0.05,
@@ -27,12 +29,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――天津風",
 			typewriter = {
 				speed = 0.05,
@@ -44,8 +47,9 @@
 			side = 2,
 			bgName = "star_level_bg_495",
 			factiontag = "妖異エージェント",
-			actorName = "天津風の声",
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			actorName = "天津風の声",
 			hidePaintObj = true,
 			say = "指揮官……！！うぅ、本物の指揮官だ！",
 			typewriter = {
@@ -54,10 +58,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "天津風の燃え上がる蒼い狐火が激しい怒りとともに、ヨルクの本体へと襲いかかる。",
 			typewriter = {
 				speed = 0.05,
@@ -70,6 +75,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -85,11 +91,12 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
+			side = 2,
+			NextIcon = 1,
 			hidePaintObj = true,
-			nameColor = "#FF9B93",
 			say = "ふふ……羨ましいくらいの信頼関係ね",
 			typewriter = {
 				speed = 0.05,
@@ -98,11 +105,12 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
+			side = 2,
+			NextIcon = 1,
 			hidePaintObj = true,
-			nameColor = "#FF9B93",
 			say = "知りたくなったわ……もしあなたについていったら、どこまで連れて行ってくれるのかしら？",
 			typewriter = {
 				speed = 0.05,
@@ -110,10 +118,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "ヨルクが炎に包まれる中、収容装置を投げつけた。彼女は抵抗せず、ただ静かに妖しく微笑んだ。",
 			typewriter = {
 				speed = 0.05,
@@ -121,12 +130,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_495",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――収容、成功",
 			typewriter = {
 				speed = 0.05,
@@ -134,10 +144,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_154",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "収容装置がもとに戻ると、怪異空間が崩れ落ちはじめた。",
 			typewriter = {
 				speed = 0.05,
@@ -162,10 +173,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_154",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "すると携帯電話が突然振動し、発信者名にジャベリンと表示された。",
 			typewriter = {
 				speed = 0.05,
@@ -179,6 +191,7 @@
 			factiontag = "新人エージェント",
 			dir = 1,
 			paintingNoise = true,
+			NextIcon = 1,
 			actor = 231210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -189,12 +202,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_154",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――怪我はない？",
 			typewriter = {
 				speed = 0.05,
@@ -208,6 +222,7 @@
 			factiontag = "新人エージェント",
 			dir = 1,
 			paintingNoise = true,
+			NextIcon = 1,
 			actor = 231210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -224,6 +239,7 @@
 			factiontag = "新人エージェント",
 			dir = 1,
 			paintingNoise = true,
+			NextIcon = 1,
 			actor = 231210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -240,6 +256,7 @@
 			factiontag = "新人エージェント",
 			dir = 1,
 			paintingNoise = true,
+			NextIcon = 1,
 			actor = 231210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -256,6 +273,7 @@
 			factiontag = "新人エージェント",
 			dir = 1,
 			paintingNoise = true,
+			NextIcon = 1,
 			actor = 231210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -271,6 +289,7 @@
 			bgName = "star_level_bg_154",
 			factiontag = "無辜の受付係",
 			dir = 1,
+			NextIcon = 1,
 			actor = 105040,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -286,6 +305,7 @@
 			bgName = "star_level_bg_154",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -296,12 +316,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_154",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――ひとまず二人とも身を隠しててくれ。安全第一だ",
 			typewriter = {
 				speed = 0.05,
@@ -309,12 +330,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_154",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――天津風と調査センターに戻って装備を整えてから、また迎えに行く",
 			typewriter = {
 				speed = 0.05,
@@ -327,6 +349,7 @@
 			bgName = "star_level_bg_154",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -347,6 +370,7 @@
 			factiontag = "新人エージェント",
 			dir = 1,
 			paintingNoise = true,
+			NextIcon = 1,
 			actor = 231210,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -357,10 +381,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_154",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "通信を終え、天津風と一緒に怪異事件調査センターへと急いだ。",
 			typewriter = {
 				speed = 0.05,

@@ -4,10 +4,11 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_108",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "タイガーは軽やかな残像に飛びついて、迷宮の本当の道をがぶっと切り開いた。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -16,10 +17,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_108",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "収容装置の光に包まれ始めると、チェシャーは頬をぷくりとふくらませた。こんなにも早く遊びが終わってしまうことに不満があるようだ。",
 			typewriter = {
 				speed = 0.05,
@@ -32,6 +34,7 @@
 			bgName = "star_level_bg_108",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 299035,
 			nameColor = "#A9F548FF",
 			say = "うわぁ、負けた負けた～",
@@ -42,11 +45,12 @@
 		},
 		{
 			actor = 299035,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_108",
 			factiontag = "妖異",
 			dir = 1,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "でも、ダンナさまが最後までチェシャーに付き合ってくれたから、そこだけはなかなか悪くにゃかったよ♪",
 			typewriter = {
 				speed = 0.05,
@@ -55,11 +59,12 @@
 		},
 		{
 			actor = 317030,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_148",
 			hidePaintObj = true,
-			actorName = "ある普通の後方要員",
 			side = 2,
+			actorName = "ある普通の後方要員",
+			nameColor = "#A9F548FF",
 			say = "「今日、新紀元シティNO.6に到着した……」",
 			typewriter = {
 				speed = 0.05,
@@ -91,10 +96,11 @@
 			expression = 6,
 			side = 2,
 			bgName = "star_level_bg_148",
-			hidePaintObj = true,
-			actor = 317030,
 			actorName = "ある普通の後方要員",
+			NextIcon = 1,
+			actor = 317030,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "「機械が昼夜を問わず動き続けているここは、いつも機械油の匂いが立ち込めている」",
 			typewriter = {
 				speed = 0.05,
@@ -102,10 +108,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_148",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "すらりと長身の影が、巨大な機械に寄りかかっている。まるで最後の演目の幕開けを待っているように。",
 			typewriter = {
 				speed = 0.05,
@@ -113,11 +120,12 @@
 			}
 		},
 		{
-			actor = 205162,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_148",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "くくっ、よくぞここまで来たものだ",
@@ -132,6 +140,7 @@
 			bgName = "star_level_bg_148",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -147,6 +156,7 @@
 			bgName = "star_level_bg_148",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -162,6 +172,7 @@
 			bgName = "star_level_bg_148",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -177,6 +188,7 @@
 			bgName = "star_level_bg_148",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -192,6 +204,7 @@
 			bgName = "star_level_bg_148",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -202,11 +215,12 @@
 			}
 		},
 		{
-			actor = 205162,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_148",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "どうかな。我が牙の鋭さをその身で試してみたいのか？",
@@ -221,6 +235,7 @@
 			bgName = "star_level_bg_148",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -236,6 +251,7 @@
 			bgName = "star_level_bg_148",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 205162,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -246,10 +262,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_148",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "いつの間にかライオンの手には巨大なハサミが握られていた。突如暴走した機械を踏みしめ、荒れ狂う獣のごとくこちらへと突進してきた。",
 			typewriter = {
 				speed = 0.05,

@@ -4,9 +4,10 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
+			nameColor = "#A9F548FF",
 			say = "皆の援護もあって、妨害を振り切ることに成功し、敵陣深くへと突き進んだ。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -25,11 +26,12 @@
 		},
 		{
 			actor = 304090,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
-			nameColor = "#FF9B93",
+			side = 2,
+			NextIcon = 1,
 			say = "おかえり。指揮官",
 			typewriter = {
 				speed = 0.05,
@@ -42,6 +44,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			say = "この前よりずっと面白いことになってるじゃない",
@@ -56,6 +59,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			say = "これほど多くの支援を集めるなんて……少し意外だったわ",
@@ -65,9 +69,10 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_495",
+			nameColor = "#A9F548FF",
 			say = "安土がすっと扇子を開いたと思いきや、突然その場から姿が消えた。",
 			typewriter = {
 				speed = 0.05,
@@ -80,6 +85,7 @@
 			bgName = "star_level_bg_495",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			say = "でも残念。何も変わらないの",

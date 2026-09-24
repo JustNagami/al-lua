@@ -81,7 +81,16 @@ pg.dorm3d_furniture_template.all = {
 	2113,
 	2114,
 	2115,
-	2161
+	2161,
+	2201,
+	2202,
+	2203,
+	2211,
+	2212,
+	2213,
+	2214,
+	2215,
+	2261
 }
 pg.dorm3d_furniture_template.get_id_list_by_room_id = {
 	{
@@ -178,6 +187,17 @@ pg.dorm3d_furniture_template.get_id_list_by_room_id = {
 		2114,
 		2115,
 		2161
+	},
+	[22] = {
+		2201,
+		2202,
+		2203,
+		2211,
+		2212,
+		2213,
+		2214,
+		2215,
+		2261
 	}
 }
 pg.base = pg.base or {}
@@ -186,16 +206,17 @@ pg.base.dorm3d_furniture_template = {}
 ;(function()
 	pg.base.dorm3d_furniture_template[1] = {
 		name = "カウンターチェア",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 6,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 1,
 		icon = "dorm3dIcon/3Ddrom_tianlangxing_CommonFurniture5",
 		desc = "黒いウッドの座面と赤いレザーのクッションがついた、精巧に作られたカウンターチェア。クッションの厚さはちょうどよくて、長時間座っていても疲れを感じない。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 1,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -212,20 +233,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2] = {
 		name = "搾り機",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 1,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "果物や野菜を細切りにして中に入れ、あとはスタートボタンを押すだけ。機能が充実していて使いやすく、料理初心者には必須のアイテムだ。",
 		icon = "dorm3dIcon/3Ddrom_tianlangxing_CommonFurniture4",
 		acesses = "",
 		model = "Pay_Siriushostel/pre_db_sh_electrical03",
-		unlock_banners = "",
+		rarity = 2,
 		id = 2,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			100201
 		},
@@ -233,16 +255,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[3] = {
 		name = "クラシックソファ",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 5,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 1,
 		icon = "dorm3dIcon/3Ddrom_tianlangxing_CommonFurniture6",
 		desc = "クラシックなデザインでちょうどいい長さの本革ソファー。リビングにラグジュアリーな雰囲気を醸し出すだけでなく、快適な座り心地も提供してくれる。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 3,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -259,16 +282,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[4] = {
 		name = "シンプルなベッド",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 4,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 1,
 		icon = "dorm3dIcon/3Ddrom_tianlangxing_CommonFurniture3",
 		desc = "ベッドフレームは丈夫な木材で作られており、使う人の体重を簡単に支えることができる。シンプルで快適なデザインはいい夢をもたらすのに十分な役割を果たしていると言えよう。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 4,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -285,20 +309,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[5] = {
 		name = "デスクランプ",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 1,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "シリアスのドレッサーに置かれているデスクランプ。夜に明かりが足りない時にいつもこのランプをつけている。どんな時でも身だしなみをチェックしている彼女は、ベストな自分で想い人を迎えようとしているのだ。",
 		icon = "dorm3dIcon/3Ddrom_tianlangxing_CommonFurniture2",
 		acesses = "",
 		model = "Pay_Siriushostel/pre_db_sh_chandelier01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 5,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			100101
 		},
@@ -306,20 +331,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[6] = {
 		name = "クルーザーモデル",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 1,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "クルーズの旅が終わったあと、シリアスが自ら買って組み立てたモデル。そこには彼女なりの思い入れがあるやもしれない。",
 		icon = "dorm3dIcon/3Ddrom_tianlangxing_CommonFurniture1",
 		acesses = "",
 		model = "Pay_Siriushostel/pre_db_sh_decoration01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 6,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			100402
 		},
@@ -327,11 +353,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[121] = {
 		name = "スイートシークレット",
-		rarity = 4,
 		is_special = 0,
-		type = 4,
 		icon = "dorm3dIcon/3Ddrom_tianlangxing_PremiumFurniture4",
+		type = 4,
+		rarity = 4,
 		room_id = 1,
+		model_night = "",
 		desc = "あちこちに可愛いリボンの装飾が散りばめられているほか、赤と白の枕と布団が、甘くてロマンチックな雰囲気を醸し出している",
 		acesses = "",
 		model = "Pay_Siriushostel/pre_db_sh_bed01",
@@ -359,11 +386,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[122] = {
 		name = "午後の夢郷",
-		rarity = 4,
 		is_special = 0,
-		type = 5,
 		icon = "dorm3dIcon/3Ddrom_tianlangxing_PremiumFurniture2",
+		type = 5,
+		rarity = 4,
 		room_id = 1,
+		model_night = "",
 		desc = "快適なリクライニングソファ。\n ふかふかで柔らかく、クッションと毛布付き。いつでも仮眠できるようなふんわりとした寝心地。",
 		acesses = "",
 		model = "Pay_Siriushostel/pre_db_sh_chair02",
@@ -391,16 +419,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[201] = {
 		name = "ゆったり布団",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 4,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 2,
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture1",
 		desc = "シンプルで上品な配色の畳の上に敷かれた、柔らかで心地よい布団。\n横たわった瞬間、疲れが消え去っていく。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 201,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -417,16 +446,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[202] = {
 		name = "穏やかな間食",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 6,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 2,
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture2",
 		desc = "向かい合って座る二人。他愛もない会話。食べ物の美味しそうな匂い。\n彼女の笑顔の中で、時間も穏やかに過ぎていく。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 202,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -443,16 +473,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[203] = {
 		name = "そよ風カーペット",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 5,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 2,
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture3",
 		desc = "安らぎを感じる植物素材の上で、ゆったりとした時間を一緒に過ごす。\nそよ風が爽やかな香りを運び、チリンチリンという音と共に、完璧な午後を紡いでいく。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 203,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -469,20 +500,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[204] = {
 		name = "春の花瓶",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 2,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "美しい弧を描く上質な磁器は、咲き誇る花々にとって最高の装飾となる。\n花の香りと花瓶の形が見事に調和し、生命力と優雅さを感じさせる。",
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture4",
 		acesses = "",
 		model = "Pay_Noshirohostel/pre_db_nh_vase01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 204,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			120101
 		},
@@ -490,20 +522,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[205] = {
 		name = "饅頭ぬいぐるみ",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 2,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "愛らしい形は思わず笑みを誘い、繊細な作りは温かな想いを伝える。\nそれは隅で静かに佇みながらも、空間の中で最も心温まる存在。",
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture5",
 		acesses = "",
 		model = "Pay_Noshirohostel/pre_db_nh_toy02",
-		unlock_banners = "",
+		rarity = 2,
 		id = 205,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			120102
 		},
@@ -511,20 +544,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[206] = {
 		name = "花見茶器セット",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 2,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "花びらが盆の縁にそっと触れた、春の優しい風景。\n桜吹雪の中、彼女と新緑の息吹を楽しむひとときを思い起こさせる。",
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture6",
 		acesses = "",
 		model = "Pay_Noshirohostel/pre_db_nh_tableware02",
-		unlock_banners = "",
+		rarity = 2,
 		id = 206,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			120201
 		},
@@ -532,20 +566,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[207] = {
 		name = "青空の松",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 2,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "凛として伸びる枝は雲上の詩を唄う。\n枝葉の配置が絶妙で、命が求める「悠然自適」を上手く表現している。",
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture7",
 		acesses = "",
 		model = "",
-		unlock_banners = "",
+		rarity = 2,
 		id = 207,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			120202
 		},
@@ -553,20 +588,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[208] = {
 		name = "静寂の余白",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 2,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "シンプルな陶器と緑の植物が、余白の芸術を演出する。\n控えめな生命力が、空間全体に禅のような静けさをもたらす。\n",
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture8",
 		acesses = "",
 		model = "",
-		unlock_banners = "",
+		rarity = 2,
 		id = 208,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			120301
 		},
@@ -574,20 +610,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[209] = {
 		name = "季節の花瓶",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 2,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "季節の色彩が玲瓏に彩り、自然で伸びやかな枝はまるで動く絵巻のよう。\n花を生ける度に、その美に新たな解釈が生まれる。",
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture9",
 		acesses = "",
 		model = "Pay_Noshirohostel/pre_db_nh_vase02",
-		unlock_banners = "",
+		rarity = 2,
 		id = 209,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			120302
 		},
@@ -595,20 +632,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[210] = {
 		name = "幸運饅頭掛け軸",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 2,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "幸運が訪れ、めでたく願いが叶う。\n丸みを帯びた愛らしいフォルムが、心を温めてくれる。",
 		icon = "dorm3dIcon/3Ddrom_nengdai_CommonFurniture10",
 		acesses = "",
 		model = "Pay_Noshirohostel/pre_db_nh_decoration02",
-		unlock_banners = "",
+		rarity = 2,
 		id = 210,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			120202
 		},
@@ -616,11 +654,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[221] = {
 		name = "タヌクッション",
-		rarity = 4,
 		is_special = 0,
-		type = 4,
 		icon = "dorm3dIcon/3Ddrom_nengdai_PremiumFurniture1",
+		type = 4,
+		rarity = 4,
 		room_id = 2,
+		model_night = "",
 		desc = "柔らかな手触り、心地よい温もりが全身を優しく包み込む。\n寄り添っても、抱きしめても、クッションはあなたを受け入れてくれる。",
 		acesses = "",
 		model = "Pay_Noshirohostel/pre_db_nh_bed01",
@@ -648,11 +687,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[222] = {
 		name = "逢瀬の机",
-		rarity = 3,
 		is_special = 0,
-		type = 6,
 		icon = "dorm3dIcon/3Ddrom_nengdai_PremiumFurniture2",
+		type = 6,
+		rarity = 3,
 		room_id = 2,
+		model_night = "",
 		desc = "広々としたテーブルは喜びと期待に満ちている。\n席の用意は整った。あとは二人の逢瀬を静かに待つのみ。",
 		acesses = "",
 		model = "Pay_Noshirohostel/pre_db_nh_diningroom01",
@@ -682,11 +722,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[223] = {
 		name = "安らぎの時間",
-		rarity = 4,
 		is_special = 0,
-		type = 5,
 		icon = "dorm3dIcon/3Ddrom_nengdai_PremiumFurniture3",
+		type = 5,
+		rarity = 4,
 		room_id = 2,
+		model_night = "",
 		desc = "柔らかなクッションが疲れた体を包み込み、姿勢を優しく支えてくれる。\n 忙しい一日で最も優しいこの場所に人はハマってしまう。",
 		acesses = "",
 		model = "Pay_Noshirohostel/pre_db_nh_livingroom01",
@@ -716,11 +757,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[151] = {
 		name = "聖夜のソリソファ",
-		rarity = 5,
 		is_special = 1,
-		type = 5,
 		icon = "dorm3dIcon/3Ddrom_tianlangxing_PremiumFurniture5",
+		type = 5,
+		rarity = 5,
 		room_id = 1,
+		model_night = "",
 		desc = "冬夜に舞う雪、温かく揺らめくキャンドルの灯り、クリスマスの約束。\n  愛らしいトナカイのソリソファに、ふかふかのクッションとブランケットをセットで。祝福と期待が織りなす星明かりに、心躍る小さなサプライズを。\n  聖夜のディナーの後、この温もりと心地よい空間の中で、素敵な物語が始まるかもしれない。",
 		acesses = "",
 		model = "Pay_Siriushostel/Sh_Sp_Xmas/pre_db_sp_sh_xmas01",
@@ -754,11 +796,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[251] = {
 		name = "ぬくぬくこたつ",
-		rarity = 5,
 		is_special = 1,
-		type = 5,
 		icon = "dorm3dIcon/3Ddrom_nengdai_PremiumFurniture251",
+		type = 5,
+		rarity = 5,
 		room_id = 2,
+		model_night = "",
 		desc = "こたつの温もりが、冬ののんびりとした午後を思い出させる。\n 窓から差し込む陽の光が畳に降り注ぎ、こたつの温もりと溶け合って、全ての疲れを癒してくれる。",
 		acesses = "",
 		model = "Pay_Noshirohostel/Nh_Sp_NewYearsDay/pre_db_nh_sp_nyd_livingroom01",
@@ -788,16 +831,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[301] = {
 		name = "クッキーソファ",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 4,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 3,
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture2",
 		desc = "まるで焼きたてのクッキーのような温かな香りが漂うソファ。\n曲線の一つ一つに可愛らしさがぎゅっと詰まっており、最高の癒やし空間を作り出している。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 301,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -814,16 +858,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[302] = {
 		name = "ソルトウッドベッド",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 6,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 3,
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture3",
 		desc = "クマのクッキーをモチーフとしたヘッドボードはシンプルながら可愛らしい。\n横たわると、シーソルトクッキーの香りが漂ってくるかのよう。疲れを忘れ、甘い夢の世界へと誘われる。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 302,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -840,16 +885,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[303] = {
 		name = "青い一角",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 5,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 3,
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture1",
 		desc = "カラフルな装飾と豊かな想像力が、青い小さな空間を不思議な雰囲気で満たしている。\nたとえ雨が降っていても、心が晴れやかになるだろう。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 303,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -866,20 +912,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[304] = {
 		name = "サカバンバスピス",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 3,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "柔らかな素材で作られた、愛らしい海の生き物のぬいぐるみ。\n最高の抱き心地。",
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture5",
 		acesses = "",
 		model = "Pay_Anchoragehostel/pre_db_ah_toy05",
-		unlock_banners = "",
+		rarity = 2,
 		id = 304,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			130101
 		},
@@ -887,20 +934,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[305] = {
 		name = "ナチュラルブレス",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 3,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "小さな緑が重なり合う。\nどこに置いても、空間に自然な癒やしを添える。",
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture4",
 		acesses = "",
 		model = "Pay_Anchoragehostel/pre_db_ah_pottedplant01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 305,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			130102
 		},
@@ -908,20 +956,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[306] = {
 		name = "時の記録",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 3,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "爽やかなデザインの額縁には、可愛らしいテイストの絵が飾られている。\nいつかこのフレームには最も大切な思い出が収められるのかもしれない。",
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture6",
 		acesses = "",
 		model = "Pay_Anchoragehostel/pre_db_ah_billboard01_group01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 306,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			130201
 		},
@@ -929,20 +978,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[307] = {
 		name = "海の出会い",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 3,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "単なる装飾品ではなく、スイッチのような存在。\n軽く押すだけで、窓は海につながる魔法の窓へと変わるだろう。",
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_CommonFurniture7",
 		acesses = "",
 		model = "Pay_Anchoragehostel/pre_db_ah_decoration02",
-		unlock_banners = "",
+		rarity = 2,
 		id = 307,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			130301
 		},
@@ -950,11 +1000,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[321] = {
 		name = "ピュアティータイム",
-		rarity = 4,
 		is_special = 0,
-		type = 6,
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_PremiumFurniture1",
+		type = 6,
+		rarity = 4,
 		room_id = 3,
+		model_night = "",
 		desc = "空想の時を楽しむ満足感と心地よさに満ちたコーヒーカップ。\nおとぎ話の中のアフタヌーンティーは、この空間にいる全ての人のものとなるだろう。",
 		acesses = "",
 		model = "Pay_Anchoragehostel/pre_db_ah_entertainmentarea01",
@@ -984,11 +1035,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[322] = {
 		name = "星々の遊船",
-		rarity = 4,
 		is_special = 0,
-		type = 4,
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_PremiumFurniture2",
+		type = 4,
+		rarity = 4,
 		room_id = 3,
+		model_night = "",
 		desc = "曲線的なデザインにオーシャンブルーの色合い、\n夜空に浮かぶフカフカなベッドはロマン溢れる冒険の夢へと導いてくれる",
 		acesses = "",
 		model = "Pay_Anchoragehostel/pre_db_ah_bedroom01",
@@ -1018,13 +1070,14 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[401] = {
 		name = "シーサイドレジャー",
-		rarity = 5,
+		is_special = 1,
 		is_exclusive = 0,
 		type = 3,
-		is_special = 1,
-		room_id = 4,
 		icon = "dorm3dIcon/3Ddrom_beach_PremiumFurniture1",
+		room_id = 4,
+		rarity = 5,
 		desc = "バカンスの時間が始まる！ヤシの木の下の日差し、涼しい海岸沿い、水しぶきと潮風。心は一瞬でバカンスの歓びに包まれる。",
+		model_night = "",
 		acesses = "",
 		model = "pay_publicplace/slide",
 		id = 401,
@@ -1045,11 +1098,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[323] = {
 		name = "クラウドドリーム",
-		rarity = 4,
 		is_special = 0,
-		type = 5,
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_PremiumFurniture8",
+		type = 5,
+		rarity = 4,
 		room_id = 3,
+		model_night = "",
 		desc = "ゆらゆらする雲、ふんわりと優しい感触、マシュマロを思わせる座り心地。一緒に甘い香りの中でのんびり過ごそう",
 		acesses = "",
 		model = "Pay_Anchoragehostel/pre_db_ah_livingroom01",
@@ -1079,11 +1133,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[324] = {
 		name = "ピュアランド",
-		rarity = 5,
 		is_special = 1,
-		type = 4,
 		icon = "dorm3dIcon/3Ddrom_ankeleiqi_PremiumFurniture9",
+		type = 4,
+		rarity = 5,
 		room_id = 3,
+		model_night = "",
 		desc = "ふわふわのハートクッションに、キラキラのおもちゃランプ。オーシャンブルーの夢を彩ったピュアランドへようこそ",
 		acesses = "",
 		model = "Pay_Anchoragehostel/Ah_Sp_ValentinesDay/pre_db_aklq_sp_vd01",
@@ -1115,16 +1170,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1101] = {
 		name = "うさうさクレイドル",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 4,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 11,
 		icon = "dorm3dIcon/3Ddrom_xinzexi_CommonFurniture1",
 		desc = "快適な眠り心地を追求したベッド。しっかりした構造で安定感もバツグン。\nふわふわのウサギ型クッションを抱いて眠れば、\n星空の下にあるにんじん農園の夢が見られる……かも？",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 1101,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -1141,16 +1197,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1102] = {
 		name = "アイスド・エイジ",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 6,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 11,
 		icon = "dorm3dIcon/3Ddrom_xinzexi_CommonFurniture2",
 		desc = "シンプルなシルエットで描かれた未来系デザイン。強力な冷却システムを搭載。\n酸素コーラをキンキンに冷やせば、\n日々のライフスタイルに爽快感と心地よさを提供してくれる。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 1102,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -1167,16 +1224,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1103] = {
 		name = "おひさまアイランド",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 5,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 11,
 		icon = "dorm3dIcon/3Ddrom_xinzexi_CommonFurniture3",
 		desc = "クラシックなファブリックソファ。ふんわり柔らかな座り心地。\n午後の陽射しがそっと差し込むとき、\nここはうたた寝にぴったりな浮島になる。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 1103,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -1193,20 +1251,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1104] = {
 		name = "プラネットナイトライト",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 11,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "惑星をモチーフにしたランプ。夜になると、淡くぼんやりと光を放つ。\n深い宇宙のどこかに、きっとひとつ——\n君を静かに見守る、消えない星がある。",
 		icon = "dorm3dIcon/3Ddrom_xinzexi_CommonFurniture6",
 		acesses = "",
 		model = "Pay_Newjerseyhostel/pre_db_njh_electrical03",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1104,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1110101
 		},
@@ -1214,20 +1273,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1105] = {
 		name = "ラインアートパネル",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 11,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "線が描き出すミニマリズム、重なり合う幾何学的が織りなす独特の美しさ。インテリアに躍動感のある雰囲気を醸し出す。",
 		icon = "dorm3dIcon/3Ddrom_xinzexi_CommonFurniture5",
 		acesses = "",
 		model = "Pay_Newjerseyhostel/pre_db_njh_billboard01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1105,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1110301
 		},
@@ -1235,20 +1295,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1106] = {
 		name = "サイレントブルー",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 11,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "スイッチをゆっくりひねると、やわらかな光が流れるように溢れ出す。\nクラゲの群れが深い青の虚空をゆらゆらと泳ぐ幻想の光景。\nこの夢のような海に想いを馳せたのは……いつからだっただろう。",
 		icon = "dorm3dIcon/3Ddrom_xinzexi_CommonFurniture7",
 		acesses = "",
 		model = "Pay_Newjerseyhostel/pre_db_njh_fishtank01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1106,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1110302
 		},
@@ -1256,20 +1317,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1107] = {
 		name = "電子レンジ",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 11,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "便利で手軽な加熱器具。朝食にもアフタヌーンティーにも熱々のものを提供してくれる。",
 		icon = "dorm3dIcon/3Ddrom_xinzexi_CommonFurniture8",
 		acesses = "",
 		model = "Pay_Newjerseyhostel/pre_db_njh_electrical04",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1107,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1110201
 		},
@@ -1277,20 +1339,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1108] = {
 		name = "緑の盆栽",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 11,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "ビジュアル的に環境改善するだけでなく、空気も浄化してくれる。",
 		icon = "dorm3dIcon/3Ddrom_xinzexi_CommonFurniture9",
 		acesses = "",
 		model = "Pay_Newjerseyhostel/pre_db_njh_pottedplant01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1108,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1110202
 		},
@@ -1298,11 +1361,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1151] = {
 		name = "星空のコーナー",
-		rarity = 4,
 		is_special = 0,
-		type = 5,
 		icon = "dorm3dIcon/3Ddrom_xinzexi_PremiumFurniture1",
+		type = 5,
+		rarity = 4,
 		room_id = 11,
+		model_night = "",
 		desc = "未来感あふれる最新型シート。室温自動調整機能付き。\nいつでも冷えたドリンクが飲め、快適さとおもてなしの極みを体現してくれる空間。",
 		acesses = "",
 		model = "Pay_Newjerseyhostel/pre_db_njh_livingroom01",
@@ -1332,11 +1396,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1152] = {
 		name = "ダイナミックホイール",
-		rarity = 5,
 		is_special = 1,
-		type = 5,
 		icon = "dorm3dIcon/3Ddrom_xinzexi_PremiumFurniture4",
+		type = 5,
+		rarity = 5,
 		room_id = 11,
+		model_night = "",
 		desc = "使用者のメンタルケアまでも配慮してくれる、本格的なフィットネスマシン。\nペダルを漕ぐだけで、自宅にいながらもワクワクする冒険の旅に出られる！",
 		acesses = "",
 		model = "Pay_Newjerseyhostel/pre_db_njh_entertainment01",
@@ -1366,11 +1431,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1153] = {
 		name = "星外の隠れ家",
-		rarity = 4,
 		is_special = 0,
-		type = 4,
 		icon = "dorm3dIcon/3Ddrom_xinzexi_PremiumFurniture2",
+		type = 4,
+		rarity = 4,
 		room_id = 11,
+		model_night = "",
 		desc = "テクノロジーと美的感覚が融合した、密やかなリラックススペース。 それはまるで、銀河の果てにある温もりのあるシェルター。\n 身をゆだねれば、日常を忘れて宇宙の夢に包まれる。",
 		acesses = "",
 		model = "Pay_Newjerseyhostel/pre_db_njh_bedroom01",
@@ -1400,11 +1466,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1154] = {
 		name = "スマート冷蔵庫IB-7",
-		rarity = 4,
 		is_special = 0,
-		type = 6,
 		icon = "dorm3dIcon/3Ddrom_xinzexi_PremiumFurniture3",
+		type = 6,
+		rarity = 4,
 		room_id = 11,
+		model_night = "",
 		desc = "こんにちは。スマート冷蔵庫IB-7へようこそ。\nご注文のイチゴアイスクリームが完成しました。あなたの一番好きなフレーバーです。\n……さらなる個別提案をご希望ですか？現在その機能は開発中です。お楽しみに！",
 		acesses = "",
 		model = "Pay_Newjerseyhostel/pre_db_njh_kitchen01",
@@ -1432,13 +1499,14 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1201] = {
 		name = "ふんわりベッド",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 4,
-		is_special = 0,
-		room_id = 12,
 		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture1",
+		room_id = 12,
+		rarity = 3,
 		desc = "柔らかなダブルベッド。快適なマットレス、布団、枕が揃っている。布団の中に入ればいつでも一日の疲れを癒してくれる。",
+		model_night = "",
 		acesses = "",
 		model = "",
 		id = 1201,
@@ -1460,13 +1528,14 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1202] = {
 		name = "木製ダイニングテーブル",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 6,
-		is_special = 0,
-		room_id = 12,
 		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture2",
+		room_id = 12,
+		rarity = 3,
 		desc = "座面と背もたれだけのシンプルな座椅子。畳用のもので、柔らかい座布団と合わせれば、長時間座っても筋肉疲労の心配がない快適さを持つ。",
+		model_night = "",
 		acesses = "",
 		model = "",
 		id = 1202,
@@ -1488,13 +1557,14 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1203] = {
 		name = "シンプルな座椅子",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 5,
-		is_special = 0,
-		room_id = 12,
 		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture3",
+		room_id = 12,
+		rarity = 3,
 		desc = "頑丈で耐久性のある良質な木材で作られたテーブル。天板は滑らかで掃除がしやすく、濃い色合いが汚れを目立たなくし、紫檀の質感をそのまま生かしている。",
+		model_night = "",
 		acesses = "",
 		model = "",
 		id = 1203,
@@ -1516,20 +1586,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1211] = {
 		name = "古風の掛け軸",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 12,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "古風な掛け軸。控えめで禅の趣があり、室内の雰囲気と調和している。部屋に静けさと雅やかさを添える。",
 		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture4",
 		acesses = "",
 		model = "Pay_Dafenghostel/pre_db_df_wallscrolls01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1211,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1120301
 		},
@@ -1537,20 +1608,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1212] = {
 		name = "恋慕のコンパニオン",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 12,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "軽やかで柔らかな素材を使った特別な衣装、身に着けるとまるで何もまとっていないかのように快適。",
 		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture5",
 		acesses = "",
 		model = "Pay_Dafenghostel/pre_db_df_cloth01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1212,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1120101
 		},
@@ -1558,20 +1630,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1213] = {
 		name = "フロアランプ",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 12,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "床に置かれた背の高い木製ランプ。柔らかな光を放つそれは、彼女が心を込めて選んだインテリア用の光源だ。",
 		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture6",
 		acesses = "",
 		model = "Pay_Dafenghostel/pre_db_df_floorlamp01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1213,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1120302
 		},
@@ -1579,19 +1652,20 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1214] = {
 		name = "半透明の屏風",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 12,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "精緻な柄が描かれている、半透明の屏風。大鳳はベッドの横に置くのが好きで、半透明のデザインで室内にほのかな艶めきを添えている。",
 		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture7",
 		acesses = "",
 		model = "Pay_Dafenghostel/pre_db_df_frame01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1214,
 		touch_id = "",
+		model_night = "",
 		target_slots = {
 			1120102
 		},
@@ -1602,20 +1676,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1215] = {
 		name = "ナイトライト",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 12,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "可愛らしいデザインのナイトライト。内部には藤の枝をあしらった装飾があり、暖かく柔らかな灯りが部屋に温もりを与える。",
 		icon = "dorm3dIcon/3Ddrom_dafeng_CommonFurniture8",
 		acesses = "",
 		model = "Pay_Dafenghostel/pre_db_df_desklamp01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1215,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1120104
 		},
@@ -1623,13 +1698,14 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1221] = {
 		name = "愛の巣",
-		rarity = 4,
+		is_special = 0,
 		unlock_tips = "",
 		type = 4,
-		is_special = 0,
-		room_id = 12,
 		icon = "dorm3dIcon/3Ddrom_dafeng_PremiumFurniture1",
+		room_id = 12,
+		rarity = 4,
 		desc = "シンプルなデザインのダブルベッド。高強度の素材を使用し、頑丈な金属フレームは大きな負荷にも耐えられる。厳選した低反発マットレスと組み合わせ、安全で快適な眠りを保証してくれる。",
+		model_night = "",
 		acesses = "",
 		model = "Pay_Dafenghostel/pre_db_df_bedroom_01",
 		id = 1221,
@@ -1655,11 +1731,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1222] = {
 		name = "花楽の韻律",
-		rarity = 5,
 		is_special = 1,
-		type = 99,
 		icon = "dorm3dIcon/3Ddrom_dafeng_PremiumFurniture2",
+		type = 99,
+		rarity = 5,
 		room_id = 12,
+		model_night = "",
 		desc = "柔らかな光が花弁をなで、彼女のシルエットを映し出す。花と音色が溶け合い、自然のささやきが流れていく。",
 		acesses = "",
 		model = "Pay_Dafenghostel/pre_db_df_tedian01",
@@ -1689,11 +1766,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1223] = {
 		name = "桜の雅席",
-		rarity = 4,
 		is_special = 0,
-		type = 5,
 		icon = "dorm3dIcon/3Ddrom_dafeng_PremiumFurniture3",
+		type = 5,
+		rarity = 4,
 		room_id = 12,
+		model_night = "",
 		desc = "古風な紙灯籠が緋色を照らし、茶の香がほのかに立ちのぼる中、精巧な茶器がそこにあった。桜の装飾をあしらった座布団と合わせて、雅な客迎えを成している。",
 		acesses = "",
 		model = "Pay_Dafenghostel/pre_db_df_livingroom_01",
@@ -1723,16 +1801,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1401] = {
 		name = "ふんわりシルク",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 4,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 14,
 		icon = "dorm3dIcon/3Ddrom_aijier_CommonFurniture1",
 		desc = "クラシックなデザインのダブルベッド。黒のヘッドボードに赤のベルベットの毛布や、柔らかなマットレスと枕が疲れた心身に温かな安らぎを提供してくれる。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 1401,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -1749,16 +1828,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1402] = {
 		name = "シンプルデスク",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 6,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 14,
 		icon = "dorm3dIcon/3Ddrom_aijier_CommonFurniture2",
 		desc = "黒の木材とシンプルな赤色の椅子。実用性と古典的な雰囲気を兼ね備えている。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 1402,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -1775,16 +1855,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1403] = {
 		name = "本革ソファ",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 5,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 14,
 		icon = "dorm3dIcon/3Ddrom_aijier_CommonFurniture3",
 		desc = "柔らかくて快適な座り心地の本革ソファ。丸形のティーテーブルと組み合せれば、一人の時間を快適に過ごせる理想の場所へと早変わり。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 1403,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -1801,20 +1882,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1411] = {
 		name = "ロングキャンドル",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 14,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "アイボリーホワイトのロングキャンドル。柔らかく温かな明かりで夜に静寂とロマンチックな雰囲気を添える。",
 		icon = "dorm3dIcon/3Ddrom_aijier_CommonFurniture4",
 		acesses = "",
 		model = "Pay_Aijierhostel/pre_db_aje_decoration01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1411,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1140303
 		},
@@ -1822,20 +1904,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1412] = {
 		name = "緑の盆栽",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 14,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "大型の観葉植物は、その大きて青々とした葉で部屋に活力を与えるだけでなく、空気をも浄化してくれる。",
 		icon = "dorm3dIcon/3Ddrom_aijier_CommonFurniture5",
 		acesses = "",
 		model = "Pay_Aijierhostel/pre_db_aje_bonsai01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1412,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1140202
 		},
@@ -1843,20 +1926,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1413] = {
 		name = "デスクライト",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 14,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "デスクに置かれているミニライト。温かな明かりを放ち、夜間の読書や仕事に快適な照明を提供してくれる。",
 		icon = "dorm3dIcon/3Ddrom_aijier_CommonFurniture6",
 		acesses = "",
 		model = "Pay_Aijierhostel/pre_db_aje_desklamp01_on",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1413,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1140103
 		},
@@ -1864,20 +1948,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1414] = {
 		name = "レトロカメラ",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 14,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "古き良きレトロカメラ。年季を感じさせる独特なデザインを持ち、写真愛好家のコレクションに最適な一品。",
 		icon = "dorm3dIcon/3Ddrom_aijier_CommonFurniture7",
 		acesses = "",
 		model = "Pay_Aijierhostel/pre_db_aje_camera01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1414,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1140102
 		},
@@ -1885,20 +1970,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1415] = {
 		name = "肖像画",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 14,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "古典的なタッチで描かれた抽象派の肖像画。鮮やかさと深みという相反する色彩が共存し、意外と部屋の雰囲気とよく合っている。",
 		icon = "dorm3dIcon/3Ddrom_aijier_CommonFurniture8",
 		acesses = "",
 		model = "Pay_Aijierhostel/pre_db_aje_billboard01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 1415,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			1140302
 		},
@@ -1906,11 +1992,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1461] = {
 		name = "真紅の寧謐",
-		rarity = 4,
 		is_special = 0,
-		type = 4,
 		icon = "dorm3dIcon/3Ddrom_aijier_PremiumFurniture1",
+		type = 4,
+		rarity = 4,
 		room_id = 14,
+		model_night = "",
 		desc = "プライベートでロマンチックなシークレットスペース。赤いベルベットの寝具と引き出し式の天蓋カーテンが、夜に静けさと温もりをもたらしてくれる。",
 		acesses = "",
 		model = "Pay_Aijierhostel/pre_db_aijier_bed01",
@@ -1940,11 +2027,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1462] = {
 		name = "知的な思案",
-		rarity = 4,
 		is_special = 0,
-		type = 6,
 		icon = "dorm3dIcon/3Ddrom_aijier_PremiumFurniture2",
+		type = 6,
+		rarity = 4,
 		room_id = 14,
+		model_night = "",
 		desc = "滑らかで平らな天板の古典的なデザインのデスク。頑丈で収納機能もあり、学習や仕事にピッタリ。",
 		acesses = "",
 		model = "Pay_Aijierhostel/pre_db_aijier_study01",
@@ -1974,11 +2062,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1463] = {
 		name = "深紅の趣",
-		rarity = 4,
 		is_special = 0,
-		type = 5,
 		icon = "dorm3dIcon/3Ddrom_aijier_PremiumFurniture3",
+		type = 5,
+		rarity = 4,
 		room_id = 14,
+		model_night = "",
 		desc = "本革素材を使用し、豪華でありながらも控えめな印象を与えるソファ。生活の安らぎと趣を存分に楽しめる一品。",
 		acesses = "",
 		model = "Pay_Aijierhostel/pre_db_aijier_living01",
@@ -2008,11 +2097,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[1468] = {
 		name = "トキメキの瞬間",
-		rarity = 5,
 		is_special = 1,
-		type = 99,
 		icon = "dorm3dIcon/3Ddrom_aijier_PremiumFurniture4",
+		type = 99,
+		rarity = 5,
 		room_id = 14,
+		model_night = "",
 		desc = "ゴージャスで魅惑的かつ情熱とロマン溢れる浴槽の中で、激しい波に潜む感情の高ぶりを肌で感じてみて。",
 		acesses = "",
 		model = "Pay_Aijierhostel/pre_db_aijier_special01",
@@ -2042,16 +2132,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2101] = {
 		name = "ダンボールお家",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 4,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 21,
 		icon = "dorm3dIcon/3Ddrom_naximofu_CommonFurniture1",
 		desc = "ダンボールをつなぎ合わせて作り上げた寝床。軽くて運搬しやすく、シンプルながら快適さも十分。よく丸まって寝る彼女の習性にピッタリ",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 2101,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -2068,16 +2159,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2102] = {
 		name = "マルチストレージラック",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 6,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 21,
 		icon = "dorm3dIcon/3Ddrom_naximofu_CommonFurniture2",
 		desc = "5段のオープンシェルフに本や工具などがそれぞれの場所に収まっている。生活の痕跡がそのまま飾られていて、どの棚も手が届く日常の一部。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 2102,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -2094,16 +2186,17 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2103] = {
 		name = "陽だまりの温もりソファ",
-		rarity = 3,
+		is_special = 0,
 		unlock_tips = "",
 		type = 5,
-		is_special = 0,
+		unlock_banners = "",
 		room_id = 21,
 		icon = "dorm3dIcon/3Ddrom_naximofu_CommonFurniture3",
 		desc = "温かみのある純白のソファと、陽だまりのかけらのようなオレンジ色のクッション。同色のローテーブルとブランケットと合わせて、どこに座っても安らぎの場所に。",
-		unlock_banners = "",
+		rarity = 3,
 		acesses = "",
 		model = "",
+		model_night = "",
 		id = 2103,
 		is_exclusive = 0,
 		scene_hides = "",
@@ -2120,20 +2213,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2111] = {
 		name = "窓辺の観葉植物",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 21,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "窓辺に置かれた緑の鉢植え。枝がすっと伸び、葉が広がり、部屋に生命力と自然の息吹が満ち溢れる。",
 		icon = "dorm3dIcon/3Ddrom_naximofu_CommonFurniture4",
 		acesses = "",
 		model = "Pay_Naximofuhostel/pre_db_nxmf_flowerpot01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 2111,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			2210303
 		},
@@ -2141,20 +2235,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2112] = {
 		name = "ネコクッション",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 21,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "厚みがあって柔らかい丸型クッション。どこに置こうと、そこがネコにとっては離れたくない最高の居場所になる。",
 		icon = "dorm3dIcon/3Ddrom_naximofu_CommonFurniture5",
 		acesses = "",
 		model = "Pay_Naximofuhostel/pre_db_nxmf_cushion01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 2112,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			2210304
 		},
@@ -2162,20 +2257,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2113] = {
 		name = "球棒モデル",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 21,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "原子や晶構造をモチーフにしたサイエンスアート。物理好きにとってのコレクションの一品でありつつ、個性的なデスク飾りにもなる",
 		icon = "dorm3dIcon/3Ddrom_naximofu_CommonFurniture6",
 		acesses = "",
 		model = "Pay_Naximofuhostel/pre_db_nxmf_decoration01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 2113,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			2210302
 		},
@@ -2183,20 +2279,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2114] = {
 		name = "黄釉の陶磁器",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 21,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "ぷっくり丸い黄色い陶磁器。釉薬がなめらかで艶やか。かわいい形が引き伸ばされたドーナツのよう。",
 		icon = "dorm3dIcon/3Ddrom_naximofu_CommonFurniture7",
 		acesses = "",
 		model = "Pay_Naximofuhostel/pre_db_nxmf_ceram01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 2114,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			2210103
 		},
@@ -2204,20 +2301,21 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2115] = {
 		name = "アロマボトル",
-		rarity = 2,
+		is_special = 0,
 		unlock_tips = "",
 		type = 3,
 		is_exclusive = 0,
 		room_id = 21,
-		is_special = 0,
+		unlock_banners = "",
 		desc = "細いアロマスティックが差し込まれている、鮮やかな黄色の小さな陶製ボトル。火を灯さなくても、香りでゆっくりと部屋中を馨しくしてくれる。",
 		icon = "dorm3dIcon/3Ddrom_naximofu_CommonFurniture8",
 		acesses = "",
 		model = "Pay_Naximofuhostel/pre_db_nxmf_cosmetic01",
-		unlock_banners = "",
+		rarity = 2,
 		id = 2115,
 		touch_id = "",
 		scene_hides = "",
+		model_night = "",
 		target_slots = {
 			2210102
 		},
@@ -2225,11 +2323,12 @@ pg.base.dorm3d_furniture_template = {}
 	}
 	pg.base.dorm3d_furniture_template[2161] = {
 		name = "回転式検測器",
-		rarity = 4,
 		is_special = 0,
-		type = 6,
 		icon = "dorm3dIcon/3Ddrom_naximofu_PremiumFurniture1",
+		type = 6,
+		rarity = 4,
 		room_id = 21,
+		model_night = "",
 		desc = "丸型の検測器がゆっくりと回転し、画面に流れるデータは星河のよう。起動ボタンを押した瞬間、何か科学的な秘密が明かされるかも。",
 		acesses = "",
 		model = "Pay_Naximofuhostel/pre_db_naximofu_basement01",
@@ -2255,6 +2354,233 @@ pg.base.dorm3d_furniture_template = {}
 		},
 		scene_hides = {
 			"no_bake_pay_prop/basement/pre_db_naximofu_basement01_0"
+		}
+	}
+	pg.base.dorm3d_furniture_template[2201] = {
+		name = "ぐっすりベッド",
+		is_special = 0,
+		unlock_tips = "",
+		type = 4,
+		unlock_banners = "",
+		room_id = 22,
+		icon = "dorm3dIcon/3Ddrom_yuanchou_CommonFurniture1",
+		desc = "穏やかで平和な時間を作ってくれる、ゆったりとしたベッド。余計な飾りがなく、不思議と肩の力が抜ける。長い一日の終わりに身を委ねたい存在",
+		rarity = 3,
+		acesses = "",
+		model = "",
+		model_night = "",
+		id = 2201,
+		is_exclusive = 0,
+		scene_hides = "",
+		target_slots = {
+			2220101
+		},
+		touch_id = {
+			{
+				20707,
+				2070710
+			}
+		},
+		shop_id = {}
+	}
+	pg.base.dorm3d_furniture_template[2202] = {
+		name = "静謐なるお祈り台",
+		is_special = 0,
+		unlock_tips = "",
+		type = 6,
+		unlock_banners = "",
+		room_id = 22,
+		icon = "dorm3dIcon/3Ddrom_yuanchou_CommonFurniture2",
+		desc = "祈りの時間のために設けられた小さな空間。静かで格式高く、それでいて儀式場めいた趣もある。黙想にふければ、乱れた思考も少しずつ静まっていくだろう",
+		rarity = 3,
+		acesses = "",
+		model = "",
+		model_night = "Pay_Yuanchouhostel/pre_db_yuanchou01_chamber01_0_night",
+		id = 2202,
+		is_exclusive = 0,
+		scene_hides = "",
+		target_slots = {
+			2220201
+		},
+		touch_id = {
+			{
+				20707,
+				2070720
+			}
+		},
+		shop_id = {}
+	}
+	pg.base.dorm3d_furniture_template[2203] = {
+		name = "午後の語らいソファ",
+		is_special = 0,
+		unlock_tips = "",
+		type = 5,
+		unlock_banners = "",
+		room_id = 22,
+		icon = "dorm3dIcon/3Ddrom_yuanchou_CommonFurniture3",
+		desc = "落ち着いた調度と柔らかな雰囲気がうまく調和し、くつろぎながらも品を失わない一角を作り出す。一人で休む時でも客をもてなす時でも、いい具合に役立つ",
+		rarity = 3,
+		acesses = "",
+		model = "",
+		model_night = "",
+		id = 2203,
+		is_exclusive = 0,
+		scene_hides = "",
+		target_slots = {
+			2220301
+		},
+		touch_id = {
+			{
+				20707,
+				2070730
+			}
+		},
+		shop_id = {}
+	}
+	pg.base.dorm3d_furniture_template[2211] = {
+		name = "金彩の観葉植物",
+		is_special = 0,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 22,
+		unlock_banners = "",
+		desc = "空間の余白を満たす、存在感たっぷりの観葉植物。まろやかな色合いは主張しすぎず、落ち着いた内装にピッタリ",
+		icon = "dorm3dIcon/3Ddrom_yuanchou_CommonFurniture4",
+		acesses = "",
+		model = "Pay_Yuanchouhostel/pre_db_yc_flowerpot01",
+		rarity = 2,
+		id = 2211,
+		touch_id = "",
+		scene_hides = "",
+		model_night = "",
+		target_slots = {
+			2220102
+		},
+		shop_id = {}
+	}
+	pg.base.dorm3d_furniture_template[2212] = {
+		name = "饅頭の記念オブジェ",
+		is_special = 0,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 22,
+		unlock_banners = "",
+		desc = "堅実な質感がオブジェクトの重みを引き立てている。派手さで目を引かなくても、込められた特別な意味が十分伝わる",
+		icon = "dorm3dIcon/3Ddrom_yuanchou_CommonFurniture5",
+		acesses = "",
+		model = "Pay_Yuanchouhostel/pre_db_yc_billboard02",
+		rarity = 2,
+		id = 2212,
+		touch_id = "",
+		scene_hides = "",
+		model_night = "",
+		target_slots = {
+			2220303
+		},
+		shop_id = {}
+	}
+	pg.base.dorm3d_furniture_template[2213] = {
+		name = "ゴールデンリーフ",
+		is_special = 0,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 22,
+		unlock_banners = "",
+		desc = "小さくも意匠の凝らされたオブジェクト。部屋の片隅にそっと置くだけで、全体の雰囲気を綺麗にまとめてくれる",
+		icon = "dorm3dIcon/3Ddrom_yuanchou_CommonFurniture6",
+		acesses = "",
+		model = "Pay_Yuanchouhostel/pre_db_yc_flowerpot02",
+		rarity = 2,
+		id = 2213,
+		touch_id = "",
+		scene_hides = "",
+		model_night = "",
+		target_slots = {
+			2220103
+		},
+		shop_id = {}
+	}
+	pg.base.dorm3d_furniture_template[2214] = {
+		name = "シースケープ",
+		is_special = 0,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 22,
+		unlock_banners = "",
+		desc = "壁に静かなムードを作り出す、額縁に収められた海景色。ただそれを見上げるだけで、心が穏やかになっていく",
+		icon = "dorm3dIcon/3Ddrom_yuanchou_CommonFurniture7",
+		acesses = "",
+		model = "Pay_Yuanchouhostel/pre_db_yc_billboard01",
+		rarity = 2,
+		id = 2214,
+		touch_id = "",
+		scene_hides = "",
+		model_night = "",
+		target_slots = {
+			2220104
+		},
+		shop_id = {}
+	}
+	pg.base.dorm3d_furniture_template[2215] = {
+		name = "ガラスデスクランプ",
+		is_special = 0,
+		unlock_tips = "",
+		type = 3,
+		is_exclusive = 0,
+		room_id = 22,
+		unlock_banners = "",
+		desc = "透き通るような色合いのガラスランプ。部屋を優雅に涼しく明るくしてくれる",
+		icon = "dorm3dIcon/3Ddrom_yuanchou_CommonFurniture8",
+		acesses = "",
+		model = "Pay_Yuanchouhostel/pre_db_yc_decoration02",
+		rarity = 2,
+		id = 2215,
+		touch_id = "",
+		scene_hides = "",
+		model_night = "",
+		target_slots = {
+			2220302
+		},
+		shop_id = {}
+	}
+	pg.base.dorm3d_furniture_template[2261] = {
+		name = "研鑽のワークテーブル",
+		is_special = 0,
+		icon = "dorm3dIcon/3Ddrom_yuanchou_PremiumFurniture1",
+		type = 6,
+		rarity = 4,
+		room_id = 22,
+		model_night = "",
+		desc = "さまざまな器具と書物で埋め尽くされたワークテーブル。研究に没頭する緊張感と、日々の暮らしが息づく確かな痕跡が交錯する",
+		acesses = "",
+		model = "Pay_Yuanchouhostel/pre_db_yuanchou01_chamber02",
+		id = 2261,
+		is_exclusive = 1,
+		target_slots = {
+			2220202
+		},
+		touch_id = {
+			{
+				20707,
+				2070740
+			}
+		},
+		shop_id = {
+			270801
+		},
+		unlock_tips = {
+			3
+		},
+		unlock_banners = {
+			"banner_furniture2261"
+		},
+		scene_hides = {
+			"no_bake_pay_prop/chamber/pre_db_yuanchou01_chamber02_0",
+			"no_bake_pay_prop/chamber/pre_db_yuanchou01_chamber02_0_night"
 		}
 	}
 end)()

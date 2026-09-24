@@ -31604,7 +31604,7 @@ end)()
 	}
 	pg.base.furniture_data_template[100089] = {
 		spine_extra = "",
-		describe = "飘飘忽忽，生人勿近~",
+		describe = "ふわふわゆらゆら、見知らぬ者は近づいてはなりませぬぞ",
 		gain_by = "",
 		type = 11,
 		dir = 0,
@@ -31625,7 +31625,7 @@ end)()
 		comfortable = 0,
 		spine_action_replace = "",
 		picture = "",
-		name = "幽幽祟祟",
+		name = "幽々妖々",
 		canputon = 0,
 		id = 100089,
 		can_rotate = 0,

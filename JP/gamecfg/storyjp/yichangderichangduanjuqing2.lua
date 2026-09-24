@@ -5,10 +5,11 @@
 	scripts = {
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "指揮官さん、聞こえる……？",
 			typewriter = {
 				speed = 0.05,
@@ -17,10 +18,11 @@
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "遥かな空の向こうから、ゆっくりと流れてくる、あの心地よい旋律が……",
 			typewriter = {
 				speed = 0.05,
@@ -40,11 +42,12 @@
 		{
 			expression = 8,
 			side = 2,
-			actor = 202381,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 202381,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "やっぱり。あなたにも星々の響き合いが聞こえるのね～",
 			typewriter = {
 				speed = 0.05,
@@ -53,11 +56,12 @@
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "今は聞こえなくても大丈夫よ",
 			typewriter = {
 				speed = 0.05,
@@ -66,11 +70,12 @@
 		},
 		{
 			actor = 202381,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "時が来たら、私があっちへと連れていってあげる。あの心を打つ楽章を、じっくり聴かせてあげるわ",
 			typewriter = {
 				speed = 0.05,

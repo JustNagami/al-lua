@@ -4,6 +4,7 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
@@ -37,6 +38,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -47,10 +49,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "まさに自分も信じられなかった展開だ。静かな応接室でこの騒動の元凶と机を挟んで向き合っている。",
 			typewriter = {
 				speed = 0.05,
@@ -58,11 +61,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "NO.5を離れたあとの次の行き先は、NO.4だったそうね……",
@@ -77,6 +81,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -87,12 +92,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――「ご提案の件は審議に回します。後日連絡しますので、今しばらくお待ちください」って言われたよ",
 			typewriter = {
 				speed = 0.05,
@@ -105,6 +111,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -115,12 +122,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――お茶を出してくれはしたけど、街の遊園地モチーフの限定グッズを何セットか渡されて、そのまま外に追い出されたよ",
 			typewriter = {
 				speed = 0.05,
@@ -133,6 +141,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -143,12 +152,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――きっぱり断られたわけじゃないけど、街の管理者たちのスケジュールが合わないってごまかされたな",
 			typewriter = {
 				speed = 0.05,
@@ -156,10 +166,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "それぞれの都市。それぞれの眼差し。",
 			typewriter = {
 				speed = 0.05,
@@ -167,10 +178,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "疑念、沈黙、警戒、ためらい。それがこちらが得たすべてだった。",
 			typewriter = {
 				speed = 0.05,
@@ -183,6 +195,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -193,11 +206,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "似たような門前払いなら、私もNO.2で何度も食らってるのよ。あそこの管理者のシェフィールドは客へのおもてなしが荒っぽくて",
@@ -207,12 +221,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――そりゃあ、おめでたいことで",
 			typewriter = {
 				speed = 0.05,
@@ -225,6 +240,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -235,10 +251,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "NO.2に着いてからというもの、妖異の襲撃を一度も受けず、何の妨害もなく安土のいる場所までたどり着いた。",
 			typewriter = {
 				speed = 0.05,
@@ -263,10 +280,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "ただし、この「招待」を受けたのは、自分一人だけだった。",
 			typewriter = {
 				speed = 0.05,
@@ -279,6 +297,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -289,11 +308,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "指揮官。私のものになりなさいな",
@@ -303,10 +323,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "折り畳んだ扇を唇の端にそっと添えて、どこまでも余裕そうな様子だ。",
 			typewriter = {
 				speed = 0.05,
@@ -319,6 +340,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -329,12 +351,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――まさか、代わりに妖異を指揮させたい、とでも言うのか？",
 			typewriter = {
 				speed = 0.05,
@@ -342,11 +365,12 @@
 			}
 		},
 		{
-			actor = 202380,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "それはいい話ね。いつでもがぶって噛みつき返せるわ",
@@ -361,6 +385,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -371,11 +396,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "率直に言わせてもらうわ。あなたには私が人間を「手中に収める」手伝いをしてほしい",
@@ -390,6 +416,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -400,12 +427,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――それから？",
 			typewriter = {
 				speed = 0.05,
@@ -418,6 +446,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -428,12 +457,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――人間を手中に収めた後はどんな計画があるんだ？",
 			typewriter = {
 				speed = 0.05,
@@ -446,6 +476,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -456,10 +487,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "安土は真顔になり、まっすぐこちらを見据えながら、長いこと考え込んだ。",
 			typewriter = {
 				speed = 0.05,
@@ -472,6 +504,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -482,12 +515,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――別に構わないよ。こっちも安土を倒した後に答えを聞くよ",
 			typewriter = {
 				speed = 0.05,
@@ -500,6 +534,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -510,11 +545,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "まあ、でも……",
@@ -529,6 +565,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -539,12 +576,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――お心遣いどうも。そろそろお暇するよ",
 			typewriter = {
 				speed = 0.05,
@@ -557,6 +595,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -567,10 +606,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "安土は立ち上がると、応接室の外の人気のない廊下へと手を向けた。",
 			typewriter = {
 				speed = 0.05,
@@ -583,6 +623,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -593,12 +634,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――……早速、通路に伏兵とか潜ませてないだろうな？",
 			typewriter = {
 				speed = 0.05,
@@ -611,6 +653,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -626,6 +669,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -641,6 +685,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 307053,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -651,10 +696,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_guild_red_n",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "通路の影から現れた少女は、浅く一礼して去っていった。",
 			typewriter = {
 				speed = 0.05,
@@ -662,12 +708,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
-			bgName = "bg_guild_red_n",
-			hidePaintObj = true,
 			portrait = "zhihuiguan",
 			side = 2,
+			bgName = "bg_guild_red_n",
+			hidePaintObj = true,
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "（……本当に伏兵がいたじゃないか……）",
 			typewriter = {
 				speed = 0.05,
@@ -680,6 +727,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -695,6 +743,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -710,6 +759,7 @@
 			bgName = "bg_guild_red_n",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -720,10 +770,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "たいして長くもない廊下にも関わらず、足取りが重く感じる。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -749,10 +800,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "辺りは異様なほど静まり返り、背後には何かがぴったりと密着してて、こっちの歩みを寸分違わず追っているようですらある。",
 			typewriter = {
 				speed = 0.05,
@@ -760,10 +812,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "通路の突き当たりにあるエレベーターが静かに開いたのを見て、ようやくほっと息をついた。",
 			typewriter = {
 				speed = 0.05,
@@ -771,10 +824,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "エレベーターに乗り込み、一階のボタンを押すと下り始めた。張りつめていた神経が少しだけ緩んだ。",
 			typewriter = {
 				speed = 0.05,
@@ -783,10 +837,11 @@
 		},
 		{
 			actor = 304091,
-			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
-			nameColor = "#A9F548FF",
+			side = 2,
 			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			say = "エレベーターが止まり、扉が開いた先は一階ではなかった。",
 			hideRecordIco = true,
 			typewriter = {
@@ -813,12 +868,13 @@
 		},
 		{
 			actor = 304091,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "赤い光に包まれた廊下の奥に安土の姿が見える。こちらをじっと見つめていて、笑みを浮んでいるように見える。",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -826,11 +882,12 @@
 		},
 		{
 			actor = 304091,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_494",
 			factiontag = "妖異",
 			dir = 1,
-			nameColor = "#FF9B93",
+			side = 2,
+			NextIcon = 1,
 			say = "おかえりなさい",
 			typewriter = {
 				speed = 0.05,
@@ -843,6 +900,7 @@
 			bgName = "star_level_bg_494",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304091,
 			nameColor = "#FF9B93",
 			say = "あら、少し離れただけで、もう私が恋しくなった？",
@@ -853,11 +911,12 @@
 		},
 		{
 			actor = 304091,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_494",
 			factiontag = "妖異",
 			dir = 1,
-			nameColor = "#FF9B93",
+			side = 2,
+			NextIcon = 1,
 			say = "そんなに急いで行かないでよ……ふふふ♪",
 			typewriter = {
 				speed = 0.05,
@@ -866,10 +925,11 @@
 		},
 		{
 			actor = 304091,
-			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
-			nameColor = "#A9F548FF",
+			side = 2,
 			withoutActorName = true,
+			nameColor = "#A9F548FF",
 			say = "エレベーターの扉が再び閉まり、小さく揺れた後、下降を始めた。",
 			hideRecordIco = true,
 			typewriter = {
@@ -896,12 +956,13 @@
 		},
 		{
 			actor = 304091,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "……ほどなくして、また止まった。",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -909,12 +970,13 @@
 		},
 		{
 			actor = 304091,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "扉が開いた先はさっきと同じ廊下で、赤い光が点滅した。",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -922,12 +984,13 @@
 		},
 		{
 			actor = 304091,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			bgName = "star_level_bg_494",
 			side = 2,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "安土との距離が先ほどよりもぐっと縮まった。今度はその瞳がはっきり見えるほどで、背筋が冷たくなるような興味を向けてきている眼差しだ。",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -939,6 +1002,7 @@
 			bgName = "star_level_bg_494",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304091,
 			nameColor = "#FF9B93",
 			say = "ほらね。外がおかしいと分かっていても、あなたは本能的にさっきのはただの勘違いだと期待してしまう",
@@ -953,6 +1017,7 @@
 			bgName = "star_level_bg_494",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304091,
 			nameColor = "#FF9B93",
 			say = "人間はいつもそう。怯えながらもその裏では化け物が優しくなる姿を夢見ている",
@@ -963,11 +1028,12 @@
 		},
 		{
 			actor = 304091,
-			side = 2,
+			nameColor = "#FF9B93",
 			bgName = "star_level_bg_494",
 			factiontag = "妖異",
 			dir = 1,
-			nameColor = "#FF9B93",
+			side = 2,
+			NextIcon = 1,
 			say = "それじゃあ、私もらしいことをしてやろうじゃない",
 			typewriter = {
 				speed = 0.05,
@@ -975,14 +1041,15 @@
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_494",
-			hidePaintObj = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "エレベーターの扉がまた閉まった。",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			hidePaintObj = true,
+			say = "エレベーターの扉がまた閉まった。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -1006,14 +1073,15 @@
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_494",
-			hidePaintObj = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "柔らかな髪の一筋が耳のそばをかすめ、うなじに冷たい痺れがぞわりと走る。そしてまとわりつくように冷たい吐息がゆっくりと降りかかった。",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			hidePaintObj = true,
+			say = "柔らかな髪の一筋が耳のそばをかすめ、うなじに冷たい痺れがぞわりと走る。そしてまとわりつくように冷たい吐息がゆっくりと降りかかった。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -1025,6 +1093,7 @@
 			bgName = "star_level_bg_494",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304091,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1035,10 +1104,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "……安土が残した名残がゆっくりと薄れていく。エレベーターは再び下降し、今度は途中で止まらなかった。",
 			bgm = "story-antarctica-serious",
 			typewriter = {
@@ -1064,10 +1134,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "エレベーターの先に一階のロビーの景色が広がった。",
 			typewriter = {
 				speed = 0.05,
@@ -1075,11 +1146,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "無事出てきたのね。約束通り、あなたを逃がしてやるわ",
@@ -1094,6 +1166,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1109,6 +1182,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1124,6 +1198,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1134,12 +1209,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_503",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "…………",
 			typewriter = {
 				speed = 0.05,
@@ -1152,6 +1228,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
@@ -1162,11 +1239,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "もう行って。その今にも崩れそうな信念を抱えて、次の扉を叩きに行くといいわ",
@@ -1176,11 +1254,12 @@
 			}
 		},
 		{
-			actor = 304090,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_503",
 			factiontag = "妖異",
 			dir = 1,
+			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "あなたがいつか、私の申し出を受け入れる気になったなら",
@@ -1195,6 +1274,7 @@
 			bgName = "star_level_bg_503",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 304090,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,

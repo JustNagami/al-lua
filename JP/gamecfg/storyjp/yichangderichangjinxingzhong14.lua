@@ -7,9 +7,10 @@
 	},
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_517",
+			nameColor = "#A9F548FF",
 			say = "……耳障りな金属の軋みとともに、エレベーターの扉がゆっくりと左右にひらいた。",
 			bgm = "theme-hospitalnight-mystic",
 			typewriter = {
@@ -18,9 +19,10 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "star_level_bg_517",
+			nameColor = "#A9F548FF",
 			say = "足早に乗り込み一階のボタンを押すと、わずかな浮遊感とともにエレベーターは下降を始めた。",
 			typewriter = {
 				speed = 0.05,
@@ -28,14 +30,15 @@
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = "home",
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "だが、階数表示が絶え間なく変わり続けたと思えば、唐突に止まった。閉ざされたガラス扉の向こうには赤い廊下があった。",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			live2d = "home",
+			say = "だが、階数表示が絶え間なく変わり続けたと思えば、唐突に止まった。閉ざされたガラス扉の向こうには赤い廊下があった。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -47,6 +50,7 @@
 			bgName = "star_level_bg_517",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "またこっそり抜け出そうとしているの？指揮官？",
 			typewriter = {
@@ -55,14 +59,15 @@
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "廊下の奥から聞き慣れた声が聞こえる。いつの間にか安土がそこに立っていた。",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			live2d = true,
+			say = "廊下の奥から聞き慣れた声が聞こえる。いつの間にか安土がそこに立っていた。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -74,6 +79,7 @@
 			bgName = "star_level_bg_517",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "このビルはこんなにも静かで……",
 			typewriter = {
@@ -85,10 +91,11 @@
 			expression = 1,
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 304091,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "二人っきりにおあつらえ向きなのに……",
 			typewriter = {
 				speed = 0.05,
@@ -99,10 +106,11 @@
 			expression = 1,
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 304091,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "もっと付き合ってくれると思っていたのだけれど……",
 			typewriter = {
 				speed = 0.05,
@@ -113,10 +121,11 @@
 			expression = 4,
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 304091,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "どうしてそんなに急いで帰ろうとするのかしら？",
 			typewriter = {
 				speed = 0.05,
@@ -129,6 +138,7 @@
 			bgName = "star_level_bg_517",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "この場所が気に入らないの？それとも……私のことが怖くなった？",
 			typewriter = {
@@ -137,28 +147,30 @@
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "安土は小首をかしげ、顔に妖しい笑みを浮かべた。",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			live2d = true,
+			say = "安土は小首をかしげ、顔に妖しい笑みを浮かべた。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = "login",
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "廊下の天井にある赤い照明が明滅する。光が戻るたびに彼女は少しずつ距離を縮めていた。",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			live2d = "login",
+			say = "廊下の天井にある赤い照明が明滅する。光が戻るたびに彼女は少しずつ距離を縮めていた。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -170,6 +182,7 @@
 			bgName = "star_level_bg_517",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "ここはね…来たいときに来て、帰りたいときに帰れる場所じゃないの♪",
 			typewriter = {
@@ -181,10 +194,11 @@
 			expression = 1,
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 304091,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "私はまだ、あなたと過ごし足りないわ",
 			typewriter = {
 				speed = 0.05,
@@ -192,42 +206,45 @@
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
+			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			live2d = true,
 			say = "安土の言葉とともに、廊下の両脇の照明がぱっと消えた。",
-			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
+			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			live2d = true,
 			say = "あたりは恐ろしいほど静まり返り、ただ自分の速まっている息の音だけが聞こえた。",
-			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "仄かな照明の中で、安土の掌がエレベーターの扉のガラスに押さえつけられた。",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			live2d = true,
+			say = "仄かな照明の中で、安土の掌がエレベーターの扉のガラスに押さえつけられた。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -237,10 +254,11 @@
 			expression = 2,
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = "main1",
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 304091,
+			nameColor = "#A9F548FF",
+			live2d = "main1",
 			say = "うふふ……その反応、ほんとうに可愛らしいこと♥",
 			typewriter = {
 				speed = 0.05,
@@ -253,6 +271,7 @@
 			bgName = "star_level_bg_517",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "指揮官って確か、「妖異」と分かり合えることに長けてるはずだよね？",
 			typewriter = {
@@ -266,6 +285,7 @@
 			bgName = "star_level_bg_517",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "だったら、よく分かってるはずでしょ？",
 			typewriter = {
@@ -279,6 +299,7 @@
 			bgName = "star_level_bg_517",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "私のような存在は「従順」だとか「まとも」とかって言葉とは無縁なことを…",
 			typewriter = {
@@ -292,6 +313,7 @@
 			bgName = "star_level_bg_517",
 			live2d = true,
 			dir = 1,
+			NextIcon = 1,
 			side = 2,
 			say = "まあ、それでも……",
 			typewriter = {
@@ -303,10 +325,11 @@
 			expression = 2,
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 304091,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "あなたは結局、私に近づいてきた……",
 			typewriter = {
 				speed = 0.05,
@@ -314,28 +337,30 @@
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = "main3",
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "エレベーターの扉はこれ以上の圧にもう耐えられないとばかりに、軋み始めた。",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			live2d = "main3",
+			say = "エレベーターの扉はこれ以上の圧にもう耐えられないとばかりに、軋み始めた。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 304091,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "二枚の扉の隙間が、少しずつ押し広げられていく……",
 			hideRecordIco = true,
+			actor = 304091,
+			NextIcon = 1,
+			live2d = true,
+			say = "二枚の扉の隙間が、少しずつ押し広げられていく……",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -345,10 +370,11 @@
 			expression = 2,
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 304091,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "うふふふ、さっきの脅かしはあくまで前菜よ。そろそろメインティッシュと行こうかしら♪",
 			typewriter = {
 				speed = 0.05,
@@ -359,10 +385,11 @@
 			expression = 1,
 			side = 2,
 			bgName = "star_level_bg_517",
-			live2d = true,
+			NextIcon = 1,
 			dir = 1,
-			nameColor = "#A9F548FF",
 			actor = 304091,
+			nameColor = "#A9F548FF",
+			live2d = true,
 			say = "あなたのその覚悟、間近でじっくり、味わわせて……♥",
 			typewriter = {
 				speed = 0.05,
@@ -370,14 +397,15 @@
 			}
 		},
 		{
-			actor = 304092,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "重い音とともにエレベーターの扉がこじ開けられ、激しい揺れに思わず体勢を崩してしまった。",
 			hideRecordIco = true,
+			actor = 304092,
+			NextIcon = 1,
+			say = "重い音とともにエレベーターの扉がこじ開けられ、激しい揺れに思わず体勢を崩してしまった。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -401,14 +429,15 @@
 			}
 		},
 		{
-			actor = 304092,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "狭く薄暗いかごの中にも関わらず、視界は肌色に包まれていく――片足を上げた体勢で、安土は目を細めてこちらを見下していた。",
 			hideRecordIco = true,
+			actor = 304092,
+			NextIcon = 1,
+			say = "狭く薄暗いかごの中にも関わらず、視界は肌色に包まれていく――片足を上げた体勢で、安土は目を細めてこちらを見下していた。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -421,6 +450,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "指揮官、迎えに来てあげたわ♥",
 			typewriter = {
 				speed = 0.05,
@@ -434,6 +464,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "あら、うっかり転んでしまったの？うふふふ",
 			typewriter = {
 				speed = 0.05,
@@ -447,6 +478,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "そうそう、さっきの話はまだ途中だったわね",
 			typewriter = {
 				speed = 0.05,
@@ -459,6 +491,7 @@
 			bgName = "star_level_bg_517",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 304092,
 			nameColor = "#A9F548FF",
 			say = "私……あなたに、あんなことやこんなこと、したくてたまらないの♥",
@@ -474,6 +507,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "指揮官ならきっと分かってくれるよね？",
 			typewriter = {
 				speed = 0.05,
@@ -481,42 +515,45 @@
 			}
 		},
 		{
-			actor = 304092,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
+			hideRecordIco = true,
+			actor = 304092,
+			NextIcon = 1,
 			say = "身を起こすより早く、安土はゆっくりと片足を上げ、爪先でこちらの肩を押さえつけた。",
-			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 304092,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
+			hideRecordIco = true,
+			actor = 304092,
+			NextIcon = 1,
 			say = "これもまた戯れかと言わんばかりに力はそこまで込められていないが、逆らうことを許さなぬような色を伺わせた。",
-			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 304092,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "安土は肩を押し付けていたつま先でこちらの顎を軽く押し上げ、彼女と目が合う形にされた。",
 			hideRecordIco = true,
+			actor = 304092,
+			NextIcon = 1,
+			say = "安土は肩を押し付けていたつま先でこちらの顎を軽く押し上げ、彼女と目が合う形にされた。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -528,6 +565,7 @@
 			bgName = "star_level_bg_517",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 304092,
 			nameColor = "#A9F548FF",
 			say = "隠れないで",
@@ -542,6 +580,7 @@
 			bgName = "star_level_bg_517",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 304092,
 			nameColor = "#A9F548FF",
 			say = "もっとそばに寄らせてもらうわ",
@@ -557,6 +596,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "それとも……見せてきた余裕も覚悟も、本当はただのまやかしかしら？",
 			typewriter = {
 				speed = 0.05,
@@ -564,28 +604,30 @@
 			}
 		},
 		{
-			actor = 304092,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "安土の生足が体の上で這い回る。軽く突いたり、ゆっくりと円を描いたり、じらすかのようだ。",
 			hideRecordIco = true,
+			actor = 304092,
+			NextIcon = 1,
+			say = "安土の生足が体の上で這い回る。軽く突いたり、ゆっくりと円を描いたり、じらすかのようだ。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
 			}
 		},
 		{
-			actor = 304092,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "身を起こそうとするたび、こちらの胸元が押され、また元の場所へと戻されてしまう。",
 			hideRecordIco = true,
+			actor = 304092,
+			NextIcon = 1,
+			say = "身を起こそうとするたび、こちらの胸元が押され、また元の場所へと戻されてしまう。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -597,6 +639,7 @@
 			bgName = "star_level_bg_517",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 304092,
 			nameColor = "#A9F548FF",
 			say = "諦めなさいな。私の許しがなければ、あなたはどこへも行けないのよ♥",
@@ -606,14 +649,15 @@
 			}
 		},
 		{
-			actor = 304092,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "明らかにこっちを「観察」しているような素振りで、こちらのすべての反応を楽しみながら、新しい刺激を探し求めているように感じた。",
 			hideRecordIco = true,
+			actor = 304092,
+			NextIcon = 1,
+			say = "明らかにこっちを「観察」しているような素振りで、こちらのすべての反応を楽しみながら、新しい刺激を探し求めているように感じた。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -626,6 +670,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "おかしいわね……",
 			typewriter = {
 				speed = 0.05,
@@ -639,6 +684,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "こんな恐ろしい「お仕置き」なら、あなたは怯えて、絶望して、苛まれるはずなのに……",
 			typewriter = {
 				speed = 0.05,
@@ -652,6 +698,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "その顔は……私の想像とは、少し違うような？",
 			typewriter = {
 				speed = 0.05,
@@ -665,6 +712,7 @@
 			spine = true,
 			dir = 1,
 			side = 2,
+			NextIcon = 1,
 			say = "うふふ……本当に新鮮♥",
 			typewriter = {
 				speed = 0.05,
@@ -677,6 +725,7 @@
 			bgName = "star_level_bg_517",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 304092,
 			nameColor = "#A9F548FF",
 			say = "どうやらあなたを見くびっていたようね。やっぱりあなたは特別よ",
@@ -691,6 +740,7 @@
 			bgName = "star_level_bg_517",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 304092,
 			nameColor = "#A9F548FF",
 			say = "ますます……もっと新しい趣向を試したくなった♥",
@@ -700,14 +750,15 @@
 			}
 		},
 		{
-			actor = 304092,
+			nameColor = "#A9F548FF",
 			side = 2,
 			bgName = "star_level_bg_517",
 			spine = true,
 			withoutActorName = true,
-			nameColor = "#A9F548FF",
-			say = "安土はわずかに目を細め、妖しく笑った。",
 			hideRecordIco = true,
+			actor = 304092,
+			NextIcon = 1,
+			say = "安土はわずかに目を細め、妖しく笑った。",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -719,6 +770,7 @@
 			bgName = "star_level_bg_517",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 304092,
 			nameColor = "#A9F548FF",
 			say = "いつまで保つのか……見せてみなさいな♪",
@@ -733,6 +785,7 @@
 			bgName = "star_level_bg_517",
 			spine = true,
 			dir = 1,
+			NextIcon = 1,
 			actor = 304092,
 			nameColor = "#A9F548FF",
 			say = "どうせ……時間はまだたっぷりあるから♥",

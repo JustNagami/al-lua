@@ -5,10 +5,11 @@
 	scripts = {
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "私と一曲踊ってみない？指揮官",
 			bgm = "story-ghostnight-fascinsting",
 			typewriter = {
@@ -24,10 +25,11 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "ええ。獲物がどこへ逃げるか、何に惹かれるか、いつ迷いを見せるか……",
 			typewriter = {
 				speed = 0.05,
@@ -36,10 +38,11 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "そんなもの、ステップを踏み出す前から反応に書いてあるわ",
 			typewriter = {
 				speed = 0.05,
@@ -54,10 +57,11 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "いえ。幻は身を隠れるためのものではなく、獲物に踏み込んでもらうためのものだから",
 			typewriter = {
 				speed = 0.05,
@@ -66,10 +70,11 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "見抜かれたところで…一瞬でも迷ってくれるならそれで十分",
 			typewriter = {
 				speed = 0.05,
@@ -84,10 +89,11 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "それは踊る相手が誰かによるわね",
 			typewriter = {
 				speed = 0.05,
@@ -96,10 +102,11 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "リズムがあまりに乱れている子なら、喜んでリードを引き受けるわ",
 			typewriter = {
 				speed = 0.05,
@@ -108,10 +115,11 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "でも、あなたの指示が明確なら……心ゆくまであなたのために踊ってあげる♥",
 			typewriter = {
 				speed = 0.05,
@@ -119,12 +127,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――ひとまず状況は把握できた",
 			typewriter = {
 				speed = 0.05,
@@ -132,12 +141,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――ヨルク、歓迎するよ",
 			typewriter = {
 				speed = 0.05,
@@ -146,10 +156,11 @@
 		},
 		{
 			actor = 403113,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "ふふ、私の席を用意してくれたなら、あなたも時間どおりに着席するのを忘れないでね？",
 			typewriter = {
 				speed = 0.05,

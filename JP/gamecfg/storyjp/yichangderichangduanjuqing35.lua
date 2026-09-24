@@ -5,12 +5,13 @@
 	scripts = {
 		{
 			actor = 317031,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			hidePaintObj = true,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "伊14は手に持った面をじっと見つめながらぼんやりしていた。",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -18,11 +19,12 @@
 		},
 		{
 			expression = 10,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 317031,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 317031,
 			say = "ぶくぶく……また、来たんだ……",
 			typewriter = {
 				speed = 0.05,
@@ -31,10 +33,11 @@
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "今度は、何を聞きたいの？",
 			typewriter = {
 				speed = 0.05,
@@ -53,11 +56,12 @@
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "…………",
 			typewriter = {
 				speed = 0.05,
@@ -67,11 +71,12 @@
 		{
 			expression = 7,
 			side = 2,
-			actor = 317031,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 317031,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "一緒にシャボン玉をぶくぶくして……？",
 			typewriter = {
 				speed = 0.05,
@@ -80,11 +85,12 @@
 		},
 		{
 			actor = 317031,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "偽装のための道具。それだけ……",
 			typewriter = {
 				speed = 0.05,
@@ -94,11 +100,12 @@
 		{
 			expression = 9,
 			side = 2,
-			actor = 317031,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 317031,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "つけたって、虚しくなるだけ……",
 			typewriter = {
 				speed = 0.05,

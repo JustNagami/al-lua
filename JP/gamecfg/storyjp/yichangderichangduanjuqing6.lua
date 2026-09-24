@@ -5,10 +5,11 @@
 	scripts = {
 		{
 			actor = 403143,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "指揮官、今すぐ、あなたのそばに行きたいの♥",
 			typewriter = {
 				speed = 0.05,
@@ -28,11 +29,12 @@
 		{
 			expression = 6,
 			side = 2,
-			actor = 403143,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 403143,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "ええ、お願いね～♥",
 			typewriter = {
 				speed = 0.05,
@@ -41,11 +43,12 @@
 		},
 		{
 			actor = 403143,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "どうか、しっかり見ていて……",
 			typewriter = {
 				speed = 0.05,
@@ -54,11 +57,12 @@
 		},
 		{
 			actor = 403143,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "私が一歩ずつ、あなたのそばへ向かってるところを♥",
 			typewriter = {
 				speed = 0.05,
@@ -68,11 +72,12 @@
 		{
 			expression = 6,
 			side = 2,
-			actor = 403143,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 403143,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "ふふ、時間はスポンジの水と同じ。絞ればいくらでも出てくるものよ",
 			typewriter = {
 				speed = 0.05,
@@ -81,11 +86,12 @@
 		},
 		{
 			actor = 403143,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "指揮官の時間を…ぎゅーっと絞り出してあげるわ♥",
 			typewriter = {
 				speed = 0.05,

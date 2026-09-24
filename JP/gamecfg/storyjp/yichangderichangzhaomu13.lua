@@ -4,14 +4,15 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			actor = 9600033,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
-			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
-			say = "ミ・ツ・ケ・タ♪指揮官さまぁ～",
 			bgm = "story-ghostnight-fascinsting",
+			actor = 9600033,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
+			say = "ミ・ツ・ケ・タ♪指揮官さまぁ～",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -25,11 +26,12 @@
 		},
 		{
 			actor = 9600033,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "そうよ～。私の触手たちの動きはとっても速いの～",
 			typewriter = {
 				speed = 0.05,
@@ -44,11 +46,12 @@
 		},
 		{
 			actor = 9600033,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "獲物を「捕まえる」だけじゃないわよ",
 			typewriter = {
 				speed = 0.05,
@@ -57,11 +60,12 @@
 		},
 		{
 			actor = 9600033,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "もし獲物があがくなら、喜んで遊んであげるわぁ～",
 			typewriter = {
 				speed = 0.05,
@@ -70,11 +74,12 @@
 		},
 		{
 			actor = 9600033,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "指揮官さまも……体験してみたいのかしらぁ～？",
 			typewriter = {
 				speed = 0.05,
@@ -89,11 +94,12 @@
 		},
 		{
 			actor = 9600033,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "獲物にほどよく動く余地を残してあげたほうが、ずっと楽しいでしょう？",
 			typewriter = {
 				speed = 0.05,
@@ -101,12 +107,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――ひとまず状況は把握できた",
 			typewriter = {
 				speed = 0.05,
@@ -114,12 +121,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――ゴールデン・ハインド、歓迎するよ",
 			typewriter = {
 				speed = 0.05,
@@ -128,11 +136,12 @@
 		},
 		{
 			actor = 9600033,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "指揮官さま直々の招集だもの。もちろんしっかり働いてあげるわぁ～",
 			typewriter = {
 				speed = 0.05,

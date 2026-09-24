@@ -4,14 +4,15 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			actor = 201191,
+			NextIcon = 1,
 			side = 2,
 			bgName = "star_level_bg_496",
-			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
-			say = "来たよ、指揮官。何か手伝えることある？",
 			bgm = "story-ghostnight-fascinsting",
+			actor = 201191,
+			nameColor = "#A9F548FF",
+			hidePaintObj = true,
+			say = "来たよ、指揮官。何か手伝えることある？",
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -25,11 +26,12 @@
 		},
 		{
 			actor = 201191,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "うん",
 			typewriter = {
 				speed = 0.05,
@@ -38,11 +40,12 @@
 		},
 		{
 			actor = 201191,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "どこまで逃げても、追いつく",
 			typewriter = {
 				speed = 0.05,
@@ -57,11 +60,12 @@
 		},
 		{
 			actor = 201191,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "「食らいつく」……そういうのはあまり得意じゃないかも…実体のない相手には、特に…",
 			typewriter = {
 				speed = 0.05,
@@ -70,11 +74,12 @@
 		},
 		{
 			actor = 201191,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "でもその必要があるなら、覚えるよ。たぶん難しくない",
 			typewriter = {
 				speed = 0.05,
@@ -89,11 +94,12 @@
 		},
 		{
 			actor = 201191,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "指揮官",
 			typewriter = {
 				speed = 0.05,
@@ -102,11 +108,12 @@
 		},
 		{
 			actor = 201191,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "でもあたし、ほかの人も一緒に助けられる。それだけの実力があるから",
 			typewriter = {
 				speed = 0.05,
@@ -114,12 +121,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――ひとまず状況は把握できた",
 			typewriter = {
 				speed = 0.05,
@@ -127,12 +135,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――ホスタイル、歓迎するよ",
 			typewriter = {
 				speed = 0.05,
@@ -141,11 +150,12 @@
 		},
 		{
 			actor = 201191,
-			side = 2,
+			nameColor = "#A9F548FF",
 			bgName = "star_level_bg_496",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
+			side = 2,
 			say = "うん。指揮官の背中、これからはあたしに預けて",
 			typewriter = {
 				speed = 0.05,

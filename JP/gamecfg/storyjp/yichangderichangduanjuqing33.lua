@@ -5,12 +5,13 @@
 	scripts = {
 		{
 			actor = 307053,
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			hidePaintObj = true,
 			withoutActorName = true,
-			hideRecordIco = true,
+			nameColor = "#A9F548FF",
 			say = "翔鶴は雪原に佇んでいた。自分は懐に抱いていた湯たんぽを彼女にそっと差し出した。",
+			hideRecordIco = true,
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -18,10 +19,11 @@
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			hidePaintObj = true,
 			dir = 1,
+			side = 2,
 			say = "恩人さま……心まで温かくなります",
 			typewriter = {
 				speed = 0.05,
@@ -30,10 +32,11 @@
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
+			NextIcon = 1,
 			say = "こんなに優しくしてくださって……どんな恩返しを期待しているんでしょうか～？",
 			typewriter = {
 				speed = 0.05,
@@ -52,11 +55,12 @@
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 1,
+			NextIcon = 1,
 			say = "恩人さま……そんなことをおっしゃると、翔鶴、離れられなくなってしまいます～♥",
 			typewriter = {
 				speed = 0.05,
@@ -65,11 +69,12 @@
 		},
 		{
 			actor = 307053,
-			side = 2,
 			nameColor = "#A9F548FF",
+			side = 2,
 			hidePaintObj = true,
 			dir = 1,
 			optionFlag = 2,
+			NextIcon = 1,
 			say = "それだけ、ですか？ああ恩人さま、あなたは本当に非情な「仕事マシン」なのですね……",
 			typewriter = {
 				speed = 0.05,

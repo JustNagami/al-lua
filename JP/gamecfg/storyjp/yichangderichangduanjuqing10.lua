@@ -5,11 +5,12 @@
 	scripts = {
 		{
 			expression = 4,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 201401,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 201401,
 			say = "指揮官が……わたしを見つけてくれたね。えへへ♪",
 			typewriter = {
 				speed = 0.05,
@@ -18,11 +19,12 @@
 		},
 		{
 			expression = 4,
+			side = 2,
 			nameColor = "#A9F548FF",
-			actor = 201401,
 			hidePaintObj = true,
 			dir = 1,
-			side = 2,
+			NextIcon = 1,
+			actor = 201401,
 			say = "ヘイスティはずっと、ずーっとここで待ってたんだよ……早く、わたしたちと遊ぼ〜？",
 			typewriter = {
 				speed = 0.05,
@@ -31,9 +33,10 @@
 		},
 		{
 			actor = 201401,
-			nameColor = "#A9F548FF",
 			actorName = "人形たち",
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
+			NextIcon = 1,
 			side = 2,
 			say = "ワタシタチト、アソボ",
 			typewriter = {
@@ -54,11 +57,12 @@
 		{
 			expression = 4,
 			side = 2,
-			actor = 201401,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 1,
+			actor = 201401,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "えへへ、いっぱい遊びを用意してるんだ～",
 			typewriter = {
 				speed = 0.05,
@@ -68,11 +72,12 @@
 		{
 			expression = 2,
 			side = 2,
-			actor = 201401,
-			hidePaintObj = true,
+			NextIcon = 1,
 			dir = 1,
 			optionFlag = 2,
+			actor = 201401,
 			nameColor = "#A9F548FF",
+			hidePaintObj = true,
 			say = "じゃあ……あとで、また会える？",
 			typewriter = {
 				speed = 0.05,

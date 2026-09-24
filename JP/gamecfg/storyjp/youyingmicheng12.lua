@@ -4,10 +4,11 @@
 	fadeOut = 1.5,
 	scripts = {
 		{
-			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "急ごしらえの発表台が朝の光の中でひときわ目を引いた。",
 			bgm = "story-dailyfuture-soft",
 			typewriter = {
@@ -25,10 +26,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "これから始まるのは、昨夜の事件についての公開説明会であり、同時に表彰式でもあった。",
 			typewriter = {
 				speed = 0.05,
@@ -41,6 +43,7 @@
 			bgName = "bg_highschool_future",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -51,11 +54,12 @@
 			}
 		},
 		{
-			actor = 900557,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "フォーマルな場だからね。それより新人はしゃんと立ってなさい。あんまりキョロキョロしないの",
@@ -74,6 +78,7 @@
 			bgName = "bg_highschool_future",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -84,12 +89,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――まあ肩の力を抜いて、笑顔でいればいい。あとはこっちで対応する",
 			typewriter = {
 				speed = 0.05,
@@ -97,10 +103,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "昨夜の混乱で街にはまだ被害の跡が残っているが、広場に集まった人々の熱気は十分すぎるほど高い。",
 			typewriter = {
 				speed = 0.05,
@@ -108,10 +115,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "議論のざわめきの中、No.1からの使者が発表台へと上がった――",
 			typewriter = {
 				speed = 0.05,
@@ -119,11 +127,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "皆さん、待たせたな！",
@@ -133,11 +142,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "新紀元シティNO.1の代表として来たクリーブランドだ！本日は八人議会からの見解を皆さんにお伝えする",
@@ -147,11 +157,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "まず、昨日ここで起きた怪異侵入事件について――最前線で戦ったすべての人員に敬意を表する",
@@ -161,11 +172,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "とりわけ、怪異事件調査センターの人員は混迷としていた中で見事に怪異を抑え、秩序を立て直し、その後の収容行動でも貢献を果たした",
@@ -175,11 +187,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "審議の結果、「怪異事件調査センター」は本日より民間協力組織から、新紀元シティNO.7の公共機関とすることを決定した！",
@@ -189,10 +202,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "束の間の静寂ののち、広場に熱烈な拍手が沸き起こった。",
 			typewriter = {
 				speed = 0.05,
@@ -200,11 +214,12 @@
 			}
 		},
 		{
-			actor = 231211,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "新人エージェント",
 			dir = 1,
+			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "こ、公共機関？！ジャベリンたち、公務員になるんですか？！",
@@ -214,12 +229,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――これからは任務の出費は、公費で落とせるな",
 			typewriter = {
 				speed = 0.05,
@@ -232,6 +248,7 @@
 			bgName = "bg_highschool_future",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -246,11 +263,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "さらに、今回の作戦で特に功績のあった「怪異事件調査センター」の以下の者――",
@@ -260,11 +278,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "指揮官および、現場勤務班のメンバーに対しても、議会より表彰が贈られる！",
@@ -274,10 +293,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "スポットライトとカメラが一斉にこちらを向いた。",
 			typewriter = {
 				speed = 0.05,
@@ -290,6 +310,7 @@
 			bgName = "bg_highschool_future",
 			factiontag = "新人エージェント",
 			dir = 1,
+			NextIcon = 1,
 			actor = 231211,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -300,11 +321,12 @@
 			}
 		},
 		{
-			actor = 900557,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "妖異エージェント",
 			dir = 1,
+			actor = 900557,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "ふふん！こうなったら、この天津風さまが注目をぶんどってやるまでよ～",
@@ -318,13 +340,14 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
+			stopbgm = true,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			NextIcon = 1,
 			actor = 102092,
-			stopbgm = true,
+			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "「幸福都市計画」の推進が妖異によって邪魔されている中、この勝利は私たちにあることを証明してくれた――",
 			typewriter = {
@@ -333,11 +356,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "怪異は決して対処できないものではないのだと。妖異とて倒せない相手ではない！",
@@ -347,10 +371,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "マントの裾が風に鋭くひるがえり、クリーブランドは一歩前へ踏み出した。",
 			typewriter = {
 				speed = 0.05,
@@ -358,11 +383,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "「幸福都市計画」の目標はただ一つ。全人間に幸福をもたらすことだ！",
@@ -372,6 +398,7 @@
 			}
 		},
 		{
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
@@ -387,11 +414,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "だから収容はゴールじゃない。妖異をただ閉じ込め、番号を振って記録に残す――それだけで満足するつもりはない",
@@ -401,11 +429,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "私たちはそれらを研究し、理解し、そして最後には完全に消し去る！",
@@ -415,10 +444,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "広場に大きな歓声が上がり、警備しているスタッフたちもその熱気に当てられ、誇らしそうにしている。",
 			typewriter = {
 				speed = 0.05,
@@ -431,6 +461,7 @@
 			bgName = "bg_highschool_future",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -441,12 +472,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――人の心を掴む演説だ。ただ……",
 			typewriter = {
 				speed = 0.05,
@@ -459,6 +491,7 @@
 			bgName = "bg_highschool_future",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 202380,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -469,10 +502,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "ちょうどそのとき、中継映像を映していた大型スクリーンが突如明滅し始めた。",
 			bgm = "story-visioncity-1",
 			typewriter = {
@@ -481,11 +515,12 @@
 			}
 		},
 		{
-			actor = 102092,
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_highschool_future",
 			factiontag = "NO.1特使",
 			dir = 1,
+			actor = 102092,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
 			say = "ん……？",
@@ -495,11 +530,12 @@
 			}
 		},
 		{
-			side = 2,
+			nameColor = "#A9F548FF",
 			actorName = "システム",
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
-			nameColor = "#A9F548FF",
+			side = 2,
+			NextIcon = 1,
 			say = "警告！警告！異常信号の割り込みを検出――",
 			typewriter = {
 				speed = 0.05,
@@ -507,10 +543,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_highschool_future",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "砂嵐のようなノイズのあと、再びスクリーンに映し出されたのは――",
 			typewriter = {
 				speed = 0.05,
@@ -545,11 +582,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "？？",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "テストテスト～。聞こえてるかしら？泥の箱の中でおままごとに興じる皆さん",
@@ -559,11 +597,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "？？",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "ふん……わざわざ人間に分かる発音に変換したけど、こういうのはやっぱり慣れないものね",
@@ -573,11 +612,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "？？",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "まあいいわ。これから炎がどこから燃え上がるのか……それを伝えるためにも少しばかりの前置きは必要ね",
@@ -587,11 +627,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "？？",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "人間の古臭いしきたりによると、悪役が登場するときは確か…名乗りをして、ポーズを決めて、退屈な口上を並べるのが相場と決まってるようね",
@@ -602,11 +643,12 @@
 		},
 		{
 			side = 2,
-			actorName = "？？",
+			nameColor = "#FF9B93",
 			bgName = "bg_youyingmicheng_cg2",
 			hidePaintObj = true,
 			dir = 1,
-			nameColor = "#FF9B93",
+			NextIcon = 1,
+			actorName = "？？",
 			say = "でも残念。そういうお決まりには、これっぽっちも興味がないの",
 			typewriter = {
 				speed = 0.05,
@@ -614,11 +656,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "？？",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg2",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "というわけで、いきなり本題にいくわよ",
@@ -628,13 +671,14 @@
 			}
 		},
 		{
-			nameColor = "#FF9B93",
+			NextIcon = 1,
 			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "妖異",
 			dir = 1,
-			soundeffect = "event:/battle/boom2",
 			actorName = "？？",
+			soundeffect = "event:/battle/boom2",
+			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "よく見てなさい――この炎を！",
 			typewriter = {
@@ -705,11 +749,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "？？",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "どこまでも無駄な努力をしてきた、あなたたちの「幸福都市計画」……それを灰になるまで燃やし尽くしてあげる！",
@@ -719,10 +764,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_cg3",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "その言葉とともに、スクリーンの映像が切り替わった――",
 			typewriter = {
 				speed = 0.05,
@@ -736,6 +782,7 @@
 			factiontag = "NO.1特使",
 			dir = 1,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			actorName = "クリーブランド",
 			hidePaintObj = true,
 			say = "なっ……？！",
@@ -768,6 +815,7 @@
 			factiontag = "NO.1特使",
 			dir = 1,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			actorName = "クリーブランド",
 			hidePaintObj = true,
 			say = "シティNO.5、NO.6……NO.3とNO.4も……",
@@ -800,6 +848,7 @@
 			factiontag = "NO.1特使",
 			dir = 1,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			actorName = "クリーブランド",
 			hidePaintObj = true,
 			say = "NO.2まで警報を寄こしてきただと……？！",
@@ -832,6 +881,7 @@
 			factiontag = "NO.1特使",
 			dir = 1,
 			nameColor = "#A9F548FF",
+			NextIcon = 1,
 			actorName = "クリーブランド",
 			hidePaintObj = true,
 			say = "……すまない皆。私は一足先にNO.1へ戻って状況をしなきゃ！",
@@ -841,10 +891,11 @@
 			}
 		},
 		{
-			nameColor = "#A9F548FF",
 			side = 2,
+			NextIcon = 1,
 			bgName = "bg_youyingmicheng_2",
 			hidePaintObj = true,
+			nameColor = "#A9F548FF",
 			say = "スクリーンの中で得意げに笑ってる少女を見た後、警戒の姿勢を見せているゴールデン・ハインドへと視線を向けた。",
 			typewriter = {
 				speed = 0.05,
@@ -852,12 +903,13 @@
 			}
 		},
 		{
-			actor = 0,
-			nameColor = "#A9F548FF",
+			portrait = "zhihuiguan",
+			side = 2,
 			bgName = "bg_youyingmicheng_2",
 			hidePaintObj = true,
-			side = 2,
-			portrait = "zhihuiguan",
+			actor = 0,
+			NextIcon = 1,
+			nameColor = "#A9F548FF",
 			say = "――彼女がその「危険な存在」か？",
 			typewriter = {
 				speed = 0.05,
@@ -870,6 +922,7 @@
 			bgName = "bg_youyingmicheng_2",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			actor = 9600030,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
@@ -880,11 +933,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "安土",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "「責任、義務、逃げることを拒む勇気……これは決して負担ではなく、一人ひとりが立ち向かうべき未来」",
@@ -911,11 +965,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "安土",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "「収容はゴールではない。人間をただ閉じ込めて、番号を振って、労働に送り出す……それだけでは不十分」",
@@ -925,11 +980,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "安土",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "「お前たちを研究し、分裂させ、最後には完全に屈服させる」",
@@ -939,11 +995,12 @@
 			}
 		},
 		{
-			side = 2,
 			actorName = "安土",
+			side = 2,
 			bgName = "bg_youyingmicheng_cg3",
 			factiontag = "妖異",
 			dir = 1,
+			NextIcon = 1,
 			nameColor = "#FF9B93",
 			hidePaintObj = true,
 			say = "ふふ、炎が燃え尽きたあとの新世界で、また会いましょう～",

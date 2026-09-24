@@ -94,7 +94,7 @@ function var_0_0.GetGameplaySystemClasses()
 		CarWashRaycastSystem,
 		CarWashMuzzleEffect,
 		CarWashDecalSystem,
-		CarWashGlassMaterialFix,
+		CarWashCarSystem,
 		CarWashLadySystem
 	}
 end
