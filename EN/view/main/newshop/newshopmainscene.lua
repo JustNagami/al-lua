@@ -1277,20 +1277,52 @@ end
 function var_0_0.GetSkinShopList(arg_95_0)
 	local var_95_0 = Clone(pg.shop_skin_subsheet.get_id_list_by_type[0])
 
-	if #getProxy(ShipSkinProxy):GetInTimeSkins() <= 0 then
-		table.remove(var_95_0, 1)
+	for iter_95_0 = #var_95_0, 1, -1 do
+		local var_95_1 = var_95_0[iter_95_0]
+		local var_95_2 = {}
+
+		if var_95_1 == ShopConst.NEW_SKIN_SHOP_ID then
+			var_95_2 = getProxy(ShipSkinProxy):GetInTimeSkins()
+		elseif var_95_1 == ShopConst.PERMANANT_SKIN_SHOP_ID then
+			var_95_2 = getProxy(ShipSkinProxy):GetPermanentSkins()
+		end
+
+		if LOCK_SKIN_US then
+			local var_95_3 = pg.gameset.levellimit_skintype.key_value
+			local var_95_4 = pg.gameset.levellimit_skintype.description
+
+			if var_95_3 >= getProxy(PlayerProxy):getData().level then
+				var_95_2 = _.filter(var_95_2, function(arg_96_0)
+					local var_96_0 = pg.ship_skin_template[arg_96_0:getSkinId()].shop_type_id
+
+					return table.contains(var_95_4, var_96_0)
+				end)
+			end
+		end
+
+		if arg_95_0.contextData.mode == nil or arg_95_0.contextData.mode == LatestSkinShopLayer.MODE_OVERVIEW then
+			for iter_95_1 = #var_95_2, 1, -1 do
+				if var_95_2[iter_95_1]:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
+					table.remove(var_95_2, iter_95_1)
+				end
+			end
+		end
+
+		if #var_95_2 <= 0 then
+			table.remove(var_95_0, 1)
+		end
 	end
 
-	local var_95_1 = pg.TimeMgr.GetInstance()
-	local var_95_2 = getProxy(ShipSkinProxy):GetAllSkins()
+	local var_95_5 = pg.TimeMgr.GetInstance()
+	local var_95_6 = getProxy(ShipSkinProxy):GetAllSkins()
 
-	for iter_95_0, iter_95_1 in ipairs(pg.shop_skin_subsheet.get_id_list_by_type[1] or {}) do
-		local var_95_3 = pg.shop_skin_subsheet[iter_95_1]
+	for iter_95_2, iter_95_3 in ipairs(pg.shop_skin_subsheet.get_id_list_by_type[1] or {}) do
+		local var_95_7 = pg.shop_skin_subsheet[iter_95_3]
 
-		if var_95_1:inTime(var_95_3.time) then
-			for iter_95_2, iter_95_3 in ipairs(var_95_2) do
-				if table.keyof(var_95_3.param, iter_95_3.id) then
-					table.insert(var_95_0, iter_95_1)
+		if var_95_5:inTime(var_95_7.time) then
+			for iter_95_4, iter_95_5 in ipairs(var_95_6) do
+				if table.keyof(var_95_7.param, iter_95_5.id) then
+					table.insert(var_95_0, iter_95_3)
 
 					break
 				end
@@ -1298,31 +1330,31 @@ function var_0_0.GetSkinShopList(arg_95_0)
 		end
 	end
 
-	table.sort(var_95_0, function(arg_96_0, arg_96_1)
-		local var_96_0 = pg.shop_skin_subsheet[arg_96_0]
-		local var_96_1 = pg.shop_skin_subsheet[arg_96_1]
+	table.sort(var_95_0, function(arg_97_0, arg_97_1)
+		local var_97_0 = pg.shop_skin_subsheet[arg_97_0]
+		local var_97_1 = pg.shop_skin_subsheet[arg_97_1]
 
-		return var_96_0.sort == var_96_0.sort and arg_96_0 < arg_96_1 or var_96_0.sort < var_96_1.sort
+		return var_97_0.sort == var_97_0.sort and arg_97_0 < arg_97_1 or var_97_0.sort < var_97_1.sort
 	end)
 
 	return var_95_0
 end
 
-function var_0_0.GetDefaultSkinShop(arg_97_0)
-	local var_97_0 = Clone(arg_97_0.skinShopList)
+function var_0_0.GetDefaultSkinShop(arg_98_0)
+	local var_98_0 = Clone(arg_98_0.skinShopList)
 
-	table.sort(var_97_0, function(arg_98_0, arg_98_1)
-		local var_98_0 = pg.shop_skin_subsheet[arg_98_0]
-		local var_98_1 = pg.shop_skin_subsheet[arg_98_1]
+	table.sort(var_98_0, function(arg_99_0, arg_99_1)
+		local var_99_0 = pg.shop_skin_subsheet[arg_99_0]
+		local var_99_1 = pg.shop_skin_subsheet[arg_99_1]
 
-		if var_98_0.shop_skin_subsheet == var_98_1.shop_skin_subsheet then
-			return var_98_0.sort == var_98_1.sort and arg_98_0 < arg_98_1 or var_98_0.sort < var_98_1.sort
+		if var_99_0.shop_skin_subsheet == var_99_1.shop_skin_subsheet then
+			return var_99_0.sort == var_99_1.sort and arg_99_0 < arg_99_1 or var_99_0.sort < var_99_1.sort
 		else
-			return var_98_0.shop_skin_subsheet < var_98_1.shop_skin_subsheet
+			return var_99_0.shop_skin_subsheet < var_99_1.shop_skin_subsheet
 		end
 	end)
 
-	return var_97_0[1]
+	return var_98_0[1]
 end
 
 return var_0_0

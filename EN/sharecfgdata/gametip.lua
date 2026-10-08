@@ -400,6 +400,9 @@ _G.pg.base.gametip.ad_2 = {
 _G.pg.base.gametip.ad_3 = {
 	tip = "<material=underline c=#A9F548 event=clickPlayer args=1><color=#92fc63>$1</color></material> gets <icon name=shiptype2 w=0.8 h=0.8/><material=underline c=#shipcolor2 event=clickShip args=2><color=#shipcolor2>$2</color></material>",
 }
+_G.pg.base.gametip.word_obtain_way = {
+	tip = "How to Obtain",
+}
 _G.pg.base.gametip.word_back = {
 	tip = "Back",
 }
@@ -27186,12 +27189,6 @@ _G.pg.base.gametip.grapihcs3d_setting_bloom_intensity_3 = {
 _G.pg.base.gametip.grapihcs3d_setting_flare = {
 	tip = "Lens Flare",
 }
-_G.pg.base.gametip.Outpost_20250904_Sidebar4 = {
-	tip = "Call to Arms",
-}
-_G.pg.base.gametip.Outpost_20250904_Sidebar5 = {
-	tip = "Prelude",
-}
 _G.pg.base.gametip.Outpost_20250904_Title1 = {
 	tip = "Call to Arms",
 }
@@ -31057,6 +31054,144 @@ _G.pg.base.gametip.cruise_task_help_2610 = {
 _G.pg.base.gametip.cruise_title_2610 = {
 	tip = "Cruise Missions – S31",
 }
+_G.pg.base.gametip.act_remaster_colllect_progress = {
+	tip = "Progress",
+}
+_G.pg.base.gametip.act_remaster_title = {
+	tip = "Capsule Rerun",
+}
+_G.pg.base.gametip.act_remaster_open_tip = {
+	tip = "Would you like to unlock the <color=#39bfff>$1</color>Capsule Rerun event?\nThe selected Capsule Rerun event can only be unlocked one time during the event period, and all content unlocked this way will become unavailable after the maintenance on <color=#39bfff>$2</color>.",
+}
+_G.pg.base.gametip.act_remaster_active_erro = {
+	tip = "Each event can only be unlocked once.",
+}
+_G.pg.base.gametip.act_remaster_tip_1 = {
+	tip = "During this event period, you may <b><color=#faba55>start a Capsule Rerun</color></b> for an event of your choosing that has not been completed yet.",
+}
+_G.pg.base.gametip.act_remaster_tip_2 = {
+	tip = "$1",
+}
+_G.pg.base.gametip.act_remaster_extend_time = {
+	tip = "Rewards must be collected by $1.",
+}
+_G.pg.base.gametip.act_remaster_time_desc = {
+	tip = "$1/$2 - $3/$4 Maint",
+}
+_G.pg.base.gametip.act_remaster_time_desc_with_hours = {
+	tip = "$1/$2 - $3/$4 $5:59:59",
+}
+_G.pg.base.gametip.act_remaster_time_desc_with_hours_without_ch = {
+	tip = "$1.$2-$3.$4 $5:$6:$7",
+}
+_G.pg.base.gametip.outpost_20250904_Sidebar6 = {
+	tip = "Shipbuilding Support Plan",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re6_1 = {
+	tip = "Main Event",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re6_2 = {
+	tip = "Milestone",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re6_3 = {
+	tip = "Call to Arms",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re6_4 = {
+	tip = "Prelude Story",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re6_5 = {
+	tip = "Building",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re6_6 = {
+	tip = "UR Exchange",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re5_1 = {
+	tip = "Main Event",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re5_2 = {
+	tip = "Milestone",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re5_3 = {
+	tip = "Call to Arms",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re5_4 = {
+	tip = "Prelude Story",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re5_5 = {
+	tip = "Building",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re4_1 = {
+	tip = "Main Event",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re4_2 = {
+	tip = "Milestone",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re4_3 = {
+	tip = "Call to Arms",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re4_4 = {
+	tip = "Prelude Story",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re4_5 = {
+	tip = "Building",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re4_6 = {
+	tip = "UR Exchange",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re3_1 = {
+	tip = "Main Event",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re3_2 = {
+	tip = "Milestone",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re3_3 = {
+	tip = "Call to Arms",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re3_4 = {
+	tip = "Prelude Story",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re3_5 = {
+	tip = "Building",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re2_1 = {
+	tip = "Main Event",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re2_2 = {
+	tip = "Milestone",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re2_3 = {
+	tip = "Call to Arms",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re2_4 = {
+	tip = "Prelude Story",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re2_5 = {
+	tip = "Building",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re7_1 = {
+	tip = "Missions",
+}
+_G.pg.base.gametip.ActivityRemasterCore_re7_2 = {
+	tip = "Building",
+}
+_G.pg.base.gametip.ActivityRemasterCore_award_preview_btn = {
+	tip = "Rewards",
+}
+_G.pg.base.gametip.ActivityRemasterCore_award_preview_title = {
+	tip = "Limited Rewards",
+}
+_G.pg.base.gametip.ActivityRemasterCore_award_preview_ship = {
+	tip = "Characters ($1)",
+}
+_G.pg.base.gametip.ActivityRemasterCore_award_preview_es = {
+	tip = "Gear Skins ($1)",
+}
+_G.pg.base.gametip.ActivityRemasterCore_award_preview_other = {
+	tip = "Other ($1)",
+}
+_G.pg.base.gametip.ActivityRemasterCore_award_own_desc = {
+	tip = "Already Owned: <color=#39bfff>$1</color>",
+}
 _G.pg.base.gametip.dorm3d_yuanchou_table = {
 	tip = "Study",
 }
@@ -31080,5 +31215,14 @@ _G.pg.base.gametip.setting_restart_download_btn = {
 }
 _G.pg.base.gametip.loading_flow_tip = {
 	tip = "Assets will be downloaded on mobile data. Please be mindful of your data usage.",
+}
+_G.pg.base.gametip.ActivityRemasterCoreActivityAdaptUI_TITLE = {
+	tip = "Event",
+}
+_G.pg.base.gametip.ActivityRemasterCoreActivityAdaptUI_TITLE_EN = {
+	tip = "ACTIVITY",
+}
+_G.pg.base.gametip.ActivityRemaster_NoticeJump_AlreadySelected = {
+	tip = "A Capsule Rerun is already unlocked. Please enter via the event entrance on the main screen.",
 }
 

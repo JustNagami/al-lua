@@ -107798,7 +107798,7 @@ _G.pg.base.item_data_statistics[60559] = {
 }
 _G.pg.base.item_data_statistics[60560] = {
 	compose_number = 0,
-	display = "由{namecode:470}赠予的，作为宴会邀约的回礼",
+	display = "由{namecode:470}赠与的，作为宴会邀约的回礼",
 	display_effect = "",
 	icon = "Props/yaoqinghan",
 	id = 60560,

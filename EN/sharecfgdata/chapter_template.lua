@@ -264163,7 +264163,7 @@ _G.pg.base.chapter_template[1820051] = {
 }
 _G.pg.base.chapter_template[1830001] = {
 	ItemTransformPattern = "",
-	act_id = 5521,
+	act_id = 1000003,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -264884,7 +264884,7 @@ _G.pg.base.chapter_template[1830001] = {
 }
 _G.pg.base.chapter_template[1830002] = {
 	ItemTransformPattern = "",
-	act_id = 5521,
+	act_id = 1000003,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -265612,7 +265612,7 @@ _G.pg.base.chapter_template[1830002] = {
 }
 _G.pg.base.chapter_template[1830003] = {
 	ItemTransformPattern = "",
-	act_id = 5521,
+	act_id = 1000003,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -265649,7 +265649,7 @@ _G.pg.base.chapter_template[1830003] = {
 	model = 2,
 	name = "A Crimson Figure",
 	num_1 = 1,
-	num_2 = 15,
+	num_2 = 11,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -265657,7 +265657,7 @@ _G.pg.base.chapter_template[1830003] = {
 	pos_y = "-0.029722",
 	pre_story = 1830105,
 	profiles = "There is more to the crimson figure donning a fox mask. She is not merely part of the illusion...",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -266347,7 +266347,7 @@ _G.pg.base.chapter_template[1830003] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -266379,7 +266379,7 @@ _G.pg.base.chapter_template[1830003] = {
 }
 _G.pg.base.chapter_template[1830004] = {
 	ItemTransformPattern = "",
-	act_id = 5522,
+	act_id = 1000004,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -267295,7 +267295,7 @@ _G.pg.base.chapter_template[1830004] = {
 }
 _G.pg.base.chapter_template[1830005] = {
 	ItemTransformPattern = "",
-	act_id = 5522,
+	act_id = 1000004,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -268088,7 +268088,7 @@ _G.pg.base.chapter_template[1830005] = {
 }
 _G.pg.base.chapter_template[1830006] = {
 	ItemTransformPattern = "",
-	act_id = 5522,
+	act_id = 1000004,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -268125,7 +268125,7 @@ _G.pg.base.chapter_template[1830006] = {
 	model = 2,
 	name = "We Are Amagi",
 	num_1 = 1,
-	num_2 = 21,
+	num_2 = 16,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -268133,7 +268133,7 @@ _G.pg.base.chapter_template[1830006] = {
 	pos_y = "-0.029722",
 	pre_story = 0,
 	profiles = "A massive group of so-called Orochi has appeared. A swarm of crimson figures stands on the ocean's surface, like a field of red spider lilies.",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -269006,7 +269006,7 @@ _G.pg.base.chapter_template[1830006] = {
 }
 _G.pg.base.chapter_template[1830021] = {
 	ItemTransformPattern = "",
-	act_id = 5521,
+	act_id = 1000003,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -269769,7 +269769,7 @@ _G.pg.base.chapter_template[1830021] = {
 }
 _G.pg.base.chapter_template[1830022] = {
 	ItemTransformPattern = "",
-	act_id = 5521,
+	act_id = 1000003,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -270539,7 +270539,7 @@ _G.pg.base.chapter_template[1830022] = {
 }
 _G.pg.base.chapter_template[1830023] = {
 	ItemTransformPattern = "",
-	act_id = 5521,
+	act_id = 1000003,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -270576,7 +270576,7 @@ _G.pg.base.chapter_template[1830023] = {
 	model = 2,
 	name = "A Crimson Figure",
 	num_1 = 1,
-	num_2 = 19,
+	num_2 = 14,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -270584,7 +270584,7 @@ _G.pg.base.chapter_template[1830023] = {
 	pos_y = "-0.029722",
 	pre_story = 1830205,
 	profiles = "There is more to the crimson figure donning a fox mask. She is not merely part of the illusion...",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -271316,7 +271316,7 @@ _G.pg.base.chapter_template[1830023] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -271348,7 +271348,7 @@ _G.pg.base.chapter_template[1830023] = {
 }
 _G.pg.base.chapter_template[1830024] = {
 	ItemTransformPattern = "",
-	act_id = 5522,
+	act_id = 1000004,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -271385,7 +271385,7 @@ _G.pg.base.chapter_template[1830024] = {
 	model = 2,
 	name = "Wind-Crushing Ice Dragon",
 	num_1 = 1,
-	num_2 = 21,
+	num_2 = 16,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -271393,7 +271393,7 @@ _G.pg.base.chapter_template[1830024] = {
 	pos_y = "-0.029722",
 	pre_story = 0,
 	profiles = "The Storm's values are all within normal ranges. Final check complete. Operation Wind-Crushing Ice Dragon starts on your command.",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -272275,7 +272275,7 @@ _G.pg.base.chapter_template[1830024] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -272309,7 +272309,7 @@ _G.pg.base.chapter_template[1830024] = {
 }
 _G.pg.base.chapter_template[1830025] = {
 	ItemTransformPattern = "",
-	act_id = 5522,
+	act_id = 1000004,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -272346,7 +272346,7 @@ _G.pg.base.chapter_template[1830025] = {
 	model = 2,
 	name = "I Am Amagi",
 	num_1 = 1,
-	num_2 = 24,
+	num_2 = 18,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -272354,7 +272354,7 @@ _G.pg.base.chapter_template[1830025] = {
 	pos_y = "-0.298889",
 	pre_story = 0,
 	profiles = "She has her likeness, memories, personality, even her mannerisms... If she isn't Amagi, then who is she?",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -273116,7 +273116,7 @@ _G.pg.base.chapter_template[1830025] = {
 	},
 	defeat_story_count = {
 		1,
-		3,
+		2,
 	},
 	npc_data = {},
 	risk_levels = {
@@ -273149,7 +273149,7 @@ _G.pg.base.chapter_template[1830025] = {
 }
 _G.pg.base.chapter_template[1830026] = {
 	ItemTransformPattern = "",
-	act_id = 5522,
+	act_id = 1000004,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -273186,7 +273186,7 @@ _G.pg.base.chapter_template[1830026] = {
 	model = 2,
 	name = "We Are Amagi",
 	num_1 = 1,
-	num_2 = 24,
+	num_2 = 18,
 	num_3 = 1,
 	oil = 10,
 	pop_pic = "",
@@ -273194,7 +273194,7 @@ _G.pg.base.chapter_template[1830026] = {
 	pos_y = "-0.029722",
 	pre_story = 0,
 	profiles = "A massive group of so-called Orochi has appeared. A swarm of crimson figures stands on the ocean's surface, like a field of red spider lilies.",
-	progress_boss = 34,
+	progress_boss = 50,
 	special_operation_list = "",
 	star_require_1 = 1,
 	star_require_2 = 2,
@@ -274114,7 +274114,7 @@ _G.pg.base.chapter_template[1830026] = {
 }
 _G.pg.base.chapter_template[1830041] = {
 	ItemTransformPattern = "",
-	act_id = 5522,
+	act_id = 1000004,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -274952,7 +274952,7 @@ _G.pg.base.chapter_template[1830041] = {
 }
 _G.pg.base.chapter_template[1830051] = {
 	ItemTransformPattern = "",
-	act_id = 5522,
+	act_id = 1000004,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -278565,7 +278565,7 @@ _G.pg.base.chapter_template[1840004] = {
 }
 _G.pg.base.chapter_template[1850001] = {
 	ItemTransformPattern = "",
-	act_id = 5562,
+	act_id = 1000023,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -279221,7 +279221,7 @@ _G.pg.base.chapter_template[1850001] = {
 }
 _G.pg.base.chapter_template[1850002] = {
 	ItemTransformPattern = "",
-	act_id = 5562,
+	act_id = 1000023,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -279282,6 +279282,9 @@ _G.pg.base.chapter_template[1850002] = {
 	pre_chapter = {
 		{
 			1850001,
+		},
+		{
+			1850021,
 		},
 	},
 	scale = {
@@ -279952,7 +279955,7 @@ _G.pg.base.chapter_template[1850002] = {
 }
 _G.pg.base.chapter_template[1850003] = {
 	ItemTransformPattern = "",
-	act_id = 5562,
+	act_id = 1000023,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -280013,6 +280016,9 @@ _G.pg.base.chapter_template[1850003] = {
 	pre_chapter = {
 		{
 			1850002,
+		},
+		{
+			1850022,
 		},
 	},
 	scale = {
@@ -280615,7 +280621,7 @@ _G.pg.base.chapter_template[1850003] = {
 }
 _G.pg.base.chapter_template[1850004] = {
 	ItemTransformPattern = "",
-	act_id = 5563,
+	act_id = 1000024,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -280676,6 +280682,9 @@ _G.pg.base.chapter_template[1850004] = {
 	pre_chapter = {
 		{
 			1850003,
+		},
+		{
+			1850023,
 		},
 	},
 	scale = {
@@ -281457,7 +281466,7 @@ _G.pg.base.chapter_template[1850004] = {
 }
 _G.pg.base.chapter_template[1850005] = {
 	ItemTransformPattern = "",
-	act_id = 5563,
+	act_id = 1000024,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -281518,6 +281527,9 @@ _G.pg.base.chapter_template[1850005] = {
 	pre_chapter = {
 		{
 			1850004,
+		},
+		{
+			1850024,
 		},
 	},
 	scale = {
@@ -282306,7 +282318,7 @@ _G.pg.base.chapter_template[1850005] = {
 }
 _G.pg.base.chapter_template[1850006] = {
 	ItemTransformPattern = "",
-	act_id = 5563,
+	act_id = 1000024,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -282367,6 +282379,9 @@ _G.pg.base.chapter_template[1850006] = {
 	pre_chapter = {
 		{
 			1850005,
+		},
+		{
+			1850025,
 		},
 	},
 	scale = {
@@ -283093,7 +283108,7 @@ _G.pg.base.chapter_template[1850006] = {
 }
 _G.pg.base.chapter_template[1850021] = {
 	ItemTransformPattern = "",
-	act_id = 5562,
+	act_id = 1000023,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -283790,7 +283805,7 @@ _G.pg.base.chapter_template[1850021] = {
 }
 _G.pg.base.chapter_template[1850022] = {
 	ItemTransformPattern = "",
-	act_id = 5562,
+	act_id = 1000023,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -283849,6 +283864,9 @@ _G.pg.base.chapter_template[1850022] = {
 	unlocklevel = 0,
 	win_condition_display = "win_condition_display_qijian",
 	pre_chapter = {
+		{
+			1850001,
+		},
 		{
 			1850021,
 		},
@@ -284562,7 +284580,7 @@ _G.pg.base.chapter_template[1850022] = {
 }
 _G.pg.base.chapter_template[1850023] = {
 	ItemTransformPattern = "",
-	act_id = 5562,
+	act_id = 1000023,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -284621,6 +284639,9 @@ _G.pg.base.chapter_template[1850023] = {
 	unlocklevel = 0,
 	win_condition_display = "win_condition_display_qijian",
 	pre_chapter = {
+		{
+			1850002,
+		},
 		{
 			1850022,
 		},
@@ -285266,7 +285287,7 @@ _G.pg.base.chapter_template[1850023] = {
 }
 _G.pg.base.chapter_template[1850024] = {
 	ItemTransformPattern = "",
-	act_id = 5563,
+	act_id = 1000024,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -285325,6 +285346,9 @@ _G.pg.base.chapter_template[1850024] = {
 	unlocklevel = 0,
 	win_condition_display = "win_condition_display_qijian",
 	pre_chapter = {
+		{
+			1850003,
+		},
 		{
 			1850023,
 		},
@@ -286153,7 +286177,7 @@ _G.pg.base.chapter_template[1850024] = {
 }
 _G.pg.base.chapter_template[1850025] = {
 	ItemTransformPattern = "",
-	act_id = 5563,
+	act_id = 1000024,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -286212,6 +286236,9 @@ _G.pg.base.chapter_template[1850025] = {
 	unlocklevel = 0,
 	win_condition_display = "win_condition_display_qijian",
 	pre_chapter = {
+		{
+			1850004,
+		},
 		{
 			1850024,
 		},
@@ -287049,7 +287076,7 @@ _G.pg.base.chapter_template[1850025] = {
 }
 _G.pg.base.chapter_template[1850026] = {
 	ItemTransformPattern = "",
-	act_id = 5563,
+	act_id = 1000024,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -287108,6 +287135,9 @@ _G.pg.base.chapter_template[1850026] = {
 	unlocklevel = 0,
 	win_condition_display = "win_condition_display_qijian",
 	pre_chapter = {
+		{
+			1850005,
+		},
 		{
 			1850025,
 		},
@@ -287883,7 +287913,7 @@ _G.pg.base.chapter_template[1850026] = {
 }
 _G.pg.base.chapter_template[1850041] = {
 	ItemTransformPattern = "",
-	act_id = 5563,
+	act_id = 1000024,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -288508,7 +288538,7 @@ _G.pg.base.chapter_template[1850041] = {
 }
 _G.pg.base.chapter_template[1850051] = {
 	ItemTransformPattern = "",
-	act_id = 5563,
+	act_id = 1000024,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -288960,7 +288990,7 @@ _G.pg.base.chapter_template[1850051] = {
 }
 _G.pg.base.chapter_template[1850052] = {
 	ItemTransformPattern = "",
-	act_id = 5563,
+	act_id = 1000024,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -302248,7 +302278,7 @@ _G.pg.base.chapter_template[1870052] = {
 }
 _G.pg.base.chapter_template[1880001] = {
 	ItemTransformPattern = "",
-	act_id = 5711,
+	act_id = 1000043,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -302989,7 +303019,7 @@ _G.pg.base.chapter_template[1880001] = {
 }
 _G.pg.base.chapter_template[1880002] = {
 	ItemTransformPattern = "",
-	act_id = 5711,
+	act_id = 1000043,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -303727,7 +303757,7 @@ _G.pg.base.chapter_template[1880002] = {
 }
 _G.pg.base.chapter_template[1880003] = {
 	ItemTransformPattern = "",
-	act_id = 5711,
+	act_id = 1000043,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -304648,7 +304678,7 @@ _G.pg.base.chapter_template[1880003] = {
 }
 _G.pg.base.chapter_template[1880004] = {
 	ItemTransformPattern = "",
-	act_id = 5712,
+	act_id = 1000044,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -305497,7 +305527,7 @@ _G.pg.base.chapter_template[1880004] = {
 }
 _G.pg.base.chapter_template[1880005] = {
 	ItemTransformPattern = "",
-	act_id = 5712,
+	act_id = 1000044,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -306360,7 +306390,7 @@ _G.pg.base.chapter_template[1880005] = {
 }
 _G.pg.base.chapter_template[1880006] = {
 	ItemTransformPattern = "",
-	act_id = 5712,
+	act_id = 1000044,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -307282,7 +307312,7 @@ _G.pg.base.chapter_template[1880006] = {
 }
 _G.pg.base.chapter_template[1880021] = {
 	ItemTransformPattern = "",
-	act_id = 5711,
+	act_id = 1000043,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -308065,7 +308095,7 @@ _G.pg.base.chapter_template[1880021] = {
 }
 _G.pg.base.chapter_template[1880022] = {
 	ItemTransformPattern = "",
-	act_id = 5711,
+	act_id = 1000043,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -308845,7 +308875,7 @@ _G.pg.base.chapter_template[1880022] = {
 }
 _G.pg.base.chapter_template[1880023] = {
 	ItemTransformPattern = "",
-	act_id = 5711,
+	act_id = 1000043,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -309808,7 +309838,7 @@ _G.pg.base.chapter_template[1880023] = {
 }
 _G.pg.base.chapter_template[1880024] = {
 	ItemTransformPattern = "",
-	act_id = 5712,
+	act_id = 1000044,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -310702,7 +310732,7 @@ _G.pg.base.chapter_template[1880024] = {
 }
 _G.pg.base.chapter_template[1880025] = {
 	ItemTransformPattern = "",
-	act_id = 5712,
+	act_id = 1000044,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -311612,7 +311642,7 @@ _G.pg.base.chapter_template[1880025] = {
 }
 _G.pg.base.chapter_template[1880026] = {
 	ItemTransformPattern = "",
-	act_id = 5712,
+	act_id = 1000044,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -312581,7 +312611,7 @@ _G.pg.base.chapter_template[1880026] = {
 }
 _G.pg.base.chapter_template[1880041] = {
 	ItemTransformPattern = "",
-	act_id = 5712,
+	act_id = 1000044,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -313399,7 +313429,7 @@ _G.pg.base.chapter_template[1880041] = {
 }
 _G.pg.base.chapter_template[1880051] = {
 	ItemTransformPattern = "",
-	act_id = 5712,
+	act_id = 1000044,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -313816,7 +313846,7 @@ _G.pg.base.chapter_template[1880051] = {
 }
 _G.pg.base.chapter_template[1880052] = {
 	ItemTransformPattern = "",
-	act_id = 5712,
+	act_id = 1000044,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -314235,7 +314265,7 @@ _G.pg.base.chapter_template[1880052] = {
 }
 _G.pg.base.chapter_template[1890001] = {
 	ItemTransformPattern = "",
-	act_id = 5821,
+	act_id = 1000063,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -314945,7 +314975,7 @@ _G.pg.base.chapter_template[1890001] = {
 }
 _G.pg.base.chapter_template[1890002] = {
 	ItemTransformPattern = "",
-	act_id = 5821,
+	act_id = 1000063,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -315658,7 +315688,7 @@ _G.pg.base.chapter_template[1890002] = {
 }
 _G.pg.base.chapter_template[1890003] = {
 	ItemTransformPattern = "",
-	act_id = 5821,
+	act_id = 1000063,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -316442,7 +316472,7 @@ _G.pg.base.chapter_template[1890003] = {
 }
 _G.pg.base.chapter_template[1890004] = {
 	ItemTransformPattern = "",
-	act_id = 5822,
+	act_id = 1000064,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -317290,7 +317320,7 @@ _G.pg.base.chapter_template[1890004] = {
 }
 _G.pg.base.chapter_template[1890005] = {
 	ItemTransformPattern = "",
-	act_id = 5822,
+	act_id = 1000064,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -318109,7 +318139,7 @@ _G.pg.base.chapter_template[1890005] = {
 }
 _G.pg.base.chapter_template[1890006] = {
 	ItemTransformPattern = "",
-	act_id = 5822,
+	act_id = 1000064,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -319024,7 +319054,7 @@ _G.pg.base.chapter_template[1890006] = {
 }
 _G.pg.base.chapter_template[1890021] = {
 	ItemTransformPattern = "",
-	act_id = 5821,
+	act_id = 1000063,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -319775,7 +319805,7 @@ _G.pg.base.chapter_template[1890021] = {
 }
 _G.pg.base.chapter_template[1890022] = {
 	ItemTransformPattern = "",
-	act_id = 5821,
+	act_id = 1000063,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -320529,7 +320559,7 @@ _G.pg.base.chapter_template[1890022] = {
 }
 _G.pg.base.chapter_template[1890023] = {
 	ItemTransformPattern = "",
-	act_id = 5821,
+	act_id = 1000063,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -321354,7 +321384,7 @@ _G.pg.base.chapter_template[1890023] = {
 }
 _G.pg.base.chapter_template[1890024] = {
 	ItemTransformPattern = "",
-	act_id = 5822,
+	act_id = 1000064,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -322247,7 +322277,7 @@ _G.pg.base.chapter_template[1890024] = {
 }
 _G.pg.base.chapter_template[1890025] = {
 	ItemTransformPattern = "",
-	act_id = 5822,
+	act_id = 1000064,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -323113,7 +323143,7 @@ _G.pg.base.chapter_template[1890025] = {
 }
 _G.pg.base.chapter_template[1890026] = {
 	ItemTransformPattern = "",
-	act_id = 5822,
+	act_id = 1000064,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -324075,7 +324105,7 @@ _G.pg.base.chapter_template[1890026] = {
 }
 _G.pg.base.chapter_template[1890041] = {
 	ItemTransformPattern = "",
-	act_id = 5822,
+	act_id = 1000064,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -324877,7 +324907,7 @@ _G.pg.base.chapter_template[1890041] = {
 }
 _G.pg.base.chapter_template[1890051] = {
 	ItemTransformPattern = "",
-	act_id = 5822,
+	act_id = 1000064,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -325315,7 +325345,7 @@ _G.pg.base.chapter_template[1890051] = {
 }
 _G.pg.base.chapter_template[1890052] = {
 	ItemTransformPattern = "",
-	act_id = 5822,
+	act_id = 1000064,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -325745,9 +325775,7 @@ _G.pg.base.chapter_template[1890052] = {
 	npc_data = {},
 	risk_levels = {},
 	land_based = {},
-	chapter_strategy = {
-		201250,
-	},
+	chapter_strategy = {},
 	wall_prefab = {},
 	alarm_cell = {},
 	weather_grids = {},
@@ -330734,7 +330762,7 @@ _G.pg.base.chapter_template[1910041] = {
 }
 _G.pg.base.chapter_template[1920001] = {
 	ItemTransformPattern = "",
-	act_id = 5941,
+	act_id = 1000083,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -331461,7 +331489,7 @@ _G.pg.base.chapter_template[1920001] = {
 }
 _G.pg.base.chapter_template[1920002] = {
 	ItemTransformPattern = "",
-	act_id = 5941,
+	act_id = 1000083,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -332191,7 +332219,7 @@ _G.pg.base.chapter_template[1920002] = {
 }
 _G.pg.base.chapter_template[1920003] = {
 	ItemTransformPattern = "",
-	act_id = 5941,
+	act_id = 1000083,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -332968,7 +332996,7 @@ _G.pg.base.chapter_template[1920003] = {
 }
 _G.pg.base.chapter_template[1920004] = {
 	ItemTransformPattern = "",
-	act_id = 5942,
+	act_id = 1000084,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -333820,7 +333848,7 @@ _G.pg.base.chapter_template[1920004] = {
 }
 _G.pg.base.chapter_template[1920005] = {
 	ItemTransformPattern = "",
-	act_id = 5942,
+	act_id = 1000084,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -334675,7 +334703,7 @@ _G.pg.base.chapter_template[1920005] = {
 }
 _G.pg.base.chapter_template[1920006] = {
 	ItemTransformPattern = "",
-	act_id = 5942,
+	act_id = 1000084,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -335556,7 +335584,7 @@ _G.pg.base.chapter_template[1920006] = {
 }
 _G.pg.base.chapter_template[1920021] = {
 	ItemTransformPattern = "",
-	act_id = 5941,
+	act_id = 1000083,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -336325,7 +336353,7 @@ _G.pg.base.chapter_template[1920021] = {
 }
 _G.pg.base.chapter_template[1920022] = {
 	ItemTransformPattern = "",
-	act_id = 5941,
+	act_id = 1000083,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -337097,7 +337125,7 @@ _G.pg.base.chapter_template[1920022] = {
 }
 _G.pg.base.chapter_template[1920023] = {
 	ItemTransformPattern = "",
-	act_id = 5941,
+	act_id = 1000083,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -337916,7 +337944,7 @@ _G.pg.base.chapter_template[1920023] = {
 }
 _G.pg.base.chapter_template[1920024] = {
 	ItemTransformPattern = "",
-	act_id = 5942,
+	act_id = 1000084,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -338813,7 +338841,7 @@ _G.pg.base.chapter_template[1920024] = {
 }
 _G.pg.base.chapter_template[1920025] = {
 	ItemTransformPattern = "",
-	act_id = 5942,
+	act_id = 1000084,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -339715,7 +339743,7 @@ _G.pg.base.chapter_template[1920025] = {
 }
 _G.pg.base.chapter_template[1920026] = {
 	ItemTransformPattern = "",
-	act_id = 5942,
+	act_id = 1000084,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -340643,7 +340671,7 @@ _G.pg.base.chapter_template[1920026] = {
 }
 _G.pg.base.chapter_template[1920041] = {
 	ItemTransformPattern = "",
-	act_id = 5942,
+	act_id = 1000084,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -341502,7 +341530,7 @@ _G.pg.base.chapter_template[1920041] = {
 }
 _G.pg.base.chapter_template[1920051] = {
 	ItemTransformPattern = "",
-	act_id = 5942,
+	act_id = 1000084,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -341947,7 +341975,7 @@ _G.pg.base.chapter_template[1920051] = {
 }
 _G.pg.base.chapter_template[1920052] = {
 	ItemTransformPattern = "",
-	act_id = 5942,
+	act_id = 1000084,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -351720,7 +351748,7 @@ _G.pg.base.chapter_template[1940052] = {
 }
 _G.pg.base.chapter_template[1950001] = {
 	ItemTransformPattern = "",
-	act_id = 50081,
+	act_id = 1000103,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -352377,7 +352405,7 @@ _G.pg.base.chapter_template[1950001] = {
 }
 _G.pg.base.chapter_template[1950002] = {
 	ItemTransformPattern = "",
-	act_id = 50081,
+	act_id = 1000103,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -353086,7 +353114,7 @@ _G.pg.base.chapter_template[1950002] = {
 }
 _G.pg.base.chapter_template[1950003] = {
 	ItemTransformPattern = "",
-	act_id = 50081,
+	act_id = 1000103,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -353735,7 +353763,7 @@ _G.pg.base.chapter_template[1950003] = {
 }
 _G.pg.base.chapter_template[1950004] = {
 	ItemTransformPattern = "",
-	act_id = 50082,
+	act_id = 1000104,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -354567,7 +354595,7 @@ _G.pg.base.chapter_template[1950004] = {
 }
 _G.pg.base.chapter_template[1950005] = {
 	ItemTransformPattern = "",
-	act_id = 50082,
+	act_id = 1000104,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -355294,7 +355322,7 @@ _G.pg.base.chapter_template[1950005] = {
 }
 _G.pg.base.chapter_template[1950006] = {
 	ItemTransformPattern = "",
-	act_id = 50082,
+	act_id = 1000104,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -356089,7 +356117,7 @@ _G.pg.base.chapter_template[1950006] = {
 }
 _G.pg.base.chapter_template[1950021] = {
 	ItemTransformPattern = "",
-	act_id = 50081,
+	act_id = 1000103,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -356787,7 +356815,7 @@ _G.pg.base.chapter_template[1950021] = {
 }
 _G.pg.base.chapter_template[1950022] = {
 	ItemTransformPattern = "",
-	act_id = 50081,
+	act_id = 1000103,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -357537,7 +357565,7 @@ _G.pg.base.chapter_template[1950022] = {
 }
 _G.pg.base.chapter_template[1950023] = {
 	ItemTransformPattern = "",
-	act_id = 50081,
+	act_id = 1000103,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -358227,7 +358255,7 @@ _G.pg.base.chapter_template[1950023] = {
 }
 _G.pg.base.chapter_template[1950024] = {
 	ItemTransformPattern = "",
-	act_id = 50082,
+	act_id = 1000104,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -359104,7 +359132,7 @@ _G.pg.base.chapter_template[1950024] = {
 }
 _G.pg.base.chapter_template[1950025] = {
 	ItemTransformPattern = "",
-	act_id = 50082,
+	act_id = 1000104,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -359878,7 +359906,7 @@ _G.pg.base.chapter_template[1950025] = {
 }
 _G.pg.base.chapter_template[1950026] = {
 	ItemTransformPattern = "",
-	act_id = 50082,
+	act_id = 1000104,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -360720,7 +360748,7 @@ _G.pg.base.chapter_template[1950026] = {
 }
 _G.pg.base.chapter_template[1950041] = {
 	ItemTransformPattern = "",
-	act_id = 50082,
+	act_id = 1000104,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -361527,7 +361555,7 @@ _G.pg.base.chapter_template[1950041] = {
 }
 _G.pg.base.chapter_template[1950051] = {
 	ItemTransformPattern = "",
-	act_id = 50082,
+	act_id = 1000104,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -361886,7 +361914,7 @@ _G.pg.base.chapter_template[1950051] = {
 }
 _G.pg.base.chapter_template[1950052] = {
 	ItemTransformPattern = "",
-	act_id = 50082,
+	act_id = 1000104,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -362245,7 +362273,7 @@ _G.pg.base.chapter_template[1950052] = {
 }
 _G.pg.base.chapter_template[1960001] = {
 	ItemTransformPattern = "",
-	act_id = 50114,
+	act_id = 1000123,
 	air_dominance = 100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -362979,7 +363007,7 @@ _G.pg.base.chapter_template[1960001] = {
 }
 _G.pg.base.chapter_template[1960002] = {
 	ItemTransformPattern = "",
-	act_id = 50114,
+	act_id = 1000123,
 	air_dominance = 130,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -363716,7 +363744,7 @@ _G.pg.base.chapter_template[1960002] = {
 }
 _G.pg.base.chapter_template[1960003] = {
 	ItemTransformPattern = "",
-	act_id = 50114,
+	act_id = 1000123,
 	air_dominance = 165,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -364488,7 +364516,7 @@ _G.pg.base.chapter_template[1960003] = {
 }
 _G.pg.base.chapter_template[1960004] = {
 	ItemTransformPattern = "",
-	act_id = 50115,
+	act_id = 1000124,
 	air_dominance = 210,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -365274,7 +365302,7 @@ _G.pg.base.chapter_template[1960004] = {
 }
 _G.pg.base.chapter_template[1960005] = {
 	ItemTransformPattern = "",
-	act_id = 50115,
+	act_id = 1000124,
 	air_dominance = 270,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -366067,7 +366095,7 @@ _G.pg.base.chapter_template[1960005] = {
 }
 _G.pg.base.chapter_template[1960006] = {
 	ItemTransformPattern = "",
-	act_id = 50115,
+	act_id = 1000124,
 	air_dominance = 330,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -367024,7 +367052,7 @@ _G.pg.base.chapter_template[1960006] = {
 }
 _G.pg.base.chapter_template[1960021] = {
 	ItemTransformPattern = "",
-	act_id = 50114,
+	act_id = 1000123,
 	air_dominance = 455,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -367800,7 +367828,7 @@ _G.pg.base.chapter_template[1960021] = {
 }
 _G.pg.base.chapter_template[1960022] = {
 	ItemTransformPattern = "",
-	act_id = 50114,
+	act_id = 1000123,
 	air_dominance = 605,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -368579,7 +368607,7 @@ _G.pg.base.chapter_template[1960022] = {
 }
 _G.pg.base.chapter_template[1960023] = {
 	ItemTransformPattern = "",
-	act_id = 50114,
+	act_id = 1000123,
 	air_dominance = 775,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -369393,7 +369421,7 @@ _G.pg.base.chapter_template[1960023] = {
 }
 _G.pg.base.chapter_template[1960024] = {
 	ItemTransformPattern = "",
-	act_id = 50115,
+	act_id = 1000124,
 	air_dominance = 850,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -370224,7 +370252,7 @@ _G.pg.base.chapter_template[1960024] = {
 }
 _G.pg.base.chapter_template[1960025] = {
 	ItemTransformPattern = "",
-	act_id = 50115,
+	act_id = 1000124,
 	air_dominance = 1100,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -371064,7 +371092,7 @@ _G.pg.base.chapter_template[1960025] = {
 }
 _G.pg.base.chapter_template[1960026] = {
 	ItemTransformPattern = "",
-	act_id = 50115,
+	act_id = 1000124,
 	air_dominance = 1410,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -372068,7 +372096,7 @@ _G.pg.base.chapter_template[1960026] = {
 }
 _G.pg.base.chapter_template[1960041] = {
 	ItemTransformPattern = "",
-	act_id = 50115,
+	act_id = 1000124,
 	air_dominance = 1820,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -372800,7 +372828,7 @@ _G.pg.base.chapter_template[1960041] = {
 }
 _G.pg.base.chapter_template[1960051] = {
 	ItemTransformPattern = "",
-	act_id = 50115,
+	act_id = 1000124,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
@@ -373210,7 +373238,7 @@ _G.pg.base.chapter_template[1960051] = {
 }
 _G.pg.base.chapter_template[1960052] = {
 	ItemTransformPattern = "",
-	act_id = 50115,
+	act_id = 1000124,
 	air_dominance = 620,
 	ammo_submarine = 0,
 	ammo_total = 5,
