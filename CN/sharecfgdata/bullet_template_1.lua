@@ -964207,9 +964207,9 @@ _G.pg.base.bullet_template_1[3185004] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -964261,9 +964261,9 @@ _G.pg.base.bullet_template_1[3185005] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -964315,9 +964315,9 @@ _G.pg.base.bullet_template_1[3185006] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -964369,9 +964369,9 @@ _G.pg.base.bullet_template_1[3185007] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -964423,9 +964423,9 @@ _G.pg.base.bullet_template_1[3185008] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -964607,9 +964607,9 @@ _G.pg.base.bullet_template_1[3185011] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -964661,9 +964661,9 @@ _G.pg.base.bullet_template_1[3185012] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -965376,9 +965376,9 @@ _G.pg.base.bullet_template_1[3185023] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -965430,9 +965430,9 @@ _G.pg.base.bullet_template_1[3185024] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -965550,9 +965550,9 @@ _G.pg.base.bullet_template_1[3185026] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -965604,9 +965604,9 @@ _G.pg.base.bullet_template_1[3185027] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -965800,9 +965800,9 @@ _G.pg.base.bullet_template_1[3185030] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -965919,9 +965919,9 @@ _G.pg.base.bullet_template_1[3185032] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -966228,9 +966228,9 @@ _G.pg.base.bullet_template_1[3185037] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -966280,9 +966280,9 @@ _G.pg.base.bullet_template_1[3185038] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -966398,9 +966398,9 @@ _G.pg.base.bullet_template_1[3185040] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -966450,9 +966450,9 @@ _G.pg.base.bullet_template_1[3185041] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -966644,9 +966644,9 @@ _G.pg.base.bullet_template_1[3185044] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -966761,9 +966761,9 @@ _G.pg.base.bullet_template_1[3185046] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -982866,7 +982866,7 @@ _G.pg.base.bullet_template_1[3205103] = {
 	miss_sfx = "",
 	modle_ID = "kedouzidan_red",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -982874,8 +982874,8 @@ _G.pg.base.bullet_template_1[3205103] = {
 	velocity = 6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -982893,9 +982893,9 @@ _G.pg.base.bullet_template_1[3205103] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -982905,6 +982905,7 @@ _G.pg.base.bullet_template_1[3205103] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -982920,7 +982921,7 @@ _G.pg.base.bullet_template_1[3205104] = {
 	miss_sfx = "",
 	modle_ID = "kedouzidan_purple",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -982928,8 +982929,8 @@ _G.pg.base.bullet_template_1[3205104] = {
 	velocity = 6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -982947,9 +982948,9 @@ _G.pg.base.bullet_template_1[3205104] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -982959,6 +982960,7 @@ _G.pg.base.bullet_template_1[3205104] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983093,7 +983095,7 @@ _G.pg.base.bullet_template_1[3205106] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983101,8 +983103,8 @@ _G.pg.base.bullet_template_1[3205106] = {
 	velocity = 6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983120,9 +983122,9 @@ _G.pg.base.bullet_template_1[3205106] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983132,6 +983134,7 @@ _G.pg.base.bullet_template_1[3205106] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983147,7 +983150,7 @@ _G.pg.base.bullet_template_1[3205107] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983155,8 +983158,8 @@ _G.pg.base.bullet_template_1[3205107] = {
 	velocity = 7,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983174,9 +983177,9 @@ _G.pg.base.bullet_template_1[3205107] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983186,6 +983189,7 @@ _G.pg.base.bullet_template_1[3205107] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983201,7 +983205,7 @@ _G.pg.base.bullet_template_1[3205108] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983209,8 +983213,8 @@ _G.pg.base.bullet_template_1[3205108] = {
 	velocity = 8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983228,9 +983232,9 @@ _G.pg.base.bullet_template_1[3205108] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983240,6 +983244,7 @@ _G.pg.base.bullet_template_1[3205108] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983255,7 +983260,7 @@ _G.pg.base.bullet_template_1[3205109] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983263,8 +983268,8 @@ _G.pg.base.bullet_template_1[3205109] = {
 	velocity = 9,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983282,9 +983287,9 @@ _G.pg.base.bullet_template_1[3205109] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983294,6 +983299,7 @@ _G.pg.base.bullet_template_1[3205109] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983309,7 +983315,7 @@ _G.pg.base.bullet_template_1[3205110] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983317,8 +983323,8 @@ _G.pg.base.bullet_template_1[3205110] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983336,9 +983342,9 @@ _G.pg.base.bullet_template_1[3205110] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983348,6 +983354,7 @@ _G.pg.base.bullet_template_1[3205110] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983363,7 +983370,7 @@ _G.pg.base.bullet_template_1[3205111] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983371,8 +983378,8 @@ _G.pg.base.bullet_template_1[3205111] = {
 	velocity = 11,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983390,9 +983397,9 @@ _G.pg.base.bullet_template_1[3205111] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983402,6 +983409,7 @@ _G.pg.base.bullet_template_1[3205111] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983417,7 +983425,7 @@ _G.pg.base.bullet_template_1[3205112] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983425,8 +983433,8 @@ _G.pg.base.bullet_template_1[3205112] = {
 	velocity = 12,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983444,9 +983452,9 @@ _G.pg.base.bullet_template_1[3205112] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983456,6 +983464,7 @@ _G.pg.base.bullet_template_1[3205112] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983471,7 +983480,7 @@ _G.pg.base.bullet_template_1[3205113] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983479,8 +983488,8 @@ _G.pg.base.bullet_template_1[3205113] = {
 	velocity = 13,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983498,9 +983507,9 @@ _G.pg.base.bullet_template_1[3205113] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983510,6 +983519,7 @@ _G.pg.base.bullet_template_1[3205113] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983525,7 +983535,7 @@ _G.pg.base.bullet_template_1[3205114] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983533,8 +983543,8 @@ _G.pg.base.bullet_template_1[3205114] = {
 	velocity = 14,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983552,9 +983562,9 @@ _G.pg.base.bullet_template_1[3205114] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983564,6 +983574,7 @@ _G.pg.base.bullet_template_1[3205114] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983579,7 +983590,7 @@ _G.pg.base.bullet_template_1[3205115] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983587,8 +983598,8 @@ _G.pg.base.bullet_template_1[3205115] = {
 	velocity = 15,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983606,9 +983617,9 @@ _G.pg.base.bullet_template_1[3205115] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983618,6 +983629,7 @@ _G.pg.base.bullet_template_1[3205115] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983728,7 +983740,7 @@ _G.pg.base.bullet_template_1[3205117] = {
 	miss_sfx = "",
 	modle_ID = "cave_bullet05",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983736,8 +983748,8 @@ _G.pg.base.bullet_template_1[3205117] = {
 	velocity = 6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983755,9 +983767,9 @@ _G.pg.base.bullet_template_1[3205117] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983767,6 +983779,7 @@ _G.pg.base.bullet_template_1[3205117] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983782,7 +983795,7 @@ _G.pg.base.bullet_template_1[3205118] = {
 	miss_sfx = "",
 	modle_ID = "cave_bullet05",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983790,8 +983803,8 @@ _G.pg.base.bullet_template_1[3205118] = {
 	velocity = 7.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983809,9 +983822,9 @@ _G.pg.base.bullet_template_1[3205118] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983821,6 +983834,7 @@ _G.pg.base.bullet_template_1[3205118] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983836,7 +983850,7 @@ _G.pg.base.bullet_template_1[3205119] = {
 	miss_sfx = "",
 	modle_ID = "cave_bullet05",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983844,8 +983858,8 @@ _G.pg.base.bullet_template_1[3205119] = {
 	velocity = 9,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983863,9 +983877,9 @@ _G.pg.base.bullet_template_1[3205119] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983875,6 +983889,7 @@ _G.pg.base.bullet_template_1[3205119] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983890,7 +983905,7 @@ _G.pg.base.bullet_template_1[3205120] = {
 	miss_sfx = "",
 	modle_ID = "cave_bullet05",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983898,8 +983913,8 @@ _G.pg.base.bullet_template_1[3205120] = {
 	velocity = 10.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983917,9 +983932,9 @@ _G.pg.base.bullet_template_1[3205120] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983929,6 +983944,7 @@ _G.pg.base.bullet_template_1[3205120] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -983944,7 +983960,7 @@ _G.pg.base.bullet_template_1[3205121] = {
 	miss_sfx = "",
 	modle_ID = "BulletGER",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -983952,8 +983968,8 @@ _G.pg.base.bullet_template_1[3205121] = {
 	velocity = 6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -983971,9 +983987,9 @@ _G.pg.base.bullet_template_1[3205121] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -983983,6 +983999,7 @@ _G.pg.base.bullet_template_1[3205121] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -984075,7 +984092,7 @@ _G.pg.base.bullet_template_1[3205123] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_zhongyu_red",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -984083,8 +984100,8 @@ _G.pg.base.bullet_template_1[3205123] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -984102,9 +984119,9 @@ _G.pg.base.bullet_template_1[3205123] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -984114,6 +984131,7 @@ _G.pg.base.bullet_template_1[3205123] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -984129,7 +984147,7 @@ _G.pg.base.bullet_template_1[3205124] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_zhongyu_red",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -984137,8 +984155,8 @@ _G.pg.base.bullet_template_1[3205124] = {
 	velocity = 5.2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -984156,9 +984174,9 @@ _G.pg.base.bullet_template_1[3205124] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -984168,6 +984186,7 @@ _G.pg.base.bullet_template_1[3205124] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -984183,7 +984202,7 @@ _G.pg.base.bullet_template_1[3205125] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_zhongyu_red",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -984191,8 +984210,8 @@ _G.pg.base.bullet_template_1[3205125] = {
 	velocity = 5.4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -984210,9 +984229,9 @@ _G.pg.base.bullet_template_1[3205125] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -984222,6 +984241,7 @@ _G.pg.base.bullet_template_1[3205125] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -984310,8 +984330,8 @@ _G.pg.base.bullet_template_1[3205127] = {
 	velocity = 3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -984329,9 +984349,9 @@ _G.pg.base.bullet_template_1[3205127] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1,
-		1,
-		1,
+		3,
+		3,
+		3,
 	},
 	cld_offset = {
 		0,
@@ -984341,6 +984361,7 @@ _G.pg.base.bullet_template_1[3205127] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -984411,6 +984432,7 @@ _G.pg.base.bullet_template_1[3205128] = {
 	},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		diveFilter = {
 			2,
 		},
@@ -984689,7 +984711,7 @@ _G.pg.base.bullet_template_1[3205133] = {
 	miss_sfx = "",
 	modle_ID = "cave_bullet05",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 25,
 	range_offset = 0,
@@ -984697,8 +984719,8 @@ _G.pg.base.bullet_template_1[3205133] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -984716,9 +984738,9 @@ _G.pg.base.bullet_template_1[3205133] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -984728,6 +984750,7 @@ _G.pg.base.bullet_template_1[3205133] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 		lastTime = 1,
 		shrapnel = {
@@ -984759,7 +984782,7 @@ _G.pg.base.bullet_template_1[3205134] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan05",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -984767,8 +984790,8 @@ _G.pg.base.bullet_template_1[3205134] = {
 	velocity = 1,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -984799,9 +984822,9 @@ _G.pg.base.bullet_template_1[3205134] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -984811,6 +984834,7 @@ _G.pg.base.bullet_template_1[3205134] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -984891,7 +984915,7 @@ _G.pg.base.bullet_template_1[3205136] = {
 	miss_sfx = "",
 	modle_ID = "cave_bullet05",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 25,
 	range_offset = 0,
@@ -984899,8 +984923,8 @@ _G.pg.base.bullet_template_1[3205136] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -984918,9 +984942,9 @@ _G.pg.base.bullet_template_1[3205136] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -984930,6 +984954,7 @@ _G.pg.base.bullet_template_1[3205136] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 		lastTime = 1,
 		shrapnel = {
@@ -984955,7 +984980,7 @@ _G.pg.base.bullet_template_1[3205137] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -984963,8 +984988,8 @@ _G.pg.base.bullet_template_1[3205137] = {
 	velocity = 1,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -984995,9 +985020,9 @@ _G.pg.base.bullet_template_1[3205137] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -985007,6 +985032,7 @@ _G.pg.base.bullet_template_1[3205137] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -985087,7 +985113,7 @@ _G.pg.base.bullet_template_1[3205139] = {
 	miss_sfx = "",
 	modle_ID = "None",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 0.01,
 	range_offset = 0,
@@ -985114,9 +985140,9 @@ _G.pg.base.bullet_template_1[3205139] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		100,
@@ -985152,7 +985178,7 @@ _G.pg.base.bullet_template_1[3205140] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan05",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -985160,8 +985186,8 @@ _G.pg.base.bullet_template_1[3205140] = {
 	velocity = 1,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -985192,9 +985218,9 @@ _G.pg.base.bullet_template_1[3205140] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -985204,6 +985230,7 @@ _G.pg.base.bullet_template_1[3205140] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -985284,7 +985311,7 @@ _G.pg.base.bullet_template_1[3205142] = {
 	miss_sfx = "",
 	modle_ID = "cave_bullet07",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 25,
 	range_offset = 0,
@@ -985292,8 +985319,8 @@ _G.pg.base.bullet_template_1[3205142] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -985311,9 +985338,9 @@ _G.pg.base.bullet_template_1[3205142] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -985323,6 +985350,7 @@ _G.pg.base.bullet_template_1[3205142] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 		lastTime = 1,
 		shrapnel = {
@@ -985354,7 +985382,7 @@ _G.pg.base.bullet_template_1[3205143] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan10",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -985362,8 +985390,8 @@ _G.pg.base.bullet_template_1[3205143] = {
 	velocity = 1,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -985394,9 +985422,9 @@ _G.pg.base.bullet_template_1[3205143] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -985406,6 +985434,7 @@ _G.pg.base.bullet_template_1[3205143] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -985421,7 +985450,7 @@ _G.pg.base.bullet_template_1[3205144] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan10",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -985429,8 +985458,8 @@ _G.pg.base.bullet_template_1[3205144] = {
 	velocity = 1,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -985461,9 +985490,9 @@ _G.pg.base.bullet_template_1[3205144] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -985473,6 +985502,7 @@ _G.pg.base.bullet_template_1[3205144] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -985553,7 +985583,7 @@ _G.pg.base.bullet_template_1[3205146] = {
 	miss_sfx = "",
 	modle_ID = "cave_bullet07",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 25,
 	range_offset = 0,
@@ -985561,8 +985591,8 @@ _G.pg.base.bullet_template_1[3205146] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -985580,9 +985610,9 @@ _G.pg.base.bullet_template_1[3205146] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -985592,6 +985622,7 @@ _G.pg.base.bullet_template_1[3205146] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 		lastTime = 1,
 		shrapnel = {
@@ -985617,7 +985648,7 @@ _G.pg.base.bullet_template_1[3205147] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan09",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -985625,8 +985656,8 @@ _G.pg.base.bullet_template_1[3205147] = {
 	velocity = 1,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -985657,9 +985688,9 @@ _G.pg.base.bullet_template_1[3205147] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -985669,6 +985700,7 @@ _G.pg.base.bullet_template_1[3205147] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -985814,7 +985846,7 @@ _G.pg.base.bullet_template_1[3205150] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan05",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -985822,8 +985854,8 @@ _G.pg.base.bullet_template_1[3205150] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -985841,9 +985873,9 @@ _G.pg.base.bullet_template_1[3205150] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -985853,6 +985885,7 @@ _G.pg.base.bullet_template_1[3205150] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -985868,7 +985901,7 @@ _G.pg.base.bullet_template_1[3205151] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan11",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -985876,8 +985909,8 @@ _G.pg.base.bullet_template_1[3205151] = {
 	velocity = 4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -985895,9 +985928,9 @@ _G.pg.base.bullet_template_1[3205151] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -985907,6 +985940,7 @@ _G.pg.base.bullet_template_1[3205151] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -985922,7 +985956,7 @@ _G.pg.base.bullet_template_1[3205152] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_zhongyu_red",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -985930,8 +985964,8 @@ _G.pg.base.bullet_template_1[3205152] = {
 	velocity = 3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -985949,9 +985983,9 @@ _G.pg.base.bullet_template_1[3205152] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -985961,6 +985995,7 @@ _G.pg.base.bullet_template_1[3205152] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -985976,7 +986011,7 @@ _G.pg.base.bullet_template_1[3205153] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan10",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -985984,8 +986019,8 @@ _G.pg.base.bullet_template_1[3205153] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986003,9 +986038,9 @@ _G.pg.base.bullet_template_1[3205153] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -986015,6 +986050,7 @@ _G.pg.base.bullet_template_1[3205153] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986030,7 +986066,7 @@ _G.pg.base.bullet_template_1[3205154] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan09",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -986038,8 +986074,8 @@ _G.pg.base.bullet_template_1[3205154] = {
 	velocity = 4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986057,9 +986093,9 @@ _G.pg.base.bullet_template_1[3205154] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -986069,6 +986105,7 @@ _G.pg.base.bullet_template_1[3205154] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986084,7 +986121,7 @@ _G.pg.base.bullet_template_1[3205155] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_zhongyu_blue",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -986092,8 +986129,8 @@ _G.pg.base.bullet_template_1[3205155] = {
 	velocity = 3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986111,9 +986148,9 @@ _G.pg.base.bullet_template_1[3205155] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -986123,6 +986160,7 @@ _G.pg.base.bullet_template_1[3205155] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986240,8 +986278,8 @@ _G.pg.base.bullet_template_1[3205157] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986284,6 +986322,7 @@ _G.pg.base.bullet_template_1[3205157] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986307,8 +986346,8 @@ _G.pg.base.bullet_template_1[3205158] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986351,6 +986390,7 @@ _G.pg.base.bullet_template_1[3205158] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986374,8 +986414,8 @@ _G.pg.base.bullet_template_1[3205159] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986418,6 +986458,7 @@ _G.pg.base.bullet_template_1[3205159] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986441,8 +986482,8 @@ _G.pg.base.bullet_template_1[3205160] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986485,6 +986526,7 @@ _G.pg.base.bullet_template_1[3205160] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986508,8 +986550,8 @@ _G.pg.base.bullet_template_1[3205161] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986552,6 +986594,7 @@ _G.pg.base.bullet_template_1[3205161] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986669,8 +986712,8 @@ _G.pg.base.bullet_template_1[3205163] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986713,6 +986756,7 @@ _G.pg.base.bullet_template_1[3205163] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986736,8 +986780,8 @@ _G.pg.base.bullet_template_1[3205164] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986780,6 +986824,7 @@ _G.pg.base.bullet_template_1[3205164] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986803,8 +986848,8 @@ _G.pg.base.bullet_template_1[3205165] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986847,6 +986892,7 @@ _G.pg.base.bullet_template_1[3205165] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986870,8 +986916,8 @@ _G.pg.base.bullet_template_1[3205166] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986914,6 +986960,7 @@ _G.pg.base.bullet_template_1[3205166] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -986937,8 +986984,8 @@ _G.pg.base.bullet_template_1[3205167] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -986981,6 +987028,7 @@ _G.pg.base.bullet_template_1[3205167] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -987069,8 +987117,8 @@ _G.pg.base.bullet_template_1[3205169] = {
 	velocity = 3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -987100,6 +987148,7 @@ _G.pg.base.bullet_template_1[3205169] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -987123,8 +987172,8 @@ _G.pg.base.bullet_template_1[3205170] = {
 	velocity = 3,
 	damage_type = {
 		3,
+		3.9,
 		4.5,
-		6,
 	},
 	DMG_font = {
 		{
@@ -987167,6 +987216,7 @@ _G.pg.base.bullet_template_1[3205170] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -987182,7 +987232,7 @@ _G.pg.base.bullet_template_1[3205171] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan05",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -987190,8 +987240,8 @@ _G.pg.base.bullet_template_1[3205171] = {
 	velocity = 6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -987209,9 +987259,9 @@ _G.pg.base.bullet_template_1[3205171] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -987221,6 +987271,7 @@ _G.pg.base.bullet_template_1[3205171] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -987236,7 +987287,7 @@ _G.pg.base.bullet_template_1[3205172] = {
 	miss_sfx = "",
 	modle_ID = "BulletGER",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -987244,8 +987295,8 @@ _G.pg.base.bullet_template_1[3205172] = {
 	velocity = 8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -987263,9 +987314,9 @@ _G.pg.base.bullet_template_1[3205172] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -987275,6 +987326,7 @@ _G.pg.base.bullet_template_1[3205172] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -987361,7 +987413,7 @@ _G.pg.base.bullet_template_1[3205174] = {
 	miss_sfx = "",
 	modle_ID = "jiantouzidan01",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -987369,8 +987421,8 @@ _G.pg.base.bullet_template_1[3205174] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -987388,9 +987440,9 @@ _G.pg.base.bullet_template_1[3205174] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -987400,6 +987452,7 @@ _G.pg.base.bullet_template_1[3205174] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -987459,6 +987512,7 @@ _G.pg.base.bullet_template_1[3205175] = {
 	extra_param = {
 		airdrop = true,
 		gravity = -0.05,
+		ignoreB = true,
 		launchVrtSpeed = -4,
 		offsetY = 70,
 		targetOffsetX = -1,
@@ -987521,6 +987575,7 @@ _G.pg.base.bullet_template_1[3205176] = {
 	},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		diveFilter = {
 			2,
 		},
@@ -1032781,8 +1032836,8 @@ _G.pg.base.bullet_template_1[3235201] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1032813,9 +1032868,9 @@ _G.pg.base.bullet_template_1[3235201] = {
 		},
 	},
 	cld_box = {
-		2,
-		2,
-		2,
+		4,
+		4,
+		4,
 	},
 	cld_offset = {
 		0,
@@ -1032828,6 +1032883,7 @@ _G.pg.base.bullet_template_1[3235201] = {
 	},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		diveFilter = {
 			2,
 		},
@@ -1032845,7 +1032901,7 @@ _G.pg.base.bullet_template_1[3235202] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_zhongyu_blue",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1032853,8 +1032909,8 @@ _G.pg.base.bullet_template_1[3235202] = {
 	velocity = 8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1032872,9 +1032928,9 @@ _G.pg.base.bullet_template_1[3235202] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1032884,6 +1032940,7 @@ _G.pg.base.bullet_template_1[3235202] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1032964,7 +1033021,7 @@ _G.pg.base.bullet_template_1[3235204] = {
 	miss_sfx = "",
 	modle_ID = "shuidizidan02",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1032972,8 +1033029,8 @@ _G.pg.base.bullet_template_1[3235204] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1032991,9 +1033048,9 @@ _G.pg.base.bullet_template_1[3235204] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1033003,6 +1033060,7 @@ _G.pg.base.bullet_template_1[3235204] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1033213,7 +1033271,7 @@ _G.pg.base.bullet_template_1[3235209] = {
 	miss_sfx = "",
 	modle_ID = "heihailunna_jiandan01",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1033221,8 +1033279,8 @@ _G.pg.base.bullet_template_1[3235209] = {
 	velocity = 4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1033240,9 +1033298,9 @@ _G.pg.base.bullet_template_1[3235209] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1033252,6 +1033310,7 @@ _G.pg.base.bullet_template_1[3235209] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1033267,7 +1033326,7 @@ _G.pg.base.bullet_template_1[3235210] = {
 	miss_sfx = "",
 	modle_ID = "heihailunna_jiandan01",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1033275,8 +1033334,8 @@ _G.pg.base.bullet_template_1[3235210] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1033294,9 +1033353,9 @@ _G.pg.base.bullet_template_1[3235210] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1033306,6 +1033365,7 @@ _G.pg.base.bullet_template_1[3235210] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1033410,7 +1033470,7 @@ _G.pg.base.bullet_template_1[3235212] = {
 	miss_sfx = "",
 	modle_ID = "heihailunna_lindan",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1033418,8 +1033478,8 @@ _G.pg.base.bullet_template_1[3235212] = {
 	velocity = 6.4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1033437,9 +1033497,9 @@ _G.pg.base.bullet_template_1[3235212] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		2,
+		2,
+		2,
 	},
 	cld_offset = {
 		0,
@@ -1033449,6 +1033509,7 @@ _G.pg.base.bullet_template_1[3235212] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1033464,7 +1033525,7 @@ _G.pg.base.bullet_template_1[3235213] = {
 	miss_sfx = "",
 	modle_ID = "heihailunna_lindan",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1033472,8 +1033533,8 @@ _G.pg.base.bullet_template_1[3235213] = {
 	velocity = 6.8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1033491,9 +1033552,9 @@ _G.pg.base.bullet_template_1[3235213] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		2,
+		2,
+		2,
 	},
 	cld_offset = {
 		0,
@@ -1033503,6 +1033564,7 @@ _G.pg.base.bullet_template_1[3235213] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1033518,7 +1033580,7 @@ _G.pg.base.bullet_template_1[3235214] = {
 	miss_sfx = "",
 	modle_ID = "heihailunna_lindan",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1033526,8 +1033588,8 @@ _G.pg.base.bullet_template_1[3235214] = {
 	velocity = 7.2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1033545,9 +1033607,9 @@ _G.pg.base.bullet_template_1[3235214] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		2,
+		2,
+		2,
 	},
 	cld_offset = {
 		0,
@@ -1033557,6 +1033619,7 @@ _G.pg.base.bullet_template_1[3235214] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1033572,7 +1033635,7 @@ _G.pg.base.bullet_template_1[3235215] = {
 	miss_sfx = "",
 	modle_ID = "heihailunna_lindan",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1033580,8 +1033643,8 @@ _G.pg.base.bullet_template_1[3235215] = {
 	velocity = 7.6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1033599,9 +1033662,9 @@ _G.pg.base.bullet_template_1[3235215] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		2,
+		2,
+		2,
 	},
 	cld_offset = {
 		0,
@@ -1033611,6 +1033674,7 @@ _G.pg.base.bullet_template_1[3235215] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1033626,7 +1033690,7 @@ _G.pg.base.bullet_template_1[3235216] = {
 	miss_sfx = "",
 	modle_ID = "heihailunna_lindan",
 	out_bound = 0,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1033634,8 +1033698,8 @@ _G.pg.base.bullet_template_1[3235216] = {
 	velocity = 8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1033653,9 +1033717,9 @@ _G.pg.base.bullet_template_1[3235216] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		2,
+		2,
+		2,
 	},
 	cld_offset = {
 		0,
@@ -1033665,6 +1033729,7 @@ _G.pg.base.bullet_template_1[3235216] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1033772,9 +1033837,9 @@ _G.pg.base.bullet_template_1[3235218] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1,
 		2,
-		1,
+		3,
+		2,
 	},
 	cld_offset = {
 		0,
@@ -1033784,6 +1033849,7 @@ _G.pg.base.bullet_template_1[3235218] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1033864,7 +1033930,7 @@ _G.pg.base.bullet_template_1[3235220] = {
 	miss_sfx = "",
 	modle_ID = "cave_bullet08",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1033872,8 +1033938,8 @@ _G.pg.base.bullet_template_1[3235220] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1033891,9 +1033957,9 @@ _G.pg.base.bullet_template_1[3235220] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1034048,7 +1034114,7 @@ _G.pg.base.bullet_template_1[3235223] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_zhongyu_blue",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1034056,8 +1034122,8 @@ _G.pg.base.bullet_template_1[3235223] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1034088,9 +1034154,9 @@ _G.pg.base.bullet_template_1[3235223] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1034115,7 +1034181,7 @@ _G.pg.base.bullet_template_1[3235224] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_xiaoyu03",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1034123,8 +1034189,8 @@ _G.pg.base.bullet_template_1[3235224] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1034155,9 +1034221,9 @@ _G.pg.base.bullet_template_1[3235224] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1034312,7 +1034378,7 @@ _G.pg.base.bullet_template_1[3235227] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_zhongyu_blue",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1034320,8 +1034386,8 @@ _G.pg.base.bullet_template_1[3235227] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1034352,9 +1034418,9 @@ _G.pg.base.bullet_template_1[3235227] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1034379,7 +1034445,7 @@ _G.pg.base.bullet_template_1[3235228] = {
 	miss_sfx = "",
 	modle_ID = "heifangzhou_xiaoyu03",
 	out_bound = 3,
-	pierce_count = 50,
+	pierce_count = 0,
 	random_damage_rate = 0,
 	range = 100,
 	range_offset = 0,
@@ -1034387,8 +1034453,8 @@ _G.pg.base.bullet_template_1[3235228] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1034419,9 +1034485,9 @@ _G.pg.base.bullet_template_1[3235228] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1035039,8 +1035105,8 @@ _G.pg.base.bullet_template_1[3235238] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1035071,9 +1035137,9 @@ _G.pg.base.bullet_template_1[3235238] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1035106,8 +1035172,8 @@ _G.pg.base.bullet_template_1[3235239] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1035138,9 +1035204,9 @@ _G.pg.base.bullet_template_1[3235239] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1035173,8 +1035239,8 @@ _G.pg.base.bullet_template_1[3235240] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1035205,9 +1035271,9 @@ _G.pg.base.bullet_template_1[3235240] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1035240,8 +1035306,8 @@ _G.pg.base.bullet_template_1[3235241] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1035272,9 +1035338,9 @@ _G.pg.base.bullet_template_1[3235241] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1035307,8 +1035373,8 @@ _G.pg.base.bullet_template_1[3235242] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1035326,9 +1035392,9 @@ _G.pg.base.bullet_template_1[3235242] = {
 	},
 	acceleration = {},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1035361,8 +1035427,8 @@ _G.pg.base.bullet_template_1[3235243] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1035393,9 +1035459,9 @@ _G.pg.base.bullet_template_1[3235243] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1035428,8 +1035494,8 @@ _G.pg.base.bullet_template_1[3235244] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1035460,9 +1035526,9 @@ _G.pg.base.bullet_template_1[3235244] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1035495,8 +1035561,8 @@ _G.pg.base.bullet_template_1[3235245] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1035527,9 +1035593,9 @@ _G.pg.base.bullet_template_1[3235245] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1035562,8 +1035628,8 @@ _G.pg.base.bullet_template_1[3235246] = {
 	velocity = 10,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1035594,9 +1035660,9 @@ _G.pg.base.bullet_template_1[3235246] = {
 		},
 	},
 	cld_box = {
-		0.1,
-		0.1,
-		0.1,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1053585,8 +1053651,8 @@ _G.pg.base.bullet_template_1[3245201] = {
 	velocity = 4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1053604,9 +1053670,9 @@ _G.pg.base.bullet_template_1[3245201] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1053616,6 +1053682,7 @@ _G.pg.base.bullet_template_1[3245201] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1053639,8 +1053706,8 @@ _G.pg.base.bullet_template_1[3245202] = {
 	velocity = 1.2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1053658,9 +1053725,9 @@ _G.pg.base.bullet_template_1[3245202] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1053670,6 +1053737,7 @@ _G.pg.base.bullet_template_1[3245202] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1053776,8 +1053844,8 @@ _G.pg.base.bullet_template_1[3245204] = {
 	velocity = 6.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1053795,9 +1053863,9 @@ _G.pg.base.bullet_template_1[3245204] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1053807,6 +1053875,7 @@ _G.pg.base.bullet_template_1[3245204] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1053830,8 +1053899,8 @@ _G.pg.base.bullet_template_1[3245205] = {
 	velocity = 7,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1053849,9 +1053918,9 @@ _G.pg.base.bullet_template_1[3245205] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1053861,6 +1053930,7 @@ _G.pg.base.bullet_template_1[3245205] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1053884,8 +1053954,8 @@ _G.pg.base.bullet_template_1[3245206] = {
 	velocity = 7.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1053903,9 +1053973,9 @@ _G.pg.base.bullet_template_1[3245206] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1053915,6 +1053985,7 @@ _G.pg.base.bullet_template_1[3245206] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1053938,8 +1054009,8 @@ _G.pg.base.bullet_template_1[3245207] = {
 	velocity = 8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1053957,9 +1054028,9 @@ _G.pg.base.bullet_template_1[3245207] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1053969,6 +1054040,7 @@ _G.pg.base.bullet_template_1[3245207] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054033,6 +1054105,7 @@ _G.pg.base.bullet_template_1[3245208] = {
 	},
 	extra_param = {
 		gravity = -0.03,
+		ignoreB = true,
 		targetOffsetX = 0,
 		targetOffsetZ = 0,
 		diveFilter = {
@@ -1054060,8 +1054133,8 @@ _G.pg.base.bullet_template_1[3245209] = {
 	velocity = 8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054091,6 +1054164,7 @@ _G.pg.base.bullet_template_1[3245209] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054114,8 +1054188,8 @@ _G.pg.base.bullet_template_1[3245210] = {
 	velocity = 4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054133,9 +1054207,9 @@ _G.pg.base.bullet_template_1[3245210] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1054145,6 +1054219,7 @@ _G.pg.base.bullet_template_1[3245210] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054168,8 +1054243,8 @@ _G.pg.base.bullet_template_1[3245211] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054187,9 +1054262,9 @@ _G.pg.base.bullet_template_1[3245211] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1054199,6 +1054274,7 @@ _G.pg.base.bullet_template_1[3245211] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054222,8 +1054298,8 @@ _G.pg.base.bullet_template_1[3245212] = {
 	velocity = 1.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054241,9 +1054317,9 @@ _G.pg.base.bullet_template_1[3245212] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1054253,6 +1054329,7 @@ _G.pg.base.bullet_template_1[3245212] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054341,8 +1054418,8 @@ _G.pg.base.bullet_template_1[3245214] = {
 	velocity = 4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054360,9 +1054437,9 @@ _G.pg.base.bullet_template_1[3245214] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1054372,6 +1054449,7 @@ _G.pg.base.bullet_template_1[3245214] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054460,8 +1054538,8 @@ _G.pg.base.bullet_template_1[3245216] = {
 	velocity = 4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054479,9 +1054557,9 @@ _G.pg.base.bullet_template_1[3245216] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1054491,6 +1054569,7 @@ _G.pg.base.bullet_template_1[3245216] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054579,8 +1054658,8 @@ _G.pg.base.bullet_template_1[3245218] = {
 	velocity = 3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054598,9 +1054677,9 @@ _G.pg.base.bullet_template_1[3245218] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1054610,6 +1054689,7 @@ _G.pg.base.bullet_template_1[3245218] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054690,8 +1054770,8 @@ _G.pg.base.bullet_template_1[3245220] = {
 	velocity = 6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054709,9 +1054789,9 @@ _G.pg.base.bullet_template_1[3245220] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1054721,6 +1054801,7 @@ _G.pg.base.bullet_template_1[3245220] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054744,8 +1054825,8 @@ _G.pg.base.bullet_template_1[3245221] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054763,9 +1054844,9 @@ _G.pg.base.bullet_template_1[3245221] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1054775,6 +1054856,7 @@ _G.pg.base.bullet_template_1[3245221] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054798,8 +1054880,8 @@ _G.pg.base.bullet_template_1[3245222] = {
 	velocity = 5.7,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054817,9 +1054899,9 @@ _G.pg.base.bullet_template_1[3245222] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1054829,6 +1054911,7 @@ _G.pg.base.bullet_template_1[3245222] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054852,8 +1054935,8 @@ _G.pg.base.bullet_template_1[3245223] = {
 	velocity = 6.4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054871,9 +1054954,9 @@ _G.pg.base.bullet_template_1[3245223] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1054883,6 +1054966,7 @@ _G.pg.base.bullet_template_1[3245223] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054906,8 +1054990,8 @@ _G.pg.base.bullet_template_1[3245224] = {
 	velocity = 7.1,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054925,9 +1055009,9 @@ _G.pg.base.bullet_template_1[3245224] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1054937,6 +1055021,7 @@ _G.pg.base.bullet_template_1[3245224] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1054960,8 +1055045,8 @@ _G.pg.base.bullet_template_1[3245225] = {
 	velocity = 7.8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1054979,9 +1055064,9 @@ _G.pg.base.bullet_template_1[3245225] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1054991,6 +1055076,7 @@ _G.pg.base.bullet_template_1[3245225] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055014,8 +1055100,8 @@ _G.pg.base.bullet_template_1[3245226] = {
 	velocity = 8.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055033,9 +1055119,9 @@ _G.pg.base.bullet_template_1[3245226] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1055045,6 +1055131,7 @@ _G.pg.base.bullet_template_1[3245226] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055068,8 +1055155,8 @@ _G.pg.base.bullet_template_1[3245227] = {
 	velocity = 9.2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055087,9 +1055174,9 @@ _G.pg.base.bullet_template_1[3245227] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1055099,6 +1055186,7 @@ _G.pg.base.bullet_template_1[3245227] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055122,8 +1055210,8 @@ _G.pg.base.bullet_template_1[3245228] = {
 	velocity = 9.9,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055141,9 +1055229,9 @@ _G.pg.base.bullet_template_1[3245228] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1055153,6 +1055241,7 @@ _G.pg.base.bullet_template_1[3245228] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055176,8 +1055265,8 @@ _G.pg.base.bullet_template_1[3245229] = {
 	velocity = 10.6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055195,9 +1055284,9 @@ _G.pg.base.bullet_template_1[3245229] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1055207,6 +1055296,7 @@ _G.pg.base.bullet_template_1[3245229] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055230,8 +1055320,8 @@ _G.pg.base.bullet_template_1[3245230] = {
 	velocity = 11.3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055249,9 +1055339,9 @@ _G.pg.base.bullet_template_1[3245230] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1055261,6 +1055351,7 @@ _G.pg.base.bullet_template_1[3245230] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055284,8 +1055375,8 @@ _G.pg.base.bullet_template_1[3245231] = {
 	velocity = 12,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055303,9 +1055394,9 @@ _G.pg.base.bullet_template_1[3245231] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1055315,6 +1055406,7 @@ _G.pg.base.bullet_template_1[3245231] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055338,8 +1055430,8 @@ _G.pg.base.bullet_template_1[3245232] = {
 	velocity = 12.7,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055357,9 +1055449,9 @@ _G.pg.base.bullet_template_1[3245232] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1055369,6 +1055461,7 @@ _G.pg.base.bullet_template_1[3245232] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055522,8 +1055615,8 @@ _G.pg.base.bullet_template_1[3245235] = {
 	velocity = 2.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055541,9 +1055634,9 @@ _G.pg.base.bullet_template_1[3245235] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1055553,6 +1055646,7 @@ _G.pg.base.bullet_template_1[3245235] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055576,8 +1055670,8 @@ _G.pg.base.bullet_template_1[3245236] = {
 	velocity = 3.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055595,9 +1055689,9 @@ _G.pg.base.bullet_template_1[3245236] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1055607,6 +1055701,7 @@ _G.pg.base.bullet_template_1[3245236] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055760,8 +1055855,8 @@ _G.pg.base.bullet_template_1[3245239] = {
 	velocity = 4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055779,9 +1055874,9 @@ _G.pg.base.bullet_template_1[3245239] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1.5,
+		1.5,
+		1.5,
 	},
 	cld_offset = {
 		0,
@@ -1055791,6 +1055886,7 @@ _G.pg.base.bullet_template_1[3245239] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1055814,8 +1055910,8 @@ _G.pg.base.bullet_template_1[3245240] = {
 	velocity = 5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1055833,9 +1055929,9 @@ _G.pg.base.bullet_template_1[3245240] = {
 	},
 	acceleration = {},
 	cld_box = {
-		2,
-		2,
-		2,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1055845,6 +1055941,7 @@ _G.pg.base.bullet_template_1[3245240] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1080488,8 +1080585,8 @@ _G.pg.base.bullet_template_1[3275202] = {
 	velocity = 6,
 	damage_type = {
 		3,
+		3.9,
 		4.5,
-		6,
 	},
 	DMG_font = {
 		{
@@ -1080507,9 +1080604,9 @@ _G.pg.base.bullet_template_1[3275202] = {
 	},
 	acceleration = {},
 	cld_box = {
-		5,
-		5,
-		5,
+		4,
+		4,
+		4,
 	},
 	cld_offset = {
 		0,
@@ -1080607,8 +1080704,8 @@ _G.pg.base.bullet_template_1[3275204] = {
 	velocity = 4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1080661,8 +1080758,8 @@ _G.pg.base.bullet_template_1[3275205] = {
 	velocity = 5,
 	damage_type = {
 		3,
+		3.9,
 		4.5,
-		6,
 	},
 	DMG_font = {
 		{
@@ -1080680,9 +1080777,9 @@ _G.pg.base.bullet_template_1[3275205] = {
 	},
 	acceleration = {},
 	cld_box = {
-		5,
-		5,
-		5,
+		4,
+		4,
+		4,
 	},
 	cld_offset = {
 		0,
@@ -1080732,8 +1080829,8 @@ _G.pg.base.bullet_template_1[3275206] = {
 	velocity = 1.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1080764,9 +1080861,9 @@ _G.pg.base.bullet_template_1[3275206] = {
 		},
 	},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1080800,8 +1080897,8 @@ _G.pg.base.bullet_template_1[3275207] = {
 	velocity = 1.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1080832,9 +1080929,9 @@ _G.pg.base.bullet_template_1[3275207] = {
 		},
 	},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1080987,8 +1081084,8 @@ _G.pg.base.bullet_template_1[3275209] = {
 	velocity = 3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081042,8 +1081139,8 @@ _G.pg.base.bullet_template_1[3275210] = {
 	velocity = 3.3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081097,8 +1081194,8 @@ _G.pg.base.bullet_template_1[3275211] = {
 	velocity = 3.6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081152,8 +1081249,8 @@ _G.pg.base.bullet_template_1[3275212] = {
 	velocity = 3.9,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081207,8 +1081304,8 @@ _G.pg.base.bullet_template_1[3275213] = {
 	velocity = 4.2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081262,8 +1081359,8 @@ _G.pg.base.bullet_template_1[3275214] = {
 	velocity = 4.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081317,8 +1081414,8 @@ _G.pg.base.bullet_template_1[3275215] = {
 	velocity = 4.8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081372,8 +1081469,8 @@ _G.pg.base.bullet_template_1[3275216] = {
 	velocity = 5.1,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081427,8 +1081524,8 @@ _G.pg.base.bullet_template_1[3275217] = {
 	velocity = 5.4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081482,8 +1081579,8 @@ _G.pg.base.bullet_template_1[3275218] = {
 	velocity = 5.7,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081656,8 +1081753,8 @@ _G.pg.base.bullet_template_1[3275220] = {
 	velocity = 3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081711,8 +1081808,8 @@ _G.pg.base.bullet_template_1[3275221] = {
 	velocity = 3.3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081766,8 +1081863,8 @@ _G.pg.base.bullet_template_1[3275222] = {
 	velocity = 3.6,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081821,8 +1081918,8 @@ _G.pg.base.bullet_template_1[3275223] = {
 	velocity = 3.9,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081876,8 +1081973,8 @@ _G.pg.base.bullet_template_1[3275224] = {
 	velocity = 4.2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081931,8 +1082028,8 @@ _G.pg.base.bullet_template_1[3275225] = {
 	velocity = 4.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1081986,8 +1082083,8 @@ _G.pg.base.bullet_template_1[3275226] = {
 	velocity = 4.8,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1082041,8 +1082138,8 @@ _G.pg.base.bullet_template_1[3275227] = {
 	velocity = 5.1,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1082096,8 +1082193,8 @@ _G.pg.base.bullet_template_1[3275228] = {
 	velocity = 5.4,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1082151,8 +1082248,8 @@ _G.pg.base.bullet_template_1[3275229] = {
 	velocity = 5.7,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1083607,8 +1083704,8 @@ _G.pg.base.bullet_template_1[3275252] = {
 	velocity = 1,
 	damage_type = {
 		3,
+		3.9,
 		4.5,
-		6,
 	},
 	DMG_font = {
 		{
@@ -1083651,6 +1083748,7 @@ _G.pg.base.bullet_template_1[3275252] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 		lastTime = 0.01,
 		shrapnel = {
@@ -1083692,8 +1083790,8 @@ _G.pg.base.bullet_template_1[3275253] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1083711,9 +1083809,9 @@ _G.pg.base.bullet_template_1[3275253] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1083723,6 +1083821,7 @@ _G.pg.base.bullet_template_1[3275253] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1083746,8 +1083845,8 @@ _G.pg.base.bullet_template_1[3275254] = {
 	velocity = 1.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1083765,9 +1083864,9 @@ _G.pg.base.bullet_template_1[3275254] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1083777,6 +1083876,7 @@ _G.pg.base.bullet_template_1[3275254] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1083800,8 +1083900,8 @@ _G.pg.base.bullet_template_1[3275255] = {
 	velocity = 10,
 	damage_type = {
 		3,
+		3.9,
 		4.5,
-		6,
 	},
 	DMG_font = {
 		{
@@ -1083873,8 +1083973,8 @@ _G.pg.base.bullet_template_1[3275256] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1083892,9 +1083992,9 @@ _G.pg.base.bullet_template_1[3275256] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1083904,6 +1084004,7 @@ _G.pg.base.bullet_template_1[3275256] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1083927,8 +1084028,8 @@ _G.pg.base.bullet_template_1[3275257] = {
 	velocity = 1.5,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1083946,9 +1084047,9 @@ _G.pg.base.bullet_template_1[3275257] = {
 	},
 	acceleration = {},
 	cld_box = {
-		1.5,
-		1.5,
-		1.5,
+		1,
+		1,
+		1,
 	},
 	cld_offset = {
 		0,
@@ -1083958,6 +1084059,7 @@ _G.pg.base.bullet_template_1[3275257] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1084079,6 +1084181,7 @@ _G.pg.base.bullet_template_1[3275259] = {
 	},
 	extra_param = {
 		gravity = -0.05,
+		ignoreB = true,
 		randomOffsetX = 5,
 		randomOffsetZ = 5,
 		diveFilter = {
@@ -1084238,8 +1084341,8 @@ _G.pg.base.bullet_template_1[3275262] = {
 	velocity = 3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1084269,6 +1084372,7 @@ _G.pg.base.bullet_template_1[3275262] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1084292,8 +1084396,8 @@ _G.pg.base.bullet_template_1[3275263] = {
 	velocity = 3,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1084323,6 +1084427,7 @@ _G.pg.base.bullet_template_1[3275263] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1084346,8 +1084451,8 @@ _G.pg.base.bullet_template_1[3275264] = {
 	velocity = 2,
 	damage_type = {
 		1,
+		1.3,
 		1.5,
-		2,
 	},
 	DMG_font = {
 		{
@@ -1084377,6 +1084482,7 @@ _G.pg.base.bullet_template_1[3275264] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1125217,6 +1125323,7 @@ _G.pg.base.bullet_template_1[3305209] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1125271,6 +1125378,7 @@ _G.pg.base.bullet_template_1[3305210] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1125456,6 +1125564,7 @@ _G.pg.base.bullet_template_1[3305213] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1125575,6 +1125684,7 @@ _G.pg.base.bullet_template_1[3305215] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1125699,6 +1125809,7 @@ _G.pg.base.bullet_template_1[3305217] = {
 	attach_buff = {},
 	extra_param = {
 		fragile = 1,
+		ignoreB = true,
 		ignoreShield = true,
 		lastTime = 0.01,
 		shrapnel = {
@@ -1125778,6 +1125889,7 @@ _G.pg.base.bullet_template_1[3305218] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1126475,6 +1126587,7 @@ _G.pg.base.bullet_template_1[3305228] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1126529,6 +1126642,7 @@ _G.pg.base.bullet_template_1[3305229] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1126583,6 +1126697,7 @@ _G.pg.base.bullet_template_1[3305230] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1126637,6 +1126752,7 @@ _G.pg.base.bullet_template_1[3305231] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1126691,6 +1126807,7 @@ _G.pg.base.bullet_template_1[3305232] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1126745,6 +1126862,7 @@ _G.pg.base.bullet_template_1[3305233] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1126799,6 +1126917,7 @@ _G.pg.base.bullet_template_1[3305234] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1126931,6 +1127050,7 @@ _G.pg.base.bullet_template_1[3305236] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1127119,6 +1127239,7 @@ _G.pg.base.bullet_template_1[3305239] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1127173,6 +1127294,7 @@ _G.pg.base.bullet_template_1[3305240] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1127368,6 +1127490,7 @@ _G.pg.base.bullet_template_1[3305243] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1127422,6 +1127545,7 @@ _G.pg.base.bullet_template_1[3305244] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1127476,6 +1127600,7 @@ _G.pg.base.bullet_template_1[3305245] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1127685,6 +1127810,7 @@ _G.pg.base.bullet_template_1[3305248] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1127764,6 +1127890,7 @@ _G.pg.base.bullet_template_1[3305249] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1127889,6 +1128016,7 @@ _G.pg.base.bullet_template_1[3305251] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1127943,6 +1128071,7 @@ _G.pg.base.bullet_template_1[3305252] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1128195,6 +1128324,7 @@ _G.pg.base.bullet_template_1[3305256] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1128262,6 +1128392,7 @@ _G.pg.base.bullet_template_1[3305257] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1136566,6 +1136697,275 @@ _G.pg.base.bullet_template_1[3314021] = {
 	attach_buff = {},
 	extra_param = {},
 }
+_G.pg.base.bullet_template_1[3315001] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3315001,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01_alert",
+	out_bound = 1,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 150,
+	range_offset = 0,
+	type = 5,
+	velocity = 3,
+	damage_type = {
+		0,
+		0,
+		0,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		tracker = {
+			angular = 2.4,
+			range = 120,
+		},
+	},
+	cld_box = {
+		13,
+		13,
+		26,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		hitSplitOnly = true,
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 1,
+				bullet_ID = 3315002,
+				emitterType = "BattleBulletEmitter",
+				inheritAngle = 1,
+			},
+			FXID = "",
+		},
+	},
+}
+_G.pg.base.bullet_template_1[3315002] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3315002,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "bullet_dayu01",
+	out_bound = 3,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		0,
+		0,
+		0,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		13,
+		13,
+		26,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 0.01,
+		shrapnel = {
+			{
+				barrage_ID = 1,
+				bullet_ID = 3315003,
+				emitterType = "BattleBulletEmitter",
+			},
+			{
+				barrage_ID = 3315103,
+				bullet_ID = 730154,
+				emitterType = "BattleBulletEmitter",
+			},
+			FXID = "",
+		},
+	},
+}
+_G.pg.base.bullet_template_1[3315003] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3315003,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "None",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 9,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 13.5,
+		time = 8,
+	},
+	attach_buff = {
+		{
+			buff_id = 201520,
+			effect_id = "smoke_baifeng",
+		},
+	},
+	extra_param = {
+		ellipse_range = 27,
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+_G.pg.base.bullet_template_1[3315004] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "None",
+	hit_sfx = "",
+	id = 3315004,
+	miss_fx = "None",
+	miss_sfx = "",
+	modle_ID = "AlertArea_circle_looping",
+	out_bound = 3,
+	pierce_count = 50,
+	random_damage_rate = 0,
+	range = 0.01,
+	range_offset = 0,
+	type = 5,
+	velocity = 0.1,
+	damage_type = {
+		1,
+		1,
+		1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		2,
+		2,
+		2,
+	},
+	cld_offset = {
+		100,
+		0,
+		100,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		directHit = true,
+		ignoreB = true,
+		ignoreShield = true,
+		lastTime = 1.5,
+		shrapnel = {
+			{
+				barrage_ID = 1,
+				bullet_ID = 3315002,
+				emitterType = "BattleBulletEmitter",
+			},
+			FXID = "",
+		},
+	},
+}
 _G.pg.base.bullet_template_1[3315005] = {
 	alert_fx = "",
 	ammo_type = 1,
@@ -1139281,8 +1139681,8 @@ _G.pg.base.bullet_template_1[3315106] = {
 	velocity = 8,
 	damage_type = {
 		3,
+		3.9,
 		4.5,
-		6,
 	},
 	DMG_font = {
 		{
@@ -1139312,6 +1139712,7 @@ _G.pg.base.bullet_template_1[3315106] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1139366,6 +1139767,7 @@ _G.pg.base.bullet_template_1[3315107] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1139451,6 +1139853,7 @@ _G.pg.base.bullet_template_1[3315108] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1139536,6 +1139939,7 @@ _G.pg.base.bullet_template_1[3315109] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1139636,8 +1140040,8 @@ _G.pg.base.bullet_template_1[3315111] = {
 	velocity = 2,
 	damage_type = {
 		3,
+		3.9,
 		4.5,
-		6,
 	},
 	DMG_font = {
 		{
@@ -1139919,8 +1140323,8 @@ _G.pg.base.bullet_template_1[3315115] = {
 	velocity = 2,
 	damage_type = {
 		3,
+		3.9,
 		4.5,
-		6,
 	},
 	DMG_font = {
 		{
@@ -1140301,6 +1140705,7 @@ _G.pg.base.bullet_template_1[3315120] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1140355,6 +1140760,7 @@ _G.pg.base.bullet_template_1[3315121] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1140409,6 +1140815,7 @@ _G.pg.base.bullet_template_1[3315122] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1140463,6 +1140870,7 @@ _G.pg.base.bullet_template_1[3315123] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1140517,6 +1140925,7 @@ _G.pg.base.bullet_template_1[3315124] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1140571,6 +1140980,7 @@ _G.pg.base.bullet_template_1[3315125] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1140625,6 +1141035,7 @@ _G.pg.base.bullet_template_1[3315126] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1140740,6 +1141151,7 @@ _G.pg.base.bullet_template_1[3315128] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1141321,6 +1141733,7 @@ _G.pg.base.bullet_template_1[3315136] = {
 	hit_type = {},
 	attach_buff = {},
 	extra_param = {
+		ignoreB = true,
 		ignoreShield = true,
 	},
 }
@@ -1141411,8 +1141824,8 @@ _G.pg.base.bullet_template_1[3315138] = {
 	velocity = 1.5,
 	damage_type = {
 		3,
+		3.9,
 		4.5,
-		6,
 	},
 	DMG_font = {
 		{
