@@ -653,7 +653,10 @@ end
 
 function var_0_0.GetEncoreSkins(arg_48_0)
 	local var_48_0 = {}
-	local var_48_1 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_BUFF)
+	local var_48_1 = getProxy(ActivityProxy):getActivitiesByTypes({
+		ActivityConst.ACTIVITY_TYPE_PT_BUFF,
+		ActivityConst.ACTIVITY_TYPE_PT_BUFF_MARK2
+	})
 
 	local function var_48_2(arg_49_0)
 		local var_49_0 = arg_49_0:getConfig("config_client")
@@ -814,6 +817,10 @@ function var_0_0.GetInTimeSkins(arg_56_0)
 		elseif var_56_1.type == Goods.TYPE_ACTIVITY_EXTRA and pg.activity_shop_extra[var_56_1.id].shop_tag ~= 1 then
 			table.remove(var_56_0, iter_56_0)
 		end
+	end
+
+	for iter_56_1, iter_56_2 in pairs(var_56_0) do
+		print("=====================", iter_56_2.id, iter_56_2:getSkinId())
 	end
 
 	return var_56_0

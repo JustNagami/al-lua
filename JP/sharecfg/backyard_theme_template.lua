@@ -4450,7 +4450,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[113] = {
 		Cfg_1 = 5,
 		name = "ウェスタン宿屋",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 113,
 		comfortable = 0,
@@ -4487,7 +4487,7 @@ end)()
 	pg.base.backyard_theme_template[114] = {
 		Cfg_1 = 5,
 		name = "楽園ドリーム",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 114,
 		comfortable = 0,
@@ -4586,7 +4586,7 @@ end)()
 	pg.base.backyard_theme_template[117] = {
 		Cfg_1 = 5,
 		name = "ラフシェルター",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 117,
 		comfortable = 0,
@@ -4655,7 +4655,7 @@ end)()
 	pg.base.backyard_theme_template[119] = {
 		Cfg_1 = 5,
 		name = "ファラオの秘境",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 119,
 		comfortable = 0,
@@ -4772,7 +4772,7 @@ end)()
 	pg.base.backyard_theme_template[122] = {
 		Cfg_1 = 5,
 		name = "シーサイド",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 122,
 		comfortable = 0,
@@ -4962,7 +4962,7 @@ end)()
 	pg.base.backyard_theme_template[127] = {
 		Cfg_1 = 5,
 		name = "林間秘湯",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 127,
 		comfortable = 0,
@@ -4999,7 +4999,7 @@ end)()
 	pg.base.backyard_theme_template[129] = {
 		Cfg_1 = 5,
 		name = "忍者の城",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 129,
 		comfortable = 0,

@@ -7730,11 +7730,10 @@ end)()
 		bgm = "battle-eagleunion",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5521,
+		on_activity = 1000003,
 		ui_type = 1,
 		bg = "Map_1830001",
 		story_id = "",
-		chapterGroups = "",
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
@@ -7782,6 +7781,20 @@ end)()
 					"effect_1830005"
 				}
 			}
+		},
+		chapterGroups = {
+			{
+				1830001,
+				1830021
+			},
+			{
+				1830002,
+				1830022
+			},
+			{
+				1830003,
+				1830023
+			}
 		}
 	}
 	pg.base.expedition_data_by_map[1830002] = {
@@ -7802,11 +7815,10 @@ end)()
 		bgm = "battle-newwind",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5521,
+		on_activity = 1000003,
 		ui_type = 1,
 		bg = "Map_1830002",
 		story_id = "",
-		chapterGroups = "",
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
@@ -7854,6 +7866,20 @@ end)()
 					"effect_1830003"
 				}
 			}
+		},
+		chapterGroups = {
+			{
+				1830004,
+				1830024
+			},
+			{
+				1830005,
+				1830025
+			},
+			{
+				1830006,
+				1830026
+			}
 		}
 	}
 	pg.base.expedition_data_by_map[1830011] = {
@@ -7874,11 +7900,10 @@ end)()
 		bgm = "battle-eagleunion",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5521,
+		on_activity = 1000003,
 		ui_type = 1,
 		bg = "Map_1830001",
 		story_id = "",
-		chapterGroups = "",
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
@@ -7926,6 +7951,20 @@ end)()
 					"effect_1830005"
 				}
 			}
+		},
+		chapterGroups = {
+			{
+				1830001,
+				1830021
+			},
+			{
+				1830002,
+				1830022
+			},
+			{
+				1830003,
+				1830023
+			}
 		}
 	}
 	pg.base.expedition_data_by_map[1830012] = {
@@ -7946,11 +7985,10 @@ end)()
 		bgm = "battle-newwind",
 		default_bgm = "",
 		uifx = "",
-		on_activity = 5521,
+		on_activity = 1000003,
 		ui_type = 1,
 		bg = "Map_1830002",
 		story_id = "",
-		chapterGroups = "",
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
@@ -7998,6 +8036,20 @@ end)()
 					"effect_1830003"
 				}
 			}
+		},
+		chapterGroups = {
+			{
+				1830004,
+				1830024
+			},
+			{
+				1830005,
+				1830025
+			},
+			{
+				1830006,
+				1830026
+			}
 		}
 	}
 	pg.base.expedition_data_by_map[1830025] = {
@@ -8018,12 +8070,11 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-island-soft",
 		default_bgm = "",
-		on_activity = 5521,
+		on_activity = 1000003,
 		uifx = "",
 		ui_type = 1,
 		bg = "Map_1830005",
 		story_id = "",
-		chapterGroups = "",
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
@@ -8049,6 +8100,11 @@ end)()
 				0,
 				-465
 			}
+		},
+		chapterGroups = {
+			{
+				1830041
+			}
 		}
 	}
 	pg.base.expedition_data_by_map[1830026] = {
@@ -8069,12 +8125,11 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-designfleet-VII",
 		default_bgm = "",
-		on_activity = 5521,
+		on_activity = 1000003,
 		uifx = "",
 		ui_type = 1,
 		bg = "Map_1830004",
 		story_id = "",
-		chapterGroups = "",
 		destory_icon_suffix = "blue",
 		story_inactive_color = "",
 		animtor = 1,
@@ -8099,6 +8154,11 @@ end)()
 			{
 				0,
 				-465
+			}
+		},
+		chapterGroups = {
+			{
+				1830051
 			}
 		}
 	}
@@ -8276,7 +8336,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-amagi-cv",
 		default_bgm = "bsm-2",
-		on_activity = 5562,
+		on_activity = 1000023,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1850001",
@@ -8308,13 +8368,16 @@ end)()
 		},
 		chapterGroups = {
 			{
-				1850001
+				1850001,
+				1850021
 			},
 			{
-				1850002
+				1850002,
+				1850022
 			},
 			{
-				1850003
+				1850003,
+				1850023
 			}
 		},
 		story_id = {
@@ -8375,7 +8438,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-nailuo-theme",
 		default_bgm = "bsm-2",
-		on_activity = 5562,
+		on_activity = 1000023,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1850002",
@@ -8407,13 +8470,16 @@ end)()
 		},
 		chapterGroups = {
 			{
-				1850004
+				1850004,
+				1850024
 			},
 			{
-				1850005
+				1850005,
+				1850025
 			},
 			{
-				1850006
+				1850006,
+				1850026
 			}
 		},
 		story_id = {
@@ -8474,7 +8540,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-amagi-cv",
 		default_bgm = "bsm-2",
-		on_activity = 5562,
+		on_activity = 1000023,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1850001",
@@ -8506,12 +8572,15 @@ end)()
 		},
 		chapterGroups = {
 			{
+				1850001,
 				1850021
 			},
 			{
+				1850002,
 				1850022
 			},
 			{
+				1850003,
 				1850023
 			}
 		},
@@ -8573,7 +8642,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-nailuo-theme",
 		default_bgm = "bsm-2",
-		on_activity = 5562,
+		on_activity = 1000023,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1850002",
@@ -8605,12 +8674,15 @@ end)()
 		},
 		chapterGroups = {
 			{
+				1850004,
 				1850024
 			},
 			{
+				1850005,
 				1850025
 			},
 			{
+				1850006,
 				1850026
 			}
 		},
@@ -8672,7 +8744,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-arbitrator-tower",
 		default_bgm = "bsm-2",
-		on_activity = 5562,
+		on_activity = 1000023,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1850003",
@@ -8765,7 +8837,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-akagi-meta",
 		default_bgm = "bsm-2",
-		on_activity = 5562,
+		on_activity = 1000023,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1850004",
@@ -9500,7 +9572,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-ironblood-strong",
 		default_bgm = "story-ironblood-strong",
-		on_activity = 5711,
+		on_activity = 1000043,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1880001",
@@ -9598,7 +9670,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-starbeast",
 		default_bgm = "story-ironblood-strong",
-		on_activity = 5711,
+		on_activity = 1000043,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1880003",
@@ -9696,7 +9768,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-ironblood-strong",
 		default_bgm = "story-ironblood-strong",
-		on_activity = 5711,
+		on_activity = 1000043,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1880001",
@@ -9794,7 +9866,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-starbeast",
 		default_bgm = "story-ironblood-strong",
-		on_activity = 5711,
+		on_activity = 1000043,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1880003",
@@ -9892,7 +9964,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-ironblood-light",
 		default_bgm = "story-ironblood-strong",
-		on_activity = 5711,
+		on_activity = 1000043,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1880004",
@@ -9981,7 +10053,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-antix-past",
 		default_bgm = "story-ironblood-strong",
-		on_activity = 5711,
+		on_activity = 1000043,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1880002",
@@ -10071,7 +10143,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-theme-sardinia",
 		default_bgm = "story-theme-sardinia",
-		on_activity = 5821,
+		on_activity = 1000063,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1890001",
@@ -10172,7 +10244,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-shenguang-holy",
 		default_bgm = "story-theme-sardinia",
-		on_activity = 5821,
+		on_activity = 1000063,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1890003",
@@ -10273,7 +10345,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-theme-sardinia",
 		default_bgm = "story-theme-sardinia",
-		on_activity = 5821,
+		on_activity = 1000063,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1890001",
@@ -10374,7 +10446,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-shenguang-holy",
 		default_bgm = "story-theme-sardinia",
-		on_activity = 5821,
+		on_activity = 1000063,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1890003",
@@ -10475,7 +10547,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "battle-shenguang-holy",
 		default_bgm = "story-theme-sardinia",
-		on_activity = 5821,
+		on_activity = 1000063,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1890002",
@@ -10567,7 +10639,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "battle-thechariotVII",
 		default_bgm = "story-theme-sardinia",
-		on_activity = 5821,
+		on_activity = 1000063,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1890004",
@@ -10892,7 +10964,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-brokenworld-sad",
 		default_bgm = "Story-egypt-mystic",
-		on_activity = 5941,
+		on_activity = 1000083,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1920001",
@@ -10993,7 +11065,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-royalnavy-serious",
 		default_bgm = "Story-egypt-mystic",
-		on_activity = 5941,
+		on_activity = 1000083,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1920002",
@@ -11094,7 +11166,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-brokenworld-sad",
 		default_bgm = "Story-egypt-mystic",
-		on_activity = 5941,
+		on_activity = 1000083,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1920001",
@@ -11195,7 +11267,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-royalnavy-serious",
 		default_bgm = "Story-egypt-mystic",
-		on_activity = 5941,
+		on_activity = 1000083,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1920002",
@@ -11296,7 +11368,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-glorious-meta",
 		default_bgm = "Story-egypt-mystic",
-		on_activity = 5941,
+		on_activity = 1000083,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1920003",
@@ -11388,7 +11460,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-lion",
 		default_bgm = "Story-egypt-mystic",
-		on_activity = 5941,
+		on_activity = 1000083,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1920003",
@@ -11905,7 +11977,7 @@ end)()
 		bgm = "story-enzecheng-theme",
 		default_bgm = "story-enzecheng-theme",
 		uifx = "",
-		on_activity = 50081,
+		on_activity = 1000103,
 		ui_type = 14,
 		bg = "Map_1950002",
 		destory_icon_suffix = "blue",
@@ -12027,7 +12099,7 @@ end)()
 		bgm = "story-enzecheng-theme",
 		default_bgm = "story-enzecheng-theme",
 		uifx = "",
-		on_activity = 50081,
+		on_activity = 1000103,
 		ui_type = 14,
 		bg = "Map_1950003",
 		destory_icon_suffix = "blue",
@@ -12149,7 +12221,7 @@ end)()
 		bgm = "story-enzecheng-theme",
 		default_bgm = "story-enzecheng-theme",
 		uifx = "",
-		on_activity = 50081,
+		on_activity = 1000103,
 		ui_type = 14,
 		bg = "Map_1950002",
 		destory_icon_suffix = "blue",
@@ -12271,7 +12343,7 @@ end)()
 		bgm = "story-enzecheng-theme",
 		default_bgm = "story-enzecheng-theme",
 		uifx = "",
-		on_activity = 50081,
+		on_activity = 1000103,
 		ui_type = 14,
 		bg = "Map_1950003",
 		destory_icon_suffix = "blue",
@@ -12393,7 +12465,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "battle-tulipa",
 		default_bgm = "story-enzecheng-theme",
-		on_activity = 50081,
+		on_activity = 1000103,
 		uifx = "",
 		ui_type = 14,
 		bg = "Map_1950004",
@@ -12485,7 +12557,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "login-2022401us",
 		default_bgm = "story-enzecheng-theme",
-		on_activity = 50081,
+		on_activity = 1000103,
 		uifx = "",
 		ui_type = 14,
 		bg = "Map_1950004",
@@ -12578,7 +12650,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-amahara-stage2",
 		default_bgm = "map-longgong",
-		on_activity = 50114,
+		on_activity = 1000123,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1960001",
@@ -12682,7 +12754,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-amahara-stage1",
 		default_bgm = "map-longgong",
-		on_activity = 50114,
+		on_activity = 1000123,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1960003",
@@ -12786,7 +12858,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-amahara-stage2",
 		default_bgm = "map-longgong",
-		on_activity = 50114,
+		on_activity = 1000123,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1960001",
@@ -12890,7 +12962,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-amahara-stage1",
 		default_bgm = "map-longgong",
-		on_activity = 50114,
+		on_activity = 1000123,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1960003",
@@ -12994,7 +13066,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "musashi-2",
 		default_bgm = "map-longgong",
-		on_activity = 50114,
+		on_activity = 1000123,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1960004",
@@ -13089,7 +13161,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-amahara-stage3",
 		default_bgm = "map-longgong",
-		on_activity = 50114,
+		on_activity = 1000123,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1960002",
@@ -13185,7 +13257,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-tempest-light",
 		default_bgm = "Battle-nightmare-theme",
-		on_activity = 50181,
+		on_activity = 51601,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1970001",
@@ -13276,7 +13348,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-temepest-2",
 		default_bgm = "Battle-nightmare-theme",
-		on_activity = 50181,
+		on_activity = 51601,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1970002",
@@ -13367,7 +13439,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "theme-tempest-light",
 		default_bgm = "Battle-nightmare-theme",
-		on_activity = 50181,
+		on_activity = 51601,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1970001",
@@ -13452,7 +13524,7 @@ end)()
 		cloud_suffix = "",
 		bgm = "story-tempest-freedom",
 		default_bgm = "Battle-nightmare-theme",
-		on_activity = 50181,
+		on_activity = 51601,
 		uifx = "",
 		ui_type = 10,
 		bg = "Map_1970002",
