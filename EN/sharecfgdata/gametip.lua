@@ -8009,13 +8009,13 @@ _G.pg.base.gametip.buildship_new_tip = {
 	tip = "Get Azuchi guaranteed with every 200 event builds (can be done up to 4 times)!",
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Alvitr added to standard build pool!",
+	tip = "Queen Anne's Revenge added to standard build pool!",
 }
 _G.pg.base.gametip.buildship_light_tip = {
-	tip = "Z47 added to standard build pool!",
+	tip = "Lyme and Fancy added to standard build pool!",
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "U-31 added to standard build pool!",
+	tip = "Amity added to standard build pool!",
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -31061,7 +31061,7 @@ _G.pg.base.gametip.act_remaster_title = {
 	tip = "Capsule Rerun",
 }
 _G.pg.base.gametip.act_remaster_open_tip = {
-	tip = "Would you like to unlock the <color=#39bfff>$1</color>Capsule Rerun event?\nThe selected Capsule Rerun event can only be unlocked one time during the event period, and all content unlocked this way will become unavailable after the maintenance on <color=#39bfff>$2</color>.",
+	tip = "Would you like to unlock the <color=#39bfff>$1</color>Capsule Rerun event?\nThe selected Capsule Rerun event can only be unlocked one time during the event period, and all content unlocked this way will become unavailable after <color=#39bfff>$2</color>.",
 }
 _G.pg.base.gametip.act_remaster_active_erro = {
 	tip = "Each event can only be unlocked once.",
@@ -31088,10 +31088,10 @@ _G.pg.base.gametip.outpost_20250904_Sidebar6 = {
 	tip = "Shipbuilding Support Plan",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re6_1 = {
-	tip = "Main Event",
+	tip = "Milestone",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re6_2 = {
-	tip = "Milestone",
+	tip = "Main Event",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re6_3 = {
 	tip = "Call to Arms",
@@ -31121,10 +31121,10 @@ _G.pg.base.gametip.ActivityRemasterCore_re5_5 = {
 	tip = "Building",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re4_1 = {
-	tip = "Main Event",
+	tip = "Milestone",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re4_2 = {
-	tip = "Milestone",
+	tip = "Main Event",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re4_3 = {
 	tip = "Call to Arms",
@@ -31139,10 +31139,10 @@ _G.pg.base.gametip.ActivityRemasterCore_re4_6 = {
 	tip = "UR Exchange",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re3_1 = {
-	tip = "Main Event",
+	tip = "Milestone ",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re3_2 = {
-	tip = "Milestone",
+	tip = "Main Event",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re3_3 = {
 	tip = "Call to Arms",
@@ -31154,10 +31154,10 @@ _G.pg.base.gametip.ActivityRemasterCore_re3_5 = {
 	tip = "Building",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re2_1 = {
-	tip = "Main Event",
+	tip = "Milestone",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re2_2 = {
-	tip = "Milestone",
+	tip = "Main Event",
 }
 _G.pg.base.gametip.ActivityRemasterCore_re2_3 = {
 	tip = "Call to Arms",
@@ -31215,6 +31215,60 @@ _G.pg.base.gametip.setting_restart_download_btn = {
 }
 _G.pg.base.gametip.loading_flow_tip = {
 	tip = "Assets will be downloaded on mobile data. Please be mindful of your data usage.",
+}
+_G.pg.base.gametip.formation_suggestion = {
+	tip = "Fleetbuilding Guide",
+}
+_G.pg.base.gametip.formation_suggestion_tip = {
+	tip = "Tap on a character to view a recommended example gear setup. Feel free to make adjustments based on the shipgirls you have as well as their stats.",
+}
+_G.pg.base.gametip.formation_suggestion_tip_title = {
+	tip = "Recommended Fleet",
+}
+_G.pg.base.gametip.formation_suggestion_any_type_ship = {
+	tip = "Any $1",
+}
+_G.pg.base.gametip.formation_suggestion_info_title = {
+	tip = "Training Tips",
+}
+_G.pg.base.gametip.formation_suggestion_info_level = {
+	tip = "Level: Lv. $1",
+}
+_G.pg.base.gametip.formation_suggestion_info_not_get = {
+	tip = "Not Obtained",
+}
+_G.pg.base.gametip.formation_suggestion_info_got = {
+	tip = "Obtained",
+}
+_G.pg.base.gametip.formation_suggestion_info_go_dock = {
+	tip = "Go to Dock",
+}
+_G.pg.base.gametip.formation_suggestion_info_equip_recommend = {
+	tip = "Recommended Gear",
+}
+_G.pg.base.gametip.formation_suggestion_info_equip_transitional = {
+	tip = "Alternative Gear",
+}
+_G.pg.base.gametip.formation_suggestion_info_equip_copy = {
+	tip = "Copy Gear Code",
+}
+_G.pg.base.gametip.formation_suggestion_info_equip_tip = {
+	tip = "Some of the gear may be difficult to obtain, and can be substituted with the alternative gear.",
+}
+_G.pg.base.gametip.formation_suggestion_info_back = {
+	tip = "Back",
+}
+_G.pg.base.gametip.formation_suggestion_info_obtain = {
+	tip = "How to Obtain: $1",
+}
+_G.pg.base.gametip.formation_suggestion_info_level_recommend = {
+	tip = "Recommended Level: Lv. $1",
+}
+_G.pg.base.gametip.formation_suggestion_prev_chapter = {
+	tip = "Previous",
+}
+_G.pg.base.gametip.formation_suggestion_next_chapter = {
+	tip = "Next",
 }
 _G.pg.base.gametip.ActivityRemasterCoreActivityAdaptUI_TITLE = {
 	tip = "Event",
