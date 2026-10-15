@@ -4,12 +4,12 @@ function var_0_0.getUIName(arg_1_0)
 	return "LevelInfoSPUI"
 end
 
-function var_0_0.getResource(arg_2_0, arg_2_1)
+function var_0_0.getResource(arg_2_0)
 	local var_2_0 = {
 		"ui/levelmainscene_atlas"
 	}
 
-	return table.insertto(var_2_0, var_0_0.super.getResource(arg_2_0, arg_2_1))
+	return table.insertto(var_2_0, var_0_0.super.getResource(arg_2_0))
 end
 
 function var_0_0.InitUI(arg_3_0)
@@ -80,6 +80,7 @@ function var_0_0.Show(arg_9_0)
 	})
 	setActive(arg_9_0._tf, true)
 	quickPlayAnimation(arg_9_0._tf, "Anim_LevelInfoSPUI_in")
+	arg_9_0:CheckGuide()
 end
 
 function var_0_0.setAfterResDownload(arg_10_0, arg_10_1, arg_10_2, arg_10_3)

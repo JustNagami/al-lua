@@ -70,7 +70,7 @@
 				uiset = {}
 			},
 			ui = {
-				path = "UICamera/Canvas/UIMain/UIIsland/layer1/ui/IslandRoleDelegationUI(Clone)/top/back",
+				path = "UICamera/Canvas/UIMain/UIIsland/layer1/ui/IslandRoleDelegationUI(Clone)/adapt/top/back",
 				pathIndex = -1
 			}
 		},

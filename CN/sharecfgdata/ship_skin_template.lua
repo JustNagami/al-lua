@@ -264377,6 +264377,132 @@ _G.pg.base.ship_skin_template[903022] = {
 		},
 	},
 }
+_G.pg.base.ship_skin_template[903023] = {
+	bg = "501",
+	bg_sp = "",
+	bgm = "",
+	change_skin = "",
+	desc = "欢迎回来，指挥官。既然让我等了这么久，是不是该接受一点小小的惩罚呢？……呵呵，只是开个玩笑而已，快来我身边坐下吧~",
+	double_char = 0,
+	get_showing = "",
+	group_index = 3,
+	gyro = 0,
+	hand_id = 1,
+	id = 903023,
+	illustrator = -1,
+	illustrator2 = -1,
+	l2d_animations = "",
+	l2d_drag_rate = "",
+	l2d_ignore_drag = 0,
+	l2d_para_range = "",
+	l2d_se = "",
+	l2d_voice_calibrate = "",
+	lip_smoothing = 0,
+	lip_sync_gain = 0,
+	live2d_offset_profile = "",
+	lover_hand = "hand_1_02",
+	lover_kiss = "lip03",
+	main_UI_FX = "",
+	name = "严厉女仆不严厉",
+	painting = "aerjiliya_4",
+	part_scale = "",
+	prefab = "aerjiliya_4",
+	purchase_offset = "",
+	rarity_bg = "",
+	ship_group = 90302,
+	ship_l2d_id = "",
+	shop_dynamic_hx = 0,
+	shop_id = 0,
+	shop_offset = "",
+	shop_type_id = 17,
+	show_skin = "stand",
+	skeleton_default_skin = "",
+	skin_type = 4,
+	special_effects = "",
+	spine_action_offset = false,
+	spine_offset = "",
+	spine_offset_profile = "",
+	spine_use_live2d = 0,
+	time = "",
+	voice_actor = 142,
+	voice_actor_2 = -1,
+	voice_lang = "",
+	tag = {
+		2,
+	},
+	live2d_offset = {
+		0,
+		0,
+		0,
+	},
+	fx_container = {
+		{
+			0,
+			1.99185,
+			1.15,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0.75,
+			-1.299,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+	bound_bone = {
+		cannon = {
+			{
+				1.507,
+				0.968,
+				0,
+			},
+		},
+		vicegun = {
+			{
+				1.105,
+				0.892,
+				0,
+			},
+		},
+		torpedo = {
+			{
+				0,
+				0.019,
+				0,
+			},
+		},
+		antiaircraft = {
+			{
+				0.686,
+				2.428,
+				0,
+			},
+		},
+	},
+	smoke = {
+		{
+			50,
+			{
+				{
+					"smoke",
+					{
+						-0.526,
+						2.387,
+						0,
+					},
+				},
+			},
+		},
+	},
+}
 _G.pg.base.ship_skin_template[903030] = {
 	bg = "",
 	bg_sp = "",
