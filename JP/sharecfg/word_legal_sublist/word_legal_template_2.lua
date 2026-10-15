@@ -617,6 +617,11 @@ function temp()
 						}
 					}
 				}
+			},
+			ソ = {
+				ン = {
+					this = true
+				}
 			}
 		},
 		ク = {

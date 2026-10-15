@@ -62,6 +62,9 @@ function temp()
 	var_0_1.名 = {
 		取 = {
 			this = true
+		},
+		寄 = {
+			this = true
 		}
 	}
 end
@@ -349,6 +352,16 @@ temp()
 function temp()
 	var_0_1.雲 = {
 		仙 = {
+			this = true,
+			ち = {
+				ゃ = {
+					ん = {
+						this = true
+					}
+				}
+			}
+		},
+		龍 = {
 			this = true
 		}
 	}

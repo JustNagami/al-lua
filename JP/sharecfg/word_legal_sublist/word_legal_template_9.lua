@@ -437,3 +437,33 @@ function temp()
 end
 
 temp()
+
+function temp()
+	var_0_1.藤 = {
+		波 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.木 = {
+		津 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.安 = {
+		土 = {
+			this = true
+		}
+	}
+end
+
+temp()

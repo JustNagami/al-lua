@@ -4517,7 +4517,7 @@ end)()
 	pg.base.backyard_theme_template[115] = {
 		Cfg_1 = 5,
 		name = "シャドウポート",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 115,
 		comfortable = 0,
@@ -5104,7 +5104,7 @@ end)()
 	pg.base.backyard_theme_template[132] = {
 		Cfg_1 = 5,
 		name = "幽光の神殿",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 132,
 		comfortable = 0,

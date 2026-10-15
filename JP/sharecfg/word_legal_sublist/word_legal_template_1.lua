@@ -449,7 +449,20 @@ function temp()
 			ケ = {
 				ル = {
 					ク = {
-						this = true
+						this = true,
+						["("] = {
+							M = {
+								E = {
+									T = {
+										A = {
+											[")"] = {
+												this = true
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			},
@@ -1181,6 +1194,13 @@ function temp()
 		ニ = {
 			カ = {
 				this = true
+			}
+		},
+		ス = {
+			ク = {
+				ワ = {
+					this = true
+				}
 			}
 		}
 	}
