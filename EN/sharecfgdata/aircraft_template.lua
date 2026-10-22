@@ -294844,4 +294844,80 @@ _G.pg.base.aircraft_template[3436712] = {
 		},
 	},
 }
+_G.pg.base.aircraft_template[3440107] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1680,
+	icon = "feiji_haigushou02",
+	id = 3440107,
+	max_hp = 60,
+	model_ID = "feiji_haigushou02",
+	name = "【2026风帆四期T2】BOSS 寂静之灵航母 飞鱼舰载机（快速冲底）",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 50,
+	type = 1,
+	weapon_ID = {
+		3440108,
+		3440109,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
 

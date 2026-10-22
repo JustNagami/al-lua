@@ -22346,7 +22346,7 @@ _G.pg.base.gametip.BoatAdGame_minigame_help = {
 	},
 }
 _G.pg.base.gametip.activity_1024_memory = {
-	tip = "Insufficient Halloween Pages. Complete the event missions to get some!",
+	tip = "Insufficient Fantaisie Pages. Complete event missions to obtain more!",
 }
 _G.pg.base.gametip.activity_1024_memory_get = {
 	tip = "- Claimed -",
@@ -27189,6 +27189,12 @@ _G.pg.base.gametip.grapihcs3d_setting_bloom_intensity_3 = {
 _G.pg.base.gametip.grapihcs3d_setting_flare = {
 	tip = "Lens Flare",
 }
+_G.pg.base.gametip.Outpost_20250904_Sidebar4 = {
+	tip = "Call to Arms",
+}
+_G.pg.base.gametip.Outpost_20250904_Sidebar5 = {
+	tip = "Sakuran Invitation",
+}
 _G.pg.base.gametip.Outpost_20250904_Title1 = {
 	tip = "Call to Arms",
 }
@@ -31278,5 +31284,11 @@ _G.pg.base.gametip.ActivityRemasterCoreActivityAdaptUI_TITLE_EN = {
 }
 _G.pg.base.gametip.ActivityRemaster_NoticeJump_AlreadySelected = {
 	tip = "A Capsule Rerun is already unlocked. Please enter via the event entrance on the main screen.",
+}
+_G.pg.base.gametip.HurricaneTreasureCoreActivityUI_subtitle_1 = {
+	tip = "Marks of Treasure",
+}
+_G.pg.base.gametip.windfog_skin_stroy_finish = {
+	tip = "Complete all stories to obtain.",
 }
 
