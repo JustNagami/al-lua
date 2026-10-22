@@ -32,7 +32,8 @@ pg.soundstory_template.all = {
 	27,
 	28,
 	29,
-	30
+	30,
+	31
 }
 pg.base = pg.base or {}
 pg.base.soundstory_template = {}
@@ -176,13 +177,14 @@ pg.base.soundstory_template = {}
 	pg.base.soundstory_template[6] = {
 		story_pic = "",
 		name = "特別プレゼント?!",
-		story_resource_CN = "",
+		time = "always",
 		audition_resource_CN = "",
 		CV_JP = "伊藤あすか",
 		audition_text = "それにしても遅いわね…もうハムマンをいつまで待たせる気？",
-		id = 6,
+		story_resource_CN = "",
 		ship_id = 10125,
 		audition_resource_JP = "ss-10125-1",
+		id = 6,
 		CV_CN = "",
 		overview = "柄にもないイタズラをしようとする、素直じゃない彼女によるアクシデント？！",
 		captions_color = "#763d1f",
@@ -197,33 +199,6 @@ pg.base.soundstory_template = {}
 			1,
 			15,
 			3
-		},
-		time = {
-			"timer",
-			{
-				{
-					2025,
-					4,
-					24
-				},
-				{
-					12,
-					0,
-					0
-				}
-			},
-			{
-				{
-					2025,
-					4,
-					30
-				},
-				{
-					23,
-					59,
-					59
-				}
-			}
 		}
 	}
 	pg.base.soundstory_template[7] = {
@@ -552,7 +527,7 @@ pg.base.soundstory_template = {}
 					30
 				},
 				{
-					12,
+					16,
 					0,
 					0
 				}
@@ -600,21 +575,21 @@ pg.base.soundstory_template = {}
 			"timer",
 			{
 				{
-					2024,
-					7,
-					25
+					2026,
+					10,
+					22
 				},
 				{
-					12,
+					16,
 					0,
 					0
 				}
 			},
 			{
 				{
-					2024,
-					7,
-					31
+					2026,
+					10,
+					28
 				},
 				{
 					23,
@@ -1437,6 +1412,59 @@ pg.base.soundstory_template = {}
 					2026,
 					8,
 					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.soundstory_template[31] = {
+		story_pic = "",
+		name = "スペシャル占いタイム",
+		story_resource_CN = "",
+		audition_resource_CN = "",
+		CV_JP = "涼花みなせ",
+		audition_text = "あたしを想像して、あたしを感じて、そしてその感触を……水晶玉に映させてぇ……",
+		id = 31,
+		ship_id = 960019,
+		audition_resource_JP = "ss-960019-1",
+		CV_CN = "",
+		overview = "指揮官と約束した、セリミエの「スペシャル占いタイム」。\n彼女はこの水晶玉を使って、指揮官の心の全てを見通していく……",
+		captions_color = "#2c2952",
+		story_resource_JP = "soundStory31_JP",
+		order = 2,
+		cost1 = {
+			1,
+			14,
+			120
+		},
+		cost2 = {
+			1,
+			15,
+			3
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					10,
+					22
+				},
+				{
+					12,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					10,
+					28
 				},
 				{
 					23,

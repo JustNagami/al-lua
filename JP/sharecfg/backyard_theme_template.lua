@@ -131,7 +131,8 @@ pg.backyard_theme_template.all = {
 	140,
 	141,
 	142,
-	143
+	143,
+	144
 }
 pg.base = pg.base or {}
 pg.base.backyard_theme_template = {}
@@ -5537,6 +5538,50 @@ end)()
 			343301,
 			343302,
 			343303
+		}
+	}
+	pg.base.backyard_theme_template[144] = {
+		Cfg_1 = 5,
+		name = "冒険者ギルド",
+		hot = 1,
+		is_view = 1,
+		id = 144,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "ギルドの扉をくぐり、勇者の冒険ライフを始めよう！",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "tegthemeicon",
+		deblocking = 1,
+		order = 144,
+		ids = {
+			344001,
+			344002,
+			344101,
+			344102,
+			344103,
+			344104,
+			344105,
+			344106,
+			344107,
+			344108,
+			344109,
+			344110,
+			344111,
+			344112,
+			344113,
+			344114,
+			344115,
+			344116,
+			344117,
+			344118,
+			344301,
+			344302,
+			344303,
+			344304,
+			344305,
+			344306
 		}
 	}
 end)()

@@ -218,6 +218,17 @@ function temp()
 		ー = {
 			デ = {
 				this = true
+			},
+			ン = {
+				バ = {
+					ア = {
+						デ = {
+							ン = {
+								this = true
+							}
+						}
+					}
+				}
 			}
 		}
 	}

@@ -32,8 +32,20 @@ end
 function var_0_0.PlayStory(arg_5_0)
 	local var_5_0 = arg_5_0.activity:getConfig("config_client").story
 
-	for iter_5_0, iter_5_1 in ipairs(var_5_0) do
-		pg.NewStoryMgr.GetInstance():Play(iter_5_1)
+	if checkExist(var_5_0, {
+		arg_5_0.nday
+	}, {
+		1
+	}) then
+		pg.NewStoryMgr.GetInstance():Play(var_5_0[arg_5_0.nday][1], function()
+			if checkExist(var_5_0, {
+				arg_5_0.nday
+			}, {
+				2
+			}) then
+				pg.NewStoryMgr.GetInstance():Play(var_5_0[arg_5_0.nday][2])
+			end
+		end)
 	end
 end
 

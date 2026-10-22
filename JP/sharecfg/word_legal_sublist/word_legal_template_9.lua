@@ -7,6 +7,50 @@ var_0_0.word_legal_template_9 = {}
 local var_0_1 = var_0_0.word_legal_template_9
 
 function temp()
+	var_0_1.皇 = {
+		家 = {
+			财 = {
+				富 = {
+					号 = {
+						（ = {
+							前 = {
+								排 = {
+									） = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.铁 = {
+		角 = {
+			号 = {
+				（ = {
+					前 = {
+						排 = {
+							） = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.拉 = {
 		菲 = {
 			I = {
@@ -431,36 +475,6 @@ temp()
 function temp()
 	var_0_1.吾 = {
 		妻 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.藤 = {
-		波 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.木 = {
-		津 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.安 = {
-		土 = {
 			this = true
 		}
 	}

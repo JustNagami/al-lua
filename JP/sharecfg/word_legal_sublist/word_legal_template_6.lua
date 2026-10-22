@@ -104,15 +104,6 @@ function temp()
 						this = true
 					}
 				}
-			},
-			["("] = {
-				空 = {
-					母 = {
-						[")"] = {
-							this = true
-						}
-					}
-				}
 			}
 		},
 		海 = {
@@ -120,11 +111,6 @@ function temp()
 				香 = {
 					this = true
 				}
-			}
-		},
-		津 = {
-			風 = {
-				this = true
 			}
 		}
 	}
@@ -176,9 +162,6 @@ function temp()
 				}
 			},
 			["3"] = {
-				this = true
-			},
-			["4"] = {
 				this = true
 			}
 		},
@@ -260,14 +243,7 @@ temp()
 function temp()
 	var_0_1.武 = {
 		蔵 = {
-			this = true,
-			ち = {
-				ゃ = {
-					ん = {
-						this = true
-					}
-				}
-			}
+			this = true
 		}
 	}
 end

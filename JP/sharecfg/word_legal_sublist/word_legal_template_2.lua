@@ -617,11 +617,6 @@ function temp()
 						}
 					}
 				}
-			},
-			ソ = {
-				ン = {
-					this = true
-				}
 			}
 		},
 		ク = {
@@ -1324,6 +1319,17 @@ function temp()
 				this = true
 			}
 		},
+		ヤ = {
+			ラ = {
+				・ = {
+					ベ = {
+						イ = {
+							this = true
+						}
+					}
+				}
+			}
+		},
 		ラ = {
 			・ = {
 				デ = {
@@ -1376,6 +1382,11 @@ function temp()
 			}
 		},
 		リ = {
+			ミ = {
+				エ = {
+					this = true
+				}
+			},
 			・ = {
 				グ = {
 					ロ = {
@@ -1458,6 +1469,17 @@ function temp()
 									this = true
 								}
 							}
+						}
+					}
+				}
+			}
+		},
+		ル = {
+			ク = {
+				ー = {
+					リ = {
+						ィ = {
+							this = true
 						}
 					}
 				}
