@@ -137523,7 +137523,7 @@ _G.pg.base.item_data_statistics[81440] = {
 }
 _G.pg.base.item_data_statistics[81446] = {
 	compose_number = 0,
-	display = "购买礼包可获得60钻，高级定向蓝图·八期*2",
+	display = "购买礼包可获得钻石*60，高级定向蓝图·八期*2",
 	display_effect = "",
 	icon = "Props/fengfanv4_day1",
 	id = 81446,
@@ -137563,7 +137563,7 @@ _G.pg.base.item_data_statistics[81446] = {
 }
 _G.pg.base.item_data_statistics[81447] = {
 	compose_number = 0,
-	display = "购买礼包可获得200钻",
+	display = "购买礼包可获得钻石*200",
 	display_effect = "",
 	icon = "Props/fengfanv4_day2",
 	id = 81447,
@@ -137638,7 +137638,7 @@ _G.pg.base.item_data_statistics[81448] = {
 }
 _G.pg.base.item_data_statistics[81449] = {
 	compose_number = 0,
-	display = "购买礼包可获得60钻，试作型布里MKII*1",
+	display = "购买礼包可获得钻石*60，试作型布里MKII*1",
 	display_effect = "",
 	icon = "Props/fengfanv4_day4",
 	id = 81449,
@@ -137753,7 +137753,7 @@ _G.pg.base.item_data_statistics[81451] = {
 }
 _G.pg.base.item_data_statistics[81452] = {
 	compose_number = 0,
-	display = "购买礼包可获得60钻，高级定向蓝图·九期*2",
+	display = "购买礼包可获得钻石*60，高级定向蓝图·九期*2",
 	display_effect = "",
 	icon = "Props/fengfanv4_day7",
 	id = 81452,

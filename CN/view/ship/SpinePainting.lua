@@ -318,16 +318,18 @@ function var_0_0.onUpdateLocal(arg_22_0)
 end
 
 function var_0_0.SetVisible(arg_23_0, arg_23_1)
-	local var_23_0 = arg_23_0:getIdleName()
+	if not arg_23_1 and arg_23_0.dragDataConfigClient then
+		local var_23_0 = arg_23_0:getIdleName()
 
-	for iter_23_0, iter_23_1 in ipairs(arg_23_0.dragDataConfigClient) do
-		if iter_23_1.idle == var_23_0 and iter_23_1.lit_start and iter_23_1.lit_start >= 0 then
-			SpinePaintingConst.painting_lit_value = iter_23_1.lit_start
+		for iter_23_0, iter_23_1 in ipairs(arg_23_0.dragDataConfigClient) do
+			if iter_23_1.idle == var_23_0 and iter_23_1.lit_start and iter_23_1.lit_start >= 0 then
+				SpinePaintingConst.painting_lit_value = iter_23_1.lit_start
 
-			if PlayerPrefs.GetInt(LIVE2D_STATUS_SAVE, 1) == 1 then
-				SpinePaintingDrag.SetPaintingLite(arg_23_0._spinePaintingData:GetShipName(), arg_23_0._spinePaintingData:GetShipId(), SpinePaintingConst.painting_lit_value)
-			else
-				SpinePaintingDrag.SetPaintingLite(arg_23_0._spinePaintingData:GetShipName(), arg_23_0._spinePaintingData:GetShipId(), 0)
+				if PlayerPrefs.GetInt(LIVE2D_STATUS_SAVE, 1) == 1 then
+					SpinePaintingDrag.SetPaintingLite(arg_23_0._spinePaintingData:GetShipName(), arg_23_0._spinePaintingData:GetShipId(), SpinePaintingConst.painting_lit_value)
+				else
+					SpinePaintingDrag.SetPaintingLite(arg_23_0._spinePaintingData:GetShipName(), arg_23_0._spinePaintingData:GetShipId(), 0)
+				end
 			end
 		end
 	end
@@ -954,6 +956,8 @@ function var_0_0.SetAction(arg_59_0, arg_59_1, arg_59_2, arg_59_3)
 
 	if HXSet.isHx() and arg_59_0:getAnimationExist(arg_59_1 .. "_hx") then
 		arg_59_1 = arg_59_1 .. "_hx"
+	elseif HXSet.isHx() and arg_59_0:getAnimationExist("hx/" .. arg_59_1 .. "_hx") then
+		arg_59_1 = "hx/" .. arg_59_1 .. "_hx"
 	end
 
 	for iter_59_0, iter_59_1 in ipairs(arg_59_0.spineAnimList) do
