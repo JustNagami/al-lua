@@ -66160,6 +66160,7 @@ end)()
 			id = 4,
 			bg = "loadingbg/bg_build_4_act",
 			buildship_tip = "Rate UP for Merkuriy, Selimiye, and more!",
+			natural_expire = 1,
 			rate_tip = {
 				"<color=#ffde38>Super Rare</color>: 7%",
 				"<color=#d797ff>Elite</color>: 12%",

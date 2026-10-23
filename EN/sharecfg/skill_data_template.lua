@@ -128222,7 +128222,7 @@ end)()
 		id = 152940,
 		type = 3,
 		max_level = 10,
-		desc = "Every 4s: fires a $1 special shell (DMG is based on the skill's level); enemies hit by this special shell take $2 increased shelling DMG from Merkuriy (effect does not stack). Once per battle, when this special shell has been fired 4 times: fires a ￼$1 special barrage (DMG is based on the skill's level) and reduces this ship's DMG taken by $3 until the end of battle (does not stack).",
+		desc = "Every 4s: fires a $1 special shell (DMG is based on the skill's level); enemies hit by this special shell take $2 increased shelling DMG from Merkuriy (effect does not stack). Once per battle, when this special shell has been fired 4 times: fires a $1 special barrage (DMG is based on the skill's level) and reduces this ship's DMG taken by $3 until the end of battle (does not stack).",
 		system_transform = {},
 		world_death_mark = {
 			1

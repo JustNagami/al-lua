@@ -183627,7 +183627,7 @@ _G.pg.base.item_virtual_data_statistics[66119] = {
 	},
 }
 _G.pg.base.item_virtual_data_statistics[66120] = {
-	display = "Once the broken spear is forged anew––",
+	display = "Once the broken spear is forged anew–",
 	drop_arg = "",
 	drop_gold_max = 0,
 	drop_oil_max = 0,

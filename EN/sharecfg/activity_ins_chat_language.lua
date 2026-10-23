@@ -119686,7 +119686,7 @@ end)()
 end)()
 ;(function()
 	pg.base.activity_ins_chat_language[12343] = {
-		param = "Huh? A trade guild?! You two went and started a guild?!",
+		param = "Huh? A trade guild?! You went and started a guild?!",
 		ship_group = 960001,
 		type = 1,
 		option = "",
@@ -119694,7 +119694,7 @@ end)()
 		flag = 1
 	}
 	pg.base.activity_ins_chat_language[12344] = {
-		param = "Three. I'm in it, too.",
+		param = "I'm in it, too.",
 		ship_group = 960006,
 		type = 1,
 		option = "",

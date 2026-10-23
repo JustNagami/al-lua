@@ -38115,7 +38115,7 @@ end)()
 	}
 	pg.base.expedition_data_by_map[2200180] = {
 		map = 2200180,
-		name = "Tempesta and the Sleeping Sea - PT.1|| ||CHAPTER EX||E.X.",
+		name = "Tempesta and the Sleeping Sea - Pt.1|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
 		type = 4,
 		anchor = "",
@@ -38176,7 +38176,7 @@ end)()
 	}
 	pg.base.expedition_data_by_map[2200181] = {
 		map = 2200181,
-		name = "Tempesta and the Sleeping Sea - PT.2|| ||CHAPTER EX||E.X.",
+		name = "Tempesta and the Sleeping Sea - Pt.2|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
 		type = 4,
 		anchor = "",
