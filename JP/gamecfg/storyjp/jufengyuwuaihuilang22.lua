@@ -1649,7 +1649,7 @@
 			factiontag = "スローンポリス",
 			dir = 1,
 			nameColor = "#A9F548FF",
-			actorName = "オーメン・ランゲ",
+			actorName = "リヤラ・ベイ",
 			hidePaintObj = true,
 			say = "わぁ……",
 			typewriter = {

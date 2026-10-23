@@ -387,7 +387,7 @@
 			bgName = "bg_wuaihuilang_1",
 			factiontag = "スローンポリス",
 			dir = 1,
-			actorName = "オーメン・ランゲ",
+			actorName = "リヤラ・ベイ",
 			nameColor = "#A9F548FF",
 			say = "あれ……風が出てきましたね。水の流れも速くなっています…",
 			typewriter = {
@@ -401,7 +401,7 @@
 			bgName = "bg_wuaihuilang_1",
 			factiontag = "スローンポリス",
 			dir = 1,
-			actorName = "オーメン・ランゲ",
+			actorName = "リヤラ・ベイ",
 			nameColor = "#A9F548FF",
 			say = "ヤーンバアデン、見て。海霧が少し戻ってきてませんか？",
 			typewriter = {
@@ -415,7 +415,7 @@
 			bgName = "bg_wuaihuilang_1",
 			factiontag = "スローンポリス",
 			dir = 1,
-			actorName = "オーメン・ランゲ",
+			actorName = "リヤラ・ベイ",
 			nameColor = "#A9F548FF",
 			say = "それに幽霊船もまた湧いてきて、こっちに向かってきてます！",
 			typewriter = {
@@ -506,7 +506,7 @@
 			bgName = "bg_wuaihuilang_1",
 			factiontag = "スローンポリス",
 			dir = 1,
-			actorName = "オーメン・ランゲ",
+			actorName = "リヤラ・ベイ",
 			nameColor = "#A9F548FF",
 			say = "……きゃっ！",
 			typewriter = {

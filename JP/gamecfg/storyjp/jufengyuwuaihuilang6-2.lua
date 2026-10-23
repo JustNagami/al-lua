@@ -69,7 +69,7 @@
 			bgName = "star_level_bg_504",
 			factiontag = "スローンポリス",
 			dir = 1,
-			actorName = "オーメン・ランゲ",
+			actorName = "リヤラ・ベイ",
 			nameColor = "#A9F548FF",
 			say = "うう……この骸骨獣たち、倒しても倒してもキリがありません！",
 			typewriter = {

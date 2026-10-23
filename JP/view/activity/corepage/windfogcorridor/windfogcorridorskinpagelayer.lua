@@ -119,11 +119,6 @@ function var_0_0.UpdateTask(arg_7_0, arg_7_1, arg_7_2)
 
 	local var_7_5 = var_7_3:getProgress()
 	local var_7_6 = var_7_3:getConfig("target_num")
-
-	if arg_7_0.allCompleteCount == var_0_0.FinishCount then
-		var_7_5 = var_7_6
-	end
-
 	local var_7_7, var_7_8 = arg_7_0:GetProgressColor()
 	local var_7_9
 
@@ -144,10 +139,6 @@ function var_0_0.UpdateTask(arg_7_0, arg_7_1, arg_7_2)
 	local var_7_13 = arg_7_2:Find("get_btn")
 	local var_7_14 = arg_7_2:Find("got_btn")
 	local var_7_15 = var_7_3:getTaskStatus()
-
-	if arg_7_0.allCompleteCount == var_0_0.FinishCount then
-		var_7_15 = 2
-	end
 
 	setActive(var_7_12, var_7_15 == 0)
 	setActive(var_7_13, var_7_15 == 1)
@@ -179,7 +170,7 @@ function var_0_0.UpdateTask(arg_7_0, arg_7_1, arg_7_2)
 		end)
 	end, SFX_PANEL)
 
-	local var_7_16 = arg_7_0.allCompleteCount < var_0_0.FinishCount and var_7_15 == 1
+	local var_7_16 = var_7_15 == 1
 	local var_7_17 = arg_7_2:Find("reddot")
 
 	setActive(var_7_17, var_7_16)

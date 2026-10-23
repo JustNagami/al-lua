@@ -119747,7 +119747,7 @@ end)()
 		flag = 2
 	}
 	pg.base.activity_ins_chat_language[12350] = {
-		param = "&& ",
+		param = "107",
 		ship_group = 960001,
 		type = 4,
 		option = "",

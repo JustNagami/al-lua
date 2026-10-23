@@ -897,7 +897,7 @@
 			bgName = "star_level_bg_504",
 			actor = 9600210,
 			dir = 1,
-			actorName = "オーメン・ランゲ&ヤーンバアデン",
+			actorName = "リヤラ・ベイ&ヤーンバアデン",
 			hideOther = true,
 			nameColor = "#A9F548FF",
 			hidePaintObj = true,
