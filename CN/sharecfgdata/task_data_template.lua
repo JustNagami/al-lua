@@ -40884,7 +40884,6 @@ _G.pg.base.task_data_template[7204] = {
 	quick_finish = 0,
 	ryza_icon = "",
 	ryza_type = 0,
-	scene = "",
 	story_icon = "",
 	story_icon_shift = "",
 	story_id = "",
@@ -40914,6 +40913,9 @@ _G.pg.base.task_data_template[7204] = {
 			2,
 		},
 	},
+	scene = {
+		"LEVEL",
+	},
 }
 _G.pg.base.task_data_template[7205] = {
 	activity_client_config = "",
@@ -40934,7 +40936,6 @@ _G.pg.base.task_data_template[7205] = {
 	quick_finish = 0,
 	ryza_icon = "",
 	ryza_type = 0,
-	scene = "",
 	story_icon = "",
 	story_icon_shift = "",
 	story_id = "",
@@ -40963,6 +40964,9 @@ _G.pg.base.task_data_template[7205] = {
 			59900,
 			5,
 		},
+	},
+	scene = {
+		"LEVEL",
 	},
 }
 _G.pg.base.task_data_template[7206] = {
@@ -348482,7 +348486,6 @@ _G.pg.base.task_data_template[56803] = {
 	quick_finish = 0,
 	ryza_icon = "",
 	ryza_type = 0,
-	scene = "",
 	story_icon = "",
 	story_icon_shift = "",
 	story_id = "",
@@ -348501,6 +348504,9 @@ _G.pg.base.task_data_template[56803] = {
 			660,
 			200,
 		},
+	},
+	scene = {
+		"LEVEL",
 	},
 }
 _G.pg.base.task_data_template[56804] = {
@@ -348522,7 +348528,6 @@ _G.pg.base.task_data_template[56804] = {
 	quick_finish = 0,
 	ryza_icon = "",
 	ryza_type = 0,
-	scene = "",
 	story_icon = "",
 	story_icon_shift = "",
 	story_id = "",
@@ -348541,6 +348546,9 @@ _G.pg.base.task_data_template[56804] = {
 			660,
 			200,
 		},
+	},
+	scene = {
+		"LEVEL",
 	},
 }
 _G.pg.base.task_data_template[56805] = {

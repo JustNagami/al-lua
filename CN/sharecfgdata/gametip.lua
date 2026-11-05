@@ -27164,7 +27164,7 @@ _G.pg.base.gametip.graphi_api_switch_vulkan = {
 	tip = "渲染兼容模式暂不支持AR功能，切换模式后需要重新进入游戏，是否立即切换？",
 }
 _G.pg.base.gametip.openGLerror_warning = {
-	tip = "当前机型不支持Vulkan渲染，请前往设置开启兼容渲染模式，切换模式后需要重新进入游戏",
+	tip = "当前机型不支持OpenGL渲染，请前往设置开启兼容渲染模式，切换模式后需要重新进入游戏",
 }
 _G.pg.base.gametip["3ddorm_beach_slide_tip1"] = {
 	tip = "游玩滑梯",
