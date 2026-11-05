@@ -39948,6 +39948,7 @@ _G.pg.base.equip_data_statistics[17300] = {
 		"CV",
 		"FT",
 		"F6F",
+		"BDZW",
 	},
 }
 _G.pg.base.equip_data_statistics[17301] = {
@@ -40145,6 +40146,7 @@ _G.pg.base.equip_data_statistics[17320] = {
 		"CV",
 		"FT",
 		"F6F",
+		"BDZW",
 	},
 }
 _G.pg.base.equip_data_statistics[17321] = {
@@ -40434,6 +40436,7 @@ _G.pg.base.equip_data_statistics[17340] = {
 		"CV",
 		"FT",
 		"F6F",
+		"BDZW",
 	},
 }
 _G.pg.base.equip_data_statistics[17341] = {
@@ -41970,6 +41973,7 @@ _G.pg.base.equip_data_statistics[17440] = {
 		"CV",
 		"FT",
 		"HERK",
+		"BDZW",
 	},
 }
 _G.pg.base.equip_data_statistics[17441] = {

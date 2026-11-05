@@ -95,6 +95,7 @@ pg.island_task.all = {
 	50000002,
 	50000003,
 	50000004,
+	50000005,
 	51001000,
 	51001001,
 	51001002,
@@ -135,6 +136,13 @@ pg.island_task.all = {
 	50001026,
 	50001027,
 	50001028,
+	50001029,
+	50001030,
+	50001031,
+	50001032,
+	50001033,
+	50001034,
+	50001035,
 	50002001,
 	50002002,
 	50002003,
@@ -163,6 +171,13 @@ pg.island_task.all = {
 	50002026,
 	50002027,
 	50002028,
+	50002029,
+	50002030,
+	50002031,
+	50002032,
+	50002033,
+	50002034,
+	50002035,
 	50003001,
 	50003002,
 	50003003,
@@ -179,6 +194,10 @@ pg.island_task.all = {
 	50003014,
 	50003015,
 	50003016,
+	50003017,
+	50003018,
+	50003019,
+	50003020,
 	80001001,
 	80001002,
 	80001003,
@@ -329,6 +348,36 @@ pg.island_task.all = {
 	80001428,
 	80001429,
 	80001430,
+	80001501,
+	80001502,
+	80001503,
+	80001504,
+	80001505,
+	80001506,
+	80001507,
+	80001508,
+	80001509,
+	80001510,
+	80001511,
+	80001512,
+	80001513,
+	80001514,
+	80001515,
+	80001516,
+	80001517,
+	80001518,
+	80001519,
+	80001520,
+	80001521,
+	80001522,
+	80001523,
+	80001524,
+	80001525,
+	80001526,
+	80001527,
+	80001528,
+	80001529,
+	80001530,
 	20001001,
 	20001002,
 	20001003,
@@ -766,6 +815,7 @@ pg.island_task.get_id_list_by_type = {
 		50000002,
 		50000003,
 		50000004,
+		50000005,
 		51001001,
 		51001002,
 		51001003,
@@ -803,6 +853,13 @@ pg.island_task.get_id_list_by_type = {
 		50001026,
 		50001027,
 		50001028,
+		50001029,
+		50001030,
+		50001031,
+		50001032,
+		50001033,
+		50001034,
+		50001035,
 		50002001,
 		50002002,
 		50002003,
@@ -831,6 +888,13 @@ pg.island_task.get_id_list_by_type = {
 		50002026,
 		50002027,
 		50002028,
+		50002029,
+		50002030,
+		50002031,
+		50002032,
+		50002033,
+		50002034,
+		50002035,
 		50003001,
 		50003002,
 		50003003,
@@ -846,7 +910,11 @@ pg.island_task.get_id_list_by_type = {
 		50003013,
 		50003014,
 		50003015,
-		50003016
+		50003016,
+		50003017,
+		50003018,
+		50003019,
+		50003020
 	},
 	[8] = {
 		80001001,
@@ -998,7 +1066,37 @@ pg.island_task.get_id_list_by_type = {
 		80001427,
 		80001428,
 		80001429,
-		80001430
+		80001430,
+		80001501,
+		80001502,
+		80001503,
+		80001504,
+		80001505,
+		80001506,
+		80001507,
+		80001508,
+		80001509,
+		80001510,
+		80001511,
+		80001512,
+		80001513,
+		80001514,
+		80001515,
+		80001516,
+		80001517,
+		80001518,
+		80001519,
+		80001520,
+		80001521,
+		80001522,
+		80001523,
+		80001524,
+		80001525,
+		80001526,
+		80001527,
+		80001528,
+		80001529,
+		80001530
 	},
 	[9] = {
 		51001000,
@@ -4949,6 +5047,72 @@ pg.base.island_task = {}
 			}
 		}
 	}
+	pg.base.island_task[50000005] = {
+		name = "みかんトルネード",
+		trigger_tips = 1,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 2,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "ピアリがなにやら面白い写真を撮ったらしい。話を聞いてみよう",
+		series_name = "離島シーズン",
+		id = 50000005,
+		unlock_condition = {
+			{
+				2,
+				20015002
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					16,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			500000051
+		},
+		reward_show = {
+			{
+				41,
+				1,
+				2000
+			}
+		}
+	}
 	pg.base.island_task[51001000] = {
 		name = "育成キャラ招待",
 		trigger_tips = 0,
@@ -5265,6 +5429,8 @@ pg.base.island_task = {}
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.island_task[51003000] = {
 		name = "物静かな来訪者",
 		trigger_tips = 0,
@@ -5295,8 +5461,6 @@ pg.base.island_task = {}
 		},
 		reward_show = {}
 	}
-end)()
-;(function()
 	pg.base.island_task[51003001] = {
 		name = "物静かな来訪者Ⅰ",
 		trigger_tips = 1,
@@ -7521,6 +7685,530 @@ end)()
 			}
 		}
 	}
+	pg.base.island_task[50001029] = {
+		name = "冬の土産採集（1/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の離島に旬の採集物がたくさんあるようで……指揮官、手伝ってもらえますか？\n<採集可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>梅の花</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>スイセン</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>冬シイタケ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>クワイ</material></color>",
+		series_name = "限定採集",
+		id = 50001029,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			50001029
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				5
+			},
+			{
+				41,
+				100101,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50001030] = {
+		name = "冬の土産採集（2/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の離島に旬の採集物がたくさんあるようで……指揮官、手伝ってもらえますか？\n<採集可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>梅の花</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>スイセン</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>冬シイタケ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>クワイ</material></color>",
+		series_name = "限定採集",
+		id = 50001030,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50001029
+		},
+		target_id = {
+			50001030
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100101,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50001031] = {
+		name = "冬の土産採集（3/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の離島に旬の採集物がたくさんあるようで……指揮官、手伝ってもらえますか？\n<採集可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>梅の花</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>スイセン</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>冬シイタケ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>クワイ</material></color>",
+		series_name = "限定採集",
+		id = 50001031,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50001030
+		},
+		target_id = {
+			50001031
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100102,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50001032] = {
+		name = "冬の土産採集（4/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の離島に旬の採集物がたくさんあるようで……指揮官、手伝ってもらえますか？\n<採集可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>梅の花</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>スイセン</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>冬シイタケ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>クワイ</material></color>",
+		series_name = "限定採集",
+		id = 50001032,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50001031
+		},
+		target_id = {
+			50001032
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100102,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50001033] = {
+		name = "冬の土産採集（5/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の離島に旬の採集物がたくさんあるようで……指揮官、手伝ってもらえますか？\n<採集可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>梅の花</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>スイセン</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>冬シイタケ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>クワイ</material></color>",
+		series_name = "限定採集",
+		id = 50001033,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50001032
+		},
+		target_id = {
+			50001033
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100103,
+				1
+			},
+			{
+				41,
+				100011,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50001034] = {
+		name = "冬の土産採集（6/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の離島に旬の採集物がたくさんあるようで……指揮官、手伝ってもらえますか？\n<採集可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>梅の花</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>スイセン</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>冬シイタケ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>クワイ</material></color>",
+		series_name = "限定採集",
+		id = 50001034,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50001033
+		},
+		target_id = {
+			50001034
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				41,
+				100103,
+				1
+			},
+			{
+				41,
+				100021,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50001035] = {
+		name = "冬の土産採集（7/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の離島に旬の採集物がたくさんあるようで……指揮官、手伝ってもらえますか？\n<採集可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>梅の花</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>スイセン</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>冬シイタケ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>クワイ</material></color>",
+		series_name = "限定採集",
+		id = 50001035,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50001034
+		},
+		target_id = {
+			50001035
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				41,
+				100103,
+				3
+			},
+			{
+				41,
+				100031,
+				2
+			}
+		}
+	}
 	pg.base.island_task[50002001] = {
 		name = "秋の特産品制作（1/7）",
 		trigger_tips = 0,
@@ -7540,7 +8228,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定レシピ",
 		id = 50002001,
 		unlock_condition = {
@@ -7611,7 +8299,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定レシピ",
 		id = 50002002,
 		unlock_condition = {
@@ -7684,7 +8372,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定レシピ",
 		id = 50002003,
 		unlock_condition = {
@@ -7757,7 +8445,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定レシピ",
 		id = 50002004,
 		unlock_condition = {
@@ -7830,7 +8518,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定レシピ",
 		id = 50002005,
 		unlock_condition = {
@@ -7908,7 +8596,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定レシピ",
 		id = 50002006,
 		unlock_condition = {
@@ -7986,7 +8674,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定レシピ",
 		id = 50002007,
 		unlock_condition = {
@@ -9112,7 +9800,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定採集",
 		id = 50002022,
 		unlock_condition = {
@@ -9183,7 +9871,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定採集",
 		id = 50002023,
 		unlock_condition = {
@@ -9256,7 +9944,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定採集",
 		id = 50002024,
 		unlock_condition = {
@@ -9329,7 +10017,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定採集",
 		id = 50002025,
 		unlock_condition = {
@@ -9402,7 +10090,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定採集",
 		id = 50002026,
 		unlock_condition = {
@@ -9480,7 +10168,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定採集",
 		id = 50002027,
 		unlock_condition = {
@@ -9558,7 +10246,7 @@ end)()
 		complete_data = 10020025,
 		map_complete_tips = 1002,
 		rec_perform = "",
-		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
+		task_desc = "秋の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4005}>宵月梨</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4007}>柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4009}>干し柿</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4010}>松茸と鶏のスープ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4012}>落花生油</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4011}>秋のブーケ</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4013}>ニンジンと梨のジュース</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4014}>菊花の茶</material></color>",
 		series_name = "限定採集",
 		id = 50002028,
 		unlock_condition = {
@@ -9598,6 +10286,530 @@ end)()
 		},
 		target_id = {
 			50002028
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				41,
+				100103,
+				3
+			},
+			{
+				41,
+				100061,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50002029] = {
+		name = "冬の特産品制作（1/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>砂糖みかん</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>青ナツメ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>冬シイタケと鶏の煮込み</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>青ナツメ入り粥</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>クワイケーキ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>砂糖みかん大福</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>梅の香り袋</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>冬の花束</material></color>",
+		series_name = "限定レシピ",
+		id = 50002029,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			50002029
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				5
+			},
+			{
+				41,
+				100101,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50002030] = {
+		name = "冬の特産品制作（2/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>砂糖みかん</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>青ナツメ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>冬シイタケと鶏の煮込み</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>青ナツメ入り粥</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>クワイケーキ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>砂糖みかん大福</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>梅の香り袋</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>冬の花束</material></color>",
+		series_name = "限定レシピ",
+		id = 50002030,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50002029
+		},
+		target_id = {
+			50002030
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100101,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50002031] = {
+		name = "冬の特産品制作（3/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>砂糖みかん</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>青ナツメ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>冬シイタケと鶏の煮込み</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>青ナツメ入り粥</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>クワイケーキ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>砂糖みかん大福</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>梅の香り袋</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>冬の花束</material></color>",
+		series_name = "限定レシピ",
+		id = 50002031,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50002030
+		},
+		target_id = {
+			50002031
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100102,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50002032] = {
+		name = "冬の特産品制作（4/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>砂糖みかん</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>青ナツメ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>冬シイタケと鶏の煮込み</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>青ナツメ入り粥</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>クワイケーキ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>砂糖みかん大福</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>梅の香り袋</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>冬の花束</material></color>",
+		series_name = "限定レシピ",
+		id = 50002032,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50002031
+		},
+		target_id = {
+			50002032
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100102,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50002033] = {
+		name = "冬の特産品制作（5/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>砂糖みかん</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>青ナツメ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>冬シイタケと鶏の煮込み</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>青ナツメ入り粥</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>クワイケーキ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>砂糖みかん大福</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>梅の香り袋</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>冬の花束</material></color>",
+		series_name = "限定レシピ",
+		id = 50002033,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50002032
+		},
+		target_id = {
+			50002033
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100103,
+				1
+			},
+			{
+				41,
+				100041,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50002034] = {
+		name = "冬の特産品制作（6/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>砂糖みかん</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>青ナツメ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>冬シイタケと鶏の煮込み</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>青ナツメ入り粥</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>クワイケーキ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>砂糖みかん大福</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>梅の香り袋</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>冬の花束</material></color>",
+		series_name = "限定レシピ",
+		id = 50002034,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50002033
+		},
+		target_id = {
+			50002034
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				41,
+				100103,
+				1
+			},
+			{
+				41,
+				100051,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50002035] = {
+		name = "冬の特産品制作（7/7）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "冬の土産は経済的な価値を生み出してくれそう…離島の発展のために指揮官、お願いします！\n<製作可能土産> \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>砂糖みかん</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>青ナツメ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>冬シイタケと鶏の煮込み</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>青ナツメ入り粥</material></color>、\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>クワイケーキ</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>砂糖みかん大福</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>梅の香り袋</material></color>、<color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>冬の花束</material></color>",
+		series_name = "限定レシピ",
+		id = 50002035,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50002034
+		},
+		target_id = {
+			50002035
 		},
 		reward_show = {
 			{
@@ -10777,6 +11989,296 @@ end)()
 			}
 		}
 	}
+	pg.base.island_task[50003017] = {
+		name = "冬の特産依頼（1/4）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "指揮官からの冬の土産は離島建設に活用します。引き続き開発計画を進めましょう！",
+		series_name = "限定依頼",
+		id = 50003017,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			50003017
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100201,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50003018] = {
+		name = "冬の特産依頼（2/4）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "指揮官からの冬の土産は離島建設に活用します。引き続き開発計画を進めましょう！",
+		series_name = "限定依頼",
+		id = 50003018,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50003017
+		},
+		target_id = {
+			50003018
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100201,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50003019] = {
+		name = "冬の特産依頼（3/4）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "指揮官からの冬の土産は離島建設に活用します。引き続き開発計画を進めましょう！",
+		series_name = "限定依頼",
+		id = 50003019,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50003018
+		},
+		target_id = {
+			50003019
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100201,
+				3
+			}
+		}
+	}
+	pg.base.island_task[50003020] = {
+		name = "冬の特産依頼（4/4）",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "ピアリのところへ行こう(0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "【冬の特産経営】",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "指揮官からの冬の土産は離島建設に活用します。引き続き開発計画を進めましょう！",
+		series_name = "限定依頼",
+		id = 50003020,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					16,
+					0,
+					0
+				}
+			}
+		},
+		link_task = {
+			50003019
+		},
+		target_id = {
+			50003020
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				45,
+				104,
+				1
+			}
+		}
+	}
 	pg.base.island_task[80001001] = {
 		name = "畑の見張り",
 		trigger_tips = 0,
@@ -11053,6 +12555,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.island_task[80001007] = {
 		name = "ミルク補給",
 		trigger_tips = 0,
@@ -11877,8 +13381,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.island_task[80001026] = {
 		name = "堅実なサポート",
 		trigger_tips = 0,
@@ -15460,6 +16962,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.island_task[80001317] = {
 		name = "初めての接収",
 		trigger_tips = 0,
@@ -16269,8 +17773,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.island_task[80001406] = {
 		name = "元気オレンジ",
 		trigger_tips = 0,
@@ -17356,6 +18858,1321 @@ end)()
 			}
 		}
 	}
+	pg.base.island_task[80001501] = {
+		name = "お茶の備蓄",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "清らかな香りの茶葉を供給し、離島の休憩時間にゆったりとした趣を添えよう。\n茶葉×500を提出",
+		series_name = "",
+		id = 80001501,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015001
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001502] = {
+		name = "柑橘補給",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "新鮮な柑橘フルーツを納品し、離島開発に欠かせない果物の備蓄を補おう。\n柑橘フルーツ×500を提出",
+		series_name = "",
+		id = 80001502,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015002
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001503] = {
+		name = "マンゴー入荷",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "甘くてみずみずしいマンゴーを供給し、離島倉庫の南国フルーツを充実させよう。\nマンゴー×250を提出",
+		series_name = "",
+		id = 80001503,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015003
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001504] = {
+		name = "アボカドの香り",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "栄養たっぷりのアボカドを納品し、食品加工の選択肢を広げよう。\nアボカド×100を提出",
+		series_name = "",
+		id = 80001504,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015004
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001505] = {
+		name = "川の幸供給",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "新鮮な淡水魚の肉を供給し、離島の食卓に欠かせない基本食材を補おう。\n淡水魚の肉×100を提出",
+		series_name = "",
+		id = 80001505,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015005
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001506] = {
+		name = "海の幸入荷",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "良質な海水魚の肉を納品し、離島の食材備蓄に海の旨みを加えよう。\n海水魚の肉×100を提出",
+		series_name = "",
+		id = 80001506,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015006
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001507] = {
+		name = "豪華盛り合わせ",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "鶏肉とポテトの盛り合わせを用意し、忙しい開発作業をしっかりした食事で支えよう。\n鶏肉とポテトの盛り合わせ×100を提出",
+		series_name = "",
+		id = 80001507,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015007
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001508] = {
+		name = "甘もちコンビ",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "甘くもちもちのマンゴーともち米の蒸し飯を供給し、離島の暮らしにほっとする甘さを添えよう。\nマンゴーともち米の蒸し飯×50を提出",
+		series_name = "",
+		id = 80001508,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015008
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001509] = {
+		name = "スイーツ備蓄",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "華やかないちごシャルロットを納品し、開発エリアに心待ちのスイーツを届けよう。\nいちごシャルロット×25を提出",
+		series_name = "",
+		id = 80001509,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015009
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001510] = {
+		name = "銀鉱石採集",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "銀鉱石を納品し、離島建設に必要な金属原料を備蓄しよう。\n銀鉱石×25を提出",
+		series_name = "",
+		id = 80001510,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015010
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001511] = {
+		name = "良質木材入荷",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "質の良い木材を供給し、さまざまな精巧な建築の基礎材料にしよう。\nエレガント木材×25を提出",
+		series_name = "",
+		id = 80001511,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015011
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001512] = {
+		name = "香り袋供給",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "香り袋を用意し、離島の飾りつけにほのかな香りを添えよう。\n香り袋×10を提出",
+		series_name = "",
+		id = 80001512,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015012
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001513] = {
+		name = "食器の整備",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "食器セットを納品し、離島の飲食に必要な基本物資を整えよう。\n食器×10を提出",
+		series_name = "",
+		id = 80001513,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015013
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001514] = {
+		name = "事務用品",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "インクカートリッジを十分に供給し、離島の記録・製図・事務作業を滞りなく進めよう。\nインクカートリッジ×10を提出",
+		series_name = "",
+		id = 80001514,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015014
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001515] = {
+		name = "時間管理",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "時計を納品し、離島の各所に正確な時刻の目安を届けよう。\n時計×10を提出",
+		series_name = "",
+		id = 80001515,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015015
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001516] = {
+		name = "電力備蓄",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "丈夫で長持ちする蓄電池を供給し、離島の設備を動かすエネルギーを備蓄しよう。\n蓄電池×10を提出",
+		series_name = "",
+		id = 80001516,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015016
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001517] = {
+		name = "初めての接収",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "初めての定期補給を受け取ろう。\n定期補給を1回受け取る",
+		series_name = "",
+		id = 80001517,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015017
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001518] = {
+		name = "安心納品",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "3回の定期補給で倉庫がだんだん豊かに。\n定期補給を5回受け取る",
+		series_name = "",
+		id = 80001518,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015018
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100201,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001519] = {
+		name = "定期補充",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "定期補給の受領はもはや日々の習慣だ。\n定期補給を10回受け取る",
+		series_name = "",
+		id = 80001519,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015019
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100201,
+				2
+			}
+		}
+	}
+	pg.base.island_task[80001520] = {
+		name = "高効率納品",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "補給受領が効率的に、スムーズに！\n定期補給を20回受け取る",
+		series_name = "",
+		id = 80001520,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015020
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100101,
+				5
+			}
+		}
+	}
+	pg.base.island_task[80001521] = {
+		name = "在庫は余裕",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "備蓄が豊かで余裕ができている。\n定期補給を30回受け取る",
+		series_name = "",
+		id = 80001521,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015021
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100102,
+				2
+			}
+		}
+	}
+	pg.base.island_task[80001522] = {
+		name = "備蓄は永久的",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "絶えない物資補給が離島の重要な物資リソースとなる。\n定期補給を45回受け取る",
+		series_name = "",
+		id = 80001522,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015022
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100102,
+				3
+			}
+		}
+	}
+	pg.base.island_task[80001523] = {
+		name = "発展の礎",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "日々の積み重ねが離島開発の基盤になっている。\n定期補給を60回受け取る",
+		series_name = "",
+		id = 80001523,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015023
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100103,
+				5
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001524] = {
+		name = "初めての依頼",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "離島依頼を初歩的に理解した。\n離島依頼を10回完了する",
+		series_name = "",
+		id = 80001524,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015024
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001525] = {
+		name = "安心依頼",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "安定して依頼をこなし続けている。\n離島依頼を30回完了する",
+		series_name = "",
+		id = 80001525,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015025
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100201,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001526] = {
+		name = "堅実なサポート",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "離島開発にとって不可欠な戦力になっている。\n離島依頼を50回完了する",
+		series_name = "",
+		id = 80001526,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015026
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100201,
+				2
+			}
+		}
+	}
+	pg.base.island_task[80001527] = {
+		name = "依頼のプロ",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "仲間たちのニーズを把握し、正確に応えている。\n離島依頼を100回完了する",
+		series_name = "",
+		id = 80001527,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015027
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100101,
+				5
+			}
+		}
+	}
+	pg.base.island_task[80001528] = {
+		name = "発展の柱",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "継続的な支援が開発の原動力に。\n離島依頼を150回完了する",
+		series_name = "",
+		id = 80001528,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015028
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100102,
+				5
+			}
+		}
+	}
+	pg.base.island_task[80001529] = {
+		name = "発展の中心",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "皆にとって一番大事で、一番信頼できる存在に。\n離島依頼を200回完了する",
+		series_name = "",
+		id = 80001529,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015029
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100103,
+				5
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001530] = {
+		name = "繁栄の礎",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "開発の責任を支え、繁栄の未来を築く。\n離島依頼を300回完了する",
+		series_name = "",
+		id = 80001530,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015030
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100103,
+				5
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
 	pg.base.island_task[20001001] = {
 		name = "森の中の声",
 		trigger_tips = 1,
@@ -18425,6 +21242,8 @@ end)()
 		},
 		reward_show = {}
 	}
+end)()
+;(function()
 	pg.base.island_task[20005004] = {
 		name = "もう一つの怪しい音",
 		trigger_tips = 0,
@@ -20398,8 +23217,6 @@ end)()
 		},
 		reward_show = {}
 	}
-end)()
-;(function()
 	pg.base.island_task[20012004] = {
 		name = "果樹だって肥料がほしい",
 		trigger_tips = 0,
@@ -21176,7 +23993,7 @@ end)()
 		map_complete_tips = 0,
 		rec_perform = "ISLANDSIDE01601",
 		task_desc = "離島開発の時間だ！ピアリは資源の計画をしているらしいから、会いに行こう",
-		series_name = "シーズン",
+		series_name = "離島シーズン",
 		id = 20015001,
 		unlock_condition = {
 			{
@@ -21221,7 +24038,7 @@ end)()
 		map_complete_tips = 1002,
 		rec_perform = "",
 		task_desc = "努力する季節だ！早くみんなと離島開発を進めよう！",
-		series_name = "シーズン",
+		series_name = "離島シーズン",
 		id = 20015002,
 		unlock_condition = {
 			{
@@ -22539,6 +25356,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.island_task[30502011] = {
 		name = "出前サービス",
 		trigger_tips = 0,
@@ -25073,8 +27892,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.island_task[90002005] = {
 		name = "仲間とインタラクトする",
 		trigger_tips = 0,
