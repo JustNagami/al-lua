@@ -90,6 +90,9 @@ pg.island_unit_character.all = {
 	2021200,
 	2021201,
 	2021202,
+	2060200,
+	2060201,
+	2060202,
 	2060300,
 	2060301,
 	2060302,
@@ -109,6 +112,9 @@ pg.island_unit_character.all = {
 	3040700,
 	3040701,
 	3040702,
+	3050500,
+	3050501,
+	3050502,
 	3070700,
 	3120100,
 	3120101,
@@ -120,6 +126,9 @@ pg.island_unit_character.all = {
 	4990200,
 	4990201,
 	4990202,
+	4990500,
+	4990501,
+	4990502,
 	4990600,
 	4990601,
 	4990602,
@@ -137,8 +146,14 @@ pg.island_unit_character.all = {
 	5060100,
 	5060101,
 	5060102,
+	5060200,
+	5060201,
+	5060202,
 	6080200,
 	7010400,
+	7011100,
+	7011101,
+	7011102,
 	9010700,
 	9010701,
 	9010702,
@@ -1658,6 +1673,57 @@ pg.base.island_unit_character = {}
 		CollisionParam = "",
 		personality = 2
 	}
+	pg.base.island_unit_character[2060200] = {
+		describe_illustrated_guid = "\"Allow Argus, the embodiment of the Royal Navy's glory, to guide you–\" ...Ahh, m-maybe that's a bit of an exaggeration... I-in any case, I'm looking forward to working with you, Commander!",
+		english_name = "HMS Argus",
+		name = "Argus",
+		IslandShipIcon = "baiyanjuren",
+		group = 20602,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/20602/20602_00/prefab/pre_char_20602_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 2060200,
+		rendering = "2060200",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[2060201] = {
+		describe_illustrated_guid = "",
+		english_name = "HMS Argus",
+		name = "Argus",
+		IslandShipIcon = "baiyanjuren",
+		group = 20602,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/20602/20602_01/prefab/pre_char_20602_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 2060201,
+		rendering = "2060201",
+		personal_ani = "personal_20602_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[2060202] = {
+		describe_illustrated_guid = "",
+		english_name = "HMS Argus",
+		name = "Argus",
+		IslandShipIcon = "baiyanjuren",
+		group = 20602,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/20602/20602_02/prefab/pre_char_20602_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 2060202,
+		rendering = "2060202",
+		personal_ani = "personal_20602_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
 	pg.base.island_unit_character[2060300] = {
 		describe_illustrated_guid = "B-Big Brother, I-I'm really happy to be able to help out like this! I'll keep w-working hard, because... I-I love you the most!",
 		english_name = "HMS Unicorn",
@@ -1845,6 +1911,8 @@ pg.base.island_unit_character = {}
 		CollisionParam = "",
 		personality = 1
 	}
+end)()
+;(function()
 	pg.base.island_unit_character[3031101] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Takao",
@@ -1896,8 +1964,6 @@ pg.base.island_unit_character = {}
 		CollisionParam = "",
 		personality = 1
 	}
-end)()
-;(function()
 	pg.base.island_unit_character[3031201] = {
 		describe_illustrated_guid = "",
 		english_name = "IJN Atago",
@@ -1979,6 +2045,57 @@ end)()
 		id = 3040702,
 		rendering = "3040700",
 		personal_ani = "personal_30407_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[3050500] = {
+		describe_illustrated_guid = "So this is your island, yes? I shall have to make sure to protect everyone's smiles. I-if you don't mind, you could also show me around...",
+		english_name = "IJN Nagato",
+		name = "{namecode:74}",
+		IslandShipIcon = "changmen",
+		group = 30505,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/30505/30505_00/prefab/pre_char_30505_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 3050500,
+		rendering = "3050500",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[3050501] = {
+		describe_illustrated_guid = "",
+		english_name = "IJN Nagato",
+		name = "{namecode:74}",
+		IslandShipIcon = "changmen",
+		group = 30505,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/30505/30505_01/prefab/pre_char_30505_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 3050501,
+		rendering = "3050501",
+		personal_ani = "personal_30505_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 2
+	}
+	pg.base.island_unit_character[3050502] = {
+		describe_illustrated_guid = "",
+		english_name = "IJN Nagato",
+		name = "{namecode:74}",
+		IslandShipIcon = "changmen",
+		group = 30505,
+		animator = "island/animator/ani_role_all_01_02",
+		model = "island/character/30505/30505_02/prefab/pre_char_30505_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 3050502,
+		rendering = "3050502",
+		personal_ani = "personal_30505_1",
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
@@ -2166,6 +2283,57 @@ end)()
 		id = 4990202,
 		rendering = "4990202",
 		personal_ani = "personal_49902_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[4990500] = {
+		describe_illustrated_guid = "Heheh~ This island is quite interesting, even more so than I expected. Now then, how will you entertain this abyssal deity you've invited?",
+		english_name = "KMS Ägir",
+		name = "{namecode:480}",
+		IslandShipIcon = "aijier",
+		group = 49905,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/49905/49905_00/prefab/pre_char_49905_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 4990500,
+		rendering = "4990500",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[4990501] = {
+		describe_illustrated_guid = "",
+		english_name = "KMS Ägir",
+		name = "{namecode:480}",
+		IslandShipIcon = "aijier",
+		group = 49905,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/49905/49905_01/prefab/pre_char_49905_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 4990501,
+		rendering = "4990501",
+		personal_ani = "personal_49905_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[4990502] = {
+		describe_illustrated_guid = "",
+		english_name = "KMS Ägir",
+		name = "{namecode:480}",
+		IslandShipIcon = "aijier",
+		group = 49905,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/49905/49905_02/prefab/pre_char_49905_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 4990502,
+		rendering = "4990502",
+		personal_ani = "personal_49905_1",
 		shipId = 0,
 		CollisionParam = "",
 		personality = 1
@@ -2459,6 +2627,57 @@ end)()
 		CollisionParam = "",
 		personality = 2
 	}
+	pg.base.island_unit_character[5060200] = {
+		describe_illustrated_guid = "Commander, since we've come to such a fun place, we can't just sit around working all day, right? Heheh~ bring me along and let's go do lots of interesting things~♪",
+		english_name = "Hwah Jah",
+		name = "Hwah Jah",
+		IslandShipIcon = "huajia",
+		group = 50602,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/50602/50602_00/prefab/pre_char_50602_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 5060200,
+		rendering = "5060200",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[5060201] = {
+		describe_illustrated_guid = "",
+		english_name = "Hwah Jah",
+		name = "Hwah Jah",
+		IslandShipIcon = "huajia",
+		group = 50602,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/50602/50602_01/prefab/pre_char_50602_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 5060201,
+		rendering = "5060201",
+		personal_ani = "personal_50602_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[5060202] = {
+		describe_illustrated_guid = "",
+		english_name = "Hwah Jah",
+		name = "Hwah Jah",
+		IslandShipIcon = "huajia",
+		group = 50602,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/50602/50602_02/prefab/pre_char_50602_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 5060202,
+		rendering = "5060202",
+		personal_ani = "personal_50602_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
 	pg.base.island_unit_character[6080200] = {
 		describe_illustrated_guid = "Commander, this place is chock-full of inspiration and my brain's already firing on all cylinders! If there's anything you need doing, I'm your girl!",
 		english_name = "RN Leonardo da Vinci",
@@ -2492,6 +2711,57 @@ end)()
 		shipId = 0,
 		CollisionParam = "",
 		personality = 2
+	}
+	pg.base.island_unit_character[7011100] = {
+		describe_illustrated_guid = "Comrade Commander! There are lots of cute things on this island waiting for us to discover, right? Let's go look for them together! I'm always ready!",
+		english_name = "SN Ognevoy",
+		name = "Ognevoy",
+		IslandShipIcon = "huoli",
+		group = 70111,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/70111/70111_00/prefab/pre_char_70111_00",
+		is_active = 0,
+		navAgentParam = "",
+		id = 7011100,
+		rendering = "7011100",
+		personal_ani = "",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[7011101] = {
+		describe_illustrated_guid = "",
+		english_name = "SN Ognevoy",
+		name = "Ognevoy",
+		IslandShipIcon = "huoli",
+		group = 70111,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/70111/70111_01/prefab/pre_char_70111_01",
+		is_active = 0,
+		navAgentParam = "",
+		id = 7011101,
+		rendering = "7011101",
+		personal_ani = "personal_70111_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
+	}
+	pg.base.island_unit_character[7011102] = {
+		describe_illustrated_guid = "",
+		english_name = "SN Ognevoy",
+		name = "Ognevoy",
+		IslandShipIcon = "huoli",
+		group = 70111,
+		animator = "island/animator/ani_role_all_01_01",
+		model = "island/character/70111/70111_02/prefab/pre_char_70111_02",
+		is_active = 0,
+		navAgentParam = "",
+		id = 7011102,
+		rendering = "7011102",
+		personal_ani = "personal_70111_1",
+		shipId = 0,
+		CollisionParam = "",
+		personality = 1
 	}
 	pg.base.island_unit_character[9010700] = {
 		describe_illustrated_guid = "Commandeeer... The breeze feels nice, but it's a little too gentle to satisfy me~ So come on... Let's find a place where things are a little more \"stimulating\"♥",

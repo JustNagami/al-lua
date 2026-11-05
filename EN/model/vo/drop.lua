@@ -1861,7 +1861,11 @@ function var_0_0.InitSwitch()
 			setText(arg_275_2, var_275_0 .. "\n\n" .. i18n("word_fit") .. ": " .. table.concat(var_275_1, ","))
 		end,
 		[DROP_TYPE_VITEM] = function(arg_277_0, arg_277_1, arg_277_2)
-			setText(arg_277_2, arg_277_0:getConfig("display"))
+			if arg_277_0:getConfig("virtual_type") == VIRTUAL_DROP_TYPE_SKIN_COUPON then
+				setText(arg_277_2, arg_277_0:GetSkinCouponDesc(arg_277_0))
+			else
+				setText(arg_277_2, arg_277_0:getConfig("display"))
+			end
 		end,
 		[DROP_TYPE_WORLD_ITEM] = function(arg_278_0, arg_278_1, arg_278_2)
 			setText(arg_278_2, arg_278_0:getConfig("display"))
@@ -2114,6 +2118,33 @@ function var_0_0.InitSwitch()
 			warning(string.format("without dropType %d in updateCustomDrop", arg_338_0.type))
 		end
 	end
+end
+
+function var_0_0.GetSkinCouponDesc(arg_339_0, arg_339_1)
+	local var_339_0 = arg_339_1:getConfig("display") .. i18n("shop_new_coupon_tip1")
+	local var_339_1 = arg_339_1.id
+	local var_339_2 = arg_339_1:getConfig("link_id")
+	local var_339_3 = pg.activity_event_shop_discount[var_339_2]
+
+	for iter_339_0, iter_339_1 in ipairs(var_339_3.shop_list) do
+		local var_339_4 = pg.shop_template[iter_339_1].effect_args[1]
+		local var_339_5 = pg.ship_skin_template[var_339_4]
+		local var_339_6
+
+		if var_339_5.skin_type == ShipSkin.SKIN_TYPE_TB then
+			var_339_6 = NewEducateHelper.GetShipNameBySecId(NewEducateHelper.GetSecIdBySkinId(var_339_4))
+		else
+			var_339_6 = ShipGroup.getDefaultShipConfig(var_339_5.ship_group).name
+		end
+
+		var_339_0 = var_339_0 .. i18n("shop_new_coupon_tip2", var_339_6, var_339_5.name)
+	end
+
+	return var_339_0
+end
+
+function var_0_0.IsSkinCoupon(arg_340_0, arg_340_1)
+	return arg_340_1.type == DROP_TYPE_VITEM and arg_340_1:getConfig("virtual_type") == VIRTUAL_DROP_TYPE_SKIN_COUPON
 end
 
 return var_0_0

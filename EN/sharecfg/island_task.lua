@@ -95,6 +95,7 @@ pg.island_task.all = {
 	50000002,
 	50000003,
 	50000004,
+	50000005,
 	51001000,
 	51001001,
 	51001002,
@@ -135,6 +136,13 @@ pg.island_task.all = {
 	50001026,
 	50001027,
 	50001028,
+	50001029,
+	50001030,
+	50001031,
+	50001032,
+	50001033,
+	50001034,
+	50001035,
 	50002001,
 	50002002,
 	50002003,
@@ -163,6 +171,13 @@ pg.island_task.all = {
 	50002026,
 	50002027,
 	50002028,
+	50002029,
+	50002030,
+	50002031,
+	50002032,
+	50002033,
+	50002034,
+	50002035,
 	50003001,
 	50003002,
 	50003003,
@@ -179,6 +194,10 @@ pg.island_task.all = {
 	50003014,
 	50003015,
 	50003016,
+	50003017,
+	50003018,
+	50003019,
+	50003020,
 	80001001,
 	80001002,
 	80001003,
@@ -329,6 +348,36 @@ pg.island_task.all = {
 	80001428,
 	80001429,
 	80001430,
+	80001501,
+	80001502,
+	80001503,
+	80001504,
+	80001505,
+	80001506,
+	80001507,
+	80001508,
+	80001509,
+	80001510,
+	80001511,
+	80001512,
+	80001513,
+	80001514,
+	80001515,
+	80001516,
+	80001517,
+	80001518,
+	80001519,
+	80001520,
+	80001521,
+	80001522,
+	80001523,
+	80001524,
+	80001525,
+	80001526,
+	80001527,
+	80001528,
+	80001529,
+	80001530,
 	20001001,
 	20001002,
 	20001003,
@@ -766,6 +815,7 @@ pg.island_task.get_id_list_by_type = {
 		50000002,
 		50000003,
 		50000004,
+		50000005,
 		51001001,
 		51001002,
 		51001003,
@@ -803,6 +853,13 @@ pg.island_task.get_id_list_by_type = {
 		50001026,
 		50001027,
 		50001028,
+		50001029,
+		50001030,
+		50001031,
+		50001032,
+		50001033,
+		50001034,
+		50001035,
 		50002001,
 		50002002,
 		50002003,
@@ -831,6 +888,13 @@ pg.island_task.get_id_list_by_type = {
 		50002026,
 		50002027,
 		50002028,
+		50002029,
+		50002030,
+		50002031,
+		50002032,
+		50002033,
+		50002034,
+		50002035,
 		50003001,
 		50003002,
 		50003003,
@@ -846,7 +910,11 @@ pg.island_task.get_id_list_by_type = {
 		50003013,
 		50003014,
 		50003015,
-		50003016
+		50003016,
+		50003017,
+		50003018,
+		50003019,
+		50003020
 	},
 	[8] = {
 		80001001,
@@ -998,7 +1066,37 @@ pg.island_task.get_id_list_by_type = {
 		80001427,
 		80001428,
 		80001429,
-		80001430
+		80001430,
+		80001501,
+		80001502,
+		80001503,
+		80001504,
+		80001505,
+		80001506,
+		80001507,
+		80001508,
+		80001509,
+		80001510,
+		80001511,
+		80001512,
+		80001513,
+		80001514,
+		80001515,
+		80001516,
+		80001517,
+		80001518,
+		80001519,
+		80001520,
+		80001521,
+		80001522,
+		80001523,
+		80001524,
+		80001525,
+		80001526,
+		80001527,
+		80001528,
+		80001529,
+		80001530
 	},
 	[9] = {
 		51001000,
@@ -4949,6 +5047,72 @@ pg.base.island_task = {}
 			}
 		}
 	}
+	pg.base.island_task[50000005] = {
+		name = "Mandarin Tornado",
+		trigger_tips = 1,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 2,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Peary has taken an interesting photo. Ask her for more information.",
+		series_name = "Island Season",
+		id = 50000005,
+		unlock_condition = {
+			{
+				2,
+				20015002
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			500000051
+		},
+		reward_show = {
+			{
+				41,
+				1,
+				2000
+			}
+		}
+	}
 	pg.base.island_task[51001000] = {
 		name = "Invite Project Identity Characters",
 		trigger_tips = 0,
@@ -5265,6 +5429,8 @@ pg.base.island_task = {}
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.island_task[51003000] = {
 		name = "The Quiet Visitor",
 		trigger_tips = 0,
@@ -5295,8 +5461,6 @@ pg.base.island_task = {}
 		},
 		reward_show = {}
 	}
-end)()
-;(function()
 	pg.base.island_task[51003001] = {
 		name = "The Quiet Visitor - I",
 		trigger_tips = 1,
@@ -7521,6 +7685,530 @@ end)()
 			}
 		}
 	}
+	pg.base.island_task[50001029] = {
+		name = "Gather Winter Specialties (1/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "It seems there are loads of winter gatherables around the island. Commander, could you help me get some?\n<Gatherable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>Plum Blossoms</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>Daffodils</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>Winter Shiitake</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>Water Chestnut</material></color>",
+		series_name = "Event Gatherable",
+		id = 50001029,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			50001029
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				5
+			},
+			{
+				41,
+				100101,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50001030] = {
+		name = "Gather Winter Specialties (2/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "It seems there are loads of winter gatherables around the island. Commander, could you help me get some?\n<Gatherable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>Plum Blossoms</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>Daffodils</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>Winter Shiitake</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>Water Chestnut</material></color>",
+		series_name = "Event Gatherable",
+		id = 50001030,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50001029
+		},
+		target_id = {
+			50001030
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100101,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50001031] = {
+		name = "Gather Winter Specialties (3/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "It seems there are loads of winter gatherables around the island. Commander, could you help me get some?\n<Gatherable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>Plum Blossoms</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>Daffodils</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>Winter Shiitake</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>Water Chestnut</material></color>",
+		series_name = "Event Gatherable",
+		id = 50001031,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50001030
+		},
+		target_id = {
+			50001031
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100102,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50001032] = {
+		name = "Gather Winter Specialties (4/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "It seems there are loads of winter gatherables around the island. Commander, could you help me get some?\n<Gatherable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>Plum Blossoms</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>Daffodils</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>Winter Shiitake</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>Water Chestnut</material></color>",
+		series_name = "Event Gatherable",
+		id = 50001032,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50001031
+		},
+		target_id = {
+			50001032
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100102,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50001033] = {
+		name = "Gather Winter Specialties (5/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "It seems there are loads of winter gatherables around the island. Commander, could you help me get some?\n<Gatherable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>Plum Blossoms</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>Daffodils</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>Winter Shiitake</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>Water Chestnut</material></color>",
+		series_name = "Event Gatherable",
+		id = 50001033,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50001032
+		},
+		target_id = {
+			50001033
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100103,
+				1
+			},
+			{
+				41,
+				100011,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50001034] = {
+		name = "Gather Winter Specialties (6/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "It seems there are loads of winter gatherables around the island. Commander, could you help me get some?\n<Gatherable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>Plum Blossoms</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>Daffodils</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>Winter Shiitake</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>Water Chestnut</material></color>",
+		series_name = "Event Gatherable",
+		id = 50001034,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50001033
+		},
+		target_id = {
+			50001034
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				41,
+				100103,
+				1
+			},
+			{
+				41,
+				100021,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50001035] = {
+		name = "Gather Winter Specialties (7/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "It seems there are loads of winter gatherables around the island. Commander, could you help me get some?\n<Gatherable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4043}>Plum Blossoms</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4044}>Daffodils</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4045}>Winter Shiitake</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4046}>Water Chestnut</material></color>",
+		series_name = "Event Gatherable",
+		id = 50001035,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50001034
+		},
+		target_id = {
+			50001035
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				41,
+				100103,
+				3
+			},
+			{
+				41,
+				100031,
+				2
+			}
+		}
+	}
 	pg.base.island_task[50002001] = {
 		name = "Make Autumn Specialties (1/7)",
 		trigger_tips = 0,
@@ -9617,6 +10305,530 @@ end)()
 			}
 		}
 	}
+	pg.base.island_task[50002029] = {
+		name = "Make Winter Specialties (1/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "These winter specialties seem like they'd generate good economic value. Commander, for the sake of the island's development, please procure some!\n<Producible/Harvestable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>Satsuma Mandarin</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>Green Jujube</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>Shiitake Mushroom Chicken Stew</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>Green Jujube Porridge</material></color>, \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>Water Chestnut Cakes</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>Satsuma Mandarin Daifuku</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>Plum-Scented Sachet</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>Brumal Bouquet</material></color>",
+		series_name = "Event Recipe",
+		id = 50002029,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			50002029
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				5
+			},
+			{
+				41,
+				100101,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50002030] = {
+		name = "Make Winter Specialties (2/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "These winter specialties seem like they'd generate good economic value. Commander, for the sake of the island's development, please procure some!\n<Producible/Harvestable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>Satsuma Mandarin</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>Green Jujube</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>Shiitake Mushroom Chicken Stew</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>Green Jujube Porridge</material></color>, \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>Water Chestnut Cakes</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>Satsuma Mandarin Daifuku</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>Plum-Scented Sachet</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>Brumal Bouquet</material></color>",
+		series_name = "Event Recipe",
+		id = 50002030,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50002029
+		},
+		target_id = {
+			50002030
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100101,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50002031] = {
+		name = "Make Winter Specialties (3/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "These winter specialties seem like they'd generate good economic value. Commander, for the sake of the island's development, please procure some!\n<Producible/Harvestable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>Satsuma Mandarin</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>Green Jujube</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>Shiitake Mushroom Chicken Stew</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>Green Jujube Porridge</material></color>, \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>Water Chestnut Cakes</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>Satsuma Mandarin Daifuku</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>Plum-Scented Sachet</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>Brumal Bouquet</material></color>",
+		series_name = "Event Recipe",
+		id = 50002031,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50002030
+		},
+		target_id = {
+			50002031
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100102,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50002032] = {
+		name = "Make Winter Specialties (4/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "These winter specialties seem like they'd generate good economic value. Commander, for the sake of the island's development, please procure some!\n<Producible/Harvestable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>Satsuma Mandarin</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>Green Jujube</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>Shiitake Mushroom Chicken Stew</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>Green Jujube Porridge</material></color>, \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>Water Chestnut Cakes</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>Satsuma Mandarin Daifuku</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>Plum-Scented Sachet</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>Brumal Bouquet</material></color>",
+		series_name = "Event Recipe",
+		id = 50002032,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50002031
+		},
+		target_id = {
+			50002032
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100102,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50002033] = {
+		name = "Make Winter Specialties (5/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "These winter specialties seem like they'd generate good economic value. Commander, for the sake of the island's development, please procure some!\n<Producible/Harvestable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>Satsuma Mandarin</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>Green Jujube</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>Shiitake Mushroom Chicken Stew</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>Green Jujube Porridge</material></color>, \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>Water Chestnut Cakes</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>Satsuma Mandarin Daifuku</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>Plum-Scented Sachet</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>Brumal Bouquet</material></color>",
+		series_name = "Event Recipe",
+		id = 50002033,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50002032
+		},
+		target_id = {
+			50002033
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100103,
+				1
+			},
+			{
+				41,
+				100041,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50002034] = {
+		name = "Make Winter Specialties (6/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "These winter specialties seem like they'd generate good economic value. Commander, for the sake of the island's development, please procure some!\n<Producible/Harvestable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>Satsuma Mandarin</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>Green Jujube</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>Shiitake Mushroom Chicken Stew</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>Green Jujube Porridge</material></color>, \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>Water Chestnut Cakes</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>Satsuma Mandarin Daifuku</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>Plum-Scented Sachet</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>Brumal Bouquet</material></color>",
+		series_name = "Event Recipe",
+		id = 50002034,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50002033
+		},
+		target_id = {
+			50002034
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				41,
+				100103,
+				1
+			},
+			{
+				41,
+				100051,
+				2
+			}
+		}
+	}
+	pg.base.island_task[50002035] = {
+		name = "Make Winter Specialties (7/7)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "These winter specialties seem like they'd generate good economic value. Commander, for the sake of the island's development, please procure some!\n<Producible/Harvestable Specialties>\n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4047}>Satsuma Mandarin</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4049}>Green Jujube</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4051}>Shiitake Mushroom Chicken Stew</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4052}>Green Jujube Porridge</material></color>, \n<color=#3E7EFF><material=underline event=dropDesHandle args={41,4053}>Water Chestnut Cakes</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4054}>Satsuma Mandarin Daifuku</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4055}>Plum-Scented Sachet</material></color>, <color=#3E7EFF><material=underline event=dropDesHandle args={41,4056}>Brumal Bouquet</material></color>",
+		series_name = "Event Recipe",
+		id = 50002035,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50002034
+		},
+		target_id = {
+			50002035
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				41,
+				100103,
+				3
+			},
+			{
+				41,
+				100061,
+				2
+			}
+		}
+	}
 	pg.base.island_task[50003001] = {
 		name = "Autumn Specialty Order (1/4)",
 		trigger_tips = 0,
@@ -10777,6 +11989,296 @@ end)()
 			}
 		}
 	}
+	pg.base.island_task[50003017] = {
+		name = "Winter Specialty Order (1/4)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "The winter specialties you bring us will all go toward the development. Keep on developing this island!",
+		series_name = "Event Request",
+		id = 50003017,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {},
+		target_id = {
+			50003017
+		},
+		reward_show = {
+			{
+				41,
+				100001,
+				6
+			},
+			{
+				41,
+				100201,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50003018] = {
+		name = "Winter Specialty Order (2/4)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "The winter specialties you bring us will all go toward the development. Keep on developing this island!",
+		series_name = "Event Request",
+		id = 50003018,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50003017
+		},
+		target_id = {
+			50003018
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100201,
+				1
+			}
+		}
+	}
+	pg.base.island_task[50003019] = {
+		name = "Winter Specialty Order (3/4)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "The winter specialties you bring us will all go toward the development. Keep on developing this island!",
+		series_name = "Event Request",
+		id = 50003019,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50003018
+		},
+		target_id = {
+			50003019
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				3
+			},
+			{
+				41,
+				100201,
+				3
+			}
+		}
+	}
+	pg.base.island_task[50003020] = {
+		name = "Winter Specialty Order (4/4)",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 5,
+		complete_tips = "Go see Peary. (0/1)",
+		map_trigger_tips = 0,
+		complete_type = 1,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "[Winter Specialties]",
+		navigation = 0,
+		com_perform = "",
+		trigger_data = 0,
+		complete_data = 10020025,
+		map_complete_tips = 1002,
+		rec_perform = "",
+		task_desc = "The winter specialties you bring us will all go toward the development. Keep on developing this island!",
+		series_name = "Event Request",
+		id = 50003020,
+		unlock_condition = {
+			{
+				2,
+				10002050
+			}
+		},
+		unlock_time = {
+			{
+				{
+					2026,
+					11,
+					5
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					2,
+					1
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		link_task = {
+			50003019
+		},
+		target_id = {
+			50003020
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				2
+			},
+			{
+				45,
+				104,
+				1
+			}
+		}
+	}
 	pg.base.island_task[80001001] = {
 		name = "Watching the Fields",
 		trigger_tips = 0,
@@ -11053,6 +12555,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.island_task[80001007] = {
 		name = "Donations of Dairy",
 		trigger_tips = 0,
@@ -11877,8 +13381,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.island_task[80001026] = {
 		name = "Firm Support",
 		trigger_tips = 0,
@@ -15460,6 +16962,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.island_task[80001317] = {
 		name = "Your First Receipt",
 		trigger_tips = 0,
@@ -16269,8 +17773,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.island_task[80001406] = {
 		name = "The Juiciest of Oranges",
 		trigger_tips = 0,
@@ -17356,6 +18858,1321 @@ end)()
 			}
 		}
 	}
+	pg.base.island_task[80001501] = {
+		name = "Stocking Up on Tea",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Supply a batch of fragrant tea leaves to add leisure to everyday island life.\nDeliver 500 Tea Leaves.",
+		series_name = "",
+		id = 80001501,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015001
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001502] = {
+		name = "Citrus Resupply",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Gather fresh citrus fruits to prevent scurvy on the island.\nDeliver 500 Citrus Fruits.",
+		series_name = "",
+		id = 80001502,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015002
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001503] = {
+		name = "A Mango Windfall",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Sweet, plump mangos will enrich the island's supply of tropical fruits.\nDeliver 250 Mangos.",
+		series_name = "",
+		id = 80001503,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015003
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001504] = {
+		name = "Fragrant Avocado",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Supply nutritious avocados to expand the array of culinary options available.\nDeliver 100 Avocados.",
+		series_name = "",
+		id = 80001504,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015004
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001505] = {
+		name = "Freshwater Foods",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Bring in freshwater fish to serve as a staple food for the island's hungry denizens.\nDeliver 100 Freshwater Fish Meat.",
+		series_name = "",
+		id = 80001505,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015005
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001506] = {
+		name = "Seafood Stocks",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Procure quality saltwater fish to add a taste of the ocean to our food supply.\nDeliver 100 Saltwater Fish Meat.",
+		series_name = "",
+		id = 80001506,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015006
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001507] = {
+		name = "Platters of Abundance",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Prepare poultry and potato platters to provide hearty meals for our hard workers.\nDeliver 100 Chicken and Potato Hors d'Oeuvres.",
+		series_name = "",
+		id = 80001507,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015007
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001508] = {
+		name = "Sweet Treats",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Combine mangos and rice to add sweetness to everyday island life.\nDeliver 50 Sticky Rice with Mango.",
+		series_name = "",
+		id = 80001508,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015008
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001509] = {
+		name = "Dessert Reserves",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Luxurious strawberry charlottes will serve as a coveted sweet for the development.\nDeliver 25 Strawberry Charlottes.",
+		series_name = "",
+		id = 80001509,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015009
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001510] = {
+		name = "Extracting Silver Ore",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Supply silver ore, an essential raw material for island development.\nDeliver 25 Silver Ore.",
+		series_name = "",
+		id = 80001510,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015010
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001511] = {
+		name = "Checking Timber Stocks",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Supply high-quality timber for various refined construction projects.\nDeliver 25 Elegant Wood.",
+		series_name = "",
+		id = 80001511,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015011
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001512] = {
+		name = "Sachet Supply",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "With a batch of sachets, the island will be filled with a sweet fragrance.\nDeliver 10 Aroma Sachets.",
+		series_name = "",
+		id = 80001512,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015012
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001513] = {
+		name = "Setting the Table",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Procure cutlery sets, an essential supply for island dining.\nDeliver 10 Utensils.",
+		series_name = "",
+		id = 80001513,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015013
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001514] = {
+		name = "Providing for Paperwork",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "With enough ink cartridges, administrative tasks like record-keeping and drafting can proceed smoothly.\nDeliver 10 Ink Cartridges.",
+		series_name = "",
+		id = 80001514,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015014
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001515] = {
+		name = "Time Management",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "A batch of clocks will provide reliable timekeeping across the island.\nDeliver 10 Clocks.",
+		series_name = "",
+		id = 80001515,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015015
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001516] = {
+		name = "Power Reserves",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Supply long-lasting, stable batteries to keep equipment up and running.\nDeliver 10 Batteries.",
+		series_name = "",
+		id = 80001516,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015016
+		},
+		reward_show = {
+			{
+				41,
+				100003,
+				1
+			},
+			{
+				41,
+				100002,
+				2
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001517] = {
+		name = "Your First Receipt",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Accept your first daily supplies.\nAccept 1 Daily Supply.",
+		series_name = "",
+		id = 80001517,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015017
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001518] = {
+		name = "Safely Stored",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Fill up that warehouse with three sets of daily supplies.\nAccept 5 Daily Supplies.",
+		series_name = "",
+		id = 80001518,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015018
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100201,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001519] = {
+		name = "Regular Resupply",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Build a habit of grabbing your daily goodies.\nAccept 10 Daily Supplies.",
+		series_name = "",
+		id = 80001519,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015019
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100201,
+				2
+			}
+		}
+	}
+	pg.base.island_task[80001520] = {
+		name = "Efficient Delivery",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Free stuff, easy and efficient!\nAccept 20 Daily Supplies.",
+		series_name = "",
+		id = 80001520,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015020
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100101,
+				5
+			}
+		}
+	}
+	pg.base.island_task[80001521] = {
+		name = "Space to Spare",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Abundant reserves for a confident settlement!\nAccept 30 Daily Supplies.",
+		series_name = "",
+		id = 80001521,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015021
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100102,
+				2
+			}
+		}
+	}
+	pg.base.island_task[80001522] = {
+		name = "Sustainable Reserves",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Steady supplies, a vital resource for this island.\nAccept 45 Daily Supplies.",
+		series_name = "",
+		id = 80001522,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015022
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100102,
+				3
+			}
+		}
+	}
+	pg.base.island_task[80001523] = {
+		name = "Foundation for Development",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Regular accumulation of goods has become the basis of your development.\nAccept 60 Daily Supplies.",
+		series_name = "",
+		id = 80001523,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015023
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100103,
+				5
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001524] = {
+		name = "Your First Request",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "You have a basic understanding of requests.\nComplete 10 Island Requests.",
+		series_name = "",
+		id = 80001524,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015024
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001525] = {
+		name = "A Reliable Helper",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "You're a consistent fulfiller of requests.\nComplete 30 Island Requests.",
+		series_name = "",
+		id = 80001525,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015025
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100201,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001526] = {
+		name = "Firm Support",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "This development couldn't function without you!\nComplete 50 Island Requests.",
+		series_name = "",
+		id = 80001526,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015026
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100201,
+				2
+			}
+		}
+	}
+	pg.base.island_task[80001527] = {
+		name = "Request Master",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "You understand people's needs and respond efficiently.\nComplete 100 Island Requests.",
+		series_name = "",
+		id = 80001527,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015027
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100101,
+				5
+			}
+		}
+	}
+	pg.base.island_task[80001528] = {
+		name = "Pillar of Development",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Your continuous support is the very engine of development.\nComplete 150 Island Requests.",
+		series_name = "",
+		id = 80001528,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015028
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100102,
+				5
+			}
+		}
+	}
+	pg.base.island_task[80001529] = {
+		name = "Core of Development",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "Nobody is more reliable and beloved than you.\nComplete 200 Island Requests.",
+		series_name = "",
+		id = 80001529,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015029
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100103,
+				5
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
+	pg.base.island_task[80001530] = {
+		name = "Foundation for Prosperity",
+		trigger_tips = 0,
+		reward_exp = 0,
+		type = 8,
+		complete_tips = "",
+		map_trigger_tips = 0,
+		complete_type = 3,
+		trigger_type = 2,
+		com_page = "",
+		is_tech_task = 0,
+		count_offset = 1,
+		series = "",
+		navigation = 0,
+		com_perform = "",
+		unlock_time = "always",
+		trigger_data = 0,
+		complete_data = 0,
+		map_complete_tips = 0,
+		rec_perform = "",
+		task_desc = "You carry the heavy burden of development and build a prosperous future.\nComplete 300 Island Requests.",
+		series_name = "",
+		id = 80001530,
+		unlock_condition = {},
+		link_task = {},
+		target_id = {
+			80015030
+		},
+		reward_show = {
+			{
+				41,
+				100002,
+				1
+			},
+			{
+				41,
+				100103,
+				5
+			},
+			{
+				8,
+				170008,
+				1
+			}
+		}
+	}
 	pg.base.island_task[20001001] = {
 		name = "Sounds in the Woods",
 		trigger_tips = 1,
@@ -18425,6 +21242,8 @@ end)()
 		},
 		reward_show = {}
 	}
+end)()
+;(function()
 	pg.base.island_task[20005004] = {
 		name = "Another Creepy Noise",
 		trigger_tips = 0,
@@ -20398,8 +23217,6 @@ end)()
 		},
 		reward_show = {}
 	}
-end)()
-;(function()
 	pg.base.island_task[20012004] = {
 		name = "Trees Need Fertilizer",
 		trigger_tips = 0,
@@ -22539,6 +25356,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.island_task[30502011] = {
 		name = "Delivery Service",
 		trigger_tips = 0,
@@ -25073,8 +27892,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.island_task[90002005] = {
 		name = "Interact with any character.",
 		trigger_tips = 0,

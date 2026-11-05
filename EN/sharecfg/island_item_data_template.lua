@@ -218,6 +218,20 @@ pg.island_item_data_template.all = {
 	4040,
 	4041,
 	4042,
+	4043,
+	4044,
+	4045,
+	4046,
+	4047,
+	4048,
+	4049,
+	4050,
+	4051,
+	4052,
+	4053,
+	4054,
+	4055,
+	4056,
 	5001,
 	5002,
 	5003,
@@ -300,6 +314,11 @@ pg.island_item_data_template.all = {
 	200032,
 	200033,
 	200034,
+	200035,
+	200036,
+	200037,
+	200038,
+	200039,
 	300001,
 	300002,
 	300003,
@@ -533,6 +552,20 @@ pg.island_item_data_template.get_id_list_by_usage = {
 		4040,
 		4041,
 		4042,
+		4043,
+		4044,
+		4045,
+		4046,
+		4047,
+		4048,
+		4049,
+		4050,
+		4051,
+		4052,
+		4053,
+		4054,
+		4055,
+		4056,
 		5001,
 		5002,
 		5003,
@@ -609,6 +642,11 @@ pg.island_item_data_template.get_id_list_by_usage = {
 		200032,
 		200033,
 		200034,
+		200035,
+		200036,
+		200037,
+		200038,
+		200039,
 		300001,
 		300002,
 		300003,
@@ -817,6 +855,20 @@ pg.island_item_data_template.get_id_list_by_type = {
 		4040,
 		4041,
 		4042,
+		4043,
+		4044,
+		4045,
+		4046,
+		4047,
+		4048,
+		4049,
+		4050,
+		4051,
+		4052,
+		4053,
+		4054,
+		4055,
+		4056,
 		5001,
 		5002,
 		5003,
@@ -900,6 +952,11 @@ pg.island_item_data_template.get_id_list_by_type = {
 		200032,
 		200033,
 		200034,
+		200035,
+		200036,
+		200037,
+		200038,
+		200039,
 		300001,
 		300002,
 		300003,
@@ -7357,7 +7414,8 @@ end)()
 		have_max = 0,
 		filter = {
 			10113,
-			10127
+			10127,
+			20000
 		},
 		sub_attribute = {
 			4,
@@ -7392,7 +7450,8 @@ end)()
 		have_max = 0,
 		filter = {
 			10113,
-			10127
+			10127,
+			20000
 		},
 		sub_attribute = {
 			5,
@@ -7497,7 +7556,8 @@ end)()
 		have_max = 0,
 		filter = {
 			10113,
-			10128
+			10128,
+			20000
 		},
 		sub_attribute = {
 			4,
@@ -7532,7 +7592,8 @@ end)()
 		have_max = 0,
 		filter = {
 			10113,
-			10128
+			10128,
+			20000
 		},
 		sub_attribute = {
 			3,
@@ -7841,7 +7902,8 @@ end)()
 		have_max = 0,
 		filter = {
 			10113,
-			10128
+			10128,
+			20000
 		},
 		sub_attribute = {
 			1,
@@ -7876,7 +7938,8 @@ end)()
 		have_max = 0,
 		filter = {
 			10113,
-			10128
+			10128,
+			20000
 		},
 		sub_attribute = {
 			6,
@@ -7911,7 +7974,8 @@ end)()
 		have_max = 0,
 		filter = {
 			10113,
-			10127
+			10127,
+			20000
 		},
 		sub_attribute = {
 			2,
@@ -7946,7 +8010,8 @@ end)()
 		have_max = 0,
 		filter = {
 			10113,
-			10127
+			10127,
+			20000
 		},
 		sub_attribute = {
 			2,
@@ -8503,6 +8568,488 @@ end)()
 		jump_page = {
 			{
 				"Summer Specialties - Base Factory",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4043] = {
+		pt_num = 72,
+		name = "Plum Blossoms",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "Plum blossoms bloom, undeterred by the snow. Their elegant color and delicate fragrance make them the most beautiful sight of winter.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4043",
+		price = 1,
+		icon_normal = "",
+		rarity = 3,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4043,
+		have_max = 0,
+		filter = {
+			10111
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Map Collection",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4044] = {
+		pt_num = 1,
+		name = "Daffodils",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "Pure-white daffodil flowers. From its slender form wafts the gentle and elegant fragrance of winter.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4044",
+		price = 1,
+		icon_normal = "",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4044,
+		have_max = 0,
+		filter = {
+			10111
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Map Collection",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4045] = {
+		pt_num = 36,
+		name = "Winter Shiitake",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "A thick, flavorful winter shiitake mushroom. Its rich aroma makes it the perfect ingredient for soups and other dishes.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4045",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4045,
+		have_max = 0,
+		filter = {
+			10111
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Map Collection",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4046] = {
+		pt_num = 25,
+		name = "Water Chestnut",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "A juicy, crisp sweet water chestnut. A refreshing bite unique to the winter season.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4046",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4046,
+		have_max = 0,
+		filter = {
+			10111
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Map Collection",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4047] = {
+		pt_num = 8,
+		name = "Satsuma Mandarin",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "A satsuma mandarin that shines with a golden hue. Its flesh bursts with juice, releasing a sweet aroma when peeled.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4047",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4047,
+		have_max = 0,
+		filter = {
+			10111,
+			10125
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Sweetscent Orchard",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4048] = {
+		pt_num = 1,
+		name = "Satsuma Mandarin Seeds",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "Satsuma mandarin seeds. When buried in the soil, a gentle expectation of a sweet harvest is born.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4048",
+		price = 1,
+		icon_normal = "",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4048,
+		have_max = 0,
+		filter = {
+			10114
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Buy in the Shop",
+				{
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
+				}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4049] = {
+		pt_num = 2,
+		name = "Green Jujube",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "A jujube, ripe and vibrant green. Its crisp texture and delicate sweetness make it a delightful winter treat.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4049",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4049,
+		have_max = 0,
+		filter = {
+			10111,
+			10125
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Sweetscent Orchard",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4050] = {
+		pt_num = 1,
+		name = "Green Jujube Seeds",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "Green jujube seeds. Each tiny seed is packed with vitality, ready to grow into a sweet, crisp fruit.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4050",
+		price = 1,
+		icon_normal = "",
+		rarity = 1,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4050,
+		have_max = 0,
+		filter = {
+			10114
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Buy in the Shop",
+				{
+					"IslandShopPage",
+					{
+						1,
+						2,
+						3,
+						4,
+						5
+					},
+					{
+						10025
+					}
+				}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4051] = {
+		pt_num = 80,
+		name = "Shiitake Mushroom Chicken Stew",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 250,
+		desc = "A fragrant dish made by slowly simmering winter shiitake mushrooms with a whole chicken. The steam rising from it warms the heart.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 800,
+		icon = "IslandProps/item_4051",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4051,
+		have_max = 0,
+		filter = {
+			10113,
+			10127,
+			20000
+		},
+		sub_attribute = {
+			3,
+			35
+		},
+		jump_page = {
+			{
+				"Winter Specialties - Golden Koi Restaurant",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4052] = {
+		pt_num = 12,
+		name = "Green Jujube Porridge",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 250,
+		desc = "A sweet and smooth porridge made with green jujubes. The aroma of rice and fruit blend gently, creating a mellow texture.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 120,
+		icon = "IslandProps/item_4052",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4052,
+		have_max = 0,
+		filter = {
+			10113,
+			10127,
+			20000
+		},
+		sub_attribute = {
+			1,
+			35
+		},
+		jump_page = {
+			{
+				"Winter Specialties - Golden Koi Restaurant",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4053] = {
+		pt_num = 60,
+		name = "Water Chestnut Cakes",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 250,
+		desc = "A translucent, wobbly dim sum made from water chestnuts (ma ti gao). A flavor-packed traditional sweet that allows you to enjoy the crisp texture of water chestnuts.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 600,
+		icon = "IslandProps/item_4053",
+		price = 1,
+		icon_normal = "",
+		rarity = 2,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4053,
+		have_max = 0,
+		filter = {
+			10113,
+			10129,
+			20000
+		},
+		sub_attribute = {
+			2,
+			35
+		},
+		jump_page = {
+			{
+				"Winter Specialties, Manjuu Eatery",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4054] = {
+		pt_num = 38,
+		name = "Satsuma Mandarin Daifuku",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 250,
+		desc = "Chewy mochi filled with sweet mandarin oranges. Sweet fruit pulp is wrapped inside, ready to reveal a bomb of juicy flavor with a single bite.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 320,
+		icon = "IslandProps/item_4054",
+		price = 1,
+		icon_normal = "",
+		rarity = 3,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4054,
+		have_max = 0,
+		filter = {
+			10113,
+			10129,
+			20000
+		},
+		sub_attribute = {
+			6,
+			35
+		},
+		jump_page = {
+			{
+				"Winter Specialties, Manjuu Eatery",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4055] = {
+		pt_num = 270,
+		name = "Plum-Scented Sachet",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "A small, fragrant sachet adorned with plum blossoms. Its subtle scent always remains by your side, gracing you with a touch of winter elegance.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4055",
+		price = 1,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4055,
+		have_max = 0,
+		filter = {
+			10113,
+			10131
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Base Factory",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[4056] = {
+		pt_num = 156,
+		name = "Brumal Bouquet",
+		group_max = 0,
+		type = 1,
+		tech_id = 0,
+		convert = 1,
+		manage_influence = 0,
+		desc = "A bouquet of wintry flowers, pure and bright. The combination of plum blossoms and daffodils weaves the gentleness of winter.",
+		usage = "usage_undefined",
+		resource_type = 1,
+		order_price = 1,
+		icon = "IslandProps/item_4056",
+		price = 1,
+		icon_normal = "",
+		rarity = 3,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 4056,
+		have_max = 0,
+		filter = {
+			10113,
+			10131
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Winter Specialties - Base Factory",
 				{}
 			}
 		}
@@ -10884,6 +11431,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.island_item_data_template[200025] = {
 		pt_num = 0,
 		name = "Island Authority Permit: Laffey",
@@ -11194,6 +11743,161 @@ end)()
 			}
 		}
 	}
+	pg.base.island_item_data_template[200035] = {
+		pt_num = 0,
+		name = "Island Authority Permit: Ognevoy",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "An Island Authority Permit for Ognevoy. Use it to give the character the credentials to visit the island freely.",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200035",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200035,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Shop",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200036] = {
+		pt_num = 0,
+		name = "Island Authority Permit: Ägir",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "An Island Authority Permit for Ägir. Use it to give the character the credentials to visit the island freely.",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200036",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200036,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200037] = {
+		pt_num = 0,
+		name = "Island Authority Permit: Argus",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "An Island Authority Permit for Argus. Use it to give the character the credentials to visit the island freely.",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200037",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200037,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200038] = {
+		pt_num = 0,
+		name = "Island Authority Permit: Nagato",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "An Island Authority Permit for Nagato. Use it to give the character the credentials to visit the island freely.",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200038",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200038,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Stellar Prize Draw",
+				{}
+			}
+		}
+	}
+	pg.base.island_item_data_template[200039] = {
+		pt_num = 0,
+		name = "Island Authority Permit: Hwah Jah",
+		group_max = 0,
+		type = 2,
+		tech_id = 0,
+		convert = 0,
+		manage_influence = 0,
+		desc = "An Island Authority Permit for Hwah Jah. Use it to give the character the credentials to visit the island freely.",
+		usage = "usage_undefined",
+		resource_type = 0,
+		order_price = 0,
+		icon = "IslandProps/item_200039",
+		price = 0,
+		icon_normal = "",
+		rarity = 4,
+		drop_after_use = 0,
+		usage_arg = "[]",
+		id = 200039,
+		have_max = 0,
+		filter = {
+			10213
+		},
+		sub_attribute = {},
+		jump_page = {
+			{
+				"Season V - Island Seasonal Shop",
+				{}
+			}
+		}
+	}
 	pg.base.island_item_data_template[300001] = {
 		pt_num = 0,
 		name = "Working Efficiency at Faircrop Fields +4%",
@@ -11310,8 +12014,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.island_item_data_template[300005] = {
 		pt_num = 0,
 		name = "Working Efficiency at Sweetscent Orchard +8%",

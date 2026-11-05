@@ -4687,6 +4687,123 @@ _G.pg.base.bullet_template_2[161275] = {
 		ignoreShield = true,
 	},
 }
+_G.pg.base.bullet_template_2[161276] = {
+	alert_fx = "",
+	ammo_type = 2,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "Clhit",
+	hit_sfx = "battle/hit",
+	id = 161276,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "kuasheAP",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 80,
+	range_offset = 10,
+	type = 1,
+	velocity = 22,
+	damage_type = {
+		1.1,
+		1.1,
+		1.1,
+	},
+	DMG_font = {
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {
+		ignoreB = true,
+		ignoreShield = true,
+	},
+}
+_G.pg.base.bullet_template_2[161277] = {
+	alert_fx = "AlertArea",
+	ammo_type = 2,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellHit",
+	hit_sfx = "battle/hit",
+	id = 161277,
+	miss_fx = "ShellMissBig",
+	miss_sfx = "battle/sink",
+	modle_ID = "kuasheAP",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 110,
+	range_offset = 15,
+	type = 2,
+	velocity = 18,
+	damage_type = {
+		1.1,
+		1.1,
+		1.1,
+	},
+	DMG_font = {
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+		{
+			2,
+			1.2,
+		},
+	},
+	acceleration = {},
+	cld_box = {
+		5,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {
+		range = 16,
+		time = -1,
+	},
+	attach_buff = {},
+	extra_param = {
+		gravity = -0.05,
+		randomOffsetX = 4,
+		randomOffsetZ = 4,
+		diveFilter = {
+			2,
+		},
+	},
+}
 _G.pg.base.bullet_template_2[164099] = {
 	alert_fx = "",
 	ammo_type = 3,
@@ -13178,6 +13295,77 @@ _G.pg.base.bullet_template_2[183954] = {
 			2,
 		},
 	},
+}
+_G.pg.base.bullet_template_2[183955] = {
+	alert_fx = "",
+	ammo_type = 1,
+	antisub_enhancement = 0,
+	effect_type = 1,
+	hit_fx = "ShellMiss",
+	hit_sfx = "battle/hit",
+	id = 183955,
+	miss_fx = "ShellMiss",
+	miss_sfx = "battle/sink",
+	modle_ID = "BulletUSA_big",
+	out_bound = 0,
+	pierce_count = 0,
+	random_damage_rate = 0,
+	range = 100,
+	range_offset = 10,
+	type = 1,
+	velocity = 1.5,
+	damage_type = {
+		1.1,
+		1.1,
+		1.1,
+	},
+	DMG_font = {
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+		{
+			1,
+			1,
+		},
+	},
+	acceleration = {
+		{
+			flip = false,
+			t = 0,
+			u = -0.025,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 0.22,
+			u = 0,
+			v = 0,
+		},
+		{
+			flip = false,
+			t = 1,
+			u = 0.2,
+			v = 0,
+		},
+	},
+	cld_box = {
+		6,
+		2,
+		2,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	hit_type = {},
+	attach_buff = {},
+	extra_param = {},
 }
 _G.pg.base.bullet_template_2[184011] = {
 	alert_fx = "",

@@ -21,11 +21,6 @@ function temp()
 		},
 		风 = {
 			this = true
-		},
-		蛇 = {
-			号 = {
-				this = true
-			}
 		}
 	}
 end
