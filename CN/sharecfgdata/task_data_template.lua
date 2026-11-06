@@ -40914,7 +40914,7 @@ _G.pg.base.task_data_template[7204] = {
 		},
 	},
 	scene = {
-		"LEVEL",
+		"DAILYLEVEL",
 	},
 }
 _G.pg.base.task_data_template[7205] = {
