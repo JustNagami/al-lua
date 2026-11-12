@@ -4364,6 +4364,9 @@ _G.pg.base.gametip.word_shipNation_jinghuanlianmeng = {
 _G.pg.base.gametip.word_shipNation_nierautomata = {
 	tip = "NieR:Automata",
 }
+_G.pg.base.gametip.word_shipNation_ririsa = {
+	tip = "2.5 Dimensional Seduction",
+}
 _G.pg.base.gametip.word_reset = {
 	tip = "Reset",
 }
@@ -31361,7 +31364,7 @@ _G.pg.base.gametip.resource_repair_tips1 = {
 	tip = "Please tap \"Confirm\" to begin repairing assets.*This process may take some time.",
 }
 _G.pg.base.gametip.resource_repair_tips2 = {
-	tip = "<color=#c5cfdf>Please wait while assets are being repaired. You are unable to take any other actions at this time.</color>",
+	tip = "<color=#c5cfdf>Please wait while assets are being repaired.</color>",
 }
 _G.pg.base.gametip.resource_repair_tips3 = {
 	tip = "Please select at least 1 asset category you would like to repair.",
@@ -31373,7 +31376,7 @@ _G.pg.base.gametip.resource_repair_op2 = {
 	tip = "L2D",
 }
 _G.pg.base.gametip.resource_repair_op3 = {
-	tip = "Character Illustrations",
+	tip = "Illustrations",
 }
 _G.pg.base.gametip.resource_repair_op4 = {
 	tip = "Secrets",
@@ -31419,5 +31422,14 @@ _G.pg.base.gametip.world_task_main = {
 }
 _G.pg.base.gametip.world_task_notask = {
 	tip = "You don't have any missions yet, Commander.",
+}
+_G.pg.base.gametip.twopointfive_role_name_1 = {
+	tip = "Miriella Angel Paratroopers/Mikari",
+}
+_G.pg.base.gametip.twopointfive_role_name_2 = {
+	tip = "Liliel Angel Paratroopers/Ririsa",
+}
+_G.pg.base.gametip.combatUI_stick_set = {
+	tip = "Display joystick during Auto Combat",
 }
 

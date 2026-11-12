@@ -29,7 +29,8 @@ pg.item_data_battleui.all = {
 	207,
 	208,
 	209,
-	210
+	210,
+	211
 }
 pg.base = pg.base or {}
 pg.base.item_data_battleui = {}
@@ -451,6 +452,23 @@ pg.base.item_data_battleui = {}
 		unlock = "Buy the Battle UI Pack - Candlelit Ritual",
 		id = 210,
 		icon = "210",
+		scene = {},
+		rare_display = {
+			1,
+			2,
+			3
+		}
+	}
+	pg.base.item_data_battleui[211] = {
+		key = "SkinElite_20261112",
+		name = "Angels' Stage",
+		desc = "Feathers of light drift down from above, and a dazzling halo illuminates the stage. Whether backstage or in front of the crowd, capture every moment of the angels' descent!",
+		display_icon = "ui_211",
+		is_unlock = 1,
+		rare = 4,
+		unlock = "Buy the Battle UI Pack - Angels' Stage",
+		id = 211,
+		icon = "211",
 		scene = {},
 		rare_display = {
 			1,

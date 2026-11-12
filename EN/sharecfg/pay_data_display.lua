@@ -281,6 +281,9 @@ pg.pay_data_display.all = {
 	2093,
 	2094,
 	2095,
+	2096,
+	2097,
+	2098,
 	5011,
 	5012,
 	5013,
@@ -549,6 +552,9 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		2093,
 		2094,
 		2095,
+		2096,
+		2097,
+		2098,
 		5011,
 		5012,
 		5013,
@@ -30767,6 +30773,272 @@ end)()
 			{
 				2,
 				40090,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2096] = {
+		limit_group = 112,
+		name = "Battle UI Pack - Angels' Stage",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		id = 2096,
+		subject = "Battle UI Pack - Angels' Stage",
+		first_text = "",
+		package_sort_id = 0,
+		first_icon = "",
+		money = 1199,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		cash_show = 0,
+		descrip = "Contains a new combat UI theme.",
+		limit_type = 5,
+		name_display = "Battle UI Pack - Angels' Stage",
+		type_order = 4,
+		package_tag = "",
+		picture = "ui12",
+		akashi_pick = 1,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "uigift",
+		limit_arg = 0,
+		package_tag_open = 0,
+		airijp_id = "",
+		extra_service_item = {
+			{
+				31,
+				211,
+				1
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					11,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				211,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	}
+	pg.base.pay_data_display[2097] = {
+		limit_group = 112,
+		name = "Battle UI Pack - Angels' Stage (Basic)",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		id = 2097,
+		subject = "Battle UI Pack - Angels' Stage (Basic)",
+		first_text = "",
+		package_sort_id = 0,
+		first_icon = "",
+		money = 1199,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		cash_show = 0,
+		descrip = "Contains the Battle UI - Angels' Stage theme and 1,000 Coins.",
+		limit_type = 5,
+		name_display = "Battle UI Pack - Angels' Stage (Basic)",
+		type_order = 4,
+		package_tag = "",
+		picture = "ui12",
+		akashi_pick = 1,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.yostaren.azurlane.pack59",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "uigift",
+		limit_arg = 1,
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack59",
+		extra_service_item = {
+			{
+				31,
+				211,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					11,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				211,
+				1
+			},
+			{
+				1,
+				1,
+				1000
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40091,
+				1
+			}
+		}
+	}
+	pg.base.pay_data_display[2098] = {
+		limit_group = 112,
+		name = "Battle UI Pack - Angels' Stage (Premium)",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		id = 2098,
+		subject = "Battle UI Pack - Angels' Stage (Premium)",
+		first_text = "",
+		package_sort_id = 0,
+		first_icon = "",
+		money = 3699,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		cash_show = 0,
+		descrip = "Contains the Battle UI - Angels' Stage theme and 3,060 Coins.",
+		limit_type = 5,
+		name_display = "Battle UI Pack - Angels' Stage (Premium)",
+		type_order = 4,
+		package_tag = "",
+		picture = "ui12",
+		akashi_pick = 1,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.yostaren.azurlane.pack60",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "uigift",
+		limit_arg = 1,
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack60",
+		extra_service_item = {
+			{
+				31,
+				211,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					11,
+					12
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				31,
+				211,
+				1
+			},
+			{
+				1,
+				14,
+				3060
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40092,
 				1
 			}
 		}

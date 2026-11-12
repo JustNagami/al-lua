@@ -2564,6 +2564,13 @@ pg.skill_data_template.all = {
 	117060,
 	117070,
 	117080,
+	118010,
+	118020,
+	118030,
+	118040,
+	118050,
+	118060,
+	118070,
 	180000,
 	190000,
 	190010,
@@ -180013,6 +180020,674 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+	pg.base.skill_data_template[118010] = {
+		desc_get = "",
+		name = "Liliel's Healing",
+		id = 118010,
+		type = 2,
+		max_level = 10,
+		desc = "Every 18s: restores $1 of the whole fleet's HP. During battle, if an allied ship receives a healing effect exceeding her Max HP: that ship receives [Liliel's Blessing] (reduces DMG taken by $2 until the end of battle).\nOnce per battle, when another allied ship falls below 20.0% HP as a result of DMG taken: restores $3 of that ship's Max HP, then grants [Liliel's Blessing] to all ships in the fleet except Liliel Angel Paratroopers/Ririsa; after this effect activates (once per battle), the HP restoration effect of this skill is disabled.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"3.0%"
+			},
+			{
+				"1.0%",
+				"5.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+0.2%"
+				},
+				{
+					"1.2%",
+					"+0.2%"
+				},
+				{
+					"1.4%",
+					"+0.2%"
+				},
+				{
+					"1.6%",
+					"+0.2%"
+				},
+				{
+					"1.8%",
+					"+0.2%"
+				},
+				{
+					"2.0%",
+					"+0.2%"
+				},
+				{
+					"2.2%",
+					"+0.2%"
+				},
+				{
+					"2.4%",
+					"+0.3%"
+				},
+				{
+					"2.7%",
+					"+0.3%"
+				},
+				{
+					"3.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.4%"
+				},
+				{
+					"1.4%",
+					"+0.4%"
+				},
+				{
+					"1.8%",
+					"+0.4%"
+				},
+				{
+					"2.2%",
+					"+0.4%"
+				},
+				{
+					"2.6%",
+					"+0.4%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%",
+					"+1.0%"
+				},
+				{
+					"11.0%",
+					"+1.0%"
+				},
+				{
+					"12.0%",
+					"+1.5%"
+				},
+				{
+					"13.5%",
+					"+1.5%"
+				},
+				{
+					"15.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[118020] = {
+		desc_get = "",
+		name = "Liliel's Explosion",
+		id = 118020,
+		type = 1,
+		max_level = 10,
+		desc = "At the start of battle, increases this ship's AVI by $2. 5s after the start of battle: immediately readies 1 airstrike; whenever this ship launches an airstrike: launches an additional $1 special attack (DMG is based on the skill's level and this ship's AVI stat).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%",
+					"+0.5%"
+				},
+				{
+					"8.5%",
+					"+0.5%"
+				},
+				{
+					"9.0%",
+					"+1%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[118030] = {
+		desc_get = "",
+		name = "Liliel's Explosion+",
+		id = 118030,
+		type = 1,
+		max_level = 10,
+		desc = "At the start of battle, increases this ship's AVI by $2. 5s after the start of battle: immediately readies 1 airstrike; whenever this ship launches an airstrike: launches an additional $1 special attack (DMG is based on the skill's level, this ship's AVI stat, and the number of allied ships that have been granted [Liliel's Blessing] in this battle).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%",
+					"+0.5%"
+				},
+				{
+					"8.5%",
+					"+0.5%"
+				},
+				{
+					"9.0%",
+					"+1%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[118040] = {
+		desc_get = "",
+		name = "Angel Paratroopers",
+		id = 118040,
+		type = 1,
+		max_level = 1,
+		desc = "During battle, increases the efficiency of this ship's first gear slot by 10.0%; if there are any other 2.5 Dimensional Seduction collab ships in the fleet (excluding this ship): further increases efficiency by an additional 5.0%.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[118050] = {
+		desc_get = "",
+		name = "Miriella's Shot",
+		id = 118050,
+		type = 1,
+		max_level = 10,
+		desc = "At the start of battle, increases this ship's ACC and RLD by $1. Every 12 times this ship fires her Main Guns: fires a $2 special barrage (DMG is based on the skill's level).\nEvery 10s: fires a $2 special barrage (DMG is based on the skill's level); enemies hit by this special barrage take 8.0% increased DMG from Miriella Angel Paratroopers/Mikari for 6s.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[118060] = {
+		desc_get = "",
+		name = "Miriella's Resonance",
+		id = 118060,
+		type = 2,
+		max_level = 10,
+		desc = "At the start of battle, increases this ship's EVA by $1. When this ship hits an enemy with her Main Guns: $2 chance to increase this ship's FP by 5.0% until the end of battle (can be stacked up to 3 times). When this ship takes DMG: $2 chance to reduce this ship's DMG taken by $1 for 5s (10s cooldown between activations).",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"15.0%",
+				"30.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[118070] = {
+		desc_get = "",
+		name = "Miriella's Resonance+",
+		id = 118070,
+		type = 2,
+		max_level = 10,
+		desc = "At the start of battle, increases this ship's EVA by $1. When this ship hits an enemy with her Main Guns: $2 chance to increase this ship's FP by 5.0% until the end of battle (can be stacked up to 3 times); when this effect reaches 3 stacks: increases the DMG dealt by this ship and another random allied ship by 5.0% until the end of battle (if the target of this effect is another 2.5 Dimensional Seduction collab ship, this effect is instead increased to 10.0%).\nWhen this ship takes DMG: $2 chance to reduce this ship's DMG taken by $1 for 5s (10s cooldown between activations); when this effect ends: deploys a shield (lasts 5s) that can negate up to 6 enemy shells.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"15.0%",
+				"30.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			}
+		}
+	}
 	pg.base.skill_data_template[180000] = {
 		desc_get = "",
 		name = "Steelsurge Concerto+",
@@ -182931,6 +183606,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[800125] = {
 		desc_get = "",
 		name = "Ashen Might - Helena I ",
@@ -183205,8 +183882,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[800165] = {
 		desc_get = "",
 		name = "Flickering Light - Souryuu I",
@@ -187276,6 +187951,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[800690] = {
 		desc_get = "",
 		name = "Twilight Sheff",
@@ -187703,8 +188380,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[800730] = {
 		desc_get = "",
 		name = "Answerer of Prayers",
@@ -192691,6 +193366,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[801232] = {
 		desc_get = "",
 		name = "Flickering Light - Béarn",
@@ -193019,8 +193696,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[801265] = {
 		desc_get = "",
 		name = "Cinders of Hope - Foch",
@@ -198118,6 +198793,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[801787] = {
 		desc_get = "",
 		name = "Cinders of Hope - Glorious II",
@@ -198500,8 +199177,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[801837] = {
 		desc_get = "",
 		name = "Smoldering Core - Kawakaze II",
@@ -203565,6 +204240,8 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[802332] = {
 		desc_get = "",
 		name = "Ashen Might - Victorious II",
@@ -203938,8 +204615,6 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[802402] = {
 		desc_get = "",
 		name = "Ashen Might - Saratoga II",
@@ -210039,6 +210714,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[1011940] = {
 		desc_get = "",
 		name = "Observer of the Sky and Sea+",
@@ -210819,8 +211496,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[1012950] = {
 		desc_get = "",
 		name = "The Fighting G+",
@@ -224206,6 +224881,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.skill_data_template[1090140] = {
 		desc_get = "",
 		name = "Artillery Cover - Saratoga",
@@ -224941,8 +225618,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.skill_data_template[1090210] = {
 		desc_get = "",
 		name = "Emergency Maneuvers - Fortune",
