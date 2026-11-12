@@ -36,15 +36,17 @@ function var_0_0.IsLoaded(arg_5_0)
 end
 
 function var_0_0.SetOnceLoadedCall(arg_6_0, arg_6_1)
-	arg_6_0.loadedCallback = arg_6_1
+	return
 end
 
-function var_0_0.Load(arg_7_0, arg_7_1)
+function var_0_0.Load(arg_7_0, arg_7_1, arg_7_2)
 	arg_7_0.isPuase = false
 	arg_7_0.isExited = false
 	arg_7_0.state = var_0_2
 	arg_7_0.ship = arg_7_1
 	arg_7_0.paintingName = arg_7_1:getPainting()
+
+	local var_7_0 = arg_7_0.paintingName
 
 	arg_7_0:OnLoad(function()
 		arg_7_0.state = var_0_3
@@ -55,12 +57,22 @@ function var_0_0.Load(arg_7_0, arg_7_1)
 			arg_7_0:TriggerNextEventAuto()
 		end
 
+		if arg_7_2 and var_7_0 == arg_7_0.paintingName then
+			arg_7_2()
+
+			arg_7_2 = nil
+		end
+
 		arg_7_0:InitClickEvent()
 		arg_7_0:emit(NewMainScene.PAINTING_LOAD_COMPLETE)
 	end)
 end
 
 function var_0_0.Unload(arg_9_0)
+	if arg_9_0.state == var_0_4 then
+		return
+	end
+
 	arg_9_0.state = var_0_4
 
 	removeOnButton(arg_9_0.container)

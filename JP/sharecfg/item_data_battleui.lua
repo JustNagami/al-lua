@@ -29,7 +29,8 @@ pg.item_data_battleui.all = {
 	207,
 	208,
 	209,
-	210
+	210,
+	211
 }
 pg.base = pg.base or {}
 pg.base.item_data_battleui = {}
@@ -451,6 +452,23 @@ pg.base.item_data_battleui = {}
 		unlock = "ショップ購入（戦闘UI・ミスティック）",
 		id = 210,
 		icon = "210",
+		scene = {},
+		rare_display = {
+			1,
+			2,
+			3
+		}
+	}
+	pg.base.item_data_battleui[211] = {
+		key = "SkinElite_20261112",
+		name = "天使たちのステージ",
+		desc = "羽根が光とともに舞い落ちる、ヘイローはステージを煌めく照らし出す。舞台裏でもステージの上でも、降臨する天使たちを見逃しなく！",
+		display_icon = "ui_211",
+		is_unlock = 1,
+		rare = 4,
+		unlock = "ショップ購入（戦闘UI・天使たちのステージ）",
+		id = 211,
+		icon = "211",
 		scene = {},
 		rare_display = {
 			1,

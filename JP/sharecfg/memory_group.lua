@@ -287,6 +287,8 @@ pg.memory_group.all = {
 	379,
 	380,
 	381,
+	382,
+	383,
 	501,
 	502,
 	503,
@@ -7742,6 +7744,39 @@ end)()
 			5596
 		}
 	}
+	pg.base.memory_group[382] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 51307,
+		title = "開幕！天使たちのアズールステージ-「ステージ編」",
+		auto_unlock = "",
+		subtype = 2,
+		id = 382,
+		icon = "title_event",
+		memories = {
+			5621,
+			5622,
+			5623,
+			5624,
+			5625
+		}
+	}
+	pg.base.memory_group[383] = {
+		ship_group = 0,
+		group_id = "",
+		type = 2,
+		link_event = 51307,
+		title = "開幕！天使たちのアズールステージ-「日常編」",
+		auto_unlock = "",
+		subtype = 2,
+		id = 383,
+		icon = "title_event",
+		memories = {
+			5631,
+			5632
+		}
+	}
 	pg.base.memory_group[501] = {
 		ship_group = 31201,
 		group_id = "",
@@ -8083,6 +8118,8 @@ end)()
 			10000
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[517] = {
 		ship_group = 80801,
 		subtype = 0,
@@ -8127,8 +8164,6 @@ end)()
 			10000
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[519] = {
 		ship_group = 20604,
 		subtype = 0,
@@ -10285,6 +10320,8 @@ end)()
 			10000
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_group[618] = {
 		ship_group = 60501,
 		subtype = 0,
@@ -10329,8 +10366,6 @@ end)()
 			10000
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_group[620] = {
 		ship_group = 20607,
 		subtype = 0,

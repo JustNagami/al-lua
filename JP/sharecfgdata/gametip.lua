@@ -4335,6 +4335,9 @@ _G.pg.base.gametip.word_shipNation_jinghuanlianmeng = {
 _G.pg.base.gametip.word_shipNation_nierautomata = {
 	tip = "ニーア オートマタ",
 }
+_G.pg.base.gametip.word_shipNation_ririsa = {
+	tip = "2.5次元の誘惑",
+}
 _G.pg.base.gametip.word_reset = {
 	tip = "クリア",
 }
@@ -26922,7 +26925,7 @@ _G.pg.base.gametip.graphi_api_switch_vulkan = {
 	tip = "レンダリング互換性モードはAR機能の利用が制限されます。レンダリング互換性モードの設定を切り替えると、ゲームを再度起動する必要があります。レンダリング互換性モードを切り替えますか？",
 }
 _G.pg.base.gametip.openGLerror_warning = {
-	tip = "ご利用中の端末はVulkanレンダリングを利用できません。「設定」で互換性レンダリングモードをONしてください。\n※レンダリング互換性モードの設定を切り替えると、ゲームを再度起動する必要があります",
+	tip = "ご利用中の端末はOpenGLレンダリングを利用できません。「設定」で互換性レンダリングモードをONしてください。\n※レンダリング互換性モードの設定を切り替えると、ゲームを再度起動する必要があります",
 }
 _G.pg.base.gametip["3ddorm_beach_slide_tip1"] = {
 	tip = "滑り台",
@@ -31080,10 +31083,7 @@ _G.pg.base.gametip.ActivityRemaster_NoticeJump_AlreadySelected = {
 	tip = "開放中の軽量化復刻イベントがあります。ホーム画面のアイコンからご確認ください",
 }
 _G.pg.base.gametip.HurricaneTreasureCoreActivityUI_subtitle_1 = {
-	tip = "テンペスタの宝",
-}
-_G.pg.base.gametip.windfog_skin_stroy_finish = {
-	tip = "ストーリー全部確認して入手 ",
+	tip = "テンペスタの宝 ",
 }
 _G.pg.base.gametip.skin_double_coupon_confirm = {
 	tip = "<color=#92fc63>$1*1</color>を消費し、割引価格\n<icon name=gem w=0.6 h=0.6/><color=#FFDE38FF>$2</color>で着せ替え<color=#92fc63>$3</color>を購入しますか？割引クーポンは併用できません",
@@ -31141,6 +31141,18 @@ _G.pg.base.gametip.resource_repair_report3 = {
 }
 _G.pg.base.gametip.resource_repair_finish_tips = {
 	tip = "修復が完了しました。ゲームを再起動してください",
+}
+_G.pg.base.gametip.windfog_skin_stroy_finish = {
+	tip = "ストーリー全部確認して入手",
+}
+_G.pg.base.gametip.twopointfive_role_name_1 = {
+	tip = "ミリエラ 天使空挺隊/美花莉",
+}
+_G.pg.base.gametip.twopointfive_role_name_2 = {
+	tip = "リリエル 天使空挺隊/リリサ",
+}
+_G.pg.base.gametip.combatUI_stick_set = {
+	tip = "自律戦闘時のスティック表示",
 }
 _G.pg.base.gametip.entrance_maintain = {
 	tip = "準備中です",
