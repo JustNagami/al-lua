@@ -49,7 +49,11 @@ pg.activity_banner.all = {
 	1061,
 	1062,
 	1063,
-	1064
+	1064,
+	1065,
+	1066,
+	1067,
+	1068
 }
 pg.activity_banner.get_id_list_by_type = {
 	[2] = {
@@ -88,7 +92,11 @@ pg.activity_banner.get_id_list_by_type = {
 		1061,
 		1062,
 		1063,
-		1064
+		1064,
+		1065,
+		1066,
+		1067,
+		1068
 	},
 	[3] = {
 		8
@@ -143,7 +151,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					11,
-					25
+					26
 				},
 				{
 					23,
@@ -156,13 +164,35 @@ pg.base.activity_banner = {}
 	pg.base.activity_banner[2] = {
 		id = 2,
 		pic = "temp2",
-		time = "stop",
 		type = 2,
 		param = {
-			"scene get boat",
+			"scene skinshop",
+			{}
+		},
+		time = {
 			{
-				projectName = "new",
-				page = 1
+				{
+					2026,
+					11,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					25
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		}
 	}
@@ -193,7 +223,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					11,
-					25
+					26
 				},
 				{
 					23,
@@ -276,7 +306,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					11,
-					25
+					26
 				},
 				{
 					23,
@@ -289,13 +319,34 @@ pg.base.activity_banner = {}
 	pg.base.activity_banner[7] = {
 		id = 7,
 		pic = "temp7",
-		time = "stop",
 		type = 2,
 		param = {
-			"scene equip",
+			"dorm 3d select"
+		},
+		time = {
 			{
-				designPage = 2,
-				warp = "WARP_TO_DESIGN"
+				{
+					2026,
+					11,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					25
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		}
 	}
@@ -334,13 +385,38 @@ pg.base.activity_banner = {}
 	pg.base.activity_banner[9] = {
 		id = 9,
 		pic = "temp9",
-		time = "stop",
 		type = 2,
 		param = {
-			"scene equip",
+			"scene level",
 			{
-				designPage = 2,
-				warp = "WARP_TO_DESIGN"
+				open_remaster = true,
+				isEX = true
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					11,
+					19
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					11,
+					24
+				},
+				{
+					16,
+					0,
+					0
+				}
 			}
 		}
 	}
@@ -374,8 +450,8 @@ pg.base.activity_banner = {}
 			{
 				{
 					2026,
-					10,
-					22
+					11,
+					19
 				},
 				{
 					0,
@@ -387,7 +463,7 @@ pg.base.activity_banner = {}
 				{
 					2026,
 					11,
-					4
+					25
 				},
 				{
 					23,
@@ -798,6 +874,55 @@ pg.base.activity_banner = {}
 	pg.base.activity_banner[1064] = {
 		id = 1064,
 		pic = "temp1063",
+		time = "stop",
+		type = 2,
+		param = {
+			"scene shop",
+			{
+				warp = "shopstreet"
+			}
+		}
+	}
+	pg.base.activity_banner[1065] = {
+		id = 1065,
+		pic = "temp1065",
+		time = "stop",
+		type = 2,
+		param = {
+			"scene get boat",
+			{
+				projectName = "new",
+				page = 1
+			}
+		}
+	}
+	pg.base.activity_banner[1066] = {
+		id = 1066,
+		pic = "temp998",
+		time = "stop",
+		type = 2,
+		param = {
+			"scene charge",
+			{
+				wrap = 2
+			}
+		}
+	}
+	pg.base.activity_banner[1067] = {
+		id = 1067,
+		pic = "temp1066",
+		time = "stop",
+		type = 2,
+		param = {
+			"scene core activity",
+			{
+				coreName = "TianYuTianYuanCoreActivityReUI"
+			}
+		}
+	}
+	pg.base.activity_banner[1068] = {
+		id = 1068,
+		pic = "temp1067",
 		time = "stop",
 		type = 2,
 		param = {

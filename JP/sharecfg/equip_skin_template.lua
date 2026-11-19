@@ -64183,7 +64183,7 @@ end)()
 		orbit_rotate = false,
 		desc = "戦闘用戦術バイザーをモチーフに設計された外装",
 		orbit_combat_anima_change = "",
-		icon = "97732",
+		icon = "98641",
 		orbit_ui = "shebei_yanzhaoui",
 		mirror = 0,
 		miss_sfx = "",

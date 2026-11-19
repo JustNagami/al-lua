@@ -4449,6 +4449,9 @@ pg.memory_template.all = {
 	5625,
 	5631,
 	5632,
+	5641,
+	5642,
+	5643,
 	10000,
 	10001,
 	10002,
@@ -6088,7 +6091,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING1",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "序",
 		condition = "『紅染の来訪者・上』開始",
 		number = 0,
@@ -6106,7 +6109,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING3",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "嵐の果て・上",
 		condition = "『紅染の来訪者』A1/C1開始",
 		number = 0,
@@ -6124,7 +6127,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING4",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "嵐の果て・下",
 		condition = "『紅染の来訪者』A1/C1ボス発見",
 		number = 0,
@@ -6142,7 +6145,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING5",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "断章",
 		condition = "『紅染の来訪者』A1/C1クリア",
 		number = 0,
@@ -6160,7 +6163,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING6",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "救難信号の向こう・上",
 		condition = "『紅染の来訪者』A2/C2開始",
 		number = 0,
@@ -6178,7 +6181,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING7",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "救難信号の向こう・下",
 		condition = "『紅染の来訪者』A2/C2ボス発見",
 		number = 0,
@@ -6196,7 +6199,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING8",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "回想",
 		condition = "『紅染の来訪者』A3/C3開始",
 		number = 0,
@@ -6214,7 +6217,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING9",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "聖域の守り人・上",
 		condition = "『紅染の来訪者』A3/C3ボス発見",
 		number = 0,
@@ -6232,7 +6235,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING10",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "聖域の守り人・下",
 		condition = "『紅染の来訪者』A3/C3クリア",
 		number = 0,
@@ -6250,7 +6253,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING11",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "断章-2",
 		condition = "『紅染の来訪者・下』開始",
 		number = 0,
@@ -6268,7 +6271,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING12",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "「幸運艦」・上",
 		condition = "『紅染の来訪者』B1/D1ボス発見",
 		number = 0,
@@ -6286,7 +6289,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING13",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "「幸運艦」・下",
 		condition = "『紅染の来訪者』B1/D1クリア",
 		number = 0,
@@ -6304,7 +6307,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING14",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "「姉妹」の絆・上",
 		condition = "『紅染の来訪者』B2/D2開始",
 		number = 0,
@@ -6322,7 +6325,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING15",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "「姉妹」の絆・中",
 		condition = "『紅染の来訪者』B2/D2ボス発見",
 		number = 0,
@@ -6340,7 +6343,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING16",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "「姉妹」の絆・下",
 		condition = "『紅染の来訪者』B2/D2クリア",
 		number = 0,
@@ -6358,7 +6361,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING17",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "紅染の守護者・上",
 		condition = "『紅染の来訪者』B3/D3開始",
 		number = 0,
@@ -6376,7 +6379,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING18",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "紅染の守護者・中",
 		condition = "『紅染の来訪者』B3/D3ボス発見",
 		number = 0,
@@ -6394,7 +6397,7 @@ pg.base.memory_template = {}
 		subtitle = "",
 		story = "GUOQING19",
 		type = 1,
-		mask = "bg/bg_memory_shuanghe",
+		mask = "bg/bg_memory",
 		title = "紅染の守護者・下",
 		condition = "『紅染の来訪者』B3/D3クリア",
 		number = 0,
@@ -84824,7 +84827,7 @@ end)()
 		type = 1,
 		mask = "bg/bg_memory",
 		title = "リリサのお茶会特訓",
-		condition = "「天使たちのステージL」に参加する",
+		condition = "「天使たちのステージL」DAY3をクリア",
 		number = 0,
 		task = 0,
 		year = 0,
@@ -84842,7 +84845,7 @@ end)()
 		type = 1,
 		mask = "bg/bg_memory",
 		title = "美花莉、お仕事に励んでいます",
-		condition = "「天使たちのステージM」に参加する",
+		condition = "「天使たちのステージM」DAY3をクリア",
 		number = 0,
 		task = 0,
 		year = 0,
@@ -84851,6 +84854,60 @@ end)()
 		is_open = 0,
 		unlock_pre = {
 			"TIANSHIMENDEBILANWUTAIRICHANG2"
+		}
+	}
+	pg.base.memory_template[5641] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHISHANGTEKANXINDONGZHENLIAOSHIJIAN1",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "未熟な検査見習い",
+		condition = "「着せ替え特集：ナイトコール」ナポリのストーリーを開放",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5641,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANXINDONGZHENLIAOSHIJIAN1"
+		}
+	}
+	pg.base.memory_template[5642] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHISHANGTEKANXINDONGZHENLIAOSHIJIAN2",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "診療タイムの交わり",
+		condition = "「着せ替え特集：ナイトコール」ニューオリンズのストーリーを開放",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5642,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANXINDONGZHENLIAOSHIJIAN2"
+		}
+	}
+	pg.base.memory_template[5643] = {
+		ship_group = 0,
+		subtitle = "",
+		story = "SHISHANGTEKANXINDONGZHENLIAOSHIJIAN3",
+		type = 1,
+		mask = "bg/bg_memory",
+		title = "幸ある純白の囁き",
+		condition = "「着せ替え特集：ナイトコール」パンルヴェのストーリーを開放",
+		number = 0,
+		task = 0,
+		year = 0,
+		id = 5643,
+		icon = "memory_gangqushishangtekan",
+		is_open = 0,
+		unlock_pre = {
+			"SHISHANGTEKANXINDONGZHENLIAOSHIJIAN3"
 		}
 	}
 	pg.base.memory_template[10000] = {
@@ -85789,6 +85846,8 @@ end)()
 			"YINGHUA1"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[10052] = {
 		ship_group = 0,
 		subtitle = "",
@@ -85843,8 +85902,6 @@ end)()
 			"YINGHUA4"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[10055] = {
 		ship_group = 0,
 		subtitle = "",
@@ -87591,6 +87648,8 @@ end)()
 			"LINGHANGYUANTANXIN19"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20071] = {
 		ship_group = 0,
 		subtitle = "",
@@ -87645,8 +87704,6 @@ end)()
 			"LINGHANGYUANTANXIN22"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20074] = {
 		ship_group = 0,
 		subtitle = "",
@@ -89393,6 +89450,8 @@ end)()
 			"TANSUOZHEYANGCHENGJIHUA22"
 		}
 	}
+end)()
+;(function()
 	pg.base.memory_template[20172] = {
 		ship_group = 0,
 		subtitle = "",
@@ -89447,8 +89506,6 @@ end)()
 			"TANSUOZHEYANGCHENGJIHUA25"
 		}
 	}
-end)()
-;(function()
 	pg.base.memory_template[20175] = {
 		ship_group = 0,
 		subtitle = "",
