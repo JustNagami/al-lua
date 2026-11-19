@@ -1683,7 +1683,11 @@ pg.equip_skin_template.all = {
 	3088,
 	3089,
 	3090,
-	3091
+	3091,
+	3092,
+	3093,
+	3094,
+	3095
 }
 pg.base = pg.base or {}
 pg.base.equip_skin_template = {}
@@ -63400,7 +63404,7 @@ end)()
 		orbit_rotate = false,
 		desc = "Its appearance is modeled after the tactical visors used by androids in battle.",
 		orbit_combat_anima_change = "",
-		icon = "97732",
+		icon = "98641",
 		orbit_ui = "shebei_yanzhaoui",
 		mirror = 0,
 		miss_sfx = "",
@@ -73449,6 +73453,195 @@ end)()
 			{
 				-56,
 				-246
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	}
+	pg.base.equip_skin_template[3092] = {
+		hit_sfx = "",
+		name = "Celebration Horn Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		orbit_rotate_ui = "",
+		themeid = 199,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "99212",
+		desc = "Honk honk! It's time to celebrate!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "zidan_caipianlaba",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_caipianlaba_hit",
+		plane_group = 0,
+		id = 3092,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[3093] = {
+		hit_sfx = "",
+		name = "Sold-Out Tag Torpedo",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		orbit_rotate_ui = "",
+		themeid = 199,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "99213",
+		desc = "Sorry, we're all sold out! Come earlier next time, peep!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "yulei_jiujiudiaopai",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_jiujiudiaopai_hit",
+		plane_group = 0,
+		id = 3093,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[3094] = {
+		hit_sfx = "",
+		name = "Surprising Boxes Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 199,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "99214",
+		desc = "Surprise-filled gift boxes are overflowing from the tray!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "paodan_liwutuopan",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 3094,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[3095] = {
+		hit_sfx = "",
+		name = "Deluxe Cart of Deals",
+		orbit_rotate_ui = "",
+		type = 1,
+		preview_hit_distance = 0,
+		bullet_name = "",
+		themeid = 199,
+		orbit_combat = "shebei_gouwuche",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		desc = "If you like it, then throw it in the cart!",
+		orbit_combat_anima_change = "",
+		icon = "99215",
+		orbit_ui = "shebei_gouwucheui",
+		mirror = 0,
+		miss_sfx = "",
+		rarity = 4,
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 3095,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				0.7,
+				-1.63,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				74.7,
+				38
 			}
 		},
 		orbit_hidden_action = {

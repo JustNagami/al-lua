@@ -27,9 +27,9 @@
 			}
 		},
 		{
+			soundeffect = "event:/ui/knockdoor1",
 			side = 2,
 			bgName = "bg_guild_red_n",
-			factiontag = "敲门声",
 			dir = 1,
 			actor_rotation = 350,
 			bgm = "story-richang-lightsweet",
@@ -52,13 +52,13 @@
 			}
 		},
 		{
-			actor = 403030,
+			portrait = 403030,
 			side = 2,
 			bgName = "bg_guild_red_n",
-			factiontag = "角标",
-			dir = 1,
-			nameColor = "#A9F548FF",
 			hidePaintObj = true,
+			dir = 1,
+			actorName = "Prinz Eugen",
+			nameColor = "#A9F548FF",
 			say = "Mikari, yes? Come in.",
 			typewriter = {
 				speed = 0.05,

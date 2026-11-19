@@ -20,6 +20,7 @@ pg.item_data_battleui.all = {
 	115,
 	116,
 	117,
+	118,
 	201,
 	202,
 	203,
@@ -284,6 +285,21 @@ pg.base.item_data_battleui = {}
 		unlock = "Cruise Missions S31",
 		id = 117,
 		icon = "117",
+		scene = {},
+		rare_display = {
+			1
+		}
+	}
+	pg.base.item_data_battleui[118] = {
+		key = "SkinNormal_20261119",
+		name = "Celebratory Sale",
+		desc = "The vibrant atmosphere of the festive season fills your screen, the thrill of irresistible deals showcased to all. Act now – the fun won't last forever!",
+		display_icon = "ui_118",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Obtained from Black Friday Cruise Pass.",
+		id = 118,
+		icon = "118",
 		scene = {},
 		rare_display = {
 			1

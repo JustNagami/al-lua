@@ -1862,7 +1862,7 @@ function var_0_0.InitSwitch()
 		end,
 		[DROP_TYPE_VITEM] = function(arg_277_0, arg_277_1, arg_277_2)
 			if arg_277_0:getConfig("virtual_type") == VIRTUAL_DROP_TYPE_SKIN_COUPON then
-				setText(arg_277_2, arg_277_0:GetSkinCouponDesc(arg_277_0))
+				setText(arg_277_2, "")
 			else
 				setText(arg_277_2, arg_277_0:getConfig("display"))
 			end
@@ -2123,7 +2123,13 @@ end
 function var_0_0.GetSkinCouponDesc(arg_339_0, arg_339_1)
 	local var_339_0 = arg_339_1:getConfig("display") .. i18n("shop_new_coupon_tip1")
 	local var_339_1 = arg_339_1.id
+
+	warning("itemID" .. var_339_1)
+
 	local var_339_2 = arg_339_1:getConfig("link_id")
+
+	warning(var_339_2)
+
 	local var_339_3 = pg.activity_event_shop_discount[var_339_2]
 
 	for iter_339_0, iter_339_1 in ipairs(var_339_3.shop_list) do

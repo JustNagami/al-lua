@@ -269,7 +269,8 @@ pg.activity_limit_item_guide.all = {
 	305,
 	306,
 	307,
-	308
+	308,
+	313
 }
 pg.activity_limit_item_guide.get_id_list_by_activity = {
 	[4937] = {
@@ -535,7 +536,8 @@ pg.activity_limit_item_guide.get_id_list_by_activity = {
 		305,
 		306,
 		307,
-		308
+		308,
+		313
 	},
 	[51615] = {
 		251,
@@ -5705,6 +5707,23 @@ end)()
 				3,
 				51303,
 				"It's Showtime! Angels' Azur Stage - Angel's Stage L Event Reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[313] = {
+		id = 313,
+		activity = 51302,
+		count = 1,
+		type = 21,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 15980,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51305,
+				"It's Showtime! Angels' Azur Stage - Angel's Stage M Event Reward"
 			}
 		}
 	}
