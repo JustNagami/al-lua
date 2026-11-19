@@ -373354,7 +373354,7 @@ _G.pg.base.ship_skin_template[699022] = {
 		2,
 	},
 	live2d_offset = {
-		0,
+		93,
 		0,
 		0,
 		41,
