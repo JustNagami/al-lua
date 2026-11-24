@@ -1326,6 +1326,25 @@ pg.equip_skin_template.all = {
 	4471,
 	4472,
 	4473,
+	4474,
+	4475,
+	4476,
+	4477,
+	4478,
+	4479,
+	4480,
+	4481,
+	4482,
+	4483,
+	4484,
+	4485,
+	4486,
+	4487,
+	4488,
+	4489,
+	4490,
+	4491,
+	4492,
 	1001,
 	1002,
 	1003,
@@ -1622,6 +1641,10 @@ pg.equip_skin_template.all = {
 	2130,
 	2131,
 	2132,
+	2133,
+	2134,
+	2135,
+	2136,
 	3001,
 	3002,
 	3004,
@@ -57292,6 +57315,820 @@ end)()
 			54014
 		}
 	}
+	pg.base.equip_skin_template[4474] = {
+		hit_sfx = "",
+		name = "Mage's Firebolt Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102801",
+		desc = "O spirits of blazing flame – burn away any enemies that stand in my way!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "zidan_huomofa",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_huomofa_hit",
+		plane_group = 0,
+		id = 4474,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[4475] = {
+		hit_sfx = "",
+		name = "Mage's Windbolt Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102802",
+		desc = "O spirits of raging wind – dispel the haze that clouds my sight!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "zidan_fengmofa",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_fengmofa_hit",
+		plane_group = 0,
+		id = 4475,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[4476] = {
+		hit_sfx = "",
+		name = "Mage's Icebolt Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102803",
+		desc = "O spirits of biting frost – become the blade that rends the sky!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "zidan_bingmofa",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_bingmofa_hit",
+		plane_group = 0,
+		id = 4476,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[4477] = {
+		hit_sfx = "",
+		name = "New Game Torpedo",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102804",
+		desc = "It's time to start a brand new chapter! Who will I meet this time?",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "yulei_galui1",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_galui1_hit",
+		plane_group = 0,
+		id = 4477,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[4478] = {
+		hit_sfx = "",
+		name = "Load Game Torpedo",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102805",
+		desc = "Pick up yesterday's memories, and start today's adventures anew!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "yulei_galui2",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_galui2_hit",
+		plane_group = 0,
+		id = 4478,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[4479] = {
+		hit_sfx = "",
+		name = "Happy End Torpedo",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102806",
+		desc = "Happy End! Congratulations on beating the game!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "yulei_galui3",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_galui3_hit",
+		plane_group = 0,
+		id = 4479,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[4480] = {
+		hit_sfx = "",
+		name = "Schoolhouse Gavel Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102807",
+		desc = "Your grades are acceptable! PASS!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "paodan_faguanchui",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4480,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[4481] = {
+		hit_sfx = "",
+		name = "Spirit-Binding Manacles Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102808",
+		desc = "Heed my beck and call, accursed spirit!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "paodan_qingguangshoukao",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4481,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[4482] = {
+		hit_sfx = "",
+		name = "Mystic Gem Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102809",
+		desc = "The secrets of the academy's founder are hidden within.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "paodan_dan",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4482,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[4483] = {
+		hit_sfx = "",
+		name = "Night Airship (Torpedo)",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102810",
+		desc = "The skies are so serene tonight.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "feiji_fukongting",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4483,
+		derivate_torpedo = "yulei_galui3",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			8
+		},
+		weapon_ids = {
+			61503,
+			61504
+		}
+	}
+	pg.base.equip_skin_template[4484] = {
+		hit_sfx = "",
+		name = "Night Airship (Fighter)",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "paodan_dan",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102810",
+		desc = "The skies are so serene tonight.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "feiji_fukongting",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4484,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			7
+		},
+		weapon_ids = {
+			61505,
+			54010
+		}
+	}
+	pg.base.equip_skin_template[4485] = {
+		hit_sfx = "",
+		name = "Night Airship (Bomber)",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "paodan_dan",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102810",
+		desc = "The skies are so serene tonight.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "feiji_fukongting",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4485,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			9
+		},
+		weapon_ids = {
+			61501,
+			54014
+		}
+	}
+	pg.base.equip_skin_template[4486] = {
+		hit_sfx = "",
+		name = "Astromancer's Orb (Torpedo)",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102811",
+		desc = "The stars revolve, and magic takes form.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "feiji_yuansuqiu",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4486,
+		derivate_torpedo = "yulei_galui2",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			8
+		},
+		weapon_ids = {
+			61503,
+			61504
+		}
+	}
+	pg.base.equip_skin_template[4487] = {
+		hit_sfx = "",
+		name = "Astromancer's Orb (Fighter)",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "paodan_qingguangshoukao",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102811",
+		desc = "The stars revolve, and magic takes form.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "feiji_yuansuqiu",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4487,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			7
+		},
+		weapon_ids = {
+			61505,
+			54010
+		}
+	}
+	pg.base.equip_skin_template[4488] = {
+		hit_sfx = "",
+		name = "Astromancer's Orb (Bomber)",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "paodan_qingguangshoukao",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102811",
+		desc = "The stars revolve, and magic takes form.",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "feiji_yuansuqiu",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4488,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			9
+		},
+		weapon_ids = {
+			61501,
+			54014
+		}
+	}
+	pg.base.equip_skin_template[4489] = {
+		hit_sfx = "",
+		name = "Flying Professorjuu (Torpedo)",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102812",
+		desc = "Hold on tight to your brooms! This is your hands-on lesson in flight magic!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "feiji_mofashissaobajiu",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4489,
+		derivate_torpedo = "yulei_galui1",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			8
+		},
+		weapon_ids = {
+			61503,
+			61504
+		}
+	}
+	pg.base.equip_skin_template[4490] = {
+		hit_sfx = "",
+		name = "Flying Professorjuu (Fighter)",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "paodan_faguanchui",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102812",
+		desc = "Hold on tight to your brooms! This is your hands-on lesson in flight magic!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "feiji_mofashissaobajiu",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4490,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			7
+		},
+		weapon_ids = {
+			61505,
+			54010
+		}
+	}
+	pg.base.equip_skin_template[4491] = {
+		hit_sfx = "",
+		name = "Flying Professorjuu (Bomber)",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 92,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "paodan_faguanchui",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "102812",
+		desc = "Hold on tight to your brooms! This is your hands-on lesson in flight magic!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "feiji_mofashissaobajiu",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4491,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			9
+		},
+		weapon_ids = {
+			61501,
+			54014
+		}
+	}
+	pg.base.equip_skin_template[4492] = {
+		hit_sfx = "",
+		name = "Mystical Might",
+		orbit_rotate_ui = "",
+		type = 1,
+		preview_hit_distance = 0,
+		bullet_name = "",
+		themeid = 92,
+		orbit_combat = "shebei_modaozhili",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		desc = "Once you learn magic, you'll never need a flashlight again to light up the dark!",
+		orbit_combat_anima_change = "",
+		icon = "102813",
+		orbit_ui = "shebei_modaozhiliui",
+		mirror = 0,
+		miss_sfx = "",
+		rarity = 4,
+		orbit_ui_back = 1,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 4492,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-1.75,
+				0.35,
+				-2.93
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-150,
+				37
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	}
 	pg.base.equip_skin_template[1001] = {
 		hit_sfx = "",
 		name = "Joypad Shell (P)",
@@ -59730,6 +60567,8 @@ end)()
 			24000
 		}
 	}
+end)()
+;(function()
 	pg.base.equip_skin_template[1404] = {
 		hit_sfx = "",
 		name = "Fan Shell",
@@ -60526,8 +61365,6 @@ end)()
 			24000
 		}
 	}
-end)()
-;(function()
 	pg.base.equip_skin_template[1455] = {
 		hit_sfx = "",
 		name = "Black Rose Shell",
@@ -64098,6 +64935,8 @@ end)()
 			24000
 		}
 	}
+end)()
+;(function()
 	pg.base.equip_skin_template[1545] = {
 		hit_sfx = "",
 		name = "Angel's Rod Torpedo",
@@ -64952,8 +65791,6 @@ end)()
 			107
 		}
 	}
-end)()
-;(function()
 	pg.base.equip_skin_template[2010] = {
 		hit_sfx = "",
 		name = "Black Hole Shell ",
@@ -68649,6 +69486,8 @@ end)()
 			107
 		}
 	}
+end)()
+;(function()
 	pg.base.equip_skin_template[2095] = {
 		hit_sfx = "",
 		name = "Candelabra Shell",
@@ -69552,8 +70391,6 @@ end)()
 			101
 		}
 	}
-end)()
-;(function()
 	pg.base.equip_skin_template[2114] = {
 		hit_sfx = "",
 		name = "Worn Pillar Torpedo",
@@ -70274,7 +71111,7 @@ end)()
 		type = 1,
 		preview_hit_distance = 30,
 		orbit_rotate_ui = "",
-		themeid = 117,
+		themeid = 110,
 		orbit_combat = "",
 		ship_config_id = 100011,
 		derivate_boom = "",
@@ -70317,7 +71154,7 @@ end)()
 		type = 1,
 		preview_hit_distance = 30,
 		orbit_rotate_ui = "",
-		themeid = 117,
+		themeid = 110,
 		orbit_combat = "",
 		ship_config_id = 100011,
 		derivate_boom = "",
@@ -70359,7 +71196,7 @@ end)()
 		type = 1,
 		preview_hit_distance = 0,
 		orbit_rotate_ui = "",
-		themeid = 117,
+		themeid = 110,
 		orbit_combat = "",
 		ship_config_id = 100011,
 		derivate_boom = "",
@@ -70401,7 +71238,7 @@ end)()
 		orbit_rotate_ui = "",
 		type = 1,
 		preview_hit_distance = 0,
-		themeid = 117,
+		themeid = 110,
 		bullet_name = "",
 		orbit_combat = "shebei_wuyaquanzhang",
 		ship_config_id = 100011,
@@ -70445,6 +71282,191 @@ end)()
 			{
 				-10,
 				100
+			}
+		},
+		orbit_hidden_action = {
+			"sleep",
+			"wash"
+		}
+	}
+	pg.base.equip_skin_template[2133] = {
+		hit_sfx = "",
+		name = "Groovy Notes Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 110,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "96857",
+		desc = "Leave your worries on the dancefloor and get into the groove!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "zidan_yinfu3",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 2133,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[2134] = {
+		hit_sfx = "",
+		name = "Jazzy Trumpet Torpedo",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 110,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "96858",
+		desc = "Parrappa~! Swing to the beat!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "yulei_yinfuxiaohao",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 2134,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[2135] = {
+		hit_sfx = "",
+		name = "Star-Studded Poster Shell",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		orbit_rotate_ui = "",
+		themeid = 110,
+		orbit_combat = "",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = "",
+		double_char_bone = "",
+		orbit_combat_anima_change = "",
+		icon = "96859",
+		desc = "When the spotlight turns on, the star can't help but shine!",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		bullet_name = "paodan_faguanghaibao",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		orbit_ui_back = 0,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 2135,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[2136] = {
+		hit_sfx = "",
+		name = "Starlit Stage",
+		orbit_rotate_ui = "",
+		type = 1,
+		preview_hit_distance = 0,
+		themeid = 110,
+		bullet_name = "",
+		orbit_combat = "shebei_huatongwutai",
+		ship_config_id = 100011,
+		derivate_boom = "",
+		orbit_rotate = false,
+		desc = "The curtain has risen – presenting the melody of the starry night!",
+		orbit_combat_anima_change = "",
+		icon = "96860",
+		double_char_bone = "",
+		orbit_ui = "shebei_huatongwutaiui",
+		miss_sfx = "",
+		rarity = 4,
+		mirror = 0,
+		orbit_ui_back = 1,
+		ship_skin_id = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		plane_group = 0,
+		id = 2136,
+		derivate_torpedo = "",
+		orbit_slg = "",
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		orbit_combat_bound = {
+			"face",
+			{
+				-0.15,
+				-2.33,
+				-0.91
+			}
+		},
+		orbit_ui_bound = {
+			"face",
+			{
+				-3,
+				8.7
 			}
 		},
 		orbit_hidden_action = {
@@ -73252,6 +74274,8 @@ end)()
 			24000
 		}
 	}
+end)()
+;(function()
 	pg.base.equip_skin_template[3088] = {
 		hit_sfx = "",
 		name = "Rose Meteor Shell",

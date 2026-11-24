@@ -134,7 +134,8 @@ pg.backyard_theme_template.all = {
 	142,
 	143,
 	144,
-	145
+	145,
+	146
 }
 pg.base = pg.base or {}
 pg.base.backyard_theme_template = {}
@@ -340,7 +341,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[7] = {
 		Cfg_1 = 5,
 		name = "Summer Fun",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 7,
 		comfortable = 104,
@@ -858,7 +859,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[20] = {
 		Cfg_1 = 5,
 		name = "Manjuu Park",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 20,
 		comfortable = 0,
@@ -935,7 +936,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[22] = {
 		Cfg_1 = 5,
 		name = "Royal Metropolis",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 22,
 		comfortable = 0,
@@ -977,7 +978,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[23] = {
 		Cfg_1 = 5,
 		name = "Playground",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 23,
 		comfortable = 0,
@@ -1017,7 +1018,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[24] = {
 		Cfg_1 = 5,
 		name = "Cat Café",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 24,
 		comfortable = 0,
@@ -1065,7 +1066,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[27] = {
 		Cfg_1 = 5,
 		name = "Summer Water Park",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 27,
 		comfortable = 0,
@@ -1222,7 +1223,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[30] = {
 		Cfg_1 = 5,
 		name = "Rainbow Room",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 30,
 		comfortable = 0,
@@ -1975,7 +1976,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[47] = {
 		Cfg_1 = 5,
 		name = "The Big Leagues",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 47,
 		comfortable = 0,
@@ -2630,7 +2631,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[63] = {
 		Cfg_1 = 5,
 		name = "Manjuu Pizzeria",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 63,
 		comfortable = 0,
@@ -2749,7 +2750,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[68] = {
 		Cfg_1 = 5,
 		name = "Manjuuversal Studios",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 68,
 		comfortable = 0,
@@ -3522,7 +3523,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[87] = {
 		Cfg_1 = 5,
 		name = "Manjuu Campus",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 87,
 		comfortable = 0,
@@ -3645,7 +3646,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[90] = {
 		Cfg_1 = 5,
 		name = "Fairy Tale Forest",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 90,
 		comfortable = 0,
@@ -3684,7 +3685,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[91] = {
 		Cfg_1 = 5,
 		name = "Manjuu Ballroom",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 91,
 		comfortable = 0,
@@ -3767,7 +3768,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[93] = {
 		Cfg_1 = 5,
 		name = "Breezy Summer",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 93,
 		comfortable = 0,
@@ -3896,7 +3897,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[96] = {
 		Cfg_1 = 5,
 		name = "Beach Cabin",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 96,
 		comfortable = 0,
@@ -4037,7 +4038,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[99] = {
 		Cfg_1 = 5,
 		name = "Legendary Bathhouse",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 99,
 		comfortable = 0,
@@ -4083,7 +4084,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[100] = {
 		Cfg_1 = 5,
 		name = "Deserted Island",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 100,
 		comfortable = 0,
@@ -4350,7 +4351,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[106] = {
 		Cfg_1 = 5,
 		name = "Port Night Club",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 106,
 		comfortable = 0,
@@ -4382,7 +4383,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[107] = {
 		Cfg_1 = 5,
 		name = "Year of the Dragon",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 107,
 		comfortable = 0,
@@ -4414,7 +4415,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[108] = {
 		Cfg_1 = 5,
 		name = "Phantom Thief's Riddle Room",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 108,
 		comfortable = 0,
@@ -4456,7 +4457,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[109] = {
 		Cfg_1 = 5,
 		name = "Sorcerer's Magic Cabin",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 109,
 		comfortable = 0,
@@ -4491,7 +4492,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[110] = {
 		Cfg_1 = 5,
 		name = "Starlit Backstage",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 110,
 		comfortable = 0,
@@ -4536,7 +4537,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[111] = {
 		Cfg_1 = 5,
 		name = "Holiday Cruise",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 111,
 		comfortable = 0,
@@ -4571,7 +4572,7 @@ pg.base.backyard_theme_template = {}
 	pg.base.backyard_theme_template[112] = {
 		Cfg_1 = 5,
 		name = "Racer's Café",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 112,
 		comfortable = 0,
@@ -4608,7 +4609,7 @@ end)()
 	pg.base.backyard_theme_template[113] = {
 		Cfg_1 = 5,
 		name = "Frontier Saloon",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 113,
 		comfortable = 0,
@@ -4643,7 +4644,7 @@ end)()
 	pg.base.backyard_theme_template[114] = {
 		Cfg_1 = 5,
 		name = "Dream Park",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 114,
 		comfortable = 0,
@@ -4673,7 +4674,7 @@ end)()
 	pg.base.backyard_theme_template[115] = {
 		Cfg_1 = 5,
 		name = "Shadowy Port",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 115,
 		comfortable = 0,
@@ -4742,7 +4743,7 @@ end)()
 	pg.base.backyard_theme_template[117] = {
 		Cfg_1 = 5,
 		name = "Wilderness Safehouse",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 117,
 		comfortable = 0,
@@ -4774,7 +4775,7 @@ end)()
 	pg.base.backyard_theme_template[118] = {
 		Cfg_1 = 5,
 		name = "Spring-Seeker in the Snow",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 118,
 		comfortable = 0,
@@ -4811,7 +4812,7 @@ end)()
 	pg.base.backyard_theme_template[119] = {
 		Cfg_1 = 5,
 		name = "Pharaoh's Secret Realm",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 119,
 		comfortable = 0,
@@ -4851,7 +4852,7 @@ end)()
 	pg.base.backyard_theme_template[120] = {
 		Cfg_1 = 5,
 		name = "Interstellar Medical Station",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 120,
 		comfortable = 0,
@@ -4928,7 +4929,7 @@ end)()
 	pg.base.backyard_theme_template[122] = {
 		Cfg_1 = 5,
 		name = "Seaside Splash",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 122,
 		comfortable = 0,
@@ -5118,7 +5119,7 @@ end)()
 	pg.base.backyard_theme_template[127] = {
 		Cfg_1 = 5,
 		name = "Sylvan Hot Springs",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 127,
 		comfortable = 0,
@@ -5155,7 +5156,7 @@ end)()
 	pg.base.backyard_theme_template[129] = {
 		Cfg_1 = 5,
 		name = "Ninja Castle",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 129,
 		comfortable = 0,
@@ -5260,7 +5261,7 @@ end)()
 	pg.base.backyard_theme_template[132] = {
 		Cfg_1 = 5,
 		name = "Temple of Phantom Light",
-		hot = 1,
+		hot = 0,
 		is_view = 1,
 		id = 132,
 		comfortable = 0,
@@ -5764,6 +5765,48 @@ end)()
 			345105,
 			345106,
 			345107
+		}
+	}
+	pg.base.backyard_theme_template[146] = {
+		Cfg_1 = 5,
+		name = "Sizzling Summer Siesta",
+		hot = 1,
+		is_view = 1,
+		id = 146,
+		comfortable = 0,
+		Cfg_2 = 8,
+		desc = "Welcome to our sun-kissed vacation paradise. Spend a relaxing day surrounded by sparkling waves and joyous laughter!",
+		discount_time = "",
+		discount = 0,
+		new = 1,
+		icon = "ycthemeicon",
+		deblocking = 1,
+		order = 146,
+		ids = {
+			346001,
+			346002,
+			346101,
+			346102,
+			346103,
+			346104,
+			346105,
+			346106,
+			346107,
+			346108,
+			346109,
+			346110,
+			346111,
+			346112,
+			346113,
+			346114,
+			346115,
+			346116,
+			346117,
+			346118,
+			346119,
+			346120,
+			346121,
+			346122
 		}
 	}
 end)()

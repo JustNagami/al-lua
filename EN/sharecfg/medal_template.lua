@@ -137,7 +137,8 @@ pg.medal_template.all = {
 	200211,
 	200221,
 	200231,
-	200241
+	200241,
+	200251
 }
 pg.base = pg.base or {}
 pg.base.medal_template = {}
@@ -3091,5 +3092,26 @@ end)()
 		id = 200241,
 		target_num = 8,
 		target_id = "51611"
+	}
+	pg.base.medal_template[200251] = {
+		explain1 = "The Transfer Student of Veritas Academy",
+		name = "Veritas Academy Medal",
+		explain2 = "Event",
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "The school bell rings crisp and true on an island floating atop the clouds. A mystical light guides you to a chance encounter – and so your story begins. Welcome to Veritas Academy!",
+		next = 0,
+		icon = "9251",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9251",
+		condition = "Collect 8 stickers in The Transfer Student of Veritas Academy.",
+		rank = 1,
+		id = 200251,
+		target_num = 8,
+		target_id = "51409"
 	}
 end)()

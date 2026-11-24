@@ -295588,4 +295588,384 @@ _G.pg.base.aircraft_template[3440107] = {
 		},
 	},
 }
+_G.pg.base.aircraft_template[3456080] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1680,
+	icon = "feiji_huangjiachuan",
+	id = 3456080,
+	max_hp = 60,
+	model_ID = "feiji_huangjiachuan",
+	name = "【2026莫洛托夫SP活动】卡通怪物航母 舰载机 Lv1",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 40,
+	type = 1,
+	weapon_ID = {
+		3456085,
+		3456090,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+_G.pg.base.aircraft_template[3456081] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 1960,
+	icon = "feiji_huangjiachuan",
+	id = 3456081,
+	max_hp = 90,
+	model_ID = "feiji_huangjiachuan",
+	name = "【2026莫洛托夫SP活动】卡通怪物航母 舰载机 Lv2",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 40,
+	type = 1,
+	weapon_ID = {
+		3456086,
+		3456091,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+_G.pg.base.aircraft_template[3456082] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 2240,
+	icon = "feiji_huangjiachuan",
+	id = 3456082,
+	max_hp = 120,
+	model_ID = "feiji_huangjiachuan",
+	name = "【2026莫洛托夫SP活动】卡通怪物航母 舰载机 Lv3",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 40,
+	type = 1,
+	weapon_ID = {
+		3456087,
+		3456092,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+_G.pg.base.aircraft_template[3456083] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 2520,
+	icon = "feiji_huangjiachuan",
+	id = 3456083,
+	max_hp = 150,
+	model_ID = "feiji_huangjiachuan",
+	name = "【2026莫洛托夫SP活动】卡通怪物航母 舰载机 Lv4",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 40,
+	type = 1,
+	weapon_ID = {
+		3456088,
+		3456093,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
+_G.pg.base.aircraft_template[3456084] = {
+	ACC_growth = 0,
+	AP_growth = 2000,
+	accuracy = 23,
+	attack_power = 2,
+	crash_DMG = 10,
+	dodge = 1,
+	dodge_limit = 0,
+	funnel_behavior = "",
+	hp_growth = 2800,
+	icon = "feiji_huangjiachuan",
+	id = 3456084,
+	max_hp = 180,
+	model_ID = "feiji_huangjiachuan",
+	name = "【2026莫洛托夫SP活动】卡通怪物航母 舰载机 Lv5",
+	nationality = 3,
+	scale = 0.75,
+	spawn_brownian = 1,
+	speed = 40,
+	type = 1,
+	weapon_ID = {
+		3456089,
+		3456094,
+	},
+	position_offset = {
+		0,
+		5,
+		0,
+	},
+	cld_box = {
+		1,
+		1,
+		1,
+	},
+	cld_offset = {
+		0,
+		0,
+		0,
+	},
+	bound_bone = {
+		weapon = {
+			{
+				0.56,
+				-0.76,
+				0,
+			},
+			{
+				0.48,
+				0.99,
+				0,
+			},
+		},
+	},
+	fx_container = {
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+		{
+			0,
+			0,
+			0,
+		},
+	},
+}
 

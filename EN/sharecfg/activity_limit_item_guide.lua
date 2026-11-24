@@ -270,6 +270,10 @@ pg.activity_limit_item_guide.all = {
 	306,
 	307,
 	308,
+	309,
+	310,
+	311,
+	312,
 	313
 }
 pg.activity_limit_item_guide.get_id_list_by_activity = {
@@ -538,6 +542,12 @@ pg.activity_limit_item_guide.get_id_list_by_activity = {
 		307,
 		308,
 		313
+	},
+	[51410] = {
+		309,
+		310,
+		311,
+		312
 	},
 	[51615] = {
 		251,
@@ -5707,6 +5717,76 @@ end)()
 				3,
 				51303,
 				"It's Showtime! Angels' Azur Stage - Angel's Stage L Event Reward"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[309] = {
+		id = 309,
+		activity = 51410,
+		count = 1,
+		type = 3,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 151320,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51404,
+				"The Transfer Student of Veritas Academy - Milestone Rewards"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[310] = {
+		id = 310,
+		activity = 51410,
+		count = 1,
+		type = 9,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 4492,
+		order = 0,
+		link_params = {
+			{
+				2,
+				{
+					"bossrush main"
+				},
+				"The Transfer Student of Veritas Academy - Complete story mode."
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[311] = {
+		id = 311,
+		activity = 51410,
+		count = 4,
+		type = 4,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 705111,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51404,
+				"The Transfer Student of Veritas Academy - Milestone Rewards"
+			}
+		}
+	}
+	pg.base.activity_limit_item_guide[312] = {
+		id = 312,
+		activity = 51410,
+		count = 1,
+		type = 8,
+		is_new = 1,
+		count_storage = 0,
+		drop_id = 66122,
+		order = 0,
+		link_params = {
+			{
+				3,
+				51402,
+				"The Transfer Student of Veritas Academy - Complete the medal set (via the top-right corner of the event page)."
 			}
 		}
 	}

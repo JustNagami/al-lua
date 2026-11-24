@@ -56,6 +56,10 @@ pg.ship_meta_breakout.all = {
 	9701132,
 	9701133,
 	9701134,
+	9701141,
+	9701142,
+	9701143,
+	9701144,
 	9702011,
 	9702012,
 	9702013,
@@ -1092,6 +1096,69 @@ pg.base.ship_meta_breakout = {}
 		pre_id = 9701133,
 		weapon_ids = {}
 	}
+	pg.base.ship_meta_breakout[9701141] = {
+		breakout_view = "Unlock Cinders of Hope - Kersaint/Main gun efficiency +5%",
+		gold = 500,
+		breakout_id = 9701142,
+		repair = 0,
+		item2 = 21067,
+		item1_num = 1,
+		level = 10,
+		item2_num = 0,
+		id = 9701141,
+		item1 = 21067,
+		pre_id = 0,
+		weapon_ids = {
+			171201
+		}
+	}
+	pg.base.ship_meta_breakout[9701142] = {
+		breakout_view = "Torpedo base +1/Torpedo preload +1/Main gun efficiency +10%",
+		gold = 1500,
+		breakout_id = 9701143,
+		repair = 0,
+		item2 = 21067,
+		item1_num = 1,
+		level = 30,
+		item2_num = 0,
+		id = 9701142,
+		item1 = 21067,
+		pre_id = 9701141,
+		weapon_ids = {
+			106,
+			106
+		}
+	}
+	pg.base.ship_meta_breakout[9701143] = {
+		breakout_view = "Improve Cinders of Hope - Kersaint/All weapons' efficiency +5%",
+		gold = 2500,
+		breakout_id = 9701144,
+		repair = 0,
+		item2 = 21067,
+		item1_num = 2,
+		level = 70,
+		item2_num = 0,
+		id = 9701143,
+		item1 = 21067,
+		pre_id = 9701142,
+		weapon_ids = {
+			171202
+		}
+	}
+	pg.base.ship_meta_breakout[9701144] = {
+		breakout_view = "None",
+		gold = 0,
+		breakout_id = 0,
+		repair = 0,
+		item2 = 21067,
+		item1_num = 0,
+		level = 0,
+		item2_num = 0,
+		id = 9701144,
+		item1 = 21067,
+		pre_id = 9701143,
+		weapon_ids = {}
+	}
 	pg.base.ship_meta_breakout[9702011] = {
 		breakout_view = "Unlock Ashen Might – Helena/Main gun efficiency +5%",
 		gold = 1000,
@@ -1785,6 +1852,8 @@ pg.base.ship_meta_breakout = {}
 		pre_id = 9702113,
 		weapon_ids = {}
 	}
+end)()
+;(function()
 	pg.base.ship_meta_breakout[9702121] = {
 		breakout_view = "Unlock Cinders of Hope - Königsberg/All weapons' efficiency +2%",
 		gold = 500,
@@ -1848,8 +1917,6 @@ pg.base.ship_meta_breakout = {}
 		pre_id = 9702123,
 		weapon_ids = {}
 	}
-end)()
-;(function()
 	pg.base.ship_meta_breakout[9702131] = {
 		breakout_view = "Unlock Cinders of Hope - Nürnberg/All weapons' efficiency +2%",
 		gold = 500,
@@ -3425,6 +3492,8 @@ end)()
 		pre_id = 9706013,
 		weapon_ids = {}
 	}
+end)()
+;(function()
 	pg.base.ship_meta_breakout[9706021] = {
 		breakout_view = "Unlock Ashen Might – Junyou/All Dive Bombers +1/Aircraft efficiency +3%",
 		gold = 500,
@@ -3494,8 +3563,6 @@ end)()
 		pre_id = 9706023,
 		weapon_ids = {}
 	}
-end)()
-;(function()
 	pg.base.ship_meta_breakout[9706031] = {
 		breakout_view = "Unlock Ashen Might – Princeton/All fighters +1/Fighter efficiency +5%",
 		gold = 500,

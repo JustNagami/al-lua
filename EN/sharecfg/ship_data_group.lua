@@ -614,6 +614,7 @@ pg.ship_data_group.all = {
 	498,
 	435,
 	588,
+	765,
 	436,
 	577,
 	496,
@@ -627,6 +628,8 @@ pg.ship_data_group.all = {
 	587,
 	628,
 	685,
+	766,
+	767,
 	538,
 	539,
 	348,
@@ -899,7 +902,8 @@ pg.ship_data_group.all = {
 	30063,
 	30064,
 	30065,
-	30066
+	30066,
+	30067
 }
 pg.ship_data_group.get_id_list_by_group_type = {
 	[10000] = {
@@ -2843,6 +2847,9 @@ pg.ship_data_group.get_id_list_by_group_type = {
 	[70210] = {
 		730
 	},
+	[70213] = {
+		765
+	},
 	[70301] = {
 		496
 	},
@@ -2875,6 +2882,12 @@ pg.ship_data_group.get_id_list_by_group_type = {
 	},
 	[70509] = {
 		685
+	},
+	[70510] = {
+		766
+	},
+	[70511] = {
+		767
 	},
 	[70701] = {
 		538
@@ -3169,6 +3182,9 @@ pg.ship_data_group.get_id_list_by_group_type = {
 	},
 	[970113] = {
 		30066
+	},
+	[970114] = {
+		30067
 	},
 	[970201] = {
 		30003
@@ -4203,6 +4219,7 @@ pg.ship_data_group.get_id_list_by_handbook_type = {
 		498,
 		435,
 		588,
+		765,
 		436,
 		577,
 		496,
@@ -4216,6 +4233,8 @@ pg.ship_data_group.get_id_list_by_handbook_type = {
 		587,
 		628,
 		685,
+		766,
+		767,
 		538,
 		539,
 		348,
@@ -4494,7 +4513,8 @@ pg.ship_data_group.get_id_list_by_handbook_type = {
 		30063,
 		30064,
 		30065,
-		30066
+		30066,
+		30067
 	}
 }
 pg.base = pg.base or {}
@@ -31707,7 +31727,7 @@ end)()
 			}
 		}
 	}
-	pg.base.ship_data_group[436] = {
+	pg.base.ship_data_group[765] = {
 		type = 2,
 		redirect_id = 101,
 		hide = 0,
@@ -31715,6 +31735,38 @@ end)()
 		trans_skin = 0,
 		handbook_type = 0,
 		index_id = 613,
+		code = 765,
+		group_type = 70213,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"B",
+			"C",
+			"E",
+			"B",
+			"B",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: The Transfer Student of Veritas Academy",
+				{
+					""
+				},
+				0
+			}
+		}
+	}
+	pg.base.ship_data_group[436] = {
+		type = 2,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 7,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 614,
 		code = 436,
 		group_type = 70203,
 		trans_type = 0,
@@ -31757,7 +31809,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 614,
+		index_id = 615,
 		code = 577,
 		group_type = 70205,
 		trans_type = 0,
@@ -31800,7 +31852,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 615,
+		index_id = 616,
 		code = 496,
 		group_type = 70301,
 		trans_type = 0,
@@ -31843,7 +31895,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 616,
+		index_id = 617,
 		code = 586,
 		group_type = 70302,
 		trans_type = 0,
@@ -31886,7 +31938,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 617,
+		index_id = 618,
 		code = 727,
 		group_type = 70303,
 		trans_type = 0,
@@ -31918,7 +31970,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 618,
+		index_id = 619,
 		code = 437,
 		group_type = 70501,
 		trans_type = 0,
@@ -31960,7 +32012,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 619,
+		index_id = 620,
 		code = 438,
 		group_type = 70502,
 		trans_type = 0,
@@ -31992,7 +32044,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 620,
+		index_id = 621,
 		code = 440,
 		group_type = 70504,
 		trans_type = 0,
@@ -32035,7 +32087,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 621,
+		index_id = 622,
 		code = 441,
 		group_type = 70505,
 		trans_type = 0,
@@ -32078,7 +32130,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 622,
+		index_id = 623,
 		code = 536,
 		group_type = 70506,
 		trans_type = 0,
@@ -32110,7 +32162,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 623,
+		index_id = 624,
 		code = 587,
 		group_type = 70507,
 		trans_type = 0,
@@ -32153,7 +32205,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 624,
+		index_id = 625,
 		code = 628,
 		group_type = 70508,
 		trans_type = 0,
@@ -32185,7 +32237,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 625,
+		index_id = 626,
 		code = 685,
 		group_type = 70509,
 		trans_type = 0,
@@ -32210,6 +32262,70 @@ end)()
 			}
 		}
 	}
+	pg.base.ship_data_group[766] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 7,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 627,
+		code = 766,
+		group_type = 70510,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"D",
+			"D",
+			"A"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: The Transfer Student of Veritas Academy",
+				{
+					""
+				},
+				0
+			}
+		}
+	}
+	pg.base.ship_data_group[767] = {
+		type = 5,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 7,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 628,
+		code = 767,
+		group_type = 70511,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"E",
+			"E",
+			"D",
+			"D",
+			"B"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: The Transfer Student of Veritas Academy",
+				{
+					""
+				},
+				0
+			}
+		}
+	}
 	pg.base.ship_data_group[538] = {
 		type = 7,
 		redirect_id = 101,
@@ -32217,7 +32333,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 626,
+		index_id = 629,
 		code = 538,
 		group_type = 70701,
 		trans_type = 0,
@@ -32249,7 +32365,7 @@ end)()
 		nationality = 7,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 627,
+		index_id = 630,
 		code = 539,
 		group_type = 71801,
 		trans_type = 0,
@@ -32281,7 +32397,7 @@ end)()
 		nationality = 8,
 		trans_skin = 801029,
 		handbook_type = 0,
-		index_id = 628,
+		index_id = 631,
 		code = 348,
 		group_type = 80102,
 		trans_type = 1,
@@ -32333,7 +32449,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 629,
+		index_id = 632,
 		code = 359,
 		group_type = 80103,
 		trans_type = 0,
@@ -32370,7 +32486,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 630,
+		index_id = 633,
 		code = 395,
 		group_type = 80104,
 		trans_type = 0,
@@ -32422,7 +32538,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 631,
+		index_id = 634,
 		code = 701,
 		group_type = 80105,
 		trans_type = 0,
@@ -32454,7 +32570,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 632,
+		index_id = 635,
 		code = 745,
 		group_type = 80106,
 		trans_type = 0,
@@ -32486,7 +32602,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 633,
+		index_id = 636,
 		code = 637,
 		group_type = 80109,
 		trans_type = 0,
@@ -32520,7 +32636,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 634,
+		index_id = 637,
 		code = 347,
 		group_type = 80101,
 		trans_type = 0,
@@ -32572,7 +32688,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 635,
+		index_id = 638,
 		code = 522,
 		group_type = 80107,
 		trans_type = 0,
@@ -32615,7 +32731,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 636,
+		index_id = 639,
 		code = 523,
 		group_type = 80108,
 		trans_type = 0,
@@ -32658,7 +32774,7 @@ end)()
 		nationality = 8,
 		trans_skin = 802019,
 		handbook_type = 0,
-		index_id = 637,
+		index_id = 640,
 		code = 349,
 		group_type = 80201,
 		trans_type = 2,
@@ -32709,7 +32825,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 638,
+		index_id = 641,
 		code = 454,
 		group_type = 80202,
 		trans_type = 0,
@@ -32752,7 +32868,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 639,
+		index_id = 642,
 		code = 603,
 		group_type = 80203,
 		trans_type = 0,
@@ -32795,7 +32911,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 640,
+		index_id = 643,
 		code = 702,
 		group_type = 80204,
 		trans_type = 0,
@@ -32827,7 +32943,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 641,
+		index_id = 644,
 		code = 600,
 		group_type = 80301,
 		trans_type = 0,
@@ -32870,7 +32986,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 642,
+		index_id = 645,
 		code = 643,
 		group_type = 80302,
 		trans_type = 0,
@@ -32902,7 +33018,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 643,
+		index_id = 646,
 		code = 700,
 		group_type = 80303,
 		trans_type = 0,
@@ -32934,7 +33050,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 644,
+		index_id = 647,
 		code = 698,
 		group_type = 80401,
 		trans_type = 0,
@@ -32966,7 +33082,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 645,
+		index_id = 648,
 		code = 453,
 		group_type = 80501,
 		trans_type = 0,
@@ -33009,7 +33125,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 646,
+		index_id = 649,
 		code = 602,
 		group_type = 80502,
 		trans_type = 0,
@@ -33052,7 +33168,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 647,
+		index_id = 650,
 		code = 641,
 		group_type = 80503,
 		trans_type = 0,
@@ -33084,7 +33200,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 648,
+		index_id = 651,
 		code = 699,
 		group_type = 80601,
 		trans_type = 0,
@@ -33116,7 +33232,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 649,
+		index_id = 652,
 		code = 744,
 		group_type = 80602,
 		trans_type = 0,
@@ -33148,7 +33264,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 650,
+		index_id = 653,
 		code = 458,
 		group_type = 80701,
 		trans_type = 0,
@@ -33190,7 +33306,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 651,
+		index_id = 654,
 		code = 599,
 		group_type = 80702,
 		trans_type = 0,
@@ -33233,7 +33349,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 652,
+		index_id = 655,
 		code = 350,
 		group_type = 80801,
 		trans_type = 0,
@@ -33276,7 +33392,7 @@ end)()
 		nationality = 8,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 653,
+		index_id = 656,
 		code = 743,
 		group_type = 81801,
 		trans_type = 0,
@@ -33308,7 +33424,7 @@ end)()
 		nationality = 9,
 		trans_skin = 901019,
 		handbook_type = 0,
-		index_id = 654,
+		index_id = 657,
 		code = 351,
 		group_type = 90101,
 		trans_type = 1,
@@ -33370,7 +33486,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 655,
+		index_id = 658,
 		code = 452,
 		group_type = 90102,
 		trans_type = 0,
@@ -33413,7 +33529,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 656,
+		index_id = 659,
 		code = 457,
 		group_type = 90103,
 		trans_type = 0,
@@ -33456,7 +33572,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 657,
+		index_id = 660,
 		code = 601,
 		group_type = 90104,
 		trans_type = 0,
@@ -33498,7 +33614,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 658,
+		index_id = 661,
 		code = 645,
 		group_type = 90105,
 		trans_type = 0,
@@ -33530,7 +33646,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 659,
+		index_id = 662,
 		code = 646,
 		group_type = 90106,
 		trans_type = 0,
@@ -33562,7 +33678,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 660,
+		index_id = 663,
 		code = 642,
 		group_type = 90107,
 		trans_type = 0,
@@ -33594,7 +33710,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 661,
+		index_id = 664,
 		code = 394,
 		group_type = 90111,
 		trans_type = 0,
@@ -33648,7 +33764,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 662,
+		index_id = 665,
 		code = 556,
 		group_type = 90113,
 		trans_type = 0,
@@ -33691,7 +33807,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 663,
+		index_id = 666,
 		code = 481,
 		group_type = 90112,
 		trans_type = 0,
@@ -33735,7 +33851,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 664,
+		index_id = 667,
 		code = 653,
 		group_type = 90114,
 		trans_type = 0,
@@ -33778,7 +33894,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 665,
+		index_id = 668,
 		code = 456,
 		group_type = 90201,
 		trans_type = 0,
@@ -33820,7 +33936,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 666,
+		index_id = 669,
 		code = 598,
 		group_type = 90202,
 		trans_type = 0,
@@ -33863,7 +33979,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 667,
+		index_id = 670,
 		code = 524,
 		group_type = 90301,
 		trans_type = 0,
@@ -33906,7 +34022,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 668,
+		index_id = 671,
 		code = 455,
 		group_type = 90302,
 		trans_type = 0,
@@ -33949,7 +34065,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 669,
+		index_id = 672,
 		code = 654,
 		group_type = 90303,
 		trans_type = 0,
@@ -33992,7 +34108,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 670,
+		index_id = 673,
 		code = 352,
 		group_type = 90401,
 		trans_type = 0,
@@ -34035,7 +34151,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 671,
+		index_id = 674,
 		code = 652,
 		group_type = 90402,
 		trans_type = 0,
@@ -34078,7 +34194,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 672,
+		index_id = 675,
 		code = 353,
 		group_type = 90501,
 		trans_type = 0,
@@ -34130,7 +34246,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 673,
+		index_id = 676,
 		code = 604,
 		group_type = 90502,
 		trans_type = 0,
@@ -34173,7 +34289,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 674,
+		index_id = 677,
 		code = 418,
 		group_type = 90503,
 		trans_type = 0,
@@ -34227,7 +34343,7 @@ end)()
 		nationality = 9,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 675,
+		index_id = 678,
 		code = 555,
 		group_type = 90701,
 		trans_type = 0,
@@ -34270,7 +34386,7 @@ end)()
 		nationality = 11,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 676,
+		index_id = 679,
 		code = 687,
 		group_type = 110101,
 		trans_type = 0,
@@ -34302,7 +34418,7 @@ end)()
 		nationality = 11,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 677,
+		index_id = 680,
 		code = 686,
 		group_type = 110201,
 		trans_type = 0,
@@ -34334,7 +34450,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 678,
+		index_id = 681,
 		code = 571,
 		group_type = 960001,
 		trans_type = 0,
@@ -34376,7 +34492,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 679,
+		index_id = 682,
 		code = 613,
 		group_type = 960002,
 		trans_type = 0,
@@ -34419,7 +34535,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 680,
+		index_id = 683,
 		code = 610,
 		group_type = 960003,
 		trans_type = 0,
@@ -34462,7 +34578,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 681,
+		index_id = 684,
 		code = 611,
 		group_type = 960004,
 		trans_type = 0,
@@ -34505,7 +34621,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 682,
+		index_id = 685,
 		code = 614,
 		group_type = 960005,
 		trans_type = 0,
@@ -34548,7 +34664,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 683,
+		index_id = 686,
 		code = 612,
 		group_type = 960006,
 		trans_type = 0,
@@ -34590,7 +34706,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 684,
+		index_id = 687,
 		code = 664,
 		group_type = 960007,
 		trans_type = 0,
@@ -34633,7 +34749,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 685,
+		index_id = 688,
 		code = 665,
 		group_type = 960008,
 		trans_type = 0,
@@ -34676,7 +34792,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 686,
+		index_id = 689,
 		code = 666,
 		group_type = 960009,
 		trans_type = 0,
@@ -34719,7 +34835,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 687,
+		index_id = 690,
 		code = 667,
 		group_type = 960010,
 		trans_type = 0,
@@ -34762,7 +34878,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 688,
+		index_id = 691,
 		code = 668,
 		group_type = 960011,
 		trans_type = 0,
@@ -34804,7 +34920,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 689,
+		index_id = 692,
 		code = 709,
 		group_type = 960012,
 		trans_type = 0,
@@ -34847,7 +34963,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 690,
+		index_id = 693,
 		code = 710,
 		group_type = 960013,
 		trans_type = 0,
@@ -34890,7 +35006,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 691,
+		index_id = 694,
 		code = 711,
 		group_type = 960014,
 		trans_type = 0,
@@ -34933,7 +35049,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 692,
+		index_id = 695,
 		code = 712,
 		group_type = 960015,
 		trans_type = 0,
@@ -34976,7 +35092,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 693,
+		index_id = 696,
 		code = 713,
 		group_type = 960016,
 		trans_type = 0,
@@ -35018,7 +35134,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 694,
+		index_id = 697,
 		code = 763,
 		group_type = 960017,
 		trans_type = 0,
@@ -35050,7 +35166,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 695,
+		index_id = 698,
 		code = 762,
 		group_type = 960018,
 		trans_type = 0,
@@ -35082,7 +35198,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 696,
+		index_id = 699,
 		code = 764,
 		group_type = 960019,
 		trans_type = 0,
@@ -35114,7 +35230,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 697,
+		index_id = 700,
 		code = 760,
 		group_type = 960020,
 		trans_type = 0,
@@ -35146,7 +35262,7 @@ end)()
 		nationality = 96,
 		trans_skin = 0,
 		handbook_type = 0,
-		index_id = 698,
+		index_id = 701,
 		code = 761,
 		group_type = 960021,
 		trans_type = 0,
@@ -35203,6 +35319,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.ship_data_group[10002] = {
 		type = 3,
 		redirect_id = 101,
@@ -35299,8 +35417,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.ship_data_group[10005] = {
 		type = 2,
 		redirect_id = 101,
@@ -38451,6 +38567,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.ship_data_group[20015] = {
 		type = 2,
 		redirect_id = 101,
@@ -38556,8 +38674,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.ship_data_group[20018] = {
 		type = 3,
 		redirect_id = 101,
@@ -41890,6 +42006,41 @@ end)()
 					"METACHARACTER",
 					{
 						autoOpenShipConfigID = 9701131
+					}
+				},
+				0
+			}
+		}
+	}
+	pg.base.ship_data_group[30067] = {
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 97,
+		trans_skin = 0,
+		handbook_type = 3,
+		index_id = 30067,
+		code = 30067,
+		group_type = 970114,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"A",
+			"C",
+			"E",
+			"A",
+			"D",
+			"D"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Event: Cruise Missions",
+				{
+					"METACHARACTER",
+					{
+						autoOpenShipConfigID = 9701141
 					}
 				},
 				0

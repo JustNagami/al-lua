@@ -966,6 +966,13 @@ function temp()
 						}
 					}
 				}
+			},
+			n = {
+				o = {
+					p = {
+						this = true
+					}
+				}
 			}
 		},
 		t = {
@@ -4071,6 +4078,17 @@ function temp()
 					d = {
 						o = {
 							r = {
+								this = true
+							}
+						}
+					}
+				}
+			},
+			l = {
+				o = {
+					t = {
+						o = {
+							v = {
 								this = true
 							}
 						}
@@ -10211,7 +10229,18 @@ function temp()
 						i = {
 							n = {
 								t = {
-									this = true
+									this = true,
+									[" "] = {
+										M = {
+											E = {
+												T = {
+													A = {
+														this = true
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}

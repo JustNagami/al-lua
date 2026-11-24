@@ -102,7 +102,9 @@ pg.skill_world_display.all = {
 	802301,
 	802302,
 	802361,
-	802362
+	802362,
+	802431,
+	802432
 }
 pg.base = pg.base or {}
 pg.base.skill_world_display = {}
@@ -4469,6 +4471,22 @@ pg.base.skill_world_display = {}
 		desc_get = "",
 		id = 802362,
 		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 6.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	}
+end)()
+;(function()
+	pg.base.skill_world_display[802431] = {
+		desc_get = "",
+		id = 802431,
+		desc = "[Operation Siren]\n Every 15 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: reduces this ship's DMG taken by 2.0%.",
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_world_display[802432] = {
+		desc_get = "",
+		id = 802432,
+		desc = "[Operation Siren]\n Every 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: reduces this ship's DMG taken by 6.0%.",
 		desc_get_add = {},
 		desc_add = {}
 	}

@@ -206,6 +206,7 @@ pg.pay_data_display.all = {
 	1028,
 	1029,
 	1030,
+	1031,
 	1301,
 	1306,
 	2001,
@@ -290,6 +291,7 @@ pg.pay_data_display.all = {
 	2096,
 	2097,
 	2098,
+	2099,
 	5011,
 	5012,
 	5013,
@@ -566,6 +568,7 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		2096,
 		2097,
 		2098,
+		2099,
 		5011,
 		5012,
 		5013,
@@ -613,6 +616,7 @@ pg.pay_data_display.get_id_list_by_extra_service = {
 		1028,
 		1029,
 		1030,
+		1031,
 		1301,
 		1306
 	},
@@ -21698,14 +21702,14 @@ end)()
 		},
 		display = {
 			{
-				2,
-				42086,
-				2
+				1,
+				14,
+				2026
 			},
 			{
 				2,
-				15008,
-				50
+				42086,
+				2
 			},
 			{
 				2,
@@ -21728,11 +21732,6 @@ end)()
 				2,
 				86429,
 				1
-			},
-			{
-				1,
-				14,
-				2026
 			}
 		}
 	}
@@ -24404,6 +24403,87 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
+	pg.base.pay_data_display[1031] = {
+		limit_group = 0,
+		name = "Fair Winds Cruise Pass (2026.12)",
+		descrip_extra = "You must complete certain missions to obtain these rewards.",
+		type = 0,
+		second_text = "Unlock Special Rewards",
+		id = 1031,
+		subject = "Fair Winds Cruise Pass",
+		first_text = "",
+		package_sort_id = 0,
+		first_icon = "",
+		money = 999,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		cash_show = 0,
+		descrip = "Purchase to obtain 1500 Progress Pts and unlock Fair Winds rewards.",
+		limit_type = 2,
+		name_display = "Fair Winds Cruise Pass",
+		type_order = 6,
+		package_tag = "",
+		picture = "battlepass_1",
+		akashi_pick = 1,
+		skin_inquire_relation = 0,
+		extra_service = 4,
+		id_str = "com.yostaren.azurlane.passport36",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "",
+		limit_arg = 1,
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.passport36",
+		extra_service_item = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					12,
+					1
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					1,
+					31
+				},
+				{
+					22,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				8,
+				59599,
+				1500
+			}
+		},
+		sub_display = {
+			7032,
+			1500
+		},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {}
+	}
 	pg.base.pay_data_display[1301] = {
 		limit_group = 0,
 		name = "Black Friday Cruise Pass",
@@ -24524,9 +24604,16 @@ end)()
 		package_tag_open = 0,
 		airijp_id = "com.yostaren.azurlane.passport35",
 		extra_service_item = {
-			8,
-			65107,
-			200
+			{
+				1,
+				4101,
+				200
+			},
+			{
+				8,
+				65107,
+				1
+			}
 		},
 		time = {
 			{
@@ -31736,6 +31823,125 @@ end)()
 			}
 		}
 	}
+	pg.base.pay_data_display[2099] = {
+		limit_group = 0,
+		name = "Skill Book Pack (Fall 2026)",
+		descrip_extra = "*After your purchase, the Pack will be sent to your mailbox.",
+		type = 0,
+		second_text = "",
+		id = 2099,
+		subject = "Skill Book Pack (Fall 2026)",
+		first_text = "",
+		package_sort_id = 0,
+		first_icon = "",
+		money = 299,
+		tip = "",
+		tag = 2,
+		tip_open = 0,
+		gem = 0,
+		cash_show = 0,
+		descrip = "Purchase to obtain a large number of Skill Books.",
+		limit_type = 2,
+		name_display = "Skill Book Pack (Fall 2026)",
+		type_order = 0,
+		package_tag = "",
+		picture = "boxSkill",
+		akashi_pick = 1,
+		skin_inquire_relation = 0,
+		extra_service = 3,
+		id_str = "com.yostaren.azurlane.pack64",
+		first_pay_double = 0,
+		extra_gem = 0,
+		show_group = "",
+		limit_arg = 4,
+		package_tag_open = 0,
+		airijp_id = "com.yostaren.azurlane.pack64",
+		extra_service_item = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			},
+			{
+				2,
+				16003,
+				3
+			},
+			{
+				2,
+				16013,
+				3
+			},
+			{
+				2,
+				16023,
+				3
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					11,
+					24
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2027,
+					4,
+					14
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				16004,
+				1
+			},
+			{
+				2,
+				16014,
+				1
+			},
+			{
+				2,
+				16024,
+				1
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				40023,
+				1
+			}
+		}
+	}
 	pg.base.pay_data_display[5011] = {
 		limit_group = 0,
 		name = "Daily Paid Pack (Day 1)",
@@ -32824,6 +33030,8 @@ end)()
 			}
 		}
 	}
+end)()
+;(function()
 	pg.base.pay_data_display[5026] = {
 		limit_group = 0,
 		name = "Tempesta Building Pack (Day 6)",
@@ -33012,8 +33220,6 @@ end)()
 			}
 		}
 	}
-end)()
-;(function()
 	pg.base.pay_data_display[70001] = {
 		descrip_extra = "Dual-Form Skin Purchase (Azuchi)",
 		name = "Testing Courage in Crimson",

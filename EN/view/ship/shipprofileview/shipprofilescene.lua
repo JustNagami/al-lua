@@ -639,7 +639,7 @@ function var_0_0.CreateLive2D(arg_51_0)
 	})
 
 	arg_51_0.l2dChar = Live2DPainting.New(var_51_5, function(arg_52_0)
-		arg_52_0:setSortingModeFrontZ()
+		arg_52_0:setSortingLayer(LayerWeightConst.L2D_DEFAULT_LAYER)
 		arg_51_0.live2DBtn:SetEnable(true)
 	end)
 

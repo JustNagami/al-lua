@@ -1862,7 +1862,7 @@ function var_0_0.InitSwitch()
 		end,
 		[DROP_TYPE_VITEM] = function(arg_277_0, arg_277_1, arg_277_2)
 			if arg_277_0:getConfig("virtual_type") == VIRTUAL_DROP_TYPE_SKIN_COUPON then
-				setText(arg_277_2, "")
+				setText(arg_277_2, arg_277_0:getConfig("display"))
 			else
 				setText(arg_277_2, arg_277_0:getConfig("display"))
 			end

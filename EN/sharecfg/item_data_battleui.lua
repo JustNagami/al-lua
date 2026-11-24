@@ -21,6 +21,7 @@ pg.item_data_battleui.all = {
 	116,
 	117,
 	118,
+	119,
 	201,
 	202,
 	203,
@@ -300,6 +301,21 @@ pg.base.item_data_battleui = {}
 		unlock = "Obtained from Black Friday Cruise Pass.",
 		id = 118,
 		icon = "118",
+		scene = {},
+		rare_display = {
+			1
+		}
+	}
+	pg.base.item_data_battleui[119] = {
+		key = "SkinNormal_20261203",
+		name = "Timeless Jazz",
+		desc = "Timeless, bold, and free-spirited. The curtains have been raised – now show the world how you groove!",
+		display_icon = "ui_119",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "Cruise Missions S32",
+		id = 119,
+		icon = "119",
 		scene = {},
 		rare_display = {
 			1
