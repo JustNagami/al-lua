@@ -7,85 +7,6 @@ var_0_0.word_legal_template_3 = {}
 local var_0_1 = var_0_0.word_legal_template_3
 
 function temp()
-	var_0_1.ヌ = {
-		ビ = {
-			ア = {
-				ン = {
-					this = true
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.ト = {
-		ラ = {
-			フ = {
-				ァ = {
-					ル = {
-						ガ = {
-							ー = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		リ = {
-			ニ = {
-				ダ = {
-					ー = {
-						ド = {
-							this = true
-						}
-					}
-				}
-			},
-			エ = {
-				ス = {
-					テ = {
-						this = true
-					}
-				}
-			},
-			チ = {
-				ェ = {
-					リ = {
-						this = true
-					}
-				}
-			}
-		},
-		レ = {
-			ン = {
-				ト = {
-					this = true,
-					["("] = {
-						M = {
-							E = {
-								T = {
-									A = {
-										[")"] = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.勇 = {
 		敢 = {
 			["."] = {
@@ -230,7 +151,20 @@ function temp()
 			},
 			サ = {
 				ン = {
-					this = true
+					this = true,
+					["("] = {
+						M = {
+							E = {
+								T = {
+									A = {
+										[")"] = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -597,6 +531,35 @@ end
 temp()
 
 function temp()
+	var_0_1.天 = {
+		津 = {
+			風 = {
+				this = true
+			}
+		},
+		城 = {
+			this = true,
+			ち = {
+				ゃ = {
+					ん = {
+						this = true
+					}
+				}
+			}
+		},
+		海 = {
+			春 = {
+				香 = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
 	var_0_1.野 = {
 		分 = {
 			this = true
@@ -695,6 +658,26 @@ function temp()
 					}
 				}
 			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.松 = {
+		風 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.睦 = {
+		月 = {
+			this = true
 		}
 	}
 end

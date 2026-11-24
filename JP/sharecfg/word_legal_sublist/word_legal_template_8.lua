@@ -7,93 +7,6 @@ var_0_0.word_legal_template_8 = {}
 local var_0_1 = var_0_0.word_legal_template_8
 
 function temp()
-	var_0_1.ゴ = {
-		リ = {
-			ツ = {
-				ィ = {
-					ア = {
-						this = true
-					}
-				}
-			}
-		},
-		ー = {
-			ル = {
-				デ = {
-					ン = {
-						・ = {
-							ハ = {
-								イ = {
-									ン = {
-										ド = {
-											this = true
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.ム = {
-		ル = {
-			マ = {
-				ン = {
-					ス = {
-						ク = {
-							this = true
-						}
-					}
-				}
-			}
-		},
-		ジ = {
-			ナ = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.四 = {
-		万 = {
-			十 = {
-				this = true
-			}
-		},
-		糸 = {
-			乃 = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.孟 = {
-		菲 = {
-			斯 = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.西 = {
 		連 = {
 			寺 = {
@@ -607,6 +520,92 @@ function temp()
 								}
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.皇 = {
+		家 = {
+			财 = {
+				富 = {
+					号 = {
+						（ = {
+							前 = {
+								排 = {
+									） = {
+										this = true
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.铁 = {
+		角 = {
+			号 = {
+				（ = {
+					前 = {
+						排 = {
+							） = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.拉 = {
+		菲 = {
+			I = {
+				I = {
+					this = true
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.ナ = {
+		ポ = {
+			リ = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.と = {
+		き = {
+			の = {
+				そ = {
+					ら = {
+						this = true
 					}
 				}
 			}

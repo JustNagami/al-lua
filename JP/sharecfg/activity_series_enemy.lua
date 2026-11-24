@@ -40,6 +40,11 @@ pg.activity_series_enemy.all = {
 	6003,
 	6004,
 	6005,
+	7001,
+	7002,
+	7003,
+	7004,
+	7005,
 	1001001,
 	1001002,
 	1001003,
@@ -2707,6 +2712,333 @@ pg.base.activity_series_enemy = {}
 			{
 				"huali_2",
 				2
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		},
+		ex_count = {
+			8000,
+			20,
+			0.2,
+			1000,
+			0.8
+		}
+	}
+	pg.base.activity_series_enemy[7001] = {
+		pre_chapter = 0,
+		name = "学生寮",
+		chapter_name = "簡単",
+		type = 1,
+		pos_x = "0",
+		count = 0,
+		additional_awards_display = "",
+		pos_y = "0",
+		whether_singlefight = 0,
+		collection_group_id = 104,
+		ex_count = "",
+		oil = 0,
+		profiles = "キャンパス西側にある学生寮。アオハルの秘めた想いが、ここでひっそりと芽吹いている",
+		id = 7001,
+		limitation = {},
+		expedition_id = {
+			2079101
+		},
+		boss_icon = {
+			{
+				"beili_2",
+				1
+			}
+		},
+		pass_awards_display = {
+			{
+				8,
+				66133,
+				40
+			},
+			{
+				2,
+				200867,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54012,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	}
+	pg.base.activity_series_enemy[7002] = {
+		pre_chapter = 7001,
+		name = "飛行艇発着場",
+		chapter_name = "普通",
+		type = 1,
+		pos_x = "0",
+		count = 0,
+		collection_group_id = 105,
+		pos_y = "0",
+		whether_singlefight = 1,
+		id = 7002,
+		ex_count = "",
+		oil = 0,
+		profiles = "雲海のほとりの発着場に、飛行艇が静かに停泊している。ここから空の上のデートへ出かけよう",
+		limitation = {},
+		expedition_id = {
+			2079201,
+			2079202
+		},
+		boss_icon = {
+			{
+				"beili_2",
+				1
+			},
+			{
+				"yingxiong_2",
+				1
+			}
+		},
+		pass_awards_display = {
+			{
+				8,
+				66133,
+				140
+			},
+			{
+				2,
+				200868,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54017,
+				0
+			}
+		},
+		additional_awards_display = {
+			{
+				8,
+				66133,
+				25
+			},
+			{
+				1,
+				1,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			0,
+			0
+		}
+	}
+	pg.base.activity_series_enemy[7003] = {
+		pre_chapter = 7002,
+		name = "校舎",
+		chapter_name = "難しい",
+		type = 1,
+		pos_x = "0",
+		count = 0,
+		collection_group_id = 106,
+		pos_y = "0",
+		whether_singlefight = 1,
+		id = 7003,
+		ex_count = "",
+		oil = 0,
+		profiles = "日差しが降り注ぐ校舎の廊下。どの教室にも、笑い声とときめきに満ちた青春の思い出が詰まっている",
+		limitation = {},
+		expedition_id = {
+			2079301,
+			2079302,
+			2079303
+		},
+		boss_icon = {
+			{
+				"maliyahuanghou",
+				5
+			},
+			{
+				"moluotuofu",
+				2
+			},
+			{
+				"xinuopu",
+				5
+			}
+		},
+		pass_awards_display = {
+			{
+				8,
+				66133,
+				360
+			},
+			{
+				2,
+				200869,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54017,
+				0
+			}
+		},
+		additional_awards_display = {
+			{
+				8,
+				66133,
+				60
+			},
+			{
+				1,
+				1,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			25,
+			16
+		}
+	}
+	pg.base.activity_series_enemy[7004] = {
+		pre_chapter = 7003,
+		name = "天体観測台",
+		chapter_name = "SP",
+		type = 2,
+		pos_x = "0",
+		count = 1,
+		additional_awards_display = "",
+		pos_y = "0",
+		whether_singlefight = 0,
+		collection_group_id = 107,
+		ex_count = "",
+		oil = 0,
+		profiles = "占星術の研究に使われる観測台。今夜の空はひときわ澄んでるけど、一緒に星を眺める子はもう決まってる？",
+		id = 7004,
+		limitation = {},
+		expedition_id = {
+			2079401,
+			2079402,
+			2079403,
+			2079404
+		},
+		boss_icon = {
+			{
+				"beili_2",
+				1
+			},
+			{
+				"yingxiong_2",
+				1
+			},
+			{
+				"maliyahuanghou",
+				5
+			},
+			{
+				"moluotuofu",
+				2
+			}
+		},
+		pass_awards_display = {
+			{
+				8,
+				66133,
+				800
+			},
+			{
+				2,
+				200870,
+				0
+			},
+			{
+				2,
+				59001,
+				0
+			},
+			{
+				2,
+				54016,
+				0
+			}
+		},
+		defeat_story = {},
+		defeat_story_count = {},
+		use_oil_limit = {
+			40,
+			16
+		}
+	}
+	pg.base.activity_series_enemy[7005] = {
+		pre_chapter = 7004,
+		name = "図書館",
+		chapter_name = "EX",
+		type = 3,
+		pos_x = "0",
+		count = 0,
+		additional_awards_display = "",
+		pos_y = "0",
+		whether_singlefight = 0,
+		collection_group_id = 0,
+		pass_awards_display = "",
+		oil = 0,
+		profiles = "一見普通の図書館だが、その地下には学園の禁書庫が隠されている。封じられた禁忌の知識が再び解き放たれる時を静かに待っている",
+		id = 7005,
+		limitation = {},
+		expedition_id = {
+			2079501,
+			2079502,
+			2079503,
+			2079504,
+			2079505
+		},
+		boss_icon = {
+			{
+				"beili_2",
+				1
+			},
+			{
+				"yingxiong_2",
+				1
+			},
+			{
+				"maliyahuanghou",
+				5
+			},
+			{
+				"moluotuofu",
+				2
+			},
+			{
+				"xinuopu",
+				5
 			}
 		},
 		defeat_story = {},

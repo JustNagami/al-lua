@@ -13,7 +13,8 @@
 		{
 			type = "BattleBuffAddAttrRatioCommander",
 			trigger = {
-				"onAttach"
+				"onAttach",
+				"onRemove"
 			},
 			arg_list = {
 				ability = "tactic",

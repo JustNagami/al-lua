@@ -198,7 +198,15 @@ pg.activity_medal_template.all = {
 	5161105,
 	5161106,
 	5161107,
-	5161108
+	5161108,
+	5140901,
+	5140902,
+	5140903,
+	5140904,
+	5140905,
+	5140906,
+	5140907,
+	5140908
 }
 pg.activity_medal_template.get_id_list_by_group = {
 	[5711] = {
@@ -436,6 +444,16 @@ pg.activity_medal_template.get_id_list_by_group = {
 		5115405,
 		5115406,
 		5115407
+	},
+	[51409] = {
+		5140901,
+		5140902,
+		5140903,
+		5140904,
+		5140905,
+		5140906,
+		5140907,
+		5140908
 	},
 	[51611] = {
 		5161101,
@@ -2805,5 +2823,103 @@ end)()
 		activity_medal_name = "ステッカー：星空逆廻り",
 		id = 5161108,
 		activity_medal_desc = "「天穹は倒転し、星軌は移ろう」"
+	}
+	pg.base.activity_medal_template[5140901] = {
+		prefab_node = "1",
+		next_medal = 0,
+		item = 66123,
+		remake_task_id = 0,
+		group = 51409,
+		task_id = 25749,
+		medal_asset = "ActivityMedal/5140901",
+		activity_medal_name = "ステッカー：真理学園",
+		id = 5140901,
+		activity_medal_desc = "魔法とときめきが交錯する時、攻略が始まる――"
+	}
+	pg.base.activity_medal_template[5140902] = {
+		prefab_node = "2",
+		next_medal = 0,
+		item = 66124,
+		remake_task_id = 0,
+		group = 51409,
+		task_id = 25750,
+		medal_asset = "ActivityMedal/5140902",
+		activity_medal_name = "ステッカー：ドキドキクリティカル",
+		id = 5140902,
+		activity_medal_desc = "これは……心がドキッとしてる！"
+	}
+	pg.base.activity_medal_template[5140903] = {
+		prefab_node = "3",
+		next_medal = 0,
+		item = 66125,
+		remake_task_id = 0,
+		group = 51409,
+		task_id = 25751,
+		medal_asset = "ActivityMedal/5140903",
+		activity_medal_name = "ステッカー：告白セーブポイント",
+		id = 5140903,
+		activity_medal_desc = "ロードした理由：「好き」の声が小さすぎた"
+	}
+	pg.base.activity_medal_template[5140904] = {
+		prefab_node = "4",
+		next_medal = 0,
+		item = 66126,
+		remake_task_id = 0,
+		group = 51409,
+		task_id = 25752,
+		medal_asset = "ActivityMedal/5140904",
+		activity_medal_name = "ステッカー：スタッフ教育",
+		id = 5140904,
+		activity_medal_desc = "スタッフの教育には、スタッフを使った教育もあるわ"
+	}
+end)()
+;(function()
+	pg.base.activity_medal_template[5140905] = {
+		prefab_node = "5",
+		next_medal = 0,
+		item = 66127,
+		remake_task_id = 0,
+		group = 51409,
+		task_id = 25753,
+		medal_asset = "ActivityMedal/5140905",
+		activity_medal_name = "ステッカー：玉座の上",
+		id = 5140905,
+		activity_medal_desc = "王が認め、王が許す"
+	}
+	pg.base.activity_medal_template[5140906] = {
+		prefab_node = "6",
+		next_medal = 0,
+		item = 66128,
+		remake_task_id = 0,
+		group = 51409,
+		task_id = 25754,
+		medal_asset = "ActivityMedal/5140906",
+		activity_medal_name = "ステッカー：キャンディモンスター",
+		id = 5140906,
+		activity_medal_desc = "トリック・オア・トリート？……トリート・アンド・トリート！"
+	}
+	pg.base.activity_medal_template[5140907] = {
+		prefab_node = "7",
+		next_medal = 0,
+		item = 66129,
+		remake_task_id = 0,
+		group = 51409,
+		task_id = 25755,
+		medal_asset = "ActivityMedal/5140907",
+		activity_medal_name = "ステッカー：スノークラウン",
+		id = 5140907,
+		activity_medal_desc = "雪来たる？ただの登場演出だよ"
+	}
+	pg.base.activity_medal_template[5140908] = {
+		prefab_node = "8",
+		next_medal = 0,
+		item = 66130,
+		remake_task_id = 0,
+		group = 51409,
+		task_id = 25756,
+		medal_asset = "ActivityMedal/5140908",
+		activity_medal_name = "ステッカー：ロマンチック聖杯",
+		id = 5140908,
+		activity_medal_desc = "其れは創造主と同じ、ロマンにのみ忠実な存在"
 	}
 end)()

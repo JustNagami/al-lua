@@ -7,108 +7,6 @@ var_0_0.word_legal_template_7 = {}
 local var_0_1 = var_0_0.word_legal_template_7
 
 function temp()
-	var_0_1.明 = {
-		石 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.樫 = {
-		野 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.Z = {
-		["1"] = {
-			this = true,
-			["1"] = {
-				this = true
-			},
-			["3"] = {
-				this = true
-			},
-			["4"] = {
-				this = true
-			},
-			["5"] = {
-				this = true
-			},
-			["6"] = {
-				this = true
-			},
-			["8"] = {
-				this = true
-			},
-			["9"] = {
-				this = true
-			}
-		},
-		["2"] = {
-			this = true,
-			["0"] = {
-				this = true
-			},
-			["1"] = {
-				this = true
-			},
-			["3"] = {
-				this = true
-			},
-			["4"] = {
-				this = true
-			},
-			["5"] = {
-				this = true
-			},
-			["6"] = {
-				this = true
-			},
-			["8"] = {
-				this = true
-			}
-		},
-		["9"] = {
-			this = true
-		},
-		["3"] = {
-			["5"] = {
-				this = true
-			},
-			["6"] = {
-				this = true
-			}
-		},
-		["4"] = {
-			["3"] = {
-				this = true
-			},
-			["6"] = {
-				this = true
-			},
-			["7"] = {
-				this = true
-			}
-		},
-		["5"] = {
-			["2"] = {
-				this = true
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.沃 = {
 		尔 = {
 			普 = {
@@ -558,6 +456,93 @@ function temp()
 	var_0_1.定 = {
 		安 = {
 			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.ゴ = {
+		リ = {
+			ツ = {
+				ィ = {
+					ア = {
+						this = true
+					}
+				}
+			}
+		},
+		ー = {
+			ル = {
+				デ = {
+					ン = {
+						・ = {
+							ハ = {
+								イ = {
+									ン = {
+										ド = {
+											this = true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.ム = {
+		ル = {
+			マ = {
+				ン = {
+					ス = {
+						ク = {
+							this = true
+						}
+					}
+				}
+			}
+		},
+		ジ = {
+			ナ = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.四 = {
+		万 = {
+			十 = {
+				this = true
+			}
+		},
+		糸 = {
+			乃 = {
+				this = true
+			}
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.孟 = {
+		菲 = {
+			斯 = {
+				this = true
+			}
 		}
 	}
 end

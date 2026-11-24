@@ -7,44 +7,6 @@ var_0_0.word_legal_template_6 = {}
 local var_0_1 = var_0_0.word_legal_template_6
 
 function temp()
-	var_0_1.浅 = {
-		間 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.金 = {
-		剛 = {
-			this = true,
-			["("] = {
-				μ = {
-					兵 = {
-						装 = {
-							[")"] = {
-								this = true
-							}
-						}
-					}
-				}
-			}
-		},
-		色 = {
-			の = {
-				闇 = {
-					this = true
-				}
-			}
-		}
-	}
-end
-
-temp()
-
-function temp()
 	var_0_1.比 = {
 		叡 = {
 			this = true,
@@ -95,23 +57,9 @@ end
 temp()
 
 function temp()
-	var_0_1.天 = {
-		城 = {
-			this = true,
-			ち = {
-				ゃ = {
-					ん = {
-						this = true
-					}
-				}
-			}
-		},
-		海 = {
-			春 = {
-				香 = {
-					this = true
-				}
-			}
+	var_0_1.安 = {
+		土 = {
+			this = true
 		}
 	}
 end
@@ -162,6 +110,9 @@ function temp()
 				}
 			},
 			["3"] = {
+				this = true
+			},
+			["4"] = {
 				this = true
 			}
 		},
@@ -243,7 +194,14 @@ temp()
 function temp()
 	var_0_1.武 = {
 		蔵 = {
-			this = true
+			this = true,
+			ち = {
+				ゃ = {
+					ん = {
+						this = true
+					}
+				}
+			}
 		}
 	}
 end
@@ -524,6 +482,108 @@ function temp()
 	var_0_1.葛 = {
 		城 = {
 			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.明 = {
+		石 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.樫 = {
+		野 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.Z = {
+		["1"] = {
+			this = true,
+			["1"] = {
+				this = true
+			},
+			["3"] = {
+				this = true
+			},
+			["4"] = {
+				this = true
+			},
+			["5"] = {
+				this = true
+			},
+			["6"] = {
+				this = true
+			},
+			["8"] = {
+				this = true
+			},
+			["9"] = {
+				this = true
+			}
+		},
+		["2"] = {
+			this = true,
+			["0"] = {
+				this = true
+			},
+			["1"] = {
+				this = true
+			},
+			["3"] = {
+				this = true
+			},
+			["4"] = {
+				this = true
+			},
+			["5"] = {
+				this = true
+			},
+			["6"] = {
+				this = true
+			},
+			["8"] = {
+				this = true
+			}
+		},
+		["9"] = {
+			this = true
+		},
+		["3"] = {
+			["5"] = {
+				this = true
+			},
+			["6"] = {
+				this = true
+			}
+		},
+		["4"] = {
+			["3"] = {
+				this = true
+			},
+			["6"] = {
+				this = true
+			},
+			["7"] = {
+				this = true
+			}
+		},
+		["5"] = {
+			["2"] = {
+				this = true
+			}
 		}
 	}
 end

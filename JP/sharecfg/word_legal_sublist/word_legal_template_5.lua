@@ -7,31 +7,8 @@ var_0_0.word_legal_template_5 = {}
 local var_0_1 = var_0_0.word_legal_template_5
 
 function temp()
-	var_0_1.追 = {
-		風 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.風 = {
-		雲 = {
-			this = true
-		}
-	}
-end
-
-temp()
-
-function temp()
-	var_0_1.妙 = {
-		風 = {
-			this = true
-		},
-		高 = {
+	var_0_1.藤 = {
+		波 = {
 			this = true
 		}
 	}
@@ -61,6 +38,9 @@ temp()
 function temp()
 	var_0_1.名 = {
 		取 = {
+			this = true
+		},
+		寄 = {
 			this = true
 		}
 	}
@@ -153,6 +133,16 @@ function temp()
 			this = true
 		},
 		智 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.木 = {
+		津 = {
 			this = true
 		}
 	}
@@ -287,9 +277,6 @@ function temp()
 	var_0_1.高 = {
 		雄 = {
 			this = true
-		},
-		梁 = {
-			this = true
 		}
 	}
 end
@@ -349,7 +336,55 @@ temp()
 function temp()
 	var_0_1.雲 = {
 		仙 = {
+			this = true,
+			ち = {
+				ゃ = {
+					ん = {
+						this = true
+					}
+				}
+			}
+		},
+		龍 = {
 			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.浅 = {
+		間 = {
+			this = true
+		}
+	}
+end
+
+temp()
+
+function temp()
+	var_0_1.金 = {
+		剛 = {
+			this = true,
+			["("] = {
+				μ = {
+					兵 = {
+						装 = {
+							[")"] = {
+								this = true
+							}
+						}
+					}
+				}
+			}
+		},
+		色 = {
+			の = {
+				闇 = {
+					this = true
+				}
+			}
 		}
 	}
 end

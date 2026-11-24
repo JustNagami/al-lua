@@ -20,6 +20,7 @@ pg.item_data_battleui.all = {
 	115,
 	116,
 	117,
+	119,
 	201,
 	202,
 	203,
@@ -284,6 +285,21 @@ pg.base.item_data_battleui = {}
 		unlock = "クルーズパス31期報酬",
 		id = 117,
 		icon = "117",
+		scene = {},
+		rare_display = {
+			1
+		}
+	}
+	pg.base.item_data_battleui[119] = {
+		key = "SkinNormal_20261203",
+		name = "ジャズ",
+		desc = "華やかに輝くはレトロな味わい、軽快に弾けるは自由なるジャズのフィーリング。幕はもう上がった――さあ、あなたのステージを！",
+		display_icon = "ui_119",
+		is_unlock = 1,
+		rare = 3,
+		unlock = "シーズン任務・32期で入手",
+		id = 119,
+		icon = "119",
 		scene = {},
 		rare_display = {
 			1
